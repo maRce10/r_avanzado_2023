@@ -11,16 +11,18 @@ format:
     code-fold: show
     code-tools: true
     css: styles.css
-    link-external-icon: true
+    link-external-icon: false
     link-external-newwindow: true  
 ---
+
+```{=html}
 <style>
 body
   { counter-reset: source-line 0; }
 pre.numberSource code
   { counter-reset: none; }
 </style>
-
+```
 ```{r,echo=FALSE,message=FALSE}
 
 options("digits"=5)

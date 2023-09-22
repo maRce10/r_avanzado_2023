@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,10 +17,9 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -47,13 +46,43 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -117,30 +146,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">R avanzado 2023</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="./index.html">
  <span class="menu-text"> </span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-manuales" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-manuales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Manuales</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-manuales">    
         <li>
-    <a class="dropdown-item" href="./fundamentos_de_r.html" rel="" target="">
+    <a class="dropdown-item" href="./fundamentos_de_r.html">
  <span class="dropdown-text">Fundamentos de R</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./reportes_dinamicos_con_rmarkdown.html" rel="" target="">
+    <a class="dropdown-item" href="./reportes_dinamicos_con_rmarkdown.html">
  <span class="dropdown-text">Reportes dinámicos</span></a>
   </li>  
-        <li class="dropdown-header">Funciones</li>
+        <li>
+    <a class="dropdown-item" href="./funciones.html">
+ <span class="dropdown-text">Funciones</span></a>
+  </li>  
         <li class="dropdown-header">Bucles</li>
         <li class="dropdown-header">Modelos de regresión</li>
         <li class="dropdown-header">Modelos de regresión comunes</li>
@@ -148,27 +179,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./preparacion_curso.html" rel="" target="">
+    <a class="nav-link" href="./preparacion_curso.html">
  <span class="menu-text">Preparación para el curso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./code_redirect.html" rel="" target="">
+    <a class="nav-link" href="./code_redirect.html">
  <span class="menu-text">Compartir código</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructor.html" rel="" target="">
+    <a class="nav-link" href="./instructor.html">
  <span class="menu-text">Instructor</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/maRce10/R_avanzado_2023/" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/maRce10/R_avanzado_2023/"><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -176,60 +206,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#objetivos-del-manual" id="toc-objetivos-del-manual" class="nav-link active" data-scroll-target="#objetivos-del-manual"><span class="header-section-number">1</span> Objetivos del manual</a></li>
-  <li><a href="#crisis-de-reproducibilidad-en-la-ciencia" id="toc-crisis-de-reproducibilidad-en-la-ciencia" class="nav-link" data-scroll-target="#crisis-de-reproducibilidad-en-la-ciencia"><span class="header-section-number">1.1</span> Crisis de reproducibilidad en la ciencia</a></li>
-  <li><a href="#crear-documentos-r-markdown" id="toc-crear-documentos-r-markdown" class="nav-link" data-scroll-target="#crear-documentos-r-markdown"><span class="header-section-number">2</span> Crear documentos R Markdown</a>
+  <li><a href="#objetivos-del-manual" id="toc-objetivos-del-manual" class="nav-link active" data-scroll-target="#objetivos-del-manual"><span class="toc-section-number">1</span>  Objetivos del manual</a></li>
+  <li><a href="#crisis-de-reproducibilidad-en-la-ciencia" id="toc-crisis-de-reproducibilidad-en-la-ciencia" class="nav-link" data-scroll-target="#crisis-de-reproducibilidad-en-la-ciencia"><span class="toc-section-number">1.1</span>  Crisis de reproducibilidad en la ciencia</a></li>
+  <li><a href="#crear-documentos-r-markdown" id="toc-crear-documentos-r-markdown" class="nav-link" data-scroll-target="#crear-documentos-r-markdown"><span class="toc-section-number">2</span>  Crear documentos R Markdown</a>
   <ul class="collapse">
-  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1"><span class="header-section-number">2.1</span> Ejercicio 1</a></li>
+  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1"><span class="toc-section-number">2.1</span>  Ejercicio 1</a></li>
   </ul></li>
-  <li><a href="#syntaxis-markdown" id="toc-syntaxis-markdown" class="nav-link" data-scroll-target="#syntaxis-markdown"><span class="header-section-number">3</span> Syntaxis Markdown</a>
+  <li><a href="#syntaxis-markdown" id="toc-syntaxis-markdown" class="nav-link" data-scroll-target="#syntaxis-markdown"><span class="toc-section-number">3</span>  Syntaxis Markdown</a>
   <ul class="collapse">
-  <li><a href="#crear-encabezados-de-varios-tamaños" id="toc-crear-encabezados-de-varios-tamaños" class="nav-link" data-scroll-target="#crear-encabezados-de-varios-tamaños"><span class="header-section-number">3.1</span> Crear encabezados de varios tamaños</a></li>
+  <li><a href="#crear-encabezados-de-varios-tamaños" id="toc-crear-encabezados-de-varios-tamaños" class="nav-link" data-scroll-target="#crear-encabezados-de-varios-tamaños"><span class="toc-section-number">3.1</span>  Crear encabezados de varios tamaños</a></li>
   </ul></li>
-  <li><a href="#encabezado-1" id="toc-encabezado-1" class="nav-link" data-scroll-target="#encabezado-1"><span class="header-section-number">4</span> Encabezado 1</a>
+  <li><a href="#encabezado-1" id="toc-encabezado-1" class="nav-link" data-scroll-target="#encabezado-1"><span class="toc-section-number">4</span>  Encabezado 1</a>
   <ul class="collapse">
-  <li><a href="#encabezado-2" id="toc-encabezado-2" class="nav-link" data-scroll-target="#encabezado-2"><span class="header-section-number">4.1</span> Encabezado 2</a></li>
-  <li><a href="#opciones-del-texto" id="toc-opciones-del-texto" class="nav-link" data-scroll-target="#opciones-del-texto"><span class="header-section-number">4.2</span> Opciones del texto</a></li>
-  <li><a href="#añadir-una-imagen" id="toc-añadir-una-imagen" class="nav-link" data-scroll-target="#añadir-una-imagen"><span class="header-section-number">4.3</span> Añadir una imagen</a></li>
-  <li><a href="#crear-enlaces-hyperlinks" id="toc-crear-enlaces-hyperlinks" class="nav-link" data-scroll-target="#crear-enlaces-hyperlinks"><span class="header-section-number">4.4</span> Crear enlaces (‘hyperlinks’)</a></li>
-  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2"><span class="header-section-number">4.5</span> Ejercicio 2</a></li>
-  <li><a href="#incrustar-código" id="toc-incrustar-código" class="nav-link" data-scroll-target="#incrustar-código"><span class="header-section-number">4.6</span> Incrustar código</a></li>
-  <li><a href="#ocultar-código" id="toc-ocultar-código" class="nav-link" data-scroll-target="#ocultar-código"><span class="header-section-number">4.7</span> Ocultar código</a></li>
-  <li><a href="#incrustar-gráficos" id="toc-incrustar-gráficos" class="nav-link" data-scroll-target="#incrustar-gráficos"><span class="header-section-number">4.8</span> Incrustar gráficos</a></li>
-  <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3"><span class="header-section-number">4.9</span> Ejercicio 3</a></li>
-  <li><a href="#incrustar-código-de-r-en-el-texto" id="toc-incrustar-código-de-r-en-el-texto" class="nav-link" data-scroll-target="#incrustar-código-de-r-en-el-texto"><span class="header-section-number">4.10</span> Incrustar código de R en el texto</a></li>
+  <li><a href="#encabezado-2" id="toc-encabezado-2" class="nav-link" data-scroll-target="#encabezado-2"><span class="toc-section-number">4.1</span>  Encabezado 2</a></li>
+  <li><a href="#opciones-del-texto" id="toc-opciones-del-texto" class="nav-link" data-scroll-target="#opciones-del-texto"><span class="toc-section-number">4.2</span>  Opciones del texto</a></li>
+  <li><a href="#añadir-una-imagen" id="toc-añadir-una-imagen" class="nav-link" data-scroll-target="#añadir-una-imagen"><span class="toc-section-number">4.3</span>  Añadir una imagen</a></li>
+  <li><a href="#crear-enlaces-hyperlinks" id="toc-crear-enlaces-hyperlinks" class="nav-link" data-scroll-target="#crear-enlaces-hyperlinks"><span class="toc-section-number">4.4</span>  Crear enlaces (‘hyperlinks’)</a></li>
+  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2"><span class="toc-section-number">4.5</span>  Ejercicio 2</a></li>
+  <li><a href="#incrustar-código" id="toc-incrustar-código" class="nav-link" data-scroll-target="#incrustar-código"><span class="toc-section-number">4.6</span>  Incrustar código</a></li>
+  <li><a href="#ocultar-código" id="toc-ocultar-código" class="nav-link" data-scroll-target="#ocultar-código"><span class="toc-section-number">4.7</span>  Ocultar código</a></li>
+  <li><a href="#incrustar-gráficos" id="toc-incrustar-gráficos" class="nav-link" data-scroll-target="#incrustar-gráficos"><span class="toc-section-number">4.8</span>  Incrustar gráficos</a></li>
+  <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3"><span class="toc-section-number">4.9</span>  Ejercicio 3</a></li>
+  <li><a href="#incrustar-código-de-r-en-el-texto" id="toc-incrustar-código-de-r-en-el-texto" class="nav-link" data-scroll-target="#incrustar-código-de-r-en-el-texto"><span class="toc-section-number">4.10</span>  Incrustar código de R en el texto</a></li>
   </ul></li>
-  <li><a href="#recursos-adicionales-para-personalizar-documentos-rmarkdown" id="toc-recursos-adicionales-para-personalizar-documentos-rmarkdown" class="nav-link" data-scroll-target="#recursos-adicionales-para-personalizar-documentos-rmarkdown"><span class="header-section-number">5</span> Recursos adicionales para personalizar documentos Rmarkdown</a>
+  <li><a href="#recursos-adicionales-para-personalizar-documentos-rmarkdown" id="toc-recursos-adicionales-para-personalizar-documentos-rmarkdown" class="nav-link" data-scroll-target="#recursos-adicionales-para-personalizar-documentos-rmarkdown"><span class="toc-section-number">5</span>  Recursos adicionales para personalizar documentos Rmarkdown</a>
   <ul class="collapse">
-  <li><a href="#metadatos-yaml" id="toc-metadatos-yaml" class="nav-link" data-scroll-target="#metadatos-yaml"><span class="header-section-number">5.1</span> Metadatos (YAML)</a></li>
-  <li><a href="#emojis" id="toc-emojis" class="nav-link" data-scroll-target="#emojis"><span class="header-section-number">5.2</span> Emojis</a></li>
-  <li><a href="#cuadros-con-knitrkable" id="toc-cuadros-con-knitrkable" class="nav-link" data-scroll-target="#cuadros-con-knitrkable"><span class="header-section-number">5.3</span> Cuadros con knitr::kable</a></li>
-  <li><a href="#opciones-adicionales-en-knitr" id="toc-opciones-adicionales-en-knitr" class="nav-link" data-scroll-target="#opciones-adicionales-en-knitr"><span class="header-section-number">5.4</span> Opciones adicionales en knitr</a></li>
-  <li><a href="#presentaciones-y-otros-opciones-de-formato" id="toc-presentaciones-y-otros-opciones-de-formato" class="nav-link" data-scroll-target="#presentaciones-y-otros-opciones-de-formato"><span class="header-section-number">5.5</span> Presentaciones y otros opciones de formato</a></li>
-  <li><a href="#plantillas-de-rmarkdown" id="toc-plantillas-de-rmarkdown" class="nav-link" data-scroll-target="#plantillas-de-rmarkdown"><span class="header-section-number">5.6</span> Plantillas de Rmarkdown</a></li>
+  <li><a href="#metadatos-yaml" id="toc-metadatos-yaml" class="nav-link" data-scroll-target="#metadatos-yaml"><span class="toc-section-number">5.1</span>  Metadatos (YAML)</a></li>
+  <li><a href="#emojis" id="toc-emojis" class="nav-link" data-scroll-target="#emojis"><span class="toc-section-number">5.2</span>  Emojis</a></li>
+  <li><a href="#cuadros-con-knitrkable" id="toc-cuadros-con-knitrkable" class="nav-link" data-scroll-target="#cuadros-con-knitrkable"><span class="toc-section-number">5.3</span>  Cuadros con knitr::kable</a></li>
+  <li><a href="#opciones-adicionales-en-knitr" id="toc-opciones-adicionales-en-knitr" class="nav-link" data-scroll-target="#opciones-adicionales-en-knitr"><span class="toc-section-number">5.4</span>  Opciones adicionales en knitr</a></li>
+  <li><a href="#presentaciones-y-otros-opciones-de-formato" id="toc-presentaciones-y-otros-opciones-de-formato" class="nav-link" data-scroll-target="#presentaciones-y-otros-opciones-de-formato"><span class="toc-section-number">5.5</span>  Presentaciones y otros opciones de formato</a></li>
+  <li><a href="#plantillas-de-rmarkdown" id="toc-plantillas-de-rmarkdown" class="nav-link" data-scroll-target="#plantillas-de-rmarkdown"><span class="toc-section-number">5.6</span>  Plantillas de Rmarkdown</a></li>
   </ul></li>
-  <li><a href="#documentos-interactivos" id="toc-documentos-interactivos" class="nav-link" data-scroll-target="#documentos-interactivos"><span class="header-section-number">6</span> Documentos interactivos</a>
+  <li><a href="#documentos-interactivos" id="toc-documentos-interactivos" class="nav-link" data-scroll-target="#documentos-interactivos"><span class="toc-section-number">6</span>  Documentos interactivos</a>
   <ul class="collapse">
-  <li><a href="#html-widgets" id="toc-html-widgets" class="nav-link" data-scroll-target="#html-widgets"><span class="header-section-number">6.1</span> HTML widgets</a></li>
-  <li><a href="#aplicaciones-shiny" id="toc-aplicaciones-shiny" class="nav-link" data-scroll-target="#aplicaciones-shiny"><span class="header-section-number">6.2</span> Aplicaciones shiny</a></li>
+  <li><a href="#html-widgets" id="toc-html-widgets" class="nav-link" data-scroll-target="#html-widgets"><span class="toc-section-number">6.1</span>  HTML widgets</a></li>
+  <li><a href="#aplicaciones-shiny" id="toc-aplicaciones-shiny" class="nav-link" data-scroll-target="#aplicaciones-shiny"><span class="toc-section-number">6.2</span>  Aplicaciones shiny</a></li>
   </ul></li>
-  <li><a href="#publicar-reportes-en-linea-con-rpubs" id="toc-publicar-reportes-en-linea-con-rpubs" class="nav-link" data-scroll-target="#publicar-reportes-en-linea-con-rpubs"><span class="header-section-number">7</span> Publicar reportes en linea con Rpubs</a></li>
-  <li><a href="#herramientas-adicionales-para-organizar-análisis-de-datos" id="toc-herramientas-adicionales-para-organizar-análisis-de-datos" class="nav-link" data-scroll-target="#herramientas-adicionales-para-organizar-análisis-de-datos"><span class="header-section-number">8</span> Herramientas adicionales para organizar análisis de datos</a>
+  <li><a href="#publicar-reportes-en-linea-con-rpubs" id="toc-publicar-reportes-en-linea-con-rpubs" class="nav-link" data-scroll-target="#publicar-reportes-en-linea-con-rpubs"><span class="toc-section-number">7</span>  Publicar reportes en linea con Rpubs</a></li>
+  <li><a href="#herramientas-adicionales-para-organizar-análisis-de-datos" id="toc-herramientas-adicionales-para-organizar-análisis-de-datos" class="nav-link" data-scroll-target="#herramientas-adicionales-para-organizar-análisis-de-datos"><span class="toc-section-number">8</span>  Herramientas adicionales para organizar análisis de datos</a>
   <ul class="collapse">
-  <li><a href="#proyectos-de-rstudio" id="toc-proyectos-de-rstudio" class="nav-link" data-scroll-target="#proyectos-de-rstudio"><span class="header-section-number">8.1</span> Proyectos de Rstudio</a></li>
-  <li><a href="#compendios-de-investigación" id="toc-compendios-de-investigación" class="nav-link" data-scroll-target="#compendios-de-investigación"><span class="header-section-number">8.2</span> Compendios de investigación</a></li>
-  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4"><span class="header-section-number">8.3</span> Ejercicio 4</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">8.4</span> Referencias</a></li>
+  <li><a href="#proyectos-de-rstudio" id="toc-proyectos-de-rstudio" class="nav-link" data-scroll-target="#proyectos-de-rstudio"><span class="toc-section-number">8.1</span>  Proyectos de Rstudio</a></li>
+  <li><a href="#compendios-de-investigación" id="toc-compendios-de-investigación" class="nav-link" data-scroll-target="#compendios-de-investigación"><span class="toc-section-number">8.2</span>  Compendios de investigación</a></li>
+  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4"><span class="toc-section-number">8.3</span>  Ejercicio 4</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="toc-section-number">8.4</span>  Referencias</a></li>
   </ul></li>
   </ul>
 </nav>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -259,6 +288,9 @@ body
 pre.numberSource code
   { counter-reset: none; }
 </style>
+<div class="cell">
+
+</div>
 <section id="objetivos-del-manual" class="level1 alert alert-info" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Objetivos del manual</h1>
 <ul>
@@ -540,7 +572,7 @@ pre.numberSource code
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <colgroup>
 <col style="width: 18%">
 <col style="width: 17%">
@@ -634,7 +666,7 @@ pre.numberSource code
 <div class="cell">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <colgroup>
 <col style="width: 18%">
 <col style="width: 17%">
@@ -855,7 +887,7 @@ pre.numberSource code
 <div class="cell">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <colgroup>
 <col style="width: 18%">
 <col style="width: 17%">
@@ -1301,23 +1333,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -1433,92 +1451,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1557,12 +1489,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/marce10\.github\.io\/R_avanzado_2023\/");
+      var filterRegex = new RegExp(/https:\/\/marce10\.github\.io\/R_avanzado_2023\//);
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -2390,13 +2322,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
+      <div class="nav-footer-center">Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></div>
   </div>
 </footer>
 
