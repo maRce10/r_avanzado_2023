@@ -1,0 +1,798 @@
+---
+title: <font size="7"><b>Bucles</b></font>
+toc: true
+toc-depth: 2
+toc-location: left
+number-sections: true
+highlight-style: pygments
+format:
+  html:
+    df-print: kable
+    code-fold: show
+    code-tools: true
+    css: styles.css
+    link-external-icon: true
+    link-external-newwindow: true  
+---
+
+<style>
+body
+  { counter-reset: source-line 0; }
+pre.numberSource code
+  { counter-reset: none; }
+</style>
+
+
+```{r,echo=FALSE,message=FALSE}
+
+options("digits"=5)
+options("digits.secs"=3)
+
+# options to customize chunk outputs
+knitr::opts_chunk$set(
+  class.source = "numberLines lineAnchors", # for code line numbers
+  tidy.opts = list(width.cutoff = 65), 
+  tidy = TRUE,
+  message = FALSE
+ )
+
+library(ggplot2)
+library(RColorBrewer)
+
+theme_set(theme_classic(base_size = 50))
+
+cols <- brewer.pal(10,"Spectral")
+```
+
+
+<div class="alert alert-info">
+
+# Objetivo del manual
+
+- Aprender a procesar de forma serial operaciones que deben repetirse sobre diferentes objetos
+- Familiarizarse con el uso de bucles en la plataforma R
+- Tener una noción general de los opciones disponibles en R para construir bucles
+
+</div>
+
+---
+
+Primero debemos preparar los archivos de ejemplo:
+
+```{r, eval = FALSE}
+
+# definir directorio a donde guardar los archivos
+directorio <- "DIRECCION_DONDE_DESEA_GUARDAR_LOS ARCHIVOS_DE_EJEMPLO"
+
+# guardar archivos
+download.file(url = "https://github.com/maRce10/ucr_r_avanzado/raw/master/additional_files/datos_camara_submarina.zip", destfile = file.path(directorio, "datos_camara_submarina.zip"))
+
+# extraerlos del zip
+unzip(zipfile = file.path(directorio, "datos_camara_submarina.zip"), exdir = directorio)
+
+# hacer vector con nombre y direccion de archivos
+archivos_txt <- list.files(path = directorio, full.names = TRUE, pattern = "TXT$")
+
+
+```
+
+```{r, echo = FALSE}
+
+# definir directorio a donde guardar los archivos
+directorio <- ".."
+
+# guardar archivos
+download.file(url = "https://github.com/maRce10/ucr_r_avanzado/raw/master/additional_files/datos_camara_submarina.zip", destfile = file.path(directorio, "datos_camara_submarina.zip"))
+
+# extraerlos del zip
+unzip(zipfile = file.path(directorio, "datos_camara_submarina.zip"), exdir = directorio)
+
+# hacer vector con nombre y direccion de archivos
+archivos_txt <- list.files(path = directorio, full.names = TRUE, pattern = "TXT$")
+
+```
+
+&nbsp; 
+
+También pueden bajar el archivo directamente de [este enlance](https://github.com/maRce10/ucr_r_avanzado/raw/master/additional_files/datos_camara_submarina.zip). Recuerde extraer los archivos y hacer el vector con los nombres de los archivos (correr lineas  de la 9 a la 13).
+
+Si todo salió bien el vector "archivos_txt" deberia tener `r length(archivos_txt)` elementos:
+
+```{r}
+
+length(archivos_txt)
+
+```
+
+---
+
+&nbsp; 
+ 
+# Bucles (loops) 
+
+- Proceso automatizado de varios pasos organizado como secuencias de acciones (p. Ej., procesos 'por lotes')
+- Se usa para acelerar los procedimientos en los que se aplica la misma acción a muchos objetos (similares)
+- Crítico para la gestión de grandes bases de datos ('big data', y buenas prácticas de programación)
+
+
+2 tipos básicos:
+
+   1) Ejecutar para un número predefinido de iteraciones (es decir, tiempos). Estos se subdividen en dos clases:
+       a. Los resultados pueden ingresarse nuevamente en la siguiente iteración (bucles `for`)
+       a. Los resultados de una interacción no pueden afectar a otras iteraciones (`(X)apply`) 
+
+```{r, echo=FALSE,out.width="70%", fig.align="center"}
+
+knitr::include_graphics("./images/loops2_esp.png")
+
+```
+&nbsp;
+
+<font size = "2"> * Modificado de <i> Tutorial de bucles Datacamp </i> </font>
+
+&nbsp;
+
+
+  2) Ejecutar hasta que se cumpla una condición predefinida (bucles `while` y` repeat`)
+
+```{r, echo=FALSE,out.width="70%", fig.align="center"}
+
+knitr::include_graphics("./images/loops1_esp.png")
+
+```
+
+&nbsp;
+
+---
+
+# Bucles 'for'
+
+Por mucho, `for` es el bucle más popular. Se caracteriza por que el número de iteraciones se puede determinar de antemano y las iteraciones pueden tomar en cuenta resultados de iteraciones anteriores:
+
+```{r, echo=FALSE,out.width="40%", fig.align="center"}
+
+knitr::include_graphics("./images/for_esp.png")
+
+```
+&nbsp;
+
+El bucle `for` se inicia con el operador `for`. A este se le da un vector (*sensu lato*: lista o vector atómico) sobre el cual repetir una tarea. La tarea se encuentra en el cuerpo del bucle: 
+
+```{r}
+vctr <- 1:3 # vector sobre el cual iterar el bucle
+
+for(i in vctr) # inicio del bucle
+  print(i^2) # cuerpo del bucle
+
+```
+&nbsp;
+
+Note que en dentro de los paréntesis del operador `for` se usa el operador `in`. Este denota el nombre de objeto que se usará en el cuerpo del bucle para asignar los velores del vector. El bucle devuelve 3 valores, uno para cada valor en `vctr`. 
+
+Una forma mas clara de demostrar como el bucle repite la acción de forma serial sobre cada elemento del vector es añadiendo pausas entre iteraciones. La función `Sys.sleep()` pausa el código de R por el número de segundos que se le defina:
+
+```{r}
+
+vctr <- 1:3 # vector sobre el cual iterar el bucle
+
+for(i in vctr) {# inicio del bucle
+  print(paste("# corriendo iteración", i))
+  Sys.sleep(2) # pausar 2 segundos
+  print(i^2) # cuerpo del bucle  
+  }
+
+```
+&nbsp;
+
+En este caso vemos como el bucle toma una pausa entre cada iteración y luego hace el cálculo (cuando corre el código en su computadora).
+
+Si deseamos guardar el resultado de las operaciones debemos añadirlo a un vector vacío. Para hacer esto hay 2 opciones:
+
+   - Usando la función `append()`
+   - Agregar nuevos elementos a un vector usando indexación
+
+El siguiente código guarda los resultados usando `append()`:
+```{r}
+
+vctr <- 1:3 # vector sobre el cual iterar el bucle
+resultados <- vector() # vector vacio
+
+for(i in vctr){ # inicio del bucle
+
+    i2 <- i^2 # cuerpo del bucle
+
+  resultados <- append(resultados, i2) # guardar resultados en vector vacio
+  }
+
+resultados
+```
+
+Note que `append()` se usa dentro del cuerpo del bucle luego de hacer los cálculos. 
+
+Así podemos guardar los resultados usando indexación:
+```{r}
+
+vctr <- 1:3 # vector sobre el cual iterar el bucle
+resultados <- vector() # vector vacio
+
+for(i in vctr){ # inicio del bucle
+
+    i2 <- i^2 # cuerpo del bucle
+
+  resultados[length(resultados) + 1] <- i2 # guardar resultados en vector vacio
+  }
+
+resultados
+```
+
+Estos bucles se pueden correr sobre cualquier vector. Por ejemplo podemos evaluar para el juego de datos `iris` el promedio del largo del sépalo para cada especie de esta forma:
+
+```{r}
+
+vctr <- unique(iris$Species) # vector sobre el cual iterar el bucle
+resultados <- vector() # vector vacio
+
+for(i in vctr){ # inicio del bucle
+
+    i2 <- max(iris$Sepal.Length[iris$Species == i]) # cuerpo del bucle
+
+  resultados <- append(resultados, i2) # guardar resultados en vector vacio
+  }
+
+names(resultados)  <- vctr # añadir nombre de especies
+
+resultados
+
+```
+&nbsp;
+
+## Aplicación al manejo de datos
+
+Usaremos los datos de ejemplo que bajamos al inicio del manual para demostrar la utilidad del los bucles en el manejo de datos. Estos datos muestran la salida de un programa de identificación automática de especies marinas en videos pasivos tomados en la columna de agua. Para cada video analizado el programa genera un archivo de texto (.TXT) con una fila para cada especie detectada mas una serie de metadatos asociados a la detección. Los datos se ven así:
+
+```{r, echo=FALSE,out.width="100%", fig.align="center"}
+
+knitr::include_graphics("./images/datos.png")
+
+```
+&nbsp;
+
+Recordemos que los nombres de los archivos .TXT están guardados en un vector llamado `archivos_txt`. Podemos leer el primer archivo (i.e. el primer elemento en `archivos_txt`) de la siguiente forma:
+
+```{r}
+
+archivo1 <- read.table(archivos_txt[1], header = TRUE, skip = 4, sep = "\t")
+
+# ver pirmeras 4 filas y 8 columnas
+head(archivo1[1:4, 1:8])
+```
+&nbsp;
+
+Podemos saber cuantas especies se observaron en ese muestreo simplemente calculado el número de filas en `archivo`:
+```{r}
+
+nrow(archivo1)
+
+```
+&nbsp;
+
+Ahora, para hacer esto con todos los archivos **no es eficiente leer cada uno en su propia linea de código** y luego calcular el número de filas. Al fin de cuentas, todos los códigos serian muy parecidos, solo cambiaría el nombre del archivo. Es en estos casos que los bucles son de gran utilidad. En este ejemplo solo debemos incorporar el código de lectura del archivo y del cálculo del número de filas en el cuerpo del bucle, usando el nombre de los archivos (`archivos_txt`) como el vector sobre el cual iterar el bucle:
+
+```{r}
+
+resultados <- vector() # vector vacio
+
+for(i in archivos_txt){ # inicio del bucle
+
+    txt <- read.table(i, header = TRUE, skip = 4, sep = "\t")  # leer archivo
+    nrw <- nrow(txt) # calcular numero de filas
+    
+  resultados <- append(resultados, nrw) # guardar resultados en vector vacio
+  }
+
+resultados
+
+```
+&nbsp;
+
+Podemos ordenar estos resultados fácilmente haciendo un cuadro de datos (data.frame). Para esto creamos una columna con el nombre del archivo y otra con el resultado del número de filas:
+
+```{r}
+
+# organizar en data frame
+n_filas_df <- data.frame(archivo = basename(archivos_txt), filas = resultados)
+
+# ver primeras 6 filas
+head(n_filas_df)
+```
+
+<div class = "alert alert-info">
+
+<font size = "5"> Ejercicio 1 </font>
+
+&nbsp;
+
+Podemos calcular el número de familias observadas para el primer archivo que leímos (`archivo1`) de esta forma:
+
+```{r}
+
+length(unique(archivo1$Family))
+
+```
+
+
+1.1 Haga un bucle `for` que devuelva el número de familias para cada archivo
+
+```{r, eval = FALSE, echo = FALSE}
+
+resultados <- vector() # vector vacio
+
+for(i in archivos_txt){ # inicio del bucle
+
+    txt <- read.table(i, header = TRUE, skip = 4, sep = "\t")  # leer archivo
+    nfam <- length(unique(txt$Family)) # calcular numero de familias
+    
+  resultados <- append(resultados, nfam) # guardar resultados en vector vacio
+  }
+
+n_filas_df$familias <- resultados
+
+```
+
+&nbsp;
+
+1.2 Cree un cuadro de datos (data frame) que contenga dos columnas, una para el nombre del archivo y otra para el número de familias
+
+&nbsp;
+
+1.3 Añada una columna al cuadro de datos creado en el ejercicio anterior indicando la fecha de creación del video (esta información se encuentra en la columna 'Date' de cada archivo de texto). Note que cada archivo contiene solamente una fecha. Debe usar un bucle `for` para extraer esta información de los archivos.
+
+```{r, eval = FALSE, echo = FALSE}
+
+resultados <- vector() # vector vacio
+
+for(i in archivos_txt){ # inicio del bucle
+
+    txt <- read.table(i, header = TRUE, skip = 4, sep = "\t")  # leer archivo
+    fecha <- txt$Date[1] # calcular numero de familias
+    
+  resultados <- append(resultados, fecha) # guardar resultados en vector vacio
+  }
+
+n_filas_df$fecha <- resultados
+
+```
+
+&nbsp;
+
+1.4 Añada una columna al cuadro de datos creado en el ejercicio 1.2 (y modificado en 1.3) indicando la profundidad a la que se grabó el video. Debe usar un bucle `for` para extraer esta información de los archivos.
+
+```{r, eval = FALSE, echo = FALSE}
+
+resultados <- vector() # vector vacio
+
+for(i in archivos_txt){ # inicio del bucle
+
+    txt <- read.table(i, header = TRUE, skip = 4, sep = "\t")  # leer archivo
+    prof <- txt$Depth[1] # calcular numero de familias
+    
+  resultados <- append(resultados, prof) # guardar resultados en vector vacio
+  }
+
+resultados <- gsub(" m", "", resultados)
+resultados <- gsub("\\,", ".", resultados)
+n_filas_df$profundidad <- as.numeric(resultados)
+
+```
+&nbsp;
+
+Puede usar el siguiente código para convertir profundidad a un vector numérico:
+```{r, eval=FALSE}
+
+n_filas_df$profundidad <- gsub(" m", "", gsub("\\,", ".", n_filas_df$profundidad))
+
+```
+
+
+1.5 ¿Cuál es la correlación entre el número de especies observadas (que es igual al número de filas) y la profundidad? (pista: `cor.test()`) 
+
+&nbsp;
+
+1.6 ¿Cuál es la correlación entre el número de familias y la profundidad? 
+
+&nbsp;
+
+
+</div>
+
+El bucle `for` también puede ser usado para juntar todas los datos de los archivos de texto en un solo cuadro de datos. Esto lo podemos hacer "rellenando" un cuadro de datos vacío, de forma análoga a como rellenamos un vector vació anteriormente:
+
+```{r, eval = TRUE, echo = TRUE}
+
+df_resultados <- data.frame() # vector vacio
+
+for(i in archivos_txt){ # inicio del bucle
+
+    txt <- read.table(i, header = TRUE, skip = 4, sep = "\t")  # leer archivo
+    
+  df_resultados <- rbind(df_resultados, txt) # guardar resultados en vector vacio
+  }
+
+nrow(df_resultados) == sum(n_filas_df$filas)
+
+```
+
+---
+
+# Bucles '(X)apply' 
+
+`(X)apply` se refiere en realidad a una familia de funciones que toman una función como entrada y la aplican a una secuencia de objetos (vectores *sensu lato*). Por lo tanto hay varias funciones `(X)apply` en R:
+```{r}
+apropos("apply$")
+```
+&nbsp;
+
+Sin embargo, las más utilizadas son `apply`,` sapply`, `lapply` y` tapply`. Todos siguen la misma lógica:
+
+
+```{r, echo=FALSE,out.width="40%", fig.align="center"}
+
+knitr::include_graphics("./images/xapply_esp.png")
+
+```
+
+`lapply` toma un vector (atómico o de lista), aplica una función a cada elemento y devuelve una lista:
+
+```{r, eval = TRUE}
+
+lapply(X = c(4, 9, 16), FUN = sqrt)
+
+```
+&nbsp;
+
+`sapply` también toma un vector (atómico o de lista) y aplica la función a cada elemento, sin embargo, el resultado es un vector atómico (si es que se puede empaquetar como un vector):
+
+```{r, eval = TRUE}
+
+lapply(X = c(4, 9, 16), FUN = sqrt)
+
+
+```
+&nbsp;
+
+
+`apply` aplica una función a cada una de las filas o columnas de un objeto bidimensional. Por ejemplo, el siguiente código calcula el promedio para largo y ancho de sépalo en el juego de datos `iris`:
+
+```{r}
+
+# promedio de largo y ancho de setalo
+apply(X = iris[, c("Sepal.Length", "Sepal.Width")], MARGIN =  2, FUN =  mean)
+
+```
+&nbsp;
+
+Note que el argumento 'MARGIN' indica si el calculo se lleva a cabo a nivel de filas (`MARGIN = 1`) o columnas (`MARGIN = 2`).
+
+`tapply` es más específico ya que aplica una función a un subconjunto de datos definido por un vector categórico adicional. Por ejemplo, podemos calcular la longitud promedio de pétalo para cada especie en el juego de datos 'iris' de la siguiente manera:
+
+```{r, eval=T, echo=T}
+
+tapply(X = iris$Petal.Length, INDEX = iris$Species, FUN = mean)
+
+```
+
+&nbsp;
+
+Los bucles `(X)apply` pueden modificarse para realizar acciones personalizadas creando nuevas funciones (ya sea dentro o fuera del bucle):
+
+```{r, eval = TRUE}
+
+# funcion desde fuera del bucle
+n_filas <- function(x) {
+   txt <- read.table(x, header = TRUE, skip = 4, sep = "\t")  # leer archivo
+    nrw <- nrow(txt) # calcular numero de filas
+  return(nrw)
+}
+
+# correr bucle
+filas <- lapply(X = archivos_txt, FUN = n_filas)
+
+# ver resultados
+head(filas)
+
+```
+&nbsp;
+
+Note que el resultado es una lista. Si deseamos generar un vector podemos usar el bucle `sapply`: 
+
+```{r, eval = TRUE}
+
+# correr bucle
+filas <- sapply(X = archivos_txt, FUN = n_filas)
+
+# ver resultados
+head(filas)
+
+```
+&nbsp;
+
+Podemos usar funciones anónimas (i.e. funciones que se crean dentro del llamado del bucle) así:
+```{r, eval = TRUE}
+
+# correr bucle
+filas <- sapply(X = archivos_txt, FUN = function(x) 
+  nrow(read.table(x, header = TRUE, skip = 4, sep = "\t")) 
+)
+
+# ver resultados
+head(filas)
+
+```
+&nbsp;
+
+
+Tenga en cuenta que:
+
+1) en este tipo de bucles no hay retroalimentación de las iteraciones anteriores (es decir, los resultados de una iteración no se pueden ingresar en las iteraciones posteriores)
+
+2) `(X)apply` es más limpio que otros bucles porque los objetos creados dentro de ellos no están disponibles en el entorno de trabajo actual.
+
+&nbsp;
+
+## bucles `replicate`
+
+El bucle `replicate` también pertenece a la familia de los `(X)apply` (a pesar de su nombre), ya que toma una función y la replica. Sin embargo solo replica una acción (generalmente aleatoria) y el usuario no tiene control sobre el insumo a la función. El argumento 'n' define cuantas veces se replica la acción y 'expr' define la acción a realizar:
+
+```{r}
+
+replicate(n = 3, expr = rnorm(10))
+
+```
+&nbsp;
+
+Note que los resultados son agrupados en una matrix. 'expr' también puede replicar código que no ha sido "empaquetado en una función".
+
+&nbsp;
+
+
+<div class = "alert alert-info">
+
+<font size = "5"> Ejercicio 2</font>
+
+&nbsp;
+
+2.1 Haga un bucle `lapply` equivalente al bucle `for` en el ejercicio 1.1. 
+
+&nbsp;
+
+2.2 Haga un bucle `sapply` equivalente al bucle `for` en el ejercicio 1.1 y ponga el resultado en un cuadro de datos, similiar a lo hecho en el ejercicio 1.2 
+
+&nbsp;
+
+2.3 Haga un bucle `sapply`  que permita añadir al cuadro de datos creado en el ejercicio anterior el total de individuos observados en un muestreo (pista: sumatoria de la columna  'MaxN').
+
+&nbsp;
+
+2.4 Haga un bucle `tapply` para calcular el error estandar para el ancho de sépalo por especie en el juego de datos 'iris'.
+
+</div>
+
+
+
+---
+
+&nbsp;
+
+# Bucles 'repeat'
+
+Los bucles `repeat` deben cumplir una condición para detenerse. Típicamente el bucle lleva a cabo la acción al menos una vez, independientemente de la evaluación de la condición:
+
+```{r, echo=FALSE,out.width="40%", fig.align="center"}
+
+knitr::include_graphics("./images/repeat_esp.png")
+
+```
+
+El siguiente bucle `repeat` se ejecuta hasta que la correlación de las variables continuas generadas al azar es mayor que un umbral:
+
+```{r, eval=T, echo=T}
+
+# crear vector vacio
+cc_vector <- NULL
+
+repeat
+{
+  # generar la variable 1
+  v1 <- rnorm(n = 20, mean = 100, sd = 20)
+
+  # generar la variable 2
+  v2 <- rnorm(n = 20, mean = 100, sd = 20)
+  
+  # correr la correlacion
+  corr_coef <- cor(v1, v2)
+
+  # guardar resultados 
+  cc_vector[length(cc_vector) + 1] <- corr_coef
+ 
+  # parar si se cumple la condicion
+  if (corr_coef > 0.5)   break
+   
+  }
+
+head(cc_vector)
+
+```
+&nbsp;
+
+Podemos graficarlo el resultado asi así:
+```{r, eval=T, echo=T}
+
+
+cc <- data.frame(y = cc_vector, x = 1:length(cc_vector))
+
+ggplot(data = cc, aes(x, y)) +
+  geom_hline(yintercept = 0.5, col = cols[4], lwd = 3) +
+  geom_line(col = cols[8], lwd = 4) + 
+  labs(x = "Iteraciones", y = "Correlación de pearson (r)") + 
+  theme_classic(base_size = 25)
+
+```
+
+La condición determina si el ciclo debe detenerse. 
+
+Una característica importante de los bucles `while`,` repeat` y `for` es que pueden tomar resultados de iteraciones anteriores como entrada en iteraciones posteriores. Esto se debe a que los objetos creados dentro de la función se guardan en el entorno actual (a diferencia de los bucles `Xapply`).
+
+---
+
+&nbsp;
+
+# Bucles 'While'
+
+Los bucles `while` aplican una acción en una secuencia de elementos hasta que se cumpla una condición. Son muy parecidos a los bucles `repeat`. La condición puede evaluar un resultado del propio bucle o una entrada externa:
+
+```{r, echo=FALSE,out.width="40%", fig.align="center"}
+
+knitr::include_graphics("./images/while_esp.png")
+
+```
+
+
+```{r, eval=F, echo=T}
+
+# definir valor inicial
+corr_coef <- 0
+
+# iniciar bucle
+while(corr_coef < 0.5) {
+  
+  # generar la variable 1
+  v1 <- rnorm(n = 20, mean = 100, sd = 20)
+
+  # generar la variable 2
+  v2 <- rnorm(n = 20, mean = 100, sd = 20)
+  
+  # corrrer  la correlacion
+  corr_coef <- cor(v1, v2)
+
+  # imprimir
+  print(corr_coef)
+  }
+
+corr_coef
+
+```
+
+```{r, eval=T, echo=F}
+
+# set default value as 0
+corr_coef <- 0
+cc <- NULL
+while(corr_coef < 0.5) {
+  
+  set.seed(length(cc) + 1)
+  
+  # generate variable 1
+  v1 <- rnorm(n = 20, mean = 100, sd = 20)
+
+    set.seed(length(cc) + 100)
+
+  # generate variable 2
+  v2 <- rnorm(n = 20, mean = 100, sd = 20)
+  
+  # run correlation
+  corr_coef <- cor(v1, v2)
+cc <- append(cc, corr_coef)
+  }
+
+if(length(cc) > 10)
+cc <- cc[(length(cc) - 10):length(cc)]
+
+print(cc)
+
+```
+
+
+&nbsp;
+
+Con un pequeño ajuste, un bucle `while` también puede evaluar varias condiciones a la vez. Por ejemplo, también podemos incluir altos valores de correlación negativa:
+
+```{r, eval=T, echo=T}
+
+# definir valor inicial
+corr_coef <- 0
+
+# crear vector vacio
+cc_vector <- NULL
+
+while(corr_coef < 0.5 & corr_coef > -0.5) {
+  
+  # generar la variable 1
+  v1 <- rnorm(n = 20, mean = 100, sd = 20)
+
+  # generar la variable 2
+  v2 <- rnorm(n = 20, mean = 100, sd = 20)
+  
+  # correr correlacion
+  corr_coef <- cor(v1, v2)
+
+  # guardar resultados
+  cc_vector[length(cc_vector) + 1] <- corr_coef
+  
+  }
+
+head(cc_vector)
+
+```
+&nbsp;
+
+
+```{r, eval=T, echo=F, message=F, warning=F}
+cc <- cc_vector
+cc <- data.frame(y = cc, x = 1:length(cc))
+
+if(nrow(cc) > 50)
+cc <- cc[(nrow(cc) -50):nrow(cc),]
+  
+  ggplot(data = cc, aes(x, y)) +
+  geom_hline(yintercept = c(-0.5, 0.5), col = cols[4], lwd = 3) +
+  geom_line(col = cols[8], lwd = 4) + 
+  labs(x = "Iteraciones", y = "Correlación de pearson (r)") + 
+  theme_classic(base_size = 25)
+
+```
+
+
+---
+
+<div class="alert alert-info">
+
+<font size="5">Ejercicio 3</font> 
+
+&nbsp;
+
+3.1 Haga un bucle `while` que se detenga si la correlación es superior a 0.8 o si el bucle ha estado ejecutándose durante más de 10 segundos (consejo: use la función` difftime` y/o `as.numeric`)
+
+&nbsp;
+
+3.2  Haga un bucle `repeat` que se detenga solo si la correlación es mayor que 0.5 pero menor que 0.55
+
+  
+</div>
+
+---
+
+
+## Referencias
+
+ - [Advanced R, H Wickham](http://adv-r.had.co.nz/Functionals.html)
+ - [A Tutorial on Loops in R - Usage and Alternatives, DataCamp](https://www.datacamp.com/community/tutorials/tutorial-on-loops-in-r)
+
+---
+
+<font size="5">Session information</font>
+
+```{r session info, echo=F}
+
+sessionInfo()
+
+```

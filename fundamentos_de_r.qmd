@@ -1,0 +1,972 @@
+---
+title: <font size="7"><b>Elementos básicos del lenguaje R</b></font>
+toc: true
+toc-depth: 2
+toc-location: left
+number-sections: true
+highlight-style: pygments
+format:
+  html:
+    df-print: kable
+    code-fold: show
+    code-tools: true
+    css: styles.css
+    link-external-icon: true
+    link-external-newwindow: true  
+---
+<style>
+body
+  { counter-reset: source-line 0; }
+pre.numberSource code
+  { counter-reset: none; }
+</style>
+
+```{r,echo=FALSE,message=FALSE}
+
+options("digits"=5)
+options("digits.secs"=3)
+
+# options to customize chunk outputs
+knitr::opts_chunk$set(
+  class.source = "numberLines lineAnchors", # for code line numbers
+  tidy.opts = list(width.cutoff = 65), 
+  tidy = TRUE,
+  message = FALSE
+ )
+
+```
+
+<!-- skyblue box -->
+
+::: {.alert .alert-info}
+# Objetivo del manual {.unnumbered .unlisted}
+
+-   Familiarizarse con los bloques básicos usados en la programación en R
+
+-   Conocer las fuentes principales de documentación estandarizada en R
+:::
+
+ 
+
+# ¿Qué es R?
+
+-   Un [Lenguaje de Dominio Específico (DSL)](https://en.wikipedia.org/wiki/Domain-specific_language) libre para la estadística y el análisis de datos
+-   Una colección de más de 18695 paquetes (al sep-21-2022)
+-   Una comunidad grande y activa en la industria y el mundo académico
+-   Una forma de hablar "directamente" con su ordenador
+
+Históricamente:
+
+-   Basado en el lenguaje de programación S
+-   Alrededor de 20 años de antigüedad (el linaje data de 1975 - hace casi 40 años)
+
+<img src="images/Rinterf.jpeg" alt="R" height="600" width="800"/>
+
+ 
+
+# Rstudio
+
+Entorno de desarrollo integrado (IDE) para R. Incluye:
+
+-   Una consola
+-   Editor para resaltar la sintaxis que soporta la ejecución directa del código
+-   Herramientas para el trazado, el historial, la depuración y la gestión del espacio de trabajo
+
+<img src="images/Rstudio.jpeg" alt="R" height="500" width="800"/>
+
+ 
+
+------------------------------------------------------------------------
+
+# Elementos del lenguaje R
+
+-   **Vectores**
+-   **Listas**
+-   **Matrices**
+-   **Marcos de datos (data frames)**
+-   **Funciones (incluyendo operadores)**
+-   Tablas (tables)\
+-   Atributos
+-   ~~Arreglos (arrays)~~
+-   ~~Ambientes~~
+
+ 
+
+# Estructura básica de la representación de datos
+
+La estructura de datos básica en R es el vector. Hay dos tipos básicos de vectores: vectores atómicos y listas.
+
+Tienen tres propiedades comunes:
+
+-   Tipo, `typeof()` (clase/modo \~)
+-   Longitud, `length()` (número de elementos)
+-   Attributes, `attributes()` (metadatos)
+
+Se diferencian en los tipos de sus elementos: todos los elementos de un vector atómico deben ser del mismo tipo, mientras que los elementos de una lista pueden tener diferentes tipos
+
+```{r, echo=FALSE}
+d <- data.frame(
+ 	c("Vector atómico", "Lista"),
+	c("Matriz", "Cuadro de datos (data frame)"),
+c("arreglo (Array)", ""))
+
+
+d <- t(d)
+
+colnames(d) <-c("Homogéneo",	"Heterogéneo")
+
+rownames(d) <-c("1d",	"2d", "nd")
+
+as.data.frame(d)
+
+```
+
+ 
+
+Los números o cadenas individuales son en realidad vectores de longitud uno.
+
+ 
+
+## Vectores atomicos
+
+Tipos de vectores atómicos:
+
+-   Lógico [(booleano)](https://en.wikipedia.org/wiki/Boolean)
+-   Entero
+-   Numérico (doble)
+-   Caracteres
+
+Los vectores se construyen con la función `c()`:
+
+```{r,collapse=TRUE}
+
+x <- 1
+x1 <- c(1)
+
+all.equal(x, x1)
+
+class(x)
+
+y <- "something"
+
+class(y)
+
+w <- 1L
+
+class(w)
+ 
+z <- TRUE
+
+class(z)
+
+q <- factor(1)
+
+class(q)
+
+```
+
+ 
+
+Los vectores sólo pueden contener elementos del mismo tipo. Los tipos diferentes de elementos serán forzados al tipo más flexible:
+
+```{r, collapse=TRUE}
+
+v <- c(10, 11, 12, 13)
+
+class(v)
+
+typeof(v)
+
+is.integer(v)
+
+y <- c("Amazona", "Ara", "Eupsittula", "Myiopsitta")
+
+class(y)
+
+is.integer(y)
+
+x <- c(1,2,3, "Myiopsitta")
+
+x
+
+class(x)
+
+```
+
+ 
+
+Los valores que faltan se especifican con NA, que es un vector lógico de longitud 1. NA siempre será interpretado al tipo correcto si se utiliza dentro de `c()`:
+
+```{r, collapse=TRUE}
+
+v <- c(10, 11, 12, 13, NA)
+
+class(v)
+
+v <- c(letters[1:3], NA)
+
+class(v)
+
+```
+
+ 
+
+## Listas
+
+Puede contener objetos de diferentes clases y tamaños. Las listas se construyen con list():
+
+```{r}
+
+l <- list(ID = c("a", "b", "c", "d", "e"), size = c(1, 2, 3, 4, 5), observed = c(FALSE, TRUE, FALSE, FALSE, FALSE))
+
+l
+
+class(l)
+
+str(l)
+
+```
+
+... y dimensiones:
+
+```{r}
+
+l <- list(ID = c("a", "b", "c", "d", "e"), size = c(1, 2, 3, 4, 5, 6), observed = c(FALSE, TRUE, FALSE, FALSE, FALSE), l)
+
+str(l)
+
+l2 <- list(l, l)
+
+str(l2)
+
+```
+
+ 
+
+## Nombrar elementos
+
+Los vectores pueden ser nombrados de tres maneras:
+
+-   Al crearlo: `x <- c(a = 1, b = 2, c = 3)`.
+-   Al modificar un vector existente en su lugar: `x <- 1:3`; `names(x) <- c("a", "b", "c")` O bien: `x <- 1:3`; `names(x)[[1]] <- c("a")`
+-   Creando una copia modificada de un vector: `x <- setNames(1:3, c("a", "b", "c"))`
+
+```{r}
+y <- c(a = 1, 2, 3)
+
+names(y)
+
+v <- c(1, 2, 3)
+
+names(v) <- c('a')
+
+names(v)
+
+z <- setNames(1:3, c("a", "b", "c"))
+
+names(z)
+
+```
+
+ 
+
+## Factores
+
+Los atributos se utilizan para definir los factores. Un factor es un vector que sólo puede contener valores predefinidos y se utiliza para almacenar datos categóricos.
+
+Los factores se construyen sobre vectores enteros utilizando dos atributos:
+
+-   clase "factor": hace que se comporten de forma diferente a los vectores enteros normales
+-   niveles: define el conjunto de valores permitidos
+
+```{r}
+
+x <- factor(c("a", "b", "b", "a"))
+x
+
+levels(x)
+
+
+str(x)
+
+```
+
+ 
+
+Los factores parecen vectores de caracteres, pero en realidad son números enteros:
+
+```{r}
+
+x <- factor(c("a", "b", "b", "a"))
+
+c(x)
+```
+
+ 
+
+## Matrices
+
+Todas los elementos son del mismo tipo:
+
+```{r}
+m <- matrix(c(1, 2, 3, 11, 12, 13), nrow = 2)
+
+dim(m)
+
+m
+
+class(m)
+
+
+m <- matrix(c(1, 2, 3, 11, 12,"13"), nrow = 2)
+m
+
+
+```
+
+ 
+
+Se puede crear modificando el atributo de dimensión:
+
+```{r}
+
+c <- 1:6
+
+is.matrix(c)
+
+attributes(c)
+
+dim(c) <- c(3, 2)
+
+c
+
+is.matrix(c)
+
+attributes(c)
+
+```
+
+ 
+
+## Cuadros de datos (Data frames)
+
+Caso especial de las listas. Puede contener elementos de diferentes tipos:
+
+```{r}
+
+m <- data.frame(ID = c("a", "b", "c", "d", "e"), size = c(1, 2, 3, 4, 5), observed = c(FALSE, TRUE, FALSE, FALSE, FALSE))
+
+dim(m)
+
+m
+
+class(m)
+
+is.data.frame(m)
+
+is.list(m)
+
+str(m)
+
+```
+
+ 
+
+Pero los vectores deben tener la misma longitud:
+
+```{r, error = TRUE}
+
+m <- data.frame(ID = c("a", "b", "c", "d", "e"), size = c(1, 2, 3, 4, 5, 6), observed = c(FALSE, TRUE, FALSE, FALSE, FALSE))
+
+```
+
+ 
+
+------------------------------------------------------------------------
+
+## Extraer subconjuntos usando indexación (indexing)
+
+Los elementos dentro de los objetos pueden ser llamados por medio de la indexación. Para sub-conjuntar un vector simplemente llame a la posición del objeto usando corchetes:
+
+```{r}
+
+x <- c(1, 3, 4, 10, 15, 20, 50, 1, 6)
+
+x[1]
+
+x[2]
+
+x[2:3]
+
+x[c(1,3)]
+
+```
+
+ 
+
+Los elementos se pueden eliminar de la misma manera:
+
+```{r}
+
+
+x[-1]
+
+x[-c(1,3)]
+
+```
+
+ 
+
+Las matrices y los marcos de datos requieren 2 índices `[fila, columna]`:
+
+```{r}
+
+m <- matrix(c(1, 2, 3, 11, 12, 13), nrow = 2)
+
+m[1, ]
+
+m[, 1]
+
+m[1, 1]
+
+m[-1, ]
+
+m[, -1]
+
+m[-1, -1]
+
+
+df <- data.frame(family = c("Psittacidae", "Trochilidae", 
+                            "Psittacidae"), 
+  genus = c("Amazona", "Phaethornis", "Ara"), 
+	species = c("aestiva", "philippii", "ararauna"))
+
+df
+
+df[1, ]
+
+df[, 1]
+
+df[1, 1]
+
+df[-1, ]
+
+df[, -1]
+
+df[-1, -1]
+
+df[,"family"]
+
+df[,c("family", "genus")]
+
+```
+
+ 
+
+Las listas requieren 1 índice entre dobles corchetes `[[índice]]`:
+
+```{r}
+
+l <- list(ID = c("a", "b", "c", "d", "e"), size = c(1, 2, 3, 4, 5), observed = c(FALSE, TRUE, FALSE, FALSE, FALSE))
+
+l[[1]]
+
+l[[3]]
+
+```
+
+ 
+
+Los elementos dentro de las listas también pueden ser subconjuntos en la misma cadena de código:
+
+```{r}
+
+l[[1]][1:2]
+
+l[[3]][2]
+
+```
+
+ 
+
+## Explorar objectos
+
+```{r, eval = TRUE}
+
+str(df)
+
+names(df)
+
+dim(df)
+
+nrow(df)
+
+ncol(df)
+
+head(df)
+
+tail(df)
+
+table(df$genus)
+
+typeof(df)
+
+```
+
+```{r, eval = F}
+View(df)
+
+```
+
+ 
+
+::: {.alert .alert-info}
+## Ejercicio 1
+
+ 
+
+-   Utilice los datos de ejemplo `iris` para crear un subconjunto de datos con sólo las observaciones de la especie `setosa`
+
+-   Ahora cree un subconjunto de datos que contenga las observaciones tanto de "setosa" como de "versicolor"
+
+-   También con `iris` cree un subconjunto de datos con las observaciones para las que `iris$Sepal.length` es mayor que 6
+
+-   ¿Cuántas observaciones tienen una longitud de sépalo superior a 6?
+:::
+
+ 
+
+------------------------------------------------------------------------
+
+ 
+
+## Funciones
+
+Todas las funciones se crean con la función `function()` y siguen la misma estructura:
+
+<img src="images/function.png" alt="R" height="350" width="900"/>
+
+<font size="2">\* Modified from <i>Grolemund 2014</i></font>  
+
+R viene con muchas funciones que puedes usar para hacer tareas sofisticadas:
+
+```{r}
+# built in functions
+bi <- builtins()
+
+length(bi)
+
+sample(bi, 10)
+
+```
+
+ 
+
+Los operadores son funciones:
+
+```{r}
+
+1 + 1
+
+
+'+'(1, 1)
+
+2 * 3
+
+
+'*'(2, 3)
+
+
+```
+
+ 
+
+### Operadores mas utilizados
+
+Operadores aritméticos:
+
+```{r, echo=F}
+d <- data.frame(
+c("\\+" , "suma"),
+c("\\-", 	"resta"),
+c("\\*" ,	"multiplicación"),
+c("/",	"división"),
+c("^ or **",	"exponente"))
+
+
+d <- t(d)
+
+colnames(d) <- c("Operador      ", "Descrición  ")
+
+knitr::kable(d, row.names = F, escape = FALSE) |>
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 18)
+
+```
+
+ 
+
+```{r}
+
+1 - 2
+
+1 + 2
+
+2 ^ 2
+
+2 ** 2
+
+2:3 %in% 2:4
+
+```
+
+ 
+
+Operadores lógicos:
+
+```{r, echo=F}
+d <- data.frame(
+c("<", "menor que"),
+c("<=", "menor o igual que"),
+c(">", "mayo que"),
+c(">=",	"mayor o igual que"),
+c("==", "exactamente igual que"),
+c("!=",	"diferente que"),
+c("!x",	"No es x"),
+c("x | y", "	x O y"),
+c("x & y", 	"x Y y"),
+c("x %in% y",	"correspondencia"))
+
+d <- t(d)
+
+colnames(d) <- c("Operador      ", "Descrición  ")
+
+knitr::kable(d, row.names = F, escape = FALSE) |>
+ kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 18)
+
+```
+
+ 
+
+```{r}
+
+1 < 2 
+
+1 > 2 
+
+1 <= 2 
+
+1 == 2
+
+1 != 2
+
+1 > 2 
+
+5 %in% 1:6
+
+5 %in% 1:4
+```
+
+ 
+
+La mayoría de las funciones están vectorizadas:
+
+```{r, eval=F}
+
+1:6 * 1:6
+
+```
+
+<img src="images/vectorize.png" alt="R" height="350" width="900"/>
+
+<font size="2">\* Modified from <i>Grolemund & Wickham 2017</i></font>
+
+ 
+
+```{r, echo=F}
+
+1:6 * 1:6
+```
+
+```{r}
+
+1:6 - 1:6
+```
+
+R recicla vectores de longitud desigual:
+
+```{r, eval=F}
+
+1:6 * 1:5
+
+```
+
+<img src="images/recycle.png" alt="R" height="350" width="900"/>
+
+<font size="2">\* Modified from <i>Grolemund & Wickham 2017</i></font>
+
+ 
+
+```{r, echo=F}
+
+1:6 * 1:5
+
+```
+
+```{r}
+
+1:6 + 1:5
+
+```
+
+ 
+
+------------------------------------------------------------------------
+
+# El estilo importa
+
+<font size="2"><a href="https://google.github.io/styleguide/Rguide.xml">Based on google's R Style Guide</a></font>
+
+## Nombres de archivos
+
+Los nombres de los archivos deben terminar en .R y, por supuesto, ser auto-explicatorios:
+
+-   Bien: graficar_probabilidad_posterior.R
+-   Mal: graf.R
+
+## Nombres de objetos
+
+Variables y funciones:
+
+-   Minúsculas
+-   Utilice un guión bajo
+-   En general, nombres para las variables y verbos para las funciones
+-   Procure que los nombres sean concisos y significativos (no siempre es fácil)
+-   Avoid using names of existing functions of variables
+
+```{r, eval=F}
+
+  - Bien: dia_uno: dia_1, peso_promedio(),
+  
+  - Mal: diauno, dia1, primer.dia_delmes, mean <- function(x) sum(x), c <- 10
+```
+
+ 
+
+## Syntaxis
+
+### Espacios
+
+-   Utilice espacios alrededor de los operadores y para los argumentos dentro de una función
+-   Ponga siempre un espacio después de una coma, y nunca antes (como en el inglés normal)
+-   Coloque un espacio antes del paréntesis izquierdo, excepto en una llamada a una función
+
+```{r, eval=F}
+
+  - Bien: 
+          a <- rnorm(n = 10, sd = 10, mean = 1)
+          tab.prior <- table(df[df$dias < 0, "campaign.id"])
+          total <- sum(x[, 1])
+          total <- sum(x[1, ])
+          if (debug)
+          mean(1:10)
+          
+  - Mal: 
+         a<-rnorm(n=10,sd=10,mean=1)
+         tab.prior <- table(df[df$days.from.opt<0, "campaign.id"])  # necesita espacio alrededor de '<'
+         tab.prior <- table(df[df$days.from.opt < 0,"campaign.id"])  # Necesita espacio despues de la coma
+         tab.prior<- table(df[df$days.from.opt < 0, "campaign.id"])  # Necesita espacio antes de <-
+         tab.prior<-table(df[df$days.from.opt < 0, "campaign.id"])  # Necesita espacio alrededor de <-
+         total <- sum(x[,1])  # Necesita espacio antes de la coma  
+         if(debug) # Necesita espacio antes del parentesis
+         mean (1:10) # Espacio extra luego del nombre de la funcion
+
+```
+
+ 
+
+#### Corchetes
+
+-   La llave de apertura nunca debe ir en su propia línea
+-   La llave de cierre debe ir siempre en su propia línea
+-   Puede omitir las llaves cuando un bloque consiste en una sola declaración
+
+```{r eval=F}
+
+  - Bien:
+              if (is.null(ylim)) {
+              ylim <- c(0, 0.06)
+            }
+                      
+            if (is.null(ylim))
+              ylim <- c(0, 0.06)
+          
+  - Mal:
+            
+         if (is.null(ylim)) ylim <- c(0, 0.06)
+                    
+         if (is.null(ylim)) {ylim <- c(0, 0.06)} 
+
+         if (is.null(ylim)) {
+           ylim <- c(0, 0.06)
+           } 
+```
+
+ 
+
+#### Crear objetos
+
+-   Use \<-, no =
+
+```{r, eval = F}
+
+  - GOOD:
+         x <- 5 
+          
+  - BAD:
+         x = 5
+```
+
+ 
+
+#### Sugerencias para añadir comentarios
+
+-   Comente su código
+-   Las líneas enteras comentadas deben comenzar con \# y un espacio
+-   Los comentarios cortos pueden colocarse después del código precedido por dos espacios, #, y luego un espacio
+
+```{r, eval=F}
+
+# Create histogram of frequency of campaigns by pct budget spent.
+hist(df$pct.spent,
+     breaks = "scott",  # method for choosing number of buckets
+     main   = "Histograma: individuos por unidad de tiempo",
+     xlab   = "Número de individuos",
+     ylab   = "Frecuencia")
+```
+
+ 
+
+#### Disposición general y ordenación (estilo de google)
+
+-   Comentario de la declaración de derechos de autor (?)
+-   Comentario del autor
+-   Comentario de la descripción del archivo, incluyendo el propósito del programa, las entradas y las salidas
+-   declaraciones source() y library()
+-   Definiciones de funciones
+-   Sentencias ejecutadas, si procede (por ejemplo, print, plot)
+
+------------------------------------------------------------------------
+
+ 
+
+# Documentación de R
+
+La mayoría de los recursos de R están muy bien documentados. Así que **la primera fuente de ayuda a la que debe acudir cuando escriba código R es la propia documentación de R**. Todos los paquetes están documentados de la misma manera estándar. Familiarizarse con el formato puede simplificar mucho las cosas.
+
+## Package documentation
+
+<img src="images/packagepage.png" alt="R" height="900" width="800" style="border:3px solid gray"/>
+
+ 
+
+<font size="5">Reference manuals</font>
+
+Los manuales de referencia son colecciones de la documentación de todas las funciones de un paquete (sólo 1 por paquete):
+
+-   [manual de dynaSpec](https://cloud.r-project.org/web/packages/dynaSpec/dynaSpec.pdf)
+
+-   [manual de baRulho](https://cran.r-project.org/web/packages/baRulho/baRulho.pdf)
+
+ 
+
+## Documentación de las funciones
+
+Todas las funciones (por defecto o de paquetes cargados) deben tener una documentación que siga un formato estándar:
+
+```{r, eval=F}
+?mean
+
+help("mean")
+
+```
+
+<img src="images/documentation.png" alt="R" height="700" width="800" style="border:3px solid gray"/>  
+
+Esta documentación también puede mostrarse en Rstudio pulsando `F1` cuando el cursor está en el nombre de la función
+
+ 
+
+Si no recuerda el nombre de la función pruebe con `apropos()`:
+
+```{r}
+apropos("mean")
+
+```
+
+ 
+
+## Viñetas (vignettes)
+
+Las viñetas son documentos ilustrativos o casos de estudio que detallan el uso de un paquete (opcional, pueden ser varios por paquete).
+
+Las viñetas se pueden llamar directamente desde R:
+
+```{r}
+vgn <- browseVignettes() 
+```
+
+```{r, eval = F}
+vignette()
+```
+
+También deberían aparecer en la página del paquete en CRAN.
+
+ 
+
+## Demonstraciones
+
+Los paquetes también pueden incluir demostraciones de código extendidas ("demos"). Para listar las demos de un paquete ejecute `demo("nombre del paquete")`:
+
+```{r, eval=F}
+demo(package="stats")
+
+# call demo directly
+demo("nlm")
+
+```
+
+ 
+
+::: {.alert .alert-info}
+## Ejercicio 2
+
+ 
+
+-   ¿Qué hace la función `cut()`?
+
+-   ¿Para qué se utiliza el argumento `breaks` en `cut()`?
+
+-   Ejecuta las 4 primeras líneas de código de los ejemplos proporcionados en la documentación de `cut()`.
+
+-   ¿Cuántas viñetas tiene el paquete warbleR?
+:::
+
+ 
+
+------------------------------------------------------------------------
+
+## Referencias
+
+-   [Advanced R, H Wickham](http://adv-r.had.co.nz/Data-structures.html)
+-   [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml)\
+-   Hands-On Programming with R (Grolemund, 2014)
+
+------------------------------------------------------------------------
+
+<font size="4">Información de la sesión</font>
+
+```{r session info, echo=F}
+
+sessionInfo()
+
+```

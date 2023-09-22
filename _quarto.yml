@@ -1,0 +1,50 @@
+project:
+  type: website
+  output-dir: docs
+  
+website:
+  page-footer: Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a>
+  title: "R avanzado 2023"
+  search: true
+  site-url: https://marce10.github.io/R_avanzado_2023/
+  repo-url: https://github.com/maRce10/R_avanzado_2023/
+  navbar:
+    right:
+      - icon: github
+        href: https://github.com/maRce10/R_avanzado_2023/
+        aria-label: GitHub
+    left:
+      - href: index.qmd
+        text: " "
+      # - text: "Programa"
+      #   href: program.qmd
+      - text: "Manuales"
+        menu:
+        - text: "Fundamentos de R"
+          href: fundamentos_de_r.qmd
+        - text: "Reportes dinámicos"
+          href: reportes_dinamicos_con_rmarkdown.qmd
+        - text: "Funciones"
+          href: funciones.qmd
+        - text: "Bucles"
+          # href: spectrograms.qmd
+        - text: "Modelos de regresión"
+          # href: seewave.qmd
+        - text: "Modelos de regresión comunes"
+          # href: annotations.qmd
+        - text: "Gráficos con ggplot2"
+          # href: ohun.qmd
+      - text: "Preparación para el curso"
+        href: preparacion_curso.qmd
+      - text: "Compartir código"
+        href: code_redirect.html
+      - text: "Instructor"
+        href: instructor.qmd
+
+format:
+  html:
+    theme: simplex
+    css: styles.css
+    toc: true
+    
+editor: visual
