@@ -683,7 +683,12 @@ rm(list = ls())
 exists("fnctn_X")
 
 # cargar desde el internet
-source("https://raw.githubusercontent.com/maRce10/ucr_r_avanzado/master/images/function_x.r")
+source(
+  paste0(
+    "https://github.com/maRce10/",
+    "r_avanzado_2023/blob/master/data/function_x.r"
+  )
+)
 
 # revisar si existe en ambiente actual
 exists("fnctn_X")

@@ -59,7 +59,7 @@ theme_set(theme_classic(base_size = 20))
 ```{r functions and data, eval=T, echo=F}
 
 hylaeformis_data <- read.csv(
-  paste0("https://raw.githubusercontent.com/maRce10/", "OTS_TB_2022/master/data/hylaeformis_data.csv")
+  paste0("https://raw.githubusercontent.com/maRce10/", "r_avanzado_2023/master/data/hylaeformis_data.csv")
 )
 ```
 
@@ -223,7 +223,7 @@ Utilizando el conjunto de datos "hylaeformis":
 
 # lear desde el sitio del curso
 hylaeformis_data <- read.csv(
-  paste0("https://raw.githubusercontent.com/maRce10/", "OTS_TB_2022/master/data/hylaeformis_data.csv")
+  paste0("https://raw.githubusercontent.com/maRce10/", "r_avanzado_2023/master/data/hylaeformis_data.csv")
 )
 
 # or bajar manualmente y leer copia local
