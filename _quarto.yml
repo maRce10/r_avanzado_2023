@@ -23,15 +23,15 @@ website:
         - text: "Fundamentos de R"
           href: fundamentos_de_r.qmd
         - text: "Reportes dinámicos"
-          href: reportes_dinamicos_con_rmarkdown.qmd
+          href: reportes_dinamicos.qmd
         - text: "Funciones"
           href: funciones.qmd
         - text: "Bucles"
           href: bucles.qmd
         - text: "Modelos de regresión"
-          # href: seewave.qmd
-        - text: "Modelos de regresión comunes"
-          # href: annotations.qmd
+          href: modelos_de_regresion.qmd
+        - text: "Estadística tradicional como regresión"
+          href: estadistica_tradicional_regresion.qmd
         - text: "Gráficos con ggplot2"
           href: ggplot2.qmd
       - text: "Preparación para el curso"

@@ -1,0 +1,426 @@
+---
+title: <font size="7"><b>Modelos estádisticos tradicionales como regresiones</b></font>
+toc: true
+toc-depth: 2
+toc-location: left
+number-sections: true
+highlight-style: pygments
+format:
+  html:
+    df-print: kable
+    code-fold: show
+    code-tools: true
+    css: styles.css
+    link-external-icon: false
+    link-external-newwindow: true  
+---
+
+```{=html}
+<style>
+body
+  { counter-reset: source-line 0; }
+pre.numberSource code
+  { counter-reset: none; }
+</style>
+```
+
+```{r,echo=FALSE,message=FALSE}
+
+options("digits" = 5)
+options("digits.secs" = 3)
+
+# options to customize chunk outputs
+knitr::opts_chunk$set(
+  class.source = "numberLines lineAnchors", # for code line numbers
+  message = FALSE
+)
+```
+
+::: {.alert .alert-info}
+# Objetivo del manual {.unnumbered .unlisted}
+
+-   Entender los abordajes estadísticos tradicionales como regresiones
+
+:::
+
+ 
+
+```{r, echo = FALSE, message=FALSE}
+
+library(knitr)
+library(ggplot2)
+library(viridis)
+
+# ggplot settings
+geom_histogram <- function(...) ggplot2::geom_histogram(..., fill = viridis(10, alpha = 0.5)[8], show.legend = FALSE, bins = 20, color = "black")
+
+geom_smooth <- function(...) ggplot2::geom_smooth(..., color = viridis(10, alpha = 0.5)[8])
+
+geom_boxplot <- function(...) ggplot2::geom_boxplot(..., fill = viridis(10, alpha = 0.5)[7])
+
+theme_set(theme_classic(base_size = 20))
+
+# options to customize chunk outputs
+knitr::opts_chunk$set(
+  class.source = "numberLines lineAnchors", # for code line numbers
+  message = FALSE
+)
+```
+
+Aquí veremos las pruebas estadísticas más comunes y mostraremos cómo pueden representarse en el formato de regresión lineal. Esta sección se basa en [este artículo](https://lindeloev.github.io/tests-as-linear/). Consúltelo para obtener una descripción más detallada de las alternativas no paramétricas. 
+
+---
+
+# Prueba t de una muestra
+
+La prueba evalúa si la media de una variable continua es diferente de 0. Es equivalente a una regresión lineal sin predictor, que prueba si el intercepto es diferente de 0:
+
+<center><font size = 6>$y = \beta_0 \qquad \mathcal{H}_0: \beta_0 = 0$</font></center>
+
+&nbsp; 
+
+```{r}
+
+# number of observations
+n <- 50
+
+# set seed
+set.seed(123)
+
+# create variable with mean 1
+y <- rnorm(n = n, mean = 1)
+
+# run t test
+(t <- t.test(y))
+
+# run equivalent linear regression
+(lm_t <- summary(lm(y ~ 1)))
+```
+&nbsp; 
+
+Pongamos juntos los resultados de ambas pruebas para compararlos más de cerca:
+
+```{r, echo = FALSE}
+
+df <- data.frame(
+  model = c("t-test", "lm"),
+  estimate = c(t$estimate, lm_t$coefficients[1]),
+  "p value" = c(t$p.value, lm_t$coefficients[4]),
+  t = c(t$statistic, lm_t$coefficients[3])
+)
+
+df
+```
+&nbsp; 
+
+Tenga en cuenta que, como no hay predictores en el modelo, utilizamos un '1' en el lugar de los predictores en la fórmula del modelo ('y ~ 1').
+
+---
+
+# Prueba de t pareada
+
+Una prueba t pareada evalúa si la diferencia de promedios entre dos variables numéricas es 0
+
+<center><font size = 6>$y1 - y2 = \beta_0 \qquad \mathcal{H}_0: \beta_0 = 0$</font></center>
+
+&nbsp; 
+
+El modelo lineal correspondiente es el mismo que el de la prueba t de una muestra, pero la variable de entrada es la diferencia entre las dos variables (y1 - y2):
+
+```{r}
+
+set.seed(123)
+
+# sample size
+n <- 50
+
+# variable with mean 1
+y1 <- rnorm(n = n, mean = 1)
+
+# variable with mean 3
+y2 <- rnorm(n = n, mean = 1.4)
+
+# run paired t test
+paired_t <- t.test(y1, y2, paired = TRUE)
+
+paired_t
+
+# difference between the 2 variables
+diff_y <- y1 - y2
+
+# run model
+lm_paired_t <- summary(lm(formula = diff_y ~ 1))
+
+lm_paired_t
+```
+
+```{r, echo = FALSE}
+
+df <- data.frame(
+  model = c("paired t-test", "lm"),
+  estimate = c(paired_t$estimate, lm_paired_t$coefficients[1]),
+  "p value" = c(paired_t$p.value, lm_paired_t$coefficients[4]),
+  t = c(paired_t$statistic, lm_paired_t$coefficients[3])
+)
+
+df
+```
+&nbsp; 
+
+
+---
+
+# Prueba t de dos promedios
+
+También llamada prueba t independiente. Evalúa si los promedios de las dos variables son diferentes. La hipótesis nula es que la diferencia es 0:
+
+<center><font size = 6>$y = \beta_0 + \beta_1 * x1 \qquad \mathcal{H}_0: \beta_1 = 0$</font></center>
+
+```{r}
+
+# set seed
+set.seed(123)
+
+# number of observations
+n <- 50
+b0 <- -4
+b1 <- 3
+error <- rnorm(n = n, mean = 0, sd = 1)
+
+# random variables
+x1_num <- rbinom(n = n, size = 1, prob = 0.5)
+y <- b0 + b1 * x1_num + error
+
+x1 <- factor(x1_num, labels = c("a", "b"))
+
+# create data frame
+xy_data_cat <- data.frame(x1, x1_num, y)
+
+# run paired t test
+indep_t <- t.test(xy_data_cat$y[xy_data_cat$x1 == "a"], xy_data_cat$y[xy_data_cat$x1 == "b"])
+
+indep_t
+
+# run regression model
+lm_indep_t <- summary(lm(formula = y ~ x1, data = xy_data_cat))
+
+lm_indep_t
+```
+
+```{r, echo = FALSE}
+
+df <- data.frame(
+  model = c("2 means t-test", "lm"),
+  estimate = c(indep_t$estimate[2] - indep_t$estimate[1], lm_indep_t$coefficients[2, 1]),
+  "p value" = c(indep_t$p.value, lm_indep_t$coefficients[2, 4]),
+  t = c(indep_t$statistic, lm_indep_t$coefficients[2, 3])
+)
+
+df
+```
+&nbsp; 
+
+---
+
+# Tres o más promedios: ANDEVA unidireccional
+
+Muy similar a la prueba t de dos promedios, pero con tres o más niveles en la variable categórica:
+
+<center><font size = 6>$\hat{Y} \sim \beta_{o} + \beta_{1} * x_{1} + \beta_{2} * x_{2} + ... \qquad \mathcal{H}_0: y = \beta_0$</font></center>
+
+&nbsp; 
+
+Se trata de un **modelo de regresión múltiple**. La variable categórica se codifica con dummy, por lo que se divide en predictores indicadores ($x_i$ es $x=0$ o $x=1$). 
+
+Un conjunto de datos con una variable categórica de 3 niveles puede simularse así:
+
+```{r}
+
+# set seed
+set.seed(123)
+
+# number of observations
+n <- 50
+b0 <- -4
+b1 <- 3
+error <- rnorm(n = n, mean = 0, sd = 1)
+
+# random variables
+x1_num <- rbinom(n = n, size = 2, prob = c(0.33, 0.33))
+y <- b0 + b1 * x1_num + error
+
+x1 <- factor(x1_num, labels = c("a", "b", "c"))
+
+# create data frame
+xy_data_cat2 <- data.frame(x1, y)
+
+head(xy_data_cat2)
+```
+
+```{r, print_df = "default"}
+
+# ANOVA function
+anv_1w <- anova(aov(formula = y1 ~ x1, data = xy_data_cat2))
+
+anv_1w
+
+# linear regression
+lm_anv_1w <- summary(lm(formula = y1 ~ x1, data = xy_data_cat2))
+
+lm_anv_1w
+```
+
+
+```{r, echo = FALSE}
+
+df <- data.frame(
+  model = c("1 way anova", "lm"),
+  "F statistic" = c(anv_1w$`F value`[1], lm_anv_1w$fstatistic[1]),
+  "p value" = c(anv_1w$`Pr(>F)`[1], 0.07552)
+)
+
+df
+```
+&nbsp; 
+
+---
+
+# Chi-cuadrado para tablas de contingencia
+
+Esta prueba busca la asociación entre dos variables categóricas basándose en la co-ocurrencia de las categorías, medidas como recuentos. Esto es lo que es una tabla de contingencia: recuentos de todas las combinaciones de categorías entre dos variables. Por ejemplo, las muertes por edad de los pasajeros del Titanic:
+
+```{r}
+
+# Contingency table
+# modified from https://lindeloev.github.io/tests-as-linear/
+mood_data <- matrix(
+  data = c(100, 70, 30, 32, 110, 120), nrow = 2,
+  dimnames = list(handedness = c("left_handed", "right_handed"), mood = c("happy", "meh", "sad"))
+)
+
+mood_data
+```
+&nbsp;
+
+Aunque la codificación es un poco más elaborada, puede reducirse a un modelo ANDEVA log-lineal de dos vías:
+
+$log(y_i) = log(N) + log(\alpha_i) + log(\beta_j) + log(\alpha_i\beta_j)$
+
+&nbsp;
+
+Los coeficientes de regresión son $A_i$ y $B_i$. $\alpha_i$ y $\beta_j$ son las proporciones de recuentos para los dos niveles de la variable categórica binaria (uno para cada uno de los niveles de la segunda variable categórica). Afortunadamente, existe una implementación de este modelo en el paquete R 'MASS' que simplifica la codificación:
+
+```{r}
+
+# Built-in chi-square. It requires matrix format.
+chi_mod <- chisq.test(mood_data)
+
+chi_mod
+
+# convert to long
+mood_data_long <- as.data.frame(as.table(mood_data))
+
+# log linear model from MASS package
+log_lm_mod <- MASS::loglm(Freq ~ handedness + mood, data = mood_data_long)
+
+log_lm_mod
+```
+
+
+```{r, echo = FALSE}
+
+summ_log_lm <- summary(log_lm_mod)
+
+df <- data.frame(
+  model = c("chi-square", "log lm"),
+  `X squared` = c(chi_mod$statistic, summ_log_lm$tests[2, 1]),
+  "p value" = c(chi_mod$p.value, summ_log_lm$tests[2, 3])
+)
+
+df
+```
+&nbsp; 
+
+# Alternativas "no paramétricas" como modelos de regresión lineal
+
+Sólo presentaremos un ejemplo de prueba "no paramétrica". No obstante, este único ejemplo debería bastar para demostrar la lógica que subyace a los procedimientos "no paramétricos". La mayoría de las pruebas "no paramétricas" se basan en un sencillo truco de transformación de datos: la transformación de rango de las respuestas. Las transformaciones de rango convierten los valores en un índice según su posición cuando se ordenan por magnitud:
+
+```{r}
+
+# simulate variable
+set.seed(123)
+y <- round(rnorm(n = 5), 2)
+
+y
+
+# convert to ranks
+rank_y <- rank(y)
+
+rank_y
+```
+&nbsp; 
+
+## Prueba de Wilcoxon para dos promedios
+
+También conocida como prueba de Mann-Whitney, es la alternativa no paramétrica a la prueba t de dos promedios: 
+
+```{r}
+
+# set seed
+set.seed(123)
+
+# number of observations
+n <- 50
+y <- rnorm(n = n, mean = 0.2, sd = 1)
+
+# create data frame
+y_data <- data.frame(y)
+
+
+y
+
+# Wilcoxon / Mann-Whitney U
+wilcx_mod <- wilcox.test(y_data$y)
+
+wilcx_mod
+
+signed_rank <- function(x) sign(x) * rank(abs(x))
+
+# As linear model with our dummy-coded group_y2:
+wicx_lm_mod <- lm(signed_rank(y) ~ 1, data = y_data) # compare to
+
+summary(wicx_lm_mod)
+```
+
+```{r, echo = FALSE}
+
+summ_wicx_lm_mod <- summary(wicx_lm_mod)
+
+df <- data.frame(
+  model = c("1 mean wilcoxon", "wilcoxon_lm"),
+  p.value = c(wilcx_mod$p.value, summ_wicx_lm_mod$coefficients[4])
+)
+
+df
+```
+&nbsp; 
+
+---
+
+# Referencias
+
+- [Common statistical tests are linear models](https://lindeloev.github.io/tests-as-linear/)
+
+
+&nbsp; 
+
+---
+
+&nbsp; 
+
+<font size="4">Información de la sesión</font>
+
+```{r session info, echo=F}
+
+sessionInfo()
+```

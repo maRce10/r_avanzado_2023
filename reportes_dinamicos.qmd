@@ -1,5 +1,5 @@
 ---
-title: <font size="7"><b>Reportes dinámicos con Rmarkdown/quarto</b></font>
+title: <font size="7"><b>Reportes dinámicos</b></font>
 toc: true
 toc-depth: 2
 toc-location: left
@@ -100,7 +100,7 @@ Las herramientas programáticas como R tienden naturalmente a facilitar la repro
 
 En R la herramienta mas popular para la generación de reportes dinámicos es Rmarkdown. Rmarkdown [se puede describir](http://rmarkdown.rstudio.com) como "*un formato eléctronico de documentación que facilita la creación de documentos, presentaciones e informes dinámicos desde R*". R Markdown puede generar documentos con bloques de código de R ("chunks") incrustados entre líneas de texto. Cuando se procesa el documento, estos bloques se evalúan (si el usuario así lo desea) y los resultados se "imprimen" en el documento de acuerdo con ciertas convenciones.
 
-Quarto es una herramienta muy similar a Rmarkdown. La diferencia mas importante es la capacidad de quarto para generar reportes usando otros lenguajes de programación. Sin embargo, en términos de sintaxis ambos formatos son muy parecidos. La mayoría de las funcionalidades mostradas acá son válidas para ambos formatos (en [este enlace](https://quarto.org/docs/faq/rmarkdown.html) se puede encontrar una comparación detallada de ambos formato).  
+Quarto es una herramienta muy similar a Rmarkdown. La diferencia mas importante es la capacidad de quarto para generar reportes usando otros lenguajes de programación. Sin embargo, en términos de sintaxis ambos formatos son muy parecidos. La mayoría de las funcionalidades mostradas acá son válidas para ambos formatos (en [este enlace](https://quarto.org/docs/faq/rmarkdown.html) se puede encontrar una comparación detallada de ambos formato).
 
  
 
@@ -148,7 +148,7 @@ knitr::include_graphics("./images/image2.PNG")
 
  
 
-Esto lo llevará a su primer archivo '.Rmd' (o R Markdown) o  '.qmd' (quarto). El nuevo archivo ya viene con una plantilla con instrucciones básicas:
+Esto lo llevará a su primer archivo '.Rmd' (o R Markdown) o '.qmd' (quarto). El nuevo archivo ya viene con una plantilla con instrucciones básicas:
 
 ```{r, echo=FALSE,out.width="100%", fig.align='center'}
 
@@ -277,7 +277,6 @@ Crear un enlace a [figshare](https://figshare.com)
 ::: {.alert .alert-info}
 ## Ejercicio 2
 
-
 2.1 Cree unos encabezados y sub-encabezados en su documento Rmarkdown
 
 2.2 Añada texto con algunas palabras **en negrita** y en *italica*
@@ -400,7 +399,6 @@ boxplot(iris$Sepal.Length ~ iris$Species, col = "#EE000080",
 
 ::: {.alert .alert-info}
 ## Ejercicio 3
-
 
 3.1 Utilice los argumentos `eval`, `collapse` con diferentes valores (TRUE o FALSE) en un segmento donde corre `head(iris)`. ¿Cómo afectan el resultado?
 
@@ -579,15 +577,26 @@ Los HTML Widgets se implementan con el paquete R `htmlwidgets`, que conecta herr
 
 El siguiente código utiliza el paquete `leaflet` para generar un mapa interactivo:
 
-```{r, out.width = '100%', echo = TRUE, results='asis'}
+```{r, out.width = '100%', echo = TRUE, results = 'asis'}
 
 ll_map <- leaflet()
 
 ll_map <- addTiles(map = ll_map)
 
-ll_map <- setView( map = ll_map, lat = 5.527448, lng = -87.057245, zoom = 13)
+ll_map <-
+  setView(
+    map = ll_map,
+    lat = 5.527448,
+    lng = -87.057245,
+    zoom = 13
+  )
 
-addPopups( map = ll_map, lat = 5.527448, lng = -87.057245, popup = 'Isla del Coco')
+addPopups(
+  map = ll_map,
+  lat = 5.527448,
+  lng = -87.057245,
+  popup = 'Isla del Coco'
+)
 
 ```
 
@@ -601,9 +610,8 @@ knitr::include_graphics("./images/leaflet.png")
 
 ```
 
- 
 
-Note el uso del argumento de `as.is = TRUE` en las opciones del bloque de código.
+Note el uso del argumento de `results = 'asis'` en las opciones del bloque de código.
 
  
 
@@ -716,7 +724,12 @@ Los compendios de investigación son estructuras de carpetas pre-definidas que p
 
 path <- tempdir()
 
-make_compendium(name = "proyecto_x", path = path, format = "basic", Rproj = TRUE)
+make_compendium(
+  name = "proyecto_x",
+  path = path,
+  format = "basic",
+  Rproj = TRUE
+)
 
 ```
 

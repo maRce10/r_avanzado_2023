@@ -29,7 +29,7 @@ format:
 <font size="6"><b>Programación y métodos estadísticos <br> avanzados en R</b></font>
 </center>
 
-<center><font size="5"><b><a href="https://www.ucr.ac.cr/">Universidad de Costa Rica</a><br></b></font></center>
+<center><font size="5"><b>Universidad de Costa Rica<br></b></font></center>
 
 <i><center><font size="5"><b><a href="https://marce10.github.io/">Marcelo Araya-Salas PhD</a> y <a href="https://scholar.google.com/citations?user=hTu_SnkAAAAJ&hl=es&oi=ao"> Mario Espinoza PhD</a><br></b></font></center></i>
 

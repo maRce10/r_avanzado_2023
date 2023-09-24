@@ -1,0 +1,2293 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>R avanzado 2023 - Reportes dinámicos</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">R avanzado 2023</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text"> </span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-manuales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Manuales</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-manuales">    
+        <li>
+    <a class="dropdown-item" href="./fundamentos_de_r.html">
+ <span class="dropdown-text">Fundamentos de R</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./reportes_dinamicos.html">
+ <span class="dropdown-text">Reportes dinámicos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./funciones.html">
+ <span class="dropdown-text">Funciones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./bucles.html">
+ <span class="dropdown-text">Bucles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./modelos_de_regresion.html">
+ <span class="dropdown-text">Modelos de regresión</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./estadistica_tradicional_regresion.html">
+ <span class="dropdown-text">Estadística tradicional como regresión</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ggplot2.html">
+ <span class="dropdown-text">Gráficos con ggplot2</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./preparacion_curso.html">
+ <span class="menu-text">Preparación para el curso</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./code_redirect.html">
+ <span class="menu-text">Compartir código</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./instructor.html">
+ <span class="menu-text">Instructor</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/maRce10/R_avanzado_2023/"><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#crisis-de-reproducibilidad-en-la-ciencia" id="toc-crisis-de-reproducibilidad-en-la-ciencia" class="nav-link active" data-scroll-target="#crisis-de-reproducibilidad-en-la-ciencia"><span class="toc-section-number">0.1</span>  Crisis de reproducibilidad en la ciencia</a></li>
+  <li><a href="#crear-documentos-r-markdownquarto" id="toc-crear-documentos-r-markdownquarto" class="nav-link" data-scroll-target="#crear-documentos-r-markdownquarto"><span class="toc-section-number">1</span>  Crear documentos R Markdown/quarto</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1"><span class="toc-section-number">1.1</span>  Ejercicio 1</a></li>
+  </ul></li>
+  <li><a href="#syntaxis-markdown" id="toc-syntaxis-markdown" class="nav-link" data-scroll-target="#syntaxis-markdown"><span class="toc-section-number">2</span>  Syntaxis Markdown</a>
+  <ul class="collapse">
+  <li><a href="#crear-encabezados-de-varios-tamaños" id="toc-crear-encabezados-de-varios-tamaños" class="nav-link" data-scroll-target="#crear-encabezados-de-varios-tamaños"><span class="toc-section-number">2.1</span>  Crear encabezados de varios tamaños</a></li>
+  </ul></li>
+  <li><a href="#encabezado-1" id="toc-encabezado-1" class="nav-link" data-scroll-target="#encabezado-1"><span class="toc-section-number">3</span>  Encabezado 1</a>
+  <ul class="collapse">
+  <li><a href="#encabezado-2" id="toc-encabezado-2" class="nav-link" data-scroll-target="#encabezado-2"><span class="toc-section-number">3.1</span>  Encabezado 2</a></li>
+  <li><a href="#opciones-del-texto" id="toc-opciones-del-texto" class="nav-link" data-scroll-target="#opciones-del-texto"><span class="toc-section-number">3.2</span>  Opciones del texto</a></li>
+  <li><a href="#añadir-una-imagen" id="toc-añadir-una-imagen" class="nav-link" data-scroll-target="#añadir-una-imagen"><span class="toc-section-number">3.3</span>  Añadir una imagen</a></li>
+  <li><a href="#crear-enlaces-hyperlinks" id="toc-crear-enlaces-hyperlinks" class="nav-link" data-scroll-target="#crear-enlaces-hyperlinks"><span class="toc-section-number">3.4</span>  Crear enlaces (‘hyperlinks’)</a></li>
+  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2"><span class="toc-section-number">3.5</span>  Ejercicio 2</a></li>
+  <li><a href="#incrustar-código" id="toc-incrustar-código" class="nav-link" data-scroll-target="#incrustar-código"><span class="toc-section-number">3.6</span>  Incrustar código</a></li>
+  <li><a href="#ocultar-código" id="toc-ocultar-código" class="nav-link" data-scroll-target="#ocultar-código"><span class="toc-section-number">3.7</span>  Ocultar código</a></li>
+  <li><a href="#incrustar-gráficos" id="toc-incrustar-gráficos" class="nav-link" data-scroll-target="#incrustar-gráficos"><span class="toc-section-number">3.8</span>  Incrustar gráficos</a></li>
+  <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3"><span class="toc-section-number">3.9</span>  Ejercicio 3</a></li>
+  <li><a href="#incrustar-código-de-r-en-el-texto" id="toc-incrustar-código-de-r-en-el-texto" class="nav-link" data-scroll-target="#incrustar-código-de-r-en-el-texto"><span class="toc-section-number">3.10</span>  Incrustar código de R en el texto</a></li>
+  </ul></li>
+  <li><a href="#recursos-adicionales-para-personalizar-documentos-rmarkdown" id="toc-recursos-adicionales-para-personalizar-documentos-rmarkdown" class="nav-link" data-scroll-target="#recursos-adicionales-para-personalizar-documentos-rmarkdown"><span class="toc-section-number">4</span>  Recursos adicionales para personalizar documentos Rmarkdown</a>
+  <ul class="collapse">
+  <li><a href="#metadatos-yaml" id="toc-metadatos-yaml" class="nav-link" data-scroll-target="#metadatos-yaml"><span class="toc-section-number">4.1</span>  Metadatos (YAML)</a></li>
+  <li><a href="#emojis" id="toc-emojis" class="nav-link" data-scroll-target="#emojis"><span class="toc-section-number">4.2</span>  Emojis</a></li>
+  <li><a href="#cuadros-con-knitrkable" id="toc-cuadros-con-knitrkable" class="nav-link" data-scroll-target="#cuadros-con-knitrkable"><span class="toc-section-number">4.3</span>  Cuadros con knitr::kable</a></li>
+  <li><a href="#opciones-adicionales-en-knitr" id="toc-opciones-adicionales-en-knitr" class="nav-link" data-scroll-target="#opciones-adicionales-en-knitr"><span class="toc-section-number">4.4</span>  Opciones adicionales en knitr</a></li>
+  <li><a href="#presentaciones-y-otros-opciones-de-formato" id="toc-presentaciones-y-otros-opciones-de-formato" class="nav-link" data-scroll-target="#presentaciones-y-otros-opciones-de-formato"><span class="toc-section-number">4.5</span>  Presentaciones y otros opciones de formato</a></li>
+  <li><a href="#plantillas-de-rmarkdown" id="toc-plantillas-de-rmarkdown" class="nav-link" data-scroll-target="#plantillas-de-rmarkdown"><span class="toc-section-number">4.6</span>  Plantillas de Rmarkdown</a></li>
+  </ul></li>
+  <li><a href="#documentos-interactivos" id="toc-documentos-interactivos" class="nav-link" data-scroll-target="#documentos-interactivos"><span class="toc-section-number">5</span>  Documentos interactivos</a>
+  <ul class="collapse">
+  <li><a href="#html-widgets" id="toc-html-widgets" class="nav-link" data-scroll-target="#html-widgets"><span class="toc-section-number">5.1</span>  HTML widgets</a></li>
+  <li><a href="#aplicaciones-shiny" id="toc-aplicaciones-shiny" class="nav-link" data-scroll-target="#aplicaciones-shiny"><span class="toc-section-number">5.2</span>  Aplicaciones shiny</a></li>
+  </ul></li>
+  <li><a href="#publicar-reportes-en-linea-con-rpubs" id="toc-publicar-reportes-en-linea-con-rpubs" class="nav-link" data-scroll-target="#publicar-reportes-en-linea-con-rpubs"><span class="toc-section-number">6</span>  Publicar reportes en linea con Rpubs</a></li>
+  <li><a href="#herramientas-adicionales-para-organizar-análisis-de-datos" id="toc-herramientas-adicionales-para-organizar-análisis-de-datos" class="nav-link" data-scroll-target="#herramientas-adicionales-para-organizar-análisis-de-datos"><span class="toc-section-number">7</span>  Herramientas adicionales para organizar análisis de datos</a>
+  <ul class="collapse">
+  <li><a href="#proyectos-de-rstudio" id="toc-proyectos-de-rstudio" class="nav-link" data-scroll-target="#proyectos-de-rstudio"><span class="toc-section-number">7.1</span>  Proyectos de Rstudio</a></li>
+  <li><a href="#compendios-de-investigación" id="toc-compendios-de-investigación" class="nav-link" data-scroll-target="#compendios-de-investigación"><span class="toc-section-number">7.2</span>  Compendios de investigación</a></li>
+  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4"><span class="toc-section-number">7.3</span>  Ejercicio 4</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="toc-section-number">7.4</span>  Referencias</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><font size="7"><b>Reportes dinámicos</b></font></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<style>
+body
+  { counter-reset: source-line 0; }
+pre.numberSource code
+  { counter-reset: none; }
+</style>
+<div class="cell">
+
+</div>
+<section id="objetivos-del-manual" class="level1 unnumbered unlisted alert alert-info">
+<h1 class="unnumbered unlisted">Objetivos del manual</h1>
+<ul>
+<li><p>Familiarizarse con el formato para reportes dinámicos Rmarkdown/quarto</p></li>
+<li><p>Ser capaz de documentar el manejo y análisis de datos en R usando Rmarkdown/quarto</p></li>
+</ul>
+</section>
+<p>&nbsp;</p>
+<p>Paquetes a utilizar en este manual:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># cargar paquetes</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>sketchy<span class="sc">::</span><span class="fu">load_packages</span>(</span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="fu">c</span>(</span>
+<span id="cb1-5"><a href="#cb1-5"></a>      <span class="st">"leaflet"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6"></a>      <span class="st">"remotes"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7"></a>      <span class="st">"hadley/emo"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8"></a>      <span class="st">"maRce10/sketchy"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9"></a>      <span class="st">"knitr"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10"></a>      <span class="st">"rmarkdown"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11"></a>      <span class="st">"rmdformats"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12"></a>      <span class="st">"revealjs"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13"></a>      <span class="st">"rticles"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14"></a>      <span class="st">"tufte"</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>    )</span>
+<span id="cb1-16"><a href="#cb1-16"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>&nbsp;</p>
+<hr>
+<section id="crisis-de-reproducibilidad-en-la-ciencia" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="crisis-de-reproducibilidad-en-la-ciencia"><span class="header-section-number">0.1</span> Crisis de reproducibilidad en la ciencia</h2>
+<p>La mayoría de los procedimientos (incluyendo análisis de datos) en estudios científicos no se pueden replicar</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/nature-reproducibility-crisis.jpeg" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="https://www.nature.com/articles/533452a"><em>Baker. 2016. Nature</em></a></p>
+<p>El compartir datos y análisis de forma transparente y detalladamente documentada, en formatos que puedan ser reproducidos por otros investigadores es una de las principales herramientas para lidiar con este problema.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/soluciones_reproducible.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><em>Gallagher et al.&nbsp;2020. Nature Eco &amp; Evo</em></p>
+<p>Las herramientas programáticas como R tienden naturalmente a facilitar la reproducibilidad ya que el código de un análisis se puede registrar y compartir fácilmente. Muchos lenguajes de programación permiten la generación de reportes dinámicos, los cuales resultan fundamentales para hacer manejo de datos y análisis estadísticos reproducibles. La principal forma en que R facilita la investigación reproducible es utilizando un documento que es una combinación de contenido y código de análisis de datos. Los reportes dinámicos suelen contener toda la información necesaria para que otros investigadores puedan replicar todos los pasos de análisis que generaron los resultados de artículos científicos. Por tanto son una herramienta indispensable para mejorar la reproduciblidad en la ciencia.</p>
+<p>En R la herramienta mas popular para la generación de reportes dinámicos es Rmarkdown. Rmarkdown <a href="http://rmarkdown.rstudio.com">se puede describir</a> como “<em>un formato eléctronico de documentación que facilita la creación de documentos, presentaciones e informes dinámicos desde R</em>”. R Markdown puede generar documentos con bloques de código de R (“chunks”) incrustados entre líneas de texto. Cuando se procesa el documento, estos bloques se evalúan (si el usuario así lo desea) y los resultados se “imprimen” en el documento de acuerdo con ciertas convenciones.</p>
+<p>Quarto es una herramienta muy similar a Rmarkdown. La diferencia mas importante es la capacidad de quarto para generar reportes usando otros lenguajes de programación. Sin embargo, en términos de sintaxis ambos formatos son muy parecidos. La mayoría de las funcionalidades mostradas acá son válidas para ambos formatos (en <a href="https://quarto.org/docs/faq/rmarkdown.html">este enlace</a> se puede encontrar una comparación detallada de ambos formato).</p>
+<p>&nbsp;</p>
+<section id="ventajas-de-los-reportes-dinámicos-con-rmarkdownquarto" class="level3" data-number="0.1.1">
+<h3 data-number="0.1.1" class="anchored" data-anchor-id="ventajas-de-los-reportes-dinámicos-con-rmarkdownquarto"><span class="header-section-number">0.1.1</span> Ventajas de los reportes dinámicos con Rmarkdown/quarto:</h3>
+<ul>
+<li><p>El <strong>código R se puede incrustar en el informe</strong>, por lo que no es necesario mantener el informe y el código de R por separado</p></li>
+<li><p>Incluir el código R directamente en un informe proporciona una <strong>estructura intuitiva</strong> para reproducir los análisis</p></li>
+<li><p>El texto del informe está <strong>escrito como texto normal</strong>, por lo que no se requieren conocimientos de programación (i.e.&nbsp;R o HTML) para comprenderlos</p></li>
+<li><p><strong>El resultado es un archivo HTML</strong> que incluye imágenes, bloques de código con los comandos de R, los resultados de estos códigos y texto. No se necesitan archivos adicionales, todo está incorporado en el archivo HTML.</p></li>
+<li><p>Los informes son <strong>fáciles de compartir por correo o publicarlos en línea</strong></p></li>
+<li><p>Estos informes <strong>facilitan la colaboración y mejoran la reproducibilidad</strong> (entender los análisis es mucho mas fácil cuando hay texto explicativo, código de R, los resultados del código y los gráficos en un mismo archivo)</p></li>
+<li><p><strong>Se actualizan fácilmente</strong> para incluir nuevos análisis y/o integrar nuevos datos</p></li>
+</ul>
+<p>&nbsp;</p>
+<hr>
+</section>
+</section>
+<section id="crear-documentos-r-markdownquarto" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Crear documentos R Markdown/quarto</h1>
+<p>Usaremos <a href="www.rstudio.com">Rstudio</a> para crear documentos R Markdown. Empiece por seleccionar “R Markdown …” en el menú desplegable que aparece cuando crea un nuevo archivo:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image1.PNG" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><font size="3"> <i>Nota: es posible que se le solicite aquí que instale varios paquetes necesarios para que R Markdown/quarto funcione.</i></font></p>
+<p>&nbsp;</p>
+<p>Aparecerá una ventana que le pedirá un título y autor para el nuevo documento (esto no es tan relevante en este punto y puedo ser modificado fácilmente luego), así como el formato. Seleccione ‘HTML’ ya que nos interesa convertirlo a un formato de visualización universal. Puede cambiar sus preferencias de salida de ‘HTML’ a ‘PDF’ o ‘Word’ en cualquier momento:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image2.PNG" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Esto lo llevará a su primer archivo ‘.Rmd’ (o R Markdown) o ‘.qmd’ (quarto). El nuevo archivo ya viene con una plantilla con instrucciones básicas:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image3.PNG" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<section id="ejercicio-1" class="level2 alert alert-info" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="ejercicio-1"><span class="header-section-number">1.1</span> Ejercicio 1</h2>
+<p>Cree un nuevo archivo R Markdown o quarto, escriba algunas líneas de texto y haga clic en “Knit” para ver cómo se verá su reporte.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image4.PNG" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<p>&nbsp;</p>
+</section>
+<section id="syntaxis-markdown" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Syntaxis Markdown</h1>
+<p>Markdown (y por extensión Rmarkdown) tiene sus propias reglas sintácticas. Sin embargo, este lenguaje es relativamente simple y fácil de dominar:</p>
+<hr>
+<section id="crear-encabezados-de-varios-tamaños" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="crear-encabezados-de-varios-tamaños"><span class="header-section-number">2.1</span> Crear encabezados de varios tamaños</h2>
+<p>Código:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image5.PNG" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Resultado:</p>
+</section>
+</section>
+<section id="encabezado-1" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Encabezado 1</h1>
+<section id="encabezado-2" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="encabezado-2"><span class="header-section-number">3.1</span> Encabezado 2</h2>
+<section id="encabezado-3" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="encabezado-3"><span class="header-section-number">3.1.1</span> Encabezado 3</h3>
+<hr>
+</section>
+</section>
+<section id="opciones-del-texto" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="opciones-del-texto"><span class="header-section-number">3.2</span> Opciones del texto</h2>
+<p>&nbsp;</p>
+<p>Código:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image6.PNG" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Resultado:</p>
+<p>Hacer texto <strong>en negrita</strong>, <em>itálico</em>, <del>tachado</del>, o super<sup>índice</sup></p>
+<hr>
+</section>
+<section id="añadir-una-imagen" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="añadir-una-imagen"><span class="header-section-number">3.3</span> Añadir una imagen</h2>
+<p>Código:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/add_image.png" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Resultado:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/rmarkdown_icon.png" class="img-fluid figure-img" style="width:40.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>También podemos añadir una imagen con la función <code>include_graphics()</code> del paquete knitr.</p>
+<p>Código:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">include_graphics</span>(<span class="st">"./images/rmarkdown_icon.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Resultado:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/rmarkdown_icon.png" class="img-fluid figure-img" style="width:40.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note que esta opción nos permite hacer uso de los argumentos del bloque de código dedicados a la graficación, y po r tanto es una opción mas flexible.</p>
+<hr>
+</section>
+<section id="crear-enlaces-hyperlinks" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="crear-enlaces-hyperlinks"><span class="header-section-number">3.4</span> Crear enlaces (‘hyperlinks’)</h2>
+<p>Código:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image8.PNG" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Resultado:</p>
+<p>Crear un enlace a <a href="https://figshare.com">figshare</a></p>
+<p>&nbsp;</p>
+</section>
+<section id="ejercicio-2" class="level2 alert alert-info" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="ejercicio-2"><span class="header-section-number">3.5</span> Ejercicio 2</h2>
+<p>2.1 Cree unos encabezados y sub-encabezados en su documento Rmarkdown</p>
+<p>2.2 Añada texto con algunas palabras <strong>en negrita</strong> y en <em>italica</em></p>
+<p>2.3 Incruste una imagen de su organismo favorito (o un gif)</p>
+<p>2.4 Añada un enlace URL</p>
+</section>
+<p>&nbsp;</p>
+<section id="incrustar-código" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="incrustar-código"><span class="header-section-number">3.6</span> Incrustar código</h2>
+<p>Para incrustar el código de R, tenemos que definir un área donde se encuentra el código. Esta ‘área’ se conoce como un bloque de código (o ‘chunk’) y se define mediante:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image9.PNG" class="img-fluid figure-img" style="width:30.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Observe que el recuadro de R está en gris, mientras que el resto está en fondo blanco. Todo lo que se incluye en el segmento se evalúa y muestra de acuerdo con las especificaciones, aunque estas se pueden modificar.</p>
+<p>&nbsp;</p>
+<p>Podemos, por ejemplo, agregar una nueva columna al conjunto de datos de ejemplo de iris:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image10.PNG" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Resultado:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a>iris<span class="sc">$</span>random.var <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="fu">nrow</span>(iris))</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">head</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 17%">
+<col style="width: 18%">
+<col style="width: 17%">
+<col style="width: 11%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Sepal.Length</th>
+<th style="text-align: right;">Sepal.Width</th>
+<th style="text-align: right;">Petal.Length</th>
+<th style="text-align: right;">Petal.Width</th>
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">random.var</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">-1.96461</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">0.81696</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">-0.52155</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">0.34147</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">-0.60139</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">0.92782</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Cuando se procesa su documento, el segmento de código se muestra en un cuadro gris y los resultados de ese código se muestran en un cuadro blanco. ¿Qué pasa si solo desea que se muestre la salida de su código? ¿O que su código se muestre pero no se ejecute realmente? Hay argumentos que puede agregar a cada uno de sus bloques para especificar estas y otras opciones:</p>
+<hr>
+</section>
+<section id="ocultar-código" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="ocultar-código"><span class="header-section-number">3.7</span> Ocultar código</h2>
+<p>Añadir el argumento <code>echo=FALSE</code></p>
+<p>Código:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image11.PNG" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Resultado:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 17%">
+<col style="width: 18%">
+<col style="width: 17%">
+<col style="width: 11%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Sepal.Length</th>
+<th style="text-align: right;">Sepal.Width</th>
+<th style="text-align: right;">Petal.Length</th>
+<th style="text-align: right;">Petal.Width</th>
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">random.var</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">0.66887</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">-0.89707</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">-0.66324</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">-0.59877</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">-0.24529</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">1.24304</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Puede ver que el código está oculto pero se muestran los resultados.</p>
+<p><a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-spanish.pdf">Esta guía</a> sobre las opciones de los bloques de código puede ser muy útil:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image12.PNG" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><a href="https://yihui.org/knitr/options/">En este enlace</a> se detallan todos los argumentos disponibles para personalizar los bloques de código.</p>
+<p>&nbsp;</p>
+</section>
+<section id="incrustar-gráficos" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="incrustar-gráficos"><span class="header-section-number">3.8</span> Incrustar gráficos</h2>
+<p>Los gráficos se pueden incrustar en documentos Rmarkdown simplemente usando funciones de graficación como lo haría en un script de R normal.</p>
+<section id="código" class="level4" data-number="3.8.0.1">
+<h4 data-number="3.8.0.1" class="anchored" data-anchor-id="código"><span class="header-section-number">3.8.0.1</span> Código:</h4>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image13.PNG" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+</section>
+<section id="resultado" class="level4" data-number="3.8.0.2">
+<h4 data-number="3.8.0.2" class="anchored" data-anchor-id="resultado"><span class="header-section-number">3.8.0.2</span> Resultado:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="reportes_dinamicos_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>&nbsp;</p>
+</section>
+</section>
+<section id="ejercicio-3" class="level2 alert alert-info" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="ejercicio-3"><span class="header-section-number">3.9</span> Ejercicio 3</h2>
+<p>3.1 Utilice los argumentos <code>eval</code>, <code>collapse</code> con diferentes valores (TRUE o FALSE) en un segmento donde corre <code>head(iris)</code>. ¿Cómo afectan el resultado?</p>
+<p>3.2 Haga lo mismo con los argumentos <code>out.width</code>, <code>fig.width</code>,<code>dpi</code> y <code>fig.height</code> en un segmento que cree un gráfico. ¿Cómo afecta esta vez?</p>
+</section>
+<p>&nbsp;</p>
+<section id="incrustar-código-de-r-en-el-texto" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="incrustar-código-de-r-en-el-texto"><span class="header-section-number">3.10</span> Incrustar código de R en el texto</h2>
+<p>Es posible que haya notado a lo largo de este tutorial que tengo pequeños fragmentos de texto que parecen “bloques de código”. Esto se conoce como incrustación de código en texto.</p>
+<p>Esto se puede hacer de dos maneras:</p>
+<section id="dar-un-texto-con-la-apariencia-de-un-segmento-de-código" class="level4" data-number="3.10.0.1">
+<h4 data-number="3.10.0.1" class="anchored" data-anchor-id="dar-un-texto-con-la-apariencia-de-un-segmento-de-código"><span class="header-section-number">3.10.0.1</span> 1.Dar un texto con la apariencia de un segmento de código:</h4>
+<hr>
+</section>
+<section id="código-1" class="level4" data-number="3.10.0.2">
+<h4 data-number="3.10.0.2" class="anchored" data-anchor-id="código-1"><span class="header-section-number">3.10.0.2</span> Código:</h4>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image14.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+</section>
+<section id="resultado-1" class="level4" data-number="3.10.0.3">
+<h4 data-number="3.10.0.3" class="anchored" data-anchor-id="resultado-1"><span class="header-section-number">3.10.0.3</span> Resultado:</h4>
+<p>El promedio del largo del sépalo es <code>mean(iris$Sepal.Length)</code></p>
+<p>&nbsp;</p>
+</section>
+<section id="evaluar-el-código-en-el-texto" class="level4" data-number="3.10.0.4">
+<h4 data-number="3.10.0.4" class="anchored" data-anchor-id="evaluar-el-código-en-el-texto"><span class="header-section-number">3.10.0.4</span> 2. Evaluar el código en el texto</h4>
+</section>
+<section id="código-2" class="level4" data-number="3.10.0.5">
+<h4 data-number="3.10.0.5" class="anchored" data-anchor-id="código-2"><span class="header-section-number">3.10.0.5</span> Código:</h4>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image15.png" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="resultado-2" class="level4" data-number="3.10.0.6">
+<h4 data-number="3.10.0.6" class="anchored" data-anchor-id="resultado-2"><span class="header-section-number">3.10.0.6</span> Resultado:</h4>
+<p>El promedio del largo de sépalo para <strong>setosa</strong> es 5.006.</p>
+<p>&nbsp;</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="recursos-adicionales-para-personalizar-documentos-rmarkdown" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Recursos adicionales para personalizar documentos Rmarkdown</h1>
+<section id="metadatos-yaml" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="metadatos-yaml"><span class="header-section-number">4.1</span> Metadatos (YAML)</h2>
+<p>Hay tres componentes básicos de un documento de R Markdown: los metadatos, el texto y el código. Los metadatos se escriben entre el par de tres guiones (“- - -”) generalmente al inicio del documento. La sintaxis de los metadatos es <a href="https://en.wikipedia.org/wiki/YAML">YAML (YAML Ain’t Markup Language)</a>, por lo que a veces también se denomina metadatos YAML. La sangría es importante en YAML, así que debe añadirla a los subcampos (con respecto a un campo superior).</p>
+<p>Este encabezado muestra las opciones mas comúnmente usadas en los metadatos YAML:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="sc">---</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>title<span class="sc">:</span> <span class="st">"Un titulo descriptivo y sin faltas ortograficas"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>author<span class="sc">:</span> <span class="st">"Marcelo Araya"</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>date<span class="sc">:</span> <span class="st">"`r Sys.Date()`"</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>output<span class="sc">:</span> <span class="co"># Varios outputs mostrados solo para el ejemplo</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>  html_document<span class="sc">:</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>    fig_caption<span class="sc">:</span> yes</span>
+<span id="cb4-8"><a href="#cb4-8"></a>    number_sections<span class="sc">:</span> yes</span>
+<span id="cb4-9"><a href="#cb4-9"></a>    toc<span class="sc">:</span> yes</span>
+<span id="cb4-10"><a href="#cb4-10"></a>    toc_float<span class="sc">:</span> yes</span>
+<span id="cb4-11"><a href="#cb4-11"></a>    df_print<span class="sc">:</span> paged</span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><a href="https://bookdown.org/yihui/rmarkdown/html-document.html">En este enlace</a> se explican en detalle las opciones disponibles en el encabezado YAML de archivos Rmarkdown.</p>
+<p>&nbsp;</p>
+</section>
+<section id="emojis" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="emojis"><span class="header-section-number">4.2</span> Emojis</h2>
+<p>El paquete <a href="https://github.com/hadley/emo">emo</a> permite añadir emojis al evaluar un código:</p>
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>emo<span class="sc">::</span><span class="fu">ji</span>(<span class="st">"costa_rica"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<p>🇨🇷</p>
+<p>Tambien se puede incrustar en el texto 🇨🇷, como lo vimos <a href="#incrustar-código-de-r-en-el-texto">mas arriba</a> ⬆️ (<code>ji("up_arrow")</code>)</p>
+<p>&nbsp;</p>
+</section>
+<section id="cuadros-con-knitrkable" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="cuadros-con-knitrkable"><span class="header-section-number">4.3</span> Cuadros con knitr::kable</h2>
+<p>El paquete <code>knitr</code> también provee una función para mostrar datos tabulares de forma ordenada y ‘limpia’ en los reportes dínamicos:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, ])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 17%">
+<col style="width: 18%">
+<col style="width: 17%">
+<col style="width: 11%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Sepal.Length</th>
+<th style="text-align: right;">Sepal.Width</th>
+<th style="text-align: right;">Petal.Length</th>
+<th style="text-align: right;">Petal.Width</th>
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">random.var</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">0.66887</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">-0.89707</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">-0.66324</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">-0.59877</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">-0.24529</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.4</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">1.24304</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">0.72579</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">1.38827</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">-0.80822</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: left;">setosa</td>
+<td style="text-align: right;">-0.51581</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>El paquete <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html"><code>kableExtra</code></a> complementa esta función con muchas herramientas para personalizar el formato de las tablas en reportes dinámicos en R.</p>
+<p>&nbsp;</p>
+</section>
+<section id="opciones-adicionales-en-knitr" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="opciones-adicionales-en-knitr"><span class="header-section-number">4.4</span> Opciones adicionales en knitr</h2>
+<p>El argumento <code>opts_knit</code> de <code>knitr</code> permite definir opciones globales (aplicables a todos los bloques a menos que se re-definan):</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">root.dir =</span> <span class="st">".."</span>, <span class="at">eval =</span> <span class="cn">TRUE</span>, <span class="at">echo =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>&nbsp;</p>
+</section>
+<section id="presentaciones-y-otros-opciones-de-formato" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="presentaciones-y-otros-opciones-de-formato"><span class="header-section-number">4.5</span> Presentaciones y otros opciones de formato</h2>
+<p>Note en la ventana de creación de un nuevo documento Rmarkdown las opciones adicionales de formato:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/image16.PNG" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Los reportes dinámicos se pueden generar en otros formatos incluyendo presentaciones, pdf y documentos de word.</p>
+<p>&nbsp;</p>
+</section>
+<section id="plantillas-de-rmarkdown" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="plantillas-de-rmarkdown"><span class="header-section-number">4.6</span> Plantillas de Rmarkdown</h2>
+<p>El paquete Rmarkdown puede generar resultados en HTML, PDF, MS Word, viñetas de paquetes de R, presentaciones Beamer y HTML5. Los formatos adicionales (o ‘variantes’ de estos formatos) están disponibles en otros paquetes de R. Algunos de esos paquetes son:</p>
+<ul>
+<li>rmdformats</li>
+<li>reveljs</li>
+<li>artículos</li>
+<li>tufte</li>
+</ul>
+<p>Una vez estos paquetes han sido instalados, los nuevos formatos estarán disponibles a través del nuevo cuadro de diálogo Rmarkdown:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/templates.png" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<hr>
+</section>
+</section>
+<section id="documentos-interactivos" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Documentos interactivos</h1>
+<p>Los documentos de R Markdown también pueden generar contenido interactivo. Hay dos tipos de documentos interactivos de R Markdown: HTML Widgets y aplicaciones Shiny.</p>
+<p>&nbsp;</p>
+<section id="html-widgets" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="html-widgets"><span class="header-section-number">5.1</span> HTML widgets</h2>
+<p>Los HTML Widgets se implementan con el paquete R <code>htmlwidgets</code>, que conecta herramientas de JavaScript que crean aplicaciones interactivas, como gráficos y tablas Se han desarrollado varios paquetes que emplean HTML widgets como <code>dygraphs</code>, <code>DT</code> y <code>leaflet</code>. En este <a href="https://www.htmlwidgets.org">sitio (https://www.htmlwidgets.org)</a> se muestran una variedad de widgets disponibles así como instrucciones de como desarrollarlos.</p>
+<p>El siguiente código utiliza el paquete <code>leaflet</code> para generar un mapa interactivo:</p>
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>ll_map <span class="ot">&lt;-</span> <span class="fu">leaflet</span>()</span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a>ll_map <span class="ot">&lt;-</span> <span class="fu">addTiles</span>(<span class="at">map =</span> ll_map)</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a>ll_map <span class="ot">&lt;-</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">setView</span>(</span>
+<span id="cb8-7"><a href="#cb8-7"></a>    <span class="at">map =</span> ll_map,</span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="at">lat =</span> <span class="fl">5.527448</span>,</span>
+<span id="cb8-9"><a href="#cb8-9"></a>    <span class="at">lng =</span> <span class="sc">-</span><span class="fl">87.057245</span>,</span>
+<span id="cb8-10"><a href="#cb8-10"></a>    <span class="at">zoom =</span> <span class="dv">13</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a>  )</span>
+<span id="cb8-12"><a href="#cb8-12"></a></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="fu">addPopups</span>(</span>
+<span id="cb8-14"><a href="#cb8-14"></a>  <span class="at">map =</span> ll_map,</span>
+<span id="cb8-15"><a href="#cb8-15"></a>  <span class="at">lat =</span> <span class="fl">5.527448</span>,</span>
+<span id="cb8-16"><a href="#cb8-16"></a>  <span class="at">lng =</span> <span class="sc">-</span><span class="fl">87.057245</span>,</span>
+<span id="cb8-17"><a href="#cb8-17"></a>  <span class="at">popup =</span> <span class="st">'Isla del Coco'</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="htmlwidget-b566542cf89cfee61c1a" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b566542cf89cfee61c1a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addPopups","args":[5.527448,-87.05724499999999,"Isla del Coco",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"setView":[[5.527448,-87.05724499999999],13,[]],"limits":{"lat":[5.527448,5.527448],"lng":[-87.05724499999999,-87.05724499999999]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>&nbsp;</p>
+<p>Este es el bloque de código que generó el mapa:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/leaflet.png" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note el uso del argumento de <code>results = 'asis'</code> en las opciones del bloque de código.</p>
+<p>&nbsp;</p>
+</section>
+<section id="aplicaciones-shiny" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="aplicaciones-shiny"><span class="header-section-number">5.2</span> Aplicaciones shiny</h2>
+<p>El paquete <code>shiny</code> crea aplicaciones web interactivas en R. Para llamar al código <code>shiny</code> desde un documento R Markdown, agregue ‘runtime’: shiny a los metadatos YAML, como en este ejemplo:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="sc">---</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>title<span class="sc">:</span> <span class="st">"Documento Shiny"</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>output<span class="sc">:</span> html_document</span>
+<span id="cb9-4"><a href="#cb9-4"></a>runtime<span class="sc">:</span> shiny</span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>&nbsp;</p>
+<p>El siguiente código crea una aplicación shiny dentro del documento Rmarkdown:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  </span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">titlePanel</span>(<span class="st">"Ejemplo"</span>),</span>
+<span id="cb10-4"><a href="#cb10-4"></a>  </span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">sidebarLayout</span>(</span>
+<span id="cb10-6"><a href="#cb10-6"></a>    <span class="fu">sidebarPanel</span>(</span>
+<span id="cb10-7"><a href="#cb10-7"></a>      <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"bins"</span>,</span>
+<span id="cb10-8"><a href="#cb10-8"></a>                  <span class="at">label =</span> <span class="st">"Numero de barras:"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9"></a>                  <span class="at">min =</span> <span class="dv">1</span>,</span>
+<span id="cb10-10"><a href="#cb10-10"></a>                  <span class="at">max =</span> <span class="dv">50</span>,</span>
+<span id="cb10-11"><a href="#cb10-11"></a>                  <span class="at">value =</span> <span class="dv">30</span>)</span>
+<span id="cb10-12"><a href="#cb10-12"></a>      </span>
+<span id="cb10-13"><a href="#cb10-13"></a>    ),</span>
+<span id="cb10-14"><a href="#cb10-14"></a>    <span class="fu">mainPanel</span>(</span>
+<span id="cb10-15"><a href="#cb10-15"></a>      <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"distPlot"</span>)</span>
+<span id="cb10-16"><a href="#cb10-16"></a>    )</span>
+<span id="cb10-17"><a href="#cb10-17"></a>  )</span>
+<span id="cb10-18"><a href="#cb10-18"></a>)</span>
+<span id="cb10-19"><a href="#cb10-19"></a></span>
+<span id="cb10-20"><a href="#cb10-20"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb10-21"><a href="#cb10-21"></a> </span>
+<span id="cb10-22"><a href="#cb10-22"></a>  output<span class="sc">$</span>distPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb10-23"><a href="#cb10-23"></a>    </span>
+<span id="cb10-24"><a href="#cb10-24"></a>    x    <span class="ot">&lt;-</span> faithful<span class="sc">$</span>waiting</span>
+<span id="cb10-25"><a href="#cb10-25"></a>    bins <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x), <span class="fu">max</span>(x), <span class="at">length.out =</span> input<span class="sc">$</span>bins <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb10-26"><a href="#cb10-26"></a>    </span>
+<span id="cb10-27"><a href="#cb10-27"></a>    <span class="fu">hist</span>(x, <span class="at">breaks =</span> bins, <span class="at">col =</span> <span class="st">"#3E4A89FF"</span>, <span class="at">border =</span> <span class="st">"white"</span>,</span>
+<span id="cb10-28"><a href="#cb10-28"></a>         <span class="at">xlab =</span> <span class="st">"Tiempo de espera para la siguiente erupcion"</span>,</span>
+<span id="cb10-29"><a href="#cb10-29"></a>         <span class="at">main =</span> <span class="st">"Histograma del tiempo de espera"</span>)</span>
+<span id="cb10-30"><a href="#cb10-30"></a>  })</span>
+<span id="cb10-31"><a href="#cb10-31"></a>}</span>
+<span id="cb10-32"><a href="#cb10-32"></a></span>
+<span id="cb10-33"><a href="#cb10-33"></a><span class="co"># Crear Shiny app</span></span>
+<span id="cb10-34"><a href="#cb10-34"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>&nbsp;</p>
+<p>Note que esta aplicación no funciona en documentos estáticos de Rmarkdown. En el sitio <a href="https://shiny.rstudio.com/gallery/#demos">https://shiny.rstudio.com/gallery</a> pueden encontrar muchos ejemplos de aplicaciones shiny. Estas aplicaciones son complejas de incluir en archivos auto-contenidos y por ello no son tan amigables para reportes dinámicos como los que podemos generar con R markdown.</p>
+<p>&nbsp;</p>
+</section>
+</section>
+<section id="publicar-reportes-en-linea-con-rpubs" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Publicar reportes en linea con Rpubs</h1>
+<p>La plataforma en linea <a href="rpubs.com/">Rpubs</a> permite publicar los reportes en formato HTML. Esta opción simplifica mucho el compartir códigos, análisis y resultados ya que solamente necesitamos enviar el la dirección URL. Aún mas, podemos seguir actualizando los reportes y la misma dirección URL seguirá conteniendo las versiones actualizadas de los reportes.</p>
+<p>Para enviar nuestros reportes HTML a <a href="rpubs.com/">Rpubs</a> debemos primero hacer una cuenta en el sitio. Luego de esto simplemente tenemos que usar el enlace “publish” en la esquina superior derecha de los reportes:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/rpubs.PNG" class="img-fluid figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<hr>
+</section>
+<section id="herramientas-adicionales-para-organizar-análisis-de-datos" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Herramientas adicionales para organizar análisis de datos</h1>
+<section id="proyectos-de-rstudio" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="proyectos-de-rstudio"><span class="header-section-number">7.1</span> Proyectos de Rstudio</h2>
+<p>Los proyectos de Rstudio crean carpetas donde se guardan los archivos relacionados a un análisis específico (código y datos) y hacen de esta carpeta el directorio de trabajo por defecto cuando se abre el proyecto. Se pueden crear de esta forma:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/rproj1.png" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Luego aparecera una seria de ventanas donde pueden escoger que tipo de proyecto y el nombre de este:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/rproj2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+</section>
+<section id="compendios-de-investigación" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="compendios-de-investigación"><span class="header-section-number">7.2</span> Compendios de investigación</h2>
+<p>Los compendios de investigación son estructuras de carpetas pre-definidas que permiten seguir un orden lógico e intuitivo para organizar los archivos usados y generados en un análisis de datos de un proyecto de investigación. El paquete <a href="https://marce10.github.io/sketchy/">sketchy</a> genera estos compendios, permitiendo al usuario seleccionar entre una gama de compendios comunes en la comunidad científica. Este ejemplo crea el compendio básico (uno de los 14 que vienen con el paquete):</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>path <span class="ot">&lt;-</span> <span class="fu">tempdir</span>()</span>
+<span id="cb11-2"><a href="#cb11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="fu">make_compendium</span>(</span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="at">name =</span> <span class="st">"proyecto_x"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="at">path =</span> path,</span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="at">format =</span> <span class="st">"basic"</span>,</span>
+<span id="cb11-7"><a href="#cb11-7"></a>  <span class="at">Rproj =</span> <span class="cn">TRUE</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Creating directories ...
+proyecto_x
+│   
+├── data/  
+│   ├── processed/  # modified/rearranged data
+│   └── raw/  # original data
+├── manuscript/  # manuscript/poster figures
+├── output/  # all non-data products of data analysis
+└── scripts/  # code
+Done.</code></pre>
+</div>
+</div>
+<p>El paquete crea archivos Rmarkdown con plantillas para el análisis de datos (carpeta “scripts”) y escritura de manuscritos (carpeta “manuscript”). Corra <code>path</code> en la consola de R para ver la dirección de la carpeta donde se creo el compendio.</p>
+<p>&nbsp;</p>
+</section>
+<section id="ejercicio-4" class="level2 alert alert-info" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="ejercicio-4"><span class="header-section-number">7.3</span> Ejercicio 4</h2>
+<ul>
+<li><p>Cree un reporte dinámico que incluya un mapa dinámico de Costa Rica usando el paquete <code>leaflet</code></p></li>
+<li><p>Reproduzca alguno de los ejemplos disponibles en el sitio del paquete dygraphs (<a href="https://rstudio.github.io/dygraphs/" class="uri">https://rstudio.github.io/dygraphs/</a>) e incrústelo en su reporte dinámico</p></li>
+<li><p>Instale el paquete <code>kableExtra</code> y incruste en su reporte el códifo de ejemplo en la documentación de la función <code>kable_styling()</code> de ese paquete</p></li>
+<li><p>Cree una presentación Rmarkdown utilizando la opción “Presentation” en la ventana de creación</p></li>
+<li><p>Genere un reporte dinámico en formato PDF</p></li>
+<li><p>Cree un proyecto de Rstudio para organizar los contenidos del curso</p></li>
+<li><p>Cree un compendio de investigación con sketchy</p></li>
+</ul>
+</section>
+<p>&nbsp;</p>
+<hr>
+<section id="referencias" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="referencias"><span class="header-section-number">7.4</span> Referencias</h2>
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a></li>
+<li><a href="https://blog.rstudio.com/2016/03/21/r-markdown-custom-formats/">Rmarkdown custom format</a></li>
+<li><a href="https://rmarkdown.rstudio.com/index.html">Rmarkdown website</a></li>
+<li><a href="http://www.jacolienvanrij.com/Tutorials/tutorialMarkdown.html">Jacolien van Rij: Rmarkdown variants</a></li>
+<li><a href="https://github.com/DanielleQuinn/RLessons">Danielle Quinn: R Lessons</a></li>
+<li>Vaidyanathan, Ramnath, Yihui Xie, JJ Allaire, Joe Cheng, and Kenton Russell. 2019. Htmlwidgets: HTML Widgets for R. https://github.com/ramnathv/htmlwidgets.</li>
+</ul>
+<hr>
+<hr>
+<p><font size="4">Información de la sesión</font></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.2.2 Patched (2022-11-10 r83330)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 20.04.5 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+
+locale:
+ [1] LC_CTYPE=es_ES.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=es_ES.UTF-8    
+ [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=es_ES.UTF-8   
+ [7] LC_PAPER=es_CR.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=es_CR.UTF-8 LC_IDENTIFICATION=C       
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] tufte_0.13       rticles_0.25     revealjs_0.9     rmdformats_1.0.4
+ [5] rmarkdown_2.21   knitr_1.42       sketchy_1.0.2    emo_0.0.0.9000  
+ [9] remotes_2.4.2    leaflet_2.1.1   
+
+loaded via a namespace (and not attached):
+ [1] rstudioapi_0.14     magrittr_2.0.3      timechange_0.2.0   
+ [4] R6_2.5.1            rlang_1.1.1         fastmap_1.1.1      
+ [7] stringr_1.5.0       tools_4.2.2         packrat_0.8.1      
+[10] xfun_0.40           cli_3.6.1           htmltools_0.5.6    
+[13] crosstalk_1.2.0     yaml_2.3.7          digest_0.6.33      
+[16] assertthat_0.2.1    lifecycle_1.0.3     bookdown_0.33      
+[19] crayon_1.5.2        purrr_1.0.2         vctrs_0.6.3        
+[22] htmlwidgets_1.5.4   glue_1.6.2          evaluate_0.21      
+[25] xaringanExtra_0.7.0 stringi_1.7.12      compiler_4.2.2     
+[28] generics_0.1.3      jsonlite_1.8.7      lubridate_1.9.2    </code></pre>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/marce10\.github\.io\/R_avanzado_2023\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb14" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &lt;font size="7"&gt;&lt;b&gt;Reportes dinámicos&lt;/b&gt;&lt;/font&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="an">toc-depth:</span><span class="co"> 2</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc-location:</span><span class="co"> left</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="an">highlight-style:</span><span class="co"> pygments</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">    df-print: kable</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">    css: styles.css</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co">    link-external-icon: false</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co">    link-external-newwindow: true  </span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;style&gt;</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="in">body</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="in">  { counter-reset: source-line 0; }</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="in">pre.numberSource code</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="in">  { counter-reset: none; }</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/style&gt;</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r,echo=FALSE,message=FALSE}</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"digits"</span><span class="ot">=</span><span class="dv">5</span>)</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"digits.secs"</span><span class="ot">=</span><span class="dv">3</span>)</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="co"># options to customize chunk outputs</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">class.source =</span> <span class="st">"numberLines lineAnchors"</span>, <span class="co"># for code line numbers</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a> )</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="fu"># Objetivos del manual {.unnumbered .unlisted}</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Familiarizarse con el formato para reportes dinámicos Rmarkdown/quarto</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Ser capaz de documentar el manejo y análisis de datos en R usando Rmarkdown/quarto</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>Paquetes a utilizar en este manual:</span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a><span class="co"># cargar paquetes</span></span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>sketchy<span class="sc">::</span><span class="fu">load_packages</span>(</span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(</span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>      <span class="st">"leaflet"</span>,</span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>      <span class="st">"remotes"</span>,</span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a>      <span class="st">"hadley/emo"</span>,</span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>      <span class="st">"maRce10/sketchy"</span>,</span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a>      <span class="st">"knitr"</span>,</span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a>      <span class="st">"rmarkdown"</span>,</span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a>      <span class="st">"rmdformats"</span>,</span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a>      <span class="st">"revealjs"</span>,</span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a>      <span class="st">"rticles"</span>,</span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a>      <span class="st">"tufte"</span></span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Crisis de reproducibilidad en la ciencia</span></span>
+<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a>La mayoría de los procedimientos (incluyendo análisis de datos) en estudios científicos no se pueden replicar</span>
+<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-81"><a href="#cb14-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="70%", fig.align='center'}</span></span>
+<span id="cb14-82"><a href="#cb14-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/nature-reproducibility-crisis.jpeg"</span>)</span>
+<span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">*Baker. 2016. Nature*</span><span class="co">](https://www.nature.com/articles/533452a)</span></span>
+<span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a>El compartir datos y análisis de forma transparente y detalladamente documentada, en formatos que puedan ser reproducidos por otros investigadores es una de las principales herramientas para lidiar con este problema.</span>
+<span id="cb14-91"><a href="#cb14-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
+<span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-94"><a href="#cb14-94" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/soluciones_reproducible.png"</span>)</span>
+<span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-96"><a href="#cb14-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-97"><a href="#cb14-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a>*Gallagher et al. 2020. Nature Eco &amp; Evo*</span>
+<span id="cb14-99"><a href="#cb14-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-100"><a href="#cb14-100" aria-hidden="true" tabindex="-1"></a>Las herramientas programáticas como R tienden naturalmente a facilitar la reproducibilidad ya que el código de un análisis se puede registrar y compartir fácilmente. Muchos lenguajes de programación permiten la generación de reportes dinámicos, los cuales resultan fundamentales para hacer manejo de datos y análisis estadísticos reproducibles. La principal forma en que R facilita la investigación reproducible es utilizando un documento que es una combinación de contenido y código de análisis de datos. Los reportes dinámicos suelen contener toda la información necesaria para que otros investigadores puedan replicar todos los pasos de análisis que generaron los resultados de artículos científicos. Por tanto son una herramienta indispensable para mejorar la reproduciblidad en la ciencia.</span>
+<span id="cb14-101"><a href="#cb14-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-102"><a href="#cb14-102" aria-hidden="true" tabindex="-1"></a>En R la herramienta mas popular para la generación de reportes dinámicos es Rmarkdown. Rmarkdown <span class="co">[</span><span class="ot">se puede describir</span><span class="co">](http://rmarkdown.rstudio.com)</span> como "*un formato eléctronico de documentación que facilita la creación de documentos, presentaciones e informes dinámicos desde R*". R Markdown puede generar documentos con bloques de código de R ("chunks") incrustados entre líneas de texto. Cuando se procesa el documento, estos bloques se evalúan (si el usuario así lo desea) y los resultados se "imprimen" en el documento de acuerdo con ciertas convenciones.</span>
+<span id="cb14-103"><a href="#cb14-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-104"><a href="#cb14-104" aria-hidden="true" tabindex="-1"></a>Quarto es una herramienta muy similar a Rmarkdown. La diferencia mas importante es la capacidad de quarto para generar reportes usando otros lenguajes de programación. Sin embargo, en términos de sintaxis ambos formatos son muy parecidos. La mayoría de las funcionalidades mostradas acá son válidas para ambos formatos (en <span class="co">[</span><span class="ot">este enlace</span><span class="co">](https://quarto.org/docs/faq/rmarkdown.html)</span> se puede encontrar una comparación detallada de ambos formato).</span>
+<span id="cb14-105"><a href="#cb14-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-106"><a href="#cb14-106" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-107"><a href="#cb14-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-108"><a href="#cb14-108" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ventajas de los reportes dinámicos con Rmarkdown/quarto:</span></span>
+<span id="cb14-109"><a href="#cb14-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-110"><a href="#cb14-110" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>El **código R se puede incrustar en el informe**, por lo que no es necesario mantener el informe y el código de R por separado</span>
+<span id="cb14-111"><a href="#cb14-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-112"><a href="#cb14-112" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Incluir el código R directamente en un informe proporciona una **estructura intuitiva** para reproducir los análisis</span>
+<span id="cb14-113"><a href="#cb14-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-114"><a href="#cb14-114" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>El texto del informe está **escrito como texto normal**, por lo que no se requieren conocimientos de programación (i.e. R o HTML) para comprenderlos</span>
+<span id="cb14-115"><a href="#cb14-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-116"><a href="#cb14-116" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**El resultado es un archivo HTML** que incluye imágenes, bloques de código con los comandos de R, los resultados de estos códigos y texto. No se necesitan archivos adicionales, todo está incorporado en el archivo HTML.</span>
+<span id="cb14-117"><a href="#cb14-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-118"><a href="#cb14-118" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Los informes son **fáciles de compartir por correo o publicarlos en línea**</span>
+<span id="cb14-119"><a href="#cb14-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-120"><a href="#cb14-120" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Estos informes **facilitan la colaboración y mejoran la reproducibilidad** (entender los análisis es mucho mas fácil cuando hay texto explicativo, código de R, los resultados del código y los gráficos en un mismo archivo)</span>
+<span id="cb14-121"><a href="#cb14-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-122"><a href="#cb14-122" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Se actualizan fácilmente** para incluir nuevos análisis y/o integrar nuevos datos</span>
+<span id="cb14-123"><a href="#cb14-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-124"><a href="#cb14-124" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-125"><a href="#cb14-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-126"><a href="#cb14-126" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-127"><a href="#cb14-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-128"><a href="#cb14-128" aria-hidden="true" tabindex="-1"></a><span class="fu"># Crear documentos R Markdown/quarto</span></span>
+<span id="cb14-129"><a href="#cb14-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-130"><a href="#cb14-130" aria-hidden="true" tabindex="-1"></a>Usaremos <span class="co">[</span><span class="ot">Rstudio</span><span class="co">](www.rstudio.com)</span> para crear documentos R Markdown. Empiece por seleccionar "R Markdown ..." en el menú desplegable que aparece cuando crea un nuevo archivo:</span>
+<span id="cb14-131"><a href="#cb14-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-132"><a href="#cb14-132" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="70%", fig.align='center'}</span></span>
+<span id="cb14-133"><a href="#cb14-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-134"><a href="#cb14-134" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image1.PNG"</span>)</span>
+<span id="cb14-135"><a href="#cb14-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-136"><a href="#cb14-136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-137"><a href="#cb14-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-138"><a href="#cb14-138" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"3"</span><span class="kw">&gt;</span> <span class="kw">&lt;i&gt;</span>Nota: es posible que se le solicite aquí que instale varios paquetes necesarios para que R Markdown/quarto funcione.<span class="kw">&lt;/i&gt;&lt;/font&gt;</span></span>
+<span id="cb14-139"><a href="#cb14-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-140"><a href="#cb14-140" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-141"><a href="#cb14-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-142"><a href="#cb14-142" aria-hidden="true" tabindex="-1"></a>Aparecerá una ventana que le pedirá un título y autor para el nuevo documento (esto no es tan relevante en este punto y puedo ser modificado fácilmente luego), así como el formato. Seleccione 'HTML' ya que nos interesa convertirlo a un formato de visualización universal. Puede cambiar sus preferencias de salida de 'HTML' a 'PDF' o 'Word' en cualquier momento:</span>
+<span id="cb14-143"><a href="#cb14-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-144"><a href="#cb14-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="70%", fig.align='center'}</span></span>
+<span id="cb14-145"><a href="#cb14-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-146"><a href="#cb14-146" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image2.PNG"</span>)</span>
+<span id="cb14-147"><a href="#cb14-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-148"><a href="#cb14-148" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-149"><a href="#cb14-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-150"><a href="#cb14-150" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-151"><a href="#cb14-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-152"><a href="#cb14-152" aria-hidden="true" tabindex="-1"></a>Esto lo llevará a su primer archivo '.Rmd' (o R Markdown) o '.qmd' (quarto). El nuevo archivo ya viene con una plantilla con instrucciones básicas:</span>
+<span id="cb14-153"><a href="#cb14-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-154"><a href="#cb14-154" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
+<span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-156"><a href="#cb14-156" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image3.PNG"</span>)</span>
+<span id="cb14-157"><a href="#cb14-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-158"><a href="#cb14-158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-159"><a href="#cb14-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-160"><a href="#cb14-160" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-161"><a href="#cb14-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-162"><a href="#cb14-162" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-163"><a href="#cb14-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-164"><a href="#cb14-164" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
+<span id="cb14-165"><a href="#cb14-165" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio 1</span></span>
+<span id="cb14-166"><a href="#cb14-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-167"><a href="#cb14-167" aria-hidden="true" tabindex="-1"></a>Cree un nuevo archivo R Markdown o quarto, escriba algunas líneas de texto y haga clic en "Knit" para ver cómo se verá su reporte.</span>
+<span id="cb14-168"><a href="#cb14-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-169"><a href="#cb14-169" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="90%", fig.align='center'}</span></span>
+<span id="cb14-170"><a href="#cb14-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-171"><a href="#cb14-171" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image4.PNG"</span>)</span>
+<span id="cb14-172"><a href="#cb14-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-173"><a href="#cb14-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-174"><a href="#cb14-174" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-175"><a href="#cb14-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-176"><a href="#cb14-176" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-177"><a href="#cb14-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-178"><a href="#cb14-178" aria-hidden="true" tabindex="-1"></a><span class="fu"># Syntaxis Markdown</span></span>
+<span id="cb14-179"><a href="#cb14-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-180"><a href="#cb14-180" aria-hidden="true" tabindex="-1"></a>Markdown (y por extensión Rmarkdown) tiene sus propias reglas sintácticas. Sin embargo, este lenguaje es relativamente simple y fácil de dominar:</span>
+<span id="cb14-181"><a href="#cb14-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-182"><a href="#cb14-182" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-183"><a href="#cb14-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-184"><a href="#cb14-184" aria-hidden="true" tabindex="-1"></a><span class="fu">## Crear encabezados de varios tamaños</span></span>
+<span id="cb14-185"><a href="#cb14-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-186"><a href="#cb14-186" aria-hidden="true" tabindex="-1"></a>Código:</span>
+<span id="cb14-187"><a href="#cb14-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-188"><a href="#cb14-188" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="50%", fig.align='center'}</span></span>
+<span id="cb14-189"><a href="#cb14-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-190"><a href="#cb14-190" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image5.PNG"</span>)</span>
+<span id="cb14-191"><a href="#cb14-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-192"><a href="#cb14-192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-193"><a href="#cb14-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-194"><a href="#cb14-194" aria-hidden="true" tabindex="-1"></a>Resultado:</span>
+<span id="cb14-195"><a href="#cb14-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-196"><a href="#cb14-196" aria-hidden="true" tabindex="-1"></a><span class="fu"># Encabezado 1</span></span>
+<span id="cb14-197"><a href="#cb14-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-198"><a href="#cb14-198" aria-hidden="true" tabindex="-1"></a><span class="fu">## Encabezado 2</span></span>
+<span id="cb14-199"><a href="#cb14-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-200"><a href="#cb14-200" aria-hidden="true" tabindex="-1"></a><span class="fu">### Encabezado 3</span></span>
+<span id="cb14-201"><a href="#cb14-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-202"><a href="#cb14-202" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-203"><a href="#cb14-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-204"><a href="#cb14-204" aria-hidden="true" tabindex="-1"></a><span class="fu">## Opciones del texto</span></span>
+<span id="cb14-205"><a href="#cb14-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-206"><a href="#cb14-206" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-207"><a href="#cb14-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-208"><a href="#cb14-208" aria-hidden="true" tabindex="-1"></a>Código:</span>
+<span id="cb14-209"><a href="#cb14-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-210"><a href="#cb14-210" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="90%", fig.align='center'}</span></span>
+<span id="cb14-211"><a href="#cb14-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-212"><a href="#cb14-212" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image6.PNG"</span>)</span>
+<span id="cb14-213"><a href="#cb14-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-214"><a href="#cb14-214" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-215"><a href="#cb14-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-216"><a href="#cb14-216" aria-hidden="true" tabindex="-1"></a>Resultado:</span>
+<span id="cb14-217"><a href="#cb14-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-218"><a href="#cb14-218" aria-hidden="true" tabindex="-1"></a>Hacer texto **en negrita**, *itálico*, ~~tachado~~, o super^índice^</span>
+<span id="cb14-219"><a href="#cb14-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-220"><a href="#cb14-220" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-221"><a href="#cb14-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-222"><a href="#cb14-222" aria-hidden="true" tabindex="-1"></a><span class="fu">## Añadir una imagen</span></span>
+<span id="cb14-223"><a href="#cb14-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-224"><a href="#cb14-224" aria-hidden="true" tabindex="-1"></a>Código:</span>
+<span id="cb14-225"><a href="#cb14-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-226"><a href="#cb14-226" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="50%", fig.align='center'}</span></span>
+<span id="cb14-227"><a href="#cb14-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-228"><a href="#cb14-228" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/add_image.png"</span>)</span>
+<span id="cb14-229"><a href="#cb14-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-230"><a href="#cb14-230" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-231"><a href="#cb14-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-232"><a href="#cb14-232" aria-hidden="true" tabindex="-1"></a>Resultado:</span>
+<span id="cb14-233"><a href="#cb14-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-234"><a href="#cb14-234" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="40%", fig.align='center'}</span></span>
+<span id="cb14-235"><a href="#cb14-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-236"><a href="#cb14-236" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/rmarkdown_icon.png"</span>)</span>
+<span id="cb14-237"><a href="#cb14-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-238"><a href="#cb14-238" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-239"><a href="#cb14-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-240"><a href="#cb14-240" aria-hidden="true" tabindex="-1"></a>También podemos añadir una imagen con la función <span class="in">`include_graphics()`</span> del paquete knitr.</span>
+<span id="cb14-241"><a href="#cb14-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-242"><a href="#cb14-242" aria-hidden="true" tabindex="-1"></a>Código:</span>
+<span id="cb14-243"><a href="#cb14-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-244"><a href="#cb14-244" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
+<span id="cb14-245"><a href="#cb14-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-246"><a href="#cb14-246" aria-hidden="true" tabindex="-1"></a><span class="fu">include_graphics</span>(<span class="st">"./images/rmarkdown_icon.png"</span>)</span>
+<span id="cb14-247"><a href="#cb14-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-248"><a href="#cb14-248" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-249"><a href="#cb14-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-250"><a href="#cb14-250" aria-hidden="true" tabindex="-1"></a>Resultado:</span>
+<span id="cb14-251"><a href="#cb14-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-252"><a href="#cb14-252" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="40%", fig.align='center'}</span></span>
+<span id="cb14-253"><a href="#cb14-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-254"><a href="#cb14-254" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/rmarkdown_icon.png"</span>)</span>
+<span id="cb14-255"><a href="#cb14-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-256"><a href="#cb14-256" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-257"><a href="#cb14-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-258"><a href="#cb14-258" aria-hidden="true" tabindex="-1"></a>Note que esta opción nos permite hacer uso de los argumentos del bloque de código dedicados a la graficación, y po r tanto es una opción mas flexible.</span>
+<span id="cb14-259"><a href="#cb14-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-260"><a href="#cb14-260" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-261"><a href="#cb14-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-262"><a href="#cb14-262" aria-hidden="true" tabindex="-1"></a><span class="fu">## Crear enlaces ('hyperlinks')</span></span>
+<span id="cb14-263"><a href="#cb14-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-264"><a href="#cb14-264" aria-hidden="true" tabindex="-1"></a>Código:</span>
+<span id="cb14-265"><a href="#cb14-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-266"><a href="#cb14-266" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="70%", fig.align='center'}</span></span>
+<span id="cb14-267"><a href="#cb14-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-268"><a href="#cb14-268" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image8.PNG"</span>)</span>
+<span id="cb14-269"><a href="#cb14-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-270"><a href="#cb14-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-271"><a href="#cb14-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-272"><a href="#cb14-272" aria-hidden="true" tabindex="-1"></a>Resultado:</span>
+<span id="cb14-273"><a href="#cb14-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-274"><a href="#cb14-274" aria-hidden="true" tabindex="-1"></a>Crear un enlace a <span class="co">[</span><span class="ot">figshare</span><span class="co">](https://figshare.com)</span></span>
+<span id="cb14-275"><a href="#cb14-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-276"><a href="#cb14-276" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-277"><a href="#cb14-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-278"><a href="#cb14-278" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
+<span id="cb14-279"><a href="#cb14-279" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio 2</span></span>
+<span id="cb14-280"><a href="#cb14-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-281"><a href="#cb14-281" aria-hidden="true" tabindex="-1"></a>2.1 Cree unos encabezados y sub-encabezados en su documento Rmarkdown</span>
+<span id="cb14-282"><a href="#cb14-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-283"><a href="#cb14-283" aria-hidden="true" tabindex="-1"></a>2.2 Añada texto con algunas palabras **en negrita** y en *italica*</span>
+<span id="cb14-284"><a href="#cb14-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-285"><a href="#cb14-285" aria-hidden="true" tabindex="-1"></a>2.3 Incruste una imagen de su organismo favorito (o un gif)</span>
+<span id="cb14-286"><a href="#cb14-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-287"><a href="#cb14-287" aria-hidden="true" tabindex="-1"></a>2.4 Añada un enlace URL</span>
+<span id="cb14-288"><a href="#cb14-288" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-289"><a href="#cb14-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-290"><a href="#cb14-290" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-291"><a href="#cb14-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-292"><a href="#cb14-292" aria-hidden="true" tabindex="-1"></a><span class="fu">## Incrustar código</span></span>
+<span id="cb14-293"><a href="#cb14-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-294"><a href="#cb14-294" aria-hidden="true" tabindex="-1"></a>Para incrustar el código de R, tenemos que definir un área donde se encuentra el código. Esta 'área' se conoce como un bloque de código (o 'chunk') y se define mediante:</span>
+<span id="cb14-295"><a href="#cb14-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-296"><a href="#cb14-296" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="30%", fig.align='center'}</span></span>
+<span id="cb14-297"><a href="#cb14-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-298"><a href="#cb14-298" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image9.PNG"</span>)</span>
+<span id="cb14-299"><a href="#cb14-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-300"><a href="#cb14-300" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-301"><a href="#cb14-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-302"><a href="#cb14-302" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-303"><a href="#cb14-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-304"><a href="#cb14-304" aria-hidden="true" tabindex="-1"></a>Observe que el recuadro de R está en gris, mientras que el resto está en fondo blanco. Todo lo que se incluye en el segmento se evalúa y muestra de acuerdo con las especificaciones, aunque estas se pueden modificar.</span>
+<span id="cb14-305"><a href="#cb14-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-306"><a href="#cb14-306" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-307"><a href="#cb14-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-308"><a href="#cb14-308" aria-hidden="true" tabindex="-1"></a>Podemos, por ejemplo, agregar una nueva columna al conjunto de datos de ejemplo de iris:</span>
+<span id="cb14-309"><a href="#cb14-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-310"><a href="#cb14-310" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="70%", fig.align='center'}</span></span>
+<span id="cb14-311"><a href="#cb14-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-312"><a href="#cb14-312" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image10.PNG"</span>)</span>
+<span id="cb14-313"><a href="#cb14-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-314"><a href="#cb14-314" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-315"><a href="#cb14-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-316"><a href="#cb14-316" aria-hidden="true" tabindex="-1"></a>Resultado:</span>
+<span id="cb14-317"><a href="#cb14-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-320"><a href="#cb14-320" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-321"><a href="#cb14-321" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb14-322"><a href="#cb14-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-323"><a href="#cb14-323" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>random.var <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="fu">nrow</span>(iris))</span>
+<span id="cb14-324"><a href="#cb14-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-325"><a href="#cb14-325" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span>
+<span id="cb14-326"><a href="#cb14-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-327"><a href="#cb14-327" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-328"><a href="#cb14-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-329"><a href="#cb14-329" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-330"><a href="#cb14-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-331"><a href="#cb14-331" aria-hidden="true" tabindex="-1"></a>Cuando se procesa su documento, el segmento de código se muestra en un cuadro gris y los resultados de ese código se muestran en un cuadro blanco. ¿Qué pasa si solo desea que se muestre la salida de su código? ¿O que su código se muestre pero no se ejecute realmente? Hay argumentos que puede agregar a cada uno de sus bloques para especificar estas y otras opciones:</span>
+<span id="cb14-332"><a href="#cb14-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-333"><a href="#cb14-333" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-334"><a href="#cb14-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-335"><a href="#cb14-335" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ocultar código</span></span>
+<span id="cb14-336"><a href="#cb14-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-337"><a href="#cb14-337" aria-hidden="true" tabindex="-1"></a>Añadir el argumento <span class="in">`echo=FALSE`</span></span>
+<span id="cb14-338"><a href="#cb14-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-339"><a href="#cb14-339" aria-hidden="true" tabindex="-1"></a>Código:</span>
+<span id="cb14-340"><a href="#cb14-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-341"><a href="#cb14-341" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="90%", fig.align='center'}</span></span>
+<span id="cb14-342"><a href="#cb14-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-343"><a href="#cb14-343" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image11.PNG"</span>)</span>
+<span id="cb14-344"><a href="#cb14-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-345"><a href="#cb14-345" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-346"><a href="#cb14-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-347"><a href="#cb14-347" aria-hidden="true" tabindex="-1"></a>Resultado:</span>
+<span id="cb14-348"><a href="#cb14-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-349"><a href="#cb14-349" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE}</span></span>
+<span id="cb14-350"><a href="#cb14-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-351"><a href="#cb14-351" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb14-352"><a href="#cb14-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-353"><a href="#cb14-353" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>random.var <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="fu">nrow</span>(iris))</span>
+<span id="cb14-354"><a href="#cb14-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-355"><a href="#cb14-355" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span>
+<span id="cb14-356"><a href="#cb14-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-357"><a href="#cb14-357" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-358"><a href="#cb14-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-359"><a href="#cb14-359" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-360"><a href="#cb14-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-361"><a href="#cb14-361" aria-hidden="true" tabindex="-1"></a>Puede ver que el código está oculto pero se muestran los resultados.</span>
+<span id="cb14-362"><a href="#cb14-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-363"><a href="#cb14-363" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Esta guía</span><span class="co">](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-spanish.pdf)</span> sobre las opciones de los bloques de código puede ser muy útil:</span>
+<span id="cb14-364"><a href="#cb14-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-365"><a href="#cb14-365" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
+<span id="cb14-366"><a href="#cb14-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-367"><a href="#cb14-367" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image12.PNG"</span>)</span>
+<span id="cb14-368"><a href="#cb14-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-369"><a href="#cb14-369" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-370"><a href="#cb14-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-371"><a href="#cb14-371" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-372"><a href="#cb14-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-373"><a href="#cb14-373" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">En este enlace</span><span class="co">](https://yihui.org/knitr/options/)</span> se detallan todos los argumentos disponibles para personalizar los bloques de código.</span>
+<span id="cb14-374"><a href="#cb14-374" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-375"><a href="#cb14-375" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-376"><a href="#cb14-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-377"><a href="#cb14-377" aria-hidden="true" tabindex="-1"></a><span class="fu">## Incrustar gráficos</span></span>
+<span id="cb14-378"><a href="#cb14-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-379"><a href="#cb14-379" aria-hidden="true" tabindex="-1"></a>Los gráficos se pueden incrustar en documentos Rmarkdown simplemente usando funciones de graficación como lo haría en un script de R normal.</span>
+<span id="cb14-380"><a href="#cb14-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-381"><a href="#cb14-381" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Código:</span></span>
+<span id="cb14-382"><a href="#cb14-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-383"><a href="#cb14-383" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="90%", fig.align='center'}</span></span>
+<span id="cb14-384"><a href="#cb14-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-385"><a href="#cb14-385" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image13.PNG"</span>)</span>
+<span id="cb14-386"><a href="#cb14-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-387"><a href="#cb14-387" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-388"><a href="#cb14-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-389"><a href="#cb14-389" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-390"><a href="#cb14-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-391"><a href="#cb14-391" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Resultado:</span></span>
+<span id="cb14-392"><a href="#cb14-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-393"><a href="#cb14-393" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
+<span id="cb14-394"><a href="#cb14-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-395"><a href="#cb14-395" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(iris<span class="sc">$</span>Sepal.Length <span class="sc">~</span> iris<span class="sc">$</span>Species, <span class="at">col =</span> <span class="st">"#EE000080"</span>, </span>
+<span id="cb14-396"><a href="#cb14-396" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Sepal length (mm)"</span>, <span class="at">xlab =</span> <span class="st">"Species"</span>)</span>
+<span id="cb14-397"><a href="#cb14-397" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-398"><a href="#cb14-398" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-399"><a href="#cb14-399" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-400"><a href="#cb14-400" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-401"><a href="#cb14-401" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-402"><a href="#cb14-402" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
+<span id="cb14-403"><a href="#cb14-403" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio 3</span></span>
+<span id="cb14-404"><a href="#cb14-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-405"><a href="#cb14-405" aria-hidden="true" tabindex="-1"></a>3.1 Utilice los argumentos <span class="in">`eval`</span>, <span class="in">`collapse`</span> con diferentes valores (TRUE o FALSE) en un segmento donde corre <span class="in">`head(iris)`</span>. ¿Cómo afectan el resultado?</span>
+<span id="cb14-406"><a href="#cb14-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-407"><a href="#cb14-407" aria-hidden="true" tabindex="-1"></a>3.2 Haga lo mismo con los argumentos <span class="in">`out.width`</span>, <span class="in">`fig.width`</span>,<span class="in">`dpi`</span> y <span class="in">`fig.height`</span> en un segmento que cree un gráfico. ¿Cómo afecta esta vez?</span>
+<span id="cb14-408"><a href="#cb14-408" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-409"><a href="#cb14-409" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-410"><a href="#cb14-410" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-411"><a href="#cb14-411" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-412"><a href="#cb14-412" aria-hidden="true" tabindex="-1"></a><span class="fu">## Incrustar código de R en el texto {#incrustar-código-de-r-en-el-texto}</span></span>
+<span id="cb14-413"><a href="#cb14-413" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-414"><a href="#cb14-414" aria-hidden="true" tabindex="-1"></a>Es posible que haya notado a lo largo de este tutorial que tengo pequeños fragmentos de texto que parecen "bloques de código". Esto se conoce como incrustación de código en texto.</span>
+<span id="cb14-415"><a href="#cb14-415" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-416"><a href="#cb14-416" aria-hidden="true" tabindex="-1"></a>Esto se puede hacer de dos maneras:</span>
+<span id="cb14-417"><a href="#cb14-417" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-418"><a href="#cb14-418" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 1.Dar un texto con la apariencia de un segmento de código:</span></span>
+<span id="cb14-419"><a href="#cb14-419" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-420"><a href="#cb14-420" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-421"><a href="#cb14-421" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-422"><a href="#cb14-422" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Código:</span></span>
+<span id="cb14-423"><a href="#cb14-423" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-424"><a href="#cb14-424" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="80%", fig.align='center'}</span></span>
+<span id="cb14-425"><a href="#cb14-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-426"><a href="#cb14-426" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image14.png"</span>)</span>
+<span id="cb14-427"><a href="#cb14-427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-428"><a href="#cb14-428" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-429"><a href="#cb14-429" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-430"><a href="#cb14-430" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-431"><a href="#cb14-431" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-432"><a href="#cb14-432" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Resultado:</span></span>
+<span id="cb14-433"><a href="#cb14-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-434"><a href="#cb14-434" aria-hidden="true" tabindex="-1"></a>El promedio del largo del sépalo es <span class="in">`mean(iris$Sepal.Length)`</span></span>
+<span id="cb14-435"><a href="#cb14-435" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-436"><a href="#cb14-436" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-437"><a href="#cb14-437" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-438"><a href="#cb14-438" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 2. Evaluar el código en el texto</span></span>
+<span id="cb14-439"><a href="#cb14-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-440"><a href="#cb14-440" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Código:</span></span>
+<span id="cb14-441"><a href="#cb14-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-442"><a href="#cb14-442" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="70%", fig.align='center'}</span></span>
+<span id="cb14-443"><a href="#cb14-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-444"><a href="#cb14-444" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image15.png"</span>)</span>
+<span id="cb14-445"><a href="#cb14-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-446"><a href="#cb14-446" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-447"><a href="#cb14-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-448"><a href="#cb14-448" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Resultado:</span></span>
+<span id="cb14-449"><a href="#cb14-449" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-450"><a href="#cb14-450" aria-hidden="true" tabindex="-1"></a>El promedio del largo de sépalo para **setosa** es <span class="in">`r mean(iris$Sepal.Length[iris$Species == "setosa"])`</span>.</span>
+<span id="cb14-451"><a href="#cb14-451" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-452"><a href="#cb14-452" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-453"><a href="#cb14-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-454"><a href="#cb14-454" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-455"><a href="#cb14-455" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-456"><a href="#cb14-456" aria-hidden="true" tabindex="-1"></a><span class="fu"># Recursos adicionales para personalizar documentos Rmarkdown</span></span>
+<span id="cb14-457"><a href="#cb14-457" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-458"><a href="#cb14-458" aria-hidden="true" tabindex="-1"></a><span class="fu">## Metadatos (YAML)</span></span>
+<span id="cb14-459"><a href="#cb14-459" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-460"><a href="#cb14-460" aria-hidden="true" tabindex="-1"></a>Hay tres componentes básicos de un documento de R Markdown: los metadatos, el texto y el código. Los metadatos se escriben entre el par de tres guiones ("- - -") generalmente al inicio del documento. La sintaxis de los metadatos es <span class="co">[</span><span class="ot">YAML (YAML Ain't Markup Language)</span><span class="co">](https://en.wikipedia.org/wiki/YAML)</span>, por lo que a veces también se denomina metadatos YAML. La sangría es importante en YAML, así que debe añadirla a los subcampos (con respecto a un campo superior).</span>
+<span id="cb14-461"><a href="#cb14-461" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-462"><a href="#cb14-462" aria-hidden="true" tabindex="-1"></a>Este encabezado muestra las opciones mas comúnmente usadas en los metadatos YAML:</span>
+<span id="cb14-463"><a href="#cb14-463" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-464"><a href="#cb14-464" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
+<span id="cb14-465"><a href="#cb14-465" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-466"><a href="#cb14-466" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb14-467"><a href="#cb14-467" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Un titulo descriptivo y sin faltas ortograficas"</span></span>
+<span id="cb14-468"><a href="#cb14-468" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Marcelo Araya"</span></span>
+<span id="cb14-469"><a href="#cb14-469" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">"`r Sys.Date()`"</span></span>
+<span id="cb14-470"><a href="#cb14-470" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span> <span class="co"># Varios outputs mostrados solo para el ejemplo</span></span>
+<span id="cb14-471"><a href="#cb14-471" aria-hidden="true" tabindex="-1"></a>  html_document<span class="sc">:</span></span>
+<span id="cb14-472"><a href="#cb14-472" aria-hidden="true" tabindex="-1"></a>    fig_caption<span class="sc">:</span> yes</span>
+<span id="cb14-473"><a href="#cb14-473" aria-hidden="true" tabindex="-1"></a>    number_sections<span class="sc">:</span> yes</span>
+<span id="cb14-474"><a href="#cb14-474" aria-hidden="true" tabindex="-1"></a>    toc<span class="sc">:</span> yes</span>
+<span id="cb14-475"><a href="#cb14-475" aria-hidden="true" tabindex="-1"></a>    toc_float<span class="sc">:</span> yes</span>
+<span id="cb14-476"><a href="#cb14-476" aria-hidden="true" tabindex="-1"></a>    df_print<span class="sc">:</span> paged</span>
+<span id="cb14-477"><a href="#cb14-477" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb14-478"><a href="#cb14-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-479"><a href="#cb14-479" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-480"><a href="#cb14-480" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-481"><a href="#cb14-481" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">En este enlace</span><span class="co">](https://bookdown.org/yihui/rmarkdown/html-document.html)</span> se explican en detalle las opciones disponibles en el encabezado YAML de archivos Rmarkdown.</span>
+<span id="cb14-482"><a href="#cb14-482" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-483"><a href="#cb14-483" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-484"><a href="#cb14-484" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-485"><a href="#cb14-485" aria-hidden="true" tabindex="-1"></a><span class="fu">## Emojis</span></span>
+<span id="cb14-486"><a href="#cb14-486" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-487"><a href="#cb14-487" aria-hidden="true" tabindex="-1"></a>El paquete <span class="co">[</span><span class="ot">emo</span><span class="co">](https://github.com/hadley/emo)</span> permite añadir emojis al evaluar un código:</span>
+<span id="cb14-488"><a href="#cb14-488" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-489"><a href="#cb14-489" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, results='asis'}</span></span>
+<span id="cb14-490"><a href="#cb14-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-491"><a href="#cb14-491" aria-hidden="true" tabindex="-1"></a>emo<span class="sc">::</span><span class="fu">ji</span>(<span class="st">"costa_rica"</span>)</span>
+<span id="cb14-492"><a href="#cb14-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-493"><a href="#cb14-493" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-494"><a href="#cb14-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-495"><a href="#cb14-495" aria-hidden="true" tabindex="-1"></a>Tambien se puede incrustar en el texto <span class="in">`r ji("costa_rica")`</span>, como lo vimos <span class="co">[</span><span class="ot">mas arriba</span><span class="co">](#incrustar-código-de-r-en-el-texto)</span> <span class="in">`r ji("up_arrow")`</span> (<span class="in">`ji("up_arrow")`</span>)</span>
+<span id="cb14-496"><a href="#cb14-496" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-497"><a href="#cb14-497" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-498"><a href="#cb14-498" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-499"><a href="#cb14-499" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cuadros con knitr::kable</span></span>
+<span id="cb14-500"><a href="#cb14-500" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-501"><a href="#cb14-501" aria-hidden="true" tabindex="-1"></a>El paquete <span class="in">`knitr`</span> también provee una función para mostrar datos tabulares de forma ordenada y 'limpia' en los reportes dínamicos:</span>
+<span id="cb14-502"><a href="#cb14-502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-503"><a href="#cb14-503" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE, echo=TRUE}</span></span>
+<span id="cb14-504"><a href="#cb14-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-505"><a href="#cb14-505" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, ])</span>
+<span id="cb14-506"><a href="#cb14-506" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-507"><a href="#cb14-507" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-508"><a href="#cb14-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-509"><a href="#cb14-509" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE}</span></span>
+<span id="cb14-510"><a href="#cb14-510" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, ]</span>
+<span id="cb14-511"><a href="#cb14-511" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-512"><a href="#cb14-512" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-513"><a href="#cb14-513" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-514"><a href="#cb14-514" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-515"><a href="#cb14-515" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-516"><a href="#cb14-516" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-517"><a href="#cb14-517" aria-hidden="true" tabindex="-1"></a>El paquete <span class="co">[</span><span class="ot">`kableExtra`</span><span class="co">](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)</span> complementa esta función con muchas herramientas para personalizar el formato de las tablas en reportes dinámicos en R.</span>
+<span id="cb14-518"><a href="#cb14-518" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-519"><a href="#cb14-519" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-520"><a href="#cb14-520" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-521"><a href="#cb14-521" aria-hidden="true" tabindex="-1"></a><span class="fu">## Opciones adicionales en knitr</span></span>
+<span id="cb14-522"><a href="#cb14-522" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-523"><a href="#cb14-523" aria-hidden="true" tabindex="-1"></a>El argumento <span class="in">`opts_knit`</span> de <span class="in">`knitr`</span> permite definir opciones globales (aplicables a todos los bloques a menos que se re-definan):</span>
+<span id="cb14-524"><a href="#cb14-524" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-525"><a href="#cb14-525" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
+<span id="cb14-526"><a href="#cb14-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-527"><a href="#cb14-527" aria-hidden="true" tabindex="-1"></a>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">root.dir =</span> <span class="st">".."</span>, <span class="at">eval =</span> <span class="cn">TRUE</span>, <span class="at">echo =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-528"><a href="#cb14-528" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-529"><a href="#cb14-529" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-530"><a href="#cb14-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-531"><a href="#cb14-531" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-532"><a href="#cb14-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-533"><a href="#cb14-533" aria-hidden="true" tabindex="-1"></a><span class="fu">## Presentaciones y otros opciones de formato</span></span>
+<span id="cb14-534"><a href="#cb14-534" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-535"><a href="#cb14-535" aria-hidden="true" tabindex="-1"></a>Note en la ventana de creación de un nuevo documento Rmarkdown las opciones adicionales de formato:</span>
+<span id="cb14-536"><a href="#cb14-536" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-537"><a href="#cb14-537" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="70%", fig.align='center'}</span></span>
+<span id="cb14-538"><a href="#cb14-538" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-539"><a href="#cb14-539" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/image16.PNG"</span>)</span>
+<span id="cb14-540"><a href="#cb14-540" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-541"><a href="#cb14-541" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-542"><a href="#cb14-542" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-543"><a href="#cb14-543" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-544"><a href="#cb14-544" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-545"><a href="#cb14-545" aria-hidden="true" tabindex="-1"></a>Los reportes dinámicos se pueden generar en otros formatos incluyendo presentaciones, pdf y documentos de word.</span>
+<span id="cb14-546"><a href="#cb14-546" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-547"><a href="#cb14-547" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-548"><a href="#cb14-548" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-549"><a href="#cb14-549" aria-hidden="true" tabindex="-1"></a><span class="fu">## Plantillas de Rmarkdown</span></span>
+<span id="cb14-550"><a href="#cb14-550" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-551"><a href="#cb14-551" aria-hidden="true" tabindex="-1"></a>El paquete Rmarkdown puede generar resultados en HTML, PDF, MS Word, viñetas de paquetes de R, presentaciones Beamer y HTML5. Los formatos adicionales (o 'variantes' de estos formatos) están disponibles en otros paquetes de R. Algunos de esos paquetes son:</span>
+<span id="cb14-552"><a href="#cb14-552" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-553"><a href="#cb14-553" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>rmdformats</span>
+<span id="cb14-554"><a href="#cb14-554" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>reveljs</span>
+<span id="cb14-555"><a href="#cb14-555" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>artículos</span>
+<span id="cb14-556"><a href="#cb14-556" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>tufte</span>
+<span id="cb14-557"><a href="#cb14-557" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-558"><a href="#cb14-558" aria-hidden="true" tabindex="-1"></a>Una vez estos paquetes han sido instalados, los nuevos formatos estarán disponibles a través del nuevo cuadro de diálogo Rmarkdown:</span>
+<span id="cb14-559"><a href="#cb14-559" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-560"><a href="#cb14-560" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="70%", fig.align='center'}</span></span>
+<span id="cb14-561"><a href="#cb14-561" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-562"><a href="#cb14-562" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/templates.png"</span>)</span>
+<span id="cb14-563"><a href="#cb14-563" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-564"><a href="#cb14-564" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-565"><a href="#cb14-565" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-566"><a href="#cb14-566" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-567"><a href="#cb14-567" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-568"><a href="#cb14-568" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-569"><a href="#cb14-569" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-570"><a href="#cb14-570" aria-hidden="true" tabindex="-1"></a><span class="fu"># Documentos interactivos</span></span>
+<span id="cb14-571"><a href="#cb14-571" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-572"><a href="#cb14-572" aria-hidden="true" tabindex="-1"></a>Los documentos de R Markdown también pueden generar contenido interactivo. Hay dos tipos de documentos interactivos de R Markdown: HTML Widgets y aplicaciones Shiny.</span>
+<span id="cb14-573"><a href="#cb14-573" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-574"><a href="#cb14-574" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-575"><a href="#cb14-575" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-576"><a href="#cb14-576" aria-hidden="true" tabindex="-1"></a><span class="fu">## HTML widgets</span></span>
+<span id="cb14-577"><a href="#cb14-577" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-578"><a href="#cb14-578" aria-hidden="true" tabindex="-1"></a>Los HTML Widgets se implementan con el paquete R <span class="in">`htmlwidgets`</span>, que conecta herramientas de JavaScript que crean aplicaciones interactivas, como gráficos y tablas Se han desarrollado varios paquetes que emplean HTML widgets como <span class="in">`dygraphs`</span>, <span class="in">`DT`</span> y <span class="in">`leaflet`</span>. En este <span class="co">[</span><span class="ot">sitio (https://www.htmlwidgets.org)</span><span class="co">](https://www.htmlwidgets.org)</span> se muestran una variedad de widgets disponibles así como instrucciones de como desarrollarlos.</span>
+<span id="cb14-579"><a href="#cb14-579" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-580"><a href="#cb14-580" aria-hidden="true" tabindex="-1"></a>El siguiente código utiliza el paquete <span class="in">`leaflet`</span> para generar un mapa interactivo:</span>
+<span id="cb14-581"><a href="#cb14-581" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-582"><a href="#cb14-582" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, out.width = '100%', echo = TRUE, results = 'asis'}</span></span>
+<span id="cb14-583"><a href="#cb14-583" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-584"><a href="#cb14-584" aria-hidden="true" tabindex="-1"></a>ll_map <span class="ot">&lt;-</span> <span class="fu">leaflet</span>()</span>
+<span id="cb14-585"><a href="#cb14-585" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-586"><a href="#cb14-586" aria-hidden="true" tabindex="-1"></a>ll_map <span class="ot">&lt;-</span> <span class="fu">addTiles</span>(<span class="at">map =</span> ll_map)</span>
+<span id="cb14-587"><a href="#cb14-587" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-588"><a href="#cb14-588" aria-hidden="true" tabindex="-1"></a>ll_map <span class="ot">&lt;-</span></span>
+<span id="cb14-589"><a href="#cb14-589" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setView</span>(</span>
+<span id="cb14-590"><a href="#cb14-590" aria-hidden="true" tabindex="-1"></a>    <span class="at">map =</span> ll_map,</span>
+<span id="cb14-591"><a href="#cb14-591" aria-hidden="true" tabindex="-1"></a>    <span class="at">lat =</span> <span class="fl">5.527448</span>,</span>
+<span id="cb14-592"><a href="#cb14-592" aria-hidden="true" tabindex="-1"></a>    <span class="at">lng =</span> <span class="sc">-</span><span class="fl">87.057245</span>,</span>
+<span id="cb14-593"><a href="#cb14-593" aria-hidden="true" tabindex="-1"></a>    <span class="at">zoom =</span> <span class="dv">13</span></span>
+<span id="cb14-594"><a href="#cb14-594" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-595"><a href="#cb14-595" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-596"><a href="#cb14-596" aria-hidden="true" tabindex="-1"></a><span class="fu">addPopups</span>(</span>
+<span id="cb14-597"><a href="#cb14-597" aria-hidden="true" tabindex="-1"></a>  <span class="at">map =</span> ll_map,</span>
+<span id="cb14-598"><a href="#cb14-598" aria-hidden="true" tabindex="-1"></a>  <span class="at">lat =</span> <span class="fl">5.527448</span>,</span>
+<span id="cb14-599"><a href="#cb14-599" aria-hidden="true" tabindex="-1"></a>  <span class="at">lng =</span> <span class="sc">-</span><span class="fl">87.057245</span>,</span>
+<span id="cb14-600"><a href="#cb14-600" aria-hidden="true" tabindex="-1"></a>  <span class="at">popup =</span> <span class="st">'Isla del Coco'</span></span>
+<span id="cb14-601"><a href="#cb14-601" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-602"><a href="#cb14-602" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-603"><a href="#cb14-603" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-604"><a href="#cb14-604" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-605"><a href="#cb14-605" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-606"><a href="#cb14-606" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-607"><a href="#cb14-607" aria-hidden="true" tabindex="-1"></a>Este es el bloque de código que generó el mapa:</span>
+<span id="cb14-608"><a href="#cb14-608" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-609"><a href="#cb14-609" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="90%", fig.align='center'}</span></span>
+<span id="cb14-610"><a href="#cb14-610" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-611"><a href="#cb14-611" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/leaflet.png"</span>)</span>
+<span id="cb14-612"><a href="#cb14-612" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-613"><a href="#cb14-613" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-614"><a href="#cb14-614" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-615"><a href="#cb14-615" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-616"><a href="#cb14-616" aria-hidden="true" tabindex="-1"></a>Note el uso del argumento de <span class="in">`results = 'asis'`</span> en las opciones del bloque de código.</span>
+<span id="cb14-617"><a href="#cb14-617" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-618"><a href="#cb14-618" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-619"><a href="#cb14-619" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-620"><a href="#cb14-620" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aplicaciones shiny</span></span>
+<span id="cb14-621"><a href="#cb14-621" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-622"><a href="#cb14-622" aria-hidden="true" tabindex="-1"></a>El paquete <span class="in">`shiny`</span> crea aplicaciones web interactivas en R. Para llamar al código <span class="in">`shiny`</span> desde un documento R Markdown, agregue 'runtime': shiny a los metadatos YAML, como en este ejemplo:</span>
+<span id="cb14-623"><a href="#cb14-623" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-624"><a href="#cb14-624" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
+<span id="cb14-625"><a href="#cb14-625" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-626"><a href="#cb14-626" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb14-627"><a href="#cb14-627" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Documento Shiny"</span></span>
+<span id="cb14-628"><a href="#cb14-628" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span> html_document</span>
+<span id="cb14-629"><a href="#cb14-629" aria-hidden="true" tabindex="-1"></a>runtime<span class="sc">:</span> shiny</span>
+<span id="cb14-630"><a href="#cb14-630" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb14-631"><a href="#cb14-631" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-632"><a href="#cb14-632" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-633"><a href="#cb14-633" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-634"><a href="#cb14-634" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-635"><a href="#cb14-635" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-636"><a href="#cb14-636" aria-hidden="true" tabindex="-1"></a>El siguiente código crea una aplicación shiny dentro del documento Rmarkdown:</span>
+<span id="cb14-637"><a href="#cb14-637" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-638"><a href="#cb14-638" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
+<span id="cb14-639"><a href="#cb14-639" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-640"><a href="#cb14-640" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb14-641"><a href="#cb14-641" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-642"><a href="#cb14-642" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Ejemplo"</span>),</span>
+<span id="cb14-643"><a href="#cb14-643" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-644"><a href="#cb14-644" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarLayout</span>(</span>
+<span id="cb14-645"><a href="#cb14-645" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarPanel</span>(</span>
+<span id="cb14-646"><a href="#cb14-646" aria-hidden="true" tabindex="-1"></a>      <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"bins"</span>,</span>
+<span id="cb14-647"><a href="#cb14-647" aria-hidden="true" tabindex="-1"></a>                  <span class="at">label =</span> <span class="st">"Numero de barras:"</span>,</span>
+<span id="cb14-648"><a href="#cb14-648" aria-hidden="true" tabindex="-1"></a>                  <span class="at">min =</span> <span class="dv">1</span>,</span>
+<span id="cb14-649"><a href="#cb14-649" aria-hidden="true" tabindex="-1"></a>                  <span class="at">max =</span> <span class="dv">50</span>,</span>
+<span id="cb14-650"><a href="#cb14-650" aria-hidden="true" tabindex="-1"></a>                  <span class="at">value =</span> <span class="dv">30</span>)</span>
+<span id="cb14-651"><a href="#cb14-651" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb14-652"><a href="#cb14-652" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb14-653"><a href="#cb14-653" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mainPanel</span>(</span>
+<span id="cb14-654"><a href="#cb14-654" aria-hidden="true" tabindex="-1"></a>      <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"distPlot"</span>)</span>
+<span id="cb14-655"><a href="#cb14-655" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-656"><a href="#cb14-656" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-657"><a href="#cb14-657" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-658"><a href="#cb14-658" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-659"><a href="#cb14-659" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb14-660"><a href="#cb14-660" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb14-661"><a href="#cb14-661" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>distPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb14-662"><a href="#cb14-662" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-663"><a href="#cb14-663" aria-hidden="true" tabindex="-1"></a>    x    <span class="ot">&lt;-</span> faithful<span class="sc">$</span>waiting</span>
+<span id="cb14-664"><a href="#cb14-664" aria-hidden="true" tabindex="-1"></a>    bins <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x), <span class="fu">max</span>(x), <span class="at">length.out =</span> input<span class="sc">$</span>bins <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb14-665"><a href="#cb14-665" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-666"><a href="#cb14-666" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(x, <span class="at">breaks =</span> bins, <span class="at">col =</span> <span class="st">"#3E4A89FF"</span>, <span class="at">border =</span> <span class="st">"white"</span>,</span>
+<span id="cb14-667"><a href="#cb14-667" aria-hidden="true" tabindex="-1"></a>         <span class="at">xlab =</span> <span class="st">"Tiempo de espera para la siguiente erupcion"</span>,</span>
+<span id="cb14-668"><a href="#cb14-668" aria-hidden="true" tabindex="-1"></a>         <span class="at">main =</span> <span class="st">"Histograma del tiempo de espera"</span>)</span>
+<span id="cb14-669"><a href="#cb14-669" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb14-670"><a href="#cb14-670" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-671"><a href="#cb14-671" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-672"><a href="#cb14-672" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear Shiny app</span></span>
+<span id="cb14-673"><a href="#cb14-673" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span>
+<span id="cb14-674"><a href="#cb14-674" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-675"><a href="#cb14-675" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-676"><a href="#cb14-676" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-677"><a href="#cb14-677" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-678"><a href="#cb14-678" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-679"><a href="#cb14-679" aria-hidden="true" tabindex="-1"></a>Note que esta aplicación no funciona en documentos estáticos de Rmarkdown. En el sitio <span class="co">[</span><span class="ot">https://shiny.rstudio.com/gallery</span><span class="co">](https://shiny.rstudio.com/gallery/#demos)</span> pueden encontrar muchos ejemplos de aplicaciones shiny. Estas aplicaciones son complejas de incluir en archivos auto-contenidos y por ello no son tan amigables para reportes dinámicos como los que podemos generar con R markdown.</span>
+<span id="cb14-680"><a href="#cb14-680" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-681"><a href="#cb14-681" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-682"><a href="#cb14-682" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-683"><a href="#cb14-683" aria-hidden="true" tabindex="-1"></a><span class="fu"># Publicar reportes en linea con Rpubs</span></span>
+<span id="cb14-684"><a href="#cb14-684" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-685"><a href="#cb14-685" aria-hidden="true" tabindex="-1"></a>La plataforma en linea <span class="co">[</span><span class="ot">Rpubs</span><span class="co">](rpubs.com/)</span> permite publicar los reportes en formato HTML. Esta opción simplifica mucho el compartir códigos, análisis y resultados ya que solamente necesitamos enviar el la dirección URL. Aún mas, podemos seguir actualizando los reportes y la misma dirección URL seguirá conteniendo las versiones actualizadas de los reportes.</span>
+<span id="cb14-686"><a href="#cb14-686" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-687"><a href="#cb14-687" aria-hidden="true" tabindex="-1"></a>Para enviar nuestros reportes HTML a <span class="co">[</span><span class="ot">Rpubs</span><span class="co">](rpubs.com/)</span> debemos primero hacer una cuenta en el sitio. Luego de esto simplemente tenemos que usar el enlace "publish" en la esquina superior derecha de los reportes:</span>
+<span id="cb14-688"><a href="#cb14-688" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-689"><a href="#cb14-689" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="90%", fig.align='center'}</span></span>
+<span id="cb14-690"><a href="#cb14-690" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-691"><a href="#cb14-691" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/rpubs.PNG"</span>)</span>
+<span id="cb14-692"><a href="#cb14-692" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-693"><a href="#cb14-693" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-694"><a href="#cb14-694" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-695"><a href="#cb14-695" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-696"><a href="#cb14-696" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-697"><a href="#cb14-697" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-698"><a href="#cb14-698" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-699"><a href="#cb14-699" aria-hidden="true" tabindex="-1"></a><span class="fu"># Herramientas adicionales para organizar análisis de datos</span></span>
+<span id="cb14-700"><a href="#cb14-700" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-701"><a href="#cb14-701" aria-hidden="true" tabindex="-1"></a><span class="fu">## Proyectos de Rstudio</span></span>
+<span id="cb14-702"><a href="#cb14-702" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-703"><a href="#cb14-703" aria-hidden="true" tabindex="-1"></a>Los proyectos de Rstudio crean carpetas donde se guardan los archivos relacionados a un análisis específico (código y datos) y hacen de esta carpeta el directorio de trabajo por defecto cuando se abre el proyecto. Se pueden crear de esta forma:</span>
+<span id="cb14-704"><a href="#cb14-704" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-705"><a href="#cb14-705" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="50%", fig.align='center'}</span></span>
+<span id="cb14-706"><a href="#cb14-706" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-707"><a href="#cb14-707" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/rproj1.png"</span>)</span>
+<span id="cb14-708"><a href="#cb14-708" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-709"><a href="#cb14-709" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-710"><a href="#cb14-710" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-711"><a href="#cb14-711" aria-hidden="true" tabindex="-1"></a>Luego aparecera una seria de ventanas donde pueden escoger que tipo de proyecto y el nombre de este:</span>
+<span id="cb14-712"><a href="#cb14-712" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-713"><a href="#cb14-713" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
+<span id="cb14-714"><a href="#cb14-714" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-715"><a href="#cb14-715" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/rproj2.png"</span>)</span>
+<span id="cb14-716"><a href="#cb14-716" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-717"><a href="#cb14-717" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-718"><a href="#cb14-718" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-719"><a href="#cb14-719" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-720"><a href="#cb14-720" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-721"><a href="#cb14-721" aria-hidden="true" tabindex="-1"></a><span class="fu">## Compendios de investigación</span></span>
+<span id="cb14-722"><a href="#cb14-722" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-723"><a href="#cb14-723" aria-hidden="true" tabindex="-1"></a>Los compendios de investigación son estructuras de carpetas pre-definidas que permiten seguir un orden lógico e intuitivo para organizar los archivos usados y generados en un análisis de datos de un proyecto de investigación. El paquete <span class="co">[</span><span class="ot">sketchy</span><span class="co">](https://marce10.github.io/sketchy/)</span> genera estos compendios, permitiendo al usuario seleccionar entre una gama de compendios comunes en la comunidad científica. Este ejemplo crea el compendio básico (uno de los 14 que vienen con el paquete):</span>
+<span id="cb14-724"><a href="#cb14-724" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-727"><a href="#cb14-727" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-728"><a href="#cb14-728" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">tempdir</span>()</span>
+<span id="cb14-729"><a href="#cb14-729" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-730"><a href="#cb14-730" aria-hidden="true" tabindex="-1"></a><span class="fu">make_compendium</span>(</span>
+<span id="cb14-731"><a href="#cb14-731" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="st">"proyecto_x"</span>,</span>
+<span id="cb14-732"><a href="#cb14-732" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> path,</span>
+<span id="cb14-733"><a href="#cb14-733" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"basic"</span>,</span>
+<span id="cb14-734"><a href="#cb14-734" aria-hidden="true" tabindex="-1"></a>  <span class="at">Rproj =</span> <span class="cn">TRUE</span></span>
+<span id="cb14-735"><a href="#cb14-735" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-736"><a href="#cb14-736" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-737"><a href="#cb14-737" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-738"><a href="#cb14-738" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-739"><a href="#cb14-739" aria-hidden="true" tabindex="-1"></a>El paquete crea archivos Rmarkdown con plantillas para el análisis de datos (carpeta "scripts") y escritura de manuscritos (carpeta "manuscript"). Corra <span class="in">`path`</span> en la consola de R para ver la dirección de la carpeta donde se creo el compendio.</span>
+<span id="cb14-740"><a href="#cb14-740" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-741"><a href="#cb14-741" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-742"><a href="#cb14-742" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-743"><a href="#cb14-743" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
+<span id="cb14-744"><a href="#cb14-744" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio 4</span></span>
+<span id="cb14-745"><a href="#cb14-745" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-746"><a href="#cb14-746" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Cree un reporte dinámico que incluya un mapa dinámico de Costa Rica usando el paquete <span class="in">`leaflet`</span></span>
+<span id="cb14-747"><a href="#cb14-747" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-748"><a href="#cb14-748" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Reproduzca alguno de los ejemplos disponibles en el sitio del paquete dygraphs (<span class="ot">&lt;https://rstudio.github.io/dygraphs/&gt;</span>) e incrústelo en su reporte dinámico</span>
+<span id="cb14-749"><a href="#cb14-749" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-750"><a href="#cb14-750" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Instale el paquete <span class="in">`kableExtra`</span> y incruste en su reporte el códifo de ejemplo en la documentación de la función <span class="in">`kable_styling()`</span> de ese paquete</span>
+<span id="cb14-751"><a href="#cb14-751" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-752"><a href="#cb14-752" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Cree una presentación Rmarkdown utilizando la opción "Presentation" en la ventana de creación</span>
+<span id="cb14-753"><a href="#cb14-753" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-754"><a href="#cb14-754" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Genere un reporte dinámico en formato PDF</span>
+<span id="cb14-755"><a href="#cb14-755" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-756"><a href="#cb14-756" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Cree un proyecto de Rstudio para organizar los contenidos del curso</span>
+<span id="cb14-757"><a href="#cb14-757" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-758"><a href="#cb14-758" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Cree un compendio de investigación con sketchy</span>
+<span id="cb14-759"><a href="#cb14-759" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-760"><a href="#cb14-760" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-761"><a href="#cb14-761" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb14-762"><a href="#cb14-762" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-763"><a href="#cb14-763" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-764"><a href="#cb14-764" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-765"><a href="#cb14-765" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencias</span></span>
+<span id="cb14-766"><a href="#cb14-766" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-767"><a href="#cb14-767" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">R Markdown: The Definitive Guide</span><span class="co">](https://bookdown.org/yihui/rmarkdown/)</span></span>
+<span id="cb14-768"><a href="#cb14-768" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Rmarkdown custom format</span><span class="co">](https://blog.rstudio.com/2016/03/21/r-markdown-custom-formats/)</span></span>
+<span id="cb14-769"><a href="#cb14-769" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Rmarkdown website</span><span class="co">](https://rmarkdown.rstudio.com/index.html)</span></span>
+<span id="cb14-770"><a href="#cb14-770" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Jacolien van Rij: Rmarkdown variants</span><span class="co">](http://www.jacolienvanrij.com/Tutorials/tutorialMarkdown.html)</span></span>
+<span id="cb14-771"><a href="#cb14-771" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Danielle Quinn: R Lessons</span><span class="co">](https://github.com/DanielleQuinn/RLessons)</span></span>
+<span id="cb14-772"><a href="#cb14-772" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Vaidyanathan, Ramnath, Yihui Xie, JJ Allaire, Joe Cheng, and Kenton Russell. 2019. Htmlwidgets: HTML Widgets for R. https://github.com/ramnathv/htmlwidgets.</span>
+<span id="cb14-773"><a href="#cb14-773" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-774"><a href="#cb14-774" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-775"><a href="#cb14-775" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-776"><a href="#cb14-776" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb14-777"><a href="#cb14-777" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-778"><a href="#cb14-778" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"4"</span><span class="kw">&gt;</span>Información de la sesión<span class="kw">&lt;/font&gt;</span></span>
+<span id="cb14-779"><a href="#cb14-779" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-780"><a href="#cb14-780" aria-hidden="true" tabindex="-1"></a><span class="in">```{r session info, echo=F}</span></span>
+<span id="cb14-781"><a href="#cb14-781" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-782"><a href="#cb14-782" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
+<span id="cb14-783"><a href="#cb14-783" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-784"><a href="#cb14-784" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></div>
+  </div>
+</footer>
+
+
+
+</body></html>

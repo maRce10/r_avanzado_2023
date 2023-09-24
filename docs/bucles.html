@@ -156,7 +156,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="dropdown-text">Fundamentos de R</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./reportes_dinamicos_con_rmarkdown.html">
+    <a class="dropdown-item" href="./reportes_dinamicos.html">
  <span class="dropdown-text">Reportes dinámicos</span></a>
   </li>  
         <li>
@@ -167,8 +167,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="dropdown-item" href="./bucles.html">
  <span class="dropdown-text">Bucles</span></a>
   </li>  
-        <li class="dropdown-header">Modelos de regresión</li>
-        <li class="dropdown-header">Modelos de regresión comunes</li>
+        <li>
+    <a class="dropdown-item" href="./modelos_de_regresion.html">
+ <span class="dropdown-text">Modelos de regresión</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./estadistica_tradicional_regresion.html">
+ <span class="dropdown-text">Estadística tradicional como regresión</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="./ggplot2.html">
  <span class="dropdown-text">Gráficos con ggplot2</span></a>
@@ -939,17 +945,17 @@ pre.numberSource code
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">expr =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>          [,1]     [,2]     [,3]
- [1,]  1.93429  0.49853 -0.54756
- [2,]  0.36301  1.76951 -0.57779
- [3,] -0.15153  0.95952  0.85564
- [4,]  0.64710 -0.74617 -0.78429
- [5,]  0.10168  0.35136  0.64216
- [6,] -1.04473  0.72280 -1.39108
- [7,] -0.13515 -0.66204 -1.89205
- [8,] -0.49035  1.18252 -0.63557
- [9,]  2.30124 -0.12555 -0.64740
-[10,]  0.52064  0.18737  0.29231</code></pre>
+<pre><code>          [,1]      [,2]      [,3]
+ [1,]  0.17694 -1.118060 -0.098577
+ [2,]  0.56262  0.592245  0.260138
+ [3,] -0.71559  0.239619 -1.167631
+ [4,]  0.67891 -1.745998 -0.717307
+ [5,] -0.70091  0.550612 -2.060047
+ [6,] -0.50885 -1.161067 -0.271842
+ [7,] -1.58957 -0.470026 -0.615912
+ [8,] -0.31658  0.353802 -1.393611
+ [9,] -0.93344 -0.012597  0.493836
+[10,]  0.25385 -0.358489 -0.234724</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -1009,7 +1015,7 @@ pre.numberSource code
 <span id="cb43-21"><a href="#cb43-21"></a><span class="fu">head</span>(cc_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.100813 -0.051872  0.176596  0.118205  0.068485 -0.323775</code></pre>
+<pre><code>[1] -0.148438 -0.166986 -0.088784  0.169322  0.066564 -0.021765</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
