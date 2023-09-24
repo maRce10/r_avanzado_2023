@@ -1,0 +1,37 @@
+MaxN
+
+Generated: Wednesday 14 September 2022 18:16:01
+
+Filename	Frame	Time (mins)	Period	Period time (mins)	OpCode	TapeReader	Depth	Comment	Date	Site	BRUVS.NO	TimeIN	TimeOUT	Bait	Lat	Long	Family	Genus	Species	Code	MaxN	Has fed
+GOPR0774.MP4	  38948	  10.8297	inicio	   9.7386	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Balistidae	Sufflamen	verres	Sufverres	2	No
+GP010774.MP4	  53103	  32.4833	inicio	  31.3922	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Carangidae	Caranx	caballus	Carcaball	1	No
+GP020774.MP4	  38735	  46.2059	inicio	  45.1148	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Carangidae	Caranx	sexfasciatus	Carsexfas	1	No
+GP010774.MP4	  25604	  24.8370	inicio	  23.7459	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Carangidae	Seriola	rivoliana	Serrivoli	1	No
+GP030774.MP4	  18390	  58.2665	inicio	  57.1755	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Carcharhinidae	Triaenodon	obesus	Triobesus	1	No
+GOPR0774.MP4	   4521	   1.2571	inicio	   0.1660	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Chaetodontidae	Chaetodon	humeralis	Chahumera	1	No
+GOPR0774.MP4	   5961	   1.6575	inicio	   0.5664	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Chaetodontidae	Johnrandallia	nigrirostris	Johnigrir	2	No
+GP030774.MP4	  31162	  61.8179	inicio	  60.7268	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Cheloniidae	Chelonia	mydas	Chemydas	1	No
+GP010774.MP4	   6136	  19.4238	inicio	  18.3328	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Dasyatidae	Dasyatis	longa	Daslonga	1	No
+GOPR0774.MP4	  25155	   6.9945	inicio	   5.9034	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Diodontidae	Diodon	holocanthus	Dioholoc	1	No
+GOPR0774.MP4	  48245	  13.4148	inicio	  12.3237	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Fistulariidae	Fistularia	commersonii	Fiscommer	1	No
+GOPR0774.MP4	   4521	   1.2571	inicio	   0.1660	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Haemulidae	Haemulon	flaviguttatum	Haeflavig	108	No
+GP020774.MP4	  33273	  44.6871	inicio	  43.5961	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Haemulidae	Haemulon	maculicauda	Haemaculi	37	No
+GP010774.MP4	   1002	  17.9963	inicio	  16.9052	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Haemulidae	Haemulon	sexfasciatum	Haesexfas	12	No
+GOPR0774.MP4	   4521	   1.2571	inicio	   0.1660	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Haemulidae	Haemulon	steindachneri	Haesteind	10	No
+GP010774.MP4	  27741	  25.4312	inicio	  24.3401	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Labridae	Halichoeres	dispilus	Haldispil	11	No
+GOPR0774.MP4	  28895	   8.0344	inicio	   6.9433	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Labridae	Halichoeres	nicholsi	Halnichol	1	No
+GOPR0774.MP4	  38948	  10.8297	inicio	   9.7386	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Lutjanidae	Lutjanus	argentiventris	Lutargent	2	No
+GOPR0774.MP4	  20172	   5.6089	inicio	   4.5178	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Lutjanidae	Lutjanus	guttatus	Lutguttat	111	No
+GP010774.MP4	  25604	  24.8370	inicio	  23.7459	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Lutjanidae	Lutjanus	novemfasciatus	Lutnovemf	4	No
+GP010774.MP4	   4529	  18.9770	inicio	  17.8859	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Mullidae	Mulloidichthys	dentatus	Muldentat	1	No
+GOPR0774.MP4	  31924	   8.8766	inicio	   7.7856	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Myliobatidae	Aetobatus	narinari	Aetnarina	1	No
+GOPR0774.MP4	  27812	   7.7333	inicio	   6.6422	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Pomacanthidae	Holacanthus	passer	Holpasser	1	No
+GP030774.MP4	  62929	  70.6509	inicio	  69.5598	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Pomacentridae	Abudefduf	troschelii	Abutrosch	10	No
+GOPR0774.MP4	  15463	   4.2996	inicio	   3.2085	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Scaridae	Scarus	ghobban	Scaghobba	3	No
+GP020774.MP4	  33273	  44.6871	inicio	  43.5961	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Serranidae	Epinephelus	labriformis	Epilabrif	1	No
+GOPR0774.MP4	  38948	  10.8297	inicio	   9.7386	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Serranidae	Paranthias	colonus	Parcolonu	4	No
+GOPR0774.MP4	  38948	  10.8297	inicio	   9.7386	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Serranidae	Serranus	psittacinus	Serpsitta	1	No
+GOPR0774.MP4	  47205	  13.1256	inicio	  12.0345	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Sparidae	Calamus	brachysomus	Calbrachy	2	No
+GOPR0774.MP4	  20172	   5.6089	inicio	   4.5178	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Tetraodontidae	Arothron	meleagris	Aromeleag	2	No
+GOPR0774.MP4	  32518	   9.0418	inicio	   7.9507	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Tetraodontidae	Canthigaster	punctatissima	Canpuncta	1	No
+GOPR0774.MP4	  25155	   6.9945	inicio	   5.9034	S2C4_Virador1-20-7-2021	Sofia	10		2021-07-20	Virador	S2C4_Virador1-20-7-2021	09:35	11:59	yes	10,61025	-85,70167	Urotrygonidae	Urolophus	halleri	Urohaller	1	No

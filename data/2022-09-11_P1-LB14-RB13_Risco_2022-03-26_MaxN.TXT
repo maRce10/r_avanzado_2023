@@ -1,0 +1,14 @@
+MaxN																						
+																						
+Generated: Friday 16 September 2022 13:51:22																						
+																						
+Filename	Frame	Time (mins)	Period	Period time (mins)	OpCode	TapeReader	Depth	Comment	Date	Site	BRUVS.NO	TimeIN	TimeOUT	Bait	Lat	Long	Family	Genus	Species	Code	MaxN	Has fed
+GH020030_LcamB14.MP4	15618	21.977	inicio	20.6181	P1-LB14-RB13_Risco_2022-03-26	Louanne	27.7 m		3/6/22	Risco	P1-LB14-RB13_Risco_2022-03-26	10:52:00 AM	12:27:00 AM	Si (Caballa)	"55,236"	"-870,374"	Balistidae	Balistes	polylepis	Balpolyle	3	No
+GH010030_LcamB14.MP4	15187	4.2228	inicio	2.864	P1-LB14-RB13_Risco_2022-03-26	Louanne	27.7 m		3/6/22	Risco	P1-LB14-RB13_Risco_2022-03-26	10:52:00 AM	12:27:00 AM	Si (Caballa)	"55,236"	"-870,374"	Carangidae	Alectis	ciliaris	Aleciliar	1	No
+GH030030_LcamB14.MP4	2513	35.9673	inicio	34.6085	P1-LB14-RB13_Risco_2022-03-26	Louanne	27.7 m		3/6/22	Risco	P1-LB14-RB13_Risco_2022-03-26	10:52:00 AM	12:27:00 AM	Si (Caballa)	"55,236"	"-870,374"	Carangidae	Caranx	lugubris	Carlugubr	1	No
+GH020030_LcamB14.MP4	19283	22.996	inicio	21.6372	P1-LB14-RB13_Risco_2022-03-26	Louanne	27.7 m		3/6/22	Risco	P1-LB14-RB13_Risco_2022-03-26	10:52:00 AM	12:27:00 AM	Si (Caballa)	"55,236"	"-870,374"	Carangidae	Caranx	melampygus	Carmelamp	3	No
+GH030030_LcamB14.MP4	3693	36.2954	inicio	34.9366	P1-LB14-RB13_Risco_2022-03-26	Louanne	27.7 m		3/6/22	Risco	P1-LB14-RB13_Risco_2022-03-26	10:52:00 AM	12:27:00 AM	Si (Caballa)	"55,236"	"-870,374"	Carangidae	Elagatis	bipinnulata	Elabipinn	1	No
+GH020030_LcamB14.MP4	113	17.6657	inicio	16.3068	P1-LB14-RB13_Risco_2022-03-26	Louanne	27.7 m		3/6/22	Risco	P1-LB14-RB13_Risco_2022-03-26	10:52:00 AM	12:27:00 AM	Si (Caballa)	"55,236"	"-870,374"	Carangidae	Seriola	rivoliana	Serrivoli	2	No
+GH030030_LcamB14.MP4	4192	36.4342	inicio	35.0753	P1-LB14-RB13_Risco_2022-03-26	Louanne	27.7 m		3/6/22	Risco	P1-LB14-RB13_Risco_2022-03-26	10:52:00 AM	12:27:00 AM	Si (Caballa)	"55,236"	"-870,374"	Carcharhinidae	Carcharhinus	limbatus	Carlimbat	1	No
+GH010030_LcamB14.MP4	46578	12.9513	inicio	11.5924	P1-LB14-RB13_Risco_2022-03-26	Louanne	27.7 m		3/6/22	Risco	P1-LB14-RB13_Risco_2022-03-26	10:52:00 AM	12:27:00 AM	Si (Caballa)	"55,236"	"-870,374"	Dasyatidae	Taeniurops	meyeni	Taemeyeni	3	No
+GH010030_LcamB14.MP4	61805	17.1852	inicio	15.8264	P1-LB14-RB13_Risco_2022-03-26	Louanne	27.7 m		3/6/22	Risco	P1-LB14-RB13_Risco_2022-03-26	10:52:00 AM	12:27:00 AM	Si (Caballa)	"55,236"	"-870,374"	Lutjanidae	Lutjanus	argentiventris	Lutargent	1	No

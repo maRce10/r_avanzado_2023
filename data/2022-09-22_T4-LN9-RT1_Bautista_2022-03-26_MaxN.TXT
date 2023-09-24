@@ -1,0 +1,13 @@
+MaxN
+
+Generated: Thursday 22 September 2022 16:06:53
+
+Filename	Frame	Time (mins)	Period	Period time (mins)	OpCode	TapeReader	Depth	Comment	Date	Site	BRUVS.NO	TimeIN	TimeOUT	Bait	Lat	Long	Family	Genus	Species	Code	MaxN	Has fed
+GH030035_LcamN9.MP4	  25795	  39.2712	Inicio	  37.9449	T4-LN9-RT1_Bautista_2022-03-26	Anna	21.9		2022-03-26	Bautista	T4-LN9-RT1_Bautista_2022-03-26	08:45:00	10:17:00	Si (Caballa)	5.5091	-87.0606	Balistidae	Canthidermis	maculata	Canmacula	2	No
+GH010035_LcamN9.MP4	  27330	   7.5993	Inicio	   6.2729	T4-LN9-RT1_Bautista_2022-03-26	Anna	21.9		2022-03-26	Bautista	T4-LN9-RT1_Bautista_2022-03-26	08:45:00	10:17:00	Si (Caballa)	5.5091	-87.0606	Carangidae	Caranx	melampygus	Carmelamp	3	No
+GH020035_LcamN9.MP4	  53941	  31.0480	Inicio	  29.7216	T4-LN9-RT1_Bautista_2022-03-26	Anna	21.9		2022-03-26	Bautista	T4-LN9-RT1_Bautista_2022-03-26	08:45:00	10:17:00	Si (Caballa)	5.5091	-87.0606	Carangidae	Elagatis	bipinnulata	Elabipinn	1	No
+GH010035_LcamN9.MP4	  19492	   5.4199	Inicio	   4.0935	T4-LN9-RT1_Bautista_2022-03-26	Anna	21.9		2022-03-26	Bautista	T4-LN9-RT1_Bautista_2022-03-26	08:45:00	10:17:00	Si (Caballa)	5.5091	-87.0606	Carcharhinidae	Triaenodon	obesus	Triobesus	1	No
+GH010035_LcamN9.MP4	  10459	   2.9082	Inicio	   1.5819	T4-LN9-RT1_Bautista_2022-03-26	Anna	21.9		2022-03-26	Bautista	T4-LN9-RT1_Bautista_2022-03-26	08:45:00	10:17:00	Si (Caballa)	5.5091	-87.0606	Lutjanidae	Hoplopagrus	guentherii	Hopguenth	1	No
+GH010035_LcamN9.MP4	   8980	   2.4969	Inicio	   1.1706	T4-LN9-RT1_Bautista_2022-03-26	Anna	21.9		2022-03-26	Bautista	T4-LN9-RT1_Bautista_2022-03-26	08:45:00	10:17:00	Si (Caballa)	5.5091	-87.0606	Lutjanidae	Lutjanus	argentiventris	Lutargent	1	No
+GH020035_LcamN9.MP4	  34017	  25.5080	Inicio	  24.1817	T4-LN9-RT1_Bautista_2022-03-26	Anna	21.9		2022-03-26	Bautista	T4-LN9-RT1_Bautista_2022-03-26	08:45:00	10:17:00	Si (Caballa)	5.5091	-87.0606	Lutjanidae	Lutjanus	viridis	Lutviridi	1	No
+GH010035_LcamN9.MP4	  27653	   7.6891	Inicio	   6.3627	T4-LN9-RT1_Bautista_2022-03-26	Anna	21.9		2022-03-26	Bautista	T4-LN9-RT1_Bautista_2022-03-26	08:45:00	10:17:00	Si (Caballa)	5.5091	-87.0606	Serranidae	Paranthias	colonus	Parcolonu	3	No

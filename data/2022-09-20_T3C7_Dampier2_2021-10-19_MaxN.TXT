@@ -1,0 +1,24 @@
+MaxN
+
+Generated: Tuesday 20 September 2022 16:34:43
+
+Filename	Frame	Time (mins)	Period	Period time (mins)	OpCode	TapeReader	Depth	Comment	Date	Site	BRUVS.NO	TimeIN	TimeOUT	Bait	Lat	Long	Family	Genus	Species	Code	MaxN	Has fed
+GOPR0199.MP4	  12588	   3.5002	Inicio	   1.8071	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Acanthuridae	Acanthurus	nigricans	Acanigric	1	No
+GOPR0199.MP4	  14160	   3.9373	Inicio	   2.2442	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Acanthuridae	Acanthurus	xanthopterus	Acaxantho	1	No
+GOPR0199.MP4	   7659	   2.1296	Inicio	   0.4365	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Acanthuridae	Prionurus	laticlavius	Prilaticl	1	No
+GOPR0199.MP4	  12387	   3.4443	Inicio	   1.7512	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Balistidae	Canthidermis	maculata	Canmacula	7	No
+GOPR0199.MP4	  23657	   6.5780	Inicio	   4.8849	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Balistidae	Melichthys	niger	Melniger	9	No
+GOPR0199.MP4	  12588	   3.5002	Inicio	   1.8071	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Balistidae	Xanthichthys	mento	Xanmento	1	No
+GP030199.MP4	   2071	  53.7290	Inicio	  52.0359	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Carangidae	Alectis	ciliaris	Aleciliar	1	No
+GOPR0199.MP4	   6089	   1.6931	Inicio	   0.0000	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Carangidae	Caranx	lugubris	Carlugubr	5	No
+GOPR0199.MP4	   6280	   1.7462	Inicio	   0.0531	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Carangidae	Caranx	melampygus	Carmelamp	14	No
+GP010199.MP4	  54645	  32.9120	Inicio	  31.2190	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Carangidae	Seriola	rivoliana	Serrivoli	1	No
+GP030199.MP4	   7183	  55.1504	Inicio	  53.4573	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Carcharhinidae	Carcharhinus	galapagensis	Cargalapa	1	No
+GP020199.MP4	  23619	  42.0028	Inicio	  40.3097	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Carcharhinidae	Triaenodon	obesus	Triobesus	5	No
+GP020199.MP4	   2279	  36.0691	Inicio	  34.3760	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Dasyatidae	Taeniurops	meyeni	Taemeyeni	1	No
+GOPR0199.MP4	   6294	   1.7501	Inicio	   0.0570	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Lutjanidae	Lutjanus	argentiventris	Lutargent	31	No
+GOPR0199.MP4	   8658	   2.4074	Inicio	   0.7143	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Scaridae	Scarus	rubroviolaceus	Scarubrov	1	No
+GOPR0199.MP4	  28362	   7.8862	Inicio	   6.1931	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Serranidae	Dermatolepis	dermatolepis	Derdermat	14	No
+GOPR0199.MP4	  57092	  15.8747	Inicio	  14.1817	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Serranidae	Mycteroperca	olfax	Mycolfax	4	No
+GOPR0199.MP4	   6089	   1.6931	Inicio	   0.0000	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Serranidae	Paranthias	colonus	Parcolonu	89	No
+GOPR0199.MP4	   6294	   1.7501	Inicio	   0.0570	T3C7_Dampier2_2021-10-19	Anna LQ	31.6		2021-10-19	Dampier 2	T3C7_Dampier2_2021-10-19	10:49	12:23	Si (Caballa)	5,49962	-87,0771	Zanclidae	Zanclus	cornutus	Zancornut	1	No

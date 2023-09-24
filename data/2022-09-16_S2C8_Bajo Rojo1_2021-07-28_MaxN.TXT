@@ -1,0 +1,27 @@
+MaxN
+
+Generated: Friday 16 September 2022 14:37:56
+
+Filename	Frame	Time (mins)	Period	Period time (mins)	OpCode	TapeReader	Depth	Comment	Date	Site	BRUVS.NO	TimeIN	TimeOUT	Bait	Lat	Long	Family	Genus	Species	Code	MaxN	Has fed
+GOPR0032.MP4	  34906	   9.7058	inicio	   6.8424	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Acanthuridae	Acanthurus	xanthopterus	Acaxantho	56	No
+GOPR0032.MP4	  33281	   9.2540	inicio	   6.3906	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Blenniidae	Plagiotremus	azaleus		1	No
+GP010032.MP4	  17165	  22.4905	inicio	  19.6271	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Carangidae	Caranx	caballus	Carcaball	1	No
+GOPR0032.MP4	  16612	   4.6191	inicio	   1.7556	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Chaetodontidae	Chaetodon	humeralis	Chahumera	5	No
+GP010032.MP4	  17165	  22.4905	inicio	  19.6271	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Cheloniidae	Chelonia	mydas	Chemydas	2	No
+GOPR0032.MP4	  42185	  11.7298	inicio	   8.8664	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Dasyatidae	Dasyatis	longa	Daslonga	1	No
+GOPR0032.MP4	  11058	   3.0747	inicio	   0.2113	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Diodontidae	Diodon	holocanthus	Dioholoc	1	No
+GP010032.MP4	  58606	  34.0134	inicio	  31.1500	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Fistulariidae	Fistularia	commersonii	Fiscommer	1	No
+GP030032.MP4	  43374	  65.2135	inicio	  62.3501	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Haemulidae	Haemulon	flaviguttatum	Haeflavig	70	No
+GOPR0032.MP4	  15367	   4.2729	inicio	   1.4095	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Haemulidae	Haemulon	maculicauda	Haemaculi	1	No
+GOPR0032.MP4	  18970	   5.2747	inicio	   2.4113	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Labridae	Bodianus	diplotaenia	Boddiplot	2	No
+GP010032.MP4	  17165	  22.4905	inicio	  19.6271	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Labridae	Halichoeres	dispilus	Haldispil	11	No
+GOPR0032.MP4	  25547	   7.1035	inicio	   4.2401	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Lutjanidae	Lutjanus	argentiventris	Lutargent	1	No
+GOPR0032.MP4	  20345	   5.6570	inicio	   2.7936	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Lutjanidae	Lutjanus	guttatus	Lutguttat	1	No
+GP030032.MP4	   1445	  53.5549	inicio	  50.6915	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Monacanthidae	Aluterus	monoceros	Alumonoce	1	No
+GP010032.MP4	  36223	  27.7897	inicio	  24.9263	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Muraenidae	Echidna	nebulosa	Echnebulo	1	No
+GP010032.MP4	   3961	  18.8191	inicio	  15.9557	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Pomacentridae	Stegastes	flavilatus	Steflavil	1	No
+GP030032.MP4	  38360	  63.8193	inicio	  60.9559	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Serranidae	Epinephelus	labriformis	Epilabrif	1	No
+GP030032.MP4	  44955	  65.6531	inicio	  62.7897	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Serranidae	Paranthias	colonus	Parcolonu	2	No
+GOPR0032.MP4	  17120	   4.7603	inicio	   1.8969	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Sparidae	Calamus	brachysomus	Calbrachy	2	No
+GOPR0032.MP4	  55114	  15.3248	inicio	  12.4613	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Tetraodontidae	Arothron	meleagris	Aromeleag	1	No
+GP030032.MP4	  12164	  56.5354	inicio	  53.6720	S2C8_Bajo Rojo1_2021-07-28	Sofia	17		2021-07-28	Bajo Rojo1	S2C8_Bajo Rojo1_2021-07-28	08:05	10:05	yes	10,95829	-85,73502	Urotrygonidae	Urolophus	halleri	Urohaller	1	No

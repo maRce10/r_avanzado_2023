@@ -1,0 +1,17 @@
+MaxN																						
+																						
+Generated: Friday 16 September 2022 13:39:03																						
+																						
+Filename	Frame	Time (mins)	Period	Period time (mins)	OpCode	TapeReader	Depth	Comment	Date	Site	BRUVS.NO	TimeIN	TimeOUT	Bait	Lat	Long	Family	Genus	Species	Code	MaxN	Has fed
+GH040307_LcamN4.MP4	55511	68.338	inicio	66.916	S6-LN4-RN8_Chatham_2022-03-28	Louanne	28.1 m		3/28/22	Chatam	S6-LN4-RN8_Chatham_2022-03-28	11:56:00 AM	11:56:00 AM	Si (Caballa)	"55,523"	"-870,348"	Balistidae	Balistes	polylepis	Balpolyle	5	No
+GH040307_LcamN4.MP4	24991	59.8517	inicio	58.4298	S6-LN4-RN8_Chatham_2022-03-28	Louanne	28.1 m		3/28/22	Chatam	S6-LN4-RN8_Chatham_2022-03-28	11:56:00 AM	11:56:00 AM	Si (Caballa)	"55,523"	"-870,348"	Balistidae	Canthidermis	maculata	Canmacula	9	No
+GH020307_LcamN4.MP4	3122	18.5024	inicio	17.0804	S6-LN4-RN8_Chatham_2022-03-28	Louanne	28.1 m		3/28/22	Chatam	S6-LN4-RN8_Chatham_2022-03-28	11:56:00 AM	11:56:00 AM	Si (Caballa)	"55,523"	"-870,348"	Carangidae	Alectis	ciliaris	Aleciliar	2	No
+GH020307_LcamN4.MP4	40414	28.8716	inicio	27.4496	S6-LN4-RN8_Chatham_2022-03-28	Louanne	28.1 m		3/28/22	Chatam	S6-LN4-RN8_Chatham_2022-03-28	11:56:00 AM	11:56:00 AM	Si (Caballa)	"55,523"	"-870,348"	Carangidae	Caranx	caballus	Carcaball	3	No
+GH010307_LcamN4.MP4	13719	3.8146	inicio	2.3927	S6-LN4-RN8_Chatham_2022-03-28	Louanne	28.1 m		3/28/22	Chatam	S6-LN4-RN8_Chatham_2022-03-28	11:56:00 AM	11:56:00 AM	Si (Caballa)	"55,523"	"-870,348"	Carangidae	Caranx	melampygus	Carmelamp	2	No
+GH010307_LcamN4.MP4	38549	10.7188	inicio	9.2968	S6-LN4-RN8_Chatham_2022-03-28	Louanne	28.1 m		3/28/22	Chatam	S6-LN4-RN8_Chatham_2022-03-28	11:56:00 AM	11:56:00 AM	Si (Caballa)	"55,523"	"-870,348"	Carangidae	Elagatis	bipinnulata	Elabipinn	4	No
+GH010307_LcamN4.MP4	48241	13.4137	inicio	11.9917	S6-LN4-RN8_Chatham_2022-03-28	Louanne	28.1 m		3/28/22	Chatam	S6-LN4-RN8_Chatham_2022-03-28	11:56:00 AM	11:56:00 AM	Si (Caballa)	"55,523"	"-870,348"	Carangidae	Seriola	rivoliana	Serrivoli	1	No
+GH010307_LcamN4.MP4	13719	3.8146	inicio	2.3927	S6-LN4-RN8_Chatham_2022-03-28	Louanne	28.1 m		3/28/22	Chatam	S6-LN4-RN8_Chatham_2022-03-28	11:56:00 AM	11:56:00 AM	Si (Caballa)	"55,523"	"-870,348"	Carcharhinidae	Carcharhinus	albimarginatus	Caralbima	1	No
+GH020307_LcamN4.MP4	23841	24.2634	inicio	22.8414	S6-LN4-RN8_Chatham_2022-03-28	Louanne	28.1 m		3/28/22	Chatam	S6-LN4-RN8_Chatham_2022-03-28	11:56:00 AM	11:56:00 AM	Si (Caballa)	"55,523"	"-870,348"	Carcharhinidae	Carcharhinus	galapagensis	Cargalapa	2	No
+GH010307_LcamN4.MP4	35742	9.9383	inicio	8.5163	S6-LN4-RN8_Chatham_2022-03-28	Louanne	28.1 m		3/28/22	Chatam	S6-LN4-RN8_Chatham_2022-03-28	11:56:00 AM	11:56:00 AM	Si (Caballa)	"55,523"	"-870,348"	Carcharhinidae	Carcharhinus	limbatus	Carlimbat	1	No
+GH040307_LcamN4.MP4	16295	57.4338	inicio	56.0118	S6-LN4-RN8_Chatham_2022-03-28	Louanne	28.1 m		3/28/22	Chatam	S6-LN4-RN8_Chatham_2022-03-28	11:56:00 AM	11:56:00 AM	Si (Caballa)	"55,523"	"-870,348"	Dasyatidae	Taeniurops	meyeni	Taemeyeni	1	No
+GH010307_LcamN4.MP4	30451	8.4671	inicio	7.0451	S6-LN4-RN8_Chatham_2022-03-28	Louanne	28.1 m		3/28/22	Chatam	S6-LN4-RN8_Chatham_2022-03-28	11:56:00 AM	11:56:00 AM	Si (Caballa)	"55,523"	"-870,348"	Haemulidae	Haemulon	scudderii	Haescudde	1	No

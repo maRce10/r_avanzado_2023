@@ -1,0 +1,17 @@
+MaxN
+
+Generated: Saturday 24 September 2022 17:42:26
+
+Filename	Frame	Time (mins)	Period	Period time (mins)	OpCode	TapeReader	Depth	Comment	Date	Site	BRUVS.NO	TimeIN	TimeOUT	Bait	Lat	Long	Family	Genus	Species	Code	MaxN	Has fed
+GH038774_LcamT3.MP4	  31149	  40.7599	Inicio	  38.8983	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	Sasha Graziani	28		2021-10-17	Esfinge 2	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	08:48	10:01	Caballa	5.53393	-87.08958	Balistidae	Balistes	polylepis	Balpolyle	4	No
+GH028774_LcamT3.MP4	  24616	  22.8940	Inicio	  21.0324	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	Sasha Graziani	28		2021-10-17	Esfinge 2	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	08:48	10:01	Caballa	5.53393	-87.08958	Balistidae	Canthidermis	maculata	Canmacula	15	No
+GH018774_LcamT3.MP4	  31397	   8.7301	Inicio	   6.8685	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	Sasha Graziani	28		2021-10-17	Esfinge 2	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	08:48	10:01	Caballa	5.53393	-87.08958	Carangidae	Caranx	melampygus	Carmelamp	7	No
+GH018774_LcamT3.MP4	  54798	  15.2369	Inicio	  13.3753	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	Sasha Graziani	28		2021-10-17	Esfinge 2	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	08:48	10:01	Caballa	5.53393	-87.08958	Carangidae	Elagatis	bipinnulata	Elabipinn	4	No
+GH018774_LcamT3.MP4	  46202	  12.8467	Inicio	  10.9851	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	Sasha Graziani	28		2021-10-17	Esfinge 2	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	08:48	10:01	Caballa	5.53393	-87.08958	Carangidae	Seriola	rivoliana	Serrivoli	1	No
+GH018774_LcamT3.MP4	  51656	  14.3632	Inicio	  12.5017	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	Sasha Graziani	28		2021-10-17	Esfinge 2	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	08:48	10:01	Caballa	5.53393	-87.08958	Carcharhinidae	Carcharhinus	albimarginatus	Caralbima	2	No
+GH038774_LcamT3.MP4	  25076	  39.0713	Inicio	  37.2097	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	Sasha Graziani	28		2021-10-17	Esfinge 2	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	08:48	10:01	Caballa	5.53393	-87.08958	Carcharhinidae	Carcharhinus	falciformis	Carfalcif	2	No
+GH028774_LcamT3.MP4	  30944	  24.6535	Inicio	  22.7919	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	Sasha Graziani	28		2021-10-17	Esfinge 2	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	08:48	10:01	Caballa	5.53393	-87.08958	Carcharhinidae	Carcharhinus	limbatus	Carlimbat	1	No
+GH038774_LcamT3.MP4	   1447	  32.5011	Inicio	  30.6395	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	Sasha Graziani	28		2021-10-17	Esfinge 2	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	08:48	10:01	Caballa	5.53393	-87.08958	Carcharhinidae	Galeocerdo	cuvier	Galcuvier	1	No
+GH048774_LcamT3.MP4	    138	  48.1865	Inicio	  46.3249	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	Sasha Graziani	28		2021-10-17	Esfinge 2	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	08:48	10:01	Caballa	5.53393	-87.08958	Haemulidae	Anisotremus	interruptus	Aniinterr	1	No
+GH038774_LcamT3.MP4	  42898	  44.0268	Inicio	  42.1652	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	Sasha Graziani	28		2021-10-17	Esfinge 2	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	08:48	10:01	Caballa	5.53393	-87.08958	Scombridae	Thunnus	albacares	Thualbaca	1	No
+GH028774_LcamT3.MP4	  16282	  20.5767	Inicio	  18.7151	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	Sasha Graziani	28		2021-10-17	Esfinge 2	T4-LcamT3-RcamSN7_Esfinge2_2021-10-17	08:48	10:01	Caballa	5.53393	-87.08958	Sphyrnidae	Sphyrna	lewini	Sphlewini	12	No

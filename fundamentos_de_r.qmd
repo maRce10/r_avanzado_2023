@@ -23,6 +23,7 @@ pre.numberSource code
   { counter-reset: none; }
 </style>
 ```
+
 ```{r,echo=FALSE,message=FALSE}
 
 options("digits"=5)
@@ -31,8 +32,6 @@ options("digits.secs"=3)
 # options to customize chunk outputs
 knitr::opts_chunk$set(
   class.source = "numberLines lineAnchors", # for code line numbers
-  tidy.opts = list(width.cutoff = 65), 
-  tidy = TRUE,
   message = FALSE
  )
 

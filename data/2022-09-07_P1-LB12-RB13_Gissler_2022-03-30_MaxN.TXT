@@ -1,0 +1,19 @@
+MaxN
+
+Generated: Wednesday 07 September 2022 13:05:50
+
+Filename	Frame	Time (mins)	Period	Period time (mins)	OpCode	TapeReader	Depth	Comment	Date	Site	BRUVS.NO	TimeIN	TimeOUT	Bait	Lat	Long	Family	Genus	Species	Code	MaxN	Has fed
+GH050017_LcamB12.MP4	   1225	  70.8778	inicio	  70.0914	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Acanthuridae	Acanthurus	nigricans	Acanigric	2	No
+GH040017_LcamB12.MP4	  15672	  57.2605	inicio	  56.4742	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Acanthuridae	Acanthurus	xanthopterus	Acaxantho	3	No
+GH020017_LcamB12.MP4	  58235	  33.8268	inicio	  33.0405	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Balistidae	Canthidermis	maculata	Canmacula	3	No
+GH020017_LcamB12.MP4	  46945	  30.6876	inicio	  29.9013	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Balistidae	Melichthys	niger	Melniger	32	No
+GH010017_LcamB12.MP4	  55671	  15.4796	inicio	  14.6933	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Balistidae	Sufflamen	verres	Sufverres	1	No
+GH010017_LcamB12.MP4	  38802	  10.7891	inicio	  10.0028	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Carangidae	Caranx	lugubris	Carlugubr	1	No
+GH010017_LcamB12.MP4	   9015	   2.5067	inicio	   1.7203	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Carangidae	Caranx	melampygus	Carmelamp	3	No
+GH010017_LcamB12.MP4	  41740	  11.6060	inicio	  10.8197	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Carangidae	Decapterus	macarellus	Decmacare	1	No
+GH010017_LcamB12.MP4	  25269	   7.0262	inicio	   6.2398	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Carangidae	Elagatis	bipinnulata	Elabipinn	2	No
+GH040017_LcamB12.MP4	  10435	  55.8044	inicio	  55.0180	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Carcharhinidae	Triaenodon	obesus	Triobesus	3	No
+GH010017_LcamB12.MP4	   6298	   1.7512	inicio	   0.9649	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Kyphosidae	Kyphosus	ocyurus	Kypocyuru	1	No
+GH020017_LcamB12.MP4	  49368	  31.3613	inicio	  30.5750	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Lutjanidae	Lutjanus	jordani	Lutjordan	4	No
+GH030017_LcamB12.MP4	  21186	  41.1595	inicio	  40.3731	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Lutjanidae	Lutjanus	novemfasciatus	Lutnovemf	1	No
+GH030017_LcamB12.MP4	  56906	  51.0916	inicio	  50.3053	P1-LB12-RB13_Gissler_2022-03-30	Louanne	6.4 m		30-03-2022	Gissler	P1-LB12-RB13_Gissler_2022-03-30	08:54:00 AM	10:20:00 AM	Si (Caballa)	5.5442	-87.062	Scaridae	Scarus	rubroviolaceus	Scarubrov	1	No

@@ -1,0 +1,13 @@
+MaxN
+
+Generated: Wednesday 14 September 2022 19:13:44
+
+Filename	Frame	Time (mins)	Period	Period time (mins)	OpCode	TapeReader	Depth	Comment	Date	Site	BRUVS.NO	TimeIN	TimeOUT	Bait	Lat	Long	Family	Genus	Species	Code	MaxN	Has fed
+GP020776.MP4	   2754	  36.2012	inicio	  35.2458	R2C4_Catalinas1_21-7-2021	Sofia	9,6		2021-07-21	Catalinas	R2C4_Catalinas1_21-7-2021	09:31	12:05	yes	10,47932	-85,86868	Acanthuridae	Prionurus	laticlavius	Prilaticl	2	No
+GOPR0776.MP4	  30399	   8.4526	inicio	   7.4972	R2C4_Catalinas1_21-7-2021	Sofia	9,6		2021-07-21	Catalinas	R2C4_Catalinas1_21-7-2021	09:31	12:05	yes	10,47932	-85,86868	Balistidae	Balistes	polylepis	Balpolyle	1	No
+GP010776.MP4	  57929	  33.8252	inicio	  32.8698	R2C4_Catalinas1_21-7-2021	Sofia	9,6		2021-07-21	Catalinas	R2C4_Catalinas1_21-7-2021	09:31	12:05	yes	10,47932	-85,86868	Balistidae	Sufflamen	verres	Sufverres	3	No
+GP040776.MP4	  30457	  79.3395	inicio	  78.3841	R2C4_Catalinas1_21-7-2021	Sofia	9,6		2021-07-21	Catalinas	R2C4_Catalinas1_21-7-2021	09:31	12:05	yes	10,47932	-85,86868	Carangidae	Caranx	caballus	Carcaball	2	No
+GP040776.MP4	   2963	  71.6947	inicio	  70.7393	R2C4_Catalinas1_21-7-2021	Sofia	9,6		2021-07-21	Catalinas	R2C4_Catalinas1_21-7-2021	09:31	12:05	yes	10,47932	-85,86868	Carangidae	Oligoplites	refulgens	Olirefulg	3	No
+GP020776.MP4	   8961	  37.9271	inicio	  36.9717	R2C4_Catalinas1_21-7-2021	Sofia	9,6		2021-07-21	Catalinas	R2C4_Catalinas1_21-7-2021	09:31	12:05	yes	10,47932	-85,86868	Carangidae	Seriola	rivoliana	Serrivoli	1	No
+GP010776.MP4	  53526	  32.6009	inicio	  31.6455	R2C4_Catalinas1_21-7-2021	Sofia	9,6		2021-07-21	Catalinas	R2C4_Catalinas1_21-7-2021	09:31	12:05	yes	10,47932	-85,86868	Labridae	Halichoeres	dispilus	Haldispil	4	No
+GP010776.MP4	  26192	  25.0005	inicio	  24.0451	R2C4_Catalinas1_21-7-2021	Sofia	9,6		2021-07-21	Catalinas	R2C4_Catalinas1_21-7-2021	09:31	12:05	yes	10,47932	-85,86868	Muraenidae	Gymnothorax	castaneus	Gymcastan	1	No

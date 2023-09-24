@@ -1,0 +1,31 @@
+MaxN
+
+Generated: Sunday 25 September 2022 19:07:17
+
+Filename	Frame	Time (mins)	Period	Period time (mins)	OpCode	TapeReader	Depth	Comment	Date	Site	BRUVS.NO	TimeIN	TimeOUT	Bait	Lat	Long	Family	Genus	Species	Code	MaxN	Has fed
+GP010089.MP4	  21355	  23.6556	inicio	  22.6059	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Acanthuridae	Acanthurus	xanthopterus	Acaxantho	13	No
+GOPR0089.MP4	  52385	  14.5659	inicio	  13.5163	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Balistidae	Balistes	polylepis	Balpolyle	1	No
+GOPR0089.MP4	  16887	   4.6955	inicio	   3.6459	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Balistidae	Sufflamen	verres	Sufverres	2	No
+GP030089.MP4	  30113	  61.5262	inicio	  60.4765	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Carangidae	Elagatis	bipinnulata	Elabipinn	1	No
+GOPR0089.MP4	   4574	   1.2718	inicio	   0.2222	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Chaetodontidae	Johnrandallia	nigrirostris	Johnigrir	2	No
+GP010089.MP4	   6907	  19.6382	inicio	  18.5886	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Cheloniidae	Chelonia	mydas	Chemydas	1	No
+GP010089.MP4	  48272	  31.1400	inicio	  30.0903	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Diodontidae	Diodon	hystrix	Diohystri	1	No
+GOPR0089.MP4	  54515	  15.1582	inicio	  14.1085	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Fistulariidae	Fistularia	commersonii	Fiscommer	1	No
+GP010089.MP4	  33349	  26.9906	inicio	  25.9409	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Ginglymostomatidae	Ginglymostoma	unami	Ginunami	1	No
+GOPR0089.MP4	  35581	   9.8935	inicio	   8.8438	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Haemulidae	Haemulon	maculicauda	Haemaculi	150	No
+GOPR0089.MP4	  42888	  11.9252	inicio	  10.8756	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Labridae	Bodianus	diplotaenia	Boddiplot	1	No
+GOPR0089.MP4	  31364	   8.7209	inicio	   7.6713	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Labridae	Halichoeres	dispilus	Haldispil	11	No
+GP030089.MP4	   3046	  54.0001	inicio	  52.9504	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Lutjanidae	Hoplopagrus	guentherii	Hopguenth	1	No
+GP020089.MP4	  14491	  39.4647	inicio	  38.4150	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Lutjanidae	Lutjanus	aratus	Lutaratus	1	No
+GP020089.MP4	   9871	  38.1801	inicio	  37.1304	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Lutjanidae	Lutjanus	argentiventris	Lutargent	1	No
+GP030089.MP4	  32428	  62.1699	inicio	  61.1202	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Lutjanidae	Lutjanus	inermis	Lutinermi	2	No
+GOPR0089.MP4	   5680	   1.5794	inicio	   0.5297	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Mullidae	Mulloidichthys	dentatus	Muldentat	1	No
+GOPR0089.MP4	  42398	  11.7890	inicio	  10.7393	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Muraenidae	Gymnothorax	castaneus	Gymcastan	1	No
+GOPR0089.MP4	   3977	   1.1058	inicio	   0.0562	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Pomacanthidae	Holacanthus	passer	Holpasser	1	No
+GP030089.MP4	  59168	  69.6051	inicio	  68.5554	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Pomacentridae	Abudefduf	troschelii	Abutrosch	29	No
+GOPR0089.MP4	  35581	   9.8935	inicio	   8.8438	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Pomacentridae	Chromis	atrilobata	Chratrilo	315	No
+GOPR0089.MP4	   6040	   1.6795	inicio	   0.6298	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Pomacentridae	Stegastes	flavilatus	Steflavil	1	No
+GOPR0089.MP4	   4574	   1.2718	inicio	   0.2222	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Scaridae	Scarus	ghobban	Scaghobba	8	No
+GP030089.MP4	  47622	  66.3947	inicio	  65.3450	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Serranidae	Paranthias	colonus	Parcolonu	4	No
+GOPR0089.MP4	  40118	  11.1550	inicio	  10.1054	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Tetraodontidae	Arothron	meleagris	Aromeleag	1	No
+GOPR0089.MP4	  45111	  12.5434	inicio	  11.4937	T3C2_SJ2_2021-09-25	Sofia	13		2021-09-25	SanJose3	T3C2_SJ2_2021-09-25	07:53	09:37	yes	10,86148	-85,91844	Tetraodontidae	Canthigaster	punctatissima	Canpuncta	2	No

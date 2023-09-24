@@ -1,0 +1,7 @@
+MaxN
+
+Generated: Saturday 03 September 2022 10:34:17
+
+Filename	Frame	Time (mins)	Period	Period time (mins)	OpCode	TapeReader	Depth	Comment	Date	Site	BRUVS.NO	TimeIN	TimeOUT	Bait	Lat	Long	Family	Genus	Species	Code	MaxN	Has fed
+GH030020_LcamB19.MP4	  62913	  52.7619	Inicio	  51.9038	T4-LB19-RB18_PuntaMariaOeste_2022-03-24	Sasha Graziani	10		2022-03-24	Punta Maria Oeste	T4-LB19-RB18_PuntaMariaOeste_2022-03-24	11:10:00 AM	12:30:00 PM	Yes (Caballa)	5.5248	-87.1345	Balistidae	Canthidermis	maculata	Canmacula	1	No
+GH030020_LcamB19.MP4	  31643	  44.0671	Inicio	  43.2090	T4-LB19-RB18_PuntaMariaOeste_2022-03-24	Sasha Graziani	10		2022-03-24	Punta Maria Oeste	T4-LB19-RB18_PuntaMariaOeste_2022-03-24	11:10:00 AM	12:30:00 PM	Yes (Caballa)	5.5248	-87.1345	Istiophoridae	Kajikia	audax	Kajaudax	1	No

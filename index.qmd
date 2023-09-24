@@ -9,21 +9,21 @@ format:
     css: styles.css
 ---
 
-<div class="alert alert-success">
+<!-- <div class="alert alert-success"> -->
 
-<center><font size="5"><b>Nuevo curso: <i>Herramientas prácticas para investigación reproducible</i></b></font></center>
+<!-- <center><font size="5"><b>Nuevo curso: <i>Herramientas prácticas para investigación reproducible</i></b></font></center> -->
 
-Objetivos: 
+<!-- Objetivos:  -->
 
-1. repositorios en linea para compartir datos y productos de la investigación 
-1. herramientas digitales de libre acceso
-1. implementación de buenas pŕacticas de manejo y análisis de datos
+<!-- 1. repositorios en linea para compartir datos y productos de la investigación  -->
+<!-- 1. herramientas digitales de libre acceso -->
+<!-- 1. implementación de buenas pŕacticas de manejo y análisis de datos -->
 
-<center><font size="5"><b><i><a href="https://marce10.github.io/ciencia_reproducible/">Enlace al curso</a></i></b></font></center>
+<!-- <center><font size="5"><b><i><a href="https://marce10.github.io/ciencia_reproducible/">Enlace al curso</a></i></b></font></center> -->
 
-</div>
+<!-- </div> -->
 
-&nbsp;
+<!-- &nbsp; -->
 
 <center>
 <font size="6"><b>Programación y métodos estadísticos <br> avanzados en R</b></font>
@@ -68,7 +68,6 @@ brindadas por medio de prácticas y proyectos de investigación
 ```{r, out.width = "100%", echo = FALSE, fig.align= "center"}
 
 knitr::include_graphics("./images/chunk.png")
-
 ```
 
 - También usaremos el enlace ["Compartir código"](https://codefile.io/f/XOIzH23KfULuZKyZ1TYT) en el menú principal del este sitio (arriba) para pasar códigos que se desarrollen en clase
@@ -100,5 +99,4 @@ knitr::include_graphics("./images/discrim.png")
 
 ```{r, out.width = "90%", echo = FALSE, fig.align= "center"}
 knitr::include_graphics("./images/hostig.png")
-
 ```

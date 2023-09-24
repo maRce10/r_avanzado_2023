@@ -6,31 +6,29 @@ highlight-style: pygments
 format:
   html:
     css: styles.css
-    link-external-icon: true
+    link-external-icon: false
     link-external-newwindow: true  
 ---
 
 ```{r, echo= FALSE}
 
 knitr::opts_chunk$set(eval = FALSE)
-
 ```
 
-1) Instalá R en la computadora que utilizarás durante el curso (https://cran.r-project.org/). Probablemente ya lo tenés instalado, pero intentá actualizarlo si tenés una versión de R < 4.0.0. Podés encontrar qué versión de R tenés ejecutando esto en la consola de R:
+1)  Instalá R en la computadora que utilizarás durante el curso (https://cran.r-project.org/). Probablemente ya lo tenés instalado, pero intentá actualizarlo si tenés una versión de R \< 4.0.0. Podés encontrar qué versión de R tenés ejecutando esto en la consola de R:
 
 ```{r}
 
 version$version.string
-
 ```
 
-2) Instalá la interfaz de RStudio (https://www.rstudio.com/products/rstudio/download/, elejí la versión gratuita).
+2)  Instalá la interfaz de RStudio (https://www.rstudio.com/products/rstudio/download/, elejí la versión gratuita).
 
-3) Abrí RStudio y seleccioná la pestaña "Tools" y luego "Global options" (última opción). Seleccioná la opción "Code", luego seleccioná la casilla de "Soft wrap".
+3)  Abrí RStudio y seleccioná la pestaña "Tools" y luego "Global options" (última opción). Seleccioná la opción "Code", luego seleccioná la casilla de "Soft wrap".
 
-4) También en Rstudio: Seleccioná la opción "Pane Layout" y mové "Source" al panel superior izquierdo y "Console" al panel superior derecho. Esta disposición asigna más espacio en la pantalla a los paneles más útiles. Dalé "Apply" y "Ok". Para aquellos que no estén familiarizados con RStudio, "Source" es un editor de texto donde se escribe el código y donde guardas el código en un archivo físico (normalmente en formato .R) y la consola evalúa el código que se envia desde el "Source" e imprime los resultados (si los hay). Podés escribir código en la consola, pero no se guardará en un archivo físico.
+4)  También en Rstudio: Seleccioná la opción "Pane Layout" y mové "Source" al panel superior izquierdo y "Console" al panel superior derecho. Esta disposición asigna más espacio en la pantalla a los paneles más útiles. Dalé "Apply" y "Ok". Para aquellos que no estén familiarizados con RStudio, "Source" es un editor de texto donde se escribe el código y donde guardas el código en un archivo físico (normalmente en formato .R) y la consola evalúa el código que se envia desde el "Source" e imprime los resultados (si los hay). Podés escribir código en la consola, pero no se guardará en un archivo físico.
 
-5) Ahora en la consola de R en Rstudio ejecutá el siguiente código para instalar los paquetes que estaremos usando durante el curso:
+5)  Ahora en la consola de R en Rstudio ejecutá el siguiente código para instalar los paquetes que estaremos usando durante el curso:
 
 ```{r, eval = FALSE}
 
@@ -64,10 +62,9 @@ load_packages(
     github = "maRce10/sketchy"
   )
 )
-
 ```
 
-6) Creá un proyecto para el curso corriendo este código:
+6)  Creá un proyecto para el curso corriendo este código:
 
 ```{r, eval = FALSE}
 
@@ -77,14 +74,12 @@ sketchy::make_compendium(
   Rproj = TRUE,
   readme = TRUE
 )
-
 ```
 
 *(en realidad este es tambien un [compendio de investigación](https://marce10.github.io/ciencia_reproducible/compendios_de_investigacion.html))*
 
 Abrí el proyecto en Rstudio:
 
-![](./images/abrir_proyecto.png){width=80%}
-
+![](./images/abrir_proyecto.png){width="80%"}
 
 Este proyecto debe usarse cada vez que se trabaja código del curso `r emo::ji("v")`

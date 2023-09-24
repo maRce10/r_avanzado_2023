@@ -27,13 +27,13 @@ website:
         - text: "Funciones"
           href: funciones.qmd
         - text: "Bucles"
-          # href: spectrograms.qmd
+          href: bucles.qmd
         - text: "Modelos de regresión"
           # href: seewave.qmd
         - text: "Modelos de regresión comunes"
           # href: annotations.qmd
         - text: "Gráficos con ggplot2"
-          # href: ohun.qmd
+          href: ggplot2.qmd
       - text: "Preparación para el curso"
         href: preparacion_curso.qmd
       - text: "Compartir código"

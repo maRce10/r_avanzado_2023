@@ -1,0 +1,17 @@
+MaxN
+
+Generated: Thursday 15 September 2022 16:55:58
+
+Filename	Frame	Time (mins)	Period	Period time (mins)	OpCode	TapeReader	Depth	Comment	Date	Site	BRUVS.NO	TimeIN	TimeOUT	Bait	Lat	Long	Family	Genus	Species	Code	MaxN	Has fed
+GH040005_LcamT8.MP4	   2221	  48.7657	inicio	  48.5588	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	Camila R	30		2021-10-17	Barlovento 2	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	10:28	11:54	Si	5.51361	-87.09506	Acanthuridae	Acanthurus	xanthopterus	Acaxantho	1	No
+GH010005_LcamT8.MP4	  17034	   4.7364	inicio	   4.5295	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	Camila R	30		2021-10-17	Barlovento 2	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	10:28	11:54	Si	5.51361	-87.09506	Balistidae	Balistes	polylepis	Balpolyle	2	No
+GH040005_LcamT8.MP4	   2221	  48.7657	inicio	  48.5588	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	Camila R	30		2021-10-17	Barlovento 2	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	10:28	11:54	Si	5.51361	-87.09506	Balistidae	Canthidermis	maculata	Canmacula	33	No
+GH030005_LcamT8.MP4	  45744	  44.8181	inicio	  44.6112	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	Camila R	30		2021-10-17	Barlovento 2	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	10:28	11:54	Si	5.51361	-87.09506	Balistidae	Melichthys	niger	Melniger	4	No
+GH030005_LcamT8.MP4	   8719	  34.5231	inicio	  34.3162	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	Camila R	30		2021-10-17	Barlovento 2	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	10:28	11:54	Si	5.51361	-87.09506	Carangidae	Caranx	melampygus	Carmelamp	2	No
+GH030005_LcamT8.MP4	  29527	  40.3089	inicio	  40.1020	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	Camila R	30		2021-10-17	Barlovento 2	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	10:28	11:54	Si	5.51361	-87.09506	Carangidae	Elagatis	bipinnulata	Elabipinn	1	No
+GH030005_LcamT8.MP4	  18219	  37.1646	inicio	  36.9578	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	Camila R	30		2021-10-17	Barlovento 2	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	10:28	11:54	Si	5.51361	-87.09506	Carcharhinidae	Carcharhinus	albimarginatus	Caralbima	2	No
+GH020005_LcamT8.MP4	  51875	  30.4735	inicio	  30.2666	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	Camila R	30		2021-10-17	Barlovento 2	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	10:28	11:54	Si	5.51361	-87.09506	Carcharhinidae	Carcharhinus	galapagensis	Cargalapa	1	No
+GH040005_LcamT8.MP4	  29616	  56.3830	inicio	  56.1761	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	Camila R	30		2021-10-17	Barlovento 2	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	10:28	11:54	Si	5.51361	-87.09506	Carcharhinidae	Galeocerdo	cuvier	Galcuvier	1	No
+GH050005_LcamT8.MP4	   8338	  66.5159	inicio	  66.3090	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	Camila R	30		2021-10-17	Barlovento 2	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	10:28	11:54	Si	5.51361	-87.09506	Haemulidae	Anisotremus	interruptus	Aniinterr	1	No
+GH030005_LcamT8.MP4	   8719	  34.5231	inicio	  34.3162	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	Camila R	30		2021-10-17	Barlovento 2	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	10:28	11:54	Si	5.51361	-87.09506	Mullidae	Mulloidichthys	dentatus	Muldentat	2	No
+GH030005_LcamT8.MP4	  21224	  38.0002	inicio	  37.7933	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	Camila R	30		2021-10-17	Barlovento 2	T4-LcamT8-RcamOFI-5_Barlovento2_2021-10-17	10:28	11:54	Si	5.51361	-87.09506	Sphyrnidae	Sphyrna	lewini	Sphlewini	1	No

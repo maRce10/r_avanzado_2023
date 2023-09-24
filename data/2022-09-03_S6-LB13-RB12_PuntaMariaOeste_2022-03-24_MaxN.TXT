@@ -1,0 +1,6 @@
+MaxN
+
+Generated: Saturday 03 September 2022 21:41:38
+
+Filename	Frame	Time (mins)	Period	Period time (mins)	OpCode	TapeReader	Depth	Comment	Date	Site	BRUVS.NO	TimeIN	TimeOUT	Bait	Lat	Long	Family	Genus	Species	Code	MaxN	Has fed
+GH020023_LcamB13.MP4	  27533	  25.2900	Inicio	  24.2198	S6-LB13-RB12_PuntaMariaOeste_2022-03-24	Sasha Graziani	10		2022-03-24	Punta Maria Oeste	S6-LB13-RB12_PuntaMariaOeste_2022-03-24	11:19:00 AM	12:40:00 PM	Yes (caballa)	5.5200	-87.1388	Sphyrnidae	Sphyrna	lewini	Sphlewini	1	No

@@ -11,61 +11,56 @@ format:
     code-fold: show
     code-tools: true
     css: styles.css
-    link-external-icon: true
+    link-external-icon: false
     link-external-newwindow: true  
 ---
 
+```{=html}
 <style>
 body
   { counter-reset: source-line 0; }
 pre.numberSource code
   { counter-reset: none; }
 </style>
-
+```
 
 ```{r,echo=FALSE,message=FALSE}
 
-options("digits"=5)
-options("digits.secs"=3)
+options("digits" = 5)
+options("digits.secs" = 3)
 
 # options to customize chunk outputs
 knitr::opts_chunk$set(
   class.source = "numberLines lineAnchors", # for code line numbers
-  tidy.opts = list(width.cutoff = 65), 
-  tidy = TRUE,
   message = FALSE
- )
-
+)
 ```
 
-<div class="alert alert-info">
+::: {.alert .alert-info}
+# Objetivos del manual {.unnumbered .unlisted}
 
-# Objetivos del manual
+-   Identificar los elementos básicos que componen una función
 
-- Identificar los elementos básicos que componen una función
+-   Comprender las características de los principales tipos de argumentos en las funciones
 
-- Comprender las características de los principales tipos de argumentos en las funciones
+-   Ser capaz de construir funciones propias
+:::
 
-- Ser capaz de construir funciones propias
-
-</div>
-
-&nbsp; 
+ 
 
 # Funciones en R
 
-- Todo lo que sucede en `R` es una llamada de una función (i.e. las manipulaciones y cálculos de objetos en `R` se realizan a través de una función)
+-   Todo lo que sucede en `R` es una llamada de una función (i.e. las manipulaciones y cálculos de objetos en `R` se realizan a través de una función)
 
-- Una función es una subrutina que tiene como objetivo realizar una tarea específica
+-   Una función es una subrutina que tiene como objetivo realizar una tarea específica
 
-- Permite a los usuarios juntar bloques de código que se usan con frecuencia y, por lo tanto, resulta conveniente encapsular en un objeto que se puede llamar fácilmente cuando sea necesario
+-   Permite a los usuarios juntar bloques de código que se usan con frecuencia y, por lo tanto, resulta conveniente encapsular en un objeto que se puede llamar fácilmente cuando sea necesario
 
-- Las funciones cargadas desde los paquetes (incluido `R` básico) también se pueden modificar y sobrescribir
+-   Las funciones cargadas desde los paquetes (incluido `R` básico) también se pueden modificar y sobrescribir
 
+ 
 
-&nbsp;  
-
----
+------------------------------------------------------------------------
 
 # Estructura básica
 
@@ -74,29 +69,30 @@ Todas las funciones son creadas iguales ... mediante la función `function()` y 
 ```{r, echo=FALSE,out.width="100%", fig.align='center'}
 
 knitr::include_graphics("./images/funcion.png")
-
 ```
 
-<font size="2">* Modificado de <i>Wickham et al. 2016</i></font>
+<font size="2">\* Modificado de <i>Wickham et al. 2016</i></font>
 
-&nbsp;
+ 
 
 Podemos observar la estructura de funciones ya cargadas en nuestro entorno de `R`. Para ver el código simplemente corra al nombre de la función en `R` (sin el paréntesis). Por ejemplo, el código de la función `sd()` se puede mostrar de la siguiente manera:
+
 ```{r, eval = T}
 
 sd
-
 ```
-&nbsp;  
+
+ 
 
 En `Rstudio`, el código también se puede mostrar usando *F2* cuando el cursor está en el nombre de la función.
 
-&nbsp;  
+ 
 
 Además, podemos diseccionar las funciones en sus elementos básicos:
+
 ```{r}
 
-# cuerpo 
+# cuerpo
 body(sd)
 
 # argumentos
@@ -104,11 +100,12 @@ formals(sd)
 
 # ambiente
 environment(sd)
-
 ```
-&nbsp;  
+
+ 
 
 Algunas funciones `R` utilizan funciones primitivas (principalmente escritas en `C`). En estos casos, el código no se muestra:
+
 ```{r}
 sum
 
@@ -117,56 +114,56 @@ body(sum)
 formals(sum)
 
 environment(sum)
-
 ```
-&nbsp;  
+
+ 
 
 Las funciones son en sí mismas un tipo específico de objeto:
+
 ```{r, eval = T}
 
 class(sd)
-
 ```
-&nbsp;  
+
+ 
 
 Los operadores son funciones:
+
 ```{r}
 
 1 + 1
 
 
-'+'(1, 1)
+"+"(1, 1)
 
 2 * 3
 
 
-'*'(2, 3)
-
-
+"*"(2, 3)
 ```
-&nbsp;
- 
----
+
+ 
+
+------------------------------------------------------------------------
 
 ## Nombre
 
 ```{r, echo=FALSE,out.width="100%", fig.align='center'}
 
 knitr::include_graphics("./images/nombre.png")
-
 ```
 
 Los nombres de las funciones tienen pocas restricciones. Siguen las mismas reglas que otros objetos en `R`. Algunas recomendaciones/reglas:
 
-   - No utilice nombres de objetos comunes `R` (por ejemplo, *iris*, *x*) u objetos que ya están en el entorno
-  
-   - No use nombres de funciones de uso frecuente (por ejemplo, `mean`)
-  
-   - No puede comenzar con un número
-  
-   - Debería sugerir lo que hace
-  
-   - No debe ser muy largo
+-   No utilice nombres de objetos comunes `R` (por ejemplo, *iris*, *x*) u objetos que ya están en el entorno
+
+-   No use nombres de funciones de uso frecuente (por ejemplo, `mean`)
+
+-   No puede comenzar con un número
+
+-   Debería sugerir lo que hace
+
+-   No debe ser muy largo
 
 En caso de que tenga varias funciones con el mismo nombre, puede llamarlas individualmente utilizando el nombre del paquete (o *namespace*) seguido de `::`:
 
@@ -186,87 +183,92 @@ rm(sd)
 # usar de nuevo
 sd(1:5)
 ```
-&nbsp;  
+
+ 
 
 La sintaxis `namespace::function` también se puede usar para llamar a funciones desde paquetes que se han instalado pero que no están cargados en el entorno actual.
 
-&nbsp;  
+ 
 
 Las funciones pueden ser anónimas:
 
 ```{r}
 
 (function(x) x^10)(1:5)
-
 ```
-&nbsp;  
+
+ 
 
 Esto es más útil cuando se usan las funciones `Xapply`:
 
 ```{r}
 l <- list(1:5, 1:4, 1:3)
 
-lapply(l,function(x) x^10)
-
+lapply(l, function(x) x^10)
 ```
 
----
+------------------------------------------------------------------------
 
 ## Argumentos
 
 ```{r, echo=FALSE,out.width="100%", fig.align='center'}
 
 knitr::include_graphics("./images/argumentos.png")
-
 ```
 
-&nbsp;
+ 
 
 Permiten a los usuarios ingresar objetos en la función. Los argumentos pueden o no tener valores predeterminados. Cuando los argumentos tienen valores predeterminados, no es necesario proporcionarlos:
+
 ```{r eval = T}
 
 f1 <- function(x, y = 2) x + y
 
 f1(1)
-
 ```
-&nbsp;  
+
+ 
 
 Por supuesto, se pueden modificar:
+
 ```{r eval = T}
 
 f1(3, 4)
-
 ```
-&nbsp;  
+
+ 
 
 Los argumentos sin valor predeterminado deben ser proporcionados:
+
 ```{r error = T}
 
 f1()
-
 ```
-&nbsp;  
+
+ 
 
 Si todos los argumentos tienen un valor predeterminado, se puede invocar la función sin proporcionar ningún argumento:
+
 ```{r eval = T}
 
 f1 <- function(x = -2, y = 2) x + y
 
 f1()
-
 ```
-&nbsp;  
+
+ 
 
 Ese es el caso de `dev.off()` y `Sys.time()`:
+
 ```{r eval = T}
 
 Sys.time()
-
 ```
-&nbsp;  
+
+ 
 
 Los argumentos pueden especificarse implícitamente por posición o por nombres incompletos:
+
 ```{r}
 
 f2 <- function(a1, b1, b2) {
@@ -280,30 +282,32 @@ str(f2(1, 2, 3))
 str(f2(a = 1, 2, 3))
 
 
-str(f2(1, a= 2, 3))
+str(f2(1, a = 2, 3))
 
 
-str(f2(1,  2, a= 3))
+str(f2(1, 2, a = 3))
 
 # por posicion y nombre parcial
-str(f2(1, a = 2, b1 =3))
-
+str(f2(1, a = 2, b1 = 3))
 ```
-&nbsp;  
+
+ 
 
 Sin embargo, esto no funciona si los nombres son ambiguos:
+
 ```{r, error=T}
 
-f2(b= 1,  2, a = 3)
-
+f2(b = 1, 2, a = 3)
 ```
-&nbsp;  
+
+ 
 
 Es más seguro (y, por lo tanto, una mejor práctica) usar los nombres completos de los argumentos.
 
-&nbsp;  
+ 
 
 Las funciones también pueden tomar argumentos lógicos. Estos son útiles para modificar el comportamiento de la función para que coincida con diferentes escenarios. Por ejemplo, `mean()` permite a los usuarios ignorar los *NA*:
+
 ```{r}
 v1 <- c(1, 2, 3, NA)
 
@@ -312,84 +316,65 @@ mean(v1, na.rm = FALSE)
 
 # ignorando NAs
 mean(v1, na.rm = TRUE)
-
 ```
-&nbsp;
 
-<div class="alert alert-info">
+ 
 
+::: {.alert .alert-info}
 ## Ejercicio 1
-
-</br>
 
 1.1 ¿Qué hace la función `cor.test()`?
 
-</br>
-
 1.2 Úsela con "Sepal.Length" y "Sepal.Width" de los datos de ejemplo *iris* (use `data(iris)`)
-
-</br>
 
 1.3 ¿Qué argumentos deben proporcionarse?
 
-</br>
-
 1.4 ¿Qué hace el argumento *alternative*? Use diferentes valores para este argumento y compare los resultados
-
-</br>
 
 1.5 ¿Cómo se puede calcular la correlación de Spearman?
 
-</br>
-
 1.6 ¿Qué tipo de objeto devuelve esta función?
-
-</br>
 
 1.7 ¿Cómo puede obtener el valor de **p** directamente del resultado de la función (sin guardar el resultado como un objeto)?
 
-</br>
-
 1.8 Escoga una función de R y lea su documentación con el fin de entender su uso, cada uno de sus argumentos (y que tipo de objetos requieren) y el resultado que produce (es probable que se le pida que explique esto al grupo)
 
-</div>
+:::
 
-
----
+------------------------------------------------------------------------
 
 ## Cuerpo
 
 ```{r, echo=FALSE,out.width="100%", fig.align='center'}
 
 knitr::include_graphics("./images/cuerpo.png")
-
 ```
 
-&nbsp;
+ 
 
 El cuerpo de una función puede contener:
 
-  - Comprobación de argumentos
- 
-  - Manipulación de datos
- 
-  - Definición de resultados
+-   Comprobación de argumentos
 
-&nbsp;
+-   Manipulación de datos
+
+-   Definición de resultados
+
+ 
 
 El cuerpo de la función puede tomar el mismo tipo de código utilizado en cualquier rutina de `R`. Sin embargo, los objetos creados no estarán disponibles en el entorno.
 
 Cuando se realizan varios cálculos, debemos incluir una *declaración de retorno* (return statement), que define explícitamente la salida de la función. Esto se hace usando la función `return()`:
+
 ```{r}
 
-# sin "return statement"  
+# sin "return statement"
 f1 <- function(x, y) {
-  
-  z1 <- 2*x + y
-  z2 <- x + 2*y
-  z3 <- 2*x + 2*y
-  z4 <- x/y
-  }
+  z1 <- 2 * x + y
+  z2 <- x + 2 * y
+  z3 <- 2 * x + 2 * y
+  z4 <- x / y
+}
 
 f1(5, 3)
 
@@ -398,16 +383,14 @@ f1_out <- f1(5, 3)
 f1_out
 
 
-# con "return statement"  
+# con "return statement"
 f2 <- function(x, y) {
-  
-  z1 <- 2*x + y
-  z2 <- x + 2*y
-  z3 <- 2*x + 2*y
-  z4 <- x/y
-  
+  z1 <- 2 * x + y
+  z2 <- x + 2 * y
+  z3 <- 2 * x + 2 * y
+  z4 <- x / y
+
   return(c(z1, z2, z3, z4))
-  
 }
 
 f2(5, 3)
@@ -416,20 +399,20 @@ f2_out <- f2(5, 3)
 
 f2_out
 ```
-&nbsp;  
+
+ 
 
 Por lo tanto, cuando no se proporciona una *declaración de retorno*, la función devolverá el último objeto que se creó en el cuerpo de la función:
+
 ```{r}
-# sin "return statement"  
+# sin "return statement"
 f3 <- function(x, y) {
-  
-  z1 <- 2*x + y
-  z2 <- x + 2*y
-  z3 <- 2*x + 2*y
-  z4 <- x/y
-  
+  z1 <- 2 * x + y
+  z2 <- x + 2 * y
+  z3 <- 2 * x + 2 * y
+  z4 <- x / y
+
   c(z1, z2, z3, z4)
-  
 }
 
 f3(5, 3)
@@ -437,40 +420,41 @@ f3(5, 3)
 f3_out <- f3(5, 3)
 
 f3_out
-
 ```
-&nbsp;  
+
+ 
 
 Es más seguro usar `return()`.
 
-&nbsp;  
+ 
 
 Cuando una función realiza varias tareas, podemos usar una lista para juntar los diferentes objetos. Esto es particularmente útil cuando se generan objetos de diferentes clases (por ejemplo, vectores y listas):
+
 ```{r}
 
 f4 <- function(x, y) {
-  
-  # 1 elemento 
+  # 1 elemento
   z1 <- x + y
-  
+
   # 2 elementos
-  z2 <- c(x, y/3)
-  
-  # vector logico 
+  z2 <- c(x, y / 3)
+
+  # vector logico
   z3 <- z2 < 10
-  
-  
+
+
   l <- list(z1, z2, z3)
-  
+
   return(l)
 }
 
 f4(10, 5)
-
 ```
-&nbsp;  
+
+ 
 
 Podemos acceder a elementos específicos de la salida de una función mediante indexación:
+
 ```{r}
 # elemento 1
 f4(10, 5)[[1]]
@@ -480,11 +464,12 @@ f4(10, 5)[[2]]
 
 # elemento 3
 f4(10, 5)[[3]]
-
 ```
-&nbsp;  
+
+ 
 
 Por supuesto, también podemos guardar el resultado como un objeto y acceder a cada elemento mediante la indexación:
+
 ```{r}
 
 # elemento 1
@@ -495,117 +480,101 @@ out[[1]]
 
 # elemento 2
 out[[2]]
-
 ```
-&nbsp;  
 
-<div class="alert alert-info">
+ 
 
+::: {.alert .alert-info}
 ## Ejercicio 2
 
-</br>
-
-2.1 Cree una función llamada `promedio` que calcule el promedio de un vector numérico. Internamente solo puede utilizar los operadores algebraicos `+` y  `/` (suma y división, no puede llamar la función `mean()`)
-
-</br>
+2.1 Cree una función llamada `promedio` que calcule el promedio de un vector numérico. Internamente solo puede utilizar los operadores algebraicos `+` y `/` (suma y división, no puede llamar la función `mean()`)
 
 2.2 Cree una función que tome 2 argumentos numéricos (llámelos 'x' y 'y'), eleve cada uno al cuadrado y luego los sume
 
-</br>
-
 2.3 Agregue valores predeterminados a cada argumento
 
-</br>
-
-2.4 Ejecute la función usando los valores predeterminados 
-
-</br>
+2.4 Ejecute la función usando los valores predeterminados
 
 2.5 Ejecute la función usando un valor predeterminado y uno proporcionado en la llamada
 
-</br>
-
 2.6 Ejecute la función proporcionando ambos valores en la llamada
 
-</div>
+:::
 
-&nbsp;  
+ 
 
----
+------------------------------------------------------------------------
 
 # Argumentos lógicos
 
-Son argumentos que pueden tomar solo dos valores: `TRUE` o `FALSE`. Estos argumentos permiten modificar el comportamiento de la función de forma binaria: si es `TRUE` llevaría a cabo la tarea 1 y si es `FALSE` llevaría a cabo la tarea 2. Internamente (i.e. en el cuerpo de las función) estas funciones implican el uso del operador `if `, algunas veces incluyendo su contra-parte `else`. Estos operadores son parte fundamental de la programación y se usan para definir que acción ejecutar con base en una evaluación lógica:
+Son argumentos que pueden tomar solo dos valores: `TRUE` o `FALSE`. Estos argumentos permiten modificar el comportamiento de la función de forma binaria: si es `TRUE` llevaría a cabo la tarea 1 y si es `FALSE` llevaría a cabo la tarea 2. Internamente (i.e. en el cuerpo de las función) estas funciones implican el uso del operador `if`, algunas veces incluyendo su contra-parte `else`. Estos operadores son parte fundamental de la programación y se usan para definir que acción ejecutar con base en una evaluación lógica:
+
 ```{r}
 
 # creemos el objeto a con valor 2
 a <- 2
 
 # elevemos a la 2 si a es mayor q 0
-if (a > 0) 
-    a ^ 2
+if (a > 0) {
+  a^2
+}
 
 # elevemos a la 2 si a es mayor q 0 de lo contrario elevemoslo a la 100
-if (a > 0) 
-  a ^ 2 else
-    a ^ 100 
+if (a > 0) {
+  a^2
+} else {
+  a^100
+}
 
 # con a negativo
 a <- -3
-if (a > 0) 
-  a ^ 2 else
-    a ^ 3 
-
+if (a > 0) {
+  a^2
+} else {
+  a^3
+}
 ```
-&nbsp;  
+
+ 
 
 La parte dentro de los paréntesis justo después de `if` es la evaluación lógica.
 
 Estos operadores son utilizados en el cuerpo de la función cuando esta lleva un argumento lógico. Por ejemplo, la siguiente función utiliza un argumento lógico para decidir si la operación algebraica a realizar es una suma o un promedio:
 
 ```{r}
-mean_sum <- function(x, y, prom = FALSE){
-  
-  if (prom) 
-    b <- mean(c(x, y)) else
-      b <- sum(c(x, y))
-  
-    return(b)
-}
+mean_sum <- function(x, y, prom = FALSE) {
+  if (prom) {
+    b <- mean(c(x, y))
+  } else {
+    b <- sum(c(x, y))
+  }
 
+  return(b)
+}
 ```
-&nbsp;  
+
+ 
 
 Note que este tipo de argumentos deben tener un valor predeterminado. Podemos probar la función de la siguiente forma:
 
 ```{r}
 
 mean_sum(x = 2, y = 3)
-
 ```
 
+ 
 
-&nbsp;  
-
-<div class="alert alert-info">
-
+::: {.alert .alert-info}
 ## Ejercicio 3
-
-</br>
 
 3.1 Cree una función que tome 3 argumentos numéricos, multiplíquelos y luego calcule el logaritmo natural del resultado (función `log()`)
 
-</br>
-
 3.2 Agregue valores predeterminados a cada argumento
-
-</br>
 
 3.3 Ejecute la función con uno de los argumentos con un número negativo. ¿Qué pasa? ¿Por qué?
 
-</br>
-
 3.4 Agregue un argumento lógico que permita a los usuarios (si lo desean) convertir los argumentos de entrada a su valor absoluto (usando la función `abs()`). Agregue las modificaciones necesarias para que la función haga los cálculos con y sin valores absolutos.
+
 ```{r, eval = F, echo = F}
 # a)
 fcn_1 <- function(a, b, c) log(a * b * c)
@@ -616,75 +585,74 @@ fcn_1(1, 4, 12)
 fcn_1 <- function(a = 1, b = 2, c = 3) log(a * b * c)
 
 # c)
-
 fcn_1(1, 2, -1)
-
 ```
-</div>
+:::
 
----
+------------------------------------------------------------------------
 
 # Ventajas de usar funciones
 
-&nbsp; 
+ 
 
 ## Código mas limpio
 
 Los objetos creados dentro del cuerpo no están disponibles en el entorno actual:
+
 ```{r}
 # primero remover todo los objetos
 rm(list = ls())
 
 f5 <- function(x) {
-    sqr <- x * x
-    lg_sqr <- log(x)
-        return(lg_sqr)
+  sqr <- x * x
+  lg_sqr <- log(x)
+  return(lg_sqr)
 }
 
 f5(7)
 
 exists("sqr")
 exists("lg_sqr")
-
 ```
-&nbsp;  
+
+ 
 
 ```{r}
 
 x <- 7
 sqr <- x * x
 lg_sqr <- log(x)
-      
+
 
 exists("sqr")
 exists("lg_sqr")
-
 ```
-&nbsp;  
+
+ 
 
 ## Facil de correr y compartir
 
 Se pueden invocar funciones desde archivos de `R` externos sin estar definidas en el código actual con la función `source()`. En este ejemplo creamos la función `fnctn_X`:
+
 ```{r}
 
 fnctn_X <- function(sq_mt, vctr) {
+  # trasponer matriz y calcular est dev
+  stp1 <- t(sq_mt)
+  stp2 <- vctr * vctr
 
-    # trasponer matriz y calcular est dev
-    stp1 <- t(sq_mt)
-    stp2 <- vctr * vctr
-
-    # guardar en lista
-    rslt <- list(stp1, stp2)
-    return(rslt)
+  # guardar en lista
+  rslt <- list(stp1, stp2)
+  return(rslt)
 }
 
 fnctn_X(sq_mt = cbind(c(1, 2), c(3, 4)), vctr = c(2, 3))
-
-
 ```
-&nbsp;  
+
+ 
 
 Guarde el código anterior en un archivo `R` llamado 'function_X.R'. Ahora la función se puede cargar usando `source()`:
+
 ```{r, eval = F}
 
 # removamosla del ambiente
@@ -695,17 +663,17 @@ source("function_X.R")
 
 # run it
 fnctn_X(sq_mt = cbind(c(1, 2), c(3, 4)), vctr = c(2, 3))
-
 ```
 
 ```{r, eval=T, echo=F}
 
 fnctn_X(sq_mt = cbind(c(1, 2), c(3, 4)), vctr = c(2, 3))
-
 ```
-&nbsp; 
+
+ 
 
 Además, este código se puede compartir fácilmente. Se puede enviar por correo electrónico o publicar en línea. Incluso se puede cargar desde repositorios en línea:
+
 ```{r, error=T}
 
 # remover objetos
@@ -719,102 +687,77 @@ source("https://raw.githubusercontent.com/maRce10/ucr_r_avanzado/master/images/f
 
 # revisar si existe en ambiente actual
 exists("fnctn_X")
-
 ```
-&nbsp; 
+
+ 
 
 ## Se aplica fácilmente a nuevos objetos
 
 Esto ya debería ser obvio a este punto.
 
-
 ## Otros consejos
 
-* Construir funciones cortas:
-     + Fácil de leer
-     + Fácil de arreglar y actualizar
-     + Si es demasiado largo, probablemente debería dividirse en varias funciones
-     + Genera modularidad
+-   Construir funciones cortas:
+    -   Fácil de leer
+    -   Fácil de arreglar y actualizar
+    -   Si es demasiado largo, probablemente debería dividirse en varias funciones
+    -   Genera modularidad
+-   Añadir comentarios a todo el código  
+-   Agregar descripciones a cada uno de los argumentos que toma  
+-   Función de prueba con diferentes valores/escenarios
 
-* Añadir comentarios a todo el código
-&nbsp;
-* Agregar descripciones a cada uno de los argumentos que toma
-&nbsp;
-* Función de prueba con diferentes valores/escenarios
+------------------------------------------------------------------------
 
----
+ 
 
-
-&nbsp;
-
-<div class="alert alert-info">
-
+::: {.alert .alert-info}
 ## Ejercicio 4
-
-</br>
 
 4.1 Cree una funcion que calcule el promedio, la desviación estándar y el error estándar de un vector numérico. Estos valores deben ser devueltos como una lista con nombres.
 
-</br>
-
 4.2 Permita a los usuarios ignorar los `NAs` (similar al argumento `na.rm` en `mean()`, pista: añada un argumento lógico)
-
-</br>
 
 4.3 Haga que la función además produzca un histograma del vector numérico proporcionado por el usuario
 
-</br>
-
 4.4 Haga que la función escoja un color al azar para las barras del histograma cada vez que se corre (pista: `sample(vector.de.colores, 1)`)
-
-</br>
 
 4.5 Añada un argumento a la función que permita el usuario, si lo desea, calcular la sumatoria (`sum()`) junto con el resto de los descriptores estadísticos
 
-</br>
-
 4.6 Agregue el promedio y la desviación estándar al título del histograma (pista: use `paste()`)
-
-</br>
 
 4.7 Modifique la función para que también cree una linea vertical indicando el promedio del vector numérico proporcionado por el usuario
 
-</br>
-
 4.8 Modifique la función para que añada un polígono transparente sobre el área que cubre el promedio +/- la desviación estándar
-
-</br>
 
 4.9 Modifique la función con un argumento lógico que permita al usuario controlar si se crea un gráfico o no
 
-</div>
+:::
 
-&nbsp;  
+ 
 
----
+------------------------------------------------------------------------
 
 ## Lecturas adicionales
 
-  * <a href="http://nicercode.github.io/intro/writing-functions.html"> Introduction to R guide to writing functions with information for a total beginner</a>
-  
-  * <a href="https://twitter.com/hadleywickham">Information on functions for intermediate and advanced users (Hadley Wickham)</a>.
+-   <a href="http://nicercode.github.io/intro/writing-functions.html"> Introduction to R guide to writing functions with information for a total beginner</a>
 
-* <a href="http://cran.r-project.org/doc/manuals/R-intro.html#Writing-your-own-R-intro.html#Writing-your-own-functions">The official R intro material on writing your own functions</a> (ir a "Writing your own function")
+-   <a href="https://twitter.com/hadleywickham">Information on functions for intermediate and advanced users (Hadley Wickham)</a>.
 
-&nbsp;  
+-   <a href="http://cran.r-project.org/doc/manuals/R-intro.html#Writing-your-own-R-intro.html#Writing-your-own-functions">The official R intro material on writing your own functions</a> (ir a "Writing your own function")
 
-----
+ 
+
+------------------------------------------------------------------------
 
 ## Referencias
 
-  - Wickham, Hadley, and Garrett Grolemund. 2016. *R for data science: import, tidy, transform, visualize, and model data*.  [website](http://r4ds.had.co.nz)
-  
----
+-   Wickham, Hadley, and Garrett Grolemund. 2016. *R for data science: import, tidy, transform, visualize, and model data*. [website](http://r4ds.had.co.nz)
+
+------------------------------------------------------------------------
 
 <font size="4">Información de la sesión</font>
 
 ```{r session info, echo=F}
 
 sessionInfo()
-
 ```
