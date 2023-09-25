@@ -1,5 +1,21 @@
 ---
 title: <font size="7"><b>Funciones</b></font>
+toc: true
+toc-depth: 2
+toc-location: left
+toc-title: Contenidos
+number-sections: true
+highlight-style: pygments
+format:
+  html:
+    theme: simplex
+    css: styles.css
+    toc: true
+    df-print: kable
+    code-fold: show
+    code-tools: true
+    link-external-icon: false
+    link-external-newwindow: true  
 ---
 
 ```{=html}
