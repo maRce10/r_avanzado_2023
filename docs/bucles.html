@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,10 +17,9 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -47,13 +46,43 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -81,15 +110,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "type": "overlay",
   "limit": 20,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar"
   }
 }</script>
 
@@ -108,73 +137,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">R avanzado 2023</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="./index.html">
  <span class="menu-text"> </span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-manuales" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-manuales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Manuales</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-manuales">    
         <li>
-    <a class="dropdown-item" href="./fundamentos_de_r.html" rel="" target="">
+    <a class="dropdown-item" href="./fundamentos_de_r.html">
  <span class="dropdown-text">Fundamentos de R</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./reportes_dinamicos.html" rel="" target="">
+    <a class="dropdown-item" href="./reportes_dinamicos.html">
  <span class="dropdown-text">Reportes dinámicos</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./funciones.html" rel="" target="">
+    <a class="dropdown-item" href="./funciones.html">
  <span class="dropdown-text">Funciones</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./bucles.html" rel="" target="">
+    <a class="dropdown-item" href="./bucles.html">
  <span class="dropdown-text">Bucles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./modelos_de_regresion.html" rel="" target="">
+    <a class="dropdown-item" href="./modelos_de_regresion.html">
  <span class="dropdown-text">Modelos de regresión</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./estadistica_tradicional_regresion.html" rel="" target="">
+    <a class="dropdown-item" href="./estadistica_tradicional_regresion.html">
  <span class="dropdown-text">Estadística tradicional como regresión</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ggplot2.html" rel="" target="">
+    <a class="dropdown-item" href="./ggplot2.html">
  <span class="dropdown-text">Gráficos con ggplot2</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./preparacion_curso.html" rel="" target="">
+    <a class="nav-link" href="./preparacion_curso.html">
  <span class="menu-text">Preparación para el curso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN" rel="" target="">
+    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN">
  <span class="menu-text">Compartir código</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructor.html" rel="" target="">
+    <a class="nav-link" href="./instructor.html">
  <span class="menu-text">Instructor</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/maRce10/R_avanzado_2023/" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/maRce10/R_avanzado_2023/"><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -182,29 +209,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Contenidos</h2>
    
   <ul class="collapse">
-  <li><a href="#bucles-loops" id="toc-bucles-loops" class="nav-link active" data-scroll-target="#bucles-loops"><span class="header-section-number">1</span> Bucles (loops)</a></li>
-  <li><a href="#bucles-for" id="toc-bucles-for" class="nav-link" data-scroll-target="#bucles-for"><span class="header-section-number">2</span> Bucles ‘for’</a>
+  <li><a href="#bucles-loops" id="toc-bucles-loops" class="nav-link active" data-scroll-target="#bucles-loops"><span class="toc-section-number">1</span>  Bucles (loops)</a></li>
+  <li><a href="#bucles-for" id="toc-bucles-for" class="nav-link" data-scroll-target="#bucles-for"><span class="toc-section-number">2</span>  Bucles ‘for’</a>
   <ul class="collapse">
-  <li><a href="#aplicación-al-manejo-de-datos" id="toc-aplicación-al-manejo-de-datos" class="nav-link" data-scroll-target="#aplicación-al-manejo-de-datos"><span class="header-section-number">2.1</span> Aplicación al manejo de datos</a></li>
+  <li><a href="#aplicación-al-manejo-de-datos" id="toc-aplicación-al-manejo-de-datos" class="nav-link" data-scroll-target="#aplicación-al-manejo-de-datos"><span class="toc-section-number">2.1</span>  Aplicación al manejo de datos</a></li>
   </ul></li>
-  <li><a href="#bucles-xapply" id="toc-bucles-xapply" class="nav-link" data-scroll-target="#bucles-xapply"><span class="header-section-number">3</span> Bucles ‘(X)apply’</a>
+  <li><a href="#bucles-xapply" id="toc-bucles-xapply" class="nav-link" data-scroll-target="#bucles-xapply"><span class="toc-section-number">3</span>  Bucles ‘(X)apply’</a>
   <ul class="collapse">
-  <li><a href="#bucles-replicate" id="toc-bucles-replicate" class="nav-link" data-scroll-target="#bucles-replicate"><span class="header-section-number">3.1</span> bucles <code>replicate</code></a></li>
+  <li><a href="#bucles-replicate" id="toc-bucles-replicate" class="nav-link" data-scroll-target="#bucles-replicate"><span class="toc-section-number">3.1</span>  bucles <code>replicate</code></a></li>
   </ul></li>
-  <li><a href="#bucles-repeat" id="toc-bucles-repeat" class="nav-link" data-scroll-target="#bucles-repeat"><span class="header-section-number">4</span> Bucles ‘repeat’</a></li>
-  <li><a href="#bucles-while" id="toc-bucles-while" class="nav-link" data-scroll-target="#bucles-while"><span class="header-section-number">5</span> Bucles ‘While’</a>
+  <li><a href="#bucles-repeat" id="toc-bucles-repeat" class="nav-link" data-scroll-target="#bucles-repeat"><span class="toc-section-number">4</span>  Bucles ‘repeat’</a></li>
+  <li><a href="#bucles-while" id="toc-bucles-while" class="nav-link" data-scroll-target="#bucles-while"><span class="toc-section-number">5</span>  Bucles ‘While’</a>
   <ul class="collapse">
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">5.1</span> Referencias</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="toc-section-number">5.1</span>  Referencias</a></li>
   </ul></li>
   </ul>
 </nav>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -213,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><font size="7"><b>Bucles</b></font></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><font size="7"><b>Bucles</b></font></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">Ver el código fuente</a></li></ul></div></div>
 </div>
 
 
@@ -221,6 +247,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">25 de septiembre de 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -234,6 +266,9 @@ body
 pre.numberSource code
   { counter-reset: none; }
 </style>
+<div class="cell">
+
+</div>
 <section id="objetivos-del-manual" class="level1 unnumbered unlisted alert alert-info">
 <h1 class="unnumbered unlisted">Objetivos del manual</h1>
 <ul>
@@ -246,7 +281,7 @@ pre.numberSource code
 <p>Primero debemos preparar los archivos de ejemplo:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># definir directorio a donde guardar los archivos</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>directorio <span class="ot">&lt;-</span> <span class="st">"DIRECCION_DONDE_GUARDAR_LOS ARCHIVOS_DE_EJEMPLO"</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
@@ -271,16 +306,19 @@ pre.numberSource code
 <span id="cb1-22"><a href="#cb1-22"></a>    <span class="at">path =</span> directorio,</span>
 <span id="cb1-23"><a href="#cb1-23"></a>    <span class="at">full.names =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb1-24"><a href="#cb1-24"></a>    <span class="at">pattern =</span> <span class="st">"TXT$"</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-25"><a href="#cb1-25"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</div>
+<div class="cell">
+
 </div>
 <p>&nbsp;</p>
 <p>También pueden bajar el archivo directamente de <a href="https://github.com/maRce10/ucr_r_avanzado/raw/master/additional_files/datos_camara_submarina.zip">este enlance</a>. Recuerde extraer los archivos y hacer el vector con los nombres de los archivos (correr lineas de la 9 a la 13).</p>
 <p>Si todo salió bien el vector “archivos_txt” deberia tener 19 elementos:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">length</span>(archivos_txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">length</span>(archivos_txt)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 19</code></pre>
@@ -346,12 +384,12 @@ pre.numberSource code
 <p>El bucle <code>for</code> se inicia con el operador <code>for</code>. A este se le da un vector (<em>sensu lato</em>: lista o vector atómico) sobre el cual repetir una tarea. La tarea se encuentra en el cuerpo del bucle:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>vctr <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span> <span class="co"># vector sobre el cual iterar el bucle</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="cf">for</span> (i <span class="cf">in</span> vctr) { <span class="co"># inicio del bucle</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">print</span>(i<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb4-5"><a href="#cb4-5"></a>} <span class="co"># cuerpo del bucle</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5"></a>} <span class="co"># cuerpo del bucle</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
@@ -364,14 +402,14 @@ pre.numberSource code
 <p>Una forma mas clara de demostrar como el bucle repite la acción de forma serial sobre cada elemento del vector es añadiendo pausas entre iteraciones. La función <code>Sys.sleep()</code> pausa el código de R por el número de segundos que se le defina:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>vctr <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span> <span class="co"># vector sobre el cual iterar el bucle</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="cf">for</span> (i <span class="cf">in</span> vctr) { <span class="co"># inicio del bucle</span></span>
 <span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"# corriendo iteración"</span>, i))</span>
 <span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">Sys.sleep</span>(<span class="dv">2</span>) <span class="co"># pausar 2 segundos</span></span>
 <span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">print</span>(i<span class="sc">^</span><span class="dv">2</span>) <span class="co"># cuerpo del bucle</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-7"><a href="#cb6-7"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "# corriendo iteración 1"
@@ -392,7 +430,7 @@ pre.numberSource code
 <p>El siguiente código guarda los resultados usando <code>append()</code>:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># vector sobre el cual iterar el bucle</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>vctr <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a></span>
@@ -409,7 +447,7 @@ pre.numberSource code
 <span id="cb8-14"><a href="#cb8-14"></a>}</span>
 <span id="cb8-15"><a href="#cb8-15"></a></span>
 <span id="cb8-16"><a href="#cb8-16"></a><span class="co"># ver resultados</span></span>
-<span id="cb8-17"><a href="#cb8-17"></a>resultados</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-17"><a href="#cb8-17"></a>resultados</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 4 9</code></pre>
@@ -419,7 +457,7 @@ pre.numberSource code
 <p>Así podemos guardar los resultados usando indexación:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># vector sobre el cual iterar el bucle</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>vctr <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
 <span id="cb10-3"><a href="#cb10-3"></a></span>
@@ -435,7 +473,7 @@ pre.numberSource code
 <span id="cb10-13"><a href="#cb10-13"></a>  resultados[<span class="fu">length</span>(resultados) <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> i2</span>
 <span id="cb10-14"><a href="#cb10-14"></a>}</span>
 <span id="cb10-15"><a href="#cb10-15"></a></span>
-<span id="cb10-16"><a href="#cb10-16"></a>resultados</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-16"><a href="#cb10-16"></a>resultados</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 4 9</code></pre>
@@ -444,7 +482,7 @@ pre.numberSource code
 <p>Estos bucles se pueden correr sobre cualquier vector. Por ejemplo podemos evaluar para el juego de datos <code>iris</code> el promedio del largo del sépalo para cada especie de esta forma:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># vector sobre el cual iterar el bucle</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>vctr <span class="ot">&lt;-</span> <span class="fu">unique</span>(iris<span class="sc">$</span>Species)</span>
 <span id="cb12-3"><a href="#cb12-3"></a></span>
@@ -463,7 +501,7 @@ pre.numberSource code
 <span id="cb12-16"><a href="#cb12-16"></a><span class="co"># añadir nombre de especies</span></span>
 <span id="cb12-17"><a href="#cb12-17"></a><span class="fu">names</span>(resultados) <span class="ot">&lt;-</span> vctr</span>
 <span id="cb12-18"><a href="#cb12-18"></a></span>
-<span id="cb12-19"><a href="#cb12-19"></a>resultados</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-19"><a href="#cb12-19"></a>resultados</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    setosa versicolor  virginica 
@@ -487,15 +525,15 @@ pre.numberSource code
 <p>Recordemos que los nombres de los archivos .TXT están guardados en un vector llamado <code>archivos_txt</code>. Podemos leer el primer archivo (i.e.&nbsp;el primer elemento en <code>archivos_txt</code>) de la siguiente forma:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>archivo1 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(archivos_txt[<span class="dv">1</span>], <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">skip =</span> <span class="dv">4</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
 <span id="cb14-2"><a href="#cb14-2"></a></span>
 <span id="cb14-3"><a href="#cb14-3"></a><span class="co"># ver pirmeras 4 filas y 8 columnas</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a><span class="fu">head</span>(archivo1[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="fu">head</span>(archivo1[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <colgroup>
 <col style="width: 17%">
 <col style="width: 5%">
@@ -568,8 +606,8 @@ pre.numberSource code
 <p>Podemos saber cuantas especies se observaron en ese muestreo simplemente calculado el número de filas en <code>archivo</code>:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">nrow</span>(archivo1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">nrow</span>(archivo1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 39</code></pre>
@@ -579,7 +617,7 @@ pre.numberSource code
 <p>Ahora, para hacer esto con todos los archivos <strong>no es eficiente leer cada uno en su propia linea de código</strong> y luego calcular el número de filas. Al fin de cuentas, todos los códigos serian muy parecidos, solo cambiaría el nombre del archivo. Es en estos casos que los bucles son de gran utilidad. En este ejemplo solo debemos incorporar el código de lectura del archivo y del cálculo del número de filas en el cuerpo del bucle, usando el nombre de los archivos (<code>archivos_txt</code>) como el vector sobre el cual iterar el bucle:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># vector vacio</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>resultados <span class="ot">&lt;-</span> <span class="fu">vector</span>()</span>
 <span id="cb17-3"><a href="#cb17-3"></a></span>
@@ -594,7 +632,7 @@ pre.numberSource code
 <span id="cb17-12"><a href="#cb17-12"></a>  resultados <span class="ot">&lt;-</span> <span class="fu">append</span>(resultados, nrw)</span>
 <span id="cb17-13"><a href="#cb17-13"></a>}</span>
 <span id="cb17-14"><a href="#cb17-14"></a></span>
-<span id="cb17-15"><a href="#cb17-15"></a>resultados</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-15"><a href="#cb17-15"></a>resultados</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 39  1  2 12 14  9 12  8 32 36 21 12 22 27 29 19  8 12 26</code></pre>
@@ -604,16 +642,16 @@ pre.numberSource code
 <p>Podemos ordenar estos resultados fácilmente haciendo un cuadro de datos (data.frame). Para esto creamos una columna con el nombre del archivo y otra con el resultado del número de filas:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># organizar en data frame</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>n_filas_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">archivo =</span> <span class="fu">basename</span>(archivos_txt), <span class="at">filas =</span> resultados)</span>
 <span id="cb19-3"><a href="#cb19-3"></a></span>
 <span id="cb19-4"><a href="#cb19-4"></a><span class="co"># ver primeras 6 filas</span></span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="fu">head</span>(n_filas_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="fu">head</span>(n_filas_df)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">archivo</th>
@@ -656,26 +694,35 @@ pre.numberSource code
 <p>Podemos calcular el número de familias observadas para el primer archivo que leímos (<code>archivo1</code>) de esta forma:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(archivo1<span class="sc">$</span>Family))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(archivo1<span class="sc">$</span>Family))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 19</code></pre>
 </div>
 </div>
 <p>1.1 Haga un bucle <code>for</code> que devuelva el número de familias para cada archivo</p>
+<div class="cell">
+
+</div>
 <p>&nbsp;</p>
 <p>1.2 Cree un cuadro de datos (data frame) que contenga dos columnas, una para el nombre del archivo y otra para el número de familias</p>
 <p>&nbsp;</p>
 <p>1.3 Añada una columna al cuadro de datos creado en el ejercicio anterior indicando la fecha de creación del video (esta información se encuentra en la columna ‘Date’ de cada archivo de texto). Note que cada archivo contiene solamente una fecha. Debe usar un bucle <code>for</code> para extraer esta información de los archivos.</p>
+<div class="cell">
+
+</div>
 <p>&nbsp;</p>
 <p>1.4 Añada una columna al cuadro de datos creado en el ejercicio 1.2 (y modificado en 1.3) indicando la profundidad a la que se grabó el video. Debe usar un bucle <code>for</code> para extraer esta información de los archivos.</p>
+<div class="cell">
+
+</div>
 <p>&nbsp;</p>
 <p>Puede usar el siguiente código para convertir profundidad a un vector numérico:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>n_filas_df<span class="sc">$</span>profundidad <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">" m"</span>, <span class="st">""</span>, <span class="fu">gsub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">,"</span>, <span class="st">"."</span>, n_filas_df<span class="sc">$</span>profundidad))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>n_filas_df<span class="sc">$</span>profundidad <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">" m"</span>, <span class="st">""</span>, <span class="fu">gsub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">,"</span>, <span class="st">"."</span>, n_filas_df<span class="sc">$</span>profundidad))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>1.5 ¿Cuál es la correlación entre el número de especies observadas (que es igual al número de filas) y la profundidad? (pista: <code>cor.test()</code>)</p>
@@ -686,7 +733,7 @@ pre.numberSource code
 <p>El bucle <code>for</code> también puede ser usado para juntar todas los datos de los archivos de texto en un solo cuadro de datos. Esto lo podemos hacer “rellenando” un cuadro de datos vacío, de forma análoga a como rellenamos un vector vació anteriormente:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># vector vacio</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a>df_resultados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
 <span id="cb23-3"><a href="#cb23-3"></a></span>
@@ -699,7 +746,7 @@ pre.numberSource code
 <span id="cb23-10"><a href="#cb23-10"></a>  df_resultados <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df_resultados, txt)</span>
 <span id="cb23-11"><a href="#cb23-11"></a>}</span>
 <span id="cb23-12"><a href="#cb23-12"></a></span>
-<span id="cb23-13"><a href="#cb23-13"></a><span class="fu">nrow</span>(df_resultados) <span class="sc">==</span> <span class="fu">sum</span>(n_filas_df<span class="sc">$</span>filas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-13"><a href="#cb23-13"></a><span class="fu">nrow</span>(df_resultados) <span class="sc">==</span> <span class="fu">sum</span>(n_filas_df<span class="sc">$</span>filas)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
@@ -713,8 +760,8 @@ pre.numberSource code
 <p><code>(X)apply</code> se refiere en realidad a una familia de funciones que toman una función como entrada y la aplican a una secuencia de objetos (vectores <em>sensu lato</em>). Por lo tanto hay varias funciones <code>(X)apply</code> en R:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">apropos</span>(<span class="st">"apply$"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">apropos</span>(<span class="st">"apply$"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "apply"      "dendrapply" "eapply"     "kernapply"  "lapply"    
@@ -735,8 +782,8 @@ pre.numberSource code
 <p><code>lapply</code> toma un vector (atómico o de lista), aplica una función a cada elemento y devuelve una lista:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">lapply</span>(<span class="at">X =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>), <span class="at">FUN =</span> sqrt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">lapply</span>(<span class="at">X =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>), <span class="at">FUN =</span> sqrt)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
@@ -753,8 +800,8 @@ pre.numberSource code
 <p><code>sapply</code> también toma un vector (atómico o de lista) y aplica la función a cada elemento, sin embargo, el resultado es un vector atómico (si es que se puede empaquetar como un vector):</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">lapply</span>(<span class="at">X =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>), <span class="at">FUN =</span> sqrt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">lapply</span>(<span class="at">X =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>), <span class="at">FUN =</span> sqrt)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
@@ -771,9 +818,9 @@ pre.numberSource code
 <p><code>apply</code> aplica una función a cada una de las filas o columnas de un objeto bidimensional. Por ejemplo, el siguiente código calcula el promedio para largo y ancho de sépalo en el juego de datos <code>iris</code>:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># promedio de largo y ancho de setalo</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">apply</span>(<span class="at">X =</span> iris[, <span class="fu">c</span>(<span class="st">"Sepal.Length"</span>, <span class="st">"Sepal.Width"</span>)], <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN =</span> mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">apply</span>(<span class="at">X =</span> iris[, <span class="fu">c</span>(<span class="st">"Sepal.Length"</span>, <span class="st">"Sepal.Width"</span>)], <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN =</span> mean)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Sepal.Length  Sepal.Width 
@@ -785,8 +832,8 @@ pre.numberSource code
 <p><code>tapply</code> es más específico ya que aplica una función a un subconjunto de datos definido por un vector categórico adicional. Por ejemplo, podemos calcular la longitud promedio de pétalo para cada especie en el juego de datos ‘iris’ de la siguiente manera:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">tapply</span>(<span class="at">X =</span> iris<span class="sc">$</span>Petal.Length, <span class="at">INDEX =</span> iris<span class="sc">$</span>Species, <span class="at">FUN =</span> mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">tapply</span>(<span class="at">X =</span> iris<span class="sc">$</span>Petal.Length, <span class="at">INDEX =</span> iris<span class="sc">$</span>Species, <span class="at">FUN =</span> mean)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    setosa versicolor  virginica 
@@ -797,7 +844,7 @@ pre.numberSource code
 <p>Los bucles <code>(X)apply</code> pueden modificarse para realizar acciones personalizadas creando nuevas funciones (ya sea dentro o fuera del bucle):</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># funcion desde fuera del bucle</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a>n_filas <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb35-3"><a href="#cb35-3"></a>  <span class="co"># leer archivo</span></span>
@@ -812,7 +859,7 @@ pre.numberSource code
 <span id="cb35-12"><a href="#cb35-12"></a>filas <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="at">X =</span> archivos_txt, <span class="at">FUN =</span> n_filas)</span>
 <span id="cb35-13"><a href="#cb35-13"></a></span>
 <span id="cb35-14"><a href="#cb35-14"></a><span class="co"># ver resultados</span></span>
-<span id="cb35-15"><a href="#cb35-15"></a><span class="fu">head</span>(filas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-15"><a href="#cb35-15"></a><span class="fu">head</span>(filas)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
@@ -838,12 +885,12 @@ pre.numberSource code
 <p>Note que el resultado es una lista. Si deseamos generar un vector podemos usar el bucle <code>sapply</code>:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># correr bucle</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a>filas <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="at">X =</span> archivos_txt, <span class="at">FUN =</span> n_filas)</span>
 <span id="cb37-3"><a href="#cb37-3"></a></span>
 <span id="cb37-4"><a href="#cb37-4"></a><span class="co"># ver resultados</span></span>
-<span id="cb37-5"><a href="#cb37-5"></a><span class="fu">head</span>(filas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-5"><a href="#cb37-5"></a><span class="fu">head</span>(filas)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>       ./data//2022-09-02_R3-LcamT3-RcamN4_Pel1_2021-09-24_MaxN.TXT 
@@ -864,14 +911,14 @@ pre.numberSource code
 <p>Podemos usar funciones anónimas (i.e.&nbsp;funciones que se crean dentro del llamado del bucle) así:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># correr bucle</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a>filas <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="at">X =</span> archivos_txt, <span class="at">FUN =</span> <span class="cf">function</span>(x) {</span>
 <span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">nrow</span>(<span class="fu">read.table</span>(x, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">skip =</span> <span class="dv">4</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>))</span>
 <span id="cb39-4"><a href="#cb39-4"></a>})</span>
 <span id="cb39-5"><a href="#cb39-5"></a></span>
 <span id="cb39-6"><a href="#cb39-6"></a><span class="co"># ver resultados</span></span>
-<span id="cb39-7"><a href="#cb39-7"></a><span class="fu">head</span>(filas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-7"><a href="#cb39-7"></a><span class="fu">head</span>(filas)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>       ./data//2022-09-02_R3-LcamT3-RcamN4_Pel1_2021-09-24_MaxN.TXT 
@@ -900,21 +947,21 @@ pre.numberSource code
 <p>El bucle <code>replicate</code> también pertenece a la familia de los <code>(X)apply</code> (a pesar de su nombre), ya que toma una función y la replica. Sin embargo solo replica una acción (generalmente aleatoria) y el usuario no tiene control sobre el insumo a la función. El argumento ‘n’ define cuantas veces se replica la acción y ‘expr’ define la acción a realizar:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">expr =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">expr =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>          [,1]      [,2]     [,3]
- [1,]  0.67946 -0.443930  1.39924
- [2,] -0.37338 -0.351813  0.80717
- [3,] -0.70771 -0.494880  0.36155
- [4,]  0.93686 -2.002843  0.53287
- [5,] -1.81850 -1.216109 -0.10165
- [6,] -1.44841 -0.392135  0.37987
- [7,] -1.82485  1.014980 -0.55133
- [8,] -0.89778 -0.082003  1.53042
- [9,] -0.23814 -1.458798  0.23858
-[10,]  0.37764 -1.621710 -0.48241</code></pre>
+ [1,] -1.73916 -0.514227  0.94122
+ [2,] -1.00746  2.170692  0.97139
+ [3,]  0.75007 -0.570629  2.57307
+ [4,]  0.48030 -0.064762 -0.25425
+ [5,] -0.26242 -0.705782  1.81238
+ [6,]  1.45704  1.395056 -0.37406
+ [7,] -0.31688  0.463715  1.95422
+ [8,] -0.21543 -0.278344  2.05046
+ [9,]  0.79082 -0.306788 -0.70757
+[10,] -0.31875 -1.104380  0.86591</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -950,7 +997,7 @@ pre.numberSource code
 <p>El siguiente bucle <code>repeat</code> se ejecuta hasta que la correlación de las variables continuas generadas al azar es mayor que un umbral:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># crear vector vacio</span></span>
 <span id="cb43-2"><a href="#cb43-2"></a>cc_vector <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
 <span id="cb43-3"><a href="#cb43-3"></a></span>
@@ -971,24 +1018,24 @@ pre.numberSource code
 <span id="cb43-18"><a href="#cb43-18"></a>  <span class="cf">if</span> (corr_coef <span class="sc">&gt;</span> <span class="fl">0.5</span>) <span class="cf">break</span></span>
 <span id="cb43-19"><a href="#cb43-19"></a>}</span>
 <span id="cb43-20"><a href="#cb43-20"></a></span>
-<span id="cb43-21"><a href="#cb43-21"></a><span class="fu">head</span>(cc_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-21"><a href="#cb43-21"></a><span class="fu">head</span>(cc_vector)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.012116 0.203605 0.044796 0.063337 0.298206 0.295851</code></pre>
+<pre><code>[1]  0.024848  0.079436 -0.316175 -0.067095 -0.111127 -0.310610</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
 <p>Podemos graficarlo el resultado asi así:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>cc <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">y =</span> cc_vector, <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(cc_vector))</span>
 <span id="cb45-2"><a href="#cb45-2"></a></span>
 <span id="cb45-3"><a href="#cb45-3"></a><span class="fu">ggplot</span>(<span class="at">data =</span> cc, <span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
 <span id="cb45-4"><a href="#cb45-4"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.5</span>, <span class="at">col =</span> cols[<span class="dv">4</span>], <span class="at">lwd =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb45-5"><a href="#cb45-5"></a>  <span class="fu">geom_line</span>(<span class="at">col =</span> cols[<span class="dv">8</span>], <span class="at">lwd =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
 <span id="cb45-6"><a href="#cb45-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Iteraciones"</span>, <span class="at">y =</span> <span class="st">"Correlación de pearson (r)"</span>) <span class="sc">+</span></span>
-<span id="cb45-7"><a href="#cb45-7"></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-7"><a href="#cb45-7"></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">25</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="bucles_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid" width="672"></p>
@@ -1013,7 +1060,7 @@ pre.numberSource code
 </div>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># definir valor inicial</span></span>
 <span id="cb46-2"><a href="#cb46-2"></a>corr_coef <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb46-3"><a href="#cb46-3"></a></span>
@@ -1032,7 +1079,7 @@ pre.numberSource code
 <span id="cb46-16"><a href="#cb46-16"></a>  <span class="fu">print</span>(corr_coef)</span>
 <span id="cb46-17"><a href="#cb46-17"></a>}</span>
 <span id="cb46-18"><a href="#cb46-18"></a></span>
-<span id="cb46-19"><a href="#cb46-19"></a>corr_coef</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-19"><a href="#cb46-19"></a>corr_coef</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
@@ -1045,7 +1092,7 @@ pre.numberSource code
 <p>Con un pequeño ajuste, un bucle <code>while</code> también puede evaluar varias condiciones a la vez. Por ejemplo, también podemos incluir altos valores de correlación negativa:</p>
 <div class="cell">
 <details open="">
-<summary>Code</summary>
+<summary>Código</summary>
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># definir valor inicial</span></span>
 <span id="cb48-2"><a href="#cb48-2"></a>corr_coef <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb48-3"><a href="#cb48-3"></a></span>
@@ -1066,7 +1113,7 @@ pre.numberSource code
 <span id="cb48-18"><a href="#cb48-18"></a>  cc_vector[<span class="fu">length</span>(cc_vector) <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> corr_coef</span>
 <span id="cb48-19"><a href="#cb48-19"></a>}</span>
 <span id="cb48-20"><a href="#cb48-20"></a></span>
-<span id="cb48-21"><a href="#cb48-21"></a><span class="fu">head</span>(cc_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb48-21"><a href="#cb48-21"></a><span class="fu">head</span>(cc_vector)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.047693  0.232015  0.133767 -0.089900  0.364152  0.203306</code></pre>
@@ -1165,23 +1212,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -1192,12 +1225,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -1297,92 +1330,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1421,12 +1368,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/marce10\.github\.io\/R_avanzado_2023\/");
+      var filterRegex = new RegExp(/https:\/\/marce10\.github\.io\/R_avanzado_2023\//);
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1435,7 +1382,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
 });
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb51" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &lt;font size="7"&gt;&lt;b&gt;Bucles&lt;/b&gt;&lt;/font&gt;</span></span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
@@ -2227,18 +2174,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb51-817"><a href="#cb51-817" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb51-818"><a href="#cb51-818" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
 <span id="cb51-819"><a href="#cb51-819" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
+      <div class="nav-footer-center">Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></div>
   </div>
 </footer>
 

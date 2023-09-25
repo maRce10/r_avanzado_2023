@@ -47,10 +47,13 @@ toc-location: left
 toc-title: Contenidos
 number-sections: true
 highlight-style: pygments
-
+code-overflow: wrap
+code-copy: true
+date: today
+lang: es
 format:
   html:
-    theme: simplex
+    theme: simplex.scss
     css: styles.css
     toc: true
     df-print: kable

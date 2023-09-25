@@ -1,5 +1,8 @@
 ---
 title: <font size="7"><b>Programación y métodos estadísticos avanzados en R</b></font>
+format:
+  html:
+    code-tools: false
 ---
 
 <!-- <div class="alert alert-success"> -->
@@ -9,7 +12,9 @@ title: <font size="7"><b>Programación y métodos estadísticos avanzados en R</
 <!-- Objetivos:  -->
 
 <!-- 1. repositorios en linea para compartir datos y productos de la investigación  -->
+
 <!-- 1. herramientas digitales de libre acceso -->
+
 <!-- 1. implementación de buenas pŕacticas de manejo y análisis de datos -->
 
 <!-- <center><font size="5"><b><i><a href="https://marce10.github.io/ciencia_reproducible/">Enlace al curso</a></i></b></font></center> -->
@@ -18,72 +23,60 @@ title: <font size="7"><b>Programación y métodos estadísticos avanzados en R</
 
 <!-- &nbsp; -->
 
-
 <center><font size="5"><b>Escuela de Biología, Universidad de Costa Rica<br></b></font></center>
 
 <center><font size="5"><b><a href="https://marce10.github.io/">Marcelo Araya-Salas PhD</a> y <a href="https://scholar.google.com/citations?user=hTu_SnkAAAAJ&hl=es&oi=ao"> Mario Espinoza PhD</a><br></b></font></center>
 
+Este curso pretende profundizar en los elementos de programación computacional, manipulación de bases de datos, diseño experimental, graficación personalizada, y el uso de técnicas y modelaje estadístico avanzadas utilizando R como plataforma. El curso está dirigido a estudiantes avanzados de carrera, de licenciatura o postgrado. En el curso se pretende cubrir las bases de los principales análisis y técnicas de modelaje estadístico, así como análisis emergentes. Todas las semanas se realizarán prácticas de laboratorio en donde se aplicarán los conceptos desarrollados durante las clases de teoría. Además, durante el curso cada estudiante presentará un paquete o extensión (conjunto de herramientas aplicables a análisis específicos) de R, en donde profundizará sobre sus aplicaciones en el campo de la biología demostrando en clase en que consiste el análisis.
 
-Este curso pretende profundizar en los elementos de programación computacional,
-manipulación de bases de datos, diseño experimental, graficación personalizada, y el uso de
-técnicas y modelaje estadístico avanzadas utilizando R como plataforma. El curso está dirigido a estudiantes avanzados de carrera, de licenciatura o postgrado. En el curso se pretende cubrir las bases de los principales análisis y técnicas de modelaje estadístico, así como análisis emergentes. Todas las semanas se realizarán prácticas de laboratorio en donde se aplicarán los conceptos desarrollados durante las clases de teoría. Además, durante el curso cada estudiante presentará un paquete o extensión (conjunto de herramientas aplicables a análisis específicos) de R, en donde profundizará sobre sus aplicaciones en el campo de la biología demostrando en clase en que consiste el análisis.
+ 
 
-&nbsp;
-
-<div class="alert alert-info">
-
+::: {.alert .alert-info}
 ### **Objetivos** {.unnumbered .unlisted}
 
-- Familiarizar al estudiante con la programación en R
-- Brindar herramientas para la manipulación de bases de datos
-- Emplear métodos de visualización de datos
-- Cubrir algunos de los análisis estadísticos tradicionales
-- Proveer a los estudiantes con experiencia en la aplicación de las herramientas
-brindadas por medio de prácticas y proyectos de investigación
+-   Familiarizar al estudiante con la programación en R
+-   Brindar herramientas para la manipulación de bases de datos
+-   Emplear métodos de visualización de datos
+-   Cubrir algunos de los análisis estadísticos tradicionales
+-   Proveer a los estudiantes con experiencia en la aplicación de las herramientas brindadas por medio de prácticas y proyectos de investigación
+:::
 
-</div>
-
-&nbsp;    
-
+ 
 
 ### **Dinámica de las clases** {.unnumbered .unlisted}
 
-- Pueden hacer preguntas en cualquier momento
-- Sientanse libres de responder preguntas de compañeros
-- Traten siempre de correr el código y de tratar de entender todos sus elementos
-- Las líneas de código estan numeradas. Podemos usar esos números para referirnos a códigos específicos en los manuales. Los bloques de código también incluyen un botón que permite copiar el código:
+-   Pueden hacer preguntas en cualquier momento
+-   Sientanse libres de responder preguntas de compañeros
+-   Traten siempre de correr el código y de tratar de entender todos sus elementos
+-   Las líneas de código estan numeradas. Podemos usar esos números para referirnos a códigos específicos en los manuales. Los bloques de código también incluyen un botón que permite copiar el código:
 
 ```{r, out.width = "100%", echo = FALSE, fig.align= "center"}
 
 knitr::include_graphics("./images/chunk.png")
 ```
 
-- También usaremos el enlace ["Compartir código"](https://codefile.io/f/XOIzH23KfULuZKyZ1TYT) en el menú principal del este sitio (arriba) para pasar códigos que se desarrollen en clase
+-   También usaremos el enlace ["Compartir código"](https://codefile.io/f/XOIzH23KfULuZKyZ1TYT) en el menú principal del este sitio (arriba) para pasar códigos que se desarrollen en clase
 
-&nbsp; 
+ 
 
-<div class="alert alert-warning">
-
-
+::: {.alert .alert-warning}
 **Consejos para garantizar el máximo aprovechamiento del curso**
 
-&nbsp; 
+ 
 
-  - Aseguráte de tener todo lo que necesitas antes del comienzo de la clase
-  - Tratá de estar preparado unos minutos antes del comienzo de la clase
-  - Intenta concentrarte al máximo en el curso, cierra otros programas o pestañas innecesarias del navegador de internet (por ejemplo, instagram, twitter, etc)
-  - Comentá el código
+-   Aseguráte de tener todo lo que necesitas antes del comienzo de la clase
+-   Tratá de estar preparado unos minutos antes del comienzo de la clase
+-   Intenta concentrarte al máximo en el curso, cierra otros programas o pestañas innecesarias del navegador de internet (por ejemplo, instagram, twitter, etc)
+-   Comentá el código
+:::
 
-
-</div>
-
-&nbsp; 
+ 
 
 ```{r, out.width = "90%", echo = FALSE, fig.align= "center"}
 knitr::include_graphics("./images/discrim.png")
 ```
 
-&nbsp; 
+ 
 
 ```{r, out.width = "90%", echo = FALSE, fig.align= "center"}
 knitr::include_graphics("./images/hostig.png")

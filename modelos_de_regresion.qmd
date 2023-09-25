@@ -10,16 +10,11 @@ pre.numberSource code
   { counter-reset: none; }
 </style>
 ```
+
 ```{r,echo=FALSE,message=FALSE}
 
 options("digits"=5)
 options("digits.secs"=3)
-
-# options to customize chunk outputs
-knitr::opts_chunk$set(
-  class.source = "numberLines lineAnchors", # for code line numbers
-  message = FALSE
- )
 
 ```
 
@@ -34,22 +29,13 @@ knitr::opts_chunk$set(
  
 
 ```{r, echo = FALSE, message=FALSE}
-
-library(kableExtra)
+  
 library(knitr)
 library(ggplot2)
 library(viridis)
 library(lmerTest)
 library(sjPlot)
 library(car)
-
-tibble <- function(x, ...) { 
-  x <- kbl(x, digits=4, align= 'c', row.names = FALSE) 
-   x <- kable_styling(x, position ="center", full_width = FALSE,  bootstrap_options = c("striped", "hover", "condensed", "responsive")) 
-   asis_output(x)
-}
-
-registerS3method("knit_print", "data.frame", tibble)
 
 # ggplot settings
 geom_histogram <- function(...) ggplot2::geom_histogram(..., fill = viridis(10, alpha = 0.5)[8], show.legend = FALSE, bins = 20, color = "black")
@@ -63,23 +49,6 @@ geom_pointrange <- function(...) ggplot2::geom_pointrange(..., show.legend = FAL
 plot_model <- function(...) sjPlot::plot_model(xy_mod, type = "diag", colors = viridis(10, alpha = 0.5)[7])
 
 theme_set(theme_classic(base_size = 20))
-
-# options to customize chunk outputs
-knitr::opts_chunk$set(
-  class.source = "numberLines lineAnchors", # for code line numbers
-  tidy.opts = list(width.cutoff = 65), 
-  tidy = TRUE,
-  message = FALSE
- )
-
-htmltools::tagList(
-  xaringanExtra::use_clipboard(
-    button_text = "<i class=\"fa fa-clipboard\"></i>",
-    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
-    error_text = "<i class=\"fa fa-times-circle\" style=\"color: #F94144\"></i>"
-  ),
-  rmarkdown::html_dependency_font_awesome()
-)
 
 ```
 

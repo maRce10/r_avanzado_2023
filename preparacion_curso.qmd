@@ -51,7 +51,9 @@ load_packages(
     "MASS",
     "lmerTest",
     "sjPlot",
-    github = "maRce10/sketchy"
+    "car",
+    github = "maRce10/sketchy",
+    github = "hadley/emo"
   )
 )
 ```
@@ -60,7 +62,9 @@ load_packages(
 
 ```{r, eval = FALSE}
 
-sketchy::make_compendium(
+library(sketchy)
+
+make_compendium(
   name = "r_avanzado",
   path = "DIRECTORIO_DONDE_HACER_EL_PROYECTO",
   Rproj = TRUE,
