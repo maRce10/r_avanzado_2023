@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,10 +17,9 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -47,13 +46,43 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -108,73 +137,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">R avanzado 2023</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="./index.html">
  <span class="menu-text"> </span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-manuales" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-manuales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Manuales</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-manuales">    
         <li>
-    <a class="dropdown-item" href="./fundamentos_de_r.html" rel="" target="">
+    <a class="dropdown-item" href="./fundamentos_de_r.html">
  <span class="dropdown-text">Fundamentos de R</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./reportes_dinamicos.html" rel="" target="">
+    <a class="dropdown-item" href="./reportes_dinamicos.html">
  <span class="dropdown-text">Reportes dinámicos</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./funciones.html" rel="" target="">
+    <a class="dropdown-item" href="./funciones.html">
  <span class="dropdown-text">Funciones</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./bucles.html" rel="" target="">
+    <a class="dropdown-item" href="./bucles.html">
  <span class="dropdown-text">Bucles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./modelos_de_regresion.html" rel="" target="">
+    <a class="dropdown-item" href="./modelos_de_regresion.html">
  <span class="dropdown-text">Modelos de regresión</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./estadistica_tradicional_regresion.html" rel="" target="">
+    <a class="dropdown-item" href="./estadistica_tradicional_regresion.html">
  <span class="dropdown-text">Estadística tradicional como regresión</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ggplot2.html" rel="" target="">
+    <a class="dropdown-item" href="./ggplot2.html">
  <span class="dropdown-text">Gráficos con ggplot2</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./preparacion_curso.html" rel="" target="">
+    <a class="nav-link" href="./preparacion_curso.html">
  <span class="menu-text">Preparación para el curso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN" rel="" target="">
+    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN">
  <span class="menu-text">Compartir código</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructor.html" rel="" target="">
+    <a class="nav-link" href="./instructor.html">
  <span class="menu-text">Instructor</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/maRce10/R_avanzado_2023/" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/maRce10/R_avanzado_2023/"><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -182,29 +209,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#bucles-loops" id="toc-bucles-loops" class="nav-link active" data-scroll-target="#bucles-loops"><span class="header-section-number">1</span> Bucles (loops)</a></li>
-  <li><a href="#bucles-for" id="toc-bucles-for" class="nav-link" data-scroll-target="#bucles-for"><span class="header-section-number">2</span> Bucles ‘for’</a>
+  <li><a href="#bucles-loops" id="toc-bucles-loops" class="nav-link active" data-scroll-target="#bucles-loops"><span class="toc-section-number">1</span>  Bucles (loops)</a></li>
+  <li><a href="#bucles-for" id="toc-bucles-for" class="nav-link" data-scroll-target="#bucles-for"><span class="toc-section-number">2</span>  Bucles ‘for’</a>
   <ul class="collapse">
-  <li><a href="#aplicación-al-manejo-de-datos" id="toc-aplicación-al-manejo-de-datos" class="nav-link" data-scroll-target="#aplicación-al-manejo-de-datos"><span class="header-section-number">2.1</span> Aplicación al manejo de datos</a></li>
+  <li><a href="#aplicación-al-manejo-de-datos" id="toc-aplicación-al-manejo-de-datos" class="nav-link" data-scroll-target="#aplicación-al-manejo-de-datos"><span class="toc-section-number">2.1</span>  Aplicación al manejo de datos</a></li>
   </ul></li>
-  <li><a href="#bucles-xapply" id="toc-bucles-xapply" class="nav-link" data-scroll-target="#bucles-xapply"><span class="header-section-number">3</span> Bucles ‘(X)apply’</a>
+  <li><a href="#bucles-xapply" id="toc-bucles-xapply" class="nav-link" data-scroll-target="#bucles-xapply"><span class="toc-section-number">3</span>  Bucles ‘(X)apply’</a>
   <ul class="collapse">
-  <li><a href="#bucles-replicate" id="toc-bucles-replicate" class="nav-link" data-scroll-target="#bucles-replicate"><span class="header-section-number">3.1</span> bucles <code>replicate</code></a></li>
+  <li><a href="#bucles-replicate" id="toc-bucles-replicate" class="nav-link" data-scroll-target="#bucles-replicate"><span class="toc-section-number">3.1</span>  bucles <code>replicate</code></a></li>
   </ul></li>
-  <li><a href="#bucles-repeat" id="toc-bucles-repeat" class="nav-link" data-scroll-target="#bucles-repeat"><span class="header-section-number">4</span> Bucles ‘repeat’</a></li>
-  <li><a href="#bucles-while" id="toc-bucles-while" class="nav-link" data-scroll-target="#bucles-while"><span class="header-section-number">5</span> Bucles ‘While’</a>
+  <li><a href="#bucles-repeat" id="toc-bucles-repeat" class="nav-link" data-scroll-target="#bucles-repeat"><span class="toc-section-number">4</span>  Bucles ‘repeat’</a></li>
+  <li><a href="#bucles-while" id="toc-bucles-while" class="nav-link" data-scroll-target="#bucles-while"><span class="toc-section-number">5</span>  Bucles ‘While’</a>
   <ul class="collapse">
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">5.1</span> Referencias</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="toc-section-number">5.1</span>  Referencias</a></li>
   </ul></li>
   </ul>
 </nav>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -234,6 +260,9 @@ body
 pre.numberSource code
   { counter-reset: none; }
 </style>
+<div class="cell">
+
+</div>
 <section id="objetivos-del-manual" class="level1 unnumbered unlisted alert alert-info">
 <h1 class="unnumbered unlisted">Objetivos del manual</h1>
 <ul>
@@ -273,6 +302,9 @@ pre.numberSource code
 <span id="cb1-24"><a href="#cb1-24"></a>    <span class="at">pattern =</span> <span class="st">"TXT$"</span></span>
 <span id="cb1-25"><a href="#cb1-25"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</div>
+<div class="cell">
+
 </div>
 <p>&nbsp;</p>
 <p>También pueden bajar el archivo directamente de <a href="https://github.com/maRce10/ucr_r_avanzado/raw/master/additional_files/datos_camara_submarina.zip">este enlance</a>. Recuerde extraer los archivos y hacer el vector con los nombres de los archivos (correr lineas de la 9 a la 13).</p>
@@ -495,7 +527,7 @@ pre.numberSource code
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <colgroup>
 <col style="width: 17%">
 <col style="width: 5%">
@@ -613,7 +645,7 @@ pre.numberSource code
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">archivo</th>
@@ -664,12 +696,21 @@ pre.numberSource code
 </div>
 </div>
 <p>1.1 Haga un bucle <code>for</code> que devuelva el número de familias para cada archivo</p>
+<div class="cell">
+
+</div>
 <p>&nbsp;</p>
 <p>1.2 Cree un cuadro de datos (data frame) que contenga dos columnas, una para el nombre del archivo y otra para el número de familias</p>
 <p>&nbsp;</p>
 <p>1.3 Añada una columna al cuadro de datos creado en el ejercicio anterior indicando la fecha de creación del video (esta información se encuentra en la columna ‘Date’ de cada archivo de texto). Note que cada archivo contiene solamente una fecha. Debe usar un bucle <code>for</code> para extraer esta información de los archivos.</p>
+<div class="cell">
+
+</div>
 <p>&nbsp;</p>
 <p>1.4 Añada una columna al cuadro de datos creado en el ejercicio 1.2 (y modificado en 1.3) indicando la profundidad a la que se grabó el video. Debe usar un bucle <code>for</code> para extraer esta información de los archivos.</p>
+<div class="cell">
+
+</div>
 <p>&nbsp;</p>
 <p>Puede usar el siguiente código para convertir profundidad a un vector numérico:</p>
 <div class="cell">
@@ -904,17 +945,17 @@ pre.numberSource code
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">expr =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>          [,1]     [,2]      [,3]
- [1,] -0.62142  0.92367 -1.846658
- [2,] -0.15227 -0.34703 -0.265150
- [3,]  0.40732  0.70866 -1.994632
- [4,] -1.54494  0.44808  1.984745
- [5,]  2.31958 -0.22848  0.495151
- [6,] -0.19080 -0.71791 -1.135244
- [7,] -0.88556 -3.16415  1.609385
- [8,] -0.06310 -0.31079 -0.657669
- [9,]  0.90863  1.01428 -0.006529
-[10,]  0.63056 -0.28619 -0.330283</code></pre>
+<pre><code>          [,1]      [,2]     [,3]
+ [1,]  0.67946 -0.443930  1.39924
+ [2,] -0.37338 -0.351813  0.80717
+ [3,] -0.70771 -0.494880  0.36155
+ [4,]  0.93686 -2.002843  0.53287
+ [5,] -1.81850 -1.216109 -0.10165
+ [6,] -1.44841 -0.392135  0.37987
+ [7,] -1.82485  1.014980 -0.55133
+ [8,] -0.89778 -0.082003  1.53042
+ [9,] -0.23814 -1.458798  0.23858
+[10,]  0.37764 -1.621710 -0.48241</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -974,7 +1015,7 @@ pre.numberSource code
 <span id="cb43-21"><a href="#cb43-21"></a><span class="fu">head</span>(cc_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.014035 0.137306 0.117152 0.507356</code></pre>
+<pre><code>[1] 0.012116 0.203605 0.044796 0.063337 0.298206 0.295851</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -1165,23 +1206,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -1297,92 +1324,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1421,12 +1362,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/marce10\.github\.io\/R_avanzado_2023\/");
+      var filterRegex = new RegExp(/https:\/\/marce10\.github\.io\/R_avanzado_2023\//);
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -2232,13 +2173,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
+      <div class="nav-footer-center">Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></div>
   </div>
 </footer>
 
