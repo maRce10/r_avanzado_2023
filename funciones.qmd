@@ -10,7 +10,6 @@ pre.numberSource code
   { counter-reset: none; }
 </style>
 ```
-
 ```{r,echo=FALSE,message=FALSE}
 
 options("digits" = 5)
@@ -325,7 +324,6 @@ mean(v1, na.rm = TRUE)
 1.7 ¿Cómo puede obtener el valor de **p** directamente del resultado de la función (sin guardar el resultado como un objeto)?
 
 1.8 Escoga una función de R y lea su documentación con el fin de entender su uso, cada uno de sus argumentos (y que tipo de objetos requieren) y el resultado que produce (es probable que se le pida que explique esto al grupo)
-
 :::
 
 ------------------------------------------------------------------------
@@ -485,7 +483,6 @@ out[[2]]
 2.5 Ejecute la función usando un valor predeterminado y uno proporcionado en la llamada
 
 2.6 Ejecute la función proporcionando ambos valores en la llamada
-
 :::
 
  
@@ -722,7 +719,6 @@ Esto ya debería ser obvio a este punto.
 4.8 Modifique la función para que añada un polígono transparente sobre el área que cubre el promedio +/- la desviación estándar
 
 4.9 Modifique la función con un argumento lógico que permita al usuario controlar si se crea un gráfico o no
-
 :::
 
  

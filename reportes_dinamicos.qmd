@@ -60,7 +60,7 @@ sketchy::load_packages(
 
 ------------------------------------------------------------------------
 
-## Crisis de reproducibilidad en la ciencia
+# Crisis de reproducibilidad en la ciencia
 
 La mayoría de los procedimientos (incluyendo análisis de datos) en estudios científicos no se pueden replicar
 
@@ -91,7 +91,7 @@ Quarto es una herramienta muy similar a Rmarkdown. La diferencia mas importante 
 
  
 
-### Ventajas de los reportes dinámicos con Rmarkdown/quarto:
+## Ventajas de los reportes dinámicos con Rmarkdown/quarto:
 
 -   El **código R se puede incrustar en el informe**, por lo que no es necesario mantener el informe y el código de R por separado
 

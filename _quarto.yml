@@ -44,6 +44,7 @@ website:
 toc: true
 toc-depth: 2
 toc-location: left
+toc-title: Contenidos
 number-sections: true
 highlight-style: pygments
 
@@ -58,4 +59,4 @@ format:
     link-external-icon: false
     link-external-newwindow: true  
       
-editor: source
+editor: visual

@@ -132,7 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
 
 
-<link rel="stylesheet" href="styles.scss">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="floating nav-fixed">
@@ -220,52 +220,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Contenidos</h2>
    
   <ul class="collapse">
-  <li><a href="#crisis-de-reproducibilidad-en-la-ciencia" id="toc-crisis-de-reproducibilidad-en-la-ciencia" class="nav-link active" data-scroll-target="#crisis-de-reproducibilidad-en-la-ciencia"><span class="toc-section-number">0.1</span>  Crisis de reproducibilidad en la ciencia</a></li>
-  <li><a href="#crear-documentos-r-markdownquarto" id="toc-crear-documentos-r-markdownquarto" class="nav-link" data-scroll-target="#crear-documentos-r-markdownquarto"><span class="toc-section-number">1</span>  Crear documentos R Markdown/quarto</a>
+  <li><a href="#crisis-de-reproducibilidad-en-la-ciencia" id="toc-crisis-de-reproducibilidad-en-la-ciencia" class="nav-link active" data-scroll-target="#crisis-de-reproducibilidad-en-la-ciencia"><span class="toc-section-number">1</span>  Crisis de reproducibilidad en la ciencia</a>
   <ul class="collapse">
-  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1"><span class="toc-section-number">1.1</span>  Ejercicio 1</a></li>
+  <li><a href="#ventajas-de-los-reportes-dinámicos-con-rmarkdownquarto" id="toc-ventajas-de-los-reportes-dinámicos-con-rmarkdownquarto" class="nav-link" data-scroll-target="#ventajas-de-los-reportes-dinámicos-con-rmarkdownquarto"><span class="toc-section-number">1.1</span>  Ventajas de los reportes dinámicos con Rmarkdown/quarto:</a></li>
   </ul></li>
-  <li><a href="#syntaxis-markdown" id="toc-syntaxis-markdown" class="nav-link" data-scroll-target="#syntaxis-markdown"><span class="toc-section-number">2</span>  Syntaxis Markdown</a>
+  <li><a href="#crear-documentos-r-markdownquarto" id="toc-crear-documentos-r-markdownquarto" class="nav-link" data-scroll-target="#crear-documentos-r-markdownquarto"><span class="toc-section-number">2</span>  Crear documentos R Markdown/quarto</a>
   <ul class="collapse">
-  <li><a href="#crear-encabezados-de-varios-tamaños" id="toc-crear-encabezados-de-varios-tamaños" class="nav-link" data-scroll-target="#crear-encabezados-de-varios-tamaños"><span class="toc-section-number">2.1</span>  Crear encabezados de varios tamaños</a></li>
+  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1"><span class="toc-section-number">2.1</span>  Ejercicio 1</a></li>
   </ul></li>
-  <li><a href="#encabezado-1" id="toc-encabezado-1" class="nav-link" data-scroll-target="#encabezado-1"><span class="toc-section-number">3</span>  Encabezado 1</a>
+  <li><a href="#syntaxis-markdown" id="toc-syntaxis-markdown" class="nav-link" data-scroll-target="#syntaxis-markdown"><span class="toc-section-number">3</span>  Syntaxis Markdown</a>
   <ul class="collapse">
-  <li><a href="#encabezado-2" id="toc-encabezado-2" class="nav-link" data-scroll-target="#encabezado-2"><span class="toc-section-number">3.1</span>  Encabezado 2</a></li>
-  <li><a href="#opciones-del-texto" id="toc-opciones-del-texto" class="nav-link" data-scroll-target="#opciones-del-texto"><span class="toc-section-number">3.2</span>  Opciones del texto</a></li>
-  <li><a href="#añadir-una-imagen" id="toc-añadir-una-imagen" class="nav-link" data-scroll-target="#añadir-una-imagen"><span class="toc-section-number">3.3</span>  Añadir una imagen</a></li>
-  <li><a href="#crear-enlaces-hyperlinks" id="toc-crear-enlaces-hyperlinks" class="nav-link" data-scroll-target="#crear-enlaces-hyperlinks"><span class="toc-section-number">3.4</span>  Crear enlaces (‘hyperlinks’)</a></li>
-  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2"><span class="toc-section-number">3.5</span>  Ejercicio 2</a></li>
-  <li><a href="#incrustar-código" id="toc-incrustar-código" class="nav-link" data-scroll-target="#incrustar-código"><span class="toc-section-number">3.6</span>  Incrustar código</a></li>
-  <li><a href="#ocultar-código" id="toc-ocultar-código" class="nav-link" data-scroll-target="#ocultar-código"><span class="toc-section-number">3.7</span>  Ocultar código</a></li>
-  <li><a href="#incrustar-gráficos" id="toc-incrustar-gráficos" class="nav-link" data-scroll-target="#incrustar-gráficos"><span class="toc-section-number">3.8</span>  Incrustar gráficos</a></li>
-  <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3"><span class="toc-section-number">3.9</span>  Ejercicio 3</a></li>
-  <li><a href="#incrustar-código-de-r-en-el-texto" id="toc-incrustar-código-de-r-en-el-texto" class="nav-link" data-scroll-target="#incrustar-código-de-r-en-el-texto"><span class="toc-section-number">3.10</span>  Incrustar código de R en el texto</a></li>
+  <li><a href="#crear-encabezados-de-varios-tamaños" id="toc-crear-encabezados-de-varios-tamaños" class="nav-link" data-scroll-target="#crear-encabezados-de-varios-tamaños"><span class="toc-section-number">3.1</span>  Crear encabezados de varios tamaños</a></li>
   </ul></li>
-  <li><a href="#recursos-adicionales-para-personalizar-documentos-rmarkdown" id="toc-recursos-adicionales-para-personalizar-documentos-rmarkdown" class="nav-link" data-scroll-target="#recursos-adicionales-para-personalizar-documentos-rmarkdown"><span class="toc-section-number">4</span>  Recursos adicionales para personalizar documentos Rmarkdown</a>
+  <li><a href="#encabezado-1" id="toc-encabezado-1" class="nav-link" data-scroll-target="#encabezado-1"><span class="toc-section-number">4</span>  Encabezado 1</a>
   <ul class="collapse">
-  <li><a href="#metadatos-yaml" id="toc-metadatos-yaml" class="nav-link" data-scroll-target="#metadatos-yaml"><span class="toc-section-number">4.1</span>  Metadatos (YAML)</a></li>
-  <li><a href="#emojis" id="toc-emojis" class="nav-link" data-scroll-target="#emojis"><span class="toc-section-number">4.2</span>  Emojis</a></li>
-  <li><a href="#cuadros-con-knitrkable" id="toc-cuadros-con-knitrkable" class="nav-link" data-scroll-target="#cuadros-con-knitrkable"><span class="toc-section-number">4.3</span>  Cuadros con knitr::kable</a></li>
-  <li><a href="#opciones-adicionales-en-knitr" id="toc-opciones-adicionales-en-knitr" class="nav-link" data-scroll-target="#opciones-adicionales-en-knitr"><span class="toc-section-number">4.4</span>  Opciones adicionales en knitr</a></li>
-  <li><a href="#presentaciones-y-otros-opciones-de-formato" id="toc-presentaciones-y-otros-opciones-de-formato" class="nav-link" data-scroll-target="#presentaciones-y-otros-opciones-de-formato"><span class="toc-section-number">4.5</span>  Presentaciones y otros opciones de formato</a></li>
-  <li><a href="#plantillas-de-rmarkdown" id="toc-plantillas-de-rmarkdown" class="nav-link" data-scroll-target="#plantillas-de-rmarkdown"><span class="toc-section-number">4.6</span>  Plantillas de Rmarkdown</a></li>
+  <li><a href="#encabezado-2" id="toc-encabezado-2" class="nav-link" data-scroll-target="#encabezado-2"><span class="toc-section-number">4.1</span>  Encabezado 2</a></li>
+  <li><a href="#opciones-del-texto" id="toc-opciones-del-texto" class="nav-link" data-scroll-target="#opciones-del-texto"><span class="toc-section-number">4.2</span>  Opciones del texto</a></li>
+  <li><a href="#añadir-una-imagen" id="toc-añadir-una-imagen" class="nav-link" data-scroll-target="#añadir-una-imagen"><span class="toc-section-number">4.3</span>  Añadir una imagen</a></li>
+  <li><a href="#crear-enlaces-hyperlinks" id="toc-crear-enlaces-hyperlinks" class="nav-link" data-scroll-target="#crear-enlaces-hyperlinks"><span class="toc-section-number">4.4</span>  Crear enlaces (‘hyperlinks’)</a></li>
+  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2"><span class="toc-section-number">4.5</span>  Ejercicio 2</a></li>
+  <li><a href="#incrustar-código" id="toc-incrustar-código" class="nav-link" data-scroll-target="#incrustar-código"><span class="toc-section-number">4.6</span>  Incrustar código</a></li>
+  <li><a href="#ocultar-código" id="toc-ocultar-código" class="nav-link" data-scroll-target="#ocultar-código"><span class="toc-section-number">4.7</span>  Ocultar código</a></li>
+  <li><a href="#incrustar-gráficos" id="toc-incrustar-gráficos" class="nav-link" data-scroll-target="#incrustar-gráficos"><span class="toc-section-number">4.8</span>  Incrustar gráficos</a></li>
+  <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3"><span class="toc-section-number">4.9</span>  Ejercicio 3</a></li>
+  <li><a href="#incrustar-código-de-r-en-el-texto" id="toc-incrustar-código-de-r-en-el-texto" class="nav-link" data-scroll-target="#incrustar-código-de-r-en-el-texto"><span class="toc-section-number">4.10</span>  Incrustar código de R en el texto</a></li>
   </ul></li>
-  <li><a href="#documentos-interactivos" id="toc-documentos-interactivos" class="nav-link" data-scroll-target="#documentos-interactivos"><span class="toc-section-number">5</span>  Documentos interactivos</a>
+  <li><a href="#recursos-adicionales-para-personalizar-documentos-rmarkdown" id="toc-recursos-adicionales-para-personalizar-documentos-rmarkdown" class="nav-link" data-scroll-target="#recursos-adicionales-para-personalizar-documentos-rmarkdown"><span class="toc-section-number">5</span>  Recursos adicionales para personalizar documentos Rmarkdown</a>
   <ul class="collapse">
-  <li><a href="#html-widgets" id="toc-html-widgets" class="nav-link" data-scroll-target="#html-widgets"><span class="toc-section-number">5.1</span>  HTML widgets</a></li>
-  <li><a href="#aplicaciones-shiny" id="toc-aplicaciones-shiny" class="nav-link" data-scroll-target="#aplicaciones-shiny"><span class="toc-section-number">5.2</span>  Aplicaciones shiny</a></li>
+  <li><a href="#metadatos-yaml" id="toc-metadatos-yaml" class="nav-link" data-scroll-target="#metadatos-yaml"><span class="toc-section-number">5.1</span>  Metadatos (YAML)</a></li>
+  <li><a href="#emojis" id="toc-emojis" class="nav-link" data-scroll-target="#emojis"><span class="toc-section-number">5.2</span>  Emojis</a></li>
+  <li><a href="#cuadros-con-knitrkable" id="toc-cuadros-con-knitrkable" class="nav-link" data-scroll-target="#cuadros-con-knitrkable"><span class="toc-section-number">5.3</span>  Cuadros con knitr::kable</a></li>
+  <li><a href="#opciones-adicionales-en-knitr" id="toc-opciones-adicionales-en-knitr" class="nav-link" data-scroll-target="#opciones-adicionales-en-knitr"><span class="toc-section-number">5.4</span>  Opciones adicionales en knitr</a></li>
+  <li><a href="#presentaciones-y-otros-opciones-de-formato" id="toc-presentaciones-y-otros-opciones-de-formato" class="nav-link" data-scroll-target="#presentaciones-y-otros-opciones-de-formato"><span class="toc-section-number">5.5</span>  Presentaciones y otros opciones de formato</a></li>
+  <li><a href="#plantillas-de-rmarkdown" id="toc-plantillas-de-rmarkdown" class="nav-link" data-scroll-target="#plantillas-de-rmarkdown"><span class="toc-section-number">5.6</span>  Plantillas de Rmarkdown</a></li>
   </ul></li>
-  <li><a href="#publicar-reportes-en-linea-con-rpubs" id="toc-publicar-reportes-en-linea-con-rpubs" class="nav-link" data-scroll-target="#publicar-reportes-en-linea-con-rpubs"><span class="toc-section-number">6</span>  Publicar reportes en linea con Rpubs</a></li>
-  <li><a href="#herramientas-adicionales-para-organizar-análisis-de-datos" id="toc-herramientas-adicionales-para-organizar-análisis-de-datos" class="nav-link" data-scroll-target="#herramientas-adicionales-para-organizar-análisis-de-datos"><span class="toc-section-number">7</span>  Herramientas adicionales para organizar análisis de datos</a>
+  <li><a href="#documentos-interactivos" id="toc-documentos-interactivos" class="nav-link" data-scroll-target="#documentos-interactivos"><span class="toc-section-number">6</span>  Documentos interactivos</a>
   <ul class="collapse">
-  <li><a href="#proyectos-de-rstudio" id="toc-proyectos-de-rstudio" class="nav-link" data-scroll-target="#proyectos-de-rstudio"><span class="toc-section-number">7.1</span>  Proyectos de Rstudio</a></li>
-  <li><a href="#compendios-de-investigación" id="toc-compendios-de-investigación" class="nav-link" data-scroll-target="#compendios-de-investigación"><span class="toc-section-number">7.2</span>  Compendios de investigación</a></li>
-  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4"><span class="toc-section-number">7.3</span>  Ejercicio 4</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="toc-section-number">7.4</span>  Referencias</a></li>
+  <li><a href="#html-widgets" id="toc-html-widgets" class="nav-link" data-scroll-target="#html-widgets"><span class="toc-section-number">6.1</span>  HTML widgets</a></li>
+  <li><a href="#aplicaciones-shiny" id="toc-aplicaciones-shiny" class="nav-link" data-scroll-target="#aplicaciones-shiny"><span class="toc-section-number">6.2</span>  Aplicaciones shiny</a></li>
+  </ul></li>
+  <li><a href="#publicar-reportes-en-linea-con-rpubs" id="toc-publicar-reportes-en-linea-con-rpubs" class="nav-link" data-scroll-target="#publicar-reportes-en-linea-con-rpubs"><span class="toc-section-number">7</span>  Publicar reportes en linea con Rpubs</a></li>
+  <li><a href="#herramientas-adicionales-para-organizar-análisis-de-datos" id="toc-herramientas-adicionales-para-organizar-análisis-de-datos" class="nav-link" data-scroll-target="#herramientas-adicionales-para-organizar-análisis-de-datos"><span class="toc-section-number">8</span>  Herramientas adicionales para organizar análisis de datos</a>
+  <ul class="collapse">
+  <li><a href="#proyectos-de-rstudio" id="toc-proyectos-de-rstudio" class="nav-link" data-scroll-target="#proyectos-de-rstudio"><span class="toc-section-number">8.1</span>  Proyectos de Rstudio</a></li>
+  <li><a href="#compendios-de-investigación" id="toc-compendios-de-investigación" class="nav-link" data-scroll-target="#compendios-de-investigación"><span class="toc-section-number">8.2</span>  Compendios de investigación</a></li>
+  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4"><span class="toc-section-number">8.3</span>  Ejercicio 4</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="toc-section-number">8.4</span>  Referencias</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -334,8 +337,8 @@ pre.numberSource code
 </div>
 <p>&nbsp;</p>
 <hr>
-<section id="crisis-de-reproducibilidad-en-la-ciencia" class="level2" data-number="0.1">
-<h2 data-number="0.1" class="anchored" data-anchor-id="crisis-de-reproducibilidad-en-la-ciencia"><span class="header-section-number">0.1</span> Crisis de reproducibilidad en la ciencia</h2>
+<section id="crisis-de-reproducibilidad-en-la-ciencia" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Crisis de reproducibilidad en la ciencia</h1>
 <p>La mayoría de los procedimientos (incluyendo análisis de datos) en estudios científicos no se pueden replicar</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -362,8 +365,8 @@ pre.numberSource code
 <p>En R la herramienta mas popular para la generación de reportes dinámicos es Rmarkdown. Rmarkdown <a href="http://rmarkdown.rstudio.com">se puede describir</a> como “<em>un formato eléctronico de documentación que facilita la creación de documentos, presentaciones e informes dinámicos desde R</em>”. R Markdown puede generar documentos con bloques de código de R (“chunks”) incrustados entre líneas de texto. Cuando se procesa el documento, estos bloques se evalúan (si el usuario así lo desea) y los resultados se “imprimen” en el documento de acuerdo con ciertas convenciones.</p>
 <p>Quarto es una herramienta muy similar a Rmarkdown. La diferencia mas importante es la capacidad de quarto para generar reportes usando otros lenguajes de programación. Sin embargo, en términos de sintaxis ambos formatos son muy parecidos. La mayoría de las funcionalidades mostradas acá son válidas para ambos formatos (en <a href="https://quarto.org/docs/faq/rmarkdown.html">este enlace</a> se puede encontrar una comparación detallada de ambos formato).</p>
 <p>&nbsp;</p>
-<section id="ventajas-de-los-reportes-dinámicos-con-rmarkdownquarto" class="level3" data-number="0.1.1">
-<h3 data-number="0.1.1" class="anchored" data-anchor-id="ventajas-de-los-reportes-dinámicos-con-rmarkdownquarto"><span class="header-section-number">0.1.1</span> Ventajas de los reportes dinámicos con Rmarkdown/quarto:</h3>
+<section id="ventajas-de-los-reportes-dinámicos-con-rmarkdownquarto" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="ventajas-de-los-reportes-dinámicos-con-rmarkdownquarto"><span class="header-section-number">1.1</span> Ventajas de los reportes dinámicos con Rmarkdown/quarto:</h2>
 <ul>
 <li><p>El <strong>código R se puede incrustar en el informe</strong>, por lo que no es necesario mantener el informe y el código de R por separado</p></li>
 <li><p>Incluir el código R directamente en un informe proporciona una <strong>estructura intuitiva</strong> para reproducir los análisis</p></li>
@@ -377,8 +380,8 @@ pre.numberSource code
 <hr>
 </section>
 </section>
-<section id="crear-documentos-r-markdownquarto" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Crear documentos R Markdown/quarto</h1>
+<section id="crear-documentos-r-markdownquarto" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Crear documentos R Markdown/quarto</h1>
 <p>Usaremos <a href="www.rstudio.com">Rstudio</a> para crear documentos R Markdown. Empiece por seleccionar “R Markdown …” en el menú desplegable que aparece cuando crea un nuevo archivo:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -414,8 +417,8 @@ pre.numberSource code
 </div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<section id="ejercicio-1" class="level2 alert alert-info" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="ejercicio-1"><span class="header-section-number">1.1</span> Ejercicio 1</h2>
+<section id="ejercicio-1" class="level2 alert alert-info" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="ejercicio-1"><span class="header-section-number">2.1</span> Ejercicio 1</h2>
 <p>Cree un nuevo archivo R Markdown o quarto, escriba algunas líneas de texto y haga clic en “Knit” para ver cómo se verá su reporte.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -429,12 +432,12 @@ pre.numberSource code
 </section>
 <p>&nbsp;</p>
 </section>
-<section id="syntaxis-markdown" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Syntaxis Markdown</h1>
+<section id="syntaxis-markdown" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Syntaxis Markdown</h1>
 <p>Markdown (y por extensión Rmarkdown) tiene sus propias reglas sintácticas. Sin embargo, este lenguaje es relativamente simple y fácil de dominar:</p>
 <hr>
-<section id="crear-encabezados-de-varios-tamaños" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="crear-encabezados-de-varios-tamaños"><span class="header-section-number">2.1</span> Crear encabezados de varios tamaños</h2>
+<section id="crear-encabezados-de-varios-tamaños" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="crear-encabezados-de-varios-tamaños"><span class="header-section-number">3.1</span> Crear encabezados de varios tamaños</h2>
 <p>Código:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -448,17 +451,17 @@ pre.numberSource code
 <p>Resultado:</p>
 </section>
 </section>
-<section id="encabezado-1" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Encabezado 1</h1>
-<section id="encabezado-2" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="encabezado-2"><span class="header-section-number">3.1</span> Encabezado 2</h2>
-<section id="encabezado-3" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="encabezado-3"><span class="header-section-number">3.1.1</span> Encabezado 3</h3>
+<section id="encabezado-1" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Encabezado 1</h1>
+<section id="encabezado-2" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="encabezado-2"><span class="header-section-number">4.1</span> Encabezado 2</h2>
+<section id="encabezado-3" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="encabezado-3"><span class="header-section-number">4.1.1</span> Encabezado 3</h3>
 <hr>
 </section>
 </section>
-<section id="opciones-del-texto" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="opciones-del-texto"><span class="header-section-number">3.2</span> Opciones del texto</h2>
+<section id="opciones-del-texto" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="opciones-del-texto"><span class="header-section-number">4.2</span> Opciones del texto</h2>
 <p>&nbsp;</p>
 <p>Código:</p>
 <div class="cell" data-layout-align="center">
@@ -474,8 +477,8 @@ pre.numberSource code
 <p>Hacer texto <strong>en negrita</strong>, <em>itálico</em>, <del>tachado</del>, o super<sup>índice</sup></p>
 <hr>
 </section>
-<section id="añadir-una-imagen" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="añadir-una-imagen"><span class="header-section-number">3.3</span> Añadir una imagen</h2>
+<section id="añadir-una-imagen" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="añadir-una-imagen"><span class="header-section-number">4.3</span> Añadir una imagen</h2>
 <p>Código:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -517,8 +520,8 @@ pre.numberSource code
 <p>Note que esta opción nos permite hacer uso de los argumentos del bloque de código dedicados a la graficación, y po r tanto es una opción mas flexible.</p>
 <hr>
 </section>
-<section id="crear-enlaces-hyperlinks" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="crear-enlaces-hyperlinks"><span class="header-section-number">3.4</span> Crear enlaces (‘hyperlinks’)</h2>
+<section id="crear-enlaces-hyperlinks" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="crear-enlaces-hyperlinks"><span class="header-section-number">4.4</span> Crear enlaces (‘hyperlinks’)</h2>
 <p>Código:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -533,16 +536,16 @@ pre.numberSource code
 <p>Crear un enlace a <a href="https://figshare.com">figshare</a></p>
 <p>&nbsp;</p>
 </section>
-<section id="ejercicio-2" class="level2 alert alert-info" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="ejercicio-2"><span class="header-section-number">3.5</span> Ejercicio 2</h2>
+<section id="ejercicio-2" class="level2 alert alert-info" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="ejercicio-2"><span class="header-section-number">4.5</span> Ejercicio 2</h2>
 <p>2.1 Cree unos encabezados y sub-encabezados en su documento Rmarkdown</p>
 <p>2.2 Añada texto con algunas palabras <strong>en negrita</strong> y en <em>italica</em></p>
 <p>2.3 Incruste una imagen de su organismo favorito (o un gif)</p>
 <p>2.4 Añada un enlace URL</p>
 </section>
 <p>&nbsp;</p>
-<section id="incrustar-código" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="incrustar-código"><span class="header-section-number">3.6</span> Incrustar código</h2>
+<section id="incrustar-código" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="incrustar-código"><span class="header-section-number">4.6</span> Incrustar código</h2>
 <p>Para incrustar el código de R, tenemos que definir un área donde se encuentra el código. Esta ‘área’ se conoce como un bloque de código (o ‘chunk’) y se define mediante:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -604,7 +607,7 @@ pre.numberSource code
 <td style="text-align: right;">1.4</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">0.49127</td>
+<td style="text-align: right;">-0.42514</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4.9</td>
@@ -612,7 +615,7 @@ pre.numberSource code
 <td style="text-align: right;">1.4</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-1.16574</td>
+<td style="text-align: right;">-0.80243</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4.7</td>
@@ -620,7 +623,7 @@ pre.numberSource code
 <td style="text-align: right;">1.3</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-1.51863</td>
+<td style="text-align: right;">1.21039</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4.6</td>
@@ -628,7 +631,7 @@ pre.numberSource code
 <td style="text-align: right;">1.5</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-0.70060</td>
+<td style="text-align: right;">0.82545</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5.0</td>
@@ -636,7 +639,7 @@ pre.numberSource code
 <td style="text-align: right;">1.4</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-0.25592</td>
+<td style="text-align: right;">-0.58652</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">5.4</td>
@@ -644,7 +647,7 @@ pre.numberSource code
 <td style="text-align: right;">1.7</td>
 <td style="text-align: right;">0.4</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-0.07424</td>
+<td style="text-align: right;">-0.70320</td>
 </tr>
 </tbody>
 </table>
@@ -655,8 +658,8 @@ pre.numberSource code
 <p>Cuando se procesa su documento, el segmento de código se muestra en un cuadro gris y los resultados de ese código se muestran en un cuadro blanco. ¿Qué pasa si solo desea que se muestre la salida de su código? ¿O que su código se muestre pero no se ejecute realmente? Hay argumentos que puede agregar a cada uno de sus bloques para especificar estas y otras opciones:</p>
 <hr>
 </section>
-<section id="ocultar-código" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="ocultar-código"><span class="header-section-number">3.7</span> Ocultar código</h2>
+<section id="ocultar-código" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="ocultar-código"><span class="header-section-number">4.7</span> Ocultar código</h2>
 <p>Añadir el argumento <code>echo=FALSE</code></p>
 <p>Código:</p>
 <div class="cell" data-layout-align="center">
@@ -698,7 +701,7 @@ pre.numberSource code
 <td style="text-align: right;">1.4</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">0.58463</td>
+<td style="text-align: right;">-0.51160</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4.9</td>
@@ -706,7 +709,7 @@ pre.numberSource code
 <td style="text-align: right;">1.4</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">1.80216</td>
+<td style="text-align: right;">0.76003</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4.7</td>
@@ -714,7 +717,7 @@ pre.numberSource code
 <td style="text-align: right;">1.3</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">0.91592</td>
+<td style="text-align: right;">-0.17384</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4.6</td>
@@ -722,7 +725,7 @@ pre.numberSource code
 <td style="text-align: right;">1.5</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-0.12928</td>
+<td style="text-align: right;">0.45438</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5.0</td>
@@ -730,7 +733,7 @@ pre.numberSource code
 <td style="text-align: right;">1.4</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-2.05848</td>
+<td style="text-align: right;">-1.54627</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">5.4</td>
@@ -738,7 +741,7 @@ pre.numberSource code
 <td style="text-align: right;">1.7</td>
 <td style="text-align: right;">0.4</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-0.39760</td>
+<td style="text-align: right;">0.72488</td>
 </tr>
 </tbody>
 </table>
@@ -761,11 +764,11 @@ pre.numberSource code
 <p><a href="https://yihui.org/knitr/options/">En este enlace</a> se detallan todos los argumentos disponibles para personalizar los bloques de código.</p>
 <p>&nbsp;</p>
 </section>
-<section id="incrustar-gráficos" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="incrustar-gráficos"><span class="header-section-number">3.8</span> Incrustar gráficos</h2>
+<section id="incrustar-gráficos" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="incrustar-gráficos"><span class="header-section-number">4.8</span> Incrustar gráficos</h2>
 <p>Los gráficos se pueden incrustar en documentos Rmarkdown simplemente usando funciones de graficación como lo haría en un script de R normal.</p>
-<section id="código" class="level4" data-number="3.8.0.1">
-<h4 data-number="3.8.0.1" class="anchored" data-anchor-id="código"><span class="header-section-number">3.8.0.1</span> Código:</h4>
+<section id="código" class="level4" data-number="4.8.0.1">
+<h4 data-number="4.8.0.1" class="anchored" data-anchor-id="código"><span class="header-section-number">4.8.0.1</span> Código:</h4>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -777,8 +780,8 @@ pre.numberSource code
 </div>
 <p>&nbsp;</p>
 </section>
-<section id="resultado" class="level4" data-number="3.8.0.2">
-<h4 data-number="3.8.0.2" class="anchored" data-anchor-id="resultado"><span class="header-section-number">3.8.0.2</span> Resultado:</h4>
+<section id="resultado" class="level4" data-number="4.8.0.2">
+<h4 data-number="4.8.0.2" class="anchored" data-anchor-id="resultado"><span class="header-section-number">4.8.0.2</span> Resultado:</h4>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="reportes_dinamicos_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
@@ -787,22 +790,22 @@ pre.numberSource code
 <p>&nbsp;</p>
 </section>
 </section>
-<section id="ejercicio-3" class="level2 alert alert-info" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="ejercicio-3"><span class="header-section-number">3.9</span> Ejercicio 3</h2>
+<section id="ejercicio-3" class="level2 alert alert-info" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="ejercicio-3"><span class="header-section-number">4.9</span> Ejercicio 3</h2>
 <p>3.1 Utilice los argumentos <code>eval</code>, <code>collapse</code> con diferentes valores (TRUE o FALSE) en un segmento donde corre <code>head(iris)</code>. ¿Cómo afectan el resultado?</p>
 <p>3.2 Haga lo mismo con los argumentos <code>out.width</code>, <code>fig.width</code>,<code>dpi</code> y <code>fig.height</code> en un segmento que cree un gráfico. ¿Cómo afecta esta vez?</p>
 </section>
 <p>&nbsp;</p>
-<section id="incrustar-código-de-r-en-el-texto" class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="incrustar-código-de-r-en-el-texto"><span class="header-section-number">3.10</span> Incrustar código de R en el texto</h2>
+<section id="incrustar-código-de-r-en-el-texto" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="incrustar-código-de-r-en-el-texto"><span class="header-section-number">4.10</span> Incrustar código de R en el texto</h2>
 <p>Es posible que haya notado a lo largo de este tutorial que tengo pequeños fragmentos de texto que parecen “bloques de código”. Esto se conoce como incrustación de código en texto.</p>
 <p>Esto se puede hacer de dos maneras:</p>
-<section id="dar-un-texto-con-la-apariencia-de-un-segmento-de-código" class="level4" data-number="3.10.0.1">
-<h4 data-number="3.10.0.1" class="anchored" data-anchor-id="dar-un-texto-con-la-apariencia-de-un-segmento-de-código"><span class="header-section-number">3.10.0.1</span> 1.Dar un texto con la apariencia de un segmento de código:</h4>
+<section id="dar-un-texto-con-la-apariencia-de-un-segmento-de-código" class="level4" data-number="4.10.0.1">
+<h4 data-number="4.10.0.1" class="anchored" data-anchor-id="dar-un-texto-con-la-apariencia-de-un-segmento-de-código"><span class="header-section-number">4.10.0.1</span> 1.Dar un texto con la apariencia de un segmento de código:</h4>
 <hr>
 </section>
-<section id="código-1" class="level4" data-number="3.10.0.2">
-<h4 data-number="3.10.0.2" class="anchored" data-anchor-id="código-1"><span class="header-section-number">3.10.0.2</span> Código:</h4>
+<section id="código-1" class="level4" data-number="4.10.0.2">
+<h4 data-number="4.10.0.2" class="anchored" data-anchor-id="código-1"><span class="header-section-number">4.10.0.2</span> Código:</h4>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -814,16 +817,16 @@ pre.numberSource code
 </div>
 <p>&nbsp;</p>
 </section>
-<section id="resultado-1" class="level4" data-number="3.10.0.3">
-<h4 data-number="3.10.0.3" class="anchored" data-anchor-id="resultado-1"><span class="header-section-number">3.10.0.3</span> Resultado:</h4>
+<section id="resultado-1" class="level4" data-number="4.10.0.3">
+<h4 data-number="4.10.0.3" class="anchored" data-anchor-id="resultado-1"><span class="header-section-number">4.10.0.3</span> Resultado:</h4>
 <p>El promedio del largo del sépalo es <code>mean(iris$Sepal.Length)</code></p>
 <p>&nbsp;</p>
 </section>
-<section id="evaluar-el-código-en-el-texto" class="level4" data-number="3.10.0.4">
-<h4 data-number="3.10.0.4" class="anchored" data-anchor-id="evaluar-el-código-en-el-texto"><span class="header-section-number">3.10.0.4</span> 2. Evaluar el código en el texto</h4>
+<section id="evaluar-el-código-en-el-texto" class="level4" data-number="4.10.0.4">
+<h4 data-number="4.10.0.4" class="anchored" data-anchor-id="evaluar-el-código-en-el-texto"><span class="header-section-number">4.10.0.4</span> 2. Evaluar el código en el texto</h4>
 </section>
-<section id="código-2" class="level4" data-number="3.10.0.5">
-<h4 data-number="3.10.0.5" class="anchored" data-anchor-id="código-2"><span class="header-section-number">3.10.0.5</span> Código:</h4>
+<section id="código-2" class="level4" data-number="4.10.0.5">
+<h4 data-number="4.10.0.5" class="anchored" data-anchor-id="código-2"><span class="header-section-number">4.10.0.5</span> Código:</h4>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -834,18 +837,18 @@ pre.numberSource code
 </div>
 </div>
 </section>
-<section id="resultado-2" class="level4" data-number="3.10.0.6">
-<h4 data-number="3.10.0.6" class="anchored" data-anchor-id="resultado-2"><span class="header-section-number">3.10.0.6</span> Resultado:</h4>
+<section id="resultado-2" class="level4" data-number="4.10.0.6">
+<h4 data-number="4.10.0.6" class="anchored" data-anchor-id="resultado-2"><span class="header-section-number">4.10.0.6</span> Resultado:</h4>
 <p>El promedio del largo de sépalo para <strong>setosa</strong> es 5.006.</p>
 <p>&nbsp;</p>
 <hr>
 </section>
 </section>
 </section>
-<section id="recursos-adicionales-para-personalizar-documentos-rmarkdown" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Recursos adicionales para personalizar documentos Rmarkdown</h1>
-<section id="metadatos-yaml" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="metadatos-yaml"><span class="header-section-number">4.1</span> Metadatos (YAML)</h2>
+<section id="recursos-adicionales-para-personalizar-documentos-rmarkdown" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Recursos adicionales para personalizar documentos Rmarkdown</h1>
+<section id="metadatos-yaml" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="metadatos-yaml"><span class="header-section-number">5.1</span> Metadatos (YAML)</h2>
 <p>Hay tres componentes básicos de un documento de R Markdown: los metadatos, el texto y el código. Los metadatos se escriben entre el par de tres guiones (“- - -”) generalmente al inicio del documento. La sintaxis de los metadatos es <a href="https://en.wikipedia.org/wiki/YAML">YAML (YAML Ain’t Markup Language)</a>, por lo que a veces también se denomina metadatos YAML. La sangría es importante en YAML, así que debe añadirla a los subcampos (con respecto a un campo superior).</p>
 <p>Este encabezado muestra las opciones mas comúnmente usadas en los metadatos YAML:</p>
 <div class="cell">
@@ -868,8 +871,8 @@ pre.numberSource code
 <p><a href="https://bookdown.org/yihui/rmarkdown/html-document.html">En este enlace</a> se explican en detalle las opciones disponibles en el encabezado YAML de archivos Rmarkdown.</p>
 <p>&nbsp;</p>
 </section>
-<section id="emojis" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="emojis"><span class="header-section-number">4.2</span> Emojis</h2>
+<section id="emojis" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="emojis"><span class="header-section-number">5.2</span> Emojis</h2>
 <p>El paquete <a href="https://github.com/hadley/emo">emo</a> permite añadir emojis al evaluar un código:</p>
 <details open="">
 <summary>Code</summary>
@@ -879,8 +882,8 @@ pre.numberSource code
 <p>Tambien se puede incrustar en el texto 🇨🇷, como lo vimos <a href="#incrustar-código-de-r-en-el-texto">mas arriba</a> ⬆️ (<code>ji("up_arrow")</code>)</p>
 <p>&nbsp;</p>
 </section>
-<section id="cuadros-con-knitrkable" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="cuadros-con-knitrkable"><span class="header-section-number">4.3</span> Cuadros con knitr::kable</h2>
+<section id="cuadros-con-knitrkable" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="cuadros-con-knitrkable"><span class="header-section-number">5.3</span> Cuadros con knitr::kable</h2>
 <p>El paquete <code>knitr</code> también provee una función para mostrar datos tabulares de forma ordenada y ‘limpia’ en los reportes dínamicos:</p>
 <div class="cell">
 <details open="">
@@ -917,7 +920,7 @@ pre.numberSource code
 <td style="text-align: right;">1.4</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">0.58463</td>
+<td style="text-align: right;">-0.51160</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4.9</td>
@@ -925,7 +928,7 @@ pre.numberSource code
 <td style="text-align: right;">1.4</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">1.80216</td>
+<td style="text-align: right;">0.76003</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4.7</td>
@@ -933,7 +936,7 @@ pre.numberSource code
 <td style="text-align: right;">1.3</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">0.91592</td>
+<td style="text-align: right;">-0.17384</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4.6</td>
@@ -941,7 +944,7 @@ pre.numberSource code
 <td style="text-align: right;">1.5</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-0.12928</td>
+<td style="text-align: right;">0.45438</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5.0</td>
@@ -949,7 +952,7 @@ pre.numberSource code
 <td style="text-align: right;">1.4</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-2.05848</td>
+<td style="text-align: right;">-1.54627</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">5.4</td>
@@ -957,7 +960,7 @@ pre.numberSource code
 <td style="text-align: right;">1.7</td>
 <td style="text-align: right;">0.4</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-0.39760</td>
+<td style="text-align: right;">0.72488</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4.6</td>
@@ -965,7 +968,7 @@ pre.numberSource code
 <td style="text-align: right;">1.4</td>
 <td style="text-align: right;">0.3</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-0.00087</td>
+<td style="text-align: right;">-0.22974</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">5.0</td>
@@ -973,7 +976,7 @@ pre.numberSource code
 <td style="text-align: right;">1.5</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">0.66950</td>
+<td style="text-align: right;">-2.15903</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4.4</td>
@@ -981,7 +984,7 @@ pre.numberSource code
 <td style="text-align: right;">1.4</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-0.13965</td>
+<td style="text-align: right;">-1.04957</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4.9</td>
@@ -989,7 +992,7 @@ pre.numberSource code
 <td style="text-align: right;">1.5</td>
 <td style="text-align: right;">0.1</td>
 <td style="text-align: left;">setosa</td>
-<td style="text-align: right;">-0.30252</td>
+<td style="text-align: right;">-0.89616</td>
 </tr>
 </tbody>
 </table>
@@ -1000,8 +1003,8 @@ pre.numberSource code
 <p>El paquete <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html"><code>kableExtra</code></a> complementa esta función con muchas herramientas para personalizar el formato de las tablas en reportes dinámicos en R.</p>
 <p>&nbsp;</p>
 </section>
-<section id="opciones-adicionales-en-knitr" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="opciones-adicionales-en-knitr"><span class="header-section-number">4.4</span> Opciones adicionales en knitr</h2>
+<section id="opciones-adicionales-en-knitr" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="opciones-adicionales-en-knitr"><span class="header-section-number">5.4</span> Opciones adicionales en knitr</h2>
 <p>El argumento <code>opts_knit</code> de <code>knitr</code> permite definir opciones globales (aplicables a todos los bloques a menos que se re-definan):</p>
 <div class="cell">
 <details open="">
@@ -1011,8 +1014,8 @@ pre.numberSource code
 </div>
 <p>&nbsp;</p>
 </section>
-<section id="presentaciones-y-otros-opciones-de-formato" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="presentaciones-y-otros-opciones-de-formato"><span class="header-section-number">4.5</span> Presentaciones y otros opciones de formato</h2>
+<section id="presentaciones-y-otros-opciones-de-formato" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="presentaciones-y-otros-opciones-de-formato"><span class="header-section-number">5.5</span> Presentaciones y otros opciones de formato</h2>
 <p>Note en la ventana de creación de un nuevo documento Rmarkdown las opciones adicionales de formato:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -1027,8 +1030,8 @@ pre.numberSource code
 <p>Los reportes dinámicos se pueden generar en otros formatos incluyendo presentaciones, pdf y documentos de word.</p>
 <p>&nbsp;</p>
 </section>
-<section id="plantillas-de-rmarkdown" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="plantillas-de-rmarkdown"><span class="header-section-number">4.6</span> Plantillas de Rmarkdown</h2>
+<section id="plantillas-de-rmarkdown" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="plantillas-de-rmarkdown"><span class="header-section-number">5.6</span> Plantillas de Rmarkdown</h2>
 <p>El paquete Rmarkdown puede generar resultados en HTML, PDF, MS Word, viñetas de paquetes de R, presentaciones Beamer y HTML5. Los formatos adicionales (o ‘variantes’ de estos formatos) están disponibles en otros paquetes de R. Algunos de esos paquetes son:</p>
 <ul>
 <li>rmdformats</li>
@@ -1050,12 +1053,12 @@ pre.numberSource code
 <hr>
 </section>
 </section>
-<section id="documentos-interactivos" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Documentos interactivos</h1>
+<section id="documentos-interactivos" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Documentos interactivos</h1>
 <p>Los documentos de R Markdown también pueden generar contenido interactivo. Hay dos tipos de documentos interactivos de R Markdown: HTML Widgets y aplicaciones Shiny.</p>
 <p>&nbsp;</p>
-<section id="html-widgets" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="html-widgets"><span class="header-section-number">5.1</span> HTML widgets</h2>
+<section id="html-widgets" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="html-widgets"><span class="header-section-number">6.1</span> HTML widgets</h2>
 <p>Los HTML Widgets se implementan con el paquete R <code>htmlwidgets</code>, que conecta herramientas de JavaScript que crean aplicaciones interactivas, como gráficos y tablas Se han desarrollado varios paquetes que emplean HTML widgets como <code>dygraphs</code>, <code>DT</code> y <code>leaflet</code>. En este <a href="https://www.htmlwidgets.org">sitio (https://www.htmlwidgets.org)</a> se muestran una variedad de widgets disponibles así como instrucciones de como desarrollarlos.</p>
 <p>El siguiente código utiliza el paquete <code>leaflet</code> para generar un mapa interactivo:</p>
 <details open="">
@@ -1080,8 +1083,8 @@ pre.numberSource code
 <span id="cb8-18"><a href="#cb8-18"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-5a7f3d21204e7153fd3c" style="width:100%;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5a7f3d21204e7153fd3c">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addPopups","args":[5.527448,-87.05724499999999,"Isla del Coco",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"setView":[[5.527448,-87.05724499999999],13,[]],"limits":{"lat":[5.527448,5.527448],"lng":[-87.05724499999999,-87.05724499999999]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bca1c7a955f777b67f33" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bca1c7a955f777b67f33">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addPopups","args":[5.527448,-87.05724499999999,"Isla del Coco",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"setView":[[5.527448,-87.05724499999999],13,[]],"limits":{"lat":[5.527448,5.527448],"lng":[-87.05724499999999,-87.05724499999999]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <p>&nbsp;</p>
 <p>Este es el bloque de código que generó el mapa:</p>
@@ -1097,8 +1100,8 @@ pre.numberSource code
 <p>Note el uso del argumento de <code>results = 'asis'</code> en las opciones del bloque de código.</p>
 <p>&nbsp;</p>
 </section>
-<section id="aplicaciones-shiny" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="aplicaciones-shiny"><span class="header-section-number">5.2</span> Aplicaciones shiny</h2>
+<section id="aplicaciones-shiny" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="aplicaciones-shiny"><span class="header-section-number">6.2</span> Aplicaciones shiny</h2>
 <p>El paquete <code>shiny</code> crea aplicaciones web interactivas en R. Para llamar al código <code>shiny</code> desde un documento R Markdown, agregue ‘runtime’: shiny a los metadatos YAML, como en este ejemplo:</p>
 <div class="cell">
 <details open="">
@@ -1156,8 +1159,8 @@ pre.numberSource code
 <p>&nbsp;</p>
 </section>
 </section>
-<section id="publicar-reportes-en-linea-con-rpubs" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Publicar reportes en linea con Rpubs</h1>
+<section id="publicar-reportes-en-linea-con-rpubs" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Publicar reportes en linea con Rpubs</h1>
 <p>La plataforma en linea <a href="rpubs.com/">Rpubs</a> permite publicar los reportes en formato HTML. Esta opción simplifica mucho el compartir códigos, análisis y resultados ya que solamente necesitamos enviar el la dirección URL. Aún mas, podemos seguir actualizando los reportes y la misma dirección URL seguirá conteniendo las versiones actualizadas de los reportes.</p>
 <p>Para enviar nuestros reportes HTML a <a href="rpubs.com/">Rpubs</a> debemos primero hacer una cuenta en el sitio. Luego de esto simplemente tenemos que usar el enlace “publish” en la esquina superior derecha de los reportes:</p>
 <div class="cell" data-layout-align="center">
@@ -1172,10 +1175,10 @@ pre.numberSource code
 <p>&nbsp;</p>
 <hr>
 </section>
-<section id="herramientas-adicionales-para-organizar-análisis-de-datos" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Herramientas adicionales para organizar análisis de datos</h1>
-<section id="proyectos-de-rstudio" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="proyectos-de-rstudio"><span class="header-section-number">7.1</span> Proyectos de Rstudio</h2>
+<section id="herramientas-adicionales-para-organizar-análisis-de-datos" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Herramientas adicionales para organizar análisis de datos</h1>
+<section id="proyectos-de-rstudio" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="proyectos-de-rstudio"><span class="header-section-number">8.1</span> Proyectos de Rstudio</h2>
 <p>Los proyectos de Rstudio crean carpetas donde se guardan los archivos relacionados a un análisis específico (código y datos) y hacen de esta carpeta el directorio de trabajo por defecto cuando se abre el proyecto. Se pueden crear de esta forma:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -1198,8 +1201,8 @@ pre.numberSource code
 </div>
 <p>&nbsp;</p>
 </section>
-<section id="compendios-de-investigación" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="compendios-de-investigación"><span class="header-section-number">7.2</span> Compendios de investigación</h2>
+<section id="compendios-de-investigación" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="compendios-de-investigación"><span class="header-section-number">8.2</span> Compendios de investigación</h2>
 <p>Los compendios de investigación son estructuras de carpetas pre-definidas que permiten seguir un orden lógico e intuitivo para organizar los archivos usados y generados en un análisis de datos de un proyecto de investigación. El paquete <a href="https://marce10.github.io/sketchy/">sketchy</a> genera estos compendios, permitiendo al usuario seleccionar entre una gama de compendios comunes en la comunidad científica. Este ejemplo crea el compendio básico (uno de los 14 que vienen con el paquete):</p>
 <div class="cell">
 <details open="">
@@ -1229,8 +1232,8 @@ Done.</code></pre>
 <p>El paquete crea archivos Rmarkdown con plantillas para el análisis de datos (carpeta “scripts”) y escritura de manuscritos (carpeta “manuscript”). Corra <code>path</code> en la consola de R para ver la dirección de la carpeta donde se creo el compendio.</p>
 <p>&nbsp;</p>
 </section>
-<section id="ejercicio-4" class="level2 alert alert-info" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="ejercicio-4"><span class="header-section-number">7.3</span> Ejercicio 4</h2>
+<section id="ejercicio-4" class="level2 alert alert-info" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="ejercicio-4"><span class="header-section-number">8.3</span> Ejercicio 4</h2>
 <ul>
 <li><p>Cree un reporte dinámico que incluya un mapa dinámico de Costa Rica usando el paquete <code>leaflet</code></p></li>
 <li><p>Reproduzca alguno de los ejemplos disponibles en el sitio del paquete dygraphs (<a href="https://rstudio.github.io/dygraphs/" class="uri">https://rstudio.github.io/dygraphs/</a>) e incrústelo en su reporte dinámico</p></li>
@@ -1243,8 +1246,8 @@ Done.</code></pre>
 </section>
 <p>&nbsp;</p>
 <hr>
-<section id="referencias" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="referencias"><span class="header-section-number">7.4</span> Referencias</h2>
+<section id="referencias" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="referencias"><span class="header-section-number">8.4</span> Referencias</h2>
 <ul>
 <li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a></li>
 <li><a href="https://blog.rstudio.com/2016/03/21/r-markdown-custom-formats/">Rmarkdown custom format</a></li>
@@ -1562,7 +1565,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Crisis de reproducibilidad en la ciencia</span></span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a><span class="fu"># Crisis de reproducibilidad en la ciencia</span></span>
 <span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a>La mayoría de los procedimientos (incluyendo análisis de datos) en estudios científicos no se pueden replicar</span>
 <span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a></span>
@@ -1593,7 +1596,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb14-94"><a href="#cb14-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ventajas de los reportes dinámicos con Rmarkdown/quarto:</span></span>
+<span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ventajas de los reportes dinámicos con Rmarkdown/quarto:</span></span>
 <span id="cb14-96"><a href="#cb14-96" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-97"><a href="#cb14-97" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>El **código R se puede incrustar en el informe**, por lo que no es necesario mantener el informe y el código de R por separado</span>
 <span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a></span>
