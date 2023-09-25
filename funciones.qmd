@@ -39,7 +39,7 @@ knitr::opts_chunk$set(
 ```
 
 ::: {.alert .alert-info}
-# Objetivos del manual {.unnumbered .unlisted}
+# Objetivo del manual {.unnumbered .unlisted}
 
 -   Identificar los elementos básicos que componen una función
 
