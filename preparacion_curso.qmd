@@ -1,13 +1,5 @@
 ---
 toc: False
-toc-location: left
-number-sections: true
-highlight-style: pygments
-format:
-  html:
-    css: styles.css
-    link-external-icon: false
-    link-external-newwindow: true  
 ---
 
 ```{r, echo= FALSE}

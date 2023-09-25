@@ -1,12 +1,5 @@
 ---
-toc: true
-toc-depth: 3
-toc-location: left
-number-sections: true
-highlight-style: pygments
-format:
-  html:
-    css: styles.css
+title: <font size="7"><b>Programación y métodos estadísticos avanzados en R</b></font>
 ---
 
 <!-- <div class="alert alert-success"> -->
@@ -25,13 +18,9 @@ format:
 
 <!-- &nbsp; -->
 
-<center>
-<font size="6"><b>Programación y métodos estadísticos <br> avanzados en R</b></font>
-</center>
+<center><font size="5"><b>Escuela de Biología, Universidad de Costa Rica<br></b></font></center>
 
-<center><font size="5"><b>Universidad de Costa Rica<br></b></font></center>
-
-<i><center><font size="5"><b><a href="https://marce10.github.io/">Marcelo Araya-Salas PhD</a> y <a href="https://scholar.google.com/citations?user=hTu_SnkAAAAJ&hl=es&oi=ao"> Mario Espinoza PhD</a><br></b></font></center></i>
+<center><font size="5"><b><a href="https://marce10.github.io/">Marcelo Araya-Salas PhD</a> y <a href="https://scholar.google.com/citations?user=hTu_SnkAAAAJ&hl=es&oi=ao"> Mario Espinoza PhD</a><br></b></font></center>
 
 
 Este curso pretende profundizar en los elementos de programación computacional,
@@ -43,8 +32,6 @@ técnicas y modelaje estadístico avanzadas utilizando R como plataforma. El cur
 <div class="alert alert-info">
 
 ### **Objetivos** {.unnumbered .unlisted}
-
-&nbsp;
 
 - Familiarizar al estudiante con la programación en R
 - Brindar herramientas para la manipulación de bases de datos

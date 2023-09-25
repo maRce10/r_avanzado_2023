@@ -123,7 +123,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.scss">
 </head>
 
 <body class="floating nav-fixed">
@@ -186,7 +186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">Preparación para el curso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./code_redirect.html">
+    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN">
  <span class="menu-text">Compartir código</span></a>
   </li>  
   <li class="nav-item">
@@ -316,7 +316,7 @@ pre.numberSource code
 <pre><code>function (x, na.rm = FALSE) 
 sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x), 
     na.rm = na.rm))
-&lt;bytecode: 0x558c4c2f71d8&gt;
+&lt;bytecode: 0x56179db9cbc0&gt;
 &lt;environment: namespace:stats&gt;</code></pre>
 </div>
 </div>
@@ -586,7 +586,7 @@ $na.rm
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-09-24 00:19:08.428 CST"</code></pre>
+<pre><code>[1] "2023-09-24 20:45:48.807 CST"</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -1425,761 +1425,748 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb115" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &lt;font size="7"&gt;&lt;b&gt;Funciones&lt;/b&gt;&lt;/font&gt;</span></span>
-<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
-<span id="cb115-4"><a href="#cb115-4" aria-hidden="true" tabindex="-1"></a><span class="an">toc-depth:</span><span class="co"> 2</span></span>
-<span id="cb115-5"><a href="#cb115-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc-location:</span><span class="co"> left</span></span>
-<span id="cb115-6"><a href="#cb115-6" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
-<span id="cb115-7"><a href="#cb115-7" aria-hidden="true" tabindex="-1"></a><span class="an">highlight-style:</span><span class="co"> pygments</span></span>
-<span id="cb115-8"><a href="#cb115-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb115-9"><a href="#cb115-9" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb115-10"><a href="#cb115-10" aria-hidden="true" tabindex="-1"></a><span class="co">    df-print: kable</span></span>
-<span id="cb115-11"><a href="#cb115-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
-<span id="cb115-12"><a href="#cb115-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb115-13"><a href="#cb115-13" aria-hidden="true" tabindex="-1"></a><span class="co">    css: styles.css</span></span>
-<span id="cb115-14"><a href="#cb115-14" aria-hidden="true" tabindex="-1"></a><span class="co">    link-external-icon: false</span></span>
-<span id="cb115-15"><a href="#cb115-15" aria-hidden="true" tabindex="-1"></a><span class="co">    link-external-newwindow: true  </span></span>
-<span id="cb115-16"><a href="#cb115-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb115-17"><a href="#cb115-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-18"><a href="#cb115-18" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
-<span id="cb115-19"><a href="#cb115-19" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;style&gt;</span></span>
-<span id="cb115-20"><a href="#cb115-20" aria-hidden="true" tabindex="-1"></a><span class="in">body</span></span>
-<span id="cb115-21"><a href="#cb115-21" aria-hidden="true" tabindex="-1"></a><span class="in">  { counter-reset: source-line 0; }</span></span>
-<span id="cb115-22"><a href="#cb115-22" aria-hidden="true" tabindex="-1"></a><span class="in">pre.numberSource code</span></span>
-<span id="cb115-23"><a href="#cb115-23" aria-hidden="true" tabindex="-1"></a><span class="in">  { counter-reset: none; }</span></span>
-<span id="cb115-24"><a href="#cb115-24" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/style&gt;</span></span>
-<span id="cb115-25"><a href="#cb115-25" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-26"><a href="#cb115-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-27"><a href="#cb115-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r,echo=FALSE,message=FALSE}</span></span>
+<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb115-4"><a href="#cb115-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-5"><a href="#cb115-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb115-6"><a href="#cb115-6" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;style&gt;</span></span>
+<span id="cb115-7"><a href="#cb115-7" aria-hidden="true" tabindex="-1"></a><span class="in">body</span></span>
+<span id="cb115-8"><a href="#cb115-8" aria-hidden="true" tabindex="-1"></a><span class="in">  { counter-reset: source-line 0; }</span></span>
+<span id="cb115-9"><a href="#cb115-9" aria-hidden="true" tabindex="-1"></a><span class="in">pre.numberSource code</span></span>
+<span id="cb115-10"><a href="#cb115-10" aria-hidden="true" tabindex="-1"></a><span class="in">  { counter-reset: none; }</span></span>
+<span id="cb115-11"><a href="#cb115-11" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/style&gt;</span></span>
+<span id="cb115-12"><a href="#cb115-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-13"><a href="#cb115-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-14"><a href="#cb115-14" aria-hidden="true" tabindex="-1"></a><span class="in">```{r,echo=FALSE,message=FALSE}</span></span>
+<span id="cb115-15"><a href="#cb115-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-16"><a href="#cb115-16" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"digits"</span> <span class="ot">=</span> <span class="dv">5</span>)</span>
+<span id="cb115-17"><a href="#cb115-17" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"digits.secs"</span> <span class="ot">=</span> <span class="dv">3</span>)</span>
+<span id="cb115-18"><a href="#cb115-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-19"><a href="#cb115-19" aria-hidden="true" tabindex="-1"></a><span class="co"># options to customize chunk outputs</span></span>
+<span id="cb115-20"><a href="#cb115-20" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb115-21"><a href="#cb115-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">class.source =</span> <span class="st">"numberLines lineAnchors"</span>, <span class="co"># for code line numbers</span></span>
+<span id="cb115-22"><a href="#cb115-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
+<span id="cb115-23"><a href="#cb115-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb115-24"><a href="#cb115-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-25"><a href="#cb115-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-26"><a href="#cb115-26" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
+<span id="cb115-27"><a href="#cb115-27" aria-hidden="true" tabindex="-1"></a><span class="fu"># Objetivos del manual {.unnumbered .unlisted}</span></span>
 <span id="cb115-28"><a href="#cb115-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-29"><a href="#cb115-29" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"digits"</span> <span class="ot">=</span> <span class="dv">5</span>)</span>
-<span id="cb115-30"><a href="#cb115-30" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"digits.secs"</span> <span class="ot">=</span> <span class="dv">3</span>)</span>
-<span id="cb115-31"><a href="#cb115-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-32"><a href="#cb115-32" aria-hidden="true" tabindex="-1"></a><span class="co"># options to customize chunk outputs</span></span>
-<span id="cb115-33"><a href="#cb115-33" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
-<span id="cb115-34"><a href="#cb115-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">class.source =</span> <span class="st">"numberLines lineAnchors"</span>, <span class="co"># for code line numbers</span></span>
-<span id="cb115-35"><a href="#cb115-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
-<span id="cb115-36"><a href="#cb115-36" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb115-37"><a href="#cb115-37" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-38"><a href="#cb115-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-39"><a href="#cb115-39" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
-<span id="cb115-40"><a href="#cb115-40" aria-hidden="true" tabindex="-1"></a><span class="fu"># Objetivos del manual {.unnumbered .unlisted}</span></span>
+<span id="cb115-29"><a href="#cb115-29" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Identificar los elementos básicos que componen una función</span>
+<span id="cb115-30"><a href="#cb115-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-31"><a href="#cb115-31" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Comprender las características de los principales tipos de argumentos en las funciones</span>
+<span id="cb115-32"><a href="#cb115-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-33"><a href="#cb115-33" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Ser capaz de construir funciones propias</span>
+<span id="cb115-34"><a href="#cb115-34" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb115-35"><a href="#cb115-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-36"><a href="#cb115-36" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-37"><a href="#cb115-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-38"><a href="#cb115-38" aria-hidden="true" tabindex="-1"></a><span class="fu"># Funciones en R</span></span>
+<span id="cb115-39"><a href="#cb115-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-40"><a href="#cb115-40" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Todo lo que sucede en <span class="in">`R`</span> es una llamada de una función (i.e. las manipulaciones y cálculos de objetos en <span class="in">`R`</span> se realizan a través de una función)</span>
 <span id="cb115-41"><a href="#cb115-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-42"><a href="#cb115-42" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Identificar los elementos básicos que componen una función</span>
+<span id="cb115-42"><a href="#cb115-42" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Una función es una subrutina que tiene como objetivo realizar una tarea específica</span>
 <span id="cb115-43"><a href="#cb115-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-44"><a href="#cb115-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Comprender las características de los principales tipos de argumentos en las funciones</span>
+<span id="cb115-44"><a href="#cb115-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Permite a los usuarios juntar bloques de código que se usan con frecuencia y, por lo tanto, resulta conveniente encapsular en un objeto que se puede llamar fácilmente cuando sea necesario</span>
 <span id="cb115-45"><a href="#cb115-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-46"><a href="#cb115-46" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Ser capaz de construir funciones propias</span>
-<span id="cb115-47"><a href="#cb115-47" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb115-48"><a href="#cb115-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-49"><a href="#cb115-49" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-50"><a href="#cb115-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-51"><a href="#cb115-51" aria-hidden="true" tabindex="-1"></a><span class="fu"># Funciones en R</span></span>
-<span id="cb115-52"><a href="#cb115-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-53"><a href="#cb115-53" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Todo lo que sucede en <span class="in">`R`</span> es una llamada de una función (i.e. las manipulaciones y cálculos de objetos en <span class="in">`R`</span> se realizan a través de una función)</span>
-<span id="cb115-54"><a href="#cb115-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-55"><a href="#cb115-55" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Una función es una subrutina que tiene como objetivo realizar una tarea específica</span>
-<span id="cb115-56"><a href="#cb115-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-57"><a href="#cb115-57" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Permite a los usuarios juntar bloques de código que se usan con frecuencia y, por lo tanto, resulta conveniente encapsular en un objeto que se puede llamar fácilmente cuando sea necesario</span>
-<span id="cb115-58"><a href="#cb115-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-59"><a href="#cb115-59" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Las funciones cargadas desde los paquetes (incluido <span class="in">`R`</span> básico) también se pueden modificar y sobrescribir</span>
+<span id="cb115-46"><a href="#cb115-46" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Las funciones cargadas desde los paquetes (incluido <span class="in">`R`</span> básico) también se pueden modificar y sobrescribir</span>
+<span id="cb115-47"><a href="#cb115-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-48"><a href="#cb115-48" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-49"><a href="#cb115-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-50"><a href="#cb115-50" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb115-51"><a href="#cb115-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-52"><a href="#cb115-52" aria-hidden="true" tabindex="-1"></a><span class="fu"># Estructura básica</span></span>
+<span id="cb115-53"><a href="#cb115-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-54"><a href="#cb115-54" aria-hidden="true" tabindex="-1"></a>Todas las funciones son creadas iguales ... mediante la función <span class="in">`function()`</span> y siguen la misma estructura:</span>
+<span id="cb115-55"><a href="#cb115-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-56"><a href="#cb115-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
+<span id="cb115-57"><a href="#cb115-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-58"><a href="#cb115-58" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/funcion.png"</span>)</span>
+<span id="cb115-59"><a href="#cb115-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb115-60"><a href="#cb115-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-61"><a href="#cb115-61" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-61"><a href="#cb115-61" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"2"</span><span class="kw">&gt;</span><span class="sc">\*</span> Modificado de <span class="kw">&lt;i&gt;</span>Wickham et al. 2016<span class="kw">&lt;/i&gt;&lt;/font&gt;</span></span>
 <span id="cb115-62"><a href="#cb115-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-63"><a href="#cb115-63" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb115-63"><a href="#cb115-63" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb115-64"><a href="#cb115-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-65"><a href="#cb115-65" aria-hidden="true" tabindex="-1"></a><span class="fu"># Estructura básica</span></span>
+<span id="cb115-65"><a href="#cb115-65" aria-hidden="true" tabindex="-1"></a>Podemos observar la estructura de funciones ya cargadas en nuestro entorno de <span class="in">`R`</span>. Para ver el código simplemente corra al nombre de la función en <span class="in">`R`</span> (sin el paréntesis). Por ejemplo, el código de la función <span class="in">`sd()`</span> se puede mostrar de la siguiente manera:</span>
 <span id="cb115-66"><a href="#cb115-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-67"><a href="#cb115-67" aria-hidden="true" tabindex="-1"></a>Todas las funciones son creadas iguales ... mediante la función <span class="in">`function()`</span> y siguen la misma estructura:</span>
+<span id="cb115-67"><a href="#cb115-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = T}</span></span>
 <span id="cb115-68"><a href="#cb115-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-69"><a href="#cb115-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
-<span id="cb115-70"><a href="#cb115-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-71"><a href="#cb115-71" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/funcion.png"</span>)</span>
-<span id="cb115-72"><a href="#cb115-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-69"><a href="#cb115-69" aria-hidden="true" tabindex="-1"></a>sd</span>
+<span id="cb115-70"><a href="#cb115-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-71"><a href="#cb115-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-72"><a href="#cb115-72" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb115-73"><a href="#cb115-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-74"><a href="#cb115-74" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"2"</span><span class="kw">&gt;</span><span class="sc">\*</span> Modificado de <span class="kw">&lt;i&gt;</span>Wickham et al. 2016<span class="kw">&lt;/i&gt;&lt;/font&gt;</span></span>
+<span id="cb115-74"><a href="#cb115-74" aria-hidden="true" tabindex="-1"></a>En <span class="in">`Rstudio`</span>, el código también se puede mostrar usando *F2* cuando el cursor está en el nombre de la función.</span>
 <span id="cb115-75"><a href="#cb115-75" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb115-76"><a href="#cb115-76" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb115-77"><a href="#cb115-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-78"><a href="#cb115-78" aria-hidden="true" tabindex="-1"></a>Podemos observar la estructura de funciones ya cargadas en nuestro entorno de <span class="in">`R`</span>. Para ver el código simplemente corra al nombre de la función en <span class="in">`R`</span> (sin el paréntesis). Por ejemplo, el código de la función <span class="in">`sd()`</span> se puede mostrar de la siguiente manera:</span>
+<span id="cb115-78"><a href="#cb115-78" aria-hidden="true" tabindex="-1"></a>Además, podemos diseccionar las funciones en sus elementos básicos:</span>
 <span id="cb115-79"><a href="#cb115-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-80"><a href="#cb115-80" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = T}</span></span>
-<span id="cb115-81"><a href="#cb115-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-82"><a href="#cb115-82" aria-hidden="true" tabindex="-1"></a>sd</span>
-<span id="cb115-83"><a href="#cb115-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-84"><a href="#cb115-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-85"><a href="#cb115-85" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-86"><a href="#cb115-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-87"><a href="#cb115-87" aria-hidden="true" tabindex="-1"></a>En <span class="in">`Rstudio`</span>, el código también se puede mostrar usando *F2* cuando el cursor está en el nombre de la función.</span>
+<span id="cb115-82"><a href="#cb115-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-83"><a href="#cb115-83" aria-hidden="true" tabindex="-1"></a><span class="co"># cuerpo</span></span>
+<span id="cb115-84"><a href="#cb115-84" aria-hidden="true" tabindex="-1"></a><span class="fu">body</span>(sd)</span>
+<span id="cb115-85"><a href="#cb115-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-86"><a href="#cb115-86" aria-hidden="true" tabindex="-1"></a><span class="co"># argumentos</span></span>
+<span id="cb115-87"><a href="#cb115-87" aria-hidden="true" tabindex="-1"></a><span class="fu">formals</span>(sd)</span>
 <span id="cb115-88"><a href="#cb115-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-89"><a href="#cb115-89" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-90"><a href="#cb115-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-91"><a href="#cb115-91" aria-hidden="true" tabindex="-1"></a>Además, podemos diseccionar las funciones en sus elementos básicos:</span>
+<span id="cb115-89"><a href="#cb115-89" aria-hidden="true" tabindex="-1"></a><span class="co"># ambiente</span></span>
+<span id="cb115-90"><a href="#cb115-90" aria-hidden="true" tabindex="-1"></a><span class="fu">environment</span>(sd)</span>
+<span id="cb115-91"><a href="#cb115-91" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb115-92"><a href="#cb115-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-95"><a href="#cb115-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-96"><a href="#cb115-96" aria-hidden="true" tabindex="-1"></a><span class="co"># cuerpo</span></span>
-<span id="cb115-97"><a href="#cb115-97" aria-hidden="true" tabindex="-1"></a><span class="fu">body</span>(sd)</span>
-<span id="cb115-98"><a href="#cb115-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-99"><a href="#cb115-99" aria-hidden="true" tabindex="-1"></a><span class="co"># argumentos</span></span>
-<span id="cb115-100"><a href="#cb115-100" aria-hidden="true" tabindex="-1"></a><span class="fu">formals</span>(sd)</span>
+<span id="cb115-93"><a href="#cb115-93" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-94"><a href="#cb115-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-95"><a href="#cb115-95" aria-hidden="true" tabindex="-1"></a>Algunas funciones <span class="in">`R`</span> utilizan funciones primitivas (principalmente escritas en <span class="in">`C`</span>). En estos casos, el código no se muestra:</span>
+<span id="cb115-96"><a href="#cb115-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-99"><a href="#cb115-99" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-100"><a href="#cb115-100" aria-hidden="true" tabindex="-1"></a>sum</span>
 <span id="cb115-101"><a href="#cb115-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-102"><a href="#cb115-102" aria-hidden="true" tabindex="-1"></a><span class="co"># ambiente</span></span>
-<span id="cb115-103"><a href="#cb115-103" aria-hidden="true" tabindex="-1"></a><span class="fu">environment</span>(sd)</span>
-<span id="cb115-104"><a href="#cb115-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-102"><a href="#cb115-102" aria-hidden="true" tabindex="-1"></a><span class="fu">body</span>(sum)</span>
+<span id="cb115-103"><a href="#cb115-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-104"><a href="#cb115-104" aria-hidden="true" tabindex="-1"></a><span class="fu">formals</span>(sum)</span>
 <span id="cb115-105"><a href="#cb115-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-106"><a href="#cb115-106" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-107"><a href="#cb115-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-108"><a href="#cb115-108" aria-hidden="true" tabindex="-1"></a>Algunas funciones <span class="in">`R`</span> utilizan funciones primitivas (principalmente escritas en <span class="in">`C`</span>). En estos casos, el código no se muestra:</span>
-<span id="cb115-109"><a href="#cb115-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-112"><a href="#cb115-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-113"><a href="#cb115-113" aria-hidden="true" tabindex="-1"></a>sum</span>
+<span id="cb115-106"><a href="#cb115-106" aria-hidden="true" tabindex="-1"></a><span class="fu">environment</span>(sum)</span>
+<span id="cb115-107"><a href="#cb115-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-108"><a href="#cb115-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-109"><a href="#cb115-109" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-110"><a href="#cb115-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-111"><a href="#cb115-111" aria-hidden="true" tabindex="-1"></a>Las funciones son en sí mismas un tipo específico de objeto:</span>
+<span id="cb115-112"><a href="#cb115-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-113"><a href="#cb115-113" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = T}</span></span>
 <span id="cb115-114"><a href="#cb115-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-115"><a href="#cb115-115" aria-hidden="true" tabindex="-1"></a><span class="fu">body</span>(sum)</span>
-<span id="cb115-116"><a href="#cb115-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-117"><a href="#cb115-117" aria-hidden="true" tabindex="-1"></a><span class="fu">formals</span>(sum)</span>
-<span id="cb115-118"><a href="#cb115-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-119"><a href="#cb115-119" aria-hidden="true" tabindex="-1"></a><span class="fu">environment</span>(sum)</span>
-<span id="cb115-120"><a href="#cb115-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-115"><a href="#cb115-115" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(sd)</span>
+<span id="cb115-116"><a href="#cb115-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-117"><a href="#cb115-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-118"><a href="#cb115-118" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-119"><a href="#cb115-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-120"><a href="#cb115-120" aria-hidden="true" tabindex="-1"></a>Los operadores son funciones:</span>
 <span id="cb115-121"><a href="#cb115-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-122"><a href="#cb115-122" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-123"><a href="#cb115-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-124"><a href="#cb115-124" aria-hidden="true" tabindex="-1"></a>Las funciones son en sí mismas un tipo específico de objeto:</span>
-<span id="cb115-125"><a href="#cb115-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-126"><a href="#cb115-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = T}</span></span>
+<span id="cb115-124"><a href="#cb115-124" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-125"><a href="#cb115-125" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb115-126"><a href="#cb115-126" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb115-127"><a href="#cb115-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-128"><a href="#cb115-128" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(sd)</span>
-<span id="cb115-129"><a href="#cb115-129" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-130"><a href="#cb115-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-131"><a href="#cb115-131" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-128"><a href="#cb115-128" aria-hidden="true" tabindex="-1"></a><span class="st">"+"</span>(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb115-129"><a href="#cb115-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-130"><a href="#cb115-130" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span></span>
+<span id="cb115-131"><a href="#cb115-131" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb115-132"><a href="#cb115-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-133"><a href="#cb115-133" aria-hidden="true" tabindex="-1"></a>Los operadores son funciones:</span>
-<span id="cb115-134"><a href="#cb115-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-137"><a href="#cb115-137" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-138"><a href="#cb115-138" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb115-133"><a href="#cb115-133" aria-hidden="true" tabindex="-1"></a><span class="st">"*"</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb115-134"><a href="#cb115-134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-135"><a href="#cb115-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-136"><a href="#cb115-136" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-137"><a href="#cb115-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-138"><a href="#cb115-138" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb115-139"><a href="#cb115-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-140"><a href="#cb115-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-141"><a href="#cb115-141" aria-hidden="true" tabindex="-1"></a><span class="st">"+"</span>(<span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb115-142"><a href="#cb115-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-143"><a href="#cb115-143" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span></span>
-<span id="cb115-144"><a href="#cb115-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-145"><a href="#cb115-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-146"><a href="#cb115-146" aria-hidden="true" tabindex="-1"></a><span class="st">"*"</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb115-147"><a href="#cb115-147" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-140"><a href="#cb115-140" aria-hidden="true" tabindex="-1"></a><span class="fu">## Nombre</span></span>
+<span id="cb115-141"><a href="#cb115-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-142"><a href="#cb115-142" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
+<span id="cb115-143"><a href="#cb115-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-144"><a href="#cb115-144" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/nombre.png"</span>)</span>
+<span id="cb115-145"><a href="#cb115-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-146"><a href="#cb115-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-147"><a href="#cb115-147" aria-hidden="true" tabindex="-1"></a>Los nombres de las funciones tienen pocas restricciones. Siguen las mismas reglas que otros objetos en <span class="in">`R`</span>. Algunas recomendaciones/reglas:</span>
 <span id="cb115-148"><a href="#cb115-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-149"><a href="#cb115-149" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-149"><a href="#cb115-149" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>No utilice nombres de objetos comunes <span class="in">`R`</span> (por ejemplo, *iris*, *x*) u objetos que ya están en el entorno</span>
 <span id="cb115-150"><a href="#cb115-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-151"><a href="#cb115-151" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb115-151"><a href="#cb115-151" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>No use nombres de funciones de uso frecuente (por ejemplo, <span class="in">`mean`</span>)</span>
 <span id="cb115-152"><a href="#cb115-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-153"><a href="#cb115-153" aria-hidden="true" tabindex="-1"></a><span class="fu">## Nombre</span></span>
+<span id="cb115-153"><a href="#cb115-153" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>No puede comenzar con un número</span>
 <span id="cb115-154"><a href="#cb115-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-155"><a href="#cb115-155" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
+<span id="cb115-155"><a href="#cb115-155" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Debería sugerir lo que hace</span>
 <span id="cb115-156"><a href="#cb115-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-157"><a href="#cb115-157" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/nombre.png"</span>)</span>
-<span id="cb115-158"><a href="#cb115-158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-159"><a href="#cb115-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-160"><a href="#cb115-160" aria-hidden="true" tabindex="-1"></a>Los nombres de las funciones tienen pocas restricciones. Siguen las mismas reglas que otros objetos en <span class="in">`R`</span>. Algunas recomendaciones/reglas:</span>
-<span id="cb115-161"><a href="#cb115-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-162"><a href="#cb115-162" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>No utilice nombres de objetos comunes <span class="in">`R`</span> (por ejemplo, *iris*, *x*) u objetos que ya están en el entorno</span>
-<span id="cb115-163"><a href="#cb115-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-164"><a href="#cb115-164" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>No use nombres de funciones de uso frecuente (por ejemplo, <span class="in">`mean`</span>)</span>
-<span id="cb115-165"><a href="#cb115-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-166"><a href="#cb115-166" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>No puede comenzar con un número</span>
-<span id="cb115-167"><a href="#cb115-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-168"><a href="#cb115-168" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Debería sugerir lo que hace</span>
+<span id="cb115-157"><a href="#cb115-157" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>No debe ser muy largo</span>
+<span id="cb115-158"><a href="#cb115-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-159"><a href="#cb115-159" aria-hidden="true" tabindex="-1"></a>En caso de que tenga varias funciones con el mismo nombre, puede llamarlas individualmente utilizando el nombre del paquete (o *namespace*) seguido de <span class="in">`::`</span>:</span>
+<span id="cb115-160"><a href="#cb115-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-163"><a href="#cb115-163" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-164"><a href="#cb115-164" aria-hidden="true" tabindex="-1"></a><span class="co"># crear funcion sd</span></span>
+<span id="cb115-165"><a href="#cb115-165" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">10</span></span>
+<span id="cb115-166"><a href="#cb115-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-167"><a href="#cb115-167" aria-hidden="true" tabindex="-1"></a><span class="co"># no calcula desv. st.</span></span>
+<span id="cb115-168"><a href="#cb115-168" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
 <span id="cb115-169"><a href="#cb115-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-170"><a href="#cb115-170" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>No debe ser muy largo</span>
-<span id="cb115-171"><a href="#cb115-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-172"><a href="#cb115-172" aria-hidden="true" tabindex="-1"></a>En caso de que tenga varias funciones con el mismo nombre, puede llamarlas individualmente utilizando el nombre del paquete (o *namespace*) seguido de <span class="in">`::`</span>:</span>
-<span id="cb115-173"><a href="#cb115-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-176"><a href="#cb115-176" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-177"><a href="#cb115-177" aria-hidden="true" tabindex="-1"></a><span class="co"># crear funcion sd</span></span>
-<span id="cb115-178"><a href="#cb115-178" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">10</span></span>
+<span id="cb115-170"><a href="#cb115-170" aria-hidden="true" tabindex="-1"></a><span class="co"># sd</span></span>
+<span id="cb115-171"><a href="#cb115-171" aria-hidden="true" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">sd</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb115-172"><a href="#cb115-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-173"><a href="#cb115-173" aria-hidden="true" tabindex="-1"></a><span class="co"># remover nueva sd</span></span>
+<span id="cb115-174"><a href="#cb115-174" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(sd)</span>
+<span id="cb115-175"><a href="#cb115-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-176"><a href="#cb115-176" aria-hidden="true" tabindex="-1"></a><span class="co"># usar de nuevo</span></span>
+<span id="cb115-177"><a href="#cb115-177" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb115-178"><a href="#cb115-178" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb115-179"><a href="#cb115-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-180"><a href="#cb115-180" aria-hidden="true" tabindex="-1"></a><span class="co"># no calcula desv. st.</span></span>
-<span id="cb115-181"><a href="#cb115-181" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
-<span id="cb115-182"><a href="#cb115-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-183"><a href="#cb115-183" aria-hidden="true" tabindex="-1"></a><span class="co"># sd</span></span>
-<span id="cb115-184"><a href="#cb115-184" aria-hidden="true" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">sd</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb115-180"><a href="#cb115-180" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-181"><a href="#cb115-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-182"><a href="#cb115-182" aria-hidden="true" tabindex="-1"></a>La sintaxis <span class="in">`namespace::function`</span> también se puede usar para llamar a funciones desde paquetes que se han instalado pero que no están cargados en el entorno actual.</span>
+<span id="cb115-183"><a href="#cb115-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-184"><a href="#cb115-184" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb115-185"><a href="#cb115-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-186"><a href="#cb115-186" aria-hidden="true" tabindex="-1"></a><span class="co"># remover nueva sd</span></span>
-<span id="cb115-187"><a href="#cb115-187" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(sd)</span>
-<span id="cb115-188"><a href="#cb115-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-189"><a href="#cb115-189" aria-hidden="true" tabindex="-1"></a><span class="co"># usar de nuevo</span></span>
-<span id="cb115-190"><a href="#cb115-190" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
-<span id="cb115-191"><a href="#cb115-191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-192"><a href="#cb115-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-193"><a href="#cb115-193" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-194"><a href="#cb115-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-195"><a href="#cb115-195" aria-hidden="true" tabindex="-1"></a>La sintaxis <span class="in">`namespace::function`</span> también se puede usar para llamar a funciones desde paquetes que se han instalado pero que no están cargados en el entorno actual.</span>
-<span id="cb115-196"><a href="#cb115-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-197"><a href="#cb115-197" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-198"><a href="#cb115-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-199"><a href="#cb115-199" aria-hidden="true" tabindex="-1"></a>Las funciones pueden ser anónimas:</span>
-<span id="cb115-200"><a href="#cb115-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-203"><a href="#cb115-203" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-204"><a href="#cb115-204" aria-hidden="true" tabindex="-1"></a>(<span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">10</span>)(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
-<span id="cb115-205"><a href="#cb115-205" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-206"><a href="#cb115-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-207"><a href="#cb115-207" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-208"><a href="#cb115-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-209"><a href="#cb115-209" aria-hidden="true" tabindex="-1"></a>Esto es más útil cuando se usan las funciones <span class="in">`Xapply`</span>:</span>
-<span id="cb115-210"><a href="#cb115-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-213"><a href="#cb115-213" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-214"><a href="#cb115-214" aria-hidden="true" tabindex="-1"></a>l <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
-<span id="cb115-215"><a href="#cb115-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-216"><a href="#cb115-216" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(l, <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">10</span>)</span>
-<span id="cb115-217"><a href="#cb115-217" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-186"><a href="#cb115-186" aria-hidden="true" tabindex="-1"></a>Las funciones pueden ser anónimas:</span>
+<span id="cb115-187"><a href="#cb115-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-190"><a href="#cb115-190" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-191"><a href="#cb115-191" aria-hidden="true" tabindex="-1"></a>(<span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">10</span>)(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb115-192"><a href="#cb115-192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-193"><a href="#cb115-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-194"><a href="#cb115-194" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-195"><a href="#cb115-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-196"><a href="#cb115-196" aria-hidden="true" tabindex="-1"></a>Esto es más útil cuando se usan las funciones <span class="in">`Xapply`</span>:</span>
+<span id="cb115-197"><a href="#cb115-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-200"><a href="#cb115-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-201"><a href="#cb115-201" aria-hidden="true" tabindex="-1"></a>l <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
+<span id="cb115-202"><a href="#cb115-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-203"><a href="#cb115-203" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(l, <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">10</span>)</span>
+<span id="cb115-204"><a href="#cb115-204" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-205"><a href="#cb115-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-206"><a href="#cb115-206" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb115-207"><a href="#cb115-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-208"><a href="#cb115-208" aria-hidden="true" tabindex="-1"></a><span class="fu">## Argumentos</span></span>
+<span id="cb115-209"><a href="#cb115-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-210"><a href="#cb115-210" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
+<span id="cb115-211"><a href="#cb115-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-212"><a href="#cb115-212" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/argumentos.png"</span>)</span>
+<span id="cb115-213"><a href="#cb115-213" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-214"><a href="#cb115-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-215"><a href="#cb115-215" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-216"><a href="#cb115-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-217"><a href="#cb115-217" aria-hidden="true" tabindex="-1"></a>Permiten a los usuarios ingresar objetos en la función. Los argumentos pueden o no tener valores predeterminados. Cuando los argumentos tienen valores predeterminados, no es necesario proporcionarlos:</span>
 <span id="cb115-218"><a href="#cb115-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-219"><a href="#cb115-219" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb115-219"><a href="#cb115-219" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval = T}</span></span>
 <span id="cb115-220"><a href="#cb115-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-221"><a href="#cb115-221" aria-hidden="true" tabindex="-1"></a><span class="fu">## Argumentos</span></span>
+<span id="cb115-221"><a href="#cb115-221" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">y =</span> <span class="dv">2</span>) x <span class="sc">+</span> y</span>
 <span id="cb115-222"><a href="#cb115-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-223"><a href="#cb115-223" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
-<span id="cb115-224"><a href="#cb115-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-225"><a href="#cb115-225" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/argumentos.png"</span>)</span>
-<span id="cb115-226"><a href="#cb115-226" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-223"><a href="#cb115-223" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>(<span class="dv">1</span>)</span>
+<span id="cb115-224"><a href="#cb115-224" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-225"><a href="#cb115-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-226"><a href="#cb115-226" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb115-227"><a href="#cb115-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-228"><a href="#cb115-228" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-228"><a href="#cb115-228" aria-hidden="true" tabindex="-1"></a>Por supuesto, se pueden modificar:</span>
 <span id="cb115-229"><a href="#cb115-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-230"><a href="#cb115-230" aria-hidden="true" tabindex="-1"></a>Permiten a los usuarios ingresar objetos en la función. Los argumentos pueden o no tener valores predeterminados. Cuando los argumentos tienen valores predeterminados, no es necesario proporcionarlos:</span>
+<span id="cb115-230"><a href="#cb115-230" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval = T}</span></span>
 <span id="cb115-231"><a href="#cb115-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-232"><a href="#cb115-232" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval = T}</span></span>
-<span id="cb115-233"><a href="#cb115-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-234"><a href="#cb115-234" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">y =</span> <span class="dv">2</span>) x <span class="sc">+</span> y</span>
-<span id="cb115-235"><a href="#cb115-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-236"><a href="#cb115-236" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>(<span class="dv">1</span>)</span>
-<span id="cb115-237"><a href="#cb115-237" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-232"><a href="#cb115-232" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb115-233"><a href="#cb115-233" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-234"><a href="#cb115-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-235"><a href="#cb115-235" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-236"><a href="#cb115-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-237"><a href="#cb115-237" aria-hidden="true" tabindex="-1"></a>Los argumentos sin valor predeterminado deben ser proporcionados:</span>
 <span id="cb115-238"><a href="#cb115-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-239"><a href="#cb115-239" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-239"><a href="#cb115-239" aria-hidden="true" tabindex="-1"></a><span class="in">```{r error = T}</span></span>
 <span id="cb115-240"><a href="#cb115-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-241"><a href="#cb115-241" aria-hidden="true" tabindex="-1"></a>Por supuesto, se pueden modificar:</span>
-<span id="cb115-242"><a href="#cb115-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-243"><a href="#cb115-243" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval = T}</span></span>
-<span id="cb115-244"><a href="#cb115-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-245"><a href="#cb115-245" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>(<span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb115-246"><a href="#cb115-246" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-241"><a href="#cb115-241" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>()</span>
+<span id="cb115-242"><a href="#cb115-242" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-243"><a href="#cb115-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-244"><a href="#cb115-244" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-245"><a href="#cb115-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-246"><a href="#cb115-246" aria-hidden="true" tabindex="-1"></a>Si todos los argumentos tienen un valor predeterminado, se puede invocar la función sin proporcionar ningún argumento:</span>
 <span id="cb115-247"><a href="#cb115-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-248"><a href="#cb115-248" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-248"><a href="#cb115-248" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval = T}</span></span>
 <span id="cb115-249"><a href="#cb115-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-250"><a href="#cb115-250" aria-hidden="true" tabindex="-1"></a>Los argumentos sin valor predeterminado deben ser proporcionados:</span>
+<span id="cb115-250"><a href="#cb115-250" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="sc">-</span><span class="dv">2</span>, <span class="at">y =</span> <span class="dv">2</span>) x <span class="sc">+</span> y</span>
 <span id="cb115-251"><a href="#cb115-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-252"><a href="#cb115-252" aria-hidden="true" tabindex="-1"></a><span class="in">```{r error = T}</span></span>
-<span id="cb115-253"><a href="#cb115-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-254"><a href="#cb115-254" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>()</span>
-<span id="cb115-255"><a href="#cb115-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-252"><a href="#cb115-252" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>()</span>
+<span id="cb115-253"><a href="#cb115-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-254"><a href="#cb115-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-255"><a href="#cb115-255" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb115-256"><a href="#cb115-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-257"><a href="#cb115-257" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-257"><a href="#cb115-257" aria-hidden="true" tabindex="-1"></a>Ese es el caso de <span class="in">`dev.off()`</span> y <span class="in">`Sys.time()`</span>:</span>
 <span id="cb115-258"><a href="#cb115-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-259"><a href="#cb115-259" aria-hidden="true" tabindex="-1"></a>Si todos los argumentos tienen un valor predeterminado, se puede invocar la función sin proporcionar ningún argumento:</span>
+<span id="cb115-259"><a href="#cb115-259" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval = T}</span></span>
 <span id="cb115-260"><a href="#cb115-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-261"><a href="#cb115-261" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval = T}</span></span>
-<span id="cb115-262"><a href="#cb115-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-263"><a href="#cb115-263" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="sc">-</span><span class="dv">2</span>, <span class="at">y =</span> <span class="dv">2</span>) x <span class="sc">+</span> y</span>
-<span id="cb115-264"><a href="#cb115-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-265"><a href="#cb115-265" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>()</span>
-<span id="cb115-266"><a href="#cb115-266" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-261"><a href="#cb115-261" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb115-262"><a href="#cb115-262" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-263"><a href="#cb115-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-264"><a href="#cb115-264" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-265"><a href="#cb115-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-266"><a href="#cb115-266" aria-hidden="true" tabindex="-1"></a>Los argumentos pueden especificarse implícitamente por posición o por nombres incompletos:</span>
 <span id="cb115-267"><a href="#cb115-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-268"><a href="#cb115-268" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-269"><a href="#cb115-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-270"><a href="#cb115-270" aria-hidden="true" tabindex="-1"></a>Ese es el caso de <span class="in">`dev.off()`</span> y <span class="in">`Sys.time()`</span>:</span>
-<span id="cb115-271"><a href="#cb115-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-272"><a href="#cb115-272" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval = T}</span></span>
-<span id="cb115-273"><a href="#cb115-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-274"><a href="#cb115-274" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
-<span id="cb115-275"><a href="#cb115-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-276"><a href="#cb115-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-277"><a href="#cb115-277" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-278"><a href="#cb115-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-279"><a href="#cb115-279" aria-hidden="true" tabindex="-1"></a>Los argumentos pueden especificarse implícitamente por posición o por nombres incompletos:</span>
+<span id="cb115-270"><a href="#cb115-270" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-271"><a href="#cb115-271" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="cf">function</span>(a1, b1, b2) {</span>
+<span id="cb115-272"><a href="#cb115-272" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">a1 =</span> a1, <span class="at">b1 =</span> b1, <span class="at">b2 =</span> b2)</span>
+<span id="cb115-273"><a href="#cb115-273" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb115-274"><a href="#cb115-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-275"><a href="#cb115-275" aria-hidden="true" tabindex="-1"></a><span class="co"># por posicion</span></span>
+<span id="cb115-276"><a href="#cb115-276" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">f2</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb115-277"><a href="#cb115-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-278"><a href="#cb115-278" aria-hidden="true" tabindex="-1"></a><span class="co"># por posicion y nombre</span></span>
+<span id="cb115-279"><a href="#cb115-279" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">f2</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
 <span id="cb115-280"><a href="#cb115-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-283"><a href="#cb115-283" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-284"><a href="#cb115-284" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="cf">function</span>(a1, b1, b2) {</span>
-<span id="cb115-285"><a href="#cb115-285" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">a1 =</span> a1, <span class="at">b1 =</span> b1, <span class="at">b2 =</span> b2)</span>
-<span id="cb115-286"><a href="#cb115-286" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb115-287"><a href="#cb115-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-288"><a href="#cb115-288" aria-hidden="true" tabindex="-1"></a><span class="co"># por posicion</span></span>
-<span id="cb115-289"><a href="#cb115-289" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">f2</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb115-281"><a href="#cb115-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-282"><a href="#cb115-282" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">f2</span>(<span class="dv">1</span>, <span class="at">a =</span> <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb115-283"><a href="#cb115-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-284"><a href="#cb115-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-285"><a href="#cb115-285" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">f2</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="at">a =</span> <span class="dv">3</span>))</span>
+<span id="cb115-286"><a href="#cb115-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-287"><a href="#cb115-287" aria-hidden="true" tabindex="-1"></a><span class="co"># por posicion y nombre parcial</span></span>
+<span id="cb115-288"><a href="#cb115-288" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">f2</span>(<span class="dv">1</span>, <span class="at">a =</span> <span class="dv">2</span>, <span class="at">b1 =</span> <span class="dv">3</span>))</span>
+<span id="cb115-289"><a href="#cb115-289" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb115-290"><a href="#cb115-290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-291"><a href="#cb115-291" aria-hidden="true" tabindex="-1"></a><span class="co"># por posicion y nombre</span></span>
-<span id="cb115-292"><a href="#cb115-292" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">f2</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
-<span id="cb115-293"><a href="#cb115-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-291"><a href="#cb115-291" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-292"><a href="#cb115-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-293"><a href="#cb115-293" aria-hidden="true" tabindex="-1"></a>Sin embargo, esto no funciona si los nombres son ambiguos:</span>
 <span id="cb115-294"><a href="#cb115-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-295"><a href="#cb115-295" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">f2</span>(<span class="dv">1</span>, <span class="at">a =</span> <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb115-295"><a href="#cb115-295" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, error=T}</span></span>
 <span id="cb115-296"><a href="#cb115-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-297"><a href="#cb115-297" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-298"><a href="#cb115-298" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">f2</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="at">a =</span> <span class="dv">3</span>))</span>
+<span id="cb115-297"><a href="#cb115-297" aria-hidden="true" tabindex="-1"></a><span class="fu">f2</span>(<span class="at">b =</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="at">a =</span> <span class="dv">3</span>)</span>
+<span id="cb115-298"><a href="#cb115-298" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb115-299"><a href="#cb115-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-300"><a href="#cb115-300" aria-hidden="true" tabindex="-1"></a><span class="co"># por posicion y nombre parcial</span></span>
-<span id="cb115-301"><a href="#cb115-301" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">f2</span>(<span class="dv">1</span>, <span class="at">a =</span> <span class="dv">2</span>, <span class="at">b1 =</span> <span class="dv">3</span>))</span>
-<span id="cb115-302"><a href="#cb115-302" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-300"><a href="#cb115-300" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-301"><a href="#cb115-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-302"><a href="#cb115-302" aria-hidden="true" tabindex="-1"></a>Es más seguro (y, por lo tanto, una mejor práctica) usar los nombres completos de los argumentos.</span>
 <span id="cb115-303"><a href="#cb115-303" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb115-304"><a href="#cb115-304" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb115-305"><a href="#cb115-305" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-306"><a href="#cb115-306" aria-hidden="true" tabindex="-1"></a>Sin embargo, esto no funciona si los nombres son ambiguos:</span>
+<span id="cb115-306"><a href="#cb115-306" aria-hidden="true" tabindex="-1"></a>Las funciones también pueden tomar argumentos lógicos. Estos son útiles para modificar el comportamiento de la función para que coincida con diferentes escenarios. Por ejemplo, <span class="in">`mean()`</span> permite a los usuarios ignorar los *NA*:</span>
 <span id="cb115-307"><a href="#cb115-307" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-308"><a href="#cb115-308" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, error=T}</span></span>
-<span id="cb115-309"><a href="#cb115-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-310"><a href="#cb115-310" aria-hidden="true" tabindex="-1"></a><span class="fu">f2</span>(<span class="at">b =</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="at">a =</span> <span class="dv">3</span>)</span>
-<span id="cb115-311"><a href="#cb115-311" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-310"><a href="#cb115-310" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-311"><a href="#cb115-311" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>)</span>
 <span id="cb115-312"><a href="#cb115-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-313"><a href="#cb115-313" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-314"><a href="#cb115-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-315"><a href="#cb115-315" aria-hidden="true" tabindex="-1"></a>Es más seguro (y, por lo tanto, una mejor práctica) usar los nombres completos de los argumentos.</span>
-<span id="cb115-316"><a href="#cb115-316" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-317"><a href="#cb115-317" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-318"><a href="#cb115-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-319"><a href="#cb115-319" aria-hidden="true" tabindex="-1"></a>Las funciones también pueden tomar argumentos lógicos. Estos son útiles para modificar el comportamiento de la función para que coincida con diferentes escenarios. Por ejemplo, <span class="in">`mean()`</span> permite a los usuarios ignorar los *NA*:</span>
-<span id="cb115-320"><a href="#cb115-320" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-323"><a href="#cb115-323" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-324"><a href="#cb115-324" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>)</span>
-<span id="cb115-325"><a href="#cb115-325" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-326"><a href="#cb115-326" aria-hidden="true" tabindex="-1"></a><span class="co"># sin ignorar NAs</span></span>
-<span id="cb115-327"><a href="#cb115-327" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(v1, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb115-313"><a href="#cb115-313" aria-hidden="true" tabindex="-1"></a><span class="co"># sin ignorar NAs</span></span>
+<span id="cb115-314"><a href="#cb115-314" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(v1, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb115-315"><a href="#cb115-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-316"><a href="#cb115-316" aria-hidden="true" tabindex="-1"></a><span class="co"># ignorando NAs</span></span>
+<span id="cb115-317"><a href="#cb115-317" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(v1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb115-318"><a href="#cb115-318" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-319"><a href="#cb115-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-320"><a href="#cb115-320" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-321"><a href="#cb115-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-322"><a href="#cb115-322" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
+<span id="cb115-323"><a href="#cb115-323" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio 1</span></span>
+<span id="cb115-324"><a href="#cb115-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-325"><a href="#cb115-325" aria-hidden="true" tabindex="-1"></a>1.1 ¿Qué hace la función <span class="in">`cor.test()`</span>?</span>
+<span id="cb115-326"><a href="#cb115-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-327"><a href="#cb115-327" aria-hidden="true" tabindex="-1"></a>1.2 Úsela con "Sepal.Length" y "Sepal.Width" de los datos de ejemplo *iris* (use <span class="in">`data(iris)`</span>)</span>
 <span id="cb115-328"><a href="#cb115-328" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-329"><a href="#cb115-329" aria-hidden="true" tabindex="-1"></a><span class="co"># ignorando NAs</span></span>
-<span id="cb115-330"><a href="#cb115-330" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(v1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb115-331"><a href="#cb115-331" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-329"><a href="#cb115-329" aria-hidden="true" tabindex="-1"></a>1.3 ¿Qué argumentos deben proporcionarse?</span>
+<span id="cb115-330"><a href="#cb115-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-331"><a href="#cb115-331" aria-hidden="true" tabindex="-1"></a>1.4 ¿Qué hace el argumento *alternative*? Use diferentes valores para este argumento y compare los resultados</span>
 <span id="cb115-332"><a href="#cb115-332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-333"><a href="#cb115-333" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-333"><a href="#cb115-333" aria-hidden="true" tabindex="-1"></a>1.5 ¿Cómo se puede calcular la correlación de Spearman?</span>
 <span id="cb115-334"><a href="#cb115-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-335"><a href="#cb115-335" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
-<span id="cb115-336"><a href="#cb115-336" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio 1</span></span>
-<span id="cb115-337"><a href="#cb115-337" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-338"><a href="#cb115-338" aria-hidden="true" tabindex="-1"></a>1.1 ¿Qué hace la función <span class="in">`cor.test()`</span>?</span>
-<span id="cb115-339"><a href="#cb115-339" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-340"><a href="#cb115-340" aria-hidden="true" tabindex="-1"></a>1.2 Úsela con "Sepal.Length" y "Sepal.Width" de los datos de ejemplo *iris* (use <span class="in">`data(iris)`</span>)</span>
-<span id="cb115-341"><a href="#cb115-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-342"><a href="#cb115-342" aria-hidden="true" tabindex="-1"></a>1.3 ¿Qué argumentos deben proporcionarse?</span>
-<span id="cb115-343"><a href="#cb115-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-344"><a href="#cb115-344" aria-hidden="true" tabindex="-1"></a>1.4 ¿Qué hace el argumento *alternative*? Use diferentes valores para este argumento y compare los resultados</span>
-<span id="cb115-345"><a href="#cb115-345" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-346"><a href="#cb115-346" aria-hidden="true" tabindex="-1"></a>1.5 ¿Cómo se puede calcular la correlación de Spearman?</span>
-<span id="cb115-347"><a href="#cb115-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-348"><a href="#cb115-348" aria-hidden="true" tabindex="-1"></a>1.6 ¿Qué tipo de objeto devuelve esta función?</span>
-<span id="cb115-349"><a href="#cb115-349" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-350"><a href="#cb115-350" aria-hidden="true" tabindex="-1"></a>1.7 ¿Cómo puede obtener el valor de **p** directamente del resultado de la función (sin guardar el resultado como un objeto)?</span>
+<span id="cb115-335"><a href="#cb115-335" aria-hidden="true" tabindex="-1"></a>1.6 ¿Qué tipo de objeto devuelve esta función?</span>
+<span id="cb115-336"><a href="#cb115-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-337"><a href="#cb115-337" aria-hidden="true" tabindex="-1"></a>1.7 ¿Cómo puede obtener el valor de **p** directamente del resultado de la función (sin guardar el resultado como un objeto)?</span>
+<span id="cb115-338"><a href="#cb115-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-339"><a href="#cb115-339" aria-hidden="true" tabindex="-1"></a>1.8 Escoga una función de R y lea su documentación con el fin de entender su uso, cada uno de sus argumentos (y que tipo de objetos requieren) y el resultado que produce (es probable que se le pida que explique esto al grupo)</span>
+<span id="cb115-340"><a href="#cb115-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-341"><a href="#cb115-341" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb115-342"><a href="#cb115-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-343"><a href="#cb115-343" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb115-344"><a href="#cb115-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-345"><a href="#cb115-345" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cuerpo</span></span>
+<span id="cb115-346"><a href="#cb115-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-347"><a href="#cb115-347" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
+<span id="cb115-348"><a href="#cb115-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-349"><a href="#cb115-349" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/cuerpo.png"</span>)</span>
+<span id="cb115-350"><a href="#cb115-350" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb115-351"><a href="#cb115-351" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-352"><a href="#cb115-352" aria-hidden="true" tabindex="-1"></a>1.8 Escoga una función de R y lea su documentación con el fin de entender su uso, cada uno de sus argumentos (y que tipo de objetos requieren) y el resultado que produce (es probable que se le pida que explique esto al grupo)</span>
+<span id="cb115-352"><a href="#cb115-352" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb115-353"><a href="#cb115-353" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-354"><a href="#cb115-354" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb115-354"><a href="#cb115-354" aria-hidden="true" tabindex="-1"></a>El cuerpo de una función puede contener:</span>
 <span id="cb115-355"><a href="#cb115-355" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-356"><a href="#cb115-356" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb115-356"><a href="#cb115-356" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Comprobación de argumentos</span>
 <span id="cb115-357"><a href="#cb115-357" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-358"><a href="#cb115-358" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cuerpo</span></span>
+<span id="cb115-358"><a href="#cb115-358" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Manipulación de datos</span>
 <span id="cb115-359"><a href="#cb115-359" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-360"><a href="#cb115-360" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
+<span id="cb115-360"><a href="#cb115-360" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Definición de resultados</span>
 <span id="cb115-361"><a href="#cb115-361" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-362"><a href="#cb115-362" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/cuerpo.png"</span>)</span>
-<span id="cb115-363"><a href="#cb115-363" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-364"><a href="#cb115-364" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-365"><a href="#cb115-365" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-366"><a href="#cb115-366" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-367"><a href="#cb115-367" aria-hidden="true" tabindex="-1"></a>El cuerpo de una función puede contener:</span>
-<span id="cb115-368"><a href="#cb115-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-369"><a href="#cb115-369" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Comprobación de argumentos</span>
-<span id="cb115-370"><a href="#cb115-370" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-371"><a href="#cb115-371" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Manipulación de datos</span>
-<span id="cb115-372"><a href="#cb115-372" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-373"><a href="#cb115-373" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Definición de resultados</span>
-<span id="cb115-374"><a href="#cb115-374" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-375"><a href="#cb115-375" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-376"><a href="#cb115-376" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-377"><a href="#cb115-377" aria-hidden="true" tabindex="-1"></a>El cuerpo de la función puede tomar el mismo tipo de código utilizado en cualquier rutina de <span class="in">`R`</span>. Sin embargo, los objetos creados no estarán disponibles en el entorno.</span>
+<span id="cb115-362"><a href="#cb115-362" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-363"><a href="#cb115-363" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-364"><a href="#cb115-364" aria-hidden="true" tabindex="-1"></a>El cuerpo de la función puede tomar el mismo tipo de código utilizado en cualquier rutina de <span class="in">`R`</span>. Sin embargo, los objetos creados no estarán disponibles en el entorno.</span>
+<span id="cb115-365"><a href="#cb115-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-366"><a href="#cb115-366" aria-hidden="true" tabindex="-1"></a>Cuando se realizan varios cálculos, debemos incluir una *declaración de retorno* (return statement), que define explícitamente la salida de la función. Esto se hace usando la función <span class="in">`return()`</span>:</span>
+<span id="cb115-367"><a href="#cb115-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-370"><a href="#cb115-370" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-371"><a href="#cb115-371" aria-hidden="true" tabindex="-1"></a><span class="co"># sin "return statement"</span></span>
+<span id="cb115-372"><a href="#cb115-372" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb115-373"><a href="#cb115-373" aria-hidden="true" tabindex="-1"></a>  z1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> y</span>
+<span id="cb115-374"><a href="#cb115-374" aria-hidden="true" tabindex="-1"></a>  z2 <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> y</span>
+<span id="cb115-375"><a href="#cb115-375" aria-hidden="true" tabindex="-1"></a>  z3 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> y</span>
+<span id="cb115-376"><a href="#cb115-376" aria-hidden="true" tabindex="-1"></a>  z4 <span class="ot">&lt;-</span> x <span class="sc">/</span> y</span>
+<span id="cb115-377"><a href="#cb115-377" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb115-378"><a href="#cb115-378" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-379"><a href="#cb115-379" aria-hidden="true" tabindex="-1"></a>Cuando se realizan varios cálculos, debemos incluir una *declaración de retorno* (return statement), que define explícitamente la salida de la función. Esto se hace usando la función <span class="in">`return()`</span>:</span>
+<span id="cb115-379"><a href="#cb115-379" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span>
 <span id="cb115-380"><a href="#cb115-380" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-383"><a href="#cb115-383" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-384"><a href="#cb115-384" aria-hidden="true" tabindex="-1"></a><span class="co"># sin "return statement"</span></span>
-<span id="cb115-385"><a href="#cb115-385" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
-<span id="cb115-386"><a href="#cb115-386" aria-hidden="true" tabindex="-1"></a>  z1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> y</span>
-<span id="cb115-387"><a href="#cb115-387" aria-hidden="true" tabindex="-1"></a>  z2 <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> y</span>
-<span id="cb115-388"><a href="#cb115-388" aria-hidden="true" tabindex="-1"></a>  z3 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> y</span>
-<span id="cb115-389"><a href="#cb115-389" aria-hidden="true" tabindex="-1"></a>  z4 <span class="ot">&lt;-</span> x <span class="sc">/</span> y</span>
-<span id="cb115-390"><a href="#cb115-390" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb115-391"><a href="#cb115-391" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-392"><a href="#cb115-392" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span>
-<span id="cb115-393"><a href="#cb115-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-394"><a href="#cb115-394" aria-hidden="true" tabindex="-1"></a>f1_out <span class="ot">&lt;-</span> <span class="fu">f1</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb115-381"><a href="#cb115-381" aria-hidden="true" tabindex="-1"></a>f1_out <span class="ot">&lt;-</span> <span class="fu">f1</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb115-382"><a href="#cb115-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-383"><a href="#cb115-383" aria-hidden="true" tabindex="-1"></a>f1_out</span>
+<span id="cb115-384"><a href="#cb115-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-385"><a href="#cb115-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-386"><a href="#cb115-386" aria-hidden="true" tabindex="-1"></a><span class="co"># con "return statement"</span></span>
+<span id="cb115-387"><a href="#cb115-387" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb115-388"><a href="#cb115-388" aria-hidden="true" tabindex="-1"></a>  z1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> y</span>
+<span id="cb115-389"><a href="#cb115-389" aria-hidden="true" tabindex="-1"></a>  z2 <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> y</span>
+<span id="cb115-390"><a href="#cb115-390" aria-hidden="true" tabindex="-1"></a>  z3 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> y</span>
+<span id="cb115-391"><a href="#cb115-391" aria-hidden="true" tabindex="-1"></a>  z4 <span class="ot">&lt;-</span> x <span class="sc">/</span> y</span>
+<span id="cb115-392"><a href="#cb115-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-393"><a href="#cb115-393" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(z1, z2, z3, z4))</span>
+<span id="cb115-394"><a href="#cb115-394" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb115-395"><a href="#cb115-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-396"><a href="#cb115-396" aria-hidden="true" tabindex="-1"></a>f1_out</span>
+<span id="cb115-396"><a href="#cb115-396" aria-hidden="true" tabindex="-1"></a><span class="fu">f2</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span>
 <span id="cb115-397"><a href="#cb115-397" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-398"><a href="#cb115-398" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-399"><a href="#cb115-399" aria-hidden="true" tabindex="-1"></a><span class="co"># con "return statement"</span></span>
-<span id="cb115-400"><a href="#cb115-400" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
-<span id="cb115-401"><a href="#cb115-401" aria-hidden="true" tabindex="-1"></a>  z1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> y</span>
-<span id="cb115-402"><a href="#cb115-402" aria-hidden="true" tabindex="-1"></a>  z2 <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> y</span>
-<span id="cb115-403"><a href="#cb115-403" aria-hidden="true" tabindex="-1"></a>  z3 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> y</span>
-<span id="cb115-404"><a href="#cb115-404" aria-hidden="true" tabindex="-1"></a>  z4 <span class="ot">&lt;-</span> x <span class="sc">/</span> y</span>
-<span id="cb115-405"><a href="#cb115-405" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-406"><a href="#cb115-406" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(z1, z2, z3, z4))</span>
-<span id="cb115-407"><a href="#cb115-407" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb115-408"><a href="#cb115-408" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-409"><a href="#cb115-409" aria-hidden="true" tabindex="-1"></a><span class="fu">f2</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span>
-<span id="cb115-410"><a href="#cb115-410" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-411"><a href="#cb115-411" aria-hidden="true" tabindex="-1"></a>f2_out <span class="ot">&lt;-</span> <span class="fu">f2</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span>
-<span id="cb115-412"><a href="#cb115-412" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-413"><a href="#cb115-413" aria-hidden="true" tabindex="-1"></a>f2_out</span>
-<span id="cb115-414"><a href="#cb115-414" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-415"><a href="#cb115-415" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-416"><a href="#cb115-416" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-417"><a href="#cb115-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-418"><a href="#cb115-418" aria-hidden="true" tabindex="-1"></a>Por lo tanto, cuando no se proporciona una *declaración de retorno*, la función devolverá el último objeto que se creó en el cuerpo de la función:</span>
+<span id="cb115-398"><a href="#cb115-398" aria-hidden="true" tabindex="-1"></a>f2_out <span class="ot">&lt;-</span> <span class="fu">f2</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb115-399"><a href="#cb115-399" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-400"><a href="#cb115-400" aria-hidden="true" tabindex="-1"></a>f2_out</span>
+<span id="cb115-401"><a href="#cb115-401" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-402"><a href="#cb115-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-403"><a href="#cb115-403" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-404"><a href="#cb115-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-405"><a href="#cb115-405" aria-hidden="true" tabindex="-1"></a>Por lo tanto, cuando no se proporciona una *declaración de retorno*, la función devolverá el último objeto que se creó en el cuerpo de la función:</span>
+<span id="cb115-406"><a href="#cb115-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-409"><a href="#cb115-409" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-410"><a href="#cb115-410" aria-hidden="true" tabindex="-1"></a><span class="co"># sin "return statement"</span></span>
+<span id="cb115-411"><a href="#cb115-411" aria-hidden="true" tabindex="-1"></a>f3 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb115-412"><a href="#cb115-412" aria-hidden="true" tabindex="-1"></a>  z1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> y</span>
+<span id="cb115-413"><a href="#cb115-413" aria-hidden="true" tabindex="-1"></a>  z2 <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> y</span>
+<span id="cb115-414"><a href="#cb115-414" aria-hidden="true" tabindex="-1"></a>  z3 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> y</span>
+<span id="cb115-415"><a href="#cb115-415" aria-hidden="true" tabindex="-1"></a>  z4 <span class="ot">&lt;-</span> x <span class="sc">/</span> y</span>
+<span id="cb115-416"><a href="#cb115-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-417"><a href="#cb115-417" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(z1, z2, z3, z4)</span>
+<span id="cb115-418"><a href="#cb115-418" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb115-419"><a href="#cb115-419" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-422"><a href="#cb115-422" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-423"><a href="#cb115-423" aria-hidden="true" tabindex="-1"></a><span class="co"># sin "return statement"</span></span>
-<span id="cb115-424"><a href="#cb115-424" aria-hidden="true" tabindex="-1"></a>f3 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
-<span id="cb115-425"><a href="#cb115-425" aria-hidden="true" tabindex="-1"></a>  z1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> y</span>
-<span id="cb115-426"><a href="#cb115-426" aria-hidden="true" tabindex="-1"></a>  z2 <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> y</span>
-<span id="cb115-427"><a href="#cb115-427" aria-hidden="true" tabindex="-1"></a>  z3 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> y</span>
-<span id="cb115-428"><a href="#cb115-428" aria-hidden="true" tabindex="-1"></a>  z4 <span class="ot">&lt;-</span> x <span class="sc">/</span> y</span>
-<span id="cb115-429"><a href="#cb115-429" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-430"><a href="#cb115-430" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(z1, z2, z3, z4)</span>
-<span id="cb115-431"><a href="#cb115-431" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb115-420"><a href="#cb115-420" aria-hidden="true" tabindex="-1"></a><span class="fu">f3</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb115-421"><a href="#cb115-421" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-422"><a href="#cb115-422" aria-hidden="true" tabindex="-1"></a>f3_out <span class="ot">&lt;-</span> <span class="fu">f3</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb115-423"><a href="#cb115-423" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-424"><a href="#cb115-424" aria-hidden="true" tabindex="-1"></a>f3_out</span>
+<span id="cb115-425"><a href="#cb115-425" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-426"><a href="#cb115-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-427"><a href="#cb115-427" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-428"><a href="#cb115-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-429"><a href="#cb115-429" aria-hidden="true" tabindex="-1"></a>Es más seguro usar <span class="in">`return()`</span>.</span>
+<span id="cb115-430"><a href="#cb115-430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-431"><a href="#cb115-431" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb115-432"><a href="#cb115-432" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-433"><a href="#cb115-433" aria-hidden="true" tabindex="-1"></a><span class="fu">f3</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb115-433"><a href="#cb115-433" aria-hidden="true" tabindex="-1"></a>Cuando una función realiza varias tareas, podemos usar una lista para juntar los diferentes objetos. Esto es particularmente útil cuando se generan objetos de diferentes clases (por ejemplo, vectores y listas):</span>
 <span id="cb115-434"><a href="#cb115-434" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-435"><a href="#cb115-435" aria-hidden="true" tabindex="-1"></a>f3_out <span class="ot">&lt;-</span> <span class="fu">f3</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span>
-<span id="cb115-436"><a href="#cb115-436" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-437"><a href="#cb115-437" aria-hidden="true" tabindex="-1"></a>f3_out</span>
-<span id="cb115-438"><a href="#cb115-438" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-439"><a href="#cb115-439" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-440"><a href="#cb115-440" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-437"><a href="#cb115-437" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-438"><a href="#cb115-438" aria-hidden="true" tabindex="-1"></a>f4 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb115-439"><a href="#cb115-439" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1 elemento</span></span>
+<span id="cb115-440"><a href="#cb115-440" aria-hidden="true" tabindex="-1"></a>  z1 <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
 <span id="cb115-441"><a href="#cb115-441" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-442"><a href="#cb115-442" aria-hidden="true" tabindex="-1"></a>Es más seguro usar <span class="in">`return()`</span>.</span>
-<span id="cb115-443"><a href="#cb115-443" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-444"><a href="#cb115-444" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-445"><a href="#cb115-445" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-446"><a href="#cb115-446" aria-hidden="true" tabindex="-1"></a>Cuando una función realiza varias tareas, podemos usar una lista para juntar los diferentes objetos. Esto es particularmente útil cuando se generan objetos de diferentes clases (por ejemplo, vectores y listas):</span>
+<span id="cb115-442"><a href="#cb115-442" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2 elementos</span></span>
+<span id="cb115-443"><a href="#cb115-443" aria-hidden="true" tabindex="-1"></a>  z2 <span class="ot">&lt;-</span> <span class="fu">c</span>(x, y <span class="sc">/</span> <span class="dv">3</span>)</span>
+<span id="cb115-444"><a href="#cb115-444" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-445"><a href="#cb115-445" aria-hidden="true" tabindex="-1"></a>  <span class="co"># vector logico</span></span>
+<span id="cb115-446"><a href="#cb115-446" aria-hidden="true" tabindex="-1"></a>  z3 <span class="ot">&lt;-</span> z2 <span class="sc">&lt;</span> <span class="dv">10</span></span>
 <span id="cb115-447"><a href="#cb115-447" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-450"><a href="#cb115-450" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-451"><a href="#cb115-451" aria-hidden="true" tabindex="-1"></a>f4 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
-<span id="cb115-452"><a href="#cb115-452" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1 elemento</span></span>
-<span id="cb115-453"><a href="#cb115-453" aria-hidden="true" tabindex="-1"></a>  z1 <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
-<span id="cb115-454"><a href="#cb115-454" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-455"><a href="#cb115-455" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2 elementos</span></span>
-<span id="cb115-456"><a href="#cb115-456" aria-hidden="true" tabindex="-1"></a>  z2 <span class="ot">&lt;-</span> <span class="fu">c</span>(x, y <span class="sc">/</span> <span class="dv">3</span>)</span>
-<span id="cb115-457"><a href="#cb115-457" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-458"><a href="#cb115-458" aria-hidden="true" tabindex="-1"></a>  <span class="co"># vector logico</span></span>
-<span id="cb115-459"><a href="#cb115-459" aria-hidden="true" tabindex="-1"></a>  z3 <span class="ot">&lt;-</span> z2 <span class="sc">&lt;</span> <span class="dv">10</span></span>
+<span id="cb115-448"><a href="#cb115-448" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-449"><a href="#cb115-449" aria-hidden="true" tabindex="-1"></a>  l <span class="ot">&lt;-</span> <span class="fu">list</span>(z1, z2, z3)</span>
+<span id="cb115-450"><a href="#cb115-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-451"><a href="#cb115-451" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(l)</span>
+<span id="cb115-452"><a href="#cb115-452" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb115-453"><a href="#cb115-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-454"><a href="#cb115-454" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(<span class="dv">10</span>, <span class="dv">5</span>)</span>
+<span id="cb115-455"><a href="#cb115-455" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-456"><a href="#cb115-456" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-457"><a href="#cb115-457" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-458"><a href="#cb115-458" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-459"><a href="#cb115-459" aria-hidden="true" tabindex="-1"></a>Podemos acceder a elementos específicos de la salida de una función mediante indexación:</span>
 <span id="cb115-460"><a href="#cb115-460" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-461"><a href="#cb115-461" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-462"><a href="#cb115-462" aria-hidden="true" tabindex="-1"></a>  l <span class="ot">&lt;-</span> <span class="fu">list</span>(z1, z2, z3)</span>
-<span id="cb115-463"><a href="#cb115-463" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-464"><a href="#cb115-464" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(l)</span>
-<span id="cb115-465"><a href="#cb115-465" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb115-463"><a href="#cb115-463" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-464"><a href="#cb115-464" aria-hidden="true" tabindex="-1"></a><span class="co"># elemento 1</span></span>
+<span id="cb115-465"><a href="#cb115-465" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(<span class="dv">10</span>, <span class="dv">5</span>)[[<span class="dv">1</span>]]</span>
 <span id="cb115-466"><a href="#cb115-466" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-467"><a href="#cb115-467" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(<span class="dv">10</span>, <span class="dv">5</span>)</span>
-<span id="cb115-468"><a href="#cb115-468" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-467"><a href="#cb115-467" aria-hidden="true" tabindex="-1"></a><span class="co"># elemento 2</span></span>
+<span id="cb115-468"><a href="#cb115-468" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(<span class="dv">10</span>, <span class="dv">5</span>)[[<span class="dv">2</span>]]</span>
 <span id="cb115-469"><a href="#cb115-469" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-470"><a href="#cb115-470" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-471"><a href="#cb115-471" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-472"><a href="#cb115-472" aria-hidden="true" tabindex="-1"></a>Podemos acceder a elementos específicos de la salida de una función mediante indexación:</span>
+<span id="cb115-470"><a href="#cb115-470" aria-hidden="true" tabindex="-1"></a><span class="co"># elemento 3</span></span>
+<span id="cb115-471"><a href="#cb115-471" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(<span class="dv">10</span>, <span class="dv">5</span>)[[<span class="dv">3</span>]]</span>
+<span id="cb115-472"><a href="#cb115-472" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb115-473"><a href="#cb115-473" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-476"><a href="#cb115-476" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-477"><a href="#cb115-477" aria-hidden="true" tabindex="-1"></a><span class="co"># elemento 1</span></span>
-<span id="cb115-478"><a href="#cb115-478" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(<span class="dv">10</span>, <span class="dv">5</span>)[[<span class="dv">1</span>]]</span>
-<span id="cb115-479"><a href="#cb115-479" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-480"><a href="#cb115-480" aria-hidden="true" tabindex="-1"></a><span class="co"># elemento 2</span></span>
-<span id="cb115-481"><a href="#cb115-481" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(<span class="dv">10</span>, <span class="dv">5</span>)[[<span class="dv">2</span>]]</span>
-<span id="cb115-482"><a href="#cb115-482" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-483"><a href="#cb115-483" aria-hidden="true" tabindex="-1"></a><span class="co"># elemento 3</span></span>
-<span id="cb115-484"><a href="#cb115-484" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(<span class="dv">10</span>, <span class="dv">5</span>)[[<span class="dv">3</span>]]</span>
-<span id="cb115-485"><a href="#cb115-485" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-474"><a href="#cb115-474" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-475"><a href="#cb115-475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-476"><a href="#cb115-476" aria-hidden="true" tabindex="-1"></a>Por supuesto, también podemos guardar el resultado como un objeto y acceder a cada elemento mediante la indexación:</span>
+<span id="cb115-477"><a href="#cb115-477" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-480"><a href="#cb115-480" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-481"><a href="#cb115-481" aria-hidden="true" tabindex="-1"></a><span class="co"># elemento 1</span></span>
+<span id="cb115-482"><a href="#cb115-482" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">f4</span>(<span class="dv">10</span>, <span class="dv">5</span>)</span>
+<span id="cb115-483"><a href="#cb115-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-484"><a href="#cb115-484" aria-hidden="true" tabindex="-1"></a><span class="co"># elemento 1</span></span>
+<span id="cb115-485"><a href="#cb115-485" aria-hidden="true" tabindex="-1"></a>out[[<span class="dv">1</span>]]</span>
 <span id="cb115-486"><a href="#cb115-486" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-487"><a href="#cb115-487" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-488"><a href="#cb115-488" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-489"><a href="#cb115-489" aria-hidden="true" tabindex="-1"></a>Por supuesto, también podemos guardar el resultado como un objeto y acceder a cada elemento mediante la indexación:</span>
+<span id="cb115-487"><a href="#cb115-487" aria-hidden="true" tabindex="-1"></a><span class="co"># elemento 2</span></span>
+<span id="cb115-488"><a href="#cb115-488" aria-hidden="true" tabindex="-1"></a>out[[<span class="dv">2</span>]]</span>
+<span id="cb115-489"><a href="#cb115-489" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb115-490"><a href="#cb115-490" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-493"><a href="#cb115-493" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-494"><a href="#cb115-494" aria-hidden="true" tabindex="-1"></a><span class="co"># elemento 1</span></span>
-<span id="cb115-495"><a href="#cb115-495" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">f4</span>(<span class="dv">10</span>, <span class="dv">5</span>)</span>
-<span id="cb115-496"><a href="#cb115-496" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-497"><a href="#cb115-497" aria-hidden="true" tabindex="-1"></a><span class="co"># elemento 1</span></span>
-<span id="cb115-498"><a href="#cb115-498" aria-hidden="true" tabindex="-1"></a>out[[<span class="dv">1</span>]]</span>
+<span id="cb115-491"><a href="#cb115-491" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-492"><a href="#cb115-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-493"><a href="#cb115-493" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
+<span id="cb115-494"><a href="#cb115-494" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio 2</span></span>
+<span id="cb115-495"><a href="#cb115-495" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-496"><a href="#cb115-496" aria-hidden="true" tabindex="-1"></a>2.1 Cree una función llamada <span class="in">`promedio`</span> que calcule el promedio de un vector numérico. Internamente solo puede utilizar los operadores algebraicos <span class="in">`+`</span> y <span class="in">`/`</span> (suma y división, no puede llamar la función <span class="in">`mean()`</span>)</span>
+<span id="cb115-497"><a href="#cb115-497" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-498"><a href="#cb115-498" aria-hidden="true" tabindex="-1"></a>2.2 Cree una función que tome 2 argumentos numéricos (llámelos 'x' y 'y'), eleve cada uno al cuadrado y luego los sume</span>
 <span id="cb115-499"><a href="#cb115-499" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-500"><a href="#cb115-500" aria-hidden="true" tabindex="-1"></a><span class="co"># elemento 2</span></span>
-<span id="cb115-501"><a href="#cb115-501" aria-hidden="true" tabindex="-1"></a>out[[<span class="dv">2</span>]]</span>
-<span id="cb115-502"><a href="#cb115-502" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-500"><a href="#cb115-500" aria-hidden="true" tabindex="-1"></a>2.3 Agregue valores predeterminados a cada argumento</span>
+<span id="cb115-501"><a href="#cb115-501" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-502"><a href="#cb115-502" aria-hidden="true" tabindex="-1"></a>2.4 Ejecute la función usando los valores predeterminados</span>
 <span id="cb115-503"><a href="#cb115-503" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-504"><a href="#cb115-504" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-504"><a href="#cb115-504" aria-hidden="true" tabindex="-1"></a>2.5 Ejecute la función usando un valor predeterminado y uno proporcionado en la llamada</span>
 <span id="cb115-505"><a href="#cb115-505" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-506"><a href="#cb115-506" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
-<span id="cb115-507"><a href="#cb115-507" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio 2</span></span>
-<span id="cb115-508"><a href="#cb115-508" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-509"><a href="#cb115-509" aria-hidden="true" tabindex="-1"></a>2.1 Cree una función llamada <span class="in">`promedio`</span> que calcule el promedio de un vector numérico. Internamente solo puede utilizar los operadores algebraicos <span class="in">`+`</span> y <span class="in">`/`</span> (suma y división, no puede llamar la función <span class="in">`mean()`</span>)</span>
-<span id="cb115-510"><a href="#cb115-510" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-511"><a href="#cb115-511" aria-hidden="true" tabindex="-1"></a>2.2 Cree una función que tome 2 argumentos numéricos (llámelos 'x' y 'y'), eleve cada uno al cuadrado y luego los sume</span>
-<span id="cb115-512"><a href="#cb115-512" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-513"><a href="#cb115-513" aria-hidden="true" tabindex="-1"></a>2.3 Agregue valores predeterminados a cada argumento</span>
-<span id="cb115-514"><a href="#cb115-514" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-515"><a href="#cb115-515" aria-hidden="true" tabindex="-1"></a>2.4 Ejecute la función usando los valores predeterminados</span>
-<span id="cb115-516"><a href="#cb115-516" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-517"><a href="#cb115-517" aria-hidden="true" tabindex="-1"></a>2.5 Ejecute la función usando un valor predeterminado y uno proporcionado en la llamada</span>
-<span id="cb115-518"><a href="#cb115-518" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-519"><a href="#cb115-519" aria-hidden="true" tabindex="-1"></a>2.6 Ejecute la función proporcionando ambos valores en la llamada</span>
-<span id="cb115-520"><a href="#cb115-520" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-521"><a href="#cb115-521" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb115-522"><a href="#cb115-522" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-523"><a href="#cb115-523" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-524"><a href="#cb115-524" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-525"><a href="#cb115-525" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb115-526"><a href="#cb115-526" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-527"><a href="#cb115-527" aria-hidden="true" tabindex="-1"></a><span class="fu"># Argumentos lógicos</span></span>
+<span id="cb115-506"><a href="#cb115-506" aria-hidden="true" tabindex="-1"></a>2.6 Ejecute la función proporcionando ambos valores en la llamada</span>
+<span id="cb115-507"><a href="#cb115-507" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-508"><a href="#cb115-508" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb115-509"><a href="#cb115-509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-510"><a href="#cb115-510" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-511"><a href="#cb115-511" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-512"><a href="#cb115-512" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb115-513"><a href="#cb115-513" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-514"><a href="#cb115-514" aria-hidden="true" tabindex="-1"></a><span class="fu"># Argumentos lógicos</span></span>
+<span id="cb115-515"><a href="#cb115-515" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-516"><a href="#cb115-516" aria-hidden="true" tabindex="-1"></a>Son argumentos que pueden tomar solo dos valores: <span class="in">`TRUE`</span> o <span class="in">`FALSE`</span>. Estos argumentos permiten modificar el comportamiento de la función de forma binaria: si es <span class="in">`TRUE`</span> llevaría a cabo la tarea 1 y si es <span class="in">`FALSE`</span> llevaría a cabo la tarea 2. Internamente (i.e. en el cuerpo de las función) estas funciones implican el uso del operador <span class="in">`if`</span>, algunas veces incluyendo su contra-parte <span class="in">`else`</span>. Estos operadores son parte fundamental de la programación y se usan para definir que acción ejecutar con base en una evaluación lógica:</span>
+<span id="cb115-517"><a href="#cb115-517" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-520"><a href="#cb115-520" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-521"><a href="#cb115-521" aria-hidden="true" tabindex="-1"></a><span class="co"># creemos el objeto a con valor 2</span></span>
+<span id="cb115-522"><a href="#cb115-522" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb115-523"><a href="#cb115-523" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-524"><a href="#cb115-524" aria-hidden="true" tabindex="-1"></a><span class="co"># elevemos a la 2 si a es mayor q 0</span></span>
+<span id="cb115-525"><a href="#cb115-525" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb115-526"><a href="#cb115-526" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb115-527"><a href="#cb115-527" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb115-528"><a href="#cb115-528" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-529"><a href="#cb115-529" aria-hidden="true" tabindex="-1"></a>Son argumentos que pueden tomar solo dos valores: <span class="in">`TRUE`</span> o <span class="in">`FALSE`</span>. Estos argumentos permiten modificar el comportamiento de la función de forma binaria: si es <span class="in">`TRUE`</span> llevaría a cabo la tarea 1 y si es <span class="in">`FALSE`</span> llevaría a cabo la tarea 2. Internamente (i.e. en el cuerpo de las función) estas funciones implican el uso del operador <span class="in">`if`</span>, algunas veces incluyendo su contra-parte <span class="in">`else`</span>. Estos operadores son parte fundamental de la programación y se usan para definir que acción ejecutar con base en una evaluación lógica:</span>
-<span id="cb115-530"><a href="#cb115-530" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-533"><a href="#cb115-533" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-534"><a href="#cb115-534" aria-hidden="true" tabindex="-1"></a><span class="co"># creemos el objeto a con valor 2</span></span>
-<span id="cb115-535"><a href="#cb115-535" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb115-536"><a href="#cb115-536" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-537"><a href="#cb115-537" aria-hidden="true" tabindex="-1"></a><span class="co"># elevemos a la 2 si a es mayor q 0</span></span>
+<span id="cb115-529"><a href="#cb115-529" aria-hidden="true" tabindex="-1"></a><span class="co"># elevemos a la 2 si a es mayor q 0 de lo contrario elevemoslo a la 100</span></span>
+<span id="cb115-530"><a href="#cb115-530" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb115-531"><a href="#cb115-531" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb115-532"><a href="#cb115-532" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb115-533"><a href="#cb115-533" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">^</span><span class="dv">100</span></span>
+<span id="cb115-534"><a href="#cb115-534" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb115-535"><a href="#cb115-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-536"><a href="#cb115-536" aria-hidden="true" tabindex="-1"></a><span class="co"># con a negativo</span></span>
+<span id="cb115-537"><a href="#cb115-537" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">3</span></span>
 <span id="cb115-538"><a href="#cb115-538" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb115-539"><a href="#cb115-539" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb115-540"><a href="#cb115-540" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb115-541"><a href="#cb115-541" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-542"><a href="#cb115-542" aria-hidden="true" tabindex="-1"></a><span class="co"># elevemos a la 2 si a es mayor q 0 de lo contrario elevemoslo a la 100</span></span>
-<span id="cb115-543"><a href="#cb115-543" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb115-544"><a href="#cb115-544" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb115-545"><a href="#cb115-545" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb115-546"><a href="#cb115-546" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">^</span><span class="dv">100</span></span>
-<span id="cb115-547"><a href="#cb115-547" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb115-540"><a href="#cb115-540" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb115-541"><a href="#cb115-541" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">^</span><span class="dv">3</span></span>
+<span id="cb115-542"><a href="#cb115-542" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb115-543"><a href="#cb115-543" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-544"><a href="#cb115-544" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-545"><a href="#cb115-545" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-546"><a href="#cb115-546" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-547"><a href="#cb115-547" aria-hidden="true" tabindex="-1"></a>La parte dentro de los paréntesis justo después de <span class="in">`if`</span> es la evaluación lógica.</span>
 <span id="cb115-548"><a href="#cb115-548" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-549"><a href="#cb115-549" aria-hidden="true" tabindex="-1"></a><span class="co"># con a negativo</span></span>
-<span id="cb115-550"><a href="#cb115-550" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">3</span></span>
-<span id="cb115-551"><a href="#cb115-551" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb115-552"><a href="#cb115-552" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb115-553"><a href="#cb115-553" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb115-554"><a href="#cb115-554" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">^</span><span class="dv">3</span></span>
-<span id="cb115-555"><a href="#cb115-555" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb115-556"><a href="#cb115-556" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-557"><a href="#cb115-557" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-558"><a href="#cb115-558" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-559"><a href="#cb115-559" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-560"><a href="#cb115-560" aria-hidden="true" tabindex="-1"></a>La parte dentro de los paréntesis justo después de <span class="in">`if`</span> es la evaluación lógica.</span>
-<span id="cb115-561"><a href="#cb115-561" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-562"><a href="#cb115-562" aria-hidden="true" tabindex="-1"></a>Estos operadores son utilizados en el cuerpo de la función cuando esta lleva un argumento lógico. Por ejemplo, la siguiente función utiliza un argumento lógico para decidir si la operación algebraica a realizar es una suma o un promedio:</span>
-<span id="cb115-563"><a href="#cb115-563" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-566"><a href="#cb115-566" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-567"><a href="#cb115-567" aria-hidden="true" tabindex="-1"></a>mean_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, <span class="at">prom =</span> <span class="cn">FALSE</span>) {</span>
-<span id="cb115-568"><a href="#cb115-568" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (prom) {</span>
-<span id="cb115-569"><a href="#cb115-569" aria-hidden="true" tabindex="-1"></a>    b <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(x, y))</span>
-<span id="cb115-570"><a href="#cb115-570" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb115-571"><a href="#cb115-571" aria-hidden="true" tabindex="-1"></a>    b <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">c</span>(x, y))</span>
-<span id="cb115-572"><a href="#cb115-572" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb115-573"><a href="#cb115-573" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-574"><a href="#cb115-574" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(b)</span>
-<span id="cb115-575"><a href="#cb115-575" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb115-576"><a href="#cb115-576" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-577"><a href="#cb115-577" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-578"><a href="#cb115-578" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-549"><a href="#cb115-549" aria-hidden="true" tabindex="-1"></a>Estos operadores son utilizados en el cuerpo de la función cuando esta lleva un argumento lógico. Por ejemplo, la siguiente función utiliza un argumento lógico para decidir si la operación algebraica a realizar es una suma o un promedio:</span>
+<span id="cb115-550"><a href="#cb115-550" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-553"><a href="#cb115-553" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-554"><a href="#cb115-554" aria-hidden="true" tabindex="-1"></a>mean_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, <span class="at">prom =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb115-555"><a href="#cb115-555" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (prom) {</span>
+<span id="cb115-556"><a href="#cb115-556" aria-hidden="true" tabindex="-1"></a>    b <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(x, y))</span>
+<span id="cb115-557"><a href="#cb115-557" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb115-558"><a href="#cb115-558" aria-hidden="true" tabindex="-1"></a>    b <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">c</span>(x, y))</span>
+<span id="cb115-559"><a href="#cb115-559" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb115-560"><a href="#cb115-560" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-561"><a href="#cb115-561" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(b)</span>
+<span id="cb115-562"><a href="#cb115-562" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb115-563"><a href="#cb115-563" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-564"><a href="#cb115-564" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-565"><a href="#cb115-565" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-566"><a href="#cb115-566" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-567"><a href="#cb115-567" aria-hidden="true" tabindex="-1"></a>Note que este tipo de argumentos deben tener un valor predeterminado. Podemos probar la función de la siguiente forma:</span>
+<span id="cb115-568"><a href="#cb115-568" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-571"><a href="#cb115-571" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-572"><a href="#cb115-572" aria-hidden="true" tabindex="-1"></a><span class="fu">mean_sum</span>(<span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="dv">3</span>)</span>
+<span id="cb115-573"><a href="#cb115-573" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-574"><a href="#cb115-574" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-575"><a href="#cb115-575" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-576"><a href="#cb115-576" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-577"><a href="#cb115-577" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
+<span id="cb115-578"><a href="#cb115-578" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio 3</span></span>
 <span id="cb115-579"><a href="#cb115-579" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-580"><a href="#cb115-580" aria-hidden="true" tabindex="-1"></a>Note que este tipo de argumentos deben tener un valor predeterminado. Podemos probar la función de la siguiente forma:</span>
+<span id="cb115-580"><a href="#cb115-580" aria-hidden="true" tabindex="-1"></a>3.1 Cree una función que tome 3 argumentos numéricos, multiplíquelos y luego calcule el logaritmo natural del resultado (función <span class="in">`log()`</span>)</span>
 <span id="cb115-581"><a href="#cb115-581" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-584"><a href="#cb115-584" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-585"><a href="#cb115-585" aria-hidden="true" tabindex="-1"></a><span class="fu">mean_sum</span>(<span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="dv">3</span>)</span>
-<span id="cb115-586"><a href="#cb115-586" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-582"><a href="#cb115-582" aria-hidden="true" tabindex="-1"></a>3.2 Agregue valores predeterminados a cada argumento</span>
+<span id="cb115-583"><a href="#cb115-583" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-584"><a href="#cb115-584" aria-hidden="true" tabindex="-1"></a>3.3 Ejecute la función con uno de los argumentos con un número negativo. ¿Qué pasa? ¿Por qué?</span>
+<span id="cb115-585"><a href="#cb115-585" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-586"><a href="#cb115-586" aria-hidden="true" tabindex="-1"></a>3.4 Agregue un argumento lógico que permita a los usuarios (si lo desean) convertir los argumentos de entrada a su valor absoluto (usando la función <span class="in">`abs()`</span>). Agregue las modificaciones necesarias para que la función haga los cálculos con y sin valores absolutos.</span>
 <span id="cb115-587"><a href="#cb115-587" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-588"><a href="#cb115-588" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-589"><a href="#cb115-589" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-590"><a href="#cb115-590" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
-<span id="cb115-591"><a href="#cb115-591" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio 3</span></span>
-<span id="cb115-592"><a href="#cb115-592" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-593"><a href="#cb115-593" aria-hidden="true" tabindex="-1"></a>3.1 Cree una función que tome 3 argumentos numéricos, multiplíquelos y luego calcule el logaritmo natural del resultado (función <span class="in">`log()`</span>)</span>
-<span id="cb115-594"><a href="#cb115-594" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-595"><a href="#cb115-595" aria-hidden="true" tabindex="-1"></a>3.2 Agregue valores predeterminados a cada argumento</span>
+<span id="cb115-588"><a href="#cb115-588" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = F, echo = F}</span></span>
+<span id="cb115-589"><a href="#cb115-589" aria-hidden="true" tabindex="-1"></a><span class="co"># a)</span></span>
+<span id="cb115-590"><a href="#cb115-590" aria-hidden="true" tabindex="-1"></a>fcn_1 <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b, c) <span class="fu">log</span>(a <span class="sc">*</span> b <span class="sc">*</span> c)</span>
+<span id="cb115-591"><a href="#cb115-591" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-592"><a href="#cb115-592" aria-hidden="true" tabindex="-1"></a><span class="fu">fcn_1</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">12</span>)</span>
+<span id="cb115-593"><a href="#cb115-593" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-594"><a href="#cb115-594" aria-hidden="true" tabindex="-1"></a><span class="co"># b)</span></span>
+<span id="cb115-595"><a href="#cb115-595" aria-hidden="true" tabindex="-1"></a>fcn_1 <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>, <span class="at">c =</span> <span class="dv">3</span>) <span class="fu">log</span>(a <span class="sc">*</span> b <span class="sc">*</span> c)</span>
 <span id="cb115-596"><a href="#cb115-596" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-597"><a href="#cb115-597" aria-hidden="true" tabindex="-1"></a>3.3 Ejecute la función con uno de los argumentos con un número negativo. ¿Qué pasa? ¿Por qué?</span>
-<span id="cb115-598"><a href="#cb115-598" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-599"><a href="#cb115-599" aria-hidden="true" tabindex="-1"></a>3.4 Agregue un argumento lógico que permita a los usuarios (si lo desean) convertir los argumentos de entrada a su valor absoluto (usando la función <span class="in">`abs()`</span>). Agregue las modificaciones necesarias para que la función haga los cálculos con y sin valores absolutos.</span>
-<span id="cb115-600"><a href="#cb115-600" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-601"><a href="#cb115-601" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = F, echo = F}</span></span>
-<span id="cb115-602"><a href="#cb115-602" aria-hidden="true" tabindex="-1"></a><span class="co"># a)</span></span>
-<span id="cb115-603"><a href="#cb115-603" aria-hidden="true" tabindex="-1"></a>fcn_1 <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b, c) <span class="fu">log</span>(a <span class="sc">*</span> b <span class="sc">*</span> c)</span>
-<span id="cb115-604"><a href="#cb115-604" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-605"><a href="#cb115-605" aria-hidden="true" tabindex="-1"></a><span class="fu">fcn_1</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">12</span>)</span>
-<span id="cb115-606"><a href="#cb115-606" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-607"><a href="#cb115-607" aria-hidden="true" tabindex="-1"></a><span class="co"># b)</span></span>
-<span id="cb115-608"><a href="#cb115-608" aria-hidden="true" tabindex="-1"></a>fcn_1 <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>, <span class="at">c =</span> <span class="dv">3</span>) <span class="fu">log</span>(a <span class="sc">*</span> b <span class="sc">*</span> c)</span>
+<span id="cb115-597"><a href="#cb115-597" aria-hidden="true" tabindex="-1"></a><span class="co"># c)</span></span>
+<span id="cb115-598"><a href="#cb115-598" aria-hidden="true" tabindex="-1"></a><span class="fu">fcn_1</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb115-599"><a href="#cb115-599" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-600"><a href="#cb115-600" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb115-601"><a href="#cb115-601" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-602"><a href="#cb115-602" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb115-603"><a href="#cb115-603" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-604"><a href="#cb115-604" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ventajas de usar funciones</span></span>
+<span id="cb115-605"><a href="#cb115-605" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-606"><a href="#cb115-606" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-607"><a href="#cb115-607" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-608"><a href="#cb115-608" aria-hidden="true" tabindex="-1"></a><span class="fu">## Código mas limpio</span></span>
 <span id="cb115-609"><a href="#cb115-609" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-610"><a href="#cb115-610" aria-hidden="true" tabindex="-1"></a><span class="co"># c)</span></span>
-<span id="cb115-611"><a href="#cb115-611" aria-hidden="true" tabindex="-1"></a><span class="fu">fcn_1</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
-<span id="cb115-612"><a href="#cb115-612" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-613"><a href="#cb115-613" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb115-614"><a href="#cb115-614" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-615"><a href="#cb115-615" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb115-616"><a href="#cb115-616" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-617"><a href="#cb115-617" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ventajas de usar funciones</span></span>
-<span id="cb115-618"><a href="#cb115-618" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-619"><a href="#cb115-619" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-620"><a href="#cb115-620" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-621"><a href="#cb115-621" aria-hidden="true" tabindex="-1"></a><span class="fu">## Código mas limpio</span></span>
-<span id="cb115-622"><a href="#cb115-622" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-623"><a href="#cb115-623" aria-hidden="true" tabindex="-1"></a>Los objetos creados dentro del cuerpo no están disponibles en el entorno actual:</span>
-<span id="cb115-624"><a href="#cb115-624" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-627"><a href="#cb115-627" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-628"><a href="#cb115-628" aria-hidden="true" tabindex="-1"></a><span class="co"># primero remover todo los objetos</span></span>
-<span id="cb115-629"><a href="#cb115-629" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
-<span id="cb115-630"><a href="#cb115-630" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-631"><a href="#cb115-631" aria-hidden="true" tabindex="-1"></a>f5 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb115-632"><a href="#cb115-632" aria-hidden="true" tabindex="-1"></a>  sqr <span class="ot">&lt;-</span> x <span class="sc">*</span> x</span>
-<span id="cb115-633"><a href="#cb115-633" aria-hidden="true" tabindex="-1"></a>  lg_sqr <span class="ot">&lt;-</span> <span class="fu">log</span>(x)</span>
-<span id="cb115-634"><a href="#cb115-634" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(lg_sqr)</span>
-<span id="cb115-635"><a href="#cb115-635" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb115-636"><a href="#cb115-636" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-637"><a href="#cb115-637" aria-hidden="true" tabindex="-1"></a><span class="fu">f5</span>(<span class="dv">7</span>)</span>
+<span id="cb115-610"><a href="#cb115-610" aria-hidden="true" tabindex="-1"></a>Los objetos creados dentro del cuerpo no están disponibles en el entorno actual:</span>
+<span id="cb115-611"><a href="#cb115-611" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-614"><a href="#cb115-614" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-615"><a href="#cb115-615" aria-hidden="true" tabindex="-1"></a><span class="co"># primero remover todo los objetos</span></span>
+<span id="cb115-616"><a href="#cb115-616" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb115-617"><a href="#cb115-617" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-618"><a href="#cb115-618" aria-hidden="true" tabindex="-1"></a>f5 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb115-619"><a href="#cb115-619" aria-hidden="true" tabindex="-1"></a>  sqr <span class="ot">&lt;-</span> x <span class="sc">*</span> x</span>
+<span id="cb115-620"><a href="#cb115-620" aria-hidden="true" tabindex="-1"></a>  lg_sqr <span class="ot">&lt;-</span> <span class="fu">log</span>(x)</span>
+<span id="cb115-621"><a href="#cb115-621" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(lg_sqr)</span>
+<span id="cb115-622"><a href="#cb115-622" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb115-623"><a href="#cb115-623" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-624"><a href="#cb115-624" aria-hidden="true" tabindex="-1"></a><span class="fu">f5</span>(<span class="dv">7</span>)</span>
+<span id="cb115-625"><a href="#cb115-625" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-626"><a href="#cb115-626" aria-hidden="true" tabindex="-1"></a><span class="fu">exists</span>(<span class="st">"sqr"</span>)</span>
+<span id="cb115-627"><a href="#cb115-627" aria-hidden="true" tabindex="-1"></a><span class="fu">exists</span>(<span class="st">"lg_sqr"</span>)</span>
+<span id="cb115-628"><a href="#cb115-628" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-629"><a href="#cb115-629" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-630"><a href="#cb115-630" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-631"><a href="#cb115-631" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-634"><a href="#cb115-634" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-635"><a href="#cb115-635" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb115-636"><a href="#cb115-636" aria-hidden="true" tabindex="-1"></a>sqr <span class="ot">&lt;-</span> x <span class="sc">*</span> x</span>
+<span id="cb115-637"><a href="#cb115-637" aria-hidden="true" tabindex="-1"></a>lg_sqr <span class="ot">&lt;-</span> <span class="fu">log</span>(x)</span>
 <span id="cb115-638"><a href="#cb115-638" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-639"><a href="#cb115-639" aria-hidden="true" tabindex="-1"></a><span class="fu">exists</span>(<span class="st">"sqr"</span>)</span>
-<span id="cb115-640"><a href="#cb115-640" aria-hidden="true" tabindex="-1"></a><span class="fu">exists</span>(<span class="st">"lg_sqr"</span>)</span>
-<span id="cb115-641"><a href="#cb115-641" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-642"><a href="#cb115-642" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-643"><a href="#cb115-643" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-644"><a href="#cb115-644" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-647"><a href="#cb115-647" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-648"><a href="#cb115-648" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">7</span></span>
-<span id="cb115-649"><a href="#cb115-649" aria-hidden="true" tabindex="-1"></a>sqr <span class="ot">&lt;-</span> x <span class="sc">*</span> x</span>
-<span id="cb115-650"><a href="#cb115-650" aria-hidden="true" tabindex="-1"></a>lg_sqr <span class="ot">&lt;-</span> <span class="fu">log</span>(x)</span>
-<span id="cb115-651"><a href="#cb115-651" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-652"><a href="#cb115-652" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-653"><a href="#cb115-653" aria-hidden="true" tabindex="-1"></a><span class="fu">exists</span>(<span class="st">"sqr"</span>)</span>
-<span id="cb115-654"><a href="#cb115-654" aria-hidden="true" tabindex="-1"></a><span class="fu">exists</span>(<span class="st">"lg_sqr"</span>)</span>
-<span id="cb115-655"><a href="#cb115-655" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-656"><a href="#cb115-656" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-657"><a href="#cb115-657" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-658"><a href="#cb115-658" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-659"><a href="#cb115-659" aria-hidden="true" tabindex="-1"></a><span class="fu">## Facil de correr y compartir</span></span>
-<span id="cb115-660"><a href="#cb115-660" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-661"><a href="#cb115-661" aria-hidden="true" tabindex="-1"></a>Se pueden invocar funciones desde archivos de <span class="in">`R`</span> externos sin estar definidas en el código actual con la función <span class="in">`source()`</span>. En este ejemplo creamos la función <span class="in">`fnctn_X`</span>:</span>
+<span id="cb115-639"><a href="#cb115-639" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-640"><a href="#cb115-640" aria-hidden="true" tabindex="-1"></a><span class="fu">exists</span>(<span class="st">"sqr"</span>)</span>
+<span id="cb115-641"><a href="#cb115-641" aria-hidden="true" tabindex="-1"></a><span class="fu">exists</span>(<span class="st">"lg_sqr"</span>)</span>
+<span id="cb115-642"><a href="#cb115-642" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-643"><a href="#cb115-643" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-644"><a href="#cb115-644" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-645"><a href="#cb115-645" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-646"><a href="#cb115-646" aria-hidden="true" tabindex="-1"></a><span class="fu">## Facil de correr y compartir</span></span>
+<span id="cb115-647"><a href="#cb115-647" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-648"><a href="#cb115-648" aria-hidden="true" tabindex="-1"></a>Se pueden invocar funciones desde archivos de <span class="in">`R`</span> externos sin estar definidas en el código actual con la función <span class="in">`source()`</span>. En este ejemplo creamos la función <span class="in">`fnctn_X`</span>:</span>
+<span id="cb115-649"><a href="#cb115-649" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-652"><a href="#cb115-652" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb115-653"><a href="#cb115-653" aria-hidden="true" tabindex="-1"></a>fnctn_X <span class="ot">&lt;-</span> <span class="cf">function</span>(sq_mt, vctr) {</span>
+<span id="cb115-654"><a href="#cb115-654" aria-hidden="true" tabindex="-1"></a>  <span class="co"># trasponer matriz y calcular est dev</span></span>
+<span id="cb115-655"><a href="#cb115-655" aria-hidden="true" tabindex="-1"></a>  stp1 <span class="ot">&lt;-</span> <span class="fu">t</span>(sq_mt)</span>
+<span id="cb115-656"><a href="#cb115-656" aria-hidden="true" tabindex="-1"></a>  stp2 <span class="ot">&lt;-</span> vctr <span class="sc">*</span> vctr</span>
+<span id="cb115-657"><a href="#cb115-657" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-658"><a href="#cb115-658" aria-hidden="true" tabindex="-1"></a>  <span class="co"># guardar en lista</span></span>
+<span id="cb115-659"><a href="#cb115-659" aria-hidden="true" tabindex="-1"></a>  rslt <span class="ot">&lt;-</span> <span class="fu">list</span>(stp1, stp2)</span>
+<span id="cb115-660"><a href="#cb115-660" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rslt)</span>
+<span id="cb115-661"><a href="#cb115-661" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb115-662"><a href="#cb115-662" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-665"><a href="#cb115-665" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb115-666"><a href="#cb115-666" aria-hidden="true" tabindex="-1"></a>fnctn_X <span class="ot">&lt;-</span> <span class="cf">function</span>(sq_mt, vctr) {</span>
-<span id="cb115-667"><a href="#cb115-667" aria-hidden="true" tabindex="-1"></a>  <span class="co"># trasponer matriz y calcular est dev</span></span>
-<span id="cb115-668"><a href="#cb115-668" aria-hidden="true" tabindex="-1"></a>  stp1 <span class="ot">&lt;-</span> <span class="fu">t</span>(sq_mt)</span>
-<span id="cb115-669"><a href="#cb115-669" aria-hidden="true" tabindex="-1"></a>  stp2 <span class="ot">&lt;-</span> vctr <span class="sc">*</span> vctr</span>
-<span id="cb115-670"><a href="#cb115-670" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-671"><a href="#cb115-671" aria-hidden="true" tabindex="-1"></a>  <span class="co"># guardar en lista</span></span>
-<span id="cb115-672"><a href="#cb115-672" aria-hidden="true" tabindex="-1"></a>  rslt <span class="ot">&lt;-</span> <span class="fu">list</span>(stp1, stp2)</span>
-<span id="cb115-673"><a href="#cb115-673" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rslt)</span>
-<span id="cb115-674"><a href="#cb115-674" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb115-675"><a href="#cb115-675" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-676"><a href="#cb115-676" aria-hidden="true" tabindex="-1"></a><span class="fu">fnctn_X</span>(<span class="at">sq_mt =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)), <span class="at">vctr =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
-<span id="cb115-677"><a href="#cb115-677" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-678"><a href="#cb115-678" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-679"><a href="#cb115-679" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-680"><a href="#cb115-680" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-681"><a href="#cb115-681" aria-hidden="true" tabindex="-1"></a>Guarde el código anterior en un archivo <span class="in">`R`</span> llamado 'function_X.R'. Ahora la función se puede cargar usando <span class="in">`source()`</span>:</span>
-<span id="cb115-682"><a href="#cb115-682" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-683"><a href="#cb115-683" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = F}</span></span>
-<span id="cb115-684"><a href="#cb115-684" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-685"><a href="#cb115-685" aria-hidden="true" tabindex="-1"></a><span class="co"># removamosla del ambiente</span></span>
-<span id="cb115-686"><a href="#cb115-686" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(fnctn_X)</span>
-<span id="cb115-687"><a href="#cb115-687" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-688"><a href="#cb115-688" aria-hidden="true" tabindex="-1"></a><span class="co"># cargar funcion</span></span>
-<span id="cb115-689"><a href="#cb115-689" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"function_X.R"</span>)</span>
+<span id="cb115-663"><a href="#cb115-663" aria-hidden="true" tabindex="-1"></a><span class="fu">fnctn_X</span>(<span class="at">sq_mt =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)), <span class="at">vctr =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb115-664"><a href="#cb115-664" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-665"><a href="#cb115-665" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-666"><a href="#cb115-666" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-667"><a href="#cb115-667" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-668"><a href="#cb115-668" aria-hidden="true" tabindex="-1"></a>Guarde el código anterior en un archivo <span class="in">`R`</span> llamado 'function_X.R'. Ahora la función se puede cargar usando <span class="in">`source()`</span>:</span>
+<span id="cb115-669"><a href="#cb115-669" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-670"><a href="#cb115-670" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = F}</span></span>
+<span id="cb115-671"><a href="#cb115-671" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-672"><a href="#cb115-672" aria-hidden="true" tabindex="-1"></a><span class="co"># removamosla del ambiente</span></span>
+<span id="cb115-673"><a href="#cb115-673" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(fnctn_X)</span>
+<span id="cb115-674"><a href="#cb115-674" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-675"><a href="#cb115-675" aria-hidden="true" tabindex="-1"></a><span class="co"># cargar funcion</span></span>
+<span id="cb115-676"><a href="#cb115-676" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"function_X.R"</span>)</span>
+<span id="cb115-677"><a href="#cb115-677" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-678"><a href="#cb115-678" aria-hidden="true" tabindex="-1"></a><span class="co"># run it</span></span>
+<span id="cb115-679"><a href="#cb115-679" aria-hidden="true" tabindex="-1"></a><span class="fu">fnctn_X</span>(<span class="at">sq_mt =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)), <span class="at">vctr =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb115-680"><a href="#cb115-680" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-681"><a href="#cb115-681" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-682"><a href="#cb115-682" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval=T, echo=F}</span></span>
+<span id="cb115-683"><a href="#cb115-683" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-684"><a href="#cb115-684" aria-hidden="true" tabindex="-1"></a><span class="fu">fnctn_X</span>(<span class="at">sq_mt =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)), <span class="at">vctr =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb115-685"><a href="#cb115-685" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-686"><a href="#cb115-686" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-687"><a href="#cb115-687" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-688"><a href="#cb115-688" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-689"><a href="#cb115-689" aria-hidden="true" tabindex="-1"></a>Además, este código se puede compartir fácilmente. Se puede enviar por correo electrónico o publicar en línea. Incluso se puede cargar desde repositorios en línea:</span>
 <span id="cb115-690"><a href="#cb115-690" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-691"><a href="#cb115-691" aria-hidden="true" tabindex="-1"></a><span class="co"># run it</span></span>
-<span id="cb115-692"><a href="#cb115-692" aria-hidden="true" tabindex="-1"></a><span class="fu">fnctn_X</span>(<span class="at">sq_mt =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)), <span class="at">vctr =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
-<span id="cb115-693"><a href="#cb115-693" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-694"><a href="#cb115-694" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-695"><a href="#cb115-695" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval=T, echo=F}</span></span>
-<span id="cb115-696"><a href="#cb115-696" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-697"><a href="#cb115-697" aria-hidden="true" tabindex="-1"></a><span class="fu">fnctn_X</span>(<span class="at">sq_mt =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)), <span class="at">vctr =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
-<span id="cb115-698"><a href="#cb115-698" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-699"><a href="#cb115-699" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-700"><a href="#cb115-700" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-701"><a href="#cb115-701" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-702"><a href="#cb115-702" aria-hidden="true" tabindex="-1"></a>Además, este código se puede compartir fácilmente. Se puede enviar por correo electrónico o publicar en línea. Incluso se puede cargar desde repositorios en línea:</span>
-<span id="cb115-703"><a href="#cb115-703" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-704"><a href="#cb115-704" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, error=T}</span></span>
-<span id="cb115-705"><a href="#cb115-705" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-706"><a href="#cb115-706" aria-hidden="true" tabindex="-1"></a><span class="co"># remover objetos</span></span>
-<span id="cb115-707"><a href="#cb115-707" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
-<span id="cb115-708"><a href="#cb115-708" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-709"><a href="#cb115-709" aria-hidden="true" tabindex="-1"></a><span class="co"># revisar si existe en ambiente actual</span></span>
-<span id="cb115-710"><a href="#cb115-710" aria-hidden="true" tabindex="-1"></a><span class="fu">exists</span>(<span class="st">"fnctn_X"</span>)</span>
-<span id="cb115-711"><a href="#cb115-711" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-712"><a href="#cb115-712" aria-hidden="true" tabindex="-1"></a><span class="co"># cargar desde el internet</span></span>
-<span id="cb115-713"><a href="#cb115-713" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(</span>
-<span id="cb115-714"><a href="#cb115-714" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
-<span id="cb115-715"><a href="#cb115-715" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://github.com/maRce10/"</span>,</span>
-<span id="cb115-716"><a href="#cb115-716" aria-hidden="true" tabindex="-1"></a>    <span class="st">"r_avanzado_2023/blob/master/data/function_x.r"</span></span>
-<span id="cb115-717"><a href="#cb115-717" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb115-718"><a href="#cb115-718" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb115-719"><a href="#cb115-719" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-720"><a href="#cb115-720" aria-hidden="true" tabindex="-1"></a><span class="co"># revisar si existe en ambiente actual</span></span>
-<span id="cb115-721"><a href="#cb115-721" aria-hidden="true" tabindex="-1"></a><span class="fu">exists</span>(<span class="st">"fnctn_X"</span>)</span>
-<span id="cb115-722"><a href="#cb115-722" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb115-723"><a href="#cb115-723" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-724"><a href="#cb115-724" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-725"><a href="#cb115-725" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-726"><a href="#cb115-726" aria-hidden="true" tabindex="-1"></a><span class="fu">## Se aplica fácilmente a nuevos objetos</span></span>
+<span id="cb115-691"><a href="#cb115-691" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, error=T}</span></span>
+<span id="cb115-692"><a href="#cb115-692" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-693"><a href="#cb115-693" aria-hidden="true" tabindex="-1"></a><span class="co"># remover objetos</span></span>
+<span id="cb115-694"><a href="#cb115-694" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb115-695"><a href="#cb115-695" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-696"><a href="#cb115-696" aria-hidden="true" tabindex="-1"></a><span class="co"># revisar si existe en ambiente actual</span></span>
+<span id="cb115-697"><a href="#cb115-697" aria-hidden="true" tabindex="-1"></a><span class="fu">exists</span>(<span class="st">"fnctn_X"</span>)</span>
+<span id="cb115-698"><a href="#cb115-698" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-699"><a href="#cb115-699" aria-hidden="true" tabindex="-1"></a><span class="co"># cargar desde el internet</span></span>
+<span id="cb115-700"><a href="#cb115-700" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(</span>
+<span id="cb115-701"><a href="#cb115-701" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
+<span id="cb115-702"><a href="#cb115-702" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://github.com/maRce10/"</span>,</span>
+<span id="cb115-703"><a href="#cb115-703" aria-hidden="true" tabindex="-1"></a>    <span class="st">"r_avanzado_2023/blob/master/data/function_x.r"</span></span>
+<span id="cb115-704"><a href="#cb115-704" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb115-705"><a href="#cb115-705" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb115-706"><a href="#cb115-706" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-707"><a href="#cb115-707" aria-hidden="true" tabindex="-1"></a><span class="co"># revisar si existe en ambiente actual</span></span>
+<span id="cb115-708"><a href="#cb115-708" aria-hidden="true" tabindex="-1"></a><span class="fu">exists</span>(<span class="st">"fnctn_X"</span>)</span>
+<span id="cb115-709"><a href="#cb115-709" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-710"><a href="#cb115-710" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-711"><a href="#cb115-711" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-712"><a href="#cb115-712" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-713"><a href="#cb115-713" aria-hidden="true" tabindex="-1"></a><span class="fu">## Se aplica fácilmente a nuevos objetos</span></span>
+<span id="cb115-714"><a href="#cb115-714" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-715"><a href="#cb115-715" aria-hidden="true" tabindex="-1"></a>Esto ya debería ser obvio a este punto.</span>
+<span id="cb115-716"><a href="#cb115-716" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-717"><a href="#cb115-717" aria-hidden="true" tabindex="-1"></a><span class="fu">## Otros consejos</span></span>
+<span id="cb115-718"><a href="#cb115-718" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-719"><a href="#cb115-719" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Construir funciones cortas:</span>
+<span id="cb115-720"><a href="#cb115-720" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Fácil de leer</span>
+<span id="cb115-721"><a href="#cb115-721" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Fácil de arreglar y actualizar</span>
+<span id="cb115-722"><a href="#cb115-722" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Si es demasiado largo, probablemente debería dividirse en varias funciones</span>
+<span id="cb115-723"><a href="#cb115-723" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Genera modularidad</span>
+<span id="cb115-724"><a href="#cb115-724" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Añadir comentarios a todo el código &nbsp;</span>
+<span id="cb115-725"><a href="#cb115-725" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Agregar descripciones a cada uno de los argumentos que toma &nbsp;</span>
+<span id="cb115-726"><a href="#cb115-726" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Función de prueba con diferentes valores/escenarios</span>
 <span id="cb115-727"><a href="#cb115-727" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-728"><a href="#cb115-728" aria-hidden="true" tabindex="-1"></a>Esto ya debería ser obvio a este punto.</span>
+<span id="cb115-728"><a href="#cb115-728" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb115-729"><a href="#cb115-729" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-730"><a href="#cb115-730" aria-hidden="true" tabindex="-1"></a><span class="fu">## Otros consejos</span></span>
+<span id="cb115-730"><a href="#cb115-730" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
 <span id="cb115-731"><a href="#cb115-731" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-732"><a href="#cb115-732" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Construir funciones cortas:</span>
-<span id="cb115-733"><a href="#cb115-733" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Fácil de leer</span>
-<span id="cb115-734"><a href="#cb115-734" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Fácil de arreglar y actualizar</span>
-<span id="cb115-735"><a href="#cb115-735" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Si es demasiado largo, probablemente debería dividirse en varias funciones</span>
-<span id="cb115-736"><a href="#cb115-736" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Genera modularidad</span>
-<span id="cb115-737"><a href="#cb115-737" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Añadir comentarios a todo el código &nbsp;</span>
-<span id="cb115-738"><a href="#cb115-738" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Agregar descripciones a cada uno de los argumentos que toma &nbsp;</span>
-<span id="cb115-739"><a href="#cb115-739" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Función de prueba con diferentes valores/escenarios</span>
+<span id="cb115-732"><a href="#cb115-732" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
+<span id="cb115-733"><a href="#cb115-733" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio 4</span></span>
+<span id="cb115-734"><a href="#cb115-734" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-735"><a href="#cb115-735" aria-hidden="true" tabindex="-1"></a>4.1 Cree una funcion que calcule el promedio, la desviación estándar y el error estándar de un vector numérico. Estos valores deben ser devueltos como una lista con nombres.</span>
+<span id="cb115-736"><a href="#cb115-736" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-737"><a href="#cb115-737" aria-hidden="true" tabindex="-1"></a>4.2 Permita a los usuarios ignorar los <span class="in">`NAs`</span> (similar al argumento <span class="in">`na.rm`</span> en <span class="in">`mean()`</span>, pista: añada un argumento lógico)</span>
+<span id="cb115-738"><a href="#cb115-738" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-739"><a href="#cb115-739" aria-hidden="true" tabindex="-1"></a>4.3 Haga que la función además produzca un histograma del vector numérico proporcionado por el usuario</span>
 <span id="cb115-740"><a href="#cb115-740" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-741"><a href="#cb115-741" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb115-741"><a href="#cb115-741" aria-hidden="true" tabindex="-1"></a>4.4 Haga que la función escoja un color al azar para las barras del histograma cada vez que se corre (pista: <span class="in">`sample(vector.de.colores, 1)`</span>)</span>
 <span id="cb115-742"><a href="#cb115-742" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-743"><a href="#cb115-743" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-743"><a href="#cb115-743" aria-hidden="true" tabindex="-1"></a>4.5 Añada un argumento a la función que permita el usuario, si lo desea, calcular la sumatoria (<span class="in">`sum()`</span>) junto con el resto de los descriptores estadísticos</span>
 <span id="cb115-744"><a href="#cb115-744" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-745"><a href="#cb115-745" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
-<span id="cb115-746"><a href="#cb115-746" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio 4</span></span>
-<span id="cb115-747"><a href="#cb115-747" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-748"><a href="#cb115-748" aria-hidden="true" tabindex="-1"></a>4.1 Cree una funcion que calcule el promedio, la desviación estándar y el error estándar de un vector numérico. Estos valores deben ser devueltos como una lista con nombres.</span>
-<span id="cb115-749"><a href="#cb115-749" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-750"><a href="#cb115-750" aria-hidden="true" tabindex="-1"></a>4.2 Permita a los usuarios ignorar los <span class="in">`NAs`</span> (similar al argumento <span class="in">`na.rm`</span> en <span class="in">`mean()`</span>, pista: añada un argumento lógico)</span>
-<span id="cb115-751"><a href="#cb115-751" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-752"><a href="#cb115-752" aria-hidden="true" tabindex="-1"></a>4.3 Haga que la función además produzca un histograma del vector numérico proporcionado por el usuario</span>
-<span id="cb115-753"><a href="#cb115-753" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-754"><a href="#cb115-754" aria-hidden="true" tabindex="-1"></a>4.4 Haga que la función escoja un color al azar para las barras del histograma cada vez que se corre (pista: <span class="in">`sample(vector.de.colores, 1)`</span>)</span>
-<span id="cb115-755"><a href="#cb115-755" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-756"><a href="#cb115-756" aria-hidden="true" tabindex="-1"></a>4.5 Añada un argumento a la función que permita el usuario, si lo desea, calcular la sumatoria (<span class="in">`sum()`</span>) junto con el resto de los descriptores estadísticos</span>
-<span id="cb115-757"><a href="#cb115-757" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-758"><a href="#cb115-758" aria-hidden="true" tabindex="-1"></a>4.6 Agregue el promedio y la desviación estándar al título del histograma (pista: use <span class="in">`paste()`</span>)</span>
-<span id="cb115-759"><a href="#cb115-759" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-760"><a href="#cb115-760" aria-hidden="true" tabindex="-1"></a>4.7 Modifique la función para que también cree una linea vertical indicando el promedio del vector numérico proporcionado por el usuario</span>
-<span id="cb115-761"><a href="#cb115-761" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-762"><a href="#cb115-762" aria-hidden="true" tabindex="-1"></a>4.8 Modifique la función para que añada un polígono transparente sobre el área que cubre el promedio +/- la desviación estándar</span>
-<span id="cb115-763"><a href="#cb115-763" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-764"><a href="#cb115-764" aria-hidden="true" tabindex="-1"></a>4.9 Modifique la función con un argumento lógico que permita al usuario controlar si se crea un gráfico o no</span>
-<span id="cb115-765"><a href="#cb115-765" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-766"><a href="#cb115-766" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb115-767"><a href="#cb115-767" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-768"><a href="#cb115-768" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-769"><a href="#cb115-769" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-770"><a href="#cb115-770" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb115-771"><a href="#cb115-771" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-772"><a href="#cb115-772" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lecturas adicionales</span></span>
-<span id="cb115-773"><a href="#cb115-773" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-774"><a href="#cb115-774" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"http://nicercode.github.io/intro/writing-functions.html"</span><span class="kw">&gt;</span> Introduction to R guide to writing functions with information for a total beginner<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb115-775"><a href="#cb115-775" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-776"><a href="#cb115-776" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://twitter.com/hadleywickham"</span><span class="kw">&gt;</span>Information on functions for intermediate and advanced users (Hadley Wickham)<span class="kw">&lt;/a&gt;</span>.</span>
-<span id="cb115-777"><a href="#cb115-777" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-778"><a href="#cb115-778" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"http://cran.r-project.org/doc/manuals/R-intro.html#Writing-your-own-R-intro.html#Writing-your-own-functions"</span><span class="kw">&gt;</span>The official R intro material on writing your own functions<span class="kw">&lt;/a&gt;</span> (ir a "Writing your own function")</span>
-<span id="cb115-779"><a href="#cb115-779" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-780"><a href="#cb115-780" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb115-781"><a href="#cb115-781" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-782"><a href="#cb115-782" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb115-783"><a href="#cb115-783" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-784"><a href="#cb115-784" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencias</span></span>
-<span id="cb115-785"><a href="#cb115-785" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-786"><a href="#cb115-786" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Wickham, Hadley, and Garrett Grolemund. 2016. *R for data science: import, tidy, transform, visualize, and model data*. <span class="co">[</span><span class="ot">website</span><span class="co">](http://r4ds.had.co.nz)</span></span>
-<span id="cb115-787"><a href="#cb115-787" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-788"><a href="#cb115-788" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb115-789"><a href="#cb115-789" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-790"><a href="#cb115-790" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"4"</span><span class="kw">&gt;</span>Información de la sesión<span class="kw">&lt;/font&gt;</span></span>
-<span id="cb115-791"><a href="#cb115-791" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-792"><a href="#cb115-792" aria-hidden="true" tabindex="-1"></a><span class="in">```{r session info, echo=F}</span></span>
-<span id="cb115-793"><a href="#cb115-793" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-794"><a href="#cb115-794" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
-<span id="cb115-795"><a href="#cb115-795" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb115-745"><a href="#cb115-745" aria-hidden="true" tabindex="-1"></a>4.6 Agregue el promedio y la desviación estándar al título del histograma (pista: use <span class="in">`paste()`</span>)</span>
+<span id="cb115-746"><a href="#cb115-746" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-747"><a href="#cb115-747" aria-hidden="true" tabindex="-1"></a>4.7 Modifique la función para que también cree una linea vertical indicando el promedio del vector numérico proporcionado por el usuario</span>
+<span id="cb115-748"><a href="#cb115-748" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-749"><a href="#cb115-749" aria-hidden="true" tabindex="-1"></a>4.8 Modifique la función para que añada un polígono transparente sobre el área que cubre el promedio +/- la desviación estándar</span>
+<span id="cb115-750"><a href="#cb115-750" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-751"><a href="#cb115-751" aria-hidden="true" tabindex="-1"></a>4.9 Modifique la función con un argumento lógico que permita al usuario controlar si se crea un gráfico o no</span>
+<span id="cb115-752"><a href="#cb115-752" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-753"><a href="#cb115-753" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb115-754"><a href="#cb115-754" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-755"><a href="#cb115-755" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-756"><a href="#cb115-756" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-757"><a href="#cb115-757" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb115-758"><a href="#cb115-758" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-759"><a href="#cb115-759" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lecturas adicionales</span></span>
+<span id="cb115-760"><a href="#cb115-760" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-761"><a href="#cb115-761" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"http://nicercode.github.io/intro/writing-functions.html"</span><span class="kw">&gt;</span> Introduction to R guide to writing functions with information for a total beginner<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb115-762"><a href="#cb115-762" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-763"><a href="#cb115-763" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://twitter.com/hadleywickham"</span><span class="kw">&gt;</span>Information on functions for intermediate and advanced users (Hadley Wickham)<span class="kw">&lt;/a&gt;</span>.</span>
+<span id="cb115-764"><a href="#cb115-764" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-765"><a href="#cb115-765" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"http://cran.r-project.org/doc/manuals/R-intro.html#Writing-your-own-R-intro.html#Writing-your-own-functions"</span><span class="kw">&gt;</span>The official R intro material on writing your own functions<span class="kw">&lt;/a&gt;</span> (ir a "Writing your own function")</span>
+<span id="cb115-766"><a href="#cb115-766" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-767"><a href="#cb115-767" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb115-768"><a href="#cb115-768" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-769"><a href="#cb115-769" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb115-770"><a href="#cb115-770" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-771"><a href="#cb115-771" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencias</span></span>
+<span id="cb115-772"><a href="#cb115-772" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-773"><a href="#cb115-773" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Wickham, Hadley, and Garrett Grolemund. 2016. *R for data science: import, tidy, transform, visualize, and model data*. <span class="co">[</span><span class="ot">website</span><span class="co">](http://r4ds.had.co.nz)</span></span>
+<span id="cb115-774"><a href="#cb115-774" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-775"><a href="#cb115-775" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb115-776"><a href="#cb115-776" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-777"><a href="#cb115-777" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"4"</span><span class="kw">&gt;</span>Información de la sesión<span class="kw">&lt;/font&gt;</span></span>
+<span id="cb115-778"><a href="#cb115-778" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-779"><a href="#cb115-779" aria-hidden="true" tabindex="-1"></a><span class="in">```{r session info, echo=F}</span></span>
+<span id="cb115-780"><a href="#cb115-780" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-781"><a href="#cb115-781" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
+<span id="cb115-782"><a href="#cb115-782" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

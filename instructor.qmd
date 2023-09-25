@@ -1,9 +1,4 @@
 ---
-toc: true
-toc-depth: 3
-toc-location: left
-number-sections: true
-highlight-style: pygments
 format:
   html:
     css: styles.css
@@ -17,5 +12,4 @@ format:
 
 <font size="3">
 
-Un ecólogo del comportamiento mas que acabó haciendo mucha programación solo para poder hacer bien el análisis de datos. Ademas de la investigación, también trabajo en hacer herramientas computacionales para el análisis de datos biológicos (no genéticos), principalmente relacionados con el comportamiento animal y la bioacústica. Soy el desarrollador de los paquetes de R [warbleR](https://marce10.github.io/warbleR/index.html) y [Rraven](https://marce10.github.io/Rraven/index.html) los cuales tienen funciones para agilizar el análisis acústico de  sonidos de los animales. Más recientemente, sacamos los paquetes [baRulho](https://marce10.github.io/baRulho/index.html), para cuantificar la transmisión y la degradación de la señal acústica, [ohun](https://marce10.github.io/ohun/index.html), para optimizar la detección automática y [PhenotypeSpace](https://marce10.github.io/PhenotypeSpace/index.html) para cuantificar los espacios de rasgos multidimensionales. Recientemente también desarrollé el paquete [sketchy](https://marce10.github.io/sketchy/index.html) para organizar compendios de investigación. 
-
+Un ecólogo del comportamiento mas que acabó haciendo mucha programación solo para poder hacer bien el análisis de datos. Ademas de la investigación, también trabajo en hacer herramientas computacionales para el análisis de datos biológicos (no genéticos), principalmente relacionados con el comportamiento animal y la bioacústica. Soy el desarrollador de los paquetes de R [warbleR](https://marce10.github.io/warbleR/index.html) y [Rraven](https://marce10.github.io/Rraven/index.html) los cuales tienen funciones para agilizar el análisis acústico de sonidos de los animales. Más recientemente, sacamos los paquetes [baRulho](https://marce10.github.io/baRulho/index.html), para cuantificar la transmisión y la degradación de la señal acústica, [ohun](https://marce10.github.io/ohun/index.html), para optimizar la detección automática y [PhenotypeSpace](https://marce10.github.io/PhenotypeSpace/index.html) para cuantificar los espacios de rasgos multidimensionales. Recientemente también desarrollé el paquete [sketchy](https://marce10.github.io/sketchy/index.html) para organizar compendios de investigación.

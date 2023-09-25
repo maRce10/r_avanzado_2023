@@ -37,14 +37,25 @@ website:
       - text: "Preparación para el curso"
         href: preparacion_curso.qmd
       - text: "Compartir código"
-        href: code_redirect.html
+        href: https://codefile.io/f/inMsojTFoN
       - text: "Instructor"
         href: instructor.qmd
+
+toc: true
+toc-depth: 2
+toc-location: left
+number-sections: true
+highlight-style: pygments
 
 format:
   html:
     theme: simplex
-    css: styles.css
+    css: styles.scss
     toc: true
-    
-editor: visual
+    df-print: kable
+    code-fold: show
+    code-tools: true
+    link-external-icon: false
+    link-external-newwindow: true  
+      
+editor: source

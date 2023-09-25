@@ -1,18 +1,5 @@
 ---
 title: <font size="7"><b>Modelos estádisticos tradicionales como regresiones</b></font>
-toc: true
-toc-depth: 2
-toc-location: left
-number-sections: true
-highlight-style: pygments
-format:
-  html:
-    df-print: kable
-    code-fold: show
-    code-tools: true
-    css: styles.css
-    link-external-icon: false
-    link-external-newwindow: true  
 ---
 
 ```{=html}

@@ -1,18 +1,5 @@
 ---
 title: <font size="7"><b>Bucles</b></font>
-toc: true
-toc-depth: 2
-toc-location: left
-number-sections: true
-highlight-style: pygments
-format:
-  html:
-    df-print: kable
-    code-fold: show
-    code-tools: true
-    css: styles.css
-    link-external-icon: false
-    link-external-newwindow: true  
 ---
 
 ```{=html}
@@ -88,8 +75,17 @@ archivos_txt <-
 # definir directorio a donde guardar los archivos
 directorio <- "./data/"
 
+
+
 # guardar archivos
-download.file(url = "https://github.com/maRce10/ucr_r_avanzado/raw/master/additional_files/datos_camara_submarina.zip", destfile = file.path(directorio, "datos_camara_submarina.zip"))
+download.file(
+  url =
+    paste0(
+      "https://github.com/maRce10/",
+      "r_avanzado_2023/raw/master/data/datos_camara_submarina.zip"
+    ),
+  destfile = file.path(directorio, "datos_camara_submarina.zip")
+)
 
 # extraerlos del zip
 unzip(zipfile = file.path(directorio, "datos_camara_submarina.zip"), exdir = directorio)
