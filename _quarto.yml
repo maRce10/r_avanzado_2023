@@ -47,6 +47,10 @@ toc-location: left
 number-sections: true
 highlight-style: pygments
 
+# Switch to using Spanish translation
+# https://github.com/quarto-dev/quarto-cli/tree/main/src/resources/language
+lang: es 
+
 format:
   html:
     theme: simplex
