@@ -18,6 +18,7 @@ title: <font size="7"><b>Programación y métodos estadísticos avanzados en R</
 
 <!-- &nbsp; -->
 
+
 <center><font size="5"><b>Escuela de Biología, Universidad de Costa Rica<br></b></font></center>
 
 <center><font size="5"><b><a href="https://marce10.github.io/">Marcelo Araya-Salas PhD</a> y <a href="https://scholar.google.com/citations?user=hTu_SnkAAAAJ&hl=es&oi=ao"> Mario Espinoza PhD</a><br></b></font></center>
