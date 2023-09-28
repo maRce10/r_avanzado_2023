@@ -1,5 +1,6 @@
 ---
 title: <font size="7"><b>Programación y métodos estadísticos avanzados en R</b></font>
+date: ""
 format:
   html:
     code-tools: false
