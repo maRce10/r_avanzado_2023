@@ -492,8 +492,8 @@ knitr::kable(iris[1:10, ])
 ```
 
 ```{r, echo = FALSE}
-iris[1:10, ]
 
+iris[1:10, ]
 
 ```
 
@@ -566,6 +566,8 @@ El siguiente código utiliza el paquete `leaflet` para generar un mapa interacti
 
 ```{r, out.width = '100%', echo = TRUE, results = 'asis'}
 
+sketchy::load_packages("leaflet")
+
 ll_map <- leaflet()
 
 ll_map <- addTiles(map = ll_map)
@@ -589,19 +591,6 @@ addPopups(
 
  
 
-Este es el bloque de código que generó el mapa:
-
-```{r, echo=FALSE,out.width="90%", fig.align='center'}
-
-knitr::include_graphics("./images/leaflet.png")
-
-```
-
-
-Note el uso del argumento de `results = 'asis'` en las opciones del bloque de código.
-
- 
-
 ## Aplicaciones shiny
 
 El paquete `shiny` crea aplicaciones web interactivas en R. Para llamar al código `shiny` desde un documento R Markdown, agregue 'runtime': shiny a los metadatos YAML, como en este ejemplo:
@@ -621,6 +610,8 @@ runtime: shiny
 El siguiente código crea una aplicación shiny dentro del documento Rmarkdown:
 
 ```{r, eval = FALSE}
+
+sketchy::load_packages("shiny")
 
 ui <- fluidPage(
   
