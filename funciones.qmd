@@ -488,7 +488,7 @@ out[[2]]
 ::: {.alert .alert-info}
 ## Ejercicio 2
 
-2.1 Cree una función llamada `promedio` que calcule el promedio de un vector numérico. Internamente solo puede utilizar los operadores algebraicos `+` y `/` (suma y división, no puede llamar la función `mean()`)
+2.1 Cree una función llamada `promedio` que calcule el promedio de un vector numérico. Internamente solo puede utilizar las funciones `sum()` y `length()` (suma y división, no puede llamar la función `mean()`)
 
 2.2 Cree una función que tome 2 argumentos numéricos (llámelos 'x' y 'y'), eleve cada uno al cuadrado y luego los sume
 
