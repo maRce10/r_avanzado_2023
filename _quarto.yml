@@ -34,6 +34,10 @@ website:
           href: estadistica_tradicional_regresion.qmd
         - text: "Gráficos con ggplot2"
           href: ggplot2.qmd
+      - text: "Tareas"
+        menu:
+        - text: "Tarea 4"
+          href: tarea4.qmd
       - text: "Preparación para el curso"
         href: preparacion_curso.qmd
       - text: "Compartir código"

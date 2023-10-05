@@ -1,0 +1,151 @@
+---
+title: <center><font size="7"><b>Tarea 4</b></font></center>
+subtitle: <center><font size="5"><b>Programación y métodos estadísticos avanzados en R</b></b></font></center>
+author: <center><font size="5"><a href="http://marceloarayasalas.weebly.com/">Marcelo Araya-Salas, PhD</a></font></center>
+date: <center>"`r Sys.Date()`"</center>
+output:
+  html_document:
+    css: extra.css
+    df_print: tibble
+    highlight: pygments
+    toc: false
+    toc_depth: 3
+    toc_float:
+      collapsed: yes
+      smooth_scroll: yes
+fontsize: 12pt 
+editor_options: 
+  chunk_output_type: console
+---
+
+
+<style>
+body
+  { counter-reset: source-line 0; }
+pre.numberSource code
+  { counter-reset: none; }
+</style>
+
+&nbsp; 
+
+<div class="alert alert-warning">
+
+**Instrucciones**
+
+  * La fecha de entrega es el 4 de octubre a las 11:59 pm
+  * La tarea debe ser escrita en el formato para reportes dinámicos Rmarkdown
+  * Debe entregar el archivo html generado del Rmarkdown por medio de mediación virtual (hay un enlace para someter la tarea). No envíe el archivo Rmd.
+  * El archivo Rmarkdown debe utilizar secciones de código ("chunks") separados para cada ejercicio y subtítulos para cada uno así como comentarios en texto
+  * El código dentro de los bloques de código debe estar documentado con comentarios (usando #)
+  * Debe usar R básico para la manipulación de datos
+  * Cada item tiene un valor de 5 puntos
+
+</div>
+
+&nbsp; 
+
+```{r, echo = FALSE}
+
+# devtools::install_github("hadley/emo")
+library("leaflet")
+library("xaringanExtra")
+library("knitr")
+library("DT")
+
+# options to customize chunk outputs
+knitr::opts_chunk$set(
+  class.source = "numberLines lineAnchors", # for code line numbers
+  tidy.opts = list(width.cutoff = 65), 
+  tidy = TRUE,
+  message = FALSE
+ )
+
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
+    error_text = "<i class=\"fa fa-times-circle\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+
+# this is a customized printing style data frames 
+# screws up tibble function
+tibble <- function(x, ...) { 
+  x <- kbl(x, digits=4, align= 'c', row.names = FALSE) 
+   x <- kable_styling(x, position ="center", full_width = FALSE,  bootstrap_options = c("striped", "hover", "condensed", "responsive")) 
+   asis_output(x)
+}
+
+registerS3method("knit_print", "data.frame", tibble)
+```
+
+<!-- skyblue box -->
+
+<div class="alert alert-info">
+
+1. Cree un mapa interactivo con leaflet que muestre el Parque Nacional Corcovado, el Parque Nacional Piedras Blancas y la Reserva Forestal Golfo Dulce (*pista: pueden encontrar las coordenadas usando [google maps](https://www.google.com/maps)*). Para cada sitio añada un marcador usando la función de leaftlet `addAwesomeMarkers`. El mapa debe ser similar a este:
+
+&nbsp;
+```{r out.width = '100%', echo = TRUE, as.is = TRUE, echo = FALSE, fig.align='center'}
+
+ll_map <- leaflet()
+
+ll_map <- addTiles(map = ll_map)
+ 
+ll_map <- setView(map = ll_map, lat = 8.534785, lng = -83.552219, zoom = 10)
+
+# ll_map <- leaflet::addPopups(map = ll_map, lat = c(8.534785, 8.737077, 8.699383), lng = c( -83.552219, -83.498093, -83.275528), popup = c("Parque Nacional Corcovado", "Parque Nacional Piedras Blancas", "Reserva Forestal Golfo Dulce"))
+
+ 
+leaflet::addAwesomeMarkers(map = ll_map, lat = c(8.534785, 8.737077, 8.699383), lng = c( -83.552219, -83.498093, -83.275528))
+
+```
+&nbsp;
+
+&nbsp;
+
+2. Utilice el paquete [DT](https://rstudio.github.io/DT/) para generar un cuadro (tabla) de los datos `iris`. La tabla debe verse igual a esta:
+
+
+```{r, eval = TRUE, echo = FALSE, results='asis'}
+
+datatable(iris)
+
+```
+
+&nbsp;
+
+&nbsp;
+
+El siguiente código calcula la correlación entre largo y ancho de pétalo para los datos `iris`.
+
+```{r}
+
+cor(iris$Petal.Length, iris$Petal.Width)
+```
+
+&nbsp;
+
+3. Incruste el resultado de la correlación en una línea de texto (fuera de un bloque de código). Debe verse así (recuerde redondear):
+
+  - *El coeficiente de correlación de Pearson entre largo de pétalo y ancho de pétalo es de `r round(cor(iris$Petal.Length, iris$Petal.Width), 2)`*
+
+&nbsp;
+
+
+</div>
+
+&nbsp; 
+
+
+
+---
+
+<font size="4">Información de la sesión</font>
+
+```{r session info, echo=F}
+
+sessionInfo()
+
+```
