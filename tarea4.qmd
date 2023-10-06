@@ -1,21 +1,8 @@
 ---
 title: <font size="7"><b>Tarea 4</b></font>
-toc: true
-toc-depth: 2
-toc-location: left
-toc-title: Contenidos
-number-sections: true
-highlight-style: pygments
 format:
   html:
-    theme: simplex
-    css: styles.css
-    toc: true
-    df-print: kable
-    code-fold: show
     code-tools: false
-    link-external-icon: false
-    link-external-newwindow: true  
 ---
 
 ```{=html}
@@ -25,7 +12,10 @@ body
 pre.numberSource code
   { counter-reset: none; }
 </style>
+
+
 ```
+
 ```{r,echo=FALSE,message=FALSE}
 
 options("digits" = 5)
@@ -37,7 +27,6 @@ knitr::opts_chunk$set(
   message = FALSE
 )
 ```
-
 
 ```{=html}
 <style>
@@ -53,12 +42,14 @@ pre.numberSource code
 **Instrucciones**
 
 -   La fecha de entrega es el 12 de octubre a las 11:59:59 pm
--   La tarea debe ser escrita en el formato para reportes dinámicos Rmarkdown
--   Debe entregar el archivo html generado del Rmarkdown por medio de mediación virtual (hay un enlace para someter la tarea). No envíe el archivo Rmd.
--   El archivo Rmarkdown debe utilizar secciones de código ("chunks") separados para cada ejercicio y subtítulos para cada uno así como comentarios en texto
--   El código dentro de los bloques de código debe estar documentado con comentarios (usando \#)
+-   La tarea debe ser escrita en el formato para reportes dinámicos Rmarkdown o quarto
+-   Debe entregar el archivo html generado del documento Rmarkdown/quarto por medio de mediación virtual (hay un enlace para someter la tarea). No envíe el archivo Rmd.
+-   El reporte debe utilizar secciones de código ("chunks") separados para cada ejercicio y subtítulos para cada uno así como comentarios en texto
+- El código de los bloques siempre debe ser visible (no use `echo = FALSE`)
+-   El código dentro de los bloques de código debe estar documentado con comentarios (usando #)
 -   Debe usar R básico para la manipulación de datos
 -   Cada item tiene un valor de 5 puntos
+
 :::
 
  
@@ -135,8 +126,6 @@ datatable(iris)
 
  
 
- 
-
 El siguiente código calcula la correlación entre largo y ancho de pétalo para los datos `iris`.
 
 ```{r}
@@ -151,10 +140,13 @@ cor(iris$Petal.Length, iris$Petal.Width)
 -   *El coeficiente de correlación de Pearson entre largo de pétalo y ancho de pétalo es de `r round(cor(iris$Petal.Length, iris$Petal.Width), 2)`*
 
  
+
+4. Publique el reporte en [Rpubs](https://rpubs.com/) y añada el enlace en el reporte (use un enlace en el texto).
+
+ 
 :::
 
  
-
 
 ## Información de la sesión {.unnumbered .unlisted}
 
