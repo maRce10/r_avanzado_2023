@@ -25,9 +25,9 @@ format:
 
 <!-- &nbsp; -->
 
-<center><font size="5"><b>Escuela de Biología, Universidad de Costa Rica<br></b></font></center>
+<center><font size="4"><b>Escuela de Biología, Universidad de Costa Rica<br></b></font></center>
 
-<center><font size="5"><b><a href="https://marce10.github.io/">Marcelo Araya-Salas PhD</a> y <a href="https://scholar.google.com/citations?user=hTu_SnkAAAAJ&hl=es&oi=ao"> Mario Espinoza PhD</a><br></b></font></center>
+<center><font size="4"><b><a href="https://marce10.github.io/">Marcelo Araya-Salas PhD</a> y <a href="https://scholar.google.com/citations?user=hTu_SnkAAAAJ&hl=es&oi=ao"> Mario Espinoza PhD</a><br></b></font></center>
 
 Este curso pretende profundizar en los elementos de programación computacional, manipulación de bases de datos, diseño experimental, graficación personalizada, y el uso de técnicas y modelaje estadístico avanzadas utilizando R como plataforma. El curso está dirigido a estudiantes avanzados de carrera, de licenciatura o postgrado. En el curso se pretende cubrir las bases de los principales análisis y técnicas de modelaje estadístico, así como análisis emergentes. Todas las semanas se realizarán prácticas de laboratorio en donde se aplicarán los conceptos desarrollados durante las clases de teoría. Además, durante el curso cada estudiante presentará un paquete o extensión (conjunto de herramientas aplicables a análisis específicos) de R, en donde profundizará sobre sus aplicaciones en el campo de la biología demostrando en clase en que consiste el análisis.
 
@@ -49,7 +49,7 @@ Este curso pretende profundizar en los elementos de programación computacional,
 
 -   Pueden hacer preguntas en cualquier momento
 -   Sientanse libres de responder preguntas de compañeros
--   Traten siempre de correr el código y de tratar de entender todos sus elementos
+-   Traten siempre de correr el código y de entender todos sus elementos
 -   Las líneas de código estan numeradas. Podemos usar esos números para referirnos a códigos específicos en los manuales. Los bloques de código también incluyen un botón que permite copiar el código:
 
 ```{r, out.width = "100%", echo = FALSE, fig.align= "center"}
@@ -57,7 +57,7 @@ Este curso pretende profundizar en los elementos de programación computacional,
 knitr::include_graphics("./images/chunk.png")
 ```
 
--   También usaremos el enlace ["Compartir código"](https://codefile.io/f/XOIzH23KfULuZKyZ1TYT) en el menú principal del este sitio (arriba) para pasar códigos que se desarrollen en clase
+-   También usaremos el enlace ["Compartir código"](https://codefile.io/f/XOIzH23KfULuZKyZ1TYT) en el menú principal de este sitio (arriba) para pasar códigos que se desarrollen en clase
 
  
 
