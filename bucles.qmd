@@ -92,6 +92,7 @@ unzip(zipfile = file.path(directorio, "datos_camara_submarina.zip"), exdir = dir
 
 # hacer vector con nombre y direccion de archivos
 archivos_txt <- list.files(path = directorio, full.names = TRUE, pattern = "TXT$")
+
 ```
 
  
@@ -279,7 +280,12 @@ Recordemos que los nombres de los archivos .TXT están guardados en un vector ll
 
 ```{r}
 
-archivo1 <- read.table(archivos_txt[1], header = TRUE, skip = 4, sep = "\t")
+
+archivo1 <-
+  read.table(archivos_txt[1],
+             header = TRUE,
+             skip = 4,
+             sep = "\t")
 
 # ver pirmeras 4 filas y 8 columnas
 head(archivo1[1:4, 1:8])
@@ -300,18 +306,22 @@ Ahora, para hacer esto con todos los archivos **no es eficiente leer cada uno en
 
 ```{r}
 
+
 # vector vacio
 resultados <- vector()
 
 # inicio del bucle
 for (i in archivos_txt) {
   # leer archivo
-  txt <- read.table(i, header = TRUE, skip = 4, sep = "\t")
+  txt <- read.table(i,
+                    header = TRUE,
+                    skip = 4,
+                    sep = "\t")
   # calcular numero de filas
-  nrw <- nrow(txt)
-
+  n_sp <- nrow(txt)
+  
   # guardar resultados en vector vacio
-  resultados <- append(resultados, nrw)
+  resultados <- append(resultados, n_sp)
 }
 
 resultados
@@ -324,10 +334,12 @@ Podemos ordenar estos resultados fácilmente haciendo un cuadro de datos (data.f
 ```{r}
 
 # organizar en data frame
-n_filas_df <- data.frame(archivo = basename(archivos_txt), filas = resultados)
+n_sp_df <-
+  data.frame(archivo = basename(archivos_txt), 
+             n_sp = resultados)
 
 # ver primeras 6 filas
-head(n_filas_df)
+head(n_sp_df)
 ```
 
 ::: {.alert .alert-info}
@@ -352,21 +364,31 @@ resultados <- vector()
 # inicio del bucle
 for (i in archivos_txt) {
   # leer archivo
-  txt <- read.table(i, header = TRUE, skip = 4, sep = "\t")
-
+  txt <- read.table(i,
+                    header = TRUE,
+                    skip = 4,
+                    sep = "\t")
+  
   # calcular numero de familias
   nfam <- length(unique(txt$Family))
-
+  
   # guardar resultados en vector vacio
   resultados <- append(resultados, nfam)
 }
 
-n_filas_df$familias <- resultados
+n_sp_df$familias <- resultados
 ```
 
  
 
 1.2 Cree un cuadro de datos (data frame) que contenga dos columnas, una para el nombre del archivo y otra para el número de familias
+
+```{r}
+
+n_familias_df <-
+  data.frame(archivo = basename(archivos_txt), 
+             n_familias = resultados)
+```
 
  
 
@@ -380,16 +402,19 @@ resultados <- vector()
 # inicio del bucle
 for (i in archivos_txt) {
   # leer archivo
-  txt <- read.table(i, header = TRUE, skip = 4, sep = "\t")
-
+  txt <- read.table(i,
+                    header = TRUE,
+                    skip = 4,
+                    sep = "\t")
+  
   # guardar fecha
   fecha <- txt$Date[1]
-
+  
   # guardar resultados en vector vacio
   resultados <- append(resultados, fecha)
 }
 
-n_filas_df$fecha <- resultados
+n_sp_df$fecha <- resultados
 ```
 
  
@@ -400,17 +425,23 @@ n_filas_df$fecha <- resultados
 
 resultados <- vector() # vector vacio
 
-for (i in archivos_txt) { # inicio del bucle
-
-  txt <- read.table(i, header = TRUE, skip = 4, sep = "\t") # leer archivo
+for (i in archivos_txt) {
+  # inicio del bucle
+  
+  txt <-
+    read.table(i,
+               header = TRUE,
+               skip = 4,
+               sep = "\t") # leer archivo
   prof <- txt$Depth[1] # calcular numero de familias
-
-  resultados <- append(resultados, prof) # guardar resultados en vector vacio
+  
+  resultados <-
+    append(resultados, prof) # guardar resultados en vector vacio
 }
 
 resultados <- gsub(" m", "", resultados)
 resultados <- gsub("\\,", ".", resultados)
-n_filas_df$profundidad <- as.numeric(resultados)
+n_sp_df$profundidad <- as.numeric(resultados)
 ```
 
  
@@ -419,7 +450,10 @@ Puede usar el siguiente código para convertir profundidad a un vector numérico
 
 ```{r, eval=FALSE}
 
-n_filas_df$profundidad <- gsub(" m", "", gsub("\\,", ".", n_filas_df$profundidad))
+n_sp_df$profundidad <-
+  as.numeric(gsub(" m", "", gsub("\\,", 
+                                 ".", 
+                                 n_sp_df$profundidad)))
 ```
 
 1.5 ¿Cuál es la correlación entre el número de especies observadas (que es igual al número de filas) y la profundidad? (pista: `cor.test()`)
@@ -427,6 +461,10 @@ n_filas_df$profundidad <- gsub(" m", "", gsub("\\,", ".", n_filas_df$profundidad
  
 
 1.6 ¿Cuál es la correlación entre el número de familias y la profundidad?
+
+```{r, eval = FALSE, echo = FALSE}
+cor(n_sp_df$profundidad, n_sp_df$familias)
+```
 
  
 :::
@@ -441,13 +479,16 @@ df_resultados <- data.frame()
 # inicio del bucle
 for (i in archivos_txt) {
   # leer archivo
-  txt <- read.table(i, header = TRUE, skip = 4, sep = "\t")
-
+  txt <- read.table(i,
+                    header = TRUE,
+                    skip = 4,
+                    sep = "\t")
+  
   # guardar resultados en vector vacio
   df_resultados <- rbind(df_resultados, txt)
 }
 
-nrow(df_resultados) == sum(n_filas_df$filas)
+nrow(df_resultados) == sum(n_sp_df$filas)
 ```
 
 ------------------------------------------------------------------------
@@ -492,7 +533,9 @@ lapply(X = c(4, 9, 16), FUN = sqrt)
 ```{r}
 
 # promedio de largo y ancho de setalo
-apply(X = iris[, c("Sepal.Length", "Sepal.Width")], MARGIN = 2, FUN = mean)
+apply(X = iris[, c("Sepal.Length", "Sepal.Width")], 
+      MARGIN = 2, 
+      FUN = mean)
 ```
 
  
@@ -503,7 +546,9 @@ Note que el argumento 'MARGIN' indica si el calculo se lleva a cabo a nivel de f
 
 ```{r, eval=T, echo=T}
 
-tapply(X = iris$Petal.Length, INDEX = iris$Species, FUN = mean)
+tapply(X = iris$Petal.Length, 
+       INDEX = iris$Species, 
+       FUN = mean)
 ```
 
  
@@ -515,8 +560,11 @@ Los bucles `(X)apply` pueden modificarse para realizar acciones personalizadas c
 # funcion desde fuera del bucle
 n_filas <- function(x) {
   # leer archivo
-  txt <- read.table(x, header = TRUE, skip = 4, sep = "\t")
-
+  txt <- read.table(x,
+                    header = TRUE,
+                    skip = 4,
+                    sep = "\t")
+  
   # calcular numero de filas
   nrw <- nrow(txt)
   return(nrw)
@@ -549,9 +597,17 @@ Podemos usar funciones anónimas (i.e. funciones que se crean dentro del llamado
 ```{r, eval = TRUE}
 
 # correr bucle
-filas <- sapply(X = archivos_txt, FUN = function(x) {
-  nrow(read.table(x, header = TRUE, skip = 4, sep = "\t"))
-})
+filas <- sapply(
+  X = archivos_txt,
+  FUN = function(x) {
+    nrow(read.table(
+      x,
+      header = TRUE,
+      skip = 4,
+      sep = "\t"
+    ))
+  }
+)
 
 # ver resultados
 head(filas)
@@ -649,10 +705,13 @@ Podemos graficarlo el resultado asi así:
 ```{r, eval=T, echo=T}
 
 
+
 cc <- data.frame(y = cc_vector, x = 1:length(cc_vector))
 
 ggplot(data = cc, aes(x, y)) +
-  geom_hline(yintercept = 0.5, col = cols[4], lwd = 3) +
+  geom_hline(yintercept = 0.5,
+             col = cols[4],
+             lwd = 3) +
   geom_line(col = cols[8], lwd = 4) +
   labs(x = "Iteraciones", y = "Correlación de pearson (r)") +
   theme_classic(base_size = 25)
@@ -762,11 +821,13 @@ cc <- cc_vector
 cc <- data.frame(y = cc, x = 1:length(cc))
 
 if (nrow(cc) > 50) {
-  cc <- cc[(nrow(cc) - 50):nrow(cc), ]
+  cc <- cc[(nrow(cc) - 50):nrow(cc),]
 }
 
 ggplot(data = cc, aes(x, y)) +
-  geom_hline(yintercept = c(-0.5, 0.5), col = cols[4], lwd = 3) +
+  geom_hline(yintercept = c(-0.5, 0.5),
+             col = cols[4],
+             lwd = 3) +
   geom_line(col = cols[8], lwd = 4) +
   labs(x = "Iteraciones", y = "Correlación de pearson (r)") +
   theme_classic(base_size = 25)

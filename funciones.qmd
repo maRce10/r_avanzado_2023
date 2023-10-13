@@ -733,7 +733,7 @@ Esto ya debería ser obvio a este punto.
 
 4.7 Modifique la función para que también cree una linea vertical indicando el promedio del vector numérico proporcionado por el usuario
 
-4.8 Modifique la función para que añada un polígono transparente sobre el área que cubre el promedio +/- la desviación estándar
+4.8 Modifique la función para que añada un polígono transparente sobre el área que cubre el promedio +/- la desviación estándar (puede usar la función `rect()`)
 
 4.9 Modifique la función con un argumento lógico que permita al usuario controlar si se crea un gráfico o no
 :::
