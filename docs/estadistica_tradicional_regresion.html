@@ -191,6 +191,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="dropdown-item" href="./tarea4.html">
  <span class="dropdown-text">Tarea 4</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./tarea5.html">
+ <span class="dropdown-text">Tarea 5</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -208,7 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/maRce10/R_avanzado_2023/"><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https:/github.com/maRce10/R_avanzado_2023/"><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -258,7 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">5 de octubre de 2023</p>
+      <p class="date">20 de octubre de 2023</p>
     </div>
   </div>
   
@@ -299,7 +303,7 @@ pre.numberSource code
 <div class="cell">
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># number of observations</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># number of observations</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="co"># set seed</span></span>
@@ -326,7 +330,7 @@ mean of x
 </div>
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># run equivalent linear regression</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># run equivalent linear regression</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>(lm_t <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(y <span class="sc">~</span> <span class="dv">1</span>)))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -397,7 +401,7 @@ Residual standard error: 0.926 on 49 degrees of freedom</code></pre>
 <div class="cell">
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb5-2"><a href="#cb5-2"></a></span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="co"># sample size</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
@@ -428,7 +432,7 @@ mean difference
 </div>
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># difference between the 2 variables</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># difference between the 2 variables</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>diff_y <span class="ot">&lt;-</span> y1 <span class="sc">-</span> y2</span>
 <span id="cb7-3"><a href="#cb7-3"></a></span>
 <span id="cb7-4"><a href="#cb7-4"></a><span class="co"># run model</span></span>
@@ -499,7 +503,7 @@ Residual standard error: 1.32 on 49 degrees of freedom</code></pre>
 <div class="cell">
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># set seed</span></span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># set seed</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb9-3"><a href="#cb9-3"></a></span>
 <span id="cb9-4"><a href="#cb9-4"></a><span class="co"># number of observations</span></span>
@@ -537,7 +541,7 @@ mean of x mean of y
 </div>
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># run regression model</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># run regression model</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>lm_indep_t <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(<span class="at">formula =</span> y <span class="sc">~</span> x1, <span class="at">data =</span> xy_data_cat))</span>
 <span id="cb11-3"><a href="#cb11-3"></a></span>
 <span id="cb11-4"><a href="#cb11-4"></a>lm_indep_t</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -611,7 +615,7 @@ F-statistic:  151 on 1 and 48 DF,  p-value: &lt;2e-16</code></pre>
 <div class="cell">
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># set seed</span></span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># set seed</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb13-3"><a href="#cb13-3"></a></span>
 <span id="cb13-4"><a href="#cb13-4"></a><span class="co"># number of observations</span></span>
@@ -673,7 +677,7 @@ F-statistic:  151 on 1 and 48 DF,  p-value: &lt;2e-16</code></pre>
 <div class="cell" data-print_df="default">
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># ANOVA function</span></span>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># ANOVA function</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>anv_1w <span class="ot">&lt;-</span> <span class="fu">anova</span>(<span class="fu">aov</span>(<span class="at">formula =</span> y1 <span class="sc">~</span> x1, <span class="at">data =</span> xy_data_cat2))</span>
 <span id="cb14-3"><a href="#cb14-3"></a></span>
 <span id="cb14-4"><a href="#cb14-4"></a>anv_1w</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -714,7 +718,7 @@ F-statistic:  151 on 1 and 48 DF,  p-value: &lt;2e-16</code></pre>
 </div>
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># linear regression</span></span>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># linear regression</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>lm_anv_1w <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(<span class="at">formula =</span> y1 <span class="sc">~</span> x1, <span class="at">data =</span> xy_data_cat2))</span>
 <span id="cb15-3"><a href="#cb15-3"></a></span>
 <span id="cb15-4"><a href="#cb15-4"></a>lm_anv_1w</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -780,7 +784,7 @@ F-statistic: 2.73 on 2 and 47 DF,  p-value: 0.0755</code></pre>
 <div class="cell">
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Contingency table</span></span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Contingency table</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a><span class="co"># modified from https://lindeloev.github.io/tests-as-linear/</span></span>
 <span id="cb17-3"><a href="#cb17-3"></a>mood_data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(</span>
 <span id="cb17-4"><a href="#cb17-4"></a>  <span class="at">data =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">70</span>, <span class="dv">30</span>, <span class="dv">32</span>, <span class="dv">110</span>, <span class="dv">120</span>), <span class="at">nrow =</span> <span class="dv">2</span>,</span>
@@ -804,7 +808,7 @@ handedness     happy meh sad
 <div class="cell">
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Built-in chi-square. It requires matrix format.</span></span>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Built-in chi-square. It requires matrix format.</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>chi_mod <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(mood_data)</span>
 <span id="cb19-3"><a href="#cb19-3"></a></span>
 <span id="cb19-4"><a href="#cb19-4"></a>chi_mod</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -818,7 +822,7 @@ X-squared = 5.1, df = 2, p-value = 0.078</code></pre>
 </div>
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># convert to long</span></span>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># convert to long</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>mood_data_long <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">as.table</span>(mood_data))</span>
 <span id="cb21-3"><a href="#cb21-3"></a></span>
 <span id="cb21-4"><a href="#cb21-4"></a><span class="co"># log linear model from MASS package</span></span>
@@ -874,7 +878,7 @@ Pearson          5.0999  2 0.078087</code></pre>
 <div class="cell">
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># simulate variable</span></span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># simulate variable</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb23-3"><a href="#cb23-3"></a>y <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">5</span>), <span class="dv">2</span>)</span>
 <span id="cb23-4"><a href="#cb23-4"></a></span>
@@ -885,7 +889,7 @@ Pearson          5.0999  2 0.078087</code></pre>
 </div>
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># convert to ranks</span></span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># convert to ranks</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a>rank_y <span class="ot">&lt;-</span> <span class="fu">rank</span>(y)</span>
 <span id="cb25-3"><a href="#cb25-3"></a></span>
 <span id="cb25-4"><a href="#cb25-4"></a>rank_y</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -901,7 +905,7 @@ Pearson          5.0999  2 0.078087</code></pre>
 <div class="cell">
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># set seed</span></span>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># set seed</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb27-3"><a href="#cb27-3"></a></span>
 <span id="cb27-4"><a href="#cb27-4"></a><span class="co"># number of observations</span></span>
@@ -927,7 +931,7 @@ Pearson          5.0999  2 0.078087</code></pre>
 </div>
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Wilcoxon / Mann-Whitney U</span></span>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Wilcoxon / Mann-Whitney U</span></span>
 <span id="cb29-2"><a href="#cb29-2"></a>wilcx_mod <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(y_data<span class="sc">$</span>y)</span>
 <span id="cb29-3"><a href="#cb29-3"></a></span>
 <span id="cb29-4"><a href="#cb29-4"></a>wilcx_mod</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -942,7 +946,7 @@ alternative hypothesis: true location is not equal to 0</code></pre>
 </div>
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r numberLines lineAnchors code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>signed_rank <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sign</span>(x) <span class="sc">*</span> <span class="fu">rank</span>(<span class="fu">abs</span>(x))</span>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>signed_rank <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sign</span>(x) <span class="sc">*</span> <span class="fu">rank</span>(<span class="fu">abs</span>(x))</span>
 <span id="cb31-2"><a href="#cb31-2"></a></span>
 <span id="cb31-3"><a href="#cb31-3"></a><span class="co"># As linear model with our dummy-coded group_y2:</span></span>
 <span id="cb31-4"><a href="#cb31-4"></a>wicx_lm_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">signed_rank</span>(y) <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> y_data) <span class="co"># compare to</span></span>
@@ -1243,411 +1247,411 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb34" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &lt;font size="7"&gt;&lt;b&gt;Modelos estádisticos tradicionales como regresiones&lt;/b&gt;&lt;/font&gt;</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;style&gt;</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="in">body</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="in">  { counter-reset: source-line 0; }</span></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="in">pre.numberSource code</span></span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="in">  { counter-reset: none; }</span></span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/style&gt;</span></span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a><span class="in">```{r,echo=FALSE,message=FALSE}</span></span>
-<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"digits"</span> <span class="ot">=</span> <span class="dv">5</span>)</span>
-<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"digits.secs"</span> <span class="ot">=</span> <span class="dv">3</span>)</span>
-<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a><span class="co"># options to customize chunk outputs</span></span>
-<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
-<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">class.source =</span> <span class="st">"numberLines lineAnchors"</span>, <span class="co"># for code line numbers</span></span>
-<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
-<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a>::: {.alert .alert-info}</span>
-<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a><span class="fu"># Objetivo del manual {.unnumbered .unlisted}</span></span>
-<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Entender los abordajes estadísticos tradicionales como regresiones</span>
-<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-31"><a href="#cb34-31" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb34-32"><a href="#cb34-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-33"><a href="#cb34-33" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
-<span id="cb34-34"><a href="#cb34-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-35"><a href="#cb34-35" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE, message=FALSE}</span></span>
-<span id="cb34-36"><a href="#cb34-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-37"><a href="#cb34-37" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb34-38"><a href="#cb34-38" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb34-39"><a href="#cb34-39" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span>
-<span id="cb34-40"><a href="#cb34-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-41"><a href="#cb34-41" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot settings</span></span>
-<span id="cb34-42"><a href="#cb34-42" aria-hidden="true" tabindex="-1"></a>geom_histogram <span class="ot">&lt;-</span> <span class="cf">function</span>(...) ggplot2<span class="sc">::</span><span class="fu">geom_histogram</span>(..., <span class="at">fill =</span> <span class="fu">viridis</span>(<span class="dv">10</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)[<span class="dv">8</span>], <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">color =</span> <span class="st">"black"</span>)</span>
-<span id="cb34-43"><a href="#cb34-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-44"><a href="#cb34-44" aria-hidden="true" tabindex="-1"></a>geom_smooth <span class="ot">&lt;-</span> <span class="cf">function</span>(...) ggplot2<span class="sc">::</span><span class="fu">geom_smooth</span>(..., <span class="at">color =</span> <span class="fu">viridis</span>(<span class="dv">10</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)[<span class="dv">8</span>])</span>
-<span id="cb34-45"><a href="#cb34-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-46"><a href="#cb34-46" aria-hidden="true" tabindex="-1"></a>geom_boxplot <span class="ot">&lt;-</span> <span class="cf">function</span>(...) ggplot2<span class="sc">::</span><span class="fu">geom_boxplot</span>(..., <span class="at">fill =</span> <span class="fu">viridis</span>(<span class="dv">10</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)[<span class="dv">7</span>])</span>
-<span id="cb34-47"><a href="#cb34-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-48"><a href="#cb34-48" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">20</span>))</span>
-<span id="cb34-49"><a href="#cb34-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-50"><a href="#cb34-50" aria-hidden="true" tabindex="-1"></a><span class="co"># options to customize chunk outputs</span></span>
-<span id="cb34-51"><a href="#cb34-51" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
-<span id="cb34-52"><a href="#cb34-52" aria-hidden="true" tabindex="-1"></a>  <span class="at">class.source =</span> <span class="st">"numberLines lineAnchors"</span>, <span class="co"># for code line numbers</span></span>
-<span id="cb34-53"><a href="#cb34-53" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
-<span id="cb34-54"><a href="#cb34-54" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-55"><a href="#cb34-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-56"><a href="#cb34-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-57"><a href="#cb34-57" aria-hidden="true" tabindex="-1"></a>Aquí veremos las pruebas estadísticas más comunes y mostraremos cómo pueden representarse en el formato de regresión lineal. Esta sección se basa en <span class="co">[</span><span class="ot">este artículo</span><span class="co">](https://lindeloev.github.io/tests-as-linear/)</span>. Consúltelo para obtener una descripción más detallada de las alternativas no paramétricas. </span>
-<span id="cb34-58"><a href="#cb34-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-59"><a href="#cb34-59" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb34-60"><a href="#cb34-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-61"><a href="#cb34-61" aria-hidden="true" tabindex="-1"></a><span class="fu"># Prueba t de una muestra</span></span>
-<span id="cb34-62"><a href="#cb34-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-63"><a href="#cb34-63" aria-hidden="true" tabindex="-1"></a>La prueba evalúa si la media de una variable continua es diferente de 0. Es equivalente a una regresión lineal sin predictor, que prueba si el intercepto es diferente de 0:</span>
-<span id="cb34-64"><a href="#cb34-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-65"><a href="#cb34-65" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;center&gt;&lt;font</span> <span class="er">size</span> <span class="ot">=</span> <span class="st">6</span><span class="kw">&gt;</span>$y = \beta_0 \qquad \mathcal{H}_0: \beta_0 = 0$<span class="kw">&lt;/font&gt;&lt;/center&gt;</span></span>
-<span id="cb34-66"><a href="#cb34-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-67"><a href="#cb34-67" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span> </span>
-<span id="cb34-68"><a href="#cb34-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-71"><a href="#cb34-71" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb34-72"><a href="#cb34-72" aria-hidden="true" tabindex="-1"></a><span class="co"># number of observations</span></span>
-<span id="cb34-73"><a href="#cb34-73" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb34-74"><a href="#cb34-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-75"><a href="#cb34-75" aria-hidden="true" tabindex="-1"></a><span class="co"># set seed</span></span>
-<span id="cb34-76"><a href="#cb34-76" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb34-77"><a href="#cb34-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-78"><a href="#cb34-78" aria-hidden="true" tabindex="-1"></a><span class="co"># create variable with mean 1</span></span>
-<span id="cb34-79"><a href="#cb34-79" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">1</span>)</span>
-<span id="cb34-80"><a href="#cb34-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-81"><a href="#cb34-81" aria-hidden="true" tabindex="-1"></a><span class="co"># run t test</span></span>
-<span id="cb34-82"><a href="#cb34-82" aria-hidden="true" tabindex="-1"></a>(t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(y))</span>
-<span id="cb34-83"><a href="#cb34-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-84"><a href="#cb34-84" aria-hidden="true" tabindex="-1"></a><span class="co"># run equivalent linear regression</span></span>
-<span id="cb34-85"><a href="#cb34-85" aria-hidden="true" tabindex="-1"></a>(lm_t <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(y <span class="sc">~</span> <span class="dv">1</span>)))</span>
-<span id="cb34-86"><a href="#cb34-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-87"><a href="#cb34-87" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span> </span>
-<span id="cb34-88"><a href="#cb34-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-89"><a href="#cb34-89" aria-hidden="true" tabindex="-1"></a>Pongamos juntos los resultados de ambas pruebas para compararlos más de cerca:</span>
-<span id="cb34-90"><a href="#cb34-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-91"><a href="#cb34-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE}</span></span>
-<span id="cb34-92"><a href="#cb34-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-93"><a href="#cb34-93" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb34-94"><a href="#cb34-94" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="fu">c</span>(<span class="st">"t-test"</span>, <span class="st">"lm"</span>),</span>
-<span id="cb34-95"><a href="#cb34-95" aria-hidden="true" tabindex="-1"></a>  <span class="at">estimate =</span> <span class="fu">c</span>(t<span class="sc">$</span>estimate, lm_t<span class="sc">$</span>coefficients[<span class="dv">1</span>]),</span>
-<span id="cb34-96"><a href="#cb34-96" aria-hidden="true" tabindex="-1"></a>  <span class="st">"p value"</span> <span class="ot">=</span> <span class="fu">c</span>(t<span class="sc">$</span>p.value, lm_t<span class="sc">$</span>coefficients[<span class="dv">4</span>]),</span>
-<span id="cb34-97"><a href="#cb34-97" aria-hidden="true" tabindex="-1"></a>  <span class="at">t =</span> <span class="fu">c</span>(t<span class="sc">$</span>statistic, lm_t<span class="sc">$</span>coefficients[<span class="dv">3</span>])</span>
-<span id="cb34-98"><a href="#cb34-98" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-99"><a href="#cb34-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-100"><a href="#cb34-100" aria-hidden="true" tabindex="-1"></a>df</span>
-<span id="cb34-101"><a href="#cb34-101" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-102"><a href="#cb34-102" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span> </span>
-<span id="cb34-103"><a href="#cb34-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-104"><a href="#cb34-104" aria-hidden="true" tabindex="-1"></a>Tenga en cuenta que, como no hay predictores en el modelo, utilizamos un '1' en el lugar de los predictores en la fórmula del modelo ('y ~ 1').</span>
-<span id="cb34-105"><a href="#cb34-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-106"><a href="#cb34-106" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb34-107"><a href="#cb34-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-108"><a href="#cb34-108" aria-hidden="true" tabindex="-1"></a><span class="fu"># Prueba de t pareada</span></span>
-<span id="cb34-109"><a href="#cb34-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-110"><a href="#cb34-110" aria-hidden="true" tabindex="-1"></a>Una prueba t pareada evalúa si la diferencia de promedios entre dos variables numéricas es 0</span>
-<span id="cb34-111"><a href="#cb34-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-112"><a href="#cb34-112" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;center&gt;&lt;font</span> <span class="er">size</span> <span class="ot">=</span> <span class="st">6</span><span class="kw">&gt;</span>$y1 - y2 = \beta_0 \qquad \mathcal{H}_0: \beta_0 = 0$<span class="kw">&lt;/font&gt;&lt;/center&gt;</span></span>
-<span id="cb34-113"><a href="#cb34-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-114"><a href="#cb34-114" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span> </span>
-<span id="cb34-115"><a href="#cb34-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-116"><a href="#cb34-116" aria-hidden="true" tabindex="-1"></a>El modelo lineal correspondiente es el mismo que el de la prueba t de una muestra, pero la variable de entrada es la diferencia entre las dos variables (y1 - y2):</span>
-<span id="cb34-117"><a href="#cb34-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-120"><a href="#cb34-120" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb34-121"><a href="#cb34-121" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb34-122"><a href="#cb34-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-123"><a href="#cb34-123" aria-hidden="true" tabindex="-1"></a><span class="co"># sample size</span></span>
-<span id="cb34-124"><a href="#cb34-124" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb34-125"><a href="#cb34-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-126"><a href="#cb34-126" aria-hidden="true" tabindex="-1"></a><span class="co"># variable with mean 1</span></span>
-<span id="cb34-127"><a href="#cb34-127" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">1</span>)</span>
-<span id="cb34-128"><a href="#cb34-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-129"><a href="#cb34-129" aria-hidden="true" tabindex="-1"></a><span class="co"># variable with mean 3</span></span>
-<span id="cb34-130"><a href="#cb34-130" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="fl">1.4</span>)</span>
-<span id="cb34-131"><a href="#cb34-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-132"><a href="#cb34-132" aria-hidden="true" tabindex="-1"></a><span class="co"># run paired t test</span></span>
-<span id="cb34-133"><a href="#cb34-133" aria-hidden="true" tabindex="-1"></a>paired_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(y1, y2, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb34-134"><a href="#cb34-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-135"><a href="#cb34-135" aria-hidden="true" tabindex="-1"></a>paired_t</span>
-<span id="cb34-136"><a href="#cb34-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-137"><a href="#cb34-137" aria-hidden="true" tabindex="-1"></a><span class="co"># difference between the 2 variables</span></span>
-<span id="cb34-138"><a href="#cb34-138" aria-hidden="true" tabindex="-1"></a>diff_y <span class="ot">&lt;-</span> y1 <span class="sc">-</span> y2</span>
-<span id="cb34-139"><a href="#cb34-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-140"><a href="#cb34-140" aria-hidden="true" tabindex="-1"></a><span class="co"># run model</span></span>
-<span id="cb34-141"><a href="#cb34-141" aria-hidden="true" tabindex="-1"></a>lm_paired_t <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(<span class="at">formula =</span> diff_y <span class="sc">~</span> <span class="dv">1</span>))</span>
-<span id="cb34-142"><a href="#cb34-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-143"><a href="#cb34-143" aria-hidden="true" tabindex="-1"></a>lm_paired_t</span>
-<span id="cb34-144"><a href="#cb34-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-145"><a href="#cb34-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-146"><a href="#cb34-146" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE}</span></span>
-<span id="cb34-147"><a href="#cb34-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-148"><a href="#cb34-148" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb34-149"><a href="#cb34-149" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="fu">c</span>(<span class="st">"paired t-test"</span>, <span class="st">"lm"</span>),</span>
-<span id="cb34-150"><a href="#cb34-150" aria-hidden="true" tabindex="-1"></a>  <span class="at">estimate =</span> <span class="fu">c</span>(paired_t<span class="sc">$</span>estimate, lm_paired_t<span class="sc">$</span>coefficients[<span class="dv">1</span>]),</span>
-<span id="cb34-151"><a href="#cb34-151" aria-hidden="true" tabindex="-1"></a>  <span class="st">"p value"</span> <span class="ot">=</span> <span class="fu">c</span>(paired_t<span class="sc">$</span>p.value, lm_paired_t<span class="sc">$</span>coefficients[<span class="dv">4</span>]),</span>
-<span id="cb34-152"><a href="#cb34-152" aria-hidden="true" tabindex="-1"></a>  <span class="at">t =</span> <span class="fu">c</span>(paired_t<span class="sc">$</span>statistic, lm_paired_t<span class="sc">$</span>coefficients[<span class="dv">3</span>])</span>
-<span id="cb34-153"><a href="#cb34-153" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-154"><a href="#cb34-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-155"><a href="#cb34-155" aria-hidden="true" tabindex="-1"></a>df</span>
-<span id="cb34-156"><a href="#cb34-156" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-157"><a href="#cb34-157" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span> </span>
-<span id="cb34-158"><a href="#cb34-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-159"><a href="#cb34-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-160"><a href="#cb34-160" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb34-161"><a href="#cb34-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-162"><a href="#cb34-162" aria-hidden="true" tabindex="-1"></a><span class="fu"># Prueba t de dos promedios</span></span>
-<span id="cb34-163"><a href="#cb34-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-164"><a href="#cb34-164" aria-hidden="true" tabindex="-1"></a>También llamada prueba t independiente. Evalúa si los promedios de las dos variables son diferentes. La hipótesis nula es que la diferencia es 0:</span>
-<span id="cb34-165"><a href="#cb34-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-166"><a href="#cb34-166" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;center&gt;&lt;font</span> <span class="er">size</span> <span class="ot">=</span> <span class="st">6</span><span class="kw">&gt;</span>$y = \beta_0 + \beta_1 * x1 \qquad \mathcal{H}_0: \beta_1 = 0$<span class="kw">&lt;/font&gt;&lt;/center&gt;</span></span>
-<span id="cb34-167"><a href="#cb34-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-170"><a href="#cb34-170" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb34-171"><a href="#cb34-171" aria-hidden="true" tabindex="-1"></a><span class="co"># set seed</span></span>
-<span id="cb34-172"><a href="#cb34-172" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb34-173"><a href="#cb34-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-174"><a href="#cb34-174" aria-hidden="true" tabindex="-1"></a><span class="co"># number of observations</span></span>
-<span id="cb34-175"><a href="#cb34-175" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb34-176"><a href="#cb34-176" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">4</span></span>
-<span id="cb34-177"><a href="#cb34-177" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb34-178"><a href="#cb34-178" aria-hidden="true" tabindex="-1"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb34-179"><a href="#cb34-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-180"><a href="#cb34-180" aria-hidden="true" tabindex="-1"></a><span class="co"># random variables</span></span>
-<span id="cb34-181"><a href="#cb34-181" aria-hidden="true" tabindex="-1"></a>x1_num <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="at">n =</span> n, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span>
-<span id="cb34-182"><a href="#cb34-182" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> b0 <span class="sc">+</span> b1 <span class="sc">*</span> x1_num <span class="sc">+</span> error</span>
-<span id="cb34-183"><a href="#cb34-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-184"><a href="#cb34-184" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">factor</span>(x1_num, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>))</span>
-<span id="cb34-185"><a href="#cb34-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-186"><a href="#cb34-186" aria-hidden="true" tabindex="-1"></a><span class="co"># create data frame</span></span>
-<span id="cb34-187"><a href="#cb34-187" aria-hidden="true" tabindex="-1"></a>xy_data_cat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x1, x1_num, y)</span>
-<span id="cb34-188"><a href="#cb34-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-189"><a href="#cb34-189" aria-hidden="true" tabindex="-1"></a><span class="co"># run paired t test</span></span>
-<span id="cb34-190"><a href="#cb34-190" aria-hidden="true" tabindex="-1"></a>indep_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(xy_data_cat<span class="sc">$</span>y[xy_data_cat<span class="sc">$</span>x1 <span class="sc">==</span> <span class="st">"a"</span>], xy_data_cat<span class="sc">$</span>y[xy_data_cat<span class="sc">$</span>x1 <span class="sc">==</span> <span class="st">"b"</span>])</span>
-<span id="cb34-191"><a href="#cb34-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-192"><a href="#cb34-192" aria-hidden="true" tabindex="-1"></a>indep_t</span>
-<span id="cb34-193"><a href="#cb34-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-194"><a href="#cb34-194" aria-hidden="true" tabindex="-1"></a><span class="co"># run regression model</span></span>
-<span id="cb34-195"><a href="#cb34-195" aria-hidden="true" tabindex="-1"></a>lm_indep_t <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(<span class="at">formula =</span> y <span class="sc">~</span> x1, <span class="at">data =</span> xy_data_cat))</span>
-<span id="cb34-196"><a href="#cb34-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-197"><a href="#cb34-197" aria-hidden="true" tabindex="-1"></a>lm_indep_t</span>
-<span id="cb34-198"><a href="#cb34-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-199"><a href="#cb34-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-200"><a href="#cb34-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE}</span></span>
-<span id="cb34-201"><a href="#cb34-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-202"><a href="#cb34-202" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb34-203"><a href="#cb34-203" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="fu">c</span>(<span class="st">"2 means t-test"</span>, <span class="st">"lm"</span>),</span>
-<span id="cb34-204"><a href="#cb34-204" aria-hidden="true" tabindex="-1"></a>  <span class="at">estimate =</span> <span class="fu">c</span>(indep_t<span class="sc">$</span>estimate[<span class="dv">2</span>] <span class="sc">-</span> indep_t<span class="sc">$</span>estimate[<span class="dv">1</span>], lm_indep_t<span class="sc">$</span>coefficients[<span class="dv">2</span>, <span class="dv">1</span>]),</span>
-<span id="cb34-205"><a href="#cb34-205" aria-hidden="true" tabindex="-1"></a>  <span class="st">"p value"</span> <span class="ot">=</span> <span class="fu">c</span>(indep_t<span class="sc">$</span>p.value, lm_indep_t<span class="sc">$</span>coefficients[<span class="dv">2</span>, <span class="dv">4</span>]),</span>
-<span id="cb34-206"><a href="#cb34-206" aria-hidden="true" tabindex="-1"></a>  <span class="at">t =</span> <span class="fu">c</span>(indep_t<span class="sc">$</span>statistic, lm_indep_t<span class="sc">$</span>coefficients[<span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb34-207"><a href="#cb34-207" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-208"><a href="#cb34-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-209"><a href="#cb34-209" aria-hidden="true" tabindex="-1"></a>df</span>
-<span id="cb34-210"><a href="#cb34-210" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-211"><a href="#cb34-211" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span> </span>
-<span id="cb34-212"><a href="#cb34-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-213"><a href="#cb34-213" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb34-214"><a href="#cb34-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-215"><a href="#cb34-215" aria-hidden="true" tabindex="-1"></a><span class="fu"># Tres o más promedios: ANDEVA unidireccional</span></span>
-<span id="cb34-216"><a href="#cb34-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-217"><a href="#cb34-217" aria-hidden="true" tabindex="-1"></a>Muy similar a la prueba t de dos promedios, pero con tres o más niveles en la variable categórica:</span>
-<span id="cb34-218"><a href="#cb34-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-219"><a href="#cb34-219" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;center&gt;&lt;font</span> <span class="er">size</span> <span class="ot">=</span> <span class="st">6</span><span class="kw">&gt;</span>$\hat{Y} \sim \beta_{o} + \beta_{1} * x_{1} + \beta_{2} * x_{2} + ... \qquad \mathcal{H}_0: y = \beta_0$<span class="kw">&lt;/font&gt;&lt;/center&gt;</span></span>
-<span id="cb34-220"><a href="#cb34-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-221"><a href="#cb34-221" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span> </span>
-<span id="cb34-222"><a href="#cb34-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-223"><a href="#cb34-223" aria-hidden="true" tabindex="-1"></a>Se trata de un **modelo de regresión múltiple**. La variable categórica se codifica con dummy, por lo que se divide en predictores indicadores ($x_i$ es $x=0$ o $x=1$). </span>
-<span id="cb34-224"><a href="#cb34-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-225"><a href="#cb34-225" aria-hidden="true" tabindex="-1"></a>Un conjunto de datos con una variable categórica de 3 niveles puede simularse así:</span>
-<span id="cb34-226"><a href="#cb34-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-229"><a href="#cb34-229" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb34-230"><a href="#cb34-230" aria-hidden="true" tabindex="-1"></a><span class="co"># set seed</span></span>
-<span id="cb34-231"><a href="#cb34-231" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb34-232"><a href="#cb34-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-233"><a href="#cb34-233" aria-hidden="true" tabindex="-1"></a><span class="co"># number of observations</span></span>
-<span id="cb34-234"><a href="#cb34-234" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb34-235"><a href="#cb34-235" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">4</span></span>
-<span id="cb34-236"><a href="#cb34-236" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb34-237"><a href="#cb34-237" aria-hidden="true" tabindex="-1"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb34-238"><a href="#cb34-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-239"><a href="#cb34-239" aria-hidden="true" tabindex="-1"></a><span class="co"># random variables</span></span>
-<span id="cb34-240"><a href="#cb34-240" aria-hidden="true" tabindex="-1"></a>x1_num <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="at">n =</span> n, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.33</span>, <span class="fl">0.33</span>))</span>
-<span id="cb34-241"><a href="#cb34-241" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> b0 <span class="sc">+</span> b1 <span class="sc">*</span> x1_num <span class="sc">+</span> error</span>
-<span id="cb34-242"><a href="#cb34-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-243"><a href="#cb34-243" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">factor</span>(x1_num, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>))</span>
-<span id="cb34-244"><a href="#cb34-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-245"><a href="#cb34-245" aria-hidden="true" tabindex="-1"></a><span class="co"># create data frame</span></span>
-<span id="cb34-246"><a href="#cb34-246" aria-hidden="true" tabindex="-1"></a>xy_data_cat2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x1, y)</span>
-<span id="cb34-247"><a href="#cb34-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-248"><a href="#cb34-248" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(xy_data_cat2)</span>
-<span id="cb34-249"><a href="#cb34-249" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-250"><a href="#cb34-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-251"><a href="#cb34-251" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, print_df = "default"}</span></span>
-<span id="cb34-252"><a href="#cb34-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-253"><a href="#cb34-253" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA function</span></span>
-<span id="cb34-254"><a href="#cb34-254" aria-hidden="true" tabindex="-1"></a>anv_1w <span class="ot">&lt;-</span> <span class="fu">anova</span>(<span class="fu">aov</span>(<span class="at">formula =</span> y1 <span class="sc">~</span> x1, <span class="at">data =</span> xy_data_cat2))</span>
-<span id="cb34-255"><a href="#cb34-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-256"><a href="#cb34-256" aria-hidden="true" tabindex="-1"></a>anv_1w</span>
-<span id="cb34-257"><a href="#cb34-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-258"><a href="#cb34-258" aria-hidden="true" tabindex="-1"></a><span class="co"># linear regression</span></span>
-<span id="cb34-259"><a href="#cb34-259" aria-hidden="true" tabindex="-1"></a>lm_anv_1w <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(<span class="at">formula =</span> y1 <span class="sc">~</span> x1, <span class="at">data =</span> xy_data_cat2))</span>
-<span id="cb34-260"><a href="#cb34-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-261"><a href="#cb34-261" aria-hidden="true" tabindex="-1"></a>lm_anv_1w</span>
-<span id="cb34-262"><a href="#cb34-262" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-263"><a href="#cb34-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-264"><a href="#cb34-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-265"><a href="#cb34-265" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE}</span></span>
-<span id="cb34-266"><a href="#cb34-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-267"><a href="#cb34-267" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb34-268"><a href="#cb34-268" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="fu">c</span>(<span class="st">"1 way anova"</span>, <span class="st">"lm"</span>),</span>
-<span id="cb34-269"><a href="#cb34-269" aria-hidden="true" tabindex="-1"></a>  <span class="st">"F statistic"</span> <span class="ot">=</span> <span class="fu">c</span>(anv_1w<span class="sc">$</span><span class="st">`</span><span class="at">F value</span><span class="st">`</span>[<span class="dv">1</span>], lm_anv_1w<span class="sc">$</span>fstatistic[<span class="dv">1</span>]),</span>
-<span id="cb34-270"><a href="#cb34-270" aria-hidden="true" tabindex="-1"></a>  <span class="st">"p value"</span> <span class="ot">=</span> <span class="fu">c</span>(anv_1w<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;F)</span><span class="st">`</span>[<span class="dv">1</span>], <span class="fl">0.07552</span>)</span>
-<span id="cb34-271"><a href="#cb34-271" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-272"><a href="#cb34-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-273"><a href="#cb34-273" aria-hidden="true" tabindex="-1"></a>df</span>
-<span id="cb34-274"><a href="#cb34-274" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-275"><a href="#cb34-275" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span> </span>
-<span id="cb34-276"><a href="#cb34-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-277"><a href="#cb34-277" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb34-278"><a href="#cb34-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-279"><a href="#cb34-279" aria-hidden="true" tabindex="-1"></a><span class="fu"># Chi-cuadrado para tablas de contingencia</span></span>
-<span id="cb34-280"><a href="#cb34-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-281"><a href="#cb34-281" aria-hidden="true" tabindex="-1"></a>Esta prueba busca la asociación entre dos variables categóricas basándose en la co-ocurrencia de las categorías, medidas como recuentos. Esto es lo que es una tabla de contingencia: recuentos de todas las combinaciones de categorías entre dos variables. Por ejemplo, las muertes por edad de los pasajeros del Titanic:</span>
-<span id="cb34-282"><a href="#cb34-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-285"><a href="#cb34-285" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb34-286"><a href="#cb34-286" aria-hidden="true" tabindex="-1"></a><span class="co"># Contingency table</span></span>
-<span id="cb34-287"><a href="#cb34-287" aria-hidden="true" tabindex="-1"></a><span class="co"># modified from https://lindeloev.github.io/tests-as-linear/</span></span>
-<span id="cb34-288"><a href="#cb34-288" aria-hidden="true" tabindex="-1"></a>mood_data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(</span>
-<span id="cb34-289"><a href="#cb34-289" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">70</span>, <span class="dv">30</span>, <span class="dv">32</span>, <span class="dv">110</span>, <span class="dv">120</span>), <span class="at">nrow =</span> <span class="dv">2</span>,</span>
-<span id="cb34-290"><a href="#cb34-290" aria-hidden="true" tabindex="-1"></a>  <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="at">handedness =</span> <span class="fu">c</span>(<span class="st">"left_handed"</span>, <span class="st">"right_handed"</span>), <span class="at">mood =</span> <span class="fu">c</span>(<span class="st">"happy"</span>, <span class="st">"meh"</span>, <span class="st">"sad"</span>))</span>
-<span id="cb34-291"><a href="#cb34-291" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-292"><a href="#cb34-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-293"><a href="#cb34-293" aria-hidden="true" tabindex="-1"></a>mood_data</span>
-<span id="cb34-294"><a href="#cb34-294" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-295"><a href="#cb34-295" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span></span>
-<span id="cb34-296"><a href="#cb34-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-297"><a href="#cb34-297" aria-hidden="true" tabindex="-1"></a>Aunque la codificación es un poco más elaborada, puede reducirse a un modelo ANDEVA log-lineal de dos vías:</span>
-<span id="cb34-298"><a href="#cb34-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-299"><a href="#cb34-299" aria-hidden="true" tabindex="-1"></a>$log(y_i) = log(N) + log(\alpha_i) + log(\beta_j) + log(\alpha_i\beta_j)$</span>
-<span id="cb34-300"><a href="#cb34-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-301"><a href="#cb34-301" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span></span>
-<span id="cb34-302"><a href="#cb34-302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-303"><a href="#cb34-303" aria-hidden="true" tabindex="-1"></a>Los coeficientes de regresión son $A_i$ y $B_i$. $\alpha_i$ y $\beta_j$ son las proporciones de recuentos para los dos niveles de la variable categórica binaria (uno para cada uno de los niveles de la segunda variable categórica). Afortunadamente, existe una implementación de este modelo en el paquete R 'MASS' que simplifica la codificación:</span>
-<span id="cb34-304"><a href="#cb34-304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-307"><a href="#cb34-307" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb34-308"><a href="#cb34-308" aria-hidden="true" tabindex="-1"></a><span class="co"># Built-in chi-square. It requires matrix format.</span></span>
-<span id="cb34-309"><a href="#cb34-309" aria-hidden="true" tabindex="-1"></a>chi_mod <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(mood_data)</span>
-<span id="cb34-310"><a href="#cb34-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-311"><a href="#cb34-311" aria-hidden="true" tabindex="-1"></a>chi_mod</span>
-<span id="cb34-312"><a href="#cb34-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-313"><a href="#cb34-313" aria-hidden="true" tabindex="-1"></a><span class="co"># convert to long</span></span>
-<span id="cb34-314"><a href="#cb34-314" aria-hidden="true" tabindex="-1"></a>mood_data_long <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">as.table</span>(mood_data))</span>
-<span id="cb34-315"><a href="#cb34-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-316"><a href="#cb34-316" aria-hidden="true" tabindex="-1"></a><span class="co"># log linear model from MASS package</span></span>
-<span id="cb34-317"><a href="#cb34-317" aria-hidden="true" tabindex="-1"></a>log_lm_mod <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">loglm</span>(Freq <span class="sc">~</span> handedness <span class="sc">+</span> mood, <span class="at">data =</span> mood_data_long)</span>
-<span id="cb34-318"><a href="#cb34-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-319"><a href="#cb34-319" aria-hidden="true" tabindex="-1"></a>log_lm_mod</span>
-<span id="cb34-320"><a href="#cb34-320" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-321"><a href="#cb34-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-322"><a href="#cb34-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-323"><a href="#cb34-323" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE}</span></span>
-<span id="cb34-324"><a href="#cb34-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-325"><a href="#cb34-325" aria-hidden="true" tabindex="-1"></a>summ_log_lm <span class="ot">&lt;-</span> <span class="fu">summary</span>(log_lm_mod)</span>
-<span id="cb34-326"><a href="#cb34-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-327"><a href="#cb34-327" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb34-328"><a href="#cb34-328" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="fu">c</span>(<span class="st">"chi-square"</span>, <span class="st">"log lm"</span>),</span>
-<span id="cb34-329"><a href="#cb34-329" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">X squared</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(chi_mod<span class="sc">$</span>statistic, summ_log_lm<span class="sc">$</span>tests[<span class="dv">2</span>, <span class="dv">1</span>]),</span>
-<span id="cb34-330"><a href="#cb34-330" aria-hidden="true" tabindex="-1"></a>  <span class="st">"p value"</span> <span class="ot">=</span> <span class="fu">c</span>(chi_mod<span class="sc">$</span>p.value, summ_log_lm<span class="sc">$</span>tests[<span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb34-331"><a href="#cb34-331" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-332"><a href="#cb34-332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-333"><a href="#cb34-333" aria-hidden="true" tabindex="-1"></a>df</span>
-<span id="cb34-334"><a href="#cb34-334" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-335"><a href="#cb34-335" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span> </span>
-<span id="cb34-336"><a href="#cb34-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-337"><a href="#cb34-337" aria-hidden="true" tabindex="-1"></a><span class="fu"># Alternativas "no paramétricas" como modelos de regresión lineal</span></span>
-<span id="cb34-338"><a href="#cb34-338" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-339"><a href="#cb34-339" aria-hidden="true" tabindex="-1"></a>Sólo presentaremos un ejemplo de prueba "no paramétrica". No obstante, este único ejemplo debería bastar para demostrar la lógica que subyace a los procedimientos "no paramétricos". La mayoría de las pruebas "no paramétricas" se basan en un sencillo truco de transformación de datos: la transformación de rango de las respuestas. Las transformaciones de rango convierten los valores en un índice según su posición cuando se ordenan por magnitud:</span>
-<span id="cb34-340"><a href="#cb34-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-343"><a href="#cb34-343" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb34-344"><a href="#cb34-344" aria-hidden="true" tabindex="-1"></a><span class="co"># simulate variable</span></span>
-<span id="cb34-345"><a href="#cb34-345" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb34-346"><a href="#cb34-346" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">5</span>), <span class="dv">2</span>)</span>
-<span id="cb34-347"><a href="#cb34-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-348"><a href="#cb34-348" aria-hidden="true" tabindex="-1"></a>y</span>
-<span id="cb34-349"><a href="#cb34-349" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-350"><a href="#cb34-350" aria-hidden="true" tabindex="-1"></a><span class="co"># convert to ranks</span></span>
-<span id="cb34-351"><a href="#cb34-351" aria-hidden="true" tabindex="-1"></a>rank_y <span class="ot">&lt;-</span> <span class="fu">rank</span>(y)</span>
-<span id="cb34-352"><a href="#cb34-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-353"><a href="#cb34-353" aria-hidden="true" tabindex="-1"></a>rank_y</span>
-<span id="cb34-354"><a href="#cb34-354" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-355"><a href="#cb34-355" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span> </span>
-<span id="cb34-356"><a href="#cb34-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-357"><a href="#cb34-357" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prueba de Wilcoxon para dos promedios</span></span>
-<span id="cb34-358"><a href="#cb34-358" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-359"><a href="#cb34-359" aria-hidden="true" tabindex="-1"></a>También conocida como prueba de Mann-Whitney, es la alternativa no paramétrica a la prueba t de dos promedios: </span>
-<span id="cb34-360"><a href="#cb34-360" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-363"><a href="#cb34-363" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb34-364"><a href="#cb34-364" aria-hidden="true" tabindex="-1"></a><span class="co"># set seed</span></span>
-<span id="cb34-365"><a href="#cb34-365" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb34-366"><a href="#cb34-366" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-367"><a href="#cb34-367" aria-hidden="true" tabindex="-1"></a><span class="co"># number of observations</span></span>
-<span id="cb34-368"><a href="#cb34-368" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb34-369"><a href="#cb34-369" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="fl">0.2</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb34-370"><a href="#cb34-370" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-371"><a href="#cb34-371" aria-hidden="true" tabindex="-1"></a><span class="co"># create data frame</span></span>
-<span id="cb34-372"><a href="#cb34-372" aria-hidden="true" tabindex="-1"></a>y_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y)</span>
-<span id="cb34-373"><a href="#cb34-373" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-374"><a href="#cb34-374" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-375"><a href="#cb34-375" aria-hidden="true" tabindex="-1"></a>y</span>
-<span id="cb34-376"><a href="#cb34-376" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-377"><a href="#cb34-377" aria-hidden="true" tabindex="-1"></a><span class="co"># Wilcoxon / Mann-Whitney U</span></span>
-<span id="cb34-378"><a href="#cb34-378" aria-hidden="true" tabindex="-1"></a>wilcx_mod <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(y_data<span class="sc">$</span>y)</span>
-<span id="cb34-379"><a href="#cb34-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-380"><a href="#cb34-380" aria-hidden="true" tabindex="-1"></a>wilcx_mod</span>
-<span id="cb34-381"><a href="#cb34-381" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-382"><a href="#cb34-382" aria-hidden="true" tabindex="-1"></a>signed_rank <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sign</span>(x) <span class="sc">*</span> <span class="fu">rank</span>(<span class="fu">abs</span>(x))</span>
-<span id="cb34-383"><a href="#cb34-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-384"><a href="#cb34-384" aria-hidden="true" tabindex="-1"></a><span class="co"># As linear model with our dummy-coded group_y2:</span></span>
-<span id="cb34-385"><a href="#cb34-385" aria-hidden="true" tabindex="-1"></a>wicx_lm_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">signed_rank</span>(y) <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> y_data) <span class="co"># compare to</span></span>
-<span id="cb34-386"><a href="#cb34-386" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-387"><a href="#cb34-387" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(wicx_lm_mod)</span>
-<span id="cb34-388"><a href="#cb34-388" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-389"><a href="#cb34-389" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-390"><a href="#cb34-390" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE}</span></span>
-<span id="cb34-391"><a href="#cb34-391" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-392"><a href="#cb34-392" aria-hidden="true" tabindex="-1"></a>summ_wicx_lm_mod <span class="ot">&lt;-</span> <span class="fu">summary</span>(wicx_lm_mod)</span>
-<span id="cb34-393"><a href="#cb34-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-394"><a href="#cb34-394" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb34-395"><a href="#cb34-395" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="fu">c</span>(<span class="st">"1 mean wilcoxon"</span>, <span class="st">"wilcoxon_lm"</span>),</span>
-<span id="cb34-396"><a href="#cb34-396" aria-hidden="true" tabindex="-1"></a>  <span class="at">p.value =</span> <span class="fu">c</span>(wilcx_mod<span class="sc">$</span>p.value, summ_wicx_lm_mod<span class="sc">$</span>coefficients[<span class="dv">4</span>])</span>
-<span id="cb34-397"><a href="#cb34-397" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-398"><a href="#cb34-398" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-399"><a href="#cb34-399" aria-hidden="true" tabindex="-1"></a>df</span>
-<span id="cb34-400"><a href="#cb34-400" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb34-401"><a href="#cb34-401" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span> </span>
-<span id="cb34-402"><a href="#cb34-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-403"><a href="#cb34-403" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb34-404"><a href="#cb34-404" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-405"><a href="#cb34-405" aria-hidden="true" tabindex="-1"></a><span class="fu"># Referencias</span></span>
-<span id="cb34-406"><a href="#cb34-406" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-407"><a href="#cb34-407" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Common statistical tests are linear models</span><span class="co">](https://lindeloev.github.io/tests-as-linear/)</span></span>
-<span id="cb34-408"><a href="#cb34-408" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-409"><a href="#cb34-409" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-410"><a href="#cb34-410" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span> </span>
-<span id="cb34-411"><a href="#cb34-411" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-412"><a href="#cb34-412" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb34-413"><a href="#cb34-413" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-414"><a href="#cb34-414" aria-hidden="true" tabindex="-1"></a><span class="dv">&amp;nbsp;</span> </span>
-<span id="cb34-415"><a href="#cb34-415" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-416"><a href="#cb34-416" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"4"</span><span class="kw">&gt;</span>Información de la sesión<span class="kw">&lt;/font&gt;</span></span>
-<span id="cb34-417"><a href="#cb34-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-418"><a href="#cb34-418" aria-hidden="true" tabindex="-1"></a><span class="in">```{r session info, echo=F}</span></span>
-<span id="cb34-419"><a href="#cb34-419" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-420"><a href="#cb34-420" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
-<span id="cb34-421"><a href="#cb34-421" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb34" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1"></a><span class="co">---</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="an">title:</span><span class="co"> &lt;font size="7"&gt;&lt;b&gt;Modelos estádisticos tradicionales como regresiones&lt;/b&gt;&lt;/font&gt;</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a><span class="co">---</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a></span>
+<span id="cb34-5"><a href="#cb34-5"></a><span class="in">```{=html}</span></span>
+<span id="cb34-6"><a href="#cb34-6"></a><span class="in">&lt;style&gt;</span></span>
+<span id="cb34-7"><a href="#cb34-7"></a><span class="in">body</span></span>
+<span id="cb34-8"><a href="#cb34-8"></a><span class="in">  { counter-reset: source-line 0; }</span></span>
+<span id="cb34-9"><a href="#cb34-9"></a><span class="in">pre.numberSource code</span></span>
+<span id="cb34-10"><a href="#cb34-10"></a><span class="in">  { counter-reset: none; }</span></span>
+<span id="cb34-11"><a href="#cb34-11"></a><span class="in">&lt;/style&gt;</span></span>
+<span id="cb34-12"><a href="#cb34-12"></a><span class="in">```</span></span>
+<span id="cb34-13"><a href="#cb34-13"></a></span>
+<span id="cb34-14"><a href="#cb34-14"></a><span class="in">```{r,echo=FALSE,message=FALSE}</span></span>
+<span id="cb34-15"><a href="#cb34-15"></a></span>
+<span id="cb34-16"><a href="#cb34-16"></a><span class="fu">options</span>(<span class="st">"digits"</span> <span class="ot">=</span> <span class="dv">5</span>)</span>
+<span id="cb34-17"><a href="#cb34-17"></a><span class="fu">options</span>(<span class="st">"digits.secs"</span> <span class="ot">=</span> <span class="dv">3</span>)</span>
+<span id="cb34-18"><a href="#cb34-18"></a></span>
+<span id="cb34-19"><a href="#cb34-19"></a><span class="co"># options to customize chunk outputs</span></span>
+<span id="cb34-20"><a href="#cb34-20"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb34-21"><a href="#cb34-21"></a>  <span class="at">class.source =</span> <span class="st">"numberLines lineAnchors"</span>, <span class="co"># for code line numbers</span></span>
+<span id="cb34-22"><a href="#cb34-22"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
+<span id="cb34-23"><a href="#cb34-23"></a>)</span>
+<span id="cb34-24"><a href="#cb34-24"></a><span class="in">```</span></span>
+<span id="cb34-25"><a href="#cb34-25"></a></span>
+<span id="cb34-26"><a href="#cb34-26"></a>::: {.alert .alert-info}</span>
+<span id="cb34-27"><a href="#cb34-27"></a><span class="fu"># Objetivo del manual {.unnumbered .unlisted}</span></span>
+<span id="cb34-28"><a href="#cb34-28"></a></span>
+<span id="cb34-29"><a href="#cb34-29"></a><span class="ss">-   </span>Entender los abordajes estadísticos tradicionales como regresiones</span>
+<span id="cb34-30"><a href="#cb34-30"></a></span>
+<span id="cb34-31"><a href="#cb34-31"></a>:::</span>
+<span id="cb34-32"><a href="#cb34-32"></a></span>
+<span id="cb34-33"><a href="#cb34-33"></a>&nbsp;</span>
+<span id="cb34-34"><a href="#cb34-34"></a></span>
+<span id="cb34-35"><a href="#cb34-35"></a><span class="in">```{r, echo = FALSE, message=FALSE}</span></span>
+<span id="cb34-36"><a href="#cb34-36"></a></span>
+<span id="cb34-37"><a href="#cb34-37"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb34-38"><a href="#cb34-38"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb34-39"><a href="#cb34-39"></a><span class="fu">library</span>(viridis)</span>
+<span id="cb34-40"><a href="#cb34-40"></a></span>
+<span id="cb34-41"><a href="#cb34-41"></a><span class="co"># ggplot settings</span></span>
+<span id="cb34-42"><a href="#cb34-42"></a>geom_histogram <span class="ot">&lt;-</span> <span class="cf">function</span>(...) ggplot2<span class="sc">::</span><span class="fu">geom_histogram</span>(..., <span class="at">fill =</span> <span class="fu">viridis</span>(<span class="dv">10</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)[<span class="dv">8</span>], <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">color =</span> <span class="st">"black"</span>)</span>
+<span id="cb34-43"><a href="#cb34-43"></a></span>
+<span id="cb34-44"><a href="#cb34-44"></a>geom_smooth <span class="ot">&lt;-</span> <span class="cf">function</span>(...) ggplot2<span class="sc">::</span><span class="fu">geom_smooth</span>(..., <span class="at">color =</span> <span class="fu">viridis</span>(<span class="dv">10</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)[<span class="dv">8</span>])</span>
+<span id="cb34-45"><a href="#cb34-45"></a></span>
+<span id="cb34-46"><a href="#cb34-46"></a>geom_boxplot <span class="ot">&lt;-</span> <span class="cf">function</span>(...) ggplot2<span class="sc">::</span><span class="fu">geom_boxplot</span>(..., <span class="at">fill =</span> <span class="fu">viridis</span>(<span class="dv">10</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)[<span class="dv">7</span>])</span>
+<span id="cb34-47"><a href="#cb34-47"></a></span>
+<span id="cb34-48"><a href="#cb34-48"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">20</span>))</span>
+<span id="cb34-49"><a href="#cb34-49"></a></span>
+<span id="cb34-50"><a href="#cb34-50"></a><span class="co"># options to customize chunk outputs</span></span>
+<span id="cb34-51"><a href="#cb34-51"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb34-52"><a href="#cb34-52"></a>  <span class="at">class.source =</span> <span class="st">"numberLines lineAnchors"</span>, <span class="co"># for code line numbers</span></span>
+<span id="cb34-53"><a href="#cb34-53"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
+<span id="cb34-54"><a href="#cb34-54"></a>)</span>
+<span id="cb34-55"><a href="#cb34-55"></a><span class="in">```</span></span>
+<span id="cb34-56"><a href="#cb34-56"></a></span>
+<span id="cb34-57"><a href="#cb34-57"></a>Aquí veremos las pruebas estadísticas más comunes y mostraremos cómo pueden representarse en el formato de regresión lineal. Esta sección se basa en <span class="co">[</span><span class="ot">este artículo</span><span class="co">](https://lindeloev.github.io/tests-as-linear/)</span>. Consúltelo para obtener una descripción más detallada de las alternativas no paramétricas. </span>
+<span id="cb34-58"><a href="#cb34-58"></a></span>
+<span id="cb34-59"><a href="#cb34-59"></a>---</span>
+<span id="cb34-60"><a href="#cb34-60"></a></span>
+<span id="cb34-61"><a href="#cb34-61"></a><span class="fu"># Prueba t de una muestra</span></span>
+<span id="cb34-62"><a href="#cb34-62"></a></span>
+<span id="cb34-63"><a href="#cb34-63"></a>La prueba evalúa si la media de una variable continua es diferente de 0. Es equivalente a una regresión lineal sin predictor, que prueba si el intercepto es diferente de 0:</span>
+<span id="cb34-64"><a href="#cb34-64"></a></span>
+<span id="cb34-65"><a href="#cb34-65"></a><span class="kw">&lt;center&gt;&lt;font</span> <span class="er">size</span> <span class="ot">=</span> <span class="st">6</span><span class="kw">&gt;</span>$y = \beta_0 \qquad \mathcal{H}_0: \beta_0 = 0$<span class="kw">&lt;/font&gt;&lt;/center&gt;</span></span>
+<span id="cb34-66"><a href="#cb34-66"></a></span>
+<span id="cb34-67"><a href="#cb34-67"></a><span class="dv">&amp;nbsp;</span> </span>
+<span id="cb34-68"><a href="#cb34-68"></a></span>
+<span id="cb34-71"><a href="#cb34-71"></a><span class="in">```{r}</span></span>
+<span id="cb34-72"><a href="#cb34-72"></a><span class="co"># number of observations</span></span>
+<span id="cb34-73"><a href="#cb34-73"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb34-74"><a href="#cb34-74"></a></span>
+<span id="cb34-75"><a href="#cb34-75"></a><span class="co"># set seed</span></span>
+<span id="cb34-76"><a href="#cb34-76"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb34-77"><a href="#cb34-77"></a></span>
+<span id="cb34-78"><a href="#cb34-78"></a><span class="co"># create variable with mean 1</span></span>
+<span id="cb34-79"><a href="#cb34-79"></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">1</span>)</span>
+<span id="cb34-80"><a href="#cb34-80"></a></span>
+<span id="cb34-81"><a href="#cb34-81"></a><span class="co"># run t test</span></span>
+<span id="cb34-82"><a href="#cb34-82"></a>(t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(y))</span>
+<span id="cb34-83"><a href="#cb34-83"></a></span>
+<span id="cb34-84"><a href="#cb34-84"></a><span class="co"># run equivalent linear regression</span></span>
+<span id="cb34-85"><a href="#cb34-85"></a>(lm_t <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(y <span class="sc">~</span> <span class="dv">1</span>)))</span>
+<span id="cb34-86"><a href="#cb34-86"></a><span class="in">```</span></span>
+<span id="cb34-87"><a href="#cb34-87"></a><span class="dv">&amp;nbsp;</span> </span>
+<span id="cb34-88"><a href="#cb34-88"></a></span>
+<span id="cb34-89"><a href="#cb34-89"></a>Pongamos juntos los resultados de ambas pruebas para compararlos más de cerca:</span>
+<span id="cb34-90"><a href="#cb34-90"></a></span>
+<span id="cb34-91"><a href="#cb34-91"></a><span class="in">```{r, echo = FALSE}</span></span>
+<span id="cb34-92"><a href="#cb34-92"></a></span>
+<span id="cb34-93"><a href="#cb34-93"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb34-94"><a href="#cb34-94"></a>  <span class="at">model =</span> <span class="fu">c</span>(<span class="st">"t-test"</span>, <span class="st">"lm"</span>),</span>
+<span id="cb34-95"><a href="#cb34-95"></a>  <span class="at">estimate =</span> <span class="fu">c</span>(t<span class="sc">$</span>estimate, lm_t<span class="sc">$</span>coefficients[<span class="dv">1</span>]),</span>
+<span id="cb34-96"><a href="#cb34-96"></a>  <span class="st">"p value"</span> <span class="ot">=</span> <span class="fu">c</span>(t<span class="sc">$</span>p.value, lm_t<span class="sc">$</span>coefficients[<span class="dv">4</span>]),</span>
+<span id="cb34-97"><a href="#cb34-97"></a>  <span class="at">t =</span> <span class="fu">c</span>(t<span class="sc">$</span>statistic, lm_t<span class="sc">$</span>coefficients[<span class="dv">3</span>])</span>
+<span id="cb34-98"><a href="#cb34-98"></a>)</span>
+<span id="cb34-99"><a href="#cb34-99"></a></span>
+<span id="cb34-100"><a href="#cb34-100"></a>df</span>
+<span id="cb34-101"><a href="#cb34-101"></a><span class="in">```</span></span>
+<span id="cb34-102"><a href="#cb34-102"></a><span class="dv">&amp;nbsp;</span> </span>
+<span id="cb34-103"><a href="#cb34-103"></a></span>
+<span id="cb34-104"><a href="#cb34-104"></a>Tenga en cuenta que, como no hay predictores en el modelo, utilizamos un '1' en el lugar de los predictores en la fórmula del modelo ('y ~ 1').</span>
+<span id="cb34-105"><a href="#cb34-105"></a></span>
+<span id="cb34-106"><a href="#cb34-106"></a>---</span>
+<span id="cb34-107"><a href="#cb34-107"></a></span>
+<span id="cb34-108"><a href="#cb34-108"></a><span class="fu"># Prueba de t pareada</span></span>
+<span id="cb34-109"><a href="#cb34-109"></a></span>
+<span id="cb34-110"><a href="#cb34-110"></a>Una prueba t pareada evalúa si la diferencia de promedios entre dos variables numéricas es 0</span>
+<span id="cb34-111"><a href="#cb34-111"></a></span>
+<span id="cb34-112"><a href="#cb34-112"></a><span class="kw">&lt;center&gt;&lt;font</span> <span class="er">size</span> <span class="ot">=</span> <span class="st">6</span><span class="kw">&gt;</span>$y1 - y2 = \beta_0 \qquad \mathcal{H}_0: \beta_0 = 0$<span class="kw">&lt;/font&gt;&lt;/center&gt;</span></span>
+<span id="cb34-113"><a href="#cb34-113"></a></span>
+<span id="cb34-114"><a href="#cb34-114"></a><span class="dv">&amp;nbsp;</span> </span>
+<span id="cb34-115"><a href="#cb34-115"></a></span>
+<span id="cb34-116"><a href="#cb34-116"></a>El modelo lineal correspondiente es el mismo que el de la prueba t de una muestra, pero la variable de entrada es la diferencia entre las dos variables (y1 - y2):</span>
+<span id="cb34-117"><a href="#cb34-117"></a></span>
+<span id="cb34-120"><a href="#cb34-120"></a><span class="in">```{r}</span></span>
+<span id="cb34-121"><a href="#cb34-121"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb34-122"><a href="#cb34-122"></a></span>
+<span id="cb34-123"><a href="#cb34-123"></a><span class="co"># sample size</span></span>
+<span id="cb34-124"><a href="#cb34-124"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb34-125"><a href="#cb34-125"></a></span>
+<span id="cb34-126"><a href="#cb34-126"></a><span class="co"># variable with mean 1</span></span>
+<span id="cb34-127"><a href="#cb34-127"></a>y1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">1</span>)</span>
+<span id="cb34-128"><a href="#cb34-128"></a></span>
+<span id="cb34-129"><a href="#cb34-129"></a><span class="co"># variable with mean 3</span></span>
+<span id="cb34-130"><a href="#cb34-130"></a>y2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="fl">1.4</span>)</span>
+<span id="cb34-131"><a href="#cb34-131"></a></span>
+<span id="cb34-132"><a href="#cb34-132"></a><span class="co"># run paired t test</span></span>
+<span id="cb34-133"><a href="#cb34-133"></a>paired_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(y1, y2, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb34-134"><a href="#cb34-134"></a></span>
+<span id="cb34-135"><a href="#cb34-135"></a>paired_t</span>
+<span id="cb34-136"><a href="#cb34-136"></a></span>
+<span id="cb34-137"><a href="#cb34-137"></a><span class="co"># difference between the 2 variables</span></span>
+<span id="cb34-138"><a href="#cb34-138"></a>diff_y <span class="ot">&lt;-</span> y1 <span class="sc">-</span> y2</span>
+<span id="cb34-139"><a href="#cb34-139"></a></span>
+<span id="cb34-140"><a href="#cb34-140"></a><span class="co"># run model</span></span>
+<span id="cb34-141"><a href="#cb34-141"></a>lm_paired_t <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(<span class="at">formula =</span> diff_y <span class="sc">~</span> <span class="dv">1</span>))</span>
+<span id="cb34-142"><a href="#cb34-142"></a></span>
+<span id="cb34-143"><a href="#cb34-143"></a>lm_paired_t</span>
+<span id="cb34-144"><a href="#cb34-144"></a><span class="in">```</span></span>
+<span id="cb34-145"><a href="#cb34-145"></a></span>
+<span id="cb34-146"><a href="#cb34-146"></a><span class="in">```{r, echo = FALSE}</span></span>
+<span id="cb34-147"><a href="#cb34-147"></a></span>
+<span id="cb34-148"><a href="#cb34-148"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb34-149"><a href="#cb34-149"></a>  <span class="at">model =</span> <span class="fu">c</span>(<span class="st">"paired t-test"</span>, <span class="st">"lm"</span>),</span>
+<span id="cb34-150"><a href="#cb34-150"></a>  <span class="at">estimate =</span> <span class="fu">c</span>(paired_t<span class="sc">$</span>estimate, lm_paired_t<span class="sc">$</span>coefficients[<span class="dv">1</span>]),</span>
+<span id="cb34-151"><a href="#cb34-151"></a>  <span class="st">"p value"</span> <span class="ot">=</span> <span class="fu">c</span>(paired_t<span class="sc">$</span>p.value, lm_paired_t<span class="sc">$</span>coefficients[<span class="dv">4</span>]),</span>
+<span id="cb34-152"><a href="#cb34-152"></a>  <span class="at">t =</span> <span class="fu">c</span>(paired_t<span class="sc">$</span>statistic, lm_paired_t<span class="sc">$</span>coefficients[<span class="dv">3</span>])</span>
+<span id="cb34-153"><a href="#cb34-153"></a>)</span>
+<span id="cb34-154"><a href="#cb34-154"></a></span>
+<span id="cb34-155"><a href="#cb34-155"></a>df</span>
+<span id="cb34-156"><a href="#cb34-156"></a><span class="in">```</span></span>
+<span id="cb34-157"><a href="#cb34-157"></a><span class="dv">&amp;nbsp;</span> </span>
+<span id="cb34-158"><a href="#cb34-158"></a></span>
+<span id="cb34-159"><a href="#cb34-159"></a></span>
+<span id="cb34-160"><a href="#cb34-160"></a>---</span>
+<span id="cb34-161"><a href="#cb34-161"></a></span>
+<span id="cb34-162"><a href="#cb34-162"></a><span class="fu"># Prueba t de dos promedios</span></span>
+<span id="cb34-163"><a href="#cb34-163"></a></span>
+<span id="cb34-164"><a href="#cb34-164"></a>También llamada prueba t independiente. Evalúa si los promedios de las dos variables son diferentes. La hipótesis nula es que la diferencia es 0:</span>
+<span id="cb34-165"><a href="#cb34-165"></a></span>
+<span id="cb34-166"><a href="#cb34-166"></a><span class="kw">&lt;center&gt;&lt;font</span> <span class="er">size</span> <span class="ot">=</span> <span class="st">6</span><span class="kw">&gt;</span>$y = \beta_0 + \beta_1 * x1 \qquad \mathcal{H}_0: \beta_1 = 0$<span class="kw">&lt;/font&gt;&lt;/center&gt;</span></span>
+<span id="cb34-167"><a href="#cb34-167"></a></span>
+<span id="cb34-170"><a href="#cb34-170"></a><span class="in">```{r}</span></span>
+<span id="cb34-171"><a href="#cb34-171"></a><span class="co"># set seed</span></span>
+<span id="cb34-172"><a href="#cb34-172"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb34-173"><a href="#cb34-173"></a></span>
+<span id="cb34-174"><a href="#cb34-174"></a><span class="co"># number of observations</span></span>
+<span id="cb34-175"><a href="#cb34-175"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb34-176"><a href="#cb34-176"></a>b0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">4</span></span>
+<span id="cb34-177"><a href="#cb34-177"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb34-178"><a href="#cb34-178"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb34-179"><a href="#cb34-179"></a></span>
+<span id="cb34-180"><a href="#cb34-180"></a><span class="co"># random variables</span></span>
+<span id="cb34-181"><a href="#cb34-181"></a>x1_num <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="at">n =</span> n, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span>
+<span id="cb34-182"><a href="#cb34-182"></a>y <span class="ot">&lt;-</span> b0 <span class="sc">+</span> b1 <span class="sc">*</span> x1_num <span class="sc">+</span> error</span>
+<span id="cb34-183"><a href="#cb34-183"></a></span>
+<span id="cb34-184"><a href="#cb34-184"></a>x1 <span class="ot">&lt;-</span> <span class="fu">factor</span>(x1_num, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>))</span>
+<span id="cb34-185"><a href="#cb34-185"></a></span>
+<span id="cb34-186"><a href="#cb34-186"></a><span class="co"># create data frame</span></span>
+<span id="cb34-187"><a href="#cb34-187"></a>xy_data_cat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x1, x1_num, y)</span>
+<span id="cb34-188"><a href="#cb34-188"></a></span>
+<span id="cb34-189"><a href="#cb34-189"></a><span class="co"># run paired t test</span></span>
+<span id="cb34-190"><a href="#cb34-190"></a>indep_t <span class="ot">&lt;-</span> <span class="fu">t.test</span>(xy_data_cat<span class="sc">$</span>y[xy_data_cat<span class="sc">$</span>x1 <span class="sc">==</span> <span class="st">"a"</span>], xy_data_cat<span class="sc">$</span>y[xy_data_cat<span class="sc">$</span>x1 <span class="sc">==</span> <span class="st">"b"</span>])</span>
+<span id="cb34-191"><a href="#cb34-191"></a></span>
+<span id="cb34-192"><a href="#cb34-192"></a>indep_t</span>
+<span id="cb34-193"><a href="#cb34-193"></a></span>
+<span id="cb34-194"><a href="#cb34-194"></a><span class="co"># run regression model</span></span>
+<span id="cb34-195"><a href="#cb34-195"></a>lm_indep_t <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(<span class="at">formula =</span> y <span class="sc">~</span> x1, <span class="at">data =</span> xy_data_cat))</span>
+<span id="cb34-196"><a href="#cb34-196"></a></span>
+<span id="cb34-197"><a href="#cb34-197"></a>lm_indep_t</span>
+<span id="cb34-198"><a href="#cb34-198"></a><span class="in">```</span></span>
+<span id="cb34-199"><a href="#cb34-199"></a></span>
+<span id="cb34-200"><a href="#cb34-200"></a><span class="in">```{r, echo = FALSE}</span></span>
+<span id="cb34-201"><a href="#cb34-201"></a></span>
+<span id="cb34-202"><a href="#cb34-202"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb34-203"><a href="#cb34-203"></a>  <span class="at">model =</span> <span class="fu">c</span>(<span class="st">"2 means t-test"</span>, <span class="st">"lm"</span>),</span>
+<span id="cb34-204"><a href="#cb34-204"></a>  <span class="at">estimate =</span> <span class="fu">c</span>(indep_t<span class="sc">$</span>estimate[<span class="dv">2</span>] <span class="sc">-</span> indep_t<span class="sc">$</span>estimate[<span class="dv">1</span>], lm_indep_t<span class="sc">$</span>coefficients[<span class="dv">2</span>, <span class="dv">1</span>]),</span>
+<span id="cb34-205"><a href="#cb34-205"></a>  <span class="st">"p value"</span> <span class="ot">=</span> <span class="fu">c</span>(indep_t<span class="sc">$</span>p.value, lm_indep_t<span class="sc">$</span>coefficients[<span class="dv">2</span>, <span class="dv">4</span>]),</span>
+<span id="cb34-206"><a href="#cb34-206"></a>  <span class="at">t =</span> <span class="fu">c</span>(indep_t<span class="sc">$</span>statistic, lm_indep_t<span class="sc">$</span>coefficients[<span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb34-207"><a href="#cb34-207"></a>)</span>
+<span id="cb34-208"><a href="#cb34-208"></a></span>
+<span id="cb34-209"><a href="#cb34-209"></a>df</span>
+<span id="cb34-210"><a href="#cb34-210"></a><span class="in">```</span></span>
+<span id="cb34-211"><a href="#cb34-211"></a><span class="dv">&amp;nbsp;</span> </span>
+<span id="cb34-212"><a href="#cb34-212"></a></span>
+<span id="cb34-213"><a href="#cb34-213"></a>---</span>
+<span id="cb34-214"><a href="#cb34-214"></a></span>
+<span id="cb34-215"><a href="#cb34-215"></a><span class="fu"># Tres o más promedios: ANDEVA unidireccional</span></span>
+<span id="cb34-216"><a href="#cb34-216"></a></span>
+<span id="cb34-217"><a href="#cb34-217"></a>Muy similar a la prueba t de dos promedios, pero con tres o más niveles en la variable categórica:</span>
+<span id="cb34-218"><a href="#cb34-218"></a></span>
+<span id="cb34-219"><a href="#cb34-219"></a><span class="kw">&lt;center&gt;&lt;font</span> <span class="er">size</span> <span class="ot">=</span> <span class="st">6</span><span class="kw">&gt;</span>$\hat{Y} \sim \beta_{o} + \beta_{1} * x_{1} + \beta_{2} * x_{2} + ... \qquad \mathcal{H}_0: y = \beta_0$<span class="kw">&lt;/font&gt;&lt;/center&gt;</span></span>
+<span id="cb34-220"><a href="#cb34-220"></a></span>
+<span id="cb34-221"><a href="#cb34-221"></a><span class="dv">&amp;nbsp;</span> </span>
+<span id="cb34-222"><a href="#cb34-222"></a></span>
+<span id="cb34-223"><a href="#cb34-223"></a>Se trata de un **modelo de regresión múltiple**. La variable categórica se codifica con dummy, por lo que se divide en predictores indicadores ($x_i$ es $x=0$ o $x=1$). </span>
+<span id="cb34-224"><a href="#cb34-224"></a></span>
+<span id="cb34-225"><a href="#cb34-225"></a>Un conjunto de datos con una variable categórica de 3 niveles puede simularse así:</span>
+<span id="cb34-226"><a href="#cb34-226"></a></span>
+<span id="cb34-229"><a href="#cb34-229"></a><span class="in">```{r}</span></span>
+<span id="cb34-230"><a href="#cb34-230"></a><span class="co"># set seed</span></span>
+<span id="cb34-231"><a href="#cb34-231"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb34-232"><a href="#cb34-232"></a></span>
+<span id="cb34-233"><a href="#cb34-233"></a><span class="co"># number of observations</span></span>
+<span id="cb34-234"><a href="#cb34-234"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb34-235"><a href="#cb34-235"></a>b0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">4</span></span>
+<span id="cb34-236"><a href="#cb34-236"></a>b1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb34-237"><a href="#cb34-237"></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb34-238"><a href="#cb34-238"></a></span>
+<span id="cb34-239"><a href="#cb34-239"></a><span class="co"># random variables</span></span>
+<span id="cb34-240"><a href="#cb34-240"></a>x1_num <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="at">n =</span> n, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.33</span>, <span class="fl">0.33</span>))</span>
+<span id="cb34-241"><a href="#cb34-241"></a>y <span class="ot">&lt;-</span> b0 <span class="sc">+</span> b1 <span class="sc">*</span> x1_num <span class="sc">+</span> error</span>
+<span id="cb34-242"><a href="#cb34-242"></a></span>
+<span id="cb34-243"><a href="#cb34-243"></a>x1 <span class="ot">&lt;-</span> <span class="fu">factor</span>(x1_num, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>))</span>
+<span id="cb34-244"><a href="#cb34-244"></a></span>
+<span id="cb34-245"><a href="#cb34-245"></a><span class="co"># create data frame</span></span>
+<span id="cb34-246"><a href="#cb34-246"></a>xy_data_cat2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x1, y)</span>
+<span id="cb34-247"><a href="#cb34-247"></a></span>
+<span id="cb34-248"><a href="#cb34-248"></a><span class="fu">head</span>(xy_data_cat2)</span>
+<span id="cb34-249"><a href="#cb34-249"></a><span class="in">```</span></span>
+<span id="cb34-250"><a href="#cb34-250"></a></span>
+<span id="cb34-251"><a href="#cb34-251"></a><span class="in">```{r, print_df = "default"}</span></span>
+<span id="cb34-252"><a href="#cb34-252"></a></span>
+<span id="cb34-253"><a href="#cb34-253"></a><span class="co"># ANOVA function</span></span>
+<span id="cb34-254"><a href="#cb34-254"></a>anv_1w <span class="ot">&lt;-</span> <span class="fu">anova</span>(<span class="fu">aov</span>(<span class="at">formula =</span> y1 <span class="sc">~</span> x1, <span class="at">data =</span> xy_data_cat2))</span>
+<span id="cb34-255"><a href="#cb34-255"></a></span>
+<span id="cb34-256"><a href="#cb34-256"></a>anv_1w</span>
+<span id="cb34-257"><a href="#cb34-257"></a></span>
+<span id="cb34-258"><a href="#cb34-258"></a><span class="co"># linear regression</span></span>
+<span id="cb34-259"><a href="#cb34-259"></a>lm_anv_1w <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(<span class="at">formula =</span> y1 <span class="sc">~</span> x1, <span class="at">data =</span> xy_data_cat2))</span>
+<span id="cb34-260"><a href="#cb34-260"></a></span>
+<span id="cb34-261"><a href="#cb34-261"></a>lm_anv_1w</span>
+<span id="cb34-262"><a href="#cb34-262"></a><span class="in">```</span></span>
+<span id="cb34-263"><a href="#cb34-263"></a></span>
+<span id="cb34-264"><a href="#cb34-264"></a></span>
+<span id="cb34-265"><a href="#cb34-265"></a><span class="in">```{r, echo = FALSE}</span></span>
+<span id="cb34-266"><a href="#cb34-266"></a></span>
+<span id="cb34-267"><a href="#cb34-267"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb34-268"><a href="#cb34-268"></a>  <span class="at">model =</span> <span class="fu">c</span>(<span class="st">"1 way anova"</span>, <span class="st">"lm"</span>),</span>
+<span id="cb34-269"><a href="#cb34-269"></a>  <span class="st">"F statistic"</span> <span class="ot">=</span> <span class="fu">c</span>(anv_1w<span class="sc">$</span><span class="st">`</span><span class="at">F value</span><span class="st">`</span>[<span class="dv">1</span>], lm_anv_1w<span class="sc">$</span>fstatistic[<span class="dv">1</span>]),</span>
+<span id="cb34-270"><a href="#cb34-270"></a>  <span class="st">"p value"</span> <span class="ot">=</span> <span class="fu">c</span>(anv_1w<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;F)</span><span class="st">`</span>[<span class="dv">1</span>], <span class="fl">0.07552</span>)</span>
+<span id="cb34-271"><a href="#cb34-271"></a>)</span>
+<span id="cb34-272"><a href="#cb34-272"></a></span>
+<span id="cb34-273"><a href="#cb34-273"></a>df</span>
+<span id="cb34-274"><a href="#cb34-274"></a><span class="in">```</span></span>
+<span id="cb34-275"><a href="#cb34-275"></a><span class="dv">&amp;nbsp;</span> </span>
+<span id="cb34-276"><a href="#cb34-276"></a></span>
+<span id="cb34-277"><a href="#cb34-277"></a>---</span>
+<span id="cb34-278"><a href="#cb34-278"></a></span>
+<span id="cb34-279"><a href="#cb34-279"></a><span class="fu"># Chi-cuadrado para tablas de contingencia</span></span>
+<span id="cb34-280"><a href="#cb34-280"></a></span>
+<span id="cb34-281"><a href="#cb34-281"></a>Esta prueba busca la asociación entre dos variables categóricas basándose en la co-ocurrencia de las categorías, medidas como recuentos. Esto es lo que es una tabla de contingencia: recuentos de todas las combinaciones de categorías entre dos variables. Por ejemplo, las muertes por edad de los pasajeros del Titanic:</span>
+<span id="cb34-282"><a href="#cb34-282"></a></span>
+<span id="cb34-285"><a href="#cb34-285"></a><span class="in">```{r}</span></span>
+<span id="cb34-286"><a href="#cb34-286"></a><span class="co"># Contingency table</span></span>
+<span id="cb34-287"><a href="#cb34-287"></a><span class="co"># modified from https://lindeloev.github.io/tests-as-linear/</span></span>
+<span id="cb34-288"><a href="#cb34-288"></a>mood_data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(</span>
+<span id="cb34-289"><a href="#cb34-289"></a>  <span class="at">data =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">70</span>, <span class="dv">30</span>, <span class="dv">32</span>, <span class="dv">110</span>, <span class="dv">120</span>), <span class="at">nrow =</span> <span class="dv">2</span>,</span>
+<span id="cb34-290"><a href="#cb34-290"></a>  <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="at">handedness =</span> <span class="fu">c</span>(<span class="st">"left_handed"</span>, <span class="st">"right_handed"</span>), <span class="at">mood =</span> <span class="fu">c</span>(<span class="st">"happy"</span>, <span class="st">"meh"</span>, <span class="st">"sad"</span>))</span>
+<span id="cb34-291"><a href="#cb34-291"></a>)</span>
+<span id="cb34-292"><a href="#cb34-292"></a></span>
+<span id="cb34-293"><a href="#cb34-293"></a>mood_data</span>
+<span id="cb34-294"><a href="#cb34-294"></a><span class="in">```</span></span>
+<span id="cb34-295"><a href="#cb34-295"></a><span class="dv">&amp;nbsp;</span></span>
+<span id="cb34-296"><a href="#cb34-296"></a></span>
+<span id="cb34-297"><a href="#cb34-297"></a>Aunque la codificación es un poco más elaborada, puede reducirse a un modelo ANDEVA log-lineal de dos vías:</span>
+<span id="cb34-298"><a href="#cb34-298"></a></span>
+<span id="cb34-299"><a href="#cb34-299"></a>$log(y_i) = log(N) + log(\alpha_i) + log(\beta_j) + log(\alpha_i\beta_j)$</span>
+<span id="cb34-300"><a href="#cb34-300"></a></span>
+<span id="cb34-301"><a href="#cb34-301"></a><span class="dv">&amp;nbsp;</span></span>
+<span id="cb34-302"><a href="#cb34-302"></a></span>
+<span id="cb34-303"><a href="#cb34-303"></a>Los coeficientes de regresión son $A_i$ y $B_i$. $\alpha_i$ y $\beta_j$ son las proporciones de recuentos para los dos niveles de la variable categórica binaria (uno para cada uno de los niveles de la segunda variable categórica). Afortunadamente, existe una implementación de este modelo en el paquete R 'MASS' que simplifica la codificación:</span>
+<span id="cb34-304"><a href="#cb34-304"></a></span>
+<span id="cb34-307"><a href="#cb34-307"></a><span class="in">```{r}</span></span>
+<span id="cb34-308"><a href="#cb34-308"></a><span class="co"># Built-in chi-square. It requires matrix format.</span></span>
+<span id="cb34-309"><a href="#cb34-309"></a>chi_mod <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(mood_data)</span>
+<span id="cb34-310"><a href="#cb34-310"></a></span>
+<span id="cb34-311"><a href="#cb34-311"></a>chi_mod</span>
+<span id="cb34-312"><a href="#cb34-312"></a></span>
+<span id="cb34-313"><a href="#cb34-313"></a><span class="co"># convert to long</span></span>
+<span id="cb34-314"><a href="#cb34-314"></a>mood_data_long <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">as.table</span>(mood_data))</span>
+<span id="cb34-315"><a href="#cb34-315"></a></span>
+<span id="cb34-316"><a href="#cb34-316"></a><span class="co"># log linear model from MASS package</span></span>
+<span id="cb34-317"><a href="#cb34-317"></a>log_lm_mod <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">loglm</span>(Freq <span class="sc">~</span> handedness <span class="sc">+</span> mood, <span class="at">data =</span> mood_data_long)</span>
+<span id="cb34-318"><a href="#cb34-318"></a></span>
+<span id="cb34-319"><a href="#cb34-319"></a>log_lm_mod</span>
+<span id="cb34-320"><a href="#cb34-320"></a><span class="in">```</span></span>
+<span id="cb34-321"><a href="#cb34-321"></a></span>
+<span id="cb34-322"><a href="#cb34-322"></a></span>
+<span id="cb34-323"><a href="#cb34-323"></a><span class="in">```{r, echo = FALSE}</span></span>
+<span id="cb34-324"><a href="#cb34-324"></a></span>
+<span id="cb34-325"><a href="#cb34-325"></a>summ_log_lm <span class="ot">&lt;-</span> <span class="fu">summary</span>(log_lm_mod)</span>
+<span id="cb34-326"><a href="#cb34-326"></a></span>
+<span id="cb34-327"><a href="#cb34-327"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb34-328"><a href="#cb34-328"></a>  <span class="at">model =</span> <span class="fu">c</span>(<span class="st">"chi-square"</span>, <span class="st">"log lm"</span>),</span>
+<span id="cb34-329"><a href="#cb34-329"></a>  <span class="st">`</span><span class="at">X squared</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(chi_mod<span class="sc">$</span>statistic, summ_log_lm<span class="sc">$</span>tests[<span class="dv">2</span>, <span class="dv">1</span>]),</span>
+<span id="cb34-330"><a href="#cb34-330"></a>  <span class="st">"p value"</span> <span class="ot">=</span> <span class="fu">c</span>(chi_mod<span class="sc">$</span>p.value, summ_log_lm<span class="sc">$</span>tests[<span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb34-331"><a href="#cb34-331"></a>)</span>
+<span id="cb34-332"><a href="#cb34-332"></a></span>
+<span id="cb34-333"><a href="#cb34-333"></a>df</span>
+<span id="cb34-334"><a href="#cb34-334"></a><span class="in">```</span></span>
+<span id="cb34-335"><a href="#cb34-335"></a><span class="dv">&amp;nbsp;</span> </span>
+<span id="cb34-336"><a href="#cb34-336"></a></span>
+<span id="cb34-337"><a href="#cb34-337"></a><span class="fu"># Alternativas "no paramétricas" como modelos de regresión lineal</span></span>
+<span id="cb34-338"><a href="#cb34-338"></a></span>
+<span id="cb34-339"><a href="#cb34-339"></a>Sólo presentaremos un ejemplo de prueba "no paramétrica". No obstante, este único ejemplo debería bastar para demostrar la lógica que subyace a los procedimientos "no paramétricos". La mayoría de las pruebas "no paramétricas" se basan en un sencillo truco de transformación de datos: la transformación de rango de las respuestas. Las transformaciones de rango convierten los valores en un índice según su posición cuando se ordenan por magnitud:</span>
+<span id="cb34-340"><a href="#cb34-340"></a></span>
+<span id="cb34-343"><a href="#cb34-343"></a><span class="in">```{r}</span></span>
+<span id="cb34-344"><a href="#cb34-344"></a><span class="co"># simulate variable</span></span>
+<span id="cb34-345"><a href="#cb34-345"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb34-346"><a href="#cb34-346"></a>y <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">5</span>), <span class="dv">2</span>)</span>
+<span id="cb34-347"><a href="#cb34-347"></a></span>
+<span id="cb34-348"><a href="#cb34-348"></a>y</span>
+<span id="cb34-349"><a href="#cb34-349"></a></span>
+<span id="cb34-350"><a href="#cb34-350"></a><span class="co"># convert to ranks</span></span>
+<span id="cb34-351"><a href="#cb34-351"></a>rank_y <span class="ot">&lt;-</span> <span class="fu">rank</span>(y)</span>
+<span id="cb34-352"><a href="#cb34-352"></a></span>
+<span id="cb34-353"><a href="#cb34-353"></a>rank_y</span>
+<span id="cb34-354"><a href="#cb34-354"></a><span class="in">```</span></span>
+<span id="cb34-355"><a href="#cb34-355"></a><span class="dv">&amp;nbsp;</span> </span>
+<span id="cb34-356"><a href="#cb34-356"></a></span>
+<span id="cb34-357"><a href="#cb34-357"></a><span class="fu">## Prueba de Wilcoxon para dos promedios</span></span>
+<span id="cb34-358"><a href="#cb34-358"></a></span>
+<span id="cb34-359"><a href="#cb34-359"></a>También conocida como prueba de Mann-Whitney, es la alternativa no paramétrica a la prueba t de dos promedios: </span>
+<span id="cb34-360"><a href="#cb34-360"></a></span>
+<span id="cb34-363"><a href="#cb34-363"></a><span class="in">```{r}</span></span>
+<span id="cb34-364"><a href="#cb34-364"></a><span class="co"># set seed</span></span>
+<span id="cb34-365"><a href="#cb34-365"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb34-366"><a href="#cb34-366"></a></span>
+<span id="cb34-367"><a href="#cb34-367"></a><span class="co"># number of observations</span></span>
+<span id="cb34-368"><a href="#cb34-368"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb34-369"><a href="#cb34-369"></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="fl">0.2</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb34-370"><a href="#cb34-370"></a></span>
+<span id="cb34-371"><a href="#cb34-371"></a><span class="co"># create data frame</span></span>
+<span id="cb34-372"><a href="#cb34-372"></a>y_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y)</span>
+<span id="cb34-373"><a href="#cb34-373"></a></span>
+<span id="cb34-374"><a href="#cb34-374"></a></span>
+<span id="cb34-375"><a href="#cb34-375"></a>y</span>
+<span id="cb34-376"><a href="#cb34-376"></a></span>
+<span id="cb34-377"><a href="#cb34-377"></a><span class="co"># Wilcoxon / Mann-Whitney U</span></span>
+<span id="cb34-378"><a href="#cb34-378"></a>wilcx_mod <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(y_data<span class="sc">$</span>y)</span>
+<span id="cb34-379"><a href="#cb34-379"></a></span>
+<span id="cb34-380"><a href="#cb34-380"></a>wilcx_mod</span>
+<span id="cb34-381"><a href="#cb34-381"></a></span>
+<span id="cb34-382"><a href="#cb34-382"></a>signed_rank <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sign</span>(x) <span class="sc">*</span> <span class="fu">rank</span>(<span class="fu">abs</span>(x))</span>
+<span id="cb34-383"><a href="#cb34-383"></a></span>
+<span id="cb34-384"><a href="#cb34-384"></a><span class="co"># As linear model with our dummy-coded group_y2:</span></span>
+<span id="cb34-385"><a href="#cb34-385"></a>wicx_lm_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">signed_rank</span>(y) <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> y_data) <span class="co"># compare to</span></span>
+<span id="cb34-386"><a href="#cb34-386"></a></span>
+<span id="cb34-387"><a href="#cb34-387"></a><span class="fu">summary</span>(wicx_lm_mod)</span>
+<span id="cb34-388"><a href="#cb34-388"></a><span class="in">```</span></span>
+<span id="cb34-389"><a href="#cb34-389"></a></span>
+<span id="cb34-390"><a href="#cb34-390"></a><span class="in">```{r, echo = FALSE}</span></span>
+<span id="cb34-391"><a href="#cb34-391"></a></span>
+<span id="cb34-392"><a href="#cb34-392"></a>summ_wicx_lm_mod <span class="ot">&lt;-</span> <span class="fu">summary</span>(wicx_lm_mod)</span>
+<span id="cb34-393"><a href="#cb34-393"></a></span>
+<span id="cb34-394"><a href="#cb34-394"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb34-395"><a href="#cb34-395"></a>  <span class="at">model =</span> <span class="fu">c</span>(<span class="st">"1 mean wilcoxon"</span>, <span class="st">"wilcoxon_lm"</span>),</span>
+<span id="cb34-396"><a href="#cb34-396"></a>  <span class="at">p.value =</span> <span class="fu">c</span>(wilcx_mod<span class="sc">$</span>p.value, summ_wicx_lm_mod<span class="sc">$</span>coefficients[<span class="dv">4</span>])</span>
+<span id="cb34-397"><a href="#cb34-397"></a>)</span>
+<span id="cb34-398"><a href="#cb34-398"></a></span>
+<span id="cb34-399"><a href="#cb34-399"></a>df</span>
+<span id="cb34-400"><a href="#cb34-400"></a><span class="in">```</span></span>
+<span id="cb34-401"><a href="#cb34-401"></a><span class="dv">&amp;nbsp;</span> </span>
+<span id="cb34-402"><a href="#cb34-402"></a></span>
+<span id="cb34-403"><a href="#cb34-403"></a>---</span>
+<span id="cb34-404"><a href="#cb34-404"></a></span>
+<span id="cb34-405"><a href="#cb34-405"></a><span class="fu"># Referencias</span></span>
+<span id="cb34-406"><a href="#cb34-406"></a></span>
+<span id="cb34-407"><a href="#cb34-407"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Common statistical tests are linear models</span><span class="co">](https://lindeloev.github.io/tests-as-linear/)</span></span>
+<span id="cb34-408"><a href="#cb34-408"></a></span>
+<span id="cb34-409"><a href="#cb34-409"></a></span>
+<span id="cb34-410"><a href="#cb34-410"></a><span class="dv">&amp;nbsp;</span> </span>
+<span id="cb34-411"><a href="#cb34-411"></a></span>
+<span id="cb34-412"><a href="#cb34-412"></a>---</span>
+<span id="cb34-413"><a href="#cb34-413"></a></span>
+<span id="cb34-414"><a href="#cb34-414"></a><span class="dv">&amp;nbsp;</span> </span>
+<span id="cb34-415"><a href="#cb34-415"></a></span>
+<span id="cb34-416"><a href="#cb34-416"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"4"</span><span class="kw">&gt;</span>Información de la sesión<span class="kw">&lt;/font&gt;</span></span>
+<span id="cb34-417"><a href="#cb34-417"></a></span>
+<span id="cb34-418"><a href="#cb34-418"></a><span class="in">```{r session info, echo=F}</span></span>
+<span id="cb34-419"><a href="#cb34-419"></a></span>
+<span id="cb34-420"><a href="#cb34-420"></a><span class="fu">sessionInfo</span>()</span>
+<span id="cb34-421"><a href="#cb34-421"></a><span class="in">```</span></span>
 </code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

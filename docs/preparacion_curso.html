@@ -190,6 +190,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="dropdown-item" href="./tarea4.html">
  <span class="dropdown-text">Tarea 4</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./tarea5.html">
+ <span class="dropdown-text">Tarea 5</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -207,7 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/maRce10/R_avanzado_2023/"><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https:/github.com/maRce10/R_avanzado_2023/"><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -239,7 +243,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>version<span class="sc">$</span>version.string</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>version<span class="sc">$</span>version.string</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="2" type="1">
@@ -251,38 +255,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cargar funcion del paquete "sketchy"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://raw.githubusercontent.com/maRce10/"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sketchy/main/R/load_packages.R"</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># instalar/ cargar paquetes</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">load_packages</span>(</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">packages =</span> <span class="fu">c</span>(</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"remotes"</span>,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"leaflet"</span>,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"knitr"</span>,</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"rmarkdown"</span>,</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"kableExtra"</span>,</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RColorBrewer"</span>,</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ggplot2"</span>,</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"rmdformats"</span>,</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"viridis"</span>,</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"revealjs"</span>,</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"rticles"</span>,</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tufte"</span>,</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"lme4"</span>,</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MASS"</span>,</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"lmerTest"</span>,</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sjPlot"</span>,</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">"car"</span>,</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">github =</span> <span class="st">"maRce10/sketchy"</span>,</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">github =</span> <span class="st">"hadley/emo"</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># cargar funcion del paquete "sketchy"</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">source</span>(</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">paste0</span>(</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="st">"https://raw.githubusercontent.com/maRce10/"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="st">"sketchy/main/R/load_packages.R"</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  )</span>
+<span id="cb2-7"><a href="#cb2-7"></a>)</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="co"># instalar/ cargar paquetes</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="fu">load_packages</span>(</span>
+<span id="cb2-11"><a href="#cb2-11"></a>  <span class="at">packages =</span> <span class="fu">c</span>(</span>
+<span id="cb2-12"><a href="#cb2-12"></a>    <span class="st">"remotes"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13"></a>    <span class="st">"leaflet"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14"></a>    <span class="st">"knitr"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15"></a>    <span class="st">"rmarkdown"</span>,</span>
+<span id="cb2-16"><a href="#cb2-16"></a>    <span class="st">"kableExtra"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17"></a>    <span class="st">"RColorBrewer"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18"></a>    <span class="st">"ggplot2"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19"></a>    <span class="st">"rmdformats"</span>,</span>
+<span id="cb2-20"><a href="#cb2-20"></a>    <span class="st">"viridis"</span>,</span>
+<span id="cb2-21"><a href="#cb2-21"></a>    <span class="st">"revealjs"</span>,</span>
+<span id="cb2-22"><a href="#cb2-22"></a>    <span class="st">"rticles"</span>,</span>
+<span id="cb2-23"><a href="#cb2-23"></a>    <span class="st">"tufte"</span>,</span>
+<span id="cb2-24"><a href="#cb2-24"></a>    <span class="st">"lme4"</span>,</span>
+<span id="cb2-25"><a href="#cb2-25"></a>    <span class="st">"MASS"</span>,</span>
+<span id="cb2-26"><a href="#cb2-26"></a>    <span class="st">"lmerTest"</span>,</span>
+<span id="cb2-27"><a href="#cb2-27"></a>    <span class="st">"sjPlot"</span>,</span>
+<span id="cb2-28"><a href="#cb2-28"></a>    <span class="st">"car"</span>,</span>
+<span id="cb2-29"><a href="#cb2-29"></a>    <span class="at">github =</span> <span class="st">"maRce10/sketchy"</span>,</span>
+<span id="cb2-30"><a href="#cb2-30"></a>    <span class="at">github =</span> <span class="st">"hadley/emo"</span></span>
+<span id="cb2-31"><a href="#cb2-31"></a>  )</span>
+<span id="cb2-32"><a href="#cb2-32"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="6" type="1">
@@ -291,14 +295,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details open="">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sketchy)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make_compendium</span>(</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="st">"r_avanzado"</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">"DIRECTORIO_DONDE_HACER_EL_PROYECTO"</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Rproj =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">readme =</span> <span class="cn">TRUE</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(sketchy)</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">make_compendium</span>(</span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="at">name =</span> <span class="st">"r_avanzado"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="at">path =</span> <span class="st">"DIRECTORIO_DONDE_HACER_EL_PROYECTO"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="at">Rproj =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-7"><a href="#cb3-7"></a>  <span class="at">readme =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p><em>(en realidad este es tambien un <a href="https://marce10.github.io/ciencia_reproducible/compendios_de_investigacion.html">compendio de investigación</a>)</em></p>
@@ -509,86 +513,86 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> False</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo= FALSE}</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">eval =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>1)  Instalá R en la computadora que utilizarás durante el curso (https://cran.r-project.org/). Probablemente ya lo tenés instalado, pero intentá actualizarlo si tenés una versión de R <span class="sc">\&lt;</span> 4.0.0. Podés encontrar qué versión de R tenés ejecutando esto en la consola de R:</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>version<span class="sc">$</span>version.string</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>2)  Instalá la interfaz de RStudio (https://www.rstudio.com/products/rstudio/download/, elejí la versión gratuita).</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>3)  Abrí RStudio y seleccioná la pestaña "Tools" y luego "Global options" (última opción). Seleccioná la opción "Code", luego seleccioná la casilla de "Soft wrap".</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>4)  También en Rstudio: Seleccioná la opción "Pane Layout" y mové "Source" al panel superior izquierdo y "Console" al panel superior derecho. Esta disposición asigna más espacio en la pantalla a los paneles más útiles. Dalé "Apply" y "Ok". Para aquellos que no estén familiarizados con RStudio, "Source" es un editor de texto donde se escribe el código y donde guardas el código en un archivo físico (normalmente en formato .R) y la consola evalúa el código que se envia desde el "Source" e imprime los resultados (si los hay). Podés escribir código en la consola, pero no se guardará en un archivo físico.</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>5)  Ahora en la consola de R en Rstudio ejecutá el siguiente código para instalar los paquetes que estaremos usando durante el curso:</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co"># cargar funcion del paquete "sketchy"</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://raw.githubusercontent.com/maRce10/"</span>,</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sketchy/main/R/load_packages.R"</span></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="co"># instalar/ cargar paquetes</span></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="fu">load_packages</span>(</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">packages =</span> <span class="fu">c</span>(</span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">"remotes"</span>,</span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">"leaflet"</span>,</span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    <span class="st">"knitr"</span>,</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>    <span class="st">"rmarkdown"</span>,</span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    <span class="st">"kableExtra"</span>,</span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RColorBrewer"</span>,</span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ggplot2"</span>,</span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>    <span class="st">"rmdformats"</span>,</span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>    <span class="st">"viridis"</span>,</span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>    <span class="st">"revealjs"</span>,</span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>    <span class="st">"rticles"</span>,</span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tufte"</span>,</span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>    <span class="st">"lme4"</span>,</span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MASS"</span>,</span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>    <span class="st">"lmerTest"</span>,</span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sjPlot"</span>,</span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>    <span class="st">"car"</span>,</span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">github =</span> <span class="st">"maRce10/sketchy"</span>,</span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">github =</span> <span class="st">"hadley/emo"</span></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>6)  Creá un proyecto para el curso corriendo este código:</span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sketchy)</span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="fu">make_compendium</span>(</span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="st">"r_avanzado"</span>,</span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">"DIRECTORIO_DONDE_HACER_EL_PROYECTO"</span>,</span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>  <span class="at">Rproj =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>  <span class="at">readme =</span> <span class="cn">TRUE</span></span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>*(en realidad este es tambien un [compendio de investigación](https://marce10.github.io/ciencia_reproducible/compendios_de_investigacion.html))*</span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>Abrí el proyecto en Rstudio:</span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="al">![](./images/abrir_proyecto.png)</span>{width="80%"}</span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>Este proyecto debe usarse cada vez que se trabaja código del curso <span class="in">`r emo::ji("v")`</span></span>
+<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="an">toc:</span><span class="co"> False</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co">---</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="in">```{r, echo= FALSE}</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">eval =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="in">```</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a></span>
+<span id="cb4-10"><a href="#cb4-10"></a>1)  Instalá R en la computadora que utilizarás durante el curso (https://cran.r-project.org/). Probablemente ya lo tenés instalado, pero intentá actualizarlo si tenés una versión de R <span class="sc">\&lt;</span> 4.0.0. Podés encontrar qué versión de R tenés ejecutando esto en la consola de R:</span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="in">```{r}</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a>version<span class="sc">$</span>version.string</span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="in">```</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a></span>
+<span id="cb4-18"><a href="#cb4-18"></a>2)  Instalá la interfaz de RStudio (https://www.rstudio.com/products/rstudio/download/, elejí la versión gratuita).</span>
+<span id="cb4-19"><a href="#cb4-19"></a></span>
+<span id="cb4-20"><a href="#cb4-20"></a>3)  Abrí RStudio y seleccioná la pestaña "Tools" y luego "Global options" (última opción). Seleccioná la opción "Code", luego seleccioná la casilla de "Soft wrap".</span>
+<span id="cb4-21"><a href="#cb4-21"></a></span>
+<span id="cb4-22"><a href="#cb4-22"></a>4)  También en Rstudio: Seleccioná la opción "Pane Layout" y mové "Source" al panel superior izquierdo y "Console" al panel superior derecho. Esta disposición asigna más espacio en la pantalla a los paneles más útiles. Dalé "Apply" y "Ok". Para aquellos que no estén familiarizados con RStudio, "Source" es un editor de texto donde se escribe el código y donde guardas el código en un archivo físico (normalmente en formato .R) y la consola evalúa el código que se envia desde el "Source" e imprime los resultados (si los hay). Podés escribir código en la consola, pero no se guardará en un archivo físico.</span>
+<span id="cb4-23"><a href="#cb4-23"></a></span>
+<span id="cb4-24"><a href="#cb4-24"></a>5)  Ahora en la consola de R en Rstudio ejecutá el siguiente código para instalar los paquetes que estaremos usando durante el curso:</span>
+<span id="cb4-25"><a href="#cb4-25"></a></span>
+<span id="cb4-26"><a href="#cb4-26"></a><span class="in">```{r, eval = FALSE}</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a></span>
+<span id="cb4-28"><a href="#cb4-28"></a><span class="co"># cargar funcion del paquete "sketchy"</span></span>
+<span id="cb4-29"><a href="#cb4-29"></a><span class="fu">source</span>(</span>
+<span id="cb4-30"><a href="#cb4-30"></a>  <span class="fu">paste0</span>(</span>
+<span id="cb4-31"><a href="#cb4-31"></a>    <span class="st">"https://raw.githubusercontent.com/maRce10/"</span>,</span>
+<span id="cb4-32"><a href="#cb4-32"></a>    <span class="st">"sketchy/main/R/load_packages.R"</span></span>
+<span id="cb4-33"><a href="#cb4-33"></a>  )</span>
+<span id="cb4-34"><a href="#cb4-34"></a>)</span>
+<span id="cb4-35"><a href="#cb4-35"></a></span>
+<span id="cb4-36"><a href="#cb4-36"></a><span class="co"># instalar/ cargar paquetes</span></span>
+<span id="cb4-37"><a href="#cb4-37"></a><span class="fu">load_packages</span>(</span>
+<span id="cb4-38"><a href="#cb4-38"></a>  <span class="at">packages =</span> <span class="fu">c</span>(</span>
+<span id="cb4-39"><a href="#cb4-39"></a>    <span class="st">"remotes"</span>,</span>
+<span id="cb4-40"><a href="#cb4-40"></a>    <span class="st">"leaflet"</span>,</span>
+<span id="cb4-41"><a href="#cb4-41"></a>    <span class="st">"knitr"</span>,</span>
+<span id="cb4-42"><a href="#cb4-42"></a>    <span class="st">"rmarkdown"</span>,</span>
+<span id="cb4-43"><a href="#cb4-43"></a>    <span class="st">"kableExtra"</span>,</span>
+<span id="cb4-44"><a href="#cb4-44"></a>    <span class="st">"RColorBrewer"</span>,</span>
+<span id="cb4-45"><a href="#cb4-45"></a>    <span class="st">"ggplot2"</span>,</span>
+<span id="cb4-46"><a href="#cb4-46"></a>    <span class="st">"rmdformats"</span>,</span>
+<span id="cb4-47"><a href="#cb4-47"></a>    <span class="st">"viridis"</span>,</span>
+<span id="cb4-48"><a href="#cb4-48"></a>    <span class="st">"revealjs"</span>,</span>
+<span id="cb4-49"><a href="#cb4-49"></a>    <span class="st">"rticles"</span>,</span>
+<span id="cb4-50"><a href="#cb4-50"></a>    <span class="st">"tufte"</span>,</span>
+<span id="cb4-51"><a href="#cb4-51"></a>    <span class="st">"lme4"</span>,</span>
+<span id="cb4-52"><a href="#cb4-52"></a>    <span class="st">"MASS"</span>,</span>
+<span id="cb4-53"><a href="#cb4-53"></a>    <span class="st">"lmerTest"</span>,</span>
+<span id="cb4-54"><a href="#cb4-54"></a>    <span class="st">"sjPlot"</span>,</span>
+<span id="cb4-55"><a href="#cb4-55"></a>    <span class="st">"car"</span>,</span>
+<span id="cb4-56"><a href="#cb4-56"></a>    <span class="at">github =</span> <span class="st">"maRce10/sketchy"</span>,</span>
+<span id="cb4-57"><a href="#cb4-57"></a>    <span class="at">github =</span> <span class="st">"hadley/emo"</span></span>
+<span id="cb4-58"><a href="#cb4-58"></a>  )</span>
+<span id="cb4-59"><a href="#cb4-59"></a>)</span>
+<span id="cb4-60"><a href="#cb4-60"></a><span class="in">```</span></span>
+<span id="cb4-61"><a href="#cb4-61"></a></span>
+<span id="cb4-62"><a href="#cb4-62"></a>6)  Creá un proyecto para el curso corriendo este código:</span>
+<span id="cb4-63"><a href="#cb4-63"></a></span>
+<span id="cb4-64"><a href="#cb4-64"></a><span class="in">```{r, eval = FALSE}</span></span>
+<span id="cb4-65"><a href="#cb4-65"></a></span>
+<span id="cb4-66"><a href="#cb4-66"></a><span class="fu">library</span>(sketchy)</span>
+<span id="cb4-67"><a href="#cb4-67"></a></span>
+<span id="cb4-68"><a href="#cb4-68"></a><span class="fu">make_compendium</span>(</span>
+<span id="cb4-69"><a href="#cb4-69"></a>  <span class="at">name =</span> <span class="st">"r_avanzado"</span>,</span>
+<span id="cb4-70"><a href="#cb4-70"></a>  <span class="at">path =</span> <span class="st">"DIRECTORIO_DONDE_HACER_EL_PROYECTO"</span>,</span>
+<span id="cb4-71"><a href="#cb4-71"></a>  <span class="at">Rproj =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-72"><a href="#cb4-72"></a>  <span class="at">readme =</span> <span class="cn">TRUE</span></span>
+<span id="cb4-73"><a href="#cb4-73"></a>)</span>
+<span id="cb4-74"><a href="#cb4-74"></a><span class="in">```</span></span>
+<span id="cb4-75"><a href="#cb4-75"></a></span>
+<span id="cb4-76"><a href="#cb4-76"></a>*(en realidad este es tambien un [compendio de investigación](https://marce10.github.io/ciencia_reproducible/compendios_de_investigacion.html))*</span>
+<span id="cb4-77"><a href="#cb4-77"></a></span>
+<span id="cb4-78"><a href="#cb4-78"></a>Abrí el proyecto en Rstudio:</span>
+<span id="cb4-79"><a href="#cb4-79"></a></span>
+<span id="cb4-80"><a href="#cb4-80"></a><span class="al">![](./images/abrir_proyecto.png)</span>{width="80%"}</span>
+<span id="cb4-81"><a href="#cb4-81"></a></span>
+<span id="cb4-82"><a href="#cb4-82"></a>Este proyecto debe usarse cada vez que se trabaja código del curso <span class="in">`r emo::ji("v")`</span></span>
 </code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

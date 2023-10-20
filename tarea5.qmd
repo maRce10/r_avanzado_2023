@@ -1,0 +1,264 @@
+---
+title: <font size="7"><b>Tarea 5</b></font>
+format:
+  html:
+    code-tools: false
+code-line-numbers: false
+---
+
+```{r,echo=FALSE,message=FALSE}
+
+```
+
+ 
+
+::: {.alert .alert-warning}
+**Instrucciones**
+
+-   La fecha de entrega es el 27 de octubre a las 11:59:59 pm
+-   La tarea debe ser escrita en el formato para reportes dinámicos Rmarkdown o quarto (5 pts)
+-   Debe entregar el archivo html generado del documento Rmarkdown/quarto por medio de mediación virtual (hay un enlace para someter la tarea). No envíe el archivo Rmd.
+-   El reporte debe utilizar secciones de código ("chunks") separados para cada ejercicio y subtítulos para cada uno así como comentarios en texto
+-   El código de los bloques siempre debe ser visible (no use `echo = FALSE`)
+-   El código dentro de los bloques de código debe estar documentado con comentarios (usando #)
+-   Debe usar R básico para la manipulación de datos
+-   Cada item tiene un valor de 5 puntos
+:::
+
+ 
+
+```{r, echo = FALSE}
+
+library("knitr")
+
+```
+
+Para esta tarea trabajaremos con los datos de camaras submarinas usados en clase. Estos datos muestran la salida de un programa de identificación automática de especies marinas en videos pasivos tomados en la columna de agua. Para cada video analizado el programa genera un archivo de texto (.TXT) con una fila para cada especie detectada mas una serie de metadatos asociados a la detección. Los datos se ven así:
+
+```{r, echo=FALSE,out.width="100%", fig.align="center"}
+
+knitr::include_graphics("./images/datos.png")
+
+```
+
+ 
+
+Primero debemos preparar los archivos de ejemplo:
+
+```{r, eval = FALSE}
+
+# definir directorio a donde guardar los archivos
+directorio <- "DIRECCION_DONDE_GUARDAR_LOS ARCHIVOS_DE_EJEMPLO"
+
+# guardar archivos
+download.file(
+  url = paste0(
+    "https://github.com/maRce10/ucr_r_avanzado/",
+    "raw/master/additional_files/datos_camara_submarina.zip"
+  ),
+  destfile = file.path(directorio, "datos_camara_submarina.zip")
+)
+
+# extraerlos del zip
+unzip(
+  zipfile = file.path(directorio, "datos_camara_submarina.zip"),
+  exdir = directorio
+)
+
+# hacer vector con nombre y direccion de archivos
+archivos_txt <-
+  list.files(
+    path = directorio,
+    full.names = TRUE,
+    pattern = "TXT$"
+  )
+
+```
+
+```{r, echo = FALSE}
+
+# definir directorio a donde guardar los archivos
+directorio <- "./data/"
+
+# hacer vector con nombre y direccion de archivos
+archivos_txt <- list.files(path = directorio, full.names = TRUE, pattern = "TXT$")
+
+if (length(archivos_txt) != 19){
+
+# guardar archivos
+download.file(
+  url =
+    paste0(
+      "https://github.com/maRce10/",
+      "r_avanzado_2023/raw/master/data/datos_camara_submarina.zip"
+    ),
+  destfile = file.path(directorio, "datos_camara_submarina.zip")
+)
+
+# extraerlos del zip
+unzip(zipfile = file.path(directorio, "datos_camara_submarina.zip"), exdir = directorio)
+
+# hacer vector con nombre y direccion de archivos
+archivos_txt <- list.files(path = directorio, full.names = TRUE, pattern = "TXT$")
+}
+
+```
+
+ 
+
+También pueden bajar el archivo directamente de [este enlance](https://github.com/maRce10/ucr_r_avanzado/raw/master/additional_files/datos_camara_submarina.zip). Recuerde extraer los archivos y hacer el vector con los nombres de los archivos (correr líneas de la 9 a la 13).
+
+Si todo salió bien el vector "archivos_txt" debería tener `r length(archivos_txt)` elementos:
+
+```{r}
+
+length(archivos_txt)
+
+```
+
+ 
+
+::: {.alert .alert-info}
+1.  Haga un bucle `for` que una todos los datos contenidos en los archivos de texto en un solo data frame (debe llamarse 'datos_camaras') y añada una columna con el nombre del archivo de donde provienen los datos (debe llamarse 'archivo', *pistas: 1) añadir el nombre del archivo en una columna se hace en el cuerpo del bucle luego de leer el archivo; 2) recuerden usar `basename()`*).
+
+```{r, echo = FALSE}
+
+datos_camaras <- data.frame()
+
+for(i in archivos_txt){
+  
+  txt <- read.table(i, header = TRUE, skip = 4, sep = "\t")
+  
+  txt$archivo <- basename(i)
+  
+  datos_camaras <- rbind(datos_camaras, txt) 
+}
+
+```
+
+2.  Haga un bucle `sapply` que devuelva el número de familias para cada archivo. El bucle debe trabajar sobre el data frame 'datos_camaras' creado en el ejercicio 1. El resultado debe ser guardado en un cuadro de datos ('data frame') que contenga las columnas 'archivo' y 'n_familias'. (*pistas: 1) necesitan crear una función en la llamada del bucle; 2) el bucle debe ciclar sobre cada uno de los nombres de archivo; 3) deben crear un subconjunto de los datos para cada archivo a lo interno del bucle*)
+
+```{r, echo = FALSE}
+
+n_familias <- sapply(unique(datos_camaras$archivo), function(x){
+  
+  Y <- datos_camaras[datos_camaras$archivo == x, ]
+  
+  n_fams <- length(unique(Y$Family))
+
+  return(n_fams)
+  })
+
+cam_dat <- data.frame(archivo = basename(unique(datos_camaras$archivo)), n_familias = n_familias, row.names = 1:length(n_familias))
+
+```
+
+3.  Haga un bucle `sapply` que devuelva el número de géneros (columna 'genus') para cada archivo. El bucle debe trabajar sobre el data frame 'datos_camaras' creado en el ejercicio 1. El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2.
+
+```{r, echo = FALSE}
+
+cam_dat$n_generos <- sapply(unique(datos_camaras$archivo), function(x){
+  
+  Y <- datos_camaras[datos_camaras$archivo == x, ]
+  
+  n_fams <- length(unique(Y$Genus))
+
+  return(n_fams)
+  })
+
+```
+
+4.  Haga un bucle `sapply` que devuelva la fecha de creación del video para cada archivo. El bucle debe trabajar sobre el data frame 'datos_camaras' creado en el ejercicio 1. El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2.
+
+```{r, echo = FALSE}
+
+cam_dat$date <- sapply(unique(datos_camaras$archivo), function(x){
+  
+  Y <- datos_camaras[datos_camaras$archivo == x, ]
+  
+  date <- length(unique(Y$Date))
+
+  return(date)
+  })
+
+```
+
+5. Haga un bucle `sapply` que calcule el número de veces que se observó cada especie. El bucle debe trabajar sobre el data frame 'datos_camaras' creado en el ejercicio 1 y el calculo debe ser la suma de la columna 'MaxN'. Ponga los resultados en un cuadro de datos con columnas para especie y número de observaciones. (_pista: `unique(datos_camaras$Species)`). Remueva el campo en el que especie es igual a "".
+
+```{r, echo = FALSE}
+
+n_obs <- sapply(unique(datos_camaras$Species), function(x){
+  
+  X <- datos_camaras[datos_camaras$Species == x, ]
+  
+  obs <- sum(X$MaxN)
+  
+  return(obs)
+})
+
+
+sp_dat <- data.frame(spp = unique(datos_camaras$Species), n_obs)
+
+sp_dat <- sp_dat[sp_dat$spp != "", ]
+```
+
+6. Utilice bucles `sapply` para añadir el mínimo y máximo de la profundidad para cada una de las especies en el cuadro de datos creado en el ejercicio anterior (_pistas: 1) asegúrese que la columna de profundidad es numérica antes de calcular las profundidades; 2) `gsub(" m", "", )`; 3) `gsub(",", ".", )`; 4) `as.numeric()`_) 
+
+```{r, echo = FALSE}
+
+datos_camaras$Depth <- gsub(" m", "", datos_camaras$Depth)
+datos_camaras$Depth <- gsub(",", ".", datos_camaras$Depth)
+datos_camaras$Depth <- as.numeric(datos_camaras$Depth)
+
+
+sp_dat$min_prof <- sapply(sp_dat$spp, function(x){
+  
+  X <- datos_camaras[datos_camaras$Species == x, ]
+  
+  min_prf <- min(X$Depth, na.rm = TRUE)
+  
+  return(min_prf)
+})
+
+sp_dat$max_prof <- sapply(sp_dat$spp, function(x){
+  
+  X <- datos_camaras[datos_camaras$Species == x, ]
+  
+  max_prf <- max(X$Depth, na.rm = TRUE)
+  
+  return(max_prf)
+})
+
+```
+
+7. Calcule el rango de profundidad (i.e. la diferencia entre el mínimo y el máximo de la profundidad) para cada especie y añádalo como una columna al cuadro de datos creado en el ejercicio 5.
+
+```{r, echo = FALSE}
+
+sp_dat$rango_prof <- sapply(sp_dat$spp, function(x){
+  
+  X <- datos_camaras[datos_camaras$Species == x, ]
+  
+  max_prf <- max(X$Depth, na.rm = TRUE)
+  
+  return(max_prf)
+})
+
+sp_dat$rango_prof <- sp_dat$max_prof - sp_dat$min_prof
+
+```
+
+8. Incluya el cuadro de datos generado en los ejercicios 5 a 7 como una tabla en su reporte usando la función `DT` del paquete `datatable`.
+
+9.  Publique el reporte en [Rpubs](https://rpubs.com/) y añada el enlace en el reporte (use un enlace en el texto).
+
+:::
+
+ 
+
+## Información de la sesión {.unnumbered .unlisted}
+
+```{r session info, echo=F}
+
+sessionInfo()
+```

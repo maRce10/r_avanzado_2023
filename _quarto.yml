@@ -11,7 +11,7 @@ website:
   navbar:
     right:
       - icon: github
-        href: https://github.com/maRce10/R_avanzado_2023/
+        href: https:/github.com/maRce10/R_avanzado_2023/
         aria-label: GitHub
     left:
       - href: index.qmd
@@ -38,6 +38,8 @@ website:
         menu:
         - text: "Tarea 4"
           href: tarea4.qmd
+        - text: "Tarea 5"
+          href: tarea5.qmd
       - text: "Preparación para el curso"
         href: preparacion_curso.qmd
       - text: "Compartir código"
@@ -50,6 +52,7 @@ toc-depth: 2
 toc-location: left
 toc-title: Contenidos
 number-sections: true
+code-line-numbers: true
 highlight-style: pygments
 code-overflow: wrap
 code-copy: true

@@ -2,46 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/modelos_de_regresion.html</loc>
-    <lastmod>2023-10-06T00:43:29.980Z</lastmod>
+    <lastmod>2023-10-20T20:47:34.382Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marce10.github.io/R_avanzado_2023/tarea5.html</loc>
+    <lastmod>2023-10-20T21:09:10.389Z</lastmod>
   </url>
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/reportes_dinamicos.html</loc>
-    <lastmod>2023-10-06T14:16:40.237Z</lastmod>
+    <lastmod>2023-10-20T20:47:42.814Z</lastmod>
   </url>
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/preparacion_curso.html</loc>
-    <lastmod>2023-10-06T14:18:35.689Z</lastmod>
+    <lastmod>2023-10-20T20:47:45.510Z</lastmod>
   </url>
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/fundamentos_de_r.html</loc>
-    <lastmod>2023-10-06T01:22:48.317Z</lastmod>
+    <lastmod>2023-10-20T20:47:51.574Z</lastmod>
   </url>
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/index.html</loc>
-    <lastmod>2023-10-08T12:32:19.748Z</lastmod>
+    <lastmod>2023-10-20T20:49:44.779Z</lastmod>
   </url>
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/ggplot2.html</loc>
-    <lastmod>2023-10-06T00:44:14.331Z</lastmod>
+    <lastmod>2023-10-20T20:48:21.652Z</lastmod>
   </url>
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/funciones.html</loc>
-    <lastmod>2023-10-13T15:45:39.823Z</lastmod>
+    <lastmod>2023-10-20T20:48:27.492Z</lastmod>
   </url>
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/bucles.html</loc>
-    <lastmod>2023-10-13T15:53:59.089Z</lastmod>
+    <lastmod>2023-10-20T20:48:40.852Z</lastmod>
   </url>
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/instructor.html</loc>
-    <lastmod>2023-10-06T14:19:13.162Z</lastmod>
+    <lastmod>2023-10-20T20:48:41.480Z</lastmod>
   </url>
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/estadistica_tradicional_regresion.html</loc>
-    <lastmod>2023-10-06T00:44:41.937Z</lastmod>
+    <lastmod>2023-10-20T20:48:45.745Z</lastmod>
   </url>
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/tarea4.html</loc>
-    <lastmod>2023-10-06T01:26:40.385Z</lastmod>
+    <lastmod>2023-10-20T20:48:48.777Z</lastmod>
   </url>
 </urlset>
