@@ -119,7 +119,7 @@ length(archivos_txt)
  
 
 ::: {.alert .alert-info}
-1.  Haga un bucle `for` que una todos los datos contenidos en los archivos de texto en un solo data frame (debe llamarse 'datos_camaras') y añada una columna con el nombre del archivo de donde provienen los datos (debe llamarse 'archivo', *pistas: 1) añadir el nombre del archivo en una columna se hace en el cuerpo del bucle luego de leer el archivo; 2) recuerden usar `basename()`*).
+1.  Haga un bucle `for` que una todos los datos contenidos en los archivos de texto en un solo cuadro de datos ('data frame', debe llamarse 'datos_camaras') y añada una columna con el nombre del archivo de donde provienen los datos (debe llamarse 'archivo'; *pistas: 1) añadir el nombre del archivo en una columna se hace en el cuerpo del bucle luego de leer el archivo; 2) recuerden usar `basename()`*).
 
 ```{r, echo = FALSE}
 
@@ -136,7 +136,7 @@ for(i in archivos_txt){
 
 ```
 
-2.  Haga un bucle `sapply` que devuelva el número de familias para cada archivo. El bucle debe trabajar sobre el data frame 'datos_camaras' creado en el ejercicio 1. El resultado debe ser guardado en un cuadro de datos ('data frame') que contenga las columnas 'archivo' y 'n_familias'. (*pistas: 1) necesitan crear una función en la llamada del bucle; 2) el bucle debe ciclar sobre cada uno de los nombres de archivo; 3) deben crear un subconjunto de los datos para cada archivo a lo interno del bucle*)
+2.  Haga un bucle `sapply` que devuelva el número de familias para cada archivo. El bucle debe usar los datos en el data frame 'datos_camaras' creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto). El resultado debe ser guardado en un cuadro de datos ('data frame') que contenga las columnas 'archivo' y 'n_familias'. (*pistas: 1) necesitan crear una función en la llamada del bucle; 2) el bucle debe ciclar sobre cada uno de los nombres de archivo; 3) deben crear un subconjunto de los datos para cada archivo a lo interno del bucle*). Las primeras 3 filas del cuadro de datos deben verse así:
 
 ```{r, echo = FALSE}
 
@@ -151,9 +151,10 @@ n_familias <- sapply(unique(datos_camaras$archivo), function(x){
 
 cam_dat <- data.frame(archivo = basename(unique(datos_camaras$archivo)), n_familias = n_familias, row.names = 1:length(n_familias))
 
+head(cam_dat, 3)
 ```
 
-3.  Haga un bucle `sapply` que devuelva el número de géneros (columna 'genus') para cada archivo. El bucle debe trabajar sobre el data frame 'datos_camaras' creado en el ejercicio 1. El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2.
+3.  Haga un bucle `sapply` que devuelva el número de géneros (columna 'genus') para cada archivo. El bucle debe usar los datos en el data frame 'datos_camaras' creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto). El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2. Las primeras 3 filas del cuadro de datos deben verse así:
 
 ```{r, echo = FALSE}
 
@@ -166,9 +167,10 @@ cam_dat$n_generos <- sapply(unique(datos_camaras$archivo), function(x){
   return(n_fams)
   })
 
+head(cam_dat, 3)
 ```
 
-4.  Haga un bucle `sapply` que devuelva la fecha de creación del video para cada archivo. El bucle debe trabajar sobre el data frame 'datos_camaras' creado en el ejercicio 1. El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2.
+4.  Haga un bucle `sapply` que devuelva la fecha de creación del video para cada archivo. El bucle debe usar los datos en el data frame 'datos_camaras' creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto). El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2.  Las primeras 3 filas del cuadro de datos deben verse así:
 
 ```{r, echo = FALSE}
 
@@ -181,9 +183,11 @@ cam_dat$date <- sapply(unique(datos_camaras$archivo), function(x){
   return(date)
   })
 
+head(cam_dat, 3)
 ```
 
-5. Haga un bucle `sapply` que calcule el número de veces que se observó cada especie. El bucle debe trabajar sobre el data frame 'datos_camaras' creado en el ejercicio 1 y el calculo debe ser la suma de la columna 'MaxN'. Ponga los resultados en un cuadro de datos con columnas para especie y número de observaciones. (_pista: `unique(datos_camaras$Species)`). Remueva el campo en el que especie es igual a "".
+5. Haga un bucle `sapply` que calcule el número de veces que se observó cada especie. El bucle debe trabajar sobre el data frame 'datos_camaras' creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto) y el cálculo debe ser la suma de la columna 'MaxN'. Ponga los resultados en un cuadro de datos con columnas para especie y número de observaciones. (_pista: `unique(datos_camaras$Species)`_). Remueva el campo en el que especie es igual a "". Las primeras 3 filas del cuadro de datos deben verse así:
+
 
 ```{r, echo = FALSE}
 
@@ -200,9 +204,11 @@ n_obs <- sapply(unique(datos_camaras$Species), function(x){
 sp_dat <- data.frame(spp = unique(datos_camaras$Species), n_obs)
 
 sp_dat <- sp_dat[sp_dat$spp != "", ]
+
+head(sp_dat, 3)
 ```
 
-6. Utilice bucles `sapply` para añadir el mínimo y máximo de la profundidad para cada una de las especies en el cuadro de datos creado en el ejercicio anterior (_pistas: 1) asegúrese que la columna de profundidad es numérica antes de calcular las profundidades; 2) `gsub(" m", "", )`; 3) `gsub(",", ".", )`; 4) `as.numeric()`_) 
+6. Utilice bucles `sapply` para añadir el mínimo y máximo de la profundidad para cada una de las especies en el cuadro de datos creado en el ejercicio anterior (_pistas: 1) asegúrese que la columna de profundidad es numérica antes de calcular las profundidades; 2) `gsub(" m", "", vector)`; 3) `gsub(",", ".", vector)`; 4) `as.numeric()`_). Las primeras 3 filas del cuadro de datos deben verse así:
 
 ```{r, echo = FALSE}
 
@@ -229,9 +235,11 @@ sp_dat$max_prof <- sapply(sp_dat$spp, function(x){
   return(max_prf)
 })
 
+head(sp_dat, 3)
+
 ```
 
-7. Calcule el rango de profundidad (i.e. la diferencia entre el mínimo y el máximo de la profundidad) para cada especie y añádalo como una columna al cuadro de datos creado en el ejercicio 5.
+7. Calcule el rango de profundidad (i.e. la diferencia entre el mínimo y el máximo de la profundidad) para cada especie y añádalo como una columna al cuadro de datos creado en el ejercicio 5. Las primeras 3 filas del cuadro de datos deben verse así:
 
 ```{r, echo = FALSE}
 
@@ -245,6 +253,8 @@ sp_dat$rango_prof <- sapply(sp_dat$spp, function(x){
 })
 
 sp_dat$rango_prof <- sp_dat$max_prof - sp_dat$min_prof
+
+head(sp_dat, 3)
 
 ```
 

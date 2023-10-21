@@ -337,46 +337,255 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>&nbsp;</p>
 <div class="alert alert-info">
 <ol type="1">
-<li>Haga un bucle <code>for</code> que una todos los datos contenidos en los archivos de texto en un solo data frame (debe llamarse ‘datos_camaras’) y añada una columna con el nombre del archivo de donde provienen los datos (debe llamarse ‘archivo’, <em>pistas: 1) añadir el nombre del archivo en una columna se hace en el cuerpo del bucle luego de leer el archivo; 2) recuerden usar <code>basename()</code></em>).</li>
+<li>Haga un bucle <code>for</code> que una todos los datos contenidos en los archivos de texto en un solo cuadro de datos (‘data frame’, debe llamarse ‘datos_camaras’) y añada una columna con el nombre del archivo de donde provienen los datos (debe llamarse ‘archivo’; <em>pistas: 1) añadir el nombre del archivo en una columna se hace en el cuerpo del bucle luego de leer el archivo; 2) recuerden usar <code>basename()</code></em>).</li>
 </ol>
 <div class="cell">
 
 </div>
 <ol start="2" type="1">
-<li>Haga un bucle <code>sapply</code> que devuelva el número de familias para cada archivo. El bucle debe trabajar sobre el data frame ‘datos_camaras’ creado en el ejercicio 1. El resultado debe ser guardado en un cuadro de datos (‘data frame’) que contenga las columnas ‘archivo’ y ‘n_familias’. (<em>pistas: 1) necesitan crear una función en la llamada del bucle; 2) el bucle debe ciclar sobre cada uno de los nombres de archivo; 3) deben crear un subconjunto de los datos para cada archivo a lo interno del bucle</em>)</li>
+<li>Haga un bucle <code>sapply</code> que devuelva el número de familias para cada archivo. El bucle debe usar los datos en el data frame ‘datos_camaras’ creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto). El resultado debe ser guardado en un cuadro de datos (‘data frame’) que contenga las columnas ‘archivo’ y ‘n_familias’. (<em>pistas: 1) necesitan crear una función en la llamada del bucle; 2) el bucle debe ciclar sobre cada uno de los nombres de archivo; 3) deben crear un subconjunto de los datos para cada archivo a lo interno del bucle</em>). Las primeras 3 filas del cuadro de datos deben verse así:</li>
 </ol>
 <div class="cell">
-
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 84%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">archivo</th>
+<th style="text-align: right;">n_familias</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2022-09-02_R3-LcamT3-RcamN4_Pel1_2021-09-24_MaxN.TXT</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-09-03_S6-LB13-RB12_PuntaMariaOeste_2022-03-24_MaxN.TXT</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-09-03_T4-LB19-RB18_PuntaMariaOeste_2022-03-24_MaxN.TXT</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <ol start="3" type="1">
-<li>Haga un bucle <code>sapply</code> que devuelva el número de géneros (columna ‘genus’) para cada archivo. El bucle debe trabajar sobre el data frame ‘datos_camaras’ creado en el ejercicio 1. El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2.</li>
+<li>Haga un bucle <code>sapply</code> que devuelva el número de géneros (columna ‘genus’) para cada archivo. El bucle debe usar los datos en el data frame ‘datos_camaras’ creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto). El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2. Las primeras 3 filas del cuadro de datos deben verse así:</li>
 </ol>
 <div class="cell">
-
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 74%">
+<col style="width: 13%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">archivo</th>
+<th style="text-align: right;">n_familias</th>
+<th style="text-align: right;">n_generos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2022-09-02_R3-LcamT3-RcamN4_Pel1_2021-09-24_MaxN.TXT</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-09-03_S6-LB13-RB12_PuntaMariaOeste_2022-03-24_MaxN.TXT</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-09-03_T4-LB19-RB18_PuntaMariaOeste_2022-03-24_MaxN.TXT</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <ol start="4" type="1">
-<li>Haga un bucle <code>sapply</code> que devuelva la fecha de creación del video para cada archivo. El bucle debe trabajar sobre el data frame ‘datos_camaras’ creado en el ejercicio 1. El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2.</li>
+<li>Haga un bucle <code>sapply</code> que devuelva la fecha de creación del video para cada archivo. El bucle debe usar los datos en el data frame ‘datos_camaras’ creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto). El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2. Las primeras 3 filas del cuadro de datos deben verse así:</li>
 </ol>
 <div class="cell">
-
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 69%">
+<col style="width: 12%">
+<col style="width: 11%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">archivo</th>
+<th style="text-align: right;">n_familias</th>
+<th style="text-align: right;">n_generos</th>
+<th style="text-align: right;">date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2022-09-02_R3-LcamT3-RcamN4_Pel1_2021-09-24_MaxN.TXT</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-09-03_S6-LB13-RB12_PuntaMariaOeste_2022-03-24_MaxN.TXT</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-09-03_T4-LB19-RB18_PuntaMariaOeste_2022-03-24_MaxN.TXT</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <ol start="5" type="1">
-<li>Haga un bucle <code>sapply</code> que calcule el número de veces que se observó cada especie. El bucle debe trabajar sobre el data frame ‘datos_camaras’ creado en el ejercicio 1 y el calculo debe ser la suma de la columna ‘MaxN’. Ponga los resultados en un cuadro de datos con columnas para especie y número de observaciones. (_pista: <code>unique(datos_camaras$Species)</code>). Remueva el campo en el que especie es igual a ““.</li>
+<li>Haga un bucle <code>sapply</code> que calcule el número de veces que se observó cada especie. El bucle debe trabajar sobre el data frame ‘datos_camaras’ creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto) y el cálculo debe ser la suma de la columna ‘MaxN’. Ponga los resultados en un cuadro de datos con columnas para especie y número de observaciones. (<em>pista: <code>unique(datos_camaras$Species)</code></em>). Remueva el campo en el que especie es igual a ““. Las primeras 3 filas del cuadro de datos deben verse así:</li>
 </ol>
 <div class="cell">
-
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">spp</th>
+<th style="text-align: right;">n_obs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">xanthopterus</td>
+<td style="text-align: left;">xanthopterus</td>
+<td style="text-align: right;">145</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">laticlavius</td>
+<td style="text-align: left;">laticlavius</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">polylepis</td>
+<td style="text-align: left;">polylepis</td>
+<td style="text-align: right;">26</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <ol start="6" type="1">
-<li>Utilice bucles <code>sapply</code> para añadir el mínimo y máximo de la profundidad para cada una de las especies en el cuadro de datos creado en el ejercicio anterior (<em>pistas: 1) asegúrese que la columna de profundidad es numérica antes de calcular las profundidades; 2) <code>gsub(" m", "", )</code>; 3) <code>gsub(",", ".", )</code>; 4) <code>as.numeric()</code></em>)</li>
+<li>Utilice bucles <code>sapply</code> para añadir el mínimo y máximo de la profundidad para cada una de las especies en el cuadro de datos creado en el ejercicio anterior (<em>pistas: 1) asegúrese que la columna de profundidad es numérica antes de calcular las profundidades; 2) <code>gsub(" m", "", vector)</code>; 3) <code>gsub(",", ".", vector)</code>; 4) <code>as.numeric()</code></em>). Las primeras 3 filas del cuadro de datos deben verse así:</li>
 </ol>
 <div class="cell">
-
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">spp</th>
+<th style="text-align: right;">n_obs</th>
+<th style="text-align: right;">min_prof</th>
+<th style="text-align: right;">max_prof</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">xanthopterus</td>
+<td style="text-align: left;">xanthopterus</td>
+<td style="text-align: right;">145</td>
+<td style="text-align: right;">6.4</td>
+<td style="text-align: right;">31.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">laticlavius</td>
+<td style="text-align: left;">laticlavius</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">9.6</td>
+<td style="text-align: right;">31.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">polylepis</td>
+<td style="text-align: left;">polylepis</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">9.6</td>
+<td style="text-align: right;">30.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <ol start="7" type="1">
-<li>Calcule el rango de profundidad (i.e.&nbsp;la diferencia entre el mínimo y el máximo de la profundidad) para cada especie y añádalo como una columna al cuadro de datos creado en el ejercicio 5.</li>
+<li>Calcule el rango de profundidad (i.e.&nbsp;la diferencia entre el mínimo y el máximo de la profundidad) para cada especie y añádalo como una columna al cuadro de datos creado en el ejercicio 5. Las primeras 3 filas del cuadro de datos deben verse así:</li>
 </ol>
 <div class="cell">
-
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">spp</th>
+<th style="text-align: right;">n_obs</th>
+<th style="text-align: right;">min_prof</th>
+<th style="text-align: right;">max_prof</th>
+<th style="text-align: right;">rango_prof</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">xanthopterus</td>
+<td style="text-align: left;">xanthopterus</td>
+<td style="text-align: right;">145</td>
+<td style="text-align: right;">6.4</td>
+<td style="text-align: right;">31.6</td>
+<td style="text-align: right;">25.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">laticlavius</td>
+<td style="text-align: left;">laticlavius</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">9.6</td>
+<td style="text-align: right;">31.6</td>
+<td style="text-align: right;">22.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">polylepis</td>
+<td style="text-align: left;">polylepis</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">9.6</td>
+<td style="text-align: right;">30.0</td>
+<td style="text-align: right;">20.4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <ol start="8" type="1">
 <li><p>Incluya el cuadro de datos generado en los ejercicios 5 a 7 como una tabla en su reporte usando la función <code>DT</code> del paquete <code>datatable</code>.</p></li>
