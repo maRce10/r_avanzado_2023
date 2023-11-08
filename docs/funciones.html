@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-99.9.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,11 +17,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -109,6 +80,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -118,7 +95,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar"
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
@@ -132,19 +110,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">R avanzado 2023</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
- <span class="menu-text"> </span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text"> </span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-manuales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -194,67 +173,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="dropdown-item" href="./tarea5.html">
  <span class="dropdown-text">Tarea 5</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./respuestas_tarea5.html">
+ <span class="dropdown-text">Solución Tarea 5</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./preparacion_curso.html">
- <span class="menu-text">Preparación para el curso</span></a>
+    <a class="nav-link" href="./preparacion_curso.html"> 
+<span class="menu-text">Preparación para el curso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN">
- <span class="menu-text">Compartir código</span></a>
+    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN"> 
+<span class="menu-text">Compartir código</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructor.html">
- <span class="menu-text">Instructor</span></a>
+    <a class="nav-link" href="./instructor.html"> 
+<span class="menu-text">Instructor</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https:/github.com/maRce10/R_avanzado_2023/"><i class="bi bi-github" role="img" aria-label="GitHub">
+  <li class="nav-item">
+    <a class="nav-link" href="https:/github.com/maRce10/R_avanzado_2023/"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text">https:/github.com/maRce10/R_avanzado_2023/</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Contenidos</h2>
    
   <ul class="collapse">
-  <li><a href="#funciones-en-r" id="toc-funciones-en-r" class="nav-link active" data-scroll-target="#funciones-en-r"><span class="toc-section-number">1</span>  Funciones en R</a></li>
-  <li><a href="#estructura-básica" id="toc-estructura-básica" class="nav-link" data-scroll-target="#estructura-básica"><span class="toc-section-number">2</span>  Estructura básica</a>
+  <li><a href="#funciones-en-r" id="toc-funciones-en-r" class="nav-link active" data-scroll-target="#funciones-en-r"><span class="header-section-number">1</span> Funciones en R</a></li>
+  <li><a href="#estructura-básica" id="toc-estructura-básica" class="nav-link" data-scroll-target="#estructura-básica"><span class="header-section-number">2</span> Estructura básica</a>
   <ul class="collapse">
-  <li><a href="#nombre" id="toc-nombre" class="nav-link" data-scroll-target="#nombre"><span class="toc-section-number">2.1</span>  Nombre</a></li>
-  <li><a href="#argumentos" id="toc-argumentos" class="nav-link" data-scroll-target="#argumentos"><span class="toc-section-number">2.2</span>  Argumentos</a></li>
-  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1"><span class="toc-section-number">2.3</span>  Ejercicio 1</a></li>
-  <li><a href="#cuerpo" id="toc-cuerpo" class="nav-link" data-scroll-target="#cuerpo"><span class="toc-section-number">2.4</span>  Cuerpo</a></li>
-  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2"><span class="toc-section-number">2.5</span>  Ejercicio 2</a></li>
+  <li><a href="#nombre" id="toc-nombre" class="nav-link" data-scroll-target="#nombre"><span class="header-section-number">2.1</span> Nombre</a></li>
+  <li><a href="#argumentos" id="toc-argumentos" class="nav-link" data-scroll-target="#argumentos"><span class="header-section-number">2.2</span> Argumentos</a></li>
+  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1"><span class="header-section-number">2.3</span> Ejercicio 1</a></li>
+  <li><a href="#cuerpo" id="toc-cuerpo" class="nav-link" data-scroll-target="#cuerpo"><span class="header-section-number">2.4</span> Cuerpo</a></li>
+  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2"><span class="header-section-number">2.5</span> Ejercicio 2</a></li>
   </ul></li>
-  <li><a href="#argumentos-lógicos" id="toc-argumentos-lógicos" class="nav-link" data-scroll-target="#argumentos-lógicos"><span class="toc-section-number">3</span>  Argumentos lógicos</a>
+  <li><a href="#argumentos-lógicos" id="toc-argumentos-lógicos" class="nav-link" data-scroll-target="#argumentos-lógicos"><span class="header-section-number">3</span> Argumentos lógicos</a>
   <ul class="collapse">
-  <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3"><span class="toc-section-number">3.1</span>  Ejercicio 3</a></li>
+  <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3"><span class="header-section-number">3.1</span> Ejercicio 3</a></li>
   </ul></li>
-  <li><a href="#ventajas-de-usar-funciones" id="toc-ventajas-de-usar-funciones" class="nav-link" data-scroll-target="#ventajas-de-usar-funciones"><span class="toc-section-number">4</span>  Ventajas de usar funciones</a>
+  <li><a href="#ventajas-de-usar-funciones" id="toc-ventajas-de-usar-funciones" class="nav-link" data-scroll-target="#ventajas-de-usar-funciones"><span class="header-section-number">4</span> Ventajas de usar funciones</a>
   <ul class="collapse">
-  <li><a href="#código-mas-limpio" id="toc-código-mas-limpio" class="nav-link" data-scroll-target="#código-mas-limpio"><span class="toc-section-number">4.1</span>  Código mas limpio</a></li>
-  <li><a href="#facil-de-correr-y-compartir" id="toc-facil-de-correr-y-compartir" class="nav-link" data-scroll-target="#facil-de-correr-y-compartir"><span class="toc-section-number">4.2</span>  Facil de correr y compartir</a></li>
-  <li><a href="#se-aplica-fácilmente-a-nuevos-objetos" id="toc-se-aplica-fácilmente-a-nuevos-objetos" class="nav-link" data-scroll-target="#se-aplica-fácilmente-a-nuevos-objetos"><span class="toc-section-number">4.3</span>  Se aplica fácilmente a nuevos objetos</a></li>
-  <li><a href="#otros-consejos" id="toc-otros-consejos" class="nav-link" data-scroll-target="#otros-consejos"><span class="toc-section-number">4.4</span>  Otros consejos</a></li>
-  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4"><span class="toc-section-number">4.5</span>  Ejercicio 4</a></li>
-  <li><a href="#lecturas-adicionales" id="toc-lecturas-adicionales" class="nav-link" data-scroll-target="#lecturas-adicionales"><span class="toc-section-number">4.6</span>  Lecturas adicionales</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="toc-section-number">4.7</span>  Referencias</a></li>
+  <li><a href="#código-mas-limpio" id="toc-código-mas-limpio" class="nav-link" data-scroll-target="#código-mas-limpio"><span class="header-section-number">4.1</span> Código mas limpio</a></li>
+  <li><a href="#facil-de-correr-y-compartir" id="toc-facil-de-correr-y-compartir" class="nav-link" data-scroll-target="#facil-de-correr-y-compartir"><span class="header-section-number">4.2</span> Facil de correr y compartir</a></li>
+  <li><a href="#se-aplica-fácilmente-a-nuevos-objetos" id="toc-se-aplica-fácilmente-a-nuevos-objetos" class="nav-link" data-scroll-target="#se-aplica-fácilmente-a-nuevos-objetos"><span class="header-section-number">4.3</span> Se aplica fácilmente a nuevos objetos</a></li>
+  <li><a href="#otros-consejos" id="toc-otros-consejos" class="nav-link" data-scroll-target="#otros-consejos"><span class="header-section-number">4.4</span> Otros consejos</a></li>
+  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4"><span class="header-section-number">4.5</span> Ejercicio 4</a></li>
+  <li><a href="#lecturas-adicionales" id="toc-lecturas-adicionales" class="nav-link" data-scroll-target="#lecturas-adicionales"><span class="header-section-number">4.6</span> Lecturas adicionales</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">4.7</span> Referencias</a></li>
   </ul></li>
   </ul>
 </nav>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -274,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">20 de octubre de 2023</p>
+      <p class="date">8 de noviembre de 2023</p>
     </div>
   </div>
   
@@ -282,7 +267,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
   
 
+
 </header>
+
 
 <style>
 body
@@ -290,9 +277,6 @@ body
 pre.numberSource code
   { counter-reset: none; }
 </style>
-<div class="cell">
-
-</div>
 <section id="objetivo-del-manual" class="level1 unnumbered unlisted alert alert-info">
 <h1 class="unnumbered unlisted">Objetivo del manual</h1>
 <ul>
@@ -318,9 +302,11 @@ pre.numberSource code
 <p>Todas las funciones son creadas iguales … mediante la función <code>function()</code> y siguen la misma estructura:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/funcion.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="./images/funcion.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
+</div>
 </figure>
 </div>
 </div>
@@ -337,7 +323,7 @@ pre.numberSource code
 <pre><code>function (x, na.rm = FALSE) 
 sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x), 
     na.rm = na.rm))
-&lt;bytecode: 0x5583dd962048&gt;
+&lt;bytecode: 0x55c07cb352c0&gt;
 &lt;environment: namespace:stats&gt;</code></pre>
 </div>
 </div>
@@ -457,9 +443,11 @@ $na.rm
 <h2 data-number="2.1" class="anchored" data-anchor-id="nombre"><span class="header-section-number">2.1</span> Nombre</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/nombre.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="./images/nombre.png" id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
+</div>
 </figure>
 </div>
 </div>
@@ -544,9 +532,11 @@ $na.rm
 <h2 data-number="2.2" class="anchored" data-anchor-id="argumentos"><span class="header-section-number">2.2</span> Argumentos</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/argumentos.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="./images/argumentos.png" id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
+</div>
 </figure>
 </div>
 </div>
@@ -583,7 +573,7 @@ $na.rm
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">f1</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-error">
-<pre><code>Error in f1(): el argumento "x" está ausente, sin valor por omisión</code></pre>
+<pre><code>Error in f1(): argumento "x" ausente, sem padrão</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -607,7 +597,7 @@ $na.rm
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-10-20 14:48:24.159 CST"</code></pre>
+<pre><code>[1] "2023-11-08 15:31:49.598 CST"</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -679,7 +669,7 @@ $na.rm
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">f2</span>(<span class="at">b =</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="at">a =</span> <span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-error">
-<pre><code>Error in f2(b = 1, 2, a = 3): el argumento 1 concuerda con multiples argumentos formales</code></pre>
+<pre><code>Error in f2(b = 1, 2, a = 3): argumento 1 corresponde a múltiplos argumentos formais</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -724,9 +714,11 @@ $na.rm
 <h2 data-number="2.4" class="anchored" data-anchor-id="cuerpo"><span class="header-section-number">2.4</span> Cuerpo</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/cuerpo.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="quarto-figure quarto-figure-center anchored" width="100%" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="./images/cuerpo.png" id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
+</div>
 </figure>
 </div>
 </div>
@@ -997,9 +989,6 @@ $na.rm
 <p>3.2 Agregue valores predeterminados a cada argumento</p>
 <p>3.3 Ejecute la función con uno de los argumentos con un número negativo. ¿Qué pasa? ¿Por qué?</p>
 <p>3.4 Agregue un argumento lógico que permita a los usuarios (si lo desean) convertir los argumentos de entrada a su valor absoluto (usando la función <code>abs()</code>). Agregue las modificaciones necesarias para que la función haga los cálculos con y sin valores absolutos.</p>
-<div class="cell">
-
-</div>
 </section>
 <hr>
 </section>
@@ -1206,30 +1195,33 @@ $na.rm
 <p><font size="4">Información de la sesión</font></p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.2.2 Patched (2022-11-10 r83330)
+<pre><code>R version 4.3.1 (2023-06-16)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 20.04.5 LTS
+Running under: Ubuntu 20.04.2 LTS
 
 Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
-LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+BLAS:   /usr/lib/x86_64-linux-gnu/atlas/libblas.so.3.10.3 
+LAPACK: /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3.10.3;  LAPACK version 3.9.0
 
 locale:
- [1] LC_CTYPE=es_ES.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=es_ES.UTF-8    
- [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=es_ES.UTF-8   
+ [1] LC_CTYPE=pt_BR.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=pt_BR.UTF-8    
+ [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=pt_BR.UTF-8   
  [7] LC_PAPER=es_CR.UTF-8       LC_NAME=C                 
  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
 [11] LC_MEASUREMENT=es_CR.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: America/Costa_Rica
+tzcode source: system (glibc)
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 loaded via a namespace (and not attached):
- [1] htmlwidgets_1.5.4 compiler_4.2.2    fastmap_1.1.1     cli_3.6.1        
- [5] tools_4.2.2       htmltools_0.5.6   rstudioapi_0.14   yaml_2.3.7       
- [9] rmarkdown_2.21    knitr_1.44        xfun_0.40         digest_0.6.33    
-[13] jsonlite_1.8.7    rlang_1.1.1       evaluate_0.22    </code></pre>
+ [1] htmlwidgets_1.6.2 compiler_4.3.1    fastmap_1.1.1     cli_3.6.1        
+ [5] tools_4.3.1       htmltools_0.5.7   rstudioapi_0.15.0 yaml_2.3.7       
+ [9] rmarkdown_2.25    knitr_1.45        jsonlite_1.8.7    xfun_0.41        
+[13] digest_0.6.33     rlang_1.1.2       evaluate_0.23    </code></pre>
 </div>
 </div>
 
@@ -1267,9 +1259,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1356,10 +1362,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1369,8 +1374,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1385,6 +1399,194 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1423,12 +1625,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp(/https:\/\/marce10\.github\.io\/R_avanzado_2023\//);
+      var filterRegex = new RegExp("https:\/\/marce10\.github\.io\/R_avanzado_2023\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1468,14 +1670,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-28"><a href="#cb113-28"></a><span class="in">```</span></span>
 <span id="cb113-29"><a href="#cb113-29"></a><span class="in">```{r,echo=FALSE,message=FALSE}</span></span>
 <span id="cb113-30"><a href="#cb113-30"></a></span>
-<span id="cb113-31"><a href="#cb113-31"></a><span class="fu">options</span>(<span class="st">"digits"</span> <span class="ot">=</span> <span class="dv">5</span>)</span>
-<span id="cb113-32"><a href="#cb113-32"></a><span class="fu">options</span>(<span class="st">"digits.secs"</span> <span class="ot">=</span> <span class="dv">3</span>)</span>
+<span id="cb113-31"><a href="#cb113-31"></a><span class="in">options("digits" = 5)</span></span>
+<span id="cb113-32"><a href="#cb113-32"></a><span class="in">options("digits.secs" = 3)</span></span>
 <span id="cb113-33"><a href="#cb113-33"></a></span>
-<span id="cb113-34"><a href="#cb113-34"></a><span class="co"># options to customize chunk outputs</span></span>
-<span id="cb113-35"><a href="#cb113-35"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
-<span id="cb113-36"><a href="#cb113-36"></a>  <span class="at">class.source =</span> <span class="st">"numberLines lineAnchors"</span>, <span class="co"># for code line numbers</span></span>
-<span id="cb113-37"><a href="#cb113-37"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
-<span id="cb113-38"><a href="#cb113-38"></a>)</span>
+<span id="cb113-34"><a href="#cb113-34"></a><span class="in"># options to customize chunk outputs</span></span>
+<span id="cb113-35"><a href="#cb113-35"></a><span class="in">knitr::opts_chunk$set(</span></span>
+<span id="cb113-36"><a href="#cb113-36"></a><span class="in">  class.source = "numberLines lineAnchors", # for code line numbers</span></span>
+<span id="cb113-37"><a href="#cb113-37"></a><span class="in">  message = FALSE</span></span>
+<span id="cb113-38"><a href="#cb113-38"></a><span class="in">)</span></span>
 <span id="cb113-39"><a href="#cb113-39"></a><span class="in">```</span></span>
 <span id="cb113-40"><a href="#cb113-40"></a></span>
 <span id="cb113-41"><a href="#cb113-41"></a>::: {.alert .alert-info}</span>
@@ -1510,10 +1712,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-70"><a href="#cb113-70"></a></span>
 <span id="cb113-71"><a href="#cb113-71"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
 <span id="cb113-72"><a href="#cb113-72"></a></span>
-<span id="cb113-73"><a href="#cb113-73"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/funcion.png"</span>)</span>
+<span id="cb113-73"><a href="#cb113-73"></a><span class="in">knitr::include_graphics("./images/funcion.png")</span></span>
 <span id="cb113-74"><a href="#cb113-74"></a><span class="in">```</span></span>
 <span id="cb113-75"><a href="#cb113-75"></a></span>
-<span id="cb113-76"><a href="#cb113-76"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"2"</span><span class="kw">&gt;</span><span class="sc">\*</span> Modificado de <span class="kw">&lt;i&gt;</span>Wickham et al. 2016<span class="kw">&lt;/i&gt;&lt;/font&gt;</span></span>
+<span id="cb113-76"><a href="#cb113-76"></a>&lt;font size="2"&gt;<span class="sc">\*</span> Modificado de &lt;i&gt;Wickham et al. 2016&lt;/i&gt;&lt;/font&gt;</span>
 <span id="cb113-77"><a href="#cb113-77"></a></span>
 <span id="cb113-78"><a href="#cb113-78"></a>&nbsp;</span>
 <span id="cb113-79"><a href="#cb113-79"></a></span>
@@ -1521,7 +1723,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-81"><a href="#cb113-81"></a></span>
 <span id="cb113-82"><a href="#cb113-82"></a><span class="in">```{r, eval = T}</span></span>
 <span id="cb113-83"><a href="#cb113-83"></a></span>
-<span id="cb113-84"><a href="#cb113-84"></a>sd</span>
+<span id="cb113-84"><a href="#cb113-84"></a><span class="in">sd</span></span>
 <span id="cb113-85"><a href="#cb113-85"></a><span class="in">```</span></span>
 <span id="cb113-86"><a href="#cb113-86"></a></span>
 <span id="cb113-87"><a href="#cb113-87"></a>&nbsp;</span>
@@ -1563,7 +1765,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-127"><a href="#cb113-127"></a></span>
 <span id="cb113-128"><a href="#cb113-128"></a><span class="in">```{r, eval = T}</span></span>
 <span id="cb113-129"><a href="#cb113-129"></a></span>
-<span id="cb113-130"><a href="#cb113-130"></a><span class="fu">class</span>(sd)</span>
+<span id="cb113-130"><a href="#cb113-130"></a><span class="in">class(sd)</span></span>
 <span id="cb113-131"><a href="#cb113-131"></a><span class="in">```</span></span>
 <span id="cb113-132"><a href="#cb113-132"></a></span>
 <span id="cb113-133"><a href="#cb113-133"></a>&nbsp;</span>
@@ -1590,7 +1792,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-156"><a href="#cb113-156"></a></span>
 <span id="cb113-157"><a href="#cb113-157"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
 <span id="cb113-158"><a href="#cb113-158"></a></span>
-<span id="cb113-159"><a href="#cb113-159"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/nombre.png"</span>)</span>
+<span id="cb113-159"><a href="#cb113-159"></a><span class="in">knitr::include_graphics("./images/nombre.png")</span></span>
 <span id="cb113-160"><a href="#cb113-160"></a><span class="in">```</span></span>
 <span id="cb113-161"><a href="#cb113-161"></a></span>
 <span id="cb113-162"><a href="#cb113-162"></a>Los nombres de las funciones tienen pocas restricciones. Siguen las mismas reglas que otros objetos en <span class="in">`R`</span>. Algunas recomendaciones/reglas:</span>
@@ -1652,7 +1854,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-224"><a href="#cb113-224"></a></span>
 <span id="cb113-225"><a href="#cb113-225"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
 <span id="cb113-226"><a href="#cb113-226"></a></span>
-<span id="cb113-227"><a href="#cb113-227"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/argumentos.png"</span>)</span>
+<span id="cb113-227"><a href="#cb113-227"></a><span class="in">knitr::include_graphics("./images/argumentos.png")</span></span>
 <span id="cb113-228"><a href="#cb113-228"></a><span class="in">```</span></span>
 <span id="cb113-229"><a href="#cb113-229"></a></span>
 <span id="cb113-230"><a href="#cb113-230"></a>&nbsp;</span>
@@ -1661,9 +1863,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-233"><a href="#cb113-233"></a></span>
 <span id="cb113-234"><a href="#cb113-234"></a><span class="in">```{r eval = T}</span></span>
 <span id="cb113-235"><a href="#cb113-235"></a></span>
-<span id="cb113-236"><a href="#cb113-236"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">y =</span> <span class="dv">2</span>) x <span class="sc">+</span> y</span>
+<span id="cb113-236"><a href="#cb113-236"></a><span class="in">f1 &lt;- function(x, y = 2) x + y</span></span>
 <span id="cb113-237"><a href="#cb113-237"></a></span>
-<span id="cb113-238"><a href="#cb113-238"></a><span class="fu">f1</span>(<span class="dv">1</span>)</span>
+<span id="cb113-238"><a href="#cb113-238"></a><span class="in">f1(1)</span></span>
 <span id="cb113-239"><a href="#cb113-239"></a><span class="in">```</span></span>
 <span id="cb113-240"><a href="#cb113-240"></a></span>
 <span id="cb113-241"><a href="#cb113-241"></a>&nbsp;</span>
@@ -1672,7 +1874,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-244"><a href="#cb113-244"></a></span>
 <span id="cb113-245"><a href="#cb113-245"></a><span class="in">```{r eval = T}</span></span>
 <span id="cb113-246"><a href="#cb113-246"></a></span>
-<span id="cb113-247"><a href="#cb113-247"></a><span class="fu">f1</span>(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb113-247"><a href="#cb113-247"></a><span class="in">f1(3, 4)</span></span>
 <span id="cb113-248"><a href="#cb113-248"></a><span class="in">```</span></span>
 <span id="cb113-249"><a href="#cb113-249"></a></span>
 <span id="cb113-250"><a href="#cb113-250"></a>&nbsp;</span>
@@ -1681,7 +1883,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-253"><a href="#cb113-253"></a></span>
 <span id="cb113-254"><a href="#cb113-254"></a><span class="in">```{r error = T}</span></span>
 <span id="cb113-255"><a href="#cb113-255"></a></span>
-<span id="cb113-256"><a href="#cb113-256"></a><span class="fu">f1</span>()</span>
+<span id="cb113-256"><a href="#cb113-256"></a><span class="in">f1()</span></span>
 <span id="cb113-257"><a href="#cb113-257"></a><span class="in">```</span></span>
 <span id="cb113-258"><a href="#cb113-258"></a></span>
 <span id="cb113-259"><a href="#cb113-259"></a>&nbsp;</span>
@@ -1690,9 +1892,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-262"><a href="#cb113-262"></a></span>
 <span id="cb113-263"><a href="#cb113-263"></a><span class="in">```{r eval = T}</span></span>
 <span id="cb113-264"><a href="#cb113-264"></a></span>
-<span id="cb113-265"><a href="#cb113-265"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="sc">-</span><span class="dv">2</span>, <span class="at">y =</span> <span class="dv">2</span>) x <span class="sc">+</span> y</span>
+<span id="cb113-265"><a href="#cb113-265"></a><span class="in">f1 &lt;- function(x = -2, y = 2) x + y</span></span>
 <span id="cb113-266"><a href="#cb113-266"></a></span>
-<span id="cb113-267"><a href="#cb113-267"></a><span class="fu">f1</span>()</span>
+<span id="cb113-267"><a href="#cb113-267"></a><span class="in">f1()</span></span>
 <span id="cb113-268"><a href="#cb113-268"></a><span class="in">```</span></span>
 <span id="cb113-269"><a href="#cb113-269"></a></span>
 <span id="cb113-270"><a href="#cb113-270"></a>&nbsp;</span>
@@ -1701,7 +1903,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-273"><a href="#cb113-273"></a></span>
 <span id="cb113-274"><a href="#cb113-274"></a><span class="in">```{r eval = T}</span></span>
 <span id="cb113-275"><a href="#cb113-275"></a></span>
-<span id="cb113-276"><a href="#cb113-276"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb113-276"><a href="#cb113-276"></a><span class="in">Sys.time()</span></span>
 <span id="cb113-277"><a href="#cb113-277"></a><span class="in">```</span></span>
 <span id="cb113-278"><a href="#cb113-278"></a></span>
 <span id="cb113-279"><a href="#cb113-279"></a>&nbsp;</span>
@@ -1735,7 +1937,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-309"><a href="#cb113-309"></a></span>
 <span id="cb113-310"><a href="#cb113-310"></a><span class="in">```{r, error=T}</span></span>
 <span id="cb113-311"><a href="#cb113-311"></a></span>
-<span id="cb113-312"><a href="#cb113-312"></a><span class="fu">f2</span>(<span class="at">b =</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="at">a =</span> <span class="dv">3</span>)</span>
+<span id="cb113-312"><a href="#cb113-312"></a><span class="in">f2(b = 1, 2, a = 3)</span></span>
 <span id="cb113-313"><a href="#cb113-313"></a><span class="in">```</span></span>
 <span id="cb113-314"><a href="#cb113-314"></a></span>
 <span id="cb113-315"><a href="#cb113-315"></a>&nbsp;</span>
@@ -1784,7 +1986,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-360"><a href="#cb113-360"></a></span>
 <span id="cb113-361"><a href="#cb113-361"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align='center'}</span></span>
 <span id="cb113-362"><a href="#cb113-362"></a></span>
-<span id="cb113-363"><a href="#cb113-363"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/cuerpo.png"</span>)</span>
+<span id="cb113-363"><a href="#cb113-363"></a><span class="in">knitr::include_graphics("./images/cuerpo.png")</span></span>
 <span id="cb113-364"><a href="#cb113-364"></a><span class="in">```</span></span>
 <span id="cb113-365"><a href="#cb113-365"></a></span>
 <span id="cb113-366"><a href="#cb113-366"></a>&nbsp;</span>
@@ -2007,16 +2209,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-599"><a href="#cb113-599"></a>3.4 Agregue un argumento lógico que permita a los usuarios (si lo desean) convertir los argumentos de entrada a su valor absoluto (usando la función <span class="in">`abs()`</span>). Agregue las modificaciones necesarias para que la función haga los cálculos con y sin valores absolutos.</span>
 <span id="cb113-600"><a href="#cb113-600"></a></span>
 <span id="cb113-601"><a href="#cb113-601"></a><span class="in">```{r, eval = F, echo = F}</span></span>
-<span id="cb113-602"><a href="#cb113-602"></a><span class="co"># a)</span></span>
-<span id="cb113-603"><a href="#cb113-603"></a>fcn_1 <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b, c) <span class="fu">log</span>(a <span class="sc">*</span> b <span class="sc">*</span> c)</span>
+<span id="cb113-602"><a href="#cb113-602"></a><span class="in"># a)</span></span>
+<span id="cb113-603"><a href="#cb113-603"></a><span class="in">fcn_1 &lt;- function(a, b, c) log(a * b * c)</span></span>
 <span id="cb113-604"><a href="#cb113-604"></a></span>
-<span id="cb113-605"><a href="#cb113-605"></a><span class="fu">fcn_1</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">12</span>)</span>
+<span id="cb113-605"><a href="#cb113-605"></a><span class="in">fcn_1(1, 4, 12)</span></span>
 <span id="cb113-606"><a href="#cb113-606"></a></span>
-<span id="cb113-607"><a href="#cb113-607"></a><span class="co"># b)</span></span>
-<span id="cb113-608"><a href="#cb113-608"></a>fcn_1 <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>, <span class="at">c =</span> <span class="dv">3</span>) <span class="fu">log</span>(a <span class="sc">*</span> b <span class="sc">*</span> c)</span>
+<span id="cb113-607"><a href="#cb113-607"></a><span class="in"># b)</span></span>
+<span id="cb113-608"><a href="#cb113-608"></a><span class="in">fcn_1 &lt;- function(a = 1, b = 2, c = 3) log(a * b * c)</span></span>
 <span id="cb113-609"><a href="#cb113-609"></a></span>
-<span id="cb113-610"><a href="#cb113-610"></a><span class="co"># c)</span></span>
-<span id="cb113-611"><a href="#cb113-611"></a><span class="fu">fcn_1</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb113-610"><a href="#cb113-610"></a><span class="in"># c)</span></span>
+<span id="cb113-611"><a href="#cb113-611"></a><span class="in">fcn_1(1, 2, -1)</span></span>
 <span id="cb113-612"><a href="#cb113-612"></a><span class="in">```</span></span>
 <span id="cb113-613"><a href="#cb113-613"></a>:::</span>
 <span id="cb113-614"><a href="#cb113-614"></a></span>
@@ -2084,19 +2286,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-682"><a href="#cb113-682"></a></span>
 <span id="cb113-683"><a href="#cb113-683"></a><span class="in">```{r, eval = F}</span></span>
 <span id="cb113-684"><a href="#cb113-684"></a></span>
-<span id="cb113-685"><a href="#cb113-685"></a><span class="co"># removamosla del ambiente</span></span>
-<span id="cb113-686"><a href="#cb113-686"></a><span class="fu">rm</span>(fnctn_X)</span>
+<span id="cb113-685"><a href="#cb113-685"></a><span class="in"># removamosla del ambiente</span></span>
+<span id="cb113-686"><a href="#cb113-686"></a><span class="in">rm(fnctn_X)</span></span>
 <span id="cb113-687"><a href="#cb113-687"></a></span>
-<span id="cb113-688"><a href="#cb113-688"></a><span class="co"># cargar funcion</span></span>
-<span id="cb113-689"><a href="#cb113-689"></a><span class="fu">source</span>(<span class="st">"function_X.R"</span>)</span>
+<span id="cb113-688"><a href="#cb113-688"></a><span class="in"># cargar funcion</span></span>
+<span id="cb113-689"><a href="#cb113-689"></a><span class="in">source("function_X.R")</span></span>
 <span id="cb113-690"><a href="#cb113-690"></a></span>
-<span id="cb113-691"><a href="#cb113-691"></a><span class="co"># run it</span></span>
-<span id="cb113-692"><a href="#cb113-692"></a><span class="fu">fnctn_X</span>(<span class="at">sq_mt =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)), <span class="at">vctr =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb113-691"><a href="#cb113-691"></a><span class="in"># run it</span></span>
+<span id="cb113-692"><a href="#cb113-692"></a><span class="in">fnctn_X(sq_mt = cbind(c(1, 2), c(3, 4)), vctr = c(2, 3))</span></span>
 <span id="cb113-693"><a href="#cb113-693"></a><span class="in">```</span></span>
 <span id="cb113-694"><a href="#cb113-694"></a></span>
 <span id="cb113-695"><a href="#cb113-695"></a><span class="in">```{r, eval=T, echo=F}</span></span>
 <span id="cb113-696"><a href="#cb113-696"></a></span>
-<span id="cb113-697"><a href="#cb113-697"></a><span class="fu">fnctn_X</span>(<span class="at">sq_mt =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)), <span class="at">vctr =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb113-697"><a href="#cb113-697"></a><span class="in">fnctn_X(sq_mt = cbind(c(1, 2), c(3, 4)), vctr = c(2, 3))</span></span>
 <span id="cb113-698"><a href="#cb113-698"></a><span class="in">```</span></span>
 <span id="cb113-699"><a href="#cb113-699"></a></span>
 <span id="cb113-700"><a href="#cb113-700"></a>&nbsp;</span>
@@ -2105,23 +2307,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-703"><a href="#cb113-703"></a></span>
 <span id="cb113-704"><a href="#cb113-704"></a><span class="in">```{r, error=T}</span></span>
 <span id="cb113-705"><a href="#cb113-705"></a></span>
-<span id="cb113-706"><a href="#cb113-706"></a><span class="co"># remover objetos</span></span>
-<span id="cb113-707"><a href="#cb113-707"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb113-706"><a href="#cb113-706"></a><span class="in"># remover objetos</span></span>
+<span id="cb113-707"><a href="#cb113-707"></a><span class="in">rm(list = ls())</span></span>
 <span id="cb113-708"><a href="#cb113-708"></a></span>
-<span id="cb113-709"><a href="#cb113-709"></a><span class="co"># revisar si existe en ambiente actual</span></span>
-<span id="cb113-710"><a href="#cb113-710"></a><span class="fu">exists</span>(<span class="st">"fnctn_X"</span>)</span>
+<span id="cb113-709"><a href="#cb113-709"></a><span class="in"># revisar si existe en ambiente actual</span></span>
+<span id="cb113-710"><a href="#cb113-710"></a><span class="in">exists("fnctn_X")</span></span>
 <span id="cb113-711"><a href="#cb113-711"></a></span>
-<span id="cb113-712"><a href="#cb113-712"></a><span class="co"># cargar desde el internet</span></span>
-<span id="cb113-713"><a href="#cb113-713"></a><span class="fu">source</span>(</span>
-<span id="cb113-714"><a href="#cb113-714"></a>  <span class="fu">paste0</span>(</span>
-<span id="cb113-715"><a href="#cb113-715"></a>    <span class="st">"https://raw.githubusercontent.com/maRce10/"</span>,</span>
-<span id="cb113-716"><a href="#cb113-716"></a>    <span class="st">"r_avanzado_2023/master/data/function_x.r"</span></span>
-<span id="cb113-717"><a href="#cb113-717"></a>  )</span>
-<span id="cb113-718"><a href="#cb113-718"></a>)</span>
+<span id="cb113-712"><a href="#cb113-712"></a><span class="in"># cargar desde el internet</span></span>
+<span id="cb113-713"><a href="#cb113-713"></a><span class="in">source(</span></span>
+<span id="cb113-714"><a href="#cb113-714"></a><span class="in">  paste0(</span></span>
+<span id="cb113-715"><a href="#cb113-715"></a><span class="in">    "https://raw.githubusercontent.com/maRce10/",</span></span>
+<span id="cb113-716"><a href="#cb113-716"></a><span class="in">    "r_avanzado_2023/master/data/function_x.r"</span></span>
+<span id="cb113-717"><a href="#cb113-717"></a><span class="in">  )</span></span>
+<span id="cb113-718"><a href="#cb113-718"></a><span class="in">)</span></span>
 <span id="cb113-719"><a href="#cb113-719"></a></span>
 <span id="cb113-720"><a href="#cb113-720"></a></span>
-<span id="cb113-721"><a href="#cb113-721"></a><span class="co"># revisar si existe en ambiente actual</span></span>
-<span id="cb113-722"><a href="#cb113-722"></a><span class="fu">exists</span>(<span class="st">"fnctn_X"</span>)</span>
+<span id="cb113-721"><a href="#cb113-721"></a><span class="in"># revisar si existe en ambiente actual</span></span>
+<span id="cb113-722"><a href="#cb113-722"></a><span class="in">exists("fnctn_X")</span></span>
 <span id="cb113-723"><a href="#cb113-723"></a><span class="in">```</span></span>
 <span id="cb113-724"><a href="#cb113-724"></a></span>
 <span id="cb113-725"><a href="#cb113-725"></a>&nbsp;</span>
@@ -2173,11 +2375,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-771"><a href="#cb113-771"></a></span>
 <span id="cb113-772"><a href="#cb113-772"></a><span class="fu">## Lecturas adicionales</span></span>
 <span id="cb113-773"><a href="#cb113-773"></a></span>
-<span id="cb113-774"><a href="#cb113-774"></a><span class="ss">-   </span><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"http://nicercode.github.io/intro/writing-functions.html"</span><span class="kw">&gt;</span> Introduction to R guide to writing functions with information for a total beginner<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb113-774"><a href="#cb113-774"></a><span class="ss">-   </span>&lt;a href="http://nicercode.github.io/intro/writing-functions.html"&gt; Introduction to R guide to writing functions with information for a total beginner&lt;/a&gt;</span>
 <span id="cb113-775"><a href="#cb113-775"></a></span>
-<span id="cb113-776"><a href="#cb113-776"></a><span class="ss">-   </span><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://twitter.com/hadleywickham"</span><span class="kw">&gt;</span>Information on functions for intermediate and advanced users (Hadley Wickham)<span class="kw">&lt;/a&gt;</span>.</span>
+<span id="cb113-776"><a href="#cb113-776"></a><span class="ss">-   </span>&lt;a href="https://twitter.com/hadleywickham"&gt;Information on functions for intermediate and advanced users (Hadley Wickham)&lt;/a&gt;.</span>
 <span id="cb113-777"><a href="#cb113-777"></a></span>
-<span id="cb113-778"><a href="#cb113-778"></a><span class="ss">-   </span><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"http://cran.r-project.org/doc/manuals/R-intro.html#Writing-your-own-R-intro.html#Writing-your-own-functions"</span><span class="kw">&gt;</span>The official R intro material on writing your own functions<span class="kw">&lt;/a&gt;</span> (ir a "Writing your own function")</span>
+<span id="cb113-778"><a href="#cb113-778"></a><span class="ss">-   </span>&lt;a href="http://cran.r-project.org/doc/manuals/R-intro.html#Writing-your-own-R-intro.html#Writing-your-own-functions"&gt;The official R intro material on writing your own functions&lt;/a&gt; (ir a "Writing your own function")</span>
 <span id="cb113-779"><a href="#cb113-779"></a></span>
 <span id="cb113-780"><a href="#cb113-780"></a>&nbsp;</span>
 <span id="cb113-781"><a href="#cb113-781"></a></span>
@@ -2189,20 +2391,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb113-787"><a href="#cb113-787"></a></span>
 <span id="cb113-788"><a href="#cb113-788"></a>------------------------------------------------------------------------</span>
 <span id="cb113-789"><a href="#cb113-789"></a></span>
-<span id="cb113-790"><a href="#cb113-790"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"4"</span><span class="kw">&gt;</span>Información de la sesión<span class="kw">&lt;/font&gt;</span></span>
+<span id="cb113-790"><a href="#cb113-790"></a>&lt;font size="4"&gt;Información de la sesión&lt;/font&gt;</span>
 <span id="cb113-791"><a href="#cb113-791"></a></span>
 <span id="cb113-792"><a href="#cb113-792"></a><span class="in">```{r session info, echo=F}</span></span>
 <span id="cb113-793"><a href="#cb113-793"></a></span>
-<span id="cb113-794"><a href="#cb113-794"></a><span class="fu">sessionInfo</span>()</span>
+<span id="cb113-794"><a href="#cb113-794"></a><span class="in">sessionInfo()</span></span>
 <span id="cb113-795"><a href="#cb113-795"></a><span class="in">```</span></span>
 </code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
+
 
 
 

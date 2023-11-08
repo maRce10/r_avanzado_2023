@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-99.9.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,11 +17,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -109,6 +80,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -118,7 +95,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar"
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
@@ -132,19 +110,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">R avanzado 2023</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
- <span class="menu-text"> </span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text"> </span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-manuales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -194,58 +173,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="dropdown-item" href="./tarea5.html">
  <span class="dropdown-text">Tarea 5</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./respuestas_tarea5.html">
+ <span class="dropdown-text">Solución Tarea 5</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./preparacion_curso.html">
- <span class="menu-text">Preparación para el curso</span></a>
+    <a class="nav-link" href="./preparacion_curso.html"> 
+<span class="menu-text">Preparación para el curso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN">
- <span class="menu-text">Compartir código</span></a>
+    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN"> 
+<span class="menu-text">Compartir código</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructor.html">
- <span class="menu-text">Instructor</span></a>
+    <a class="nav-link" href="./instructor.html"> 
+<span class="menu-text">Instructor</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https:/github.com/maRce10/R_avanzado_2023/"><i class="bi bi-github" role="img" aria-label="GitHub">
+  <li class="nav-item">
+    <a class="nav-link" href="https:/github.com/maRce10/R_avanzado_2023/"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text">https:/github.com/maRce10/R_avanzado_2023/</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Contenidos</h2>
    
   <ul class="collapse">
-  <li><a href="#bucles-loops" id="toc-bucles-loops" class="nav-link active" data-scroll-target="#bucles-loops"><span class="toc-section-number">1</span>  Bucles (loops)</a></li>
-  <li><a href="#bucles-for" id="toc-bucles-for" class="nav-link" data-scroll-target="#bucles-for"><span class="toc-section-number">2</span>  Bucles ‘for’</a>
+  <li><a href="#bucles-loops" id="toc-bucles-loops" class="nav-link active" data-scroll-target="#bucles-loops"><span class="header-section-number">1</span> Bucles (loops)</a></li>
+  <li><a href="#bucles-for" id="toc-bucles-for" class="nav-link" data-scroll-target="#bucles-for"><span class="header-section-number">2</span> Bucles ‘for’</a>
   <ul class="collapse">
-  <li><a href="#aplicación-al-manejo-de-datos" id="toc-aplicación-al-manejo-de-datos" class="nav-link" data-scroll-target="#aplicación-al-manejo-de-datos"><span class="toc-section-number">2.1</span>  Aplicación al manejo de datos</a></li>
+  <li><a href="#aplicación-al-manejo-de-datos" id="toc-aplicación-al-manejo-de-datos" class="nav-link" data-scroll-target="#aplicación-al-manejo-de-datos"><span class="header-section-number">2.1</span> Aplicación al manejo de datos</a></li>
   </ul></li>
-  <li><a href="#bucles-xapply" id="toc-bucles-xapply" class="nav-link" data-scroll-target="#bucles-xapply"><span class="toc-section-number">3</span>  Bucles ‘(X)apply’</a>
+  <li><a href="#bucles-xapply" id="toc-bucles-xapply" class="nav-link" data-scroll-target="#bucles-xapply"><span class="header-section-number">3</span> Bucles ‘(X)apply’</a>
   <ul class="collapse">
-  <li><a href="#bucles-replicate" id="toc-bucles-replicate" class="nav-link" data-scroll-target="#bucles-replicate"><span class="toc-section-number">3.1</span>  bucles <code>replicate</code></a></li>
+  <li><a href="#bucles-replicate" id="toc-bucles-replicate" class="nav-link" data-scroll-target="#bucles-replicate"><span class="header-section-number">3.1</span> bucles <code>replicate</code></a></li>
   </ul></li>
-  <li><a href="#bucles-repeat" id="toc-bucles-repeat" class="nav-link" data-scroll-target="#bucles-repeat"><span class="toc-section-number">4</span>  Bucles ‘repeat’</a></li>
-  <li><a href="#bucles-while" id="toc-bucles-while" class="nav-link" data-scroll-target="#bucles-while"><span class="toc-section-number">5</span>  Bucles ‘While’</a>
+  <li><a href="#bucles-repeat" id="toc-bucles-repeat" class="nav-link" data-scroll-target="#bucles-repeat"><span class="header-section-number">4</span> Bucles ‘repeat’</a></li>
+  <li><a href="#bucles-while" id="toc-bucles-while" class="nav-link" data-scroll-target="#bucles-while"><span class="header-section-number">5</span> Bucles ‘While’</a>
   <ul class="collapse">
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="toc-section-number">5.1</span>  Referencias</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">5.1</span> Referencias</a></li>
   </ul></li>
   </ul>
 </nav>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -265,7 +250,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">20 de octubre de 2023</p>
+      <p class="date">8 de noviembre de 2023</p>
     </div>
   </div>
   
@@ -273,7 +258,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
   
 
+
 </header>
+
 
 <style>
 body
@@ -281,9 +268,6 @@ body
 pre.numberSource code
   { counter-reset: none; }
 </style>
-<div class="cell">
-
-</div>
 <section id="objetivos-del-manual" class="level1 unnumbered unlisted alert alert-info">
 <h1 class="unnumbered unlisted">Objetivos del manual</h1>
 <ul>
@@ -324,9 +308,6 @@ pre.numberSource code
 <span id="cb1-25"><a href="#cb1-25"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell">
-
-</div>
 <p>&nbsp;</p>
 <p>También pueden bajar el archivo directamente de <a href="https://github.com/maRce10/ucr_r_avanzado/raw/master/additional_files/datos_camara_submarina.zip">este enlance</a>. Recuerde extraer los archivos y hacer el vector con los nombres de los archivos (correr lineas de la 9 a la 13).</p>
 <p>Si todo salió bien el vector “archivos_txt” deberia tener 19 elementos:</p>
@@ -358,9 +339,11 @@ pre.numberSource code
 </ol>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/loops2_esp.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="70%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="./images/loops2_esp.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid quarto-figure-center figure-img" style="width:70.0%">
+</div>
 </figure>
 </div>
 </div>
@@ -373,9 +356,11 @@ pre.numberSource code
 </ol>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/loops1_esp.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="70%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="./images/loops1_esp.png" id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="img-fluid quarto-figure-center figure-img" style="width:70.0%">
+</div>
 </figure>
 </div>
 </div>
@@ -388,9 +373,11 @@ pre.numberSource code
 <p>Por mucho, <code>for</code> es el bucle más popular. Se caracteriza por que el número de iteraciones se puede determinar de antemano y las iteraciones pueden tomar en cuenta resultados de iteraciones anteriores:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/for_esp.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="40%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="./images/for_esp.png" id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="img-fluid quarto-figure-center figure-img" style="width:40.0%">
+</div>
 </figure>
 </div>
 </div>
@@ -529,9 +516,11 @@ pre.numberSource code
 <p>Usaremos los datos de ejemplo que bajamos al inicio del manual para demostrar la utilidad del los bucles en el manejo de datos. Estos datos muestran la salida de un programa de identificación automática de especies marinas en videos pasivos tomados en la columna de agua. Para cada video analizado el programa genera un archivo de texto (.TXT) con una fila para cada especie detectada mas una serie de metadatos asociados a la detección. Los datos se ven así:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/datos.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="./images/datos.png" id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="img-fluid quarto-figure-center figure-img" style="width:100.0%">
+</div>
 </figure>
 </div>
 </div>
@@ -552,7 +541,7 @@ pre.numberSource code
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped small">
 <colgroup>
 <col style="width: 17%">
 <col style="width: 5%">
@@ -675,7 +664,7 @@ pre.numberSource code
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;">archivo</th>
@@ -726,9 +715,6 @@ pre.numberSource code
 </div>
 </div>
 <p>1.1 Haga un bucle <code>for</code> que devuelva el número de familias para cada archivo</p>
-<div class="cell">
-
-</div>
 <p>&nbsp;</p>
 <p>1.2 Cree un cuadro de datos (data frame) que contenga dos columnas, una para el nombre del archivo y otra para el número de familias</p>
 <div class="cell">
@@ -741,14 +727,8 @@ pre.numberSource code
 </div>
 <p>&nbsp;</p>
 <p>1.3 Añada una columna al cuadro de datos creado en el ejercicio anterior indicando la fecha de creación del video (esta información se encuentra en la columna ‘Date’ de cada archivo de texto). Note que cada archivo contiene solamente una fecha. Debe usar un bucle <code>for</code> para extraer esta información de los archivos.</p>
-<div class="cell">
-
-</div>
 <p>&nbsp;</p>
 <p>1.4 Añada una columna al cuadro de datos creado en el ejercicio 1.2 (y modificado en 1.3) indicando la profundidad a la que se grabó el video. Debe usar un bucle <code>for</code> para extraer esta información de los archivos.</p>
-<div class="cell">
-
-</div>
 <p>&nbsp;</p>
 <p>Puede usar el siguiente código para convertir profundidad a un vector numérico:</p>
 <div class="cell">
@@ -763,9 +743,6 @@ pre.numberSource code
 <p>1.5 ¿Cuál es la correlación entre el número de especies observadas (que es igual al número de filas) y la profundidad? (pista: <code>cor.test()</code>)</p>
 <p>&nbsp;</p>
 <p>1.6 ¿Cuál es la correlación entre el número de familias y la profundidad?</p>
-<div class="cell">
-
-</div>
 <p>&nbsp;</p>
 </div>
 <p>El bucle <code>for</code> también puede ser usado para juntar todas los datos de los archivos de texto en un solo cuadro de datos. Esto lo podemos hacer “rellenando” un cuadro de datos vacío, de forma análoga a como rellenamos un vector vació anteriormente:</p>
@@ -813,9 +790,11 @@ pre.numberSource code
 <p>Sin embargo, las más utilizadas son <code>apply</code>,<code>sapply</code>, <code>lapply</code> y<code>tapply</code>. Todos siguen la misma lógica:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/xapply_esp.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="40%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="./images/xapply_esp.png" id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="img-fluid quarto-figure-center figure-img" style="width:40.0%">
+</div>
 </figure>
 </div>
 </div>
@@ -1007,17 +986,17 @@ pre.numberSource code
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">expr =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>           [,1]      [,2]     [,3]
- [1,]  0.504412 -0.486815 -1.07887
- [2,] -1.115693  2.649378 -2.51495
- [3,] -0.202563  0.633742 -0.59814
- [4,] -0.468380 -0.634849  1.99056
- [5,] -1.100057  0.358236  0.36077
- [6,] -2.009318 -0.950220  0.93598
- [7,] -0.605788 -0.019031 -0.72988
- [8,]  1.376242 -0.185503 -2.10114
- [9,] -0.286896  0.181362  1.13725
-[10,]  0.035647  0.266845 -0.88342</code></pre>
+<pre><code>           [,1]       [,2]     [,3]
+ [1,] -0.587166 -0.3872521  1.40745
+ [2,]  1.068662  0.5759297 -2.00978
+ [3,]  0.578014 -0.6420343 -1.97223
+ [4,]  0.424685  0.2647723 -0.64271
+ [5,]  1.286697 -1.6176140  0.51321
+ [6,] -0.464790  0.0076626 -1.57910
+ [7,] -0.535635 -0.2015218 -0.37318
+ [8,] -1.123075 -0.7533049  0.13910
+ [9,]  0.034182 -0.2359349  1.15282
+[10,]  1.559899  0.3330638  0.55026</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -1043,9 +1022,11 @@ pre.numberSource code
 <p>Los bucles <code>repeat</code> deben cumplir una condición para detenerse. Típicamente el bucle lleva a cabo la acción al menos una vez, independientemente de la evaluación de la condición:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/repeat_esp.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="40%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="./images/repeat_esp.png" id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="img-fluid quarto-figure-center figure-img" style="width:40.0%">
+</div>
 </figure>
 </div>
 </div>
@@ -1077,7 +1058,7 @@ pre.numberSource code
 <span id="cb44-21"><a href="#cb44-21"></a><span class="fu">head</span>(cc_vector)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  0.227366 -0.044016  0.408537  0.068268  0.186869  0.046265</code></pre>
+<pre><code>[1] 0.041745 0.039751 0.112336 0.350076 0.132398 0.079224</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -1096,7 +1077,13 @@ pre.numberSource code
 <span id="cb46-9"><a href="#cb46-9"></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">25</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="bucles_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid" width="672"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-7" class="quarto-figure quarto-figure-center anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="bucles_files/figure-html/unnamed-chunk-38-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-7" class="img-fluid figure-img" width="672">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <p>La condición determina si el ciclo debe detenerse.</p>
@@ -1109,9 +1096,11 @@ pre.numberSource code
 <p>Los bucles <code>while</code> aplican una acción en una secuencia de elementos hasta que se cumpla una condición. Son muy parecidos a los bucles <code>repeat</code>. La condición puede evaluar un resultado del propio bucle o una entrada externa:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/while_esp.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="quarto-figure quarto-figure-center anchored" data-fig-align="center" width="40%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="./images/while_esp.png" id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="img-fluid quarto-figure-center figure-img" style="width:40.0%">
+</div>
 </figure>
 </div>
 </div>
@@ -1179,7 +1168,13 @@ pre.numberSource code
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="bucles_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid" width="672"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="quarto-figure quarto-figure-center anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="bucles_files/figure-html/unnamed-chunk-43-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="img-fluid figure-img" width="672">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <hr>
@@ -1201,38 +1196,41 @@ pre.numberSource code
 <p><font size="5">Session information</font></p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.2.2 Patched (2022-11-10 r83330)
+<pre><code>R version 4.3.1 (2023-06-16)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 20.04.5 LTS
+Running under: Ubuntu 20.04.2 LTS
 
 Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
-LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+BLAS:   /usr/lib/x86_64-linux-gnu/atlas/libblas.so.3.10.3 
+LAPACK: /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3.10.3;  LAPACK version 3.9.0
 
 locale:
- [1] LC_CTYPE=es_ES.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=es_ES.UTF-8    
- [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=es_ES.UTF-8   
+ [1] LC_CTYPE=pt_BR.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=pt_BR.UTF-8    
+ [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=pt_BR.UTF-8   
  [7] LC_PAPER=es_CR.UTF-8       LC_NAME=C                 
  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
 [11] LC_MEASUREMENT=es_CR.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: America/Costa_Rica
+tzcode source: system (glibc)
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] RColorBrewer_1.1-3 ggplot2_3.4.3     
+[1] RColorBrewer_1.1-3 ggplot2_3.4.4     
 
 loaded via a namespace (and not attached):
- [1] rstudioapi_0.14   knitr_1.44        magrittr_2.0.3    tidyselect_1.2.0 
- [5] munsell_0.5.0     colorspace_2.1-0  R6_2.5.1          rlang_1.1.1      
- [9] fastmap_1.1.1     fansi_1.0.4       dplyr_1.1.0       tools_4.2.2      
-[13] grid_4.2.2        gtable_0.3.4      xfun_0.40         utf8_1.2.3       
-[17] cli_3.6.1         withr_2.5.1       htmltools_0.5.6   yaml_2.3.7       
-[21] digest_0.6.33     tibble_3.2.1      lifecycle_1.0.3   farver_2.1.1     
-[25] htmlwidgets_1.5.4 vctrs_0.6.3       glue_1.6.2        evaluate_0.22    
-[29] rmarkdown_2.21    labeling_0.4.3    compiler_4.2.2    pillar_1.9.0     
-[33] generics_0.1.3    scales_1.2.1      jsonlite_1.8.7    pkgconfig_2.0.3  </code></pre>
+ [1] vctrs_0.6.4       cli_3.6.1         knitr_1.45        rlang_1.1.2      
+ [5] xfun_0.41         generics_0.1.3    jsonlite_1.8.7    labeling_0.4.3   
+ [9] glue_1.6.2        colorspace_2.1-0  htmltools_0.5.7   scales_1.2.1     
+[13] fansi_1.0.5       rmarkdown_2.25    grid_4.3.1        evaluate_0.23    
+[17] munsell_0.5.0     tibble_3.2.1      fastmap_1.1.1     yaml_2.3.7       
+[21] lifecycle_1.0.4   compiler_4.3.1    dplyr_1.1.3       htmlwidgets_1.6.2
+[25] pkgconfig_2.0.3   rstudioapi_0.15.0 farver_2.1.1      digest_0.6.33    
+[29] R6_2.5.1          tidyselect_1.2.0  utf8_1.2.4        pillar_1.9.0     
+[33] magrittr_2.0.3    withr_2.5.2       tools_4.3.1       gtable_0.3.4     </code></pre>
 </div>
 </div>
 
@@ -1270,9 +1268,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1359,10 +1371,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1372,8 +1383,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1388,6 +1408,194 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1426,12 +1634,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp(/https:\/\/marce10\.github\.io\/R_avanzado_2023\//);
+      var filterRegex = new RegExp("https:\/\/marce10\.github\.io\/R_avanzado_2023\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1466,21 +1674,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-23"><a href="#cb52-23"></a></span>
 <span id="cb52-24"><a href="#cb52-24"></a><span class="in">```{r,echo=FALSE,message=FALSE}</span></span>
 <span id="cb52-25"><a href="#cb52-25"></a></span>
-<span id="cb52-26"><a href="#cb52-26"></a><span class="fu">options</span>(<span class="st">"digits"</span> <span class="ot">=</span> <span class="dv">5</span>)</span>
-<span id="cb52-27"><a href="#cb52-27"></a><span class="fu">options</span>(<span class="st">"digits.secs"</span> <span class="ot">=</span> <span class="dv">3</span>)</span>
+<span id="cb52-26"><a href="#cb52-26"></a><span class="in">options("digits" = 5)</span></span>
+<span id="cb52-27"><a href="#cb52-27"></a><span class="in">options("digits.secs" = 3)</span></span>
 <span id="cb52-28"><a href="#cb52-28"></a></span>
-<span id="cb52-29"><a href="#cb52-29"></a><span class="co"># options to customize chunk outputs</span></span>
-<span id="cb52-30"><a href="#cb52-30"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
-<span id="cb52-31"><a href="#cb52-31"></a>  <span class="at">class.source =</span> <span class="st">"numberLines lineAnchors"</span>, <span class="co"># for code line numbers</span></span>
-<span id="cb52-32"><a href="#cb52-32"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
-<span id="cb52-33"><a href="#cb52-33"></a>)</span>
+<span id="cb52-29"><a href="#cb52-29"></a><span class="in"># options to customize chunk outputs</span></span>
+<span id="cb52-30"><a href="#cb52-30"></a><span class="in">knitr::opts_chunk$set(</span></span>
+<span id="cb52-31"><a href="#cb52-31"></a><span class="in">  class.source = "numberLines lineAnchors", # for code line numbers</span></span>
+<span id="cb52-32"><a href="#cb52-32"></a><span class="in">  message = FALSE</span></span>
+<span id="cb52-33"><a href="#cb52-33"></a><span class="in">)</span></span>
 <span id="cb52-34"><a href="#cb52-34"></a></span>
-<span id="cb52-35"><a href="#cb52-35"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb52-36"><a href="#cb52-36"></a><span class="fu">library</span>(RColorBrewer)</span>
+<span id="cb52-35"><a href="#cb52-35"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb52-36"><a href="#cb52-36"></a><span class="in">library(RColorBrewer)</span></span>
 <span id="cb52-37"><a href="#cb52-37"></a></span>
-<span id="cb52-38"><a href="#cb52-38"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">50</span>))</span>
+<span id="cb52-38"><a href="#cb52-38"></a><span class="in">theme_set(theme_classic(base_size = 50))</span></span>
 <span id="cb52-39"><a href="#cb52-39"></a></span>
-<span id="cb52-40"><a href="#cb52-40"></a>cols <span class="ot">&lt;-</span> <span class="fu">brewer.pal</span>(<span class="dv">10</span>, <span class="st">"Spectral"</span>)</span>
+<span id="cb52-40"><a href="#cb52-40"></a><span class="in">cols &lt;- brewer.pal(10, "Spectral")</span></span>
 <span id="cb52-41"><a href="#cb52-41"></a><span class="in">```</span></span>
 <span id="cb52-42"><a href="#cb52-42"></a></span>
 <span id="cb52-43"><a href="#cb52-43"></a>::: {.alert .alert-info}</span>
@@ -1497,53 +1705,53 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-54"><a href="#cb52-54"></a></span>
 <span id="cb52-55"><a href="#cb52-55"></a><span class="in">```{r, eval = FALSE}</span></span>
 <span id="cb52-56"><a href="#cb52-56"></a></span>
-<span id="cb52-57"><a href="#cb52-57"></a><span class="co"># definir directorio a donde guardar los archivos</span></span>
-<span id="cb52-58"><a href="#cb52-58"></a>directorio <span class="ot">&lt;-</span> <span class="st">"DIRECCION_DONDE_GUARDAR_LOS ARCHIVOS_DE_EJEMPLO"</span></span>
+<span id="cb52-57"><a href="#cb52-57"></a><span class="in"># definir directorio a donde guardar los archivos</span></span>
+<span id="cb52-58"><a href="#cb52-58"></a><span class="in">directorio &lt;- "DIRECCION_DONDE_GUARDAR_LOS ARCHIVOS_DE_EJEMPLO"</span></span>
 <span id="cb52-59"><a href="#cb52-59"></a></span>
-<span id="cb52-60"><a href="#cb52-60"></a><span class="co"># guardar archivos</span></span>
-<span id="cb52-61"><a href="#cb52-61"></a><span class="fu">download.file</span>(</span>
-<span id="cb52-62"><a href="#cb52-62"></a>  <span class="at">url =</span> <span class="fu">paste0</span>(</span>
-<span id="cb52-63"><a href="#cb52-63"></a>    <span class="st">"https://github.com/maRce10/ucr_r_avanzado/"</span>,</span>
-<span id="cb52-64"><a href="#cb52-64"></a>    <span class="st">"raw/master/additional_files/datos_camara_submarina.zip"</span></span>
-<span id="cb52-65"><a href="#cb52-65"></a>  ),</span>
-<span id="cb52-66"><a href="#cb52-66"></a>  <span class="at">destfile =</span> <span class="fu">file.path</span>(directorio, <span class="st">"datos_camara_submarina.zip"</span>)</span>
-<span id="cb52-67"><a href="#cb52-67"></a>)</span>
+<span id="cb52-60"><a href="#cb52-60"></a><span class="in"># guardar archivos</span></span>
+<span id="cb52-61"><a href="#cb52-61"></a><span class="in">download.file(</span></span>
+<span id="cb52-62"><a href="#cb52-62"></a><span class="in">  url = paste0(</span></span>
+<span id="cb52-63"><a href="#cb52-63"></a><span class="in">    "https://github.com/maRce10/ucr_r_avanzado/",</span></span>
+<span id="cb52-64"><a href="#cb52-64"></a><span class="in">    "raw/master/additional_files/datos_camara_submarina.zip"</span></span>
+<span id="cb52-65"><a href="#cb52-65"></a><span class="in">  ),</span></span>
+<span id="cb52-66"><a href="#cb52-66"></a><span class="in">  destfile = file.path(directorio, "datos_camara_submarina.zip")</span></span>
+<span id="cb52-67"><a href="#cb52-67"></a><span class="in">)</span></span>
 <span id="cb52-68"><a href="#cb52-68"></a></span>
-<span id="cb52-69"><a href="#cb52-69"></a><span class="co"># extraerlos del zip</span></span>
-<span id="cb52-70"><a href="#cb52-70"></a><span class="fu">unzip</span>(</span>
-<span id="cb52-71"><a href="#cb52-71"></a>  <span class="at">zipfile =</span> <span class="fu">file.path</span>(directorio, <span class="st">"datos_camara_submarina.zip"</span>),</span>
-<span id="cb52-72"><a href="#cb52-72"></a>  <span class="at">exdir =</span> directorio</span>
-<span id="cb52-73"><a href="#cb52-73"></a>)</span>
+<span id="cb52-69"><a href="#cb52-69"></a><span class="in"># extraerlos del zip</span></span>
+<span id="cb52-70"><a href="#cb52-70"></a><span class="in">unzip(</span></span>
+<span id="cb52-71"><a href="#cb52-71"></a><span class="in">  zipfile = file.path(directorio, "datos_camara_submarina.zip"),</span></span>
+<span id="cb52-72"><a href="#cb52-72"></a><span class="in">  exdir = directorio</span></span>
+<span id="cb52-73"><a href="#cb52-73"></a><span class="in">)</span></span>
 <span id="cb52-74"><a href="#cb52-74"></a></span>
-<span id="cb52-75"><a href="#cb52-75"></a><span class="co"># hacer vector con nombre y direccion de archivos</span></span>
-<span id="cb52-76"><a href="#cb52-76"></a>archivos_txt <span class="ot">&lt;-</span></span>
-<span id="cb52-77"><a href="#cb52-77"></a>  <span class="fu">list.files</span>(</span>
-<span id="cb52-78"><a href="#cb52-78"></a>    <span class="at">path =</span> directorio,</span>
-<span id="cb52-79"><a href="#cb52-79"></a>    <span class="at">full.names =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb52-80"><a href="#cb52-80"></a>    <span class="at">pattern =</span> <span class="st">"TXT$"</span></span>
-<span id="cb52-81"><a href="#cb52-81"></a>  )</span>
+<span id="cb52-75"><a href="#cb52-75"></a><span class="in"># hacer vector con nombre y direccion de archivos</span></span>
+<span id="cb52-76"><a href="#cb52-76"></a><span class="in">archivos_txt &lt;-</span></span>
+<span id="cb52-77"><a href="#cb52-77"></a><span class="in">  list.files(</span></span>
+<span id="cb52-78"><a href="#cb52-78"></a><span class="in">    path = directorio,</span></span>
+<span id="cb52-79"><a href="#cb52-79"></a><span class="in">    full.names = TRUE,</span></span>
+<span id="cb52-80"><a href="#cb52-80"></a><span class="in">    pattern = "TXT$"</span></span>
+<span id="cb52-81"><a href="#cb52-81"></a><span class="in">  )</span></span>
 <span id="cb52-82"><a href="#cb52-82"></a><span class="in">```</span></span>
 <span id="cb52-83"><a href="#cb52-83"></a></span>
 <span id="cb52-84"><a href="#cb52-84"></a><span class="in">```{r, echo = FALSE}</span></span>
 <span id="cb52-85"><a href="#cb52-85"></a></span>
-<span id="cb52-86"><a href="#cb52-86"></a><span class="co"># definir directorio a donde guardar los archivos</span></span>
-<span id="cb52-87"><a href="#cb52-87"></a>directorio <span class="ot">&lt;-</span> <span class="st">"./data/"</span></span>
+<span id="cb52-86"><a href="#cb52-86"></a><span class="in"># definir directorio a donde guardar los archivos</span></span>
+<span id="cb52-87"><a href="#cb52-87"></a><span class="in">directorio &lt;- "./data/"</span></span>
 <span id="cb52-88"><a href="#cb52-88"></a></span>
-<span id="cb52-89"><a href="#cb52-89"></a><span class="co"># guardar archivos</span></span>
-<span id="cb52-90"><a href="#cb52-90"></a><span class="fu">download.file</span>(</span>
-<span id="cb52-91"><a href="#cb52-91"></a>  <span class="at">url =</span></span>
-<span id="cb52-92"><a href="#cb52-92"></a>    <span class="fu">paste0</span>(</span>
-<span id="cb52-93"><a href="#cb52-93"></a>      <span class="st">"https://github.com/maRce10/"</span>,</span>
-<span id="cb52-94"><a href="#cb52-94"></a>      <span class="st">"r_avanzado_2023/raw/master/data/datos_camara_submarina.zip"</span></span>
-<span id="cb52-95"><a href="#cb52-95"></a>    ),</span>
-<span id="cb52-96"><a href="#cb52-96"></a>  <span class="at">destfile =</span> <span class="fu">file.path</span>(directorio, <span class="st">"datos_camara_submarina.zip"</span>)</span>
-<span id="cb52-97"><a href="#cb52-97"></a>)</span>
+<span id="cb52-89"><a href="#cb52-89"></a><span class="in"># guardar archivos</span></span>
+<span id="cb52-90"><a href="#cb52-90"></a><span class="in">download.file(</span></span>
+<span id="cb52-91"><a href="#cb52-91"></a><span class="in">  url =</span></span>
+<span id="cb52-92"><a href="#cb52-92"></a><span class="in">    paste0(</span></span>
+<span id="cb52-93"><a href="#cb52-93"></a><span class="in">      "https://github.com/maRce10/",</span></span>
+<span id="cb52-94"><a href="#cb52-94"></a><span class="in">      "r_avanzado_2023/raw/master/data/datos_camara_submarina.zip"</span></span>
+<span id="cb52-95"><a href="#cb52-95"></a><span class="in">    ),</span></span>
+<span id="cb52-96"><a href="#cb52-96"></a><span class="in">  destfile = file.path(directorio, "datos_camara_submarina.zip")</span></span>
+<span id="cb52-97"><a href="#cb52-97"></a><span class="in">)</span></span>
 <span id="cb52-98"><a href="#cb52-98"></a></span>
-<span id="cb52-99"><a href="#cb52-99"></a><span class="co"># extraerlos del zip</span></span>
-<span id="cb52-100"><a href="#cb52-100"></a><span class="fu">unzip</span>(<span class="at">zipfile =</span> <span class="fu">file.path</span>(directorio, <span class="st">"datos_camara_submarina.zip"</span>), <span class="at">exdir =</span> directorio)</span>
+<span id="cb52-99"><a href="#cb52-99"></a><span class="in"># extraerlos del zip</span></span>
+<span id="cb52-100"><a href="#cb52-100"></a><span class="in">unzip(zipfile = file.path(directorio, "datos_camara_submarina.zip"), exdir = directorio)</span></span>
 <span id="cb52-101"><a href="#cb52-101"></a></span>
-<span id="cb52-102"><a href="#cb52-102"></a><span class="co"># hacer vector con nombre y direccion de archivos</span></span>
-<span id="cb52-103"><a href="#cb52-103"></a>archivos_txt <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> directorio, <span class="at">full.names =</span> <span class="cn">TRUE</span>, <span class="at">pattern =</span> <span class="st">"TXT$"</span>)</span>
+<span id="cb52-102"><a href="#cb52-102"></a><span class="in"># hacer vector con nombre y direccion de archivos</span></span>
+<span id="cb52-103"><a href="#cb52-103"></a><span class="in">archivos_txt &lt;- list.files(path = directorio, full.names = TRUE, pattern = "TXT$")</span></span>
 <span id="cb52-104"><a href="#cb52-104"></a></span>
 <span id="cb52-105"><a href="#cb52-105"></a><span class="in">```</span></span>
 <span id="cb52-106"><a href="#cb52-106"></a></span>
@@ -1575,12 +1783,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-134"><a href="#cb52-134"></a></span>
 <span id="cb52-135"><a href="#cb52-135"></a><span class="in">```{r, echo=FALSE,out.width="70%", fig.align="center"}</span></span>
 <span id="cb52-136"><a href="#cb52-136"></a></span>
-<span id="cb52-137"><a href="#cb52-137"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/loops2_esp.png"</span>)</span>
+<span id="cb52-137"><a href="#cb52-137"></a><span class="in">knitr::include_graphics("./images/loops2_esp.png")</span></span>
 <span id="cb52-138"><a href="#cb52-138"></a><span class="in">```</span></span>
 <span id="cb52-139"><a href="#cb52-139"></a></span>
 <span id="cb52-140"><a href="#cb52-140"></a>&nbsp;</span>
 <span id="cb52-141"><a href="#cb52-141"></a></span>
-<span id="cb52-142"><a href="#cb52-142"></a><span class="kw">&lt;font</span> <span class="er">size</span> <span class="ot">=</span> <span class="st">"2"</span><span class="kw">&gt;</span> <span class="sc">\*</span> Modificado de <span class="kw">&lt;i&gt;</span> Tutorial de bucles Datacamp <span class="kw">&lt;/i&gt;</span> <span class="kw">&lt;/font&gt;</span></span>
+<span id="cb52-142"><a href="#cb52-142"></a>&lt;font size = "2"&gt; <span class="sc">\*</span> Modificado de &lt;i&gt; Tutorial de bucles Datacamp &lt;/i&gt; &lt;/font&gt;</span>
 <span id="cb52-143"><a href="#cb52-143"></a></span>
 <span id="cb52-144"><a href="#cb52-144"></a>&nbsp;</span>
 <span id="cb52-145"><a href="#cb52-145"></a></span>
@@ -1588,7 +1796,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-147"><a href="#cb52-147"></a></span>
 <span id="cb52-148"><a href="#cb52-148"></a><span class="in">```{r, echo=FALSE,out.width="70%", fig.align="center"}</span></span>
 <span id="cb52-149"><a href="#cb52-149"></a></span>
-<span id="cb52-150"><a href="#cb52-150"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/loops1_esp.png"</span>)</span>
+<span id="cb52-150"><a href="#cb52-150"></a><span class="in">knitr::include_graphics("./images/loops1_esp.png")</span></span>
 <span id="cb52-151"><a href="#cb52-151"></a><span class="in">```</span></span>
 <span id="cb52-152"><a href="#cb52-152"></a></span>
 <span id="cb52-153"><a href="#cb52-153"></a>&nbsp;</span>
@@ -1601,7 +1809,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-160"><a href="#cb52-160"></a></span>
 <span id="cb52-161"><a href="#cb52-161"></a><span class="in">```{r, echo=FALSE,out.width="40%", fig.align="center"}</span></span>
 <span id="cb52-162"><a href="#cb52-162"></a></span>
-<span id="cb52-163"><a href="#cb52-163"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/for_esp.png"</span>)</span>
+<span id="cb52-163"><a href="#cb52-163"></a><span class="in">knitr::include_graphics("./images/for_esp.png")</span></span>
 <span id="cb52-164"><a href="#cb52-164"></a><span class="in">```</span></span>
 <span id="cb52-165"><a href="#cb52-165"></a></span>
 <span id="cb52-166"><a href="#cb52-166"></a>&nbsp;</span>
@@ -1718,7 +1926,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-287"><a href="#cb52-287"></a></span>
 <span id="cb52-288"><a href="#cb52-288"></a><span class="in">```{r, echo=FALSE,out.width="100%", fig.align="center"}</span></span>
 <span id="cb52-289"><a href="#cb52-289"></a></span>
-<span id="cb52-290"><a href="#cb52-290"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/datos.png"</span>)</span>
+<span id="cb52-290"><a href="#cb52-290"></a><span class="in">knitr::include_graphics("./images/datos.png")</span></span>
 <span id="cb52-291"><a href="#cb52-291"></a><span class="in">```</span></span>
 <span id="cb52-292"><a href="#cb52-292"></a></span>
 <span id="cb52-293"><a href="#cb52-293"></a>&nbsp;</span>
@@ -1784,7 +1992,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-361"><a href="#cb52-361"></a><span class="in">```</span></span>
 <span id="cb52-362"><a href="#cb52-362"></a></span>
 <span id="cb52-363"><a href="#cb52-363"></a>::: {.alert .alert-info}</span>
-<span id="cb52-364"><a href="#cb52-364"></a><span class="kw">&lt;font</span> <span class="er">size</span> <span class="ot">=</span> <span class="st">"5"</span><span class="kw">&gt;</span> Ejercicio 1 <span class="kw">&lt;/font&gt;</span></span>
+<span id="cb52-364"><a href="#cb52-364"></a>&lt;font size = "5"&gt; Ejercicio 1 &lt;/font&gt;</span>
 <span id="cb52-365"><a href="#cb52-365"></a></span>
 <span id="cb52-366"><a href="#cb52-366"></a>&nbsp;</span>
 <span id="cb52-367"><a href="#cb52-367"></a></span>
@@ -1798,25 +2006,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-377"><a href="#cb52-377"></a></span>
 <span id="cb52-378"><a href="#cb52-378"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
 <span id="cb52-379"><a href="#cb52-379"></a></span>
-<span id="cb52-380"><a href="#cb52-380"></a><span class="co"># vector vacio</span></span>
-<span id="cb52-381"><a href="#cb52-381"></a>resultados <span class="ot">&lt;-</span> <span class="fu">vector</span>()</span>
+<span id="cb52-380"><a href="#cb52-380"></a><span class="in"># vector vacio</span></span>
+<span id="cb52-381"><a href="#cb52-381"></a><span class="in">resultados &lt;- vector()</span></span>
 <span id="cb52-382"><a href="#cb52-382"></a></span>
-<span id="cb52-383"><a href="#cb52-383"></a><span class="co"># inicio del bucle</span></span>
-<span id="cb52-384"><a href="#cb52-384"></a><span class="cf">for</span> (i <span class="cf">in</span> archivos_txt) {</span>
-<span id="cb52-385"><a href="#cb52-385"></a>  <span class="co"># leer archivo</span></span>
-<span id="cb52-386"><a href="#cb52-386"></a>  txt <span class="ot">&lt;-</span> <span class="fu">read.table</span>(i,</span>
-<span id="cb52-387"><a href="#cb52-387"></a>                    <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb52-388"><a href="#cb52-388"></a>                    <span class="at">skip =</span> <span class="dv">4</span>,</span>
-<span id="cb52-389"><a href="#cb52-389"></a>                    <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
-<span id="cb52-390"><a href="#cb52-390"></a>  </span>
-<span id="cb52-391"><a href="#cb52-391"></a>  <span class="co"># calcular numero de familias</span></span>
-<span id="cb52-392"><a href="#cb52-392"></a>  nfam <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(txt<span class="sc">$</span>Family))</span>
-<span id="cb52-393"><a href="#cb52-393"></a>  </span>
-<span id="cb52-394"><a href="#cb52-394"></a>  <span class="co"># guardar resultados en vector vacio</span></span>
-<span id="cb52-395"><a href="#cb52-395"></a>  resultados <span class="ot">&lt;-</span> <span class="fu">append</span>(resultados, nfam)</span>
-<span id="cb52-396"><a href="#cb52-396"></a>}</span>
+<span id="cb52-383"><a href="#cb52-383"></a><span class="in"># inicio del bucle</span></span>
+<span id="cb52-384"><a href="#cb52-384"></a><span class="in">for (i in archivos_txt) {</span></span>
+<span id="cb52-385"><a href="#cb52-385"></a><span class="in">  # leer archivo</span></span>
+<span id="cb52-386"><a href="#cb52-386"></a><span class="in">  txt &lt;- read.table(i,</span></span>
+<span id="cb52-387"><a href="#cb52-387"></a><span class="in">                    header = TRUE,</span></span>
+<span id="cb52-388"><a href="#cb52-388"></a><span class="in">                    skip = 4,</span></span>
+<span id="cb52-389"><a href="#cb52-389"></a><span class="in">                    sep = "\t")</span></span>
+<span id="cb52-390"><a href="#cb52-390"></a><span class="in">  </span></span>
+<span id="cb52-391"><a href="#cb52-391"></a><span class="in">  # calcular numero de familias</span></span>
+<span id="cb52-392"><a href="#cb52-392"></a><span class="in">  nfam &lt;- length(unique(txt$Family))</span></span>
+<span id="cb52-393"><a href="#cb52-393"></a><span class="in">  </span></span>
+<span id="cb52-394"><a href="#cb52-394"></a><span class="in">  # guardar resultados en vector vacio</span></span>
+<span id="cb52-395"><a href="#cb52-395"></a><span class="in">  resultados &lt;- append(resultados, nfam)</span></span>
+<span id="cb52-396"><a href="#cb52-396"></a><span class="in">}</span></span>
 <span id="cb52-397"><a href="#cb52-397"></a></span>
-<span id="cb52-398"><a href="#cb52-398"></a>n_sp_df<span class="sc">$</span>familias <span class="ot">&lt;-</span> resultados</span>
+<span id="cb52-398"><a href="#cb52-398"></a><span class="in">n_sp_df$familias &lt;- resultados</span></span>
 <span id="cb52-399"><a href="#cb52-399"></a><span class="in">```</span></span>
 <span id="cb52-400"><a href="#cb52-400"></a></span>
 <span id="cb52-401"><a href="#cb52-401"></a>&nbsp;</span>
@@ -1835,25 +2043,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-416"><a href="#cb52-416"></a></span>
 <span id="cb52-417"><a href="#cb52-417"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
 <span id="cb52-418"><a href="#cb52-418"></a></span>
-<span id="cb52-419"><a href="#cb52-419"></a><span class="co"># vector vacio</span></span>
-<span id="cb52-420"><a href="#cb52-420"></a>resultados <span class="ot">&lt;-</span> <span class="fu">vector</span>()</span>
+<span id="cb52-419"><a href="#cb52-419"></a><span class="in"># vector vacio</span></span>
+<span id="cb52-420"><a href="#cb52-420"></a><span class="in">resultados &lt;- vector()</span></span>
 <span id="cb52-421"><a href="#cb52-421"></a></span>
-<span id="cb52-422"><a href="#cb52-422"></a><span class="co"># inicio del bucle</span></span>
-<span id="cb52-423"><a href="#cb52-423"></a><span class="cf">for</span> (i <span class="cf">in</span> archivos_txt) {</span>
-<span id="cb52-424"><a href="#cb52-424"></a>  <span class="co"># leer archivo</span></span>
-<span id="cb52-425"><a href="#cb52-425"></a>  txt <span class="ot">&lt;-</span> <span class="fu">read.table</span>(i,</span>
-<span id="cb52-426"><a href="#cb52-426"></a>                    <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb52-427"><a href="#cb52-427"></a>                    <span class="at">skip =</span> <span class="dv">4</span>,</span>
-<span id="cb52-428"><a href="#cb52-428"></a>                    <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
-<span id="cb52-429"><a href="#cb52-429"></a>  </span>
-<span id="cb52-430"><a href="#cb52-430"></a>  <span class="co"># guardar fecha</span></span>
-<span id="cb52-431"><a href="#cb52-431"></a>  fecha <span class="ot">&lt;-</span> txt<span class="sc">$</span>Date[<span class="dv">1</span>]</span>
-<span id="cb52-432"><a href="#cb52-432"></a>  </span>
-<span id="cb52-433"><a href="#cb52-433"></a>  <span class="co"># guardar resultados en vector vacio</span></span>
-<span id="cb52-434"><a href="#cb52-434"></a>  resultados <span class="ot">&lt;-</span> <span class="fu">append</span>(resultados, fecha)</span>
-<span id="cb52-435"><a href="#cb52-435"></a>}</span>
+<span id="cb52-422"><a href="#cb52-422"></a><span class="in"># inicio del bucle</span></span>
+<span id="cb52-423"><a href="#cb52-423"></a><span class="in">for (i in archivos_txt) {</span></span>
+<span id="cb52-424"><a href="#cb52-424"></a><span class="in">  # leer archivo</span></span>
+<span id="cb52-425"><a href="#cb52-425"></a><span class="in">  txt &lt;- read.table(i,</span></span>
+<span id="cb52-426"><a href="#cb52-426"></a><span class="in">                    header = TRUE,</span></span>
+<span id="cb52-427"><a href="#cb52-427"></a><span class="in">                    skip = 4,</span></span>
+<span id="cb52-428"><a href="#cb52-428"></a><span class="in">                    sep = "\t")</span></span>
+<span id="cb52-429"><a href="#cb52-429"></a><span class="in">  </span></span>
+<span id="cb52-430"><a href="#cb52-430"></a><span class="in">  # guardar fecha</span></span>
+<span id="cb52-431"><a href="#cb52-431"></a><span class="in">  fecha &lt;- txt$Date[1]</span></span>
+<span id="cb52-432"><a href="#cb52-432"></a><span class="in">  </span></span>
+<span id="cb52-433"><a href="#cb52-433"></a><span class="in">  # guardar resultados en vector vacio</span></span>
+<span id="cb52-434"><a href="#cb52-434"></a><span class="in">  resultados &lt;- append(resultados, fecha)</span></span>
+<span id="cb52-435"><a href="#cb52-435"></a><span class="in">}</span></span>
 <span id="cb52-436"><a href="#cb52-436"></a></span>
-<span id="cb52-437"><a href="#cb52-437"></a>n_sp_df<span class="sc">$</span>fecha <span class="ot">&lt;-</span> resultados</span>
+<span id="cb52-437"><a href="#cb52-437"></a><span class="in">n_sp_df$fecha &lt;- resultados</span></span>
 <span id="cb52-438"><a href="#cb52-438"></a><span class="in">```</span></span>
 <span id="cb52-439"><a href="#cb52-439"></a></span>
 <span id="cb52-440"><a href="#cb52-440"></a>&nbsp;</span>
@@ -1862,25 +2070,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-443"><a href="#cb52-443"></a></span>
 <span id="cb52-444"><a href="#cb52-444"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
 <span id="cb52-445"><a href="#cb52-445"></a></span>
-<span id="cb52-446"><a href="#cb52-446"></a>resultados <span class="ot">&lt;-</span> <span class="fu">vector</span>() <span class="co"># vector vacio</span></span>
+<span id="cb52-446"><a href="#cb52-446"></a><span class="in">resultados &lt;- vector() # vector vacio</span></span>
 <span id="cb52-447"><a href="#cb52-447"></a></span>
-<span id="cb52-448"><a href="#cb52-448"></a><span class="cf">for</span> (i <span class="cf">in</span> archivos_txt) {</span>
-<span id="cb52-449"><a href="#cb52-449"></a>  <span class="co"># inicio del bucle</span></span>
-<span id="cb52-450"><a href="#cb52-450"></a>  </span>
-<span id="cb52-451"><a href="#cb52-451"></a>  txt <span class="ot">&lt;-</span></span>
-<span id="cb52-452"><a href="#cb52-452"></a>    <span class="fu">read.table</span>(i,</span>
-<span id="cb52-453"><a href="#cb52-453"></a>               <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb52-454"><a href="#cb52-454"></a>               <span class="at">skip =</span> <span class="dv">4</span>,</span>
-<span id="cb52-455"><a href="#cb52-455"></a>               <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>) <span class="co"># leer archivo</span></span>
-<span id="cb52-456"><a href="#cb52-456"></a>  prof <span class="ot">&lt;-</span> txt<span class="sc">$</span>Depth[<span class="dv">1</span>] <span class="co"># calcular numero de familias</span></span>
-<span id="cb52-457"><a href="#cb52-457"></a>  </span>
-<span id="cb52-458"><a href="#cb52-458"></a>  resultados <span class="ot">&lt;-</span></span>
-<span id="cb52-459"><a href="#cb52-459"></a>    <span class="fu">append</span>(resultados, prof) <span class="co"># guardar resultados en vector vacio</span></span>
-<span id="cb52-460"><a href="#cb52-460"></a>}</span>
+<span id="cb52-448"><a href="#cb52-448"></a><span class="in">for (i in archivos_txt) {</span></span>
+<span id="cb52-449"><a href="#cb52-449"></a><span class="in">  # inicio del bucle</span></span>
+<span id="cb52-450"><a href="#cb52-450"></a><span class="in">  </span></span>
+<span id="cb52-451"><a href="#cb52-451"></a><span class="in">  txt &lt;-</span></span>
+<span id="cb52-452"><a href="#cb52-452"></a><span class="in">    read.table(i,</span></span>
+<span id="cb52-453"><a href="#cb52-453"></a><span class="in">               header = TRUE,</span></span>
+<span id="cb52-454"><a href="#cb52-454"></a><span class="in">               skip = 4,</span></span>
+<span id="cb52-455"><a href="#cb52-455"></a><span class="in">               sep = "\t") # leer archivo</span></span>
+<span id="cb52-456"><a href="#cb52-456"></a><span class="in">  prof &lt;- txt$Depth[1] # calcular numero de familias</span></span>
+<span id="cb52-457"><a href="#cb52-457"></a><span class="in">  </span></span>
+<span id="cb52-458"><a href="#cb52-458"></a><span class="in">  resultados &lt;-</span></span>
+<span id="cb52-459"><a href="#cb52-459"></a><span class="in">    append(resultados, prof) # guardar resultados en vector vacio</span></span>
+<span id="cb52-460"><a href="#cb52-460"></a><span class="in">}</span></span>
 <span id="cb52-461"><a href="#cb52-461"></a></span>
-<span id="cb52-462"><a href="#cb52-462"></a>resultados <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">" m"</span>, <span class="st">""</span>, resultados)</span>
-<span id="cb52-463"><a href="#cb52-463"></a>resultados <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">,"</span>, <span class="st">"."</span>, resultados)</span>
-<span id="cb52-464"><a href="#cb52-464"></a>n_sp_df<span class="sc">$</span>profundidad <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(resultados)</span>
+<span id="cb52-462"><a href="#cb52-462"></a><span class="in">resultados &lt;- gsub(" m", "", resultados)</span></span>
+<span id="cb52-463"><a href="#cb52-463"></a><span class="in">resultados &lt;- gsub("\\,", ".", resultados)</span></span>
+<span id="cb52-464"><a href="#cb52-464"></a><span class="in">n_sp_df$profundidad &lt;- as.numeric(resultados)</span></span>
 <span id="cb52-465"><a href="#cb52-465"></a><span class="in">```</span></span>
 <span id="cb52-466"><a href="#cb52-466"></a></span>
 <span id="cb52-467"><a href="#cb52-467"></a>&nbsp;</span>
@@ -1889,10 +2097,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-470"><a href="#cb52-470"></a></span>
 <span id="cb52-471"><a href="#cb52-471"></a><span class="in">```{r, eval=FALSE}</span></span>
 <span id="cb52-472"><a href="#cb52-472"></a></span>
-<span id="cb52-473"><a href="#cb52-473"></a>n_sp_df<span class="sc">$</span>profundidad <span class="ot">&lt;-</span></span>
-<span id="cb52-474"><a href="#cb52-474"></a>  <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">" m"</span>, <span class="st">""</span>, <span class="fu">gsub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">,"</span>, </span>
-<span id="cb52-475"><a href="#cb52-475"></a>                                 <span class="st">"."</span>, </span>
-<span id="cb52-476"><a href="#cb52-476"></a>                                 n_sp_df<span class="sc">$</span>profundidad)))</span>
+<span id="cb52-473"><a href="#cb52-473"></a><span class="in">n_sp_df$profundidad &lt;-</span></span>
+<span id="cb52-474"><a href="#cb52-474"></a><span class="in">  as.numeric(gsub(" m", "", gsub("\\,", </span></span>
+<span id="cb52-475"><a href="#cb52-475"></a><span class="in">                                 ".", </span></span>
+<span id="cb52-476"><a href="#cb52-476"></a><span class="in">                                 n_sp_df$profundidad)))</span></span>
 <span id="cb52-477"><a href="#cb52-477"></a><span class="in">```</span></span>
 <span id="cb52-478"><a href="#cb52-478"></a></span>
 <span id="cb52-479"><a href="#cb52-479"></a>1.5 ¿Cuál es la correlación entre el número de especies observadas (que es igual al número de filas) y la profundidad? (pista: <span class="in">`cor.test()`</span>)</span>
@@ -1902,7 +2110,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-483"><a href="#cb52-483"></a>1.6 ¿Cuál es la correlación entre el número de familias y la profundidad?</span>
 <span id="cb52-484"><a href="#cb52-484"></a></span>
 <span id="cb52-485"><a href="#cb52-485"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
-<span id="cb52-486"><a href="#cb52-486"></a><span class="fu">cor</span>(n_sp_df<span class="sc">$</span>profundidad, n_sp_df<span class="sc">$</span>familias)</span>
+<span id="cb52-486"><a href="#cb52-486"></a><span class="in">cor(n_sp_df$profundidad, n_sp_df$familias)</span></span>
 <span id="cb52-487"><a href="#cb52-487"></a><span class="in">```</span></span>
 <span id="cb52-488"><a href="#cb52-488"></a></span>
 <span id="cb52-489"><a href="#cb52-489"></a>&nbsp;</span>
@@ -1912,22 +2120,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-493"><a href="#cb52-493"></a></span>
 <span id="cb52-494"><a href="#cb52-494"></a><span class="in">```{r, eval = TRUE, echo = TRUE}</span></span>
 <span id="cb52-495"><a href="#cb52-495"></a></span>
-<span id="cb52-496"><a href="#cb52-496"></a><span class="co"># vector vacio</span></span>
-<span id="cb52-497"><a href="#cb52-497"></a>df_resultados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<span id="cb52-496"><a href="#cb52-496"></a><span class="in"># vector vacio</span></span>
+<span id="cb52-497"><a href="#cb52-497"></a><span class="in">df_resultados &lt;- data.frame()</span></span>
 <span id="cb52-498"><a href="#cb52-498"></a></span>
-<span id="cb52-499"><a href="#cb52-499"></a><span class="co"># inicio del bucle</span></span>
-<span id="cb52-500"><a href="#cb52-500"></a><span class="cf">for</span> (i <span class="cf">in</span> archivos_txt) {</span>
-<span id="cb52-501"><a href="#cb52-501"></a>  <span class="co"># leer archivo</span></span>
-<span id="cb52-502"><a href="#cb52-502"></a>  txt <span class="ot">&lt;-</span> <span class="fu">read.table</span>(i,</span>
-<span id="cb52-503"><a href="#cb52-503"></a>                    <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb52-504"><a href="#cb52-504"></a>                    <span class="at">skip =</span> <span class="dv">4</span>,</span>
-<span id="cb52-505"><a href="#cb52-505"></a>                    <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
-<span id="cb52-506"><a href="#cb52-506"></a>  </span>
-<span id="cb52-507"><a href="#cb52-507"></a>  <span class="co"># guardar resultados en vector vacio</span></span>
-<span id="cb52-508"><a href="#cb52-508"></a>  df_resultados <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df_resultados, txt)</span>
-<span id="cb52-509"><a href="#cb52-509"></a>}</span>
+<span id="cb52-499"><a href="#cb52-499"></a><span class="in"># inicio del bucle</span></span>
+<span id="cb52-500"><a href="#cb52-500"></a><span class="in">for (i in archivos_txt) {</span></span>
+<span id="cb52-501"><a href="#cb52-501"></a><span class="in">  # leer archivo</span></span>
+<span id="cb52-502"><a href="#cb52-502"></a><span class="in">  txt &lt;- read.table(i,</span></span>
+<span id="cb52-503"><a href="#cb52-503"></a><span class="in">                    header = TRUE,</span></span>
+<span id="cb52-504"><a href="#cb52-504"></a><span class="in">                    skip = 4,</span></span>
+<span id="cb52-505"><a href="#cb52-505"></a><span class="in">                    sep = "\t")</span></span>
+<span id="cb52-506"><a href="#cb52-506"></a><span class="in">  </span></span>
+<span id="cb52-507"><a href="#cb52-507"></a><span class="in">  # guardar resultados en vector vacio</span></span>
+<span id="cb52-508"><a href="#cb52-508"></a><span class="in">  df_resultados &lt;- rbind(df_resultados, txt)</span></span>
+<span id="cb52-509"><a href="#cb52-509"></a><span class="in">}</span></span>
 <span id="cb52-510"><a href="#cb52-510"></a></span>
-<span id="cb52-511"><a href="#cb52-511"></a><span class="fu">nrow</span>(df_resultados) <span class="sc">==</span> <span class="fu">sum</span>(n_sp_df<span class="sc">$</span>filas)</span>
+<span id="cb52-511"><a href="#cb52-511"></a><span class="in">nrow(df_resultados) == sum(n_sp_df$filas)</span></span>
 <span id="cb52-512"><a href="#cb52-512"></a><span class="in">```</span></span>
 <span id="cb52-513"><a href="#cb52-513"></a></span>
 <span id="cb52-514"><a href="#cb52-514"></a>------------------------------------------------------------------------</span>
@@ -1946,14 +2154,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-529"><a href="#cb52-529"></a></span>
 <span id="cb52-530"><a href="#cb52-530"></a><span class="in">```{r, echo=FALSE,out.width="40%", fig.align="center"}</span></span>
 <span id="cb52-531"><a href="#cb52-531"></a></span>
-<span id="cb52-532"><a href="#cb52-532"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/xapply_esp.png"</span>)</span>
+<span id="cb52-532"><a href="#cb52-532"></a><span class="in">knitr::include_graphics("./images/xapply_esp.png")</span></span>
 <span id="cb52-533"><a href="#cb52-533"></a><span class="in">```</span></span>
 <span id="cb52-534"><a href="#cb52-534"></a></span>
 <span id="cb52-535"><a href="#cb52-535"></a><span class="in">`lapply`</span> toma un vector (atómico o de lista), aplica una función a cada elemento y devuelve una lista:</span>
 <span id="cb52-536"><a href="#cb52-536"></a></span>
 <span id="cb52-537"><a href="#cb52-537"></a><span class="in">```{r, eval = TRUE}</span></span>
 <span id="cb52-538"><a href="#cb52-538"></a></span>
-<span id="cb52-539"><a href="#cb52-539"></a><span class="fu">lapply</span>(<span class="at">X =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>), <span class="at">FUN =</span> sqrt)</span>
+<span id="cb52-539"><a href="#cb52-539"></a><span class="in">lapply(X = c(4, 9, 16), FUN = sqrt)</span></span>
 <span id="cb52-540"><a href="#cb52-540"></a><span class="in">```</span></span>
 <span id="cb52-541"><a href="#cb52-541"></a></span>
 <span id="cb52-542"><a href="#cb52-542"></a>&nbsp;</span>
@@ -1962,7 +2170,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-545"><a href="#cb52-545"></a></span>
 <span id="cb52-546"><a href="#cb52-546"></a><span class="in">```{r, eval = TRUE}</span></span>
 <span id="cb52-547"><a href="#cb52-547"></a></span>
-<span id="cb52-548"><a href="#cb52-548"></a><span class="fu">lapply</span>(<span class="at">X =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>), <span class="at">FUN =</span> sqrt)</span>
+<span id="cb52-548"><a href="#cb52-548"></a><span class="in">lapply(X = c(4, 9, 16), FUN = sqrt)</span></span>
 <span id="cb52-549"><a href="#cb52-549"></a><span class="in">```</span></span>
 <span id="cb52-550"><a href="#cb52-550"></a></span>
 <span id="cb52-551"><a href="#cb52-551"></a>&nbsp;</span>
@@ -1984,9 +2192,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-569"><a href="#cb52-569"></a></span>
 <span id="cb52-570"><a href="#cb52-570"></a><span class="in">```{r, eval=T, echo=T}</span></span>
 <span id="cb52-571"><a href="#cb52-571"></a></span>
-<span id="cb52-572"><a href="#cb52-572"></a><span class="fu">tapply</span>(<span class="at">X =</span> iris<span class="sc">$</span>Petal.Length, </span>
-<span id="cb52-573"><a href="#cb52-573"></a>       <span class="at">INDEX =</span> iris<span class="sc">$</span>Species, </span>
-<span id="cb52-574"><a href="#cb52-574"></a>       <span class="at">FUN =</span> mean)</span>
+<span id="cb52-572"><a href="#cb52-572"></a><span class="in">tapply(X = iris$Petal.Length, </span></span>
+<span id="cb52-573"><a href="#cb52-573"></a><span class="in">       INDEX = iris$Species, </span></span>
+<span id="cb52-574"><a href="#cb52-574"></a><span class="in">       FUN = mean)</span></span>
 <span id="cb52-575"><a href="#cb52-575"></a><span class="in">```</span></span>
 <span id="cb52-576"><a href="#cb52-576"></a></span>
 <span id="cb52-577"><a href="#cb52-577"></a>&nbsp;</span>
@@ -1995,24 +2203,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-580"><a href="#cb52-580"></a></span>
 <span id="cb52-581"><a href="#cb52-581"></a><span class="in">```{r, eval = TRUE}</span></span>
 <span id="cb52-582"><a href="#cb52-582"></a></span>
-<span id="cb52-583"><a href="#cb52-583"></a><span class="co"># funcion desde fuera del bucle</span></span>
-<span id="cb52-584"><a href="#cb52-584"></a>n_filas <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb52-585"><a href="#cb52-585"></a>  <span class="co"># leer archivo</span></span>
-<span id="cb52-586"><a href="#cb52-586"></a>  txt <span class="ot">&lt;-</span> <span class="fu">read.table</span>(x,</span>
-<span id="cb52-587"><a href="#cb52-587"></a>                    <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb52-588"><a href="#cb52-588"></a>                    <span class="at">skip =</span> <span class="dv">4</span>,</span>
-<span id="cb52-589"><a href="#cb52-589"></a>                    <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
-<span id="cb52-590"><a href="#cb52-590"></a>  </span>
-<span id="cb52-591"><a href="#cb52-591"></a>  <span class="co"># calcular numero de filas</span></span>
-<span id="cb52-592"><a href="#cb52-592"></a>  nrw <span class="ot">&lt;-</span> <span class="fu">nrow</span>(txt)</span>
-<span id="cb52-593"><a href="#cb52-593"></a>  <span class="fu">return</span>(nrw)</span>
-<span id="cb52-594"><a href="#cb52-594"></a>}</span>
+<span id="cb52-583"><a href="#cb52-583"></a><span class="in"># funcion desde fuera del bucle</span></span>
+<span id="cb52-584"><a href="#cb52-584"></a><span class="in">n_filas &lt;- function(x) {</span></span>
+<span id="cb52-585"><a href="#cb52-585"></a><span class="in">  # leer archivo</span></span>
+<span id="cb52-586"><a href="#cb52-586"></a><span class="in">  txt &lt;- read.table(x,</span></span>
+<span id="cb52-587"><a href="#cb52-587"></a><span class="in">                    header = TRUE,</span></span>
+<span id="cb52-588"><a href="#cb52-588"></a><span class="in">                    skip = 4,</span></span>
+<span id="cb52-589"><a href="#cb52-589"></a><span class="in">                    sep = "\t")</span></span>
+<span id="cb52-590"><a href="#cb52-590"></a><span class="in">  </span></span>
+<span id="cb52-591"><a href="#cb52-591"></a><span class="in">  # calcular numero de filas</span></span>
+<span id="cb52-592"><a href="#cb52-592"></a><span class="in">  nrw &lt;- nrow(txt)</span></span>
+<span id="cb52-593"><a href="#cb52-593"></a><span class="in">  return(nrw)</span></span>
+<span id="cb52-594"><a href="#cb52-594"></a><span class="in">}</span></span>
 <span id="cb52-595"><a href="#cb52-595"></a></span>
-<span id="cb52-596"><a href="#cb52-596"></a><span class="co"># correr bucle</span></span>
-<span id="cb52-597"><a href="#cb52-597"></a>filas <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="at">X =</span> archivos_txt, <span class="at">FUN =</span> n_filas)</span>
+<span id="cb52-596"><a href="#cb52-596"></a><span class="in"># correr bucle</span></span>
+<span id="cb52-597"><a href="#cb52-597"></a><span class="in">filas &lt;- lapply(X = archivos_txt, FUN = n_filas)</span></span>
 <span id="cb52-598"><a href="#cb52-598"></a></span>
-<span id="cb52-599"><a href="#cb52-599"></a><span class="co"># ver resultados</span></span>
-<span id="cb52-600"><a href="#cb52-600"></a><span class="fu">head</span>(filas)</span>
+<span id="cb52-599"><a href="#cb52-599"></a><span class="in"># ver resultados</span></span>
+<span id="cb52-600"><a href="#cb52-600"></a><span class="in">head(filas)</span></span>
 <span id="cb52-601"><a href="#cb52-601"></a><span class="in">```</span></span>
 <span id="cb52-602"><a href="#cb52-602"></a></span>
 <span id="cb52-603"><a href="#cb52-603"></a>&nbsp;</span>
@@ -2021,11 +2229,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-606"><a href="#cb52-606"></a></span>
 <span id="cb52-607"><a href="#cb52-607"></a><span class="in">```{r, eval = TRUE}</span></span>
 <span id="cb52-608"><a href="#cb52-608"></a></span>
-<span id="cb52-609"><a href="#cb52-609"></a><span class="co"># correr bucle</span></span>
-<span id="cb52-610"><a href="#cb52-610"></a>filas <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="at">X =</span> archivos_txt, <span class="at">FUN =</span> n_filas)</span>
+<span id="cb52-609"><a href="#cb52-609"></a><span class="in"># correr bucle</span></span>
+<span id="cb52-610"><a href="#cb52-610"></a><span class="in">filas &lt;- sapply(X = archivos_txt, FUN = n_filas)</span></span>
 <span id="cb52-611"><a href="#cb52-611"></a></span>
-<span id="cb52-612"><a href="#cb52-612"></a><span class="co"># ver resultados</span></span>
-<span id="cb52-613"><a href="#cb52-613"></a><span class="fu">head</span>(filas)</span>
+<span id="cb52-612"><a href="#cb52-612"></a><span class="in"># ver resultados</span></span>
+<span id="cb52-613"><a href="#cb52-613"></a><span class="in">head(filas)</span></span>
 <span id="cb52-614"><a href="#cb52-614"></a><span class="in">```</span></span>
 <span id="cb52-615"><a href="#cb52-615"></a></span>
 <span id="cb52-616"><a href="#cb52-616"></a>&nbsp;</span>
@@ -2034,21 +2242,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-619"><a href="#cb52-619"></a></span>
 <span id="cb52-620"><a href="#cb52-620"></a><span class="in">```{r, eval = TRUE}</span></span>
 <span id="cb52-621"><a href="#cb52-621"></a></span>
-<span id="cb52-622"><a href="#cb52-622"></a><span class="co"># correr bucle</span></span>
-<span id="cb52-623"><a href="#cb52-623"></a>filas <span class="ot">&lt;-</span> <span class="fu">sapply</span>(</span>
-<span id="cb52-624"><a href="#cb52-624"></a>  <span class="at">X =</span> archivos_txt,</span>
-<span id="cb52-625"><a href="#cb52-625"></a>  <span class="at">FUN =</span> <span class="cf">function</span>(x) {</span>
-<span id="cb52-626"><a href="#cb52-626"></a>    <span class="fu">nrow</span>(<span class="fu">read.table</span>(</span>
-<span id="cb52-627"><a href="#cb52-627"></a>      x,</span>
-<span id="cb52-628"><a href="#cb52-628"></a>      <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb52-629"><a href="#cb52-629"></a>      <span class="at">skip =</span> <span class="dv">4</span>,</span>
-<span id="cb52-630"><a href="#cb52-630"></a>      <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span></span>
-<span id="cb52-631"><a href="#cb52-631"></a>    ))</span>
-<span id="cb52-632"><a href="#cb52-632"></a>  }</span>
-<span id="cb52-633"><a href="#cb52-633"></a>)</span>
+<span id="cb52-622"><a href="#cb52-622"></a><span class="in"># correr bucle</span></span>
+<span id="cb52-623"><a href="#cb52-623"></a><span class="in">filas &lt;- sapply(</span></span>
+<span id="cb52-624"><a href="#cb52-624"></a><span class="in">  X = archivos_txt,</span></span>
+<span id="cb52-625"><a href="#cb52-625"></a><span class="in">  FUN = function(x) {</span></span>
+<span id="cb52-626"><a href="#cb52-626"></a><span class="in">    nrow(read.table(</span></span>
+<span id="cb52-627"><a href="#cb52-627"></a><span class="in">      x,</span></span>
+<span id="cb52-628"><a href="#cb52-628"></a><span class="in">      header = TRUE,</span></span>
+<span id="cb52-629"><a href="#cb52-629"></a><span class="in">      skip = 4,</span></span>
+<span id="cb52-630"><a href="#cb52-630"></a><span class="in">      sep = "\t"</span></span>
+<span id="cb52-631"><a href="#cb52-631"></a><span class="in">    ))</span></span>
+<span id="cb52-632"><a href="#cb52-632"></a><span class="in">  }</span></span>
+<span id="cb52-633"><a href="#cb52-633"></a><span class="in">)</span></span>
 <span id="cb52-634"><a href="#cb52-634"></a></span>
-<span id="cb52-635"><a href="#cb52-635"></a><span class="co"># ver resultados</span></span>
-<span id="cb52-636"><a href="#cb52-636"></a><span class="fu">head</span>(filas)</span>
+<span id="cb52-635"><a href="#cb52-635"></a><span class="in"># ver resultados</span></span>
+<span id="cb52-636"><a href="#cb52-636"></a><span class="in">head(filas)</span></span>
 <span id="cb52-637"><a href="#cb52-637"></a><span class="in">```</span></span>
 <span id="cb52-638"><a href="#cb52-638"></a></span>
 <span id="cb52-639"><a href="#cb52-639"></a>&nbsp;</span>
@@ -2076,7 +2284,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-663"><a href="#cb52-663"></a>&nbsp;</span>
 <span id="cb52-664"><a href="#cb52-664"></a></span>
 <span id="cb52-665"><a href="#cb52-665"></a>::: {.alert .alert-info}</span>
-<span id="cb52-666"><a href="#cb52-666"></a><span class="kw">&lt;font</span> <span class="er">size</span> <span class="ot">=</span> <span class="st">"5"</span><span class="kw">&gt;</span> Ejercicio 2<span class="kw">&lt;/font&gt;</span></span>
+<span id="cb52-666"><a href="#cb52-666"></a>&lt;font size = "5"&gt; Ejercicio 2&lt;/font&gt;</span>
 <span id="cb52-667"><a href="#cb52-667"></a></span>
 <span id="cb52-668"><a href="#cb52-668"></a>&nbsp;</span>
 <span id="cb52-669"><a href="#cb52-669"></a></span>
@@ -2105,34 +2313,34 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-692"><a href="#cb52-692"></a></span>
 <span id="cb52-693"><a href="#cb52-693"></a><span class="in">```{r, echo=FALSE,out.width="40%", fig.align="center"}</span></span>
 <span id="cb52-694"><a href="#cb52-694"></a></span>
-<span id="cb52-695"><a href="#cb52-695"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/repeat_esp.png"</span>)</span>
+<span id="cb52-695"><a href="#cb52-695"></a><span class="in">knitr::include_graphics("./images/repeat_esp.png")</span></span>
 <span id="cb52-696"><a href="#cb52-696"></a><span class="in">```</span></span>
 <span id="cb52-697"><a href="#cb52-697"></a></span>
 <span id="cb52-698"><a href="#cb52-698"></a>El siguiente bucle <span class="in">`repeat`</span> se ejecuta hasta que la correlación de las variables continuas generadas al azar es mayor que un umbral:</span>
 <span id="cb52-699"><a href="#cb52-699"></a></span>
 <span id="cb52-700"><a href="#cb52-700"></a><span class="in">```{r, eval=T, echo=T}</span></span>
 <span id="cb52-701"><a href="#cb52-701"></a></span>
-<span id="cb52-702"><a href="#cb52-702"></a><span class="co"># crear vector vacio</span></span>
-<span id="cb52-703"><a href="#cb52-703"></a>cc_vector <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb52-702"><a href="#cb52-702"></a><span class="in"># crear vector vacio</span></span>
+<span id="cb52-703"><a href="#cb52-703"></a><span class="in">cc_vector &lt;- NULL</span></span>
 <span id="cb52-704"><a href="#cb52-704"></a></span>
-<span id="cb52-705"><a href="#cb52-705"></a><span class="cf">repeat</span>{</span>
-<span id="cb52-706"><a href="#cb52-706"></a>  <span class="co"># generar la variable 1</span></span>
-<span id="cb52-707"><a href="#cb52-707"></a>  v1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">20</span>)</span>
+<span id="cb52-705"><a href="#cb52-705"></a><span class="in">repeat{</span></span>
+<span id="cb52-706"><a href="#cb52-706"></a><span class="in">  # generar la variable 1</span></span>
+<span id="cb52-707"><a href="#cb52-707"></a><span class="in">  v1 &lt;- rnorm(n = 20, mean = 100, sd = 20)</span></span>
 <span id="cb52-708"><a href="#cb52-708"></a></span>
-<span id="cb52-709"><a href="#cb52-709"></a>  <span class="co"># generar la variable 2</span></span>
-<span id="cb52-710"><a href="#cb52-710"></a>  v2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">20</span>)</span>
+<span id="cb52-709"><a href="#cb52-709"></a><span class="in">  # generar la variable 2</span></span>
+<span id="cb52-710"><a href="#cb52-710"></a><span class="in">  v2 &lt;- rnorm(n = 20, mean = 100, sd = 20)</span></span>
 <span id="cb52-711"><a href="#cb52-711"></a></span>
-<span id="cb52-712"><a href="#cb52-712"></a>  <span class="co"># correr la correlacion</span></span>
-<span id="cb52-713"><a href="#cb52-713"></a>  corr_coef <span class="ot">&lt;-</span> <span class="fu">cor</span>(v1, v2)</span>
+<span id="cb52-712"><a href="#cb52-712"></a><span class="in">  # correr la correlacion</span></span>
+<span id="cb52-713"><a href="#cb52-713"></a><span class="in">  corr_coef &lt;- cor(v1, v2)</span></span>
 <span id="cb52-714"><a href="#cb52-714"></a></span>
-<span id="cb52-715"><a href="#cb52-715"></a>  <span class="co"># guardar resultados</span></span>
-<span id="cb52-716"><a href="#cb52-716"></a>  cc_vector[<span class="fu">length</span>(cc_vector) <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> corr_coef</span>
+<span id="cb52-715"><a href="#cb52-715"></a><span class="in">  # guardar resultados</span></span>
+<span id="cb52-716"><a href="#cb52-716"></a><span class="in">  cc_vector[length(cc_vector) + 1] &lt;- corr_coef</span></span>
 <span id="cb52-717"><a href="#cb52-717"></a></span>
-<span id="cb52-718"><a href="#cb52-718"></a>  <span class="co"># parar si se cumple la condicion</span></span>
-<span id="cb52-719"><a href="#cb52-719"></a>  <span class="cf">if</span> (corr_coef <span class="sc">&gt;</span> <span class="fl">0.5</span>) <span class="cf">break</span></span>
-<span id="cb52-720"><a href="#cb52-720"></a>}</span>
+<span id="cb52-718"><a href="#cb52-718"></a><span class="in">  # parar si se cumple la condicion</span></span>
+<span id="cb52-719"><a href="#cb52-719"></a><span class="in">  if (corr_coef &gt; 0.5) break</span></span>
+<span id="cb52-720"><a href="#cb52-720"></a><span class="in">}</span></span>
 <span id="cb52-721"><a href="#cb52-721"></a></span>
-<span id="cb52-722"><a href="#cb52-722"></a><span class="fu">head</span>(cc_vector)</span>
+<span id="cb52-722"><a href="#cb52-722"></a><span class="in">head(cc_vector)</span></span>
 <span id="cb52-723"><a href="#cb52-723"></a><span class="in">```</span></span>
 <span id="cb52-724"><a href="#cb52-724"></a></span>
 <span id="cb52-725"><a href="#cb52-725"></a>&nbsp;</span>
@@ -2143,15 +2351,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-730"><a href="#cb52-730"></a></span>
 <span id="cb52-731"><a href="#cb52-731"></a></span>
 <span id="cb52-732"><a href="#cb52-732"></a></span>
-<span id="cb52-733"><a href="#cb52-733"></a>cc <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">y =</span> cc_vector, <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(cc_vector))</span>
+<span id="cb52-733"><a href="#cb52-733"></a><span class="in">cc &lt;- data.frame(y = cc_vector, x = 1:length(cc_vector))</span></span>
 <span id="cb52-734"><a href="#cb52-734"></a></span>
-<span id="cb52-735"><a href="#cb52-735"></a><span class="fu">ggplot</span>(<span class="at">data =</span> cc, <span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
-<span id="cb52-736"><a href="#cb52-736"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.5</span>,</span>
-<span id="cb52-737"><a href="#cb52-737"></a>             <span class="at">col =</span> cols[<span class="dv">4</span>],</span>
-<span id="cb52-738"><a href="#cb52-738"></a>             <span class="at">lwd =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb52-739"><a href="#cb52-739"></a>  <span class="fu">geom_line</span>(<span class="at">col =</span> cols[<span class="dv">8</span>], <span class="at">lwd =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb52-740"><a href="#cb52-740"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Iteraciones"</span>, <span class="at">y =</span> <span class="st">"Correlación de pearson (r)"</span>) <span class="sc">+</span></span>
-<span id="cb52-741"><a href="#cb52-741"></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">25</span>)</span>
+<span id="cb52-735"><a href="#cb52-735"></a><span class="in">ggplot(data = cc, aes(x, y)) +</span></span>
+<span id="cb52-736"><a href="#cb52-736"></a><span class="in">  geom_hline(yintercept = 0.5,</span></span>
+<span id="cb52-737"><a href="#cb52-737"></a><span class="in">             col = cols[4],</span></span>
+<span id="cb52-738"><a href="#cb52-738"></a><span class="in">             lwd = 3) +</span></span>
+<span id="cb52-739"><a href="#cb52-739"></a><span class="in">  geom_line(col = cols[8], lwd = 4) +</span></span>
+<span id="cb52-740"><a href="#cb52-740"></a><span class="in">  labs(x = "Iteraciones", y = "Correlación de pearson (r)") +</span></span>
+<span id="cb52-741"><a href="#cb52-741"></a><span class="in">  theme_classic(base_size = 25)</span></span>
 <span id="cb52-742"><a href="#cb52-742"></a><span class="in">```</span></span>
 <span id="cb52-743"><a href="#cb52-743"></a></span>
 <span id="cb52-744"><a href="#cb52-744"></a>La condición determina si el ciclo debe detenerse.</span>
@@ -2168,58 +2376,58 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-755"><a href="#cb52-755"></a></span>
 <span id="cb52-756"><a href="#cb52-756"></a><span class="in">```{r, echo=FALSE,out.width="40%", fig.align="center"}</span></span>
 <span id="cb52-757"><a href="#cb52-757"></a></span>
-<span id="cb52-758"><a href="#cb52-758"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"./images/while_esp.png"</span>)</span>
+<span id="cb52-758"><a href="#cb52-758"></a><span class="in">knitr::include_graphics("./images/while_esp.png")</span></span>
 <span id="cb52-759"><a href="#cb52-759"></a><span class="in">```</span></span>
 <span id="cb52-760"><a href="#cb52-760"></a></span>
 <span id="cb52-761"><a href="#cb52-761"></a><span class="in">```{r, eval=F, echo=T}</span></span>
 <span id="cb52-762"><a href="#cb52-762"></a></span>
-<span id="cb52-763"><a href="#cb52-763"></a><span class="co"># definir valor inicial</span></span>
-<span id="cb52-764"><a href="#cb52-764"></a>corr_coef <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb52-763"><a href="#cb52-763"></a><span class="in"># definir valor inicial</span></span>
+<span id="cb52-764"><a href="#cb52-764"></a><span class="in">corr_coef &lt;- 0</span></span>
 <span id="cb52-765"><a href="#cb52-765"></a></span>
-<span id="cb52-766"><a href="#cb52-766"></a><span class="co"># iniciar bucle</span></span>
-<span id="cb52-767"><a href="#cb52-767"></a><span class="cf">while</span> (corr_coef <span class="sc">&lt;</span> <span class="fl">0.5</span>) {</span>
-<span id="cb52-768"><a href="#cb52-768"></a>  <span class="co"># generar la variable 1</span></span>
-<span id="cb52-769"><a href="#cb52-769"></a>  v1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">20</span>)</span>
+<span id="cb52-766"><a href="#cb52-766"></a><span class="in"># iniciar bucle</span></span>
+<span id="cb52-767"><a href="#cb52-767"></a><span class="in">while (corr_coef &lt; 0.5) {</span></span>
+<span id="cb52-768"><a href="#cb52-768"></a><span class="in">  # generar la variable 1</span></span>
+<span id="cb52-769"><a href="#cb52-769"></a><span class="in">  v1 &lt;- rnorm(n = 20, mean = 100, sd = 20)</span></span>
 <span id="cb52-770"><a href="#cb52-770"></a></span>
-<span id="cb52-771"><a href="#cb52-771"></a>  <span class="co"># generar la variable 2</span></span>
-<span id="cb52-772"><a href="#cb52-772"></a>  v2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">20</span>)</span>
+<span id="cb52-771"><a href="#cb52-771"></a><span class="in">  # generar la variable 2</span></span>
+<span id="cb52-772"><a href="#cb52-772"></a><span class="in">  v2 &lt;- rnorm(n = 20, mean = 100, sd = 20)</span></span>
 <span id="cb52-773"><a href="#cb52-773"></a></span>
-<span id="cb52-774"><a href="#cb52-774"></a>  <span class="co"># corrrer  la correlacion</span></span>
-<span id="cb52-775"><a href="#cb52-775"></a>  corr_coef <span class="ot">&lt;-</span> <span class="fu">cor</span>(v1, v2)</span>
+<span id="cb52-774"><a href="#cb52-774"></a><span class="in">  # corrrer  la correlacion</span></span>
+<span id="cb52-775"><a href="#cb52-775"></a><span class="in">  corr_coef &lt;- cor(v1, v2)</span></span>
 <span id="cb52-776"><a href="#cb52-776"></a></span>
-<span id="cb52-777"><a href="#cb52-777"></a>  <span class="co"># imprimir</span></span>
-<span id="cb52-778"><a href="#cb52-778"></a>  <span class="fu">print</span>(corr_coef)</span>
-<span id="cb52-779"><a href="#cb52-779"></a>}</span>
+<span id="cb52-777"><a href="#cb52-777"></a><span class="in">  # imprimir</span></span>
+<span id="cb52-778"><a href="#cb52-778"></a><span class="in">  print(corr_coef)</span></span>
+<span id="cb52-779"><a href="#cb52-779"></a><span class="in">}</span></span>
 <span id="cb52-780"><a href="#cb52-780"></a></span>
-<span id="cb52-781"><a href="#cb52-781"></a>corr_coef</span>
+<span id="cb52-781"><a href="#cb52-781"></a><span class="in">corr_coef</span></span>
 <span id="cb52-782"><a href="#cb52-782"></a><span class="in">```</span></span>
 <span id="cb52-783"><a href="#cb52-783"></a></span>
 <span id="cb52-784"><a href="#cb52-784"></a><span class="in">```{r, eval=T, echo=F}</span></span>
 <span id="cb52-785"><a href="#cb52-785"></a></span>
-<span id="cb52-786"><a href="#cb52-786"></a><span class="co"># set default value as 0</span></span>
-<span id="cb52-787"><a href="#cb52-787"></a>corr_coef <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb52-788"><a href="#cb52-788"></a>cc <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb52-789"><a href="#cb52-789"></a><span class="cf">while</span> (corr_coef <span class="sc">&lt;</span> <span class="fl">0.5</span>) {</span>
-<span id="cb52-790"><a href="#cb52-790"></a>  <span class="fu">set.seed</span>(<span class="fu">length</span>(cc) <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb52-786"><a href="#cb52-786"></a><span class="in"># set default value as 0</span></span>
+<span id="cb52-787"><a href="#cb52-787"></a><span class="in">corr_coef &lt;- 0</span></span>
+<span id="cb52-788"><a href="#cb52-788"></a><span class="in">cc &lt;- NULL</span></span>
+<span id="cb52-789"><a href="#cb52-789"></a><span class="in">while (corr_coef &lt; 0.5) {</span></span>
+<span id="cb52-790"><a href="#cb52-790"></a><span class="in">  set.seed(length(cc) + 1)</span></span>
 <span id="cb52-791"><a href="#cb52-791"></a></span>
-<span id="cb52-792"><a href="#cb52-792"></a>  <span class="co"># generate variable 1</span></span>
-<span id="cb52-793"><a href="#cb52-793"></a>  v1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">20</span>)</span>
+<span id="cb52-792"><a href="#cb52-792"></a><span class="in">  # generate variable 1</span></span>
+<span id="cb52-793"><a href="#cb52-793"></a><span class="in">  v1 &lt;- rnorm(n = 20, mean = 100, sd = 20)</span></span>
 <span id="cb52-794"><a href="#cb52-794"></a></span>
-<span id="cb52-795"><a href="#cb52-795"></a>  <span class="fu">set.seed</span>(<span class="fu">length</span>(cc) <span class="sc">+</span> <span class="dv">100</span>)</span>
+<span id="cb52-795"><a href="#cb52-795"></a><span class="in">  set.seed(length(cc) + 100)</span></span>
 <span id="cb52-796"><a href="#cb52-796"></a></span>
-<span id="cb52-797"><a href="#cb52-797"></a>  <span class="co"># generate variable 2</span></span>
-<span id="cb52-798"><a href="#cb52-798"></a>  v2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">20</span>)</span>
+<span id="cb52-797"><a href="#cb52-797"></a><span class="in">  # generate variable 2</span></span>
+<span id="cb52-798"><a href="#cb52-798"></a><span class="in">  v2 &lt;- rnorm(n = 20, mean = 100, sd = 20)</span></span>
 <span id="cb52-799"><a href="#cb52-799"></a></span>
-<span id="cb52-800"><a href="#cb52-800"></a>  <span class="co"># run correlation</span></span>
-<span id="cb52-801"><a href="#cb52-801"></a>  corr_coef <span class="ot">&lt;-</span> <span class="fu">cor</span>(v1, v2)</span>
-<span id="cb52-802"><a href="#cb52-802"></a>  cc <span class="ot">&lt;-</span> <span class="fu">append</span>(cc, corr_coef)</span>
-<span id="cb52-803"><a href="#cb52-803"></a>}</span>
+<span id="cb52-800"><a href="#cb52-800"></a><span class="in">  # run correlation</span></span>
+<span id="cb52-801"><a href="#cb52-801"></a><span class="in">  corr_coef &lt;- cor(v1, v2)</span></span>
+<span id="cb52-802"><a href="#cb52-802"></a><span class="in">  cc &lt;- append(cc, corr_coef)</span></span>
+<span id="cb52-803"><a href="#cb52-803"></a><span class="in">}</span></span>
 <span id="cb52-804"><a href="#cb52-804"></a></span>
-<span id="cb52-805"><a href="#cb52-805"></a><span class="cf">if</span> (<span class="fu">length</span>(cc) <span class="sc">&gt;</span> <span class="dv">10</span>) {</span>
-<span id="cb52-806"><a href="#cb52-806"></a>  cc <span class="ot">&lt;-</span> cc[(<span class="fu">length</span>(cc) <span class="sc">-</span> <span class="dv">10</span>)<span class="sc">:</span><span class="fu">length</span>(cc)]</span>
-<span id="cb52-807"><a href="#cb52-807"></a>}</span>
+<span id="cb52-805"><a href="#cb52-805"></a><span class="in">if (length(cc) &gt; 10) {</span></span>
+<span id="cb52-806"><a href="#cb52-806"></a><span class="in">  cc &lt;- cc[(length(cc) - 10):length(cc)]</span></span>
+<span id="cb52-807"><a href="#cb52-807"></a><span class="in">}</span></span>
 <span id="cb52-808"><a href="#cb52-808"></a></span>
-<span id="cb52-809"><a href="#cb52-809"></a><span class="fu">print</span>(cc)</span>
+<span id="cb52-809"><a href="#cb52-809"></a><span class="in">print(cc)</span></span>
 <span id="cb52-810"><a href="#cb52-810"></a><span class="in">```</span></span>
 <span id="cb52-811"><a href="#cb52-811"></a></span>
 <span id="cb52-812"><a href="#cb52-812"></a>&nbsp;</span>
@@ -2228,52 +2436,52 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-815"><a href="#cb52-815"></a></span>
 <span id="cb52-816"><a href="#cb52-816"></a><span class="in">```{r, eval=T, echo=T}</span></span>
 <span id="cb52-817"><a href="#cb52-817"></a></span>
-<span id="cb52-818"><a href="#cb52-818"></a><span class="co"># definir valor inicial</span></span>
-<span id="cb52-819"><a href="#cb52-819"></a>corr_coef <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb52-818"><a href="#cb52-818"></a><span class="in"># definir valor inicial</span></span>
+<span id="cb52-819"><a href="#cb52-819"></a><span class="in">corr_coef &lt;- 0</span></span>
 <span id="cb52-820"><a href="#cb52-820"></a></span>
-<span id="cb52-821"><a href="#cb52-821"></a><span class="co"># crear vector vacio</span></span>
-<span id="cb52-822"><a href="#cb52-822"></a>cc_vector <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb52-821"><a href="#cb52-821"></a><span class="in"># crear vector vacio</span></span>
+<span id="cb52-822"><a href="#cb52-822"></a><span class="in">cc_vector &lt;- NULL</span></span>
 <span id="cb52-823"><a href="#cb52-823"></a></span>
-<span id="cb52-824"><a href="#cb52-824"></a><span class="cf">while</span> (corr_coef <span class="sc">&lt;</span> <span class="fl">0.5</span> <span class="sc">&amp;</span> corr_coef <span class="sc">&gt;</span> <span class="sc">-</span><span class="fl">0.5</span>) {</span>
-<span id="cb52-825"><a href="#cb52-825"></a>  <span class="co"># generar la variable 1</span></span>
-<span id="cb52-826"><a href="#cb52-826"></a>  v1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">20</span>)</span>
+<span id="cb52-824"><a href="#cb52-824"></a><span class="in">while (corr_coef &lt; 0.5 &amp; corr_coef &gt; -0.5) {</span></span>
+<span id="cb52-825"><a href="#cb52-825"></a><span class="in">  # generar la variable 1</span></span>
+<span id="cb52-826"><a href="#cb52-826"></a><span class="in">  v1 &lt;- rnorm(n = 20, mean = 100, sd = 20)</span></span>
 <span id="cb52-827"><a href="#cb52-827"></a></span>
-<span id="cb52-828"><a href="#cb52-828"></a>  <span class="co"># generar la variable 2</span></span>
-<span id="cb52-829"><a href="#cb52-829"></a>  v2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">20</span>)</span>
+<span id="cb52-828"><a href="#cb52-828"></a><span class="in">  # generar la variable 2</span></span>
+<span id="cb52-829"><a href="#cb52-829"></a><span class="in">  v2 &lt;- rnorm(n = 20, mean = 100, sd = 20)</span></span>
 <span id="cb52-830"><a href="#cb52-830"></a></span>
-<span id="cb52-831"><a href="#cb52-831"></a>  <span class="co"># correr correlacion</span></span>
-<span id="cb52-832"><a href="#cb52-832"></a>  corr_coef <span class="ot">&lt;-</span> <span class="fu">cor</span>(v1, v2)</span>
+<span id="cb52-831"><a href="#cb52-831"></a><span class="in">  # correr correlacion</span></span>
+<span id="cb52-832"><a href="#cb52-832"></a><span class="in">  corr_coef &lt;- cor(v1, v2)</span></span>
 <span id="cb52-833"><a href="#cb52-833"></a></span>
-<span id="cb52-834"><a href="#cb52-834"></a>  <span class="co"># guardar resultados</span></span>
-<span id="cb52-835"><a href="#cb52-835"></a>  cc_vector[<span class="fu">length</span>(cc_vector) <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> corr_coef</span>
-<span id="cb52-836"><a href="#cb52-836"></a>}</span>
+<span id="cb52-834"><a href="#cb52-834"></a><span class="in">  # guardar resultados</span></span>
+<span id="cb52-835"><a href="#cb52-835"></a><span class="in">  cc_vector[length(cc_vector) + 1] &lt;- corr_coef</span></span>
+<span id="cb52-836"><a href="#cb52-836"></a><span class="in">}</span></span>
 <span id="cb52-837"><a href="#cb52-837"></a></span>
-<span id="cb52-838"><a href="#cb52-838"></a><span class="fu">head</span>(cc_vector)</span>
+<span id="cb52-838"><a href="#cb52-838"></a><span class="in">head(cc_vector)</span></span>
 <span id="cb52-839"><a href="#cb52-839"></a><span class="in">```</span></span>
 <span id="cb52-840"><a href="#cb52-840"></a></span>
 <span id="cb52-841"><a href="#cb52-841"></a>&nbsp;</span>
 <span id="cb52-842"><a href="#cb52-842"></a></span>
 <span id="cb52-843"><a href="#cb52-843"></a><span class="in">```{r, eval=T, echo=F, message=F, warning=F}</span></span>
-<span id="cb52-844"><a href="#cb52-844"></a>cc <span class="ot">&lt;-</span> cc_vector</span>
-<span id="cb52-845"><a href="#cb52-845"></a>cc <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">y =</span> cc, <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(cc))</span>
+<span id="cb52-844"><a href="#cb52-844"></a><span class="in">cc &lt;- cc_vector</span></span>
+<span id="cb52-845"><a href="#cb52-845"></a><span class="in">cc &lt;- data.frame(y = cc, x = 1:length(cc))</span></span>
 <span id="cb52-846"><a href="#cb52-846"></a></span>
-<span id="cb52-847"><a href="#cb52-847"></a><span class="cf">if</span> (<span class="fu">nrow</span>(cc) <span class="sc">&gt;</span> <span class="dv">50</span>) {</span>
-<span id="cb52-848"><a href="#cb52-848"></a>  cc <span class="ot">&lt;-</span> cc[(<span class="fu">nrow</span>(cc) <span class="sc">-</span> <span class="dv">50</span>)<span class="sc">:</span><span class="fu">nrow</span>(cc),]</span>
-<span id="cb52-849"><a href="#cb52-849"></a>}</span>
+<span id="cb52-847"><a href="#cb52-847"></a><span class="in">if (nrow(cc) &gt; 50) {</span></span>
+<span id="cb52-848"><a href="#cb52-848"></a><span class="in">  cc &lt;- cc[(nrow(cc) - 50):nrow(cc),]</span></span>
+<span id="cb52-849"><a href="#cb52-849"></a><span class="in">}</span></span>
 <span id="cb52-850"><a href="#cb52-850"></a></span>
-<span id="cb52-851"><a href="#cb52-851"></a><span class="fu">ggplot</span>(<span class="at">data =</span> cc, <span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
-<span id="cb52-852"><a href="#cb52-852"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>),</span>
-<span id="cb52-853"><a href="#cb52-853"></a>             <span class="at">col =</span> cols[<span class="dv">4</span>],</span>
-<span id="cb52-854"><a href="#cb52-854"></a>             <span class="at">lwd =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb52-855"><a href="#cb52-855"></a>  <span class="fu">geom_line</span>(<span class="at">col =</span> cols[<span class="dv">8</span>], <span class="at">lwd =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb52-856"><a href="#cb52-856"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Iteraciones"</span>, <span class="at">y =</span> <span class="st">"Correlación de pearson (r)"</span>) <span class="sc">+</span></span>
-<span id="cb52-857"><a href="#cb52-857"></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">25</span>)</span>
+<span id="cb52-851"><a href="#cb52-851"></a><span class="in">ggplot(data = cc, aes(x, y)) +</span></span>
+<span id="cb52-852"><a href="#cb52-852"></a><span class="in">  geom_hline(yintercept = c(-0.5, 0.5),</span></span>
+<span id="cb52-853"><a href="#cb52-853"></a><span class="in">             col = cols[4],</span></span>
+<span id="cb52-854"><a href="#cb52-854"></a><span class="in">             lwd = 3) +</span></span>
+<span id="cb52-855"><a href="#cb52-855"></a><span class="in">  geom_line(col = cols[8], lwd = 4) +</span></span>
+<span id="cb52-856"><a href="#cb52-856"></a><span class="in">  labs(x = "Iteraciones", y = "Correlación de pearson (r)") +</span></span>
+<span id="cb52-857"><a href="#cb52-857"></a><span class="in">  theme_classic(base_size = 25)</span></span>
 <span id="cb52-858"><a href="#cb52-858"></a><span class="in">```</span></span>
 <span id="cb52-859"><a href="#cb52-859"></a></span>
 <span id="cb52-860"><a href="#cb52-860"></a>------------------------------------------------------------------------</span>
 <span id="cb52-861"><a href="#cb52-861"></a></span>
 <span id="cb52-862"><a href="#cb52-862"></a>::: {.alert .alert-info}</span>
-<span id="cb52-863"><a href="#cb52-863"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"5"</span><span class="kw">&gt;</span>Ejercicio 3<span class="kw">&lt;/font&gt;</span></span>
+<span id="cb52-863"><a href="#cb52-863"></a>&lt;font size="5"&gt;Ejercicio 3&lt;/font&gt;</span>
 <span id="cb52-864"><a href="#cb52-864"></a></span>
 <span id="cb52-865"><a href="#cb52-865"></a>&nbsp;</span>
 <span id="cb52-866"><a href="#cb52-866"></a></span>
@@ -2293,20 +2501,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb52-880"><a href="#cb52-880"></a></span>
 <span id="cb52-881"><a href="#cb52-881"></a>------------------------------------------------------------------------</span>
 <span id="cb52-882"><a href="#cb52-882"></a></span>
-<span id="cb52-883"><a href="#cb52-883"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"5"</span><span class="kw">&gt;</span>Session information<span class="kw">&lt;/font&gt;</span></span>
+<span id="cb52-883"><a href="#cb52-883"></a>&lt;font size="5"&gt;Session information&lt;/font&gt;</span>
 <span id="cb52-884"><a href="#cb52-884"></a></span>
 <span id="cb52-885"><a href="#cb52-885"></a><span class="in">```{r session info, echo=F}</span></span>
 <span id="cb52-886"><a href="#cb52-886"></a></span>
-<span id="cb52-887"><a href="#cb52-887"></a><span class="fu">sessionInfo</span>()</span>
+<span id="cb52-887"><a href="#cb52-887"></a><span class="in">sessionInfo()</span></span>
 <span id="cb52-888"><a href="#cb52-888"></a><span class="in">```</span></span>
 </code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
+
 
 
 

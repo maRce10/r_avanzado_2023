@@ -40,6 +40,8 @@ website:
           href: tarea4.qmd
         - text: "Tarea 5"
           href: tarea5.qmd
+        - text: "Solución Tarea 5"
+          href: respuestas_tarea5.qmd
       - text: "Preparación para el curso"
         href: preparacion_curso.qmd
       - text: "Compartir código"
