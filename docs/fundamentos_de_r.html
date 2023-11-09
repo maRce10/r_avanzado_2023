@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-99.9.9">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,12 +17,11 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -47,13 +46,43 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -80,12 +109,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -95,10 +118,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Buscar"
+    "search-submit-button-title": "Enviar"
   }
 }</script>
+
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
@@ -112,20 +135,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">R avanzado 2023</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text"> </span></a>
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text"> </span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-manuales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -182,74 +204,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./preparacion_curso.html"> 
-<span class="menu-text">Preparación para el curso</span></a>
+    <a class="nav-link" href="./preparacion_curso.html">
+ <span class="menu-text">Preparación para el curso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN"> 
-<span class="menu-text">Compartir código</span></a>
+    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN">
+ <span class="menu-text">Compartir código</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructor.html"> 
-<span class="menu-text">Instructor</span></a>
+    <a class="nav-link" href="./instructor.html">
+ <span class="menu-text">Instructor</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="https:/github.com/maRce10/R_avanzado_2023/"> <i class="bi bi-github" role="img" aria-label="GitHub">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/maRce10/R_avanzado_2023/"><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
-<span class="menu-text">https:/github.com/maRce10/R_avanzado_2023/</span></a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
-</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Contenidos</h2>
    
   <ul class="collapse">
-  <li><a href="#qué-es-r" id="toc-qué-es-r" class="nav-link active" data-scroll-target="#qué-es-r"><span class="header-section-number">1</span> ¿Qué es R?</a></li>
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"><span class="header-section-number">2</span> Rstudio</a></li>
-  <li><a href="#elementos-del-lenguaje-r" id="toc-elementos-del-lenguaje-r" class="nav-link" data-scroll-target="#elementos-del-lenguaje-r"><span class="header-section-number">3</span> Elementos del lenguaje R</a></li>
-  <li><a href="#estructura-básica-de-la-representación-de-datos" id="toc-estructura-básica-de-la-representación-de-datos" class="nav-link" data-scroll-target="#estructura-básica-de-la-representación-de-datos"><span class="header-section-number">4</span> Estructura básica de la representación de datos</a>
+  <li><a href="#qué-es-r" id="toc-qué-es-r" class="nav-link active" data-scroll-target="#qué-es-r"><span class="toc-section-number">1</span>  ¿Qué es R?</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"><span class="toc-section-number">2</span>  Rstudio</a></li>
+  <li><a href="#elementos-del-lenguaje-r" id="toc-elementos-del-lenguaje-r" class="nav-link" data-scroll-target="#elementos-del-lenguaje-r"><span class="toc-section-number">3</span>  Elementos del lenguaje R</a></li>
+  <li><a href="#estructura-básica-de-la-representación-de-datos" id="toc-estructura-básica-de-la-representación-de-datos" class="nav-link" data-scroll-target="#estructura-básica-de-la-representación-de-datos"><span class="toc-section-number">4</span>  Estructura básica de la representación de datos</a>
   <ul class="collapse">
-  <li><a href="#vectores-atomicos" id="toc-vectores-atomicos" class="nav-link" data-scroll-target="#vectores-atomicos"><span class="header-section-number">4.1</span> Vectores atomicos</a></li>
-  <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas"><span class="header-section-number">4.2</span> Listas</a></li>
-  <li><a href="#nombrar-elementos" id="toc-nombrar-elementos" class="nav-link" data-scroll-target="#nombrar-elementos"><span class="header-section-number">4.3</span> Nombrar elementos</a></li>
-  <li><a href="#factores" id="toc-factores" class="nav-link" data-scroll-target="#factores"><span class="header-section-number">4.4</span> Factores</a></li>
-  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">4.5</span> Matrices</a></li>
-  <li><a href="#cuadros-de-datos-data-frames" id="toc-cuadros-de-datos-data-frames" class="nav-link" data-scroll-target="#cuadros-de-datos-data-frames"><span class="header-section-number">4.6</span> Cuadros de datos (Data frames)</a></li>
-  <li><a href="#extraer-subconjuntos-usando-indexación-indexing" id="toc-extraer-subconjuntos-usando-indexación-indexing" class="nav-link" data-scroll-target="#extraer-subconjuntos-usando-indexación-indexing"><span class="header-section-number">4.7</span> Extraer subconjuntos usando indexación (indexing)</a></li>
-  <li><a href="#explorar-objectos" id="toc-explorar-objectos" class="nav-link" data-scroll-target="#explorar-objectos"><span class="header-section-number">4.8</span> Explorar objectos</a></li>
-  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1"><span class="header-section-number">4.9</span> Ejercicio 1</a></li>
-  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones"><span class="header-section-number">4.10</span> Funciones</a></li>
+  <li><a href="#vectores-atomicos" id="toc-vectores-atomicos" class="nav-link" data-scroll-target="#vectores-atomicos"><span class="toc-section-number">4.1</span>  Vectores atomicos</a></li>
+  <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas"><span class="toc-section-number">4.2</span>  Listas</a></li>
+  <li><a href="#nombrar-elementos" id="toc-nombrar-elementos" class="nav-link" data-scroll-target="#nombrar-elementos"><span class="toc-section-number">4.3</span>  Nombrar elementos</a></li>
+  <li><a href="#factores" id="toc-factores" class="nav-link" data-scroll-target="#factores"><span class="toc-section-number">4.4</span>  Factores</a></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="toc-section-number">4.5</span>  Matrices</a></li>
+  <li><a href="#cuadros-de-datos-data-frames" id="toc-cuadros-de-datos-data-frames" class="nav-link" data-scroll-target="#cuadros-de-datos-data-frames"><span class="toc-section-number">4.6</span>  Cuadros de datos (Data frames)</a></li>
+  <li><a href="#extraer-subconjuntos-usando-indexación-indexing" id="toc-extraer-subconjuntos-usando-indexación-indexing" class="nav-link" data-scroll-target="#extraer-subconjuntos-usando-indexación-indexing"><span class="toc-section-number">4.7</span>  Extraer subconjuntos usando indexación (indexing)</a></li>
+  <li><a href="#explorar-objectos" id="toc-explorar-objectos" class="nav-link" data-scroll-target="#explorar-objectos"><span class="toc-section-number">4.8</span>  Explorar objectos</a></li>
+  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1"><span class="toc-section-number">4.9</span>  Ejercicio 1</a></li>
+  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones"><span class="toc-section-number">4.10</span>  Funciones</a></li>
   </ul></li>
-  <li><a href="#el-estilo-importa" id="toc-el-estilo-importa" class="nav-link" data-scroll-target="#el-estilo-importa"><span class="header-section-number">5</span> El estilo importa</a>
+  <li><a href="#el-estilo-importa" id="toc-el-estilo-importa" class="nav-link" data-scroll-target="#el-estilo-importa"><span class="toc-section-number">5</span>  El estilo importa</a>
   <ul class="collapse">
-  <li><a href="#nombres-de-archivos" id="toc-nombres-de-archivos" class="nav-link" data-scroll-target="#nombres-de-archivos"><span class="header-section-number">5.1</span> Nombres de archivos</a></li>
-  <li><a href="#nombres-de-objetos" id="toc-nombres-de-objetos" class="nav-link" data-scroll-target="#nombres-de-objetos"><span class="header-section-number">5.2</span> Nombres de objetos</a></li>
-  <li><a href="#syntaxis" id="toc-syntaxis" class="nav-link" data-scroll-target="#syntaxis"><span class="header-section-number">5.3</span> Syntaxis</a></li>
+  <li><a href="#nombres-de-archivos" id="toc-nombres-de-archivos" class="nav-link" data-scroll-target="#nombres-de-archivos"><span class="toc-section-number">5.1</span>  Nombres de archivos</a></li>
+  <li><a href="#nombres-de-objetos" id="toc-nombres-de-objetos" class="nav-link" data-scroll-target="#nombres-de-objetos"><span class="toc-section-number">5.2</span>  Nombres de objetos</a></li>
+  <li><a href="#syntaxis" id="toc-syntaxis" class="nav-link" data-scroll-target="#syntaxis"><span class="toc-section-number">5.3</span>  Syntaxis</a></li>
   </ul></li>
-  <li><a href="#documentación-de-r" id="toc-documentación-de-r" class="nav-link" data-scroll-target="#documentación-de-r"><span class="header-section-number">6</span> Documentación de R</a>
+  <li><a href="#documentación-de-r" id="toc-documentación-de-r" class="nav-link" data-scroll-target="#documentación-de-r"><span class="toc-section-number">6</span>  Documentación de R</a>
   <ul class="collapse">
-  <li><a href="#package-documentation" id="toc-package-documentation" class="nav-link" data-scroll-target="#package-documentation"><span class="header-section-number">6.1</span> Package documentation</a></li>
-  <li><a href="#documentación-de-las-funciones" id="toc-documentación-de-las-funciones" class="nav-link" data-scroll-target="#documentación-de-las-funciones"><span class="header-section-number">6.2</span> Documentación de las funciones</a></li>
-  <li><a href="#viñetas-vignettes" id="toc-viñetas-vignettes" class="nav-link" data-scroll-target="#viñetas-vignettes"><span class="header-section-number">6.3</span> Viñetas (vignettes)</a></li>
-  <li><a href="#demonstraciones" id="toc-demonstraciones" class="nav-link" data-scroll-target="#demonstraciones"><span class="header-section-number">6.4</span> Demonstraciones</a></li>
-  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2"><span class="header-section-number">6.5</span> Ejercicio 2</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">6.6</span> Referencias</a></li>
+  <li><a href="#package-documentation" id="toc-package-documentation" class="nav-link" data-scroll-target="#package-documentation"><span class="toc-section-number">6.1</span>  Package documentation</a></li>
+  <li><a href="#documentación-de-las-funciones" id="toc-documentación-de-las-funciones" class="nav-link" data-scroll-target="#documentación-de-las-funciones"><span class="toc-section-number">6.2</span>  Documentación de las funciones</a></li>
+  <li><a href="#viñetas-vignettes" id="toc-viñetas-vignettes" class="nav-link" data-scroll-target="#viñetas-vignettes"><span class="toc-section-number">6.3</span>  Viñetas (vignettes)</a></li>
+  <li><a href="#demonstraciones" id="toc-demonstraciones" class="nav-link" data-scroll-target="#demonstraciones"><span class="toc-section-number">6.4</span>  Demonstraciones</a></li>
+  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2"><span class="toc-section-number">6.5</span>  Ejercicio 2</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="toc-section-number">6.6</span>  Referencias</a></li>
   </ul></li>
   </ul>
 </nav>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -269,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">8 de noviembre de 2023</p>
+      <p class="date">9 de noviembre de 2023</p>
     </div>
   </div>
   
@@ -277,9 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
-
 
 <style>
 body
@@ -287,6 +305,9 @@ body
 pre.numberSource code
   { counter-reset: none; }
 </style>
+<div class="cell">
+
+</div>
 <!-- skyblue box -->
 <section id="objetivo-del-manual" class="level1 unnumbered unlisted alert alert-info">
 <h1 class="unnumbered unlisted">Objetivo del manual</h1>
@@ -353,7 +374,7 @@ pre.numberSource code
 <div class="cell">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -413,7 +434,7 @@ pre.numberSource code
 <span id="cb1-13"><a href="#cb1-13"></a><span class="fu">class</span>(y)</span>
 <span id="cb1-14"><a href="#cb1-14"></a><span class="do">## [1] "character"</span></span>
 <span id="cb1-15"><a href="#cb1-15"></a></span>
-<span id="cb1-16"><a href="#cb1-16"></a>w <span class="ot">&lt;-</span> <span class="dv">1</span>L</span>
+<span id="cb1-16"><a href="#cb1-16"></a>w <span class="ot">&lt;-</span> 1L</span>
 <span id="cb1-17"><a href="#cb1-17"></a></span>
 <span id="cb1-18"><a href="#cb1-18"></a><span class="fu">class</span>(w)</span>
 <span id="cb1-19"><a href="#cb1-19"></a><span class="do">## [1] "integer"</span></span>
@@ -764,7 +785,7 @@ Levels: a b</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">ID</th>
@@ -961,7 +982,7 @@ Levels: a b</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">family</th>
@@ -995,7 +1016,7 @@ Levels: a b</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">family</th>
@@ -1033,7 +1054,7 @@ Levels: a b</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -1065,7 +1086,7 @@ Levels: a b</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">genus</th>
@@ -1095,7 +1116,7 @@ Levels: a b</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -1131,7 +1152,7 @@ Levels: a b</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">family</th>
@@ -1243,7 +1264,7 @@ Levels: a b</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">family</th>
@@ -1277,7 +1298,7 @@ Levels: a b</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="table table-sm table-striped">
 <thead>
 <tr class="header">
 <th style="text-align: left;">family</th>
@@ -1358,16 +1379,17 @@ Levels: a b</code></pre>
 <span id="cb120-4"><a href="#cb120-4"></a><span class="fu">length</span>(bi)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1388</code></pre>
+<pre><code>[1] 1375</code></pre>
 </div>
 <details open="">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1"></a><span class="fu">sample</span>(bi, <span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "dimnames"        "file.info"       "La_version"      "mat.or.vec"     
- [5] ".F_dqrqy"        "interactive"     ".F_dqrqty"       "length&lt;-.factor"
- [9] "file.mtime"      "sort.list"      </code></pre>
+<pre><code> [1] "unlist"                ".make_numeric_version" "as.null.default"      
+ [4] "textConnection"        "I"                     "levels"               
+ [7] "isatty"                "xtfrm.AsIs"            "solve.default"        
+[10] "system2"              </code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -1408,39 +1430,37 @@ Levels: a b</code></pre>
 <p>Operadores aritméticos:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="table-responsive">
-<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Operador</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Descrición</th>
-</tr>
-</thead>
+
+<table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 18px; width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Operador       </th>
+   <th style="text-align:left;"> Descrición   </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">\+</td>
-<td style="text-align: left;">suma</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">\-</td>
-<td style="text-align: left;">resta</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">\*</td>
-<td style="text-align: left;">multiplicación</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">/</td>
-<td style="text-align: left;">división</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">^ or **</td>
-<td style="text-align: left;">exponente</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> \+ </td>
+   <td style="text-align:left;"> suma </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> \- </td>
+   <td style="text-align:left;"> resta </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> \* </td>
+   <td style="text-align:left;"> multiplicación </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> / </td>
+   <td style="text-align:left;"> división </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ^ or ** </td>
+   <td style="text-align:left;"> exponente </td>
+  </tr>
 </tbody>
 </table>
-</div>
-
 
 </div>
 </div>
@@ -1485,59 +1505,57 @@ Levels: a b</code></pre>
 <p>Operadores lógicos:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="table-responsive">
-<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Operador</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Descrición</th>
-</tr>
-</thead>
+
+<table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 18px; width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Operador       </th>
+   <th style="text-align:left;"> Descrición   </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">&lt;</td>
-<td style="text-align: left;">menor que</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&lt;=</td>
-<td style="text-align: left;">menor o igual que</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">&gt;</td>
-<td style="text-align: left;">mayo que</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">&gt;=</td>
-<td style="text-align: left;">mayor o igual que</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">==</td>
-<td style="text-align: left;">exactamente igual que</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">!=</td>
-<td style="text-align: left;">diferente que</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">!x</td>
-<td style="text-align: left;">No es x</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">x | y</td>
-<td style="text-align: left;">x O y</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">x &amp; y</td>
-<td style="text-align: left;">x Y y</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">x %in% y</td>
-<td style="text-align: left;">correspondencia</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> &lt; </td>
+   <td style="text-align:left;"> menor que </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> &lt;= </td>
+   <td style="text-align:left;"> menor o igual que </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> &gt; </td>
+   <td style="text-align:left;"> mayo que </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> &gt;= </td>
+   <td style="text-align:left;"> mayor o igual que </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> == </td>
+   <td style="text-align:left;"> exactamente igual que </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> != </td>
+   <td style="text-align:left;"> diferente que </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> !x </td>
+   <td style="text-align:left;"> No es x </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> x | y </td>
+   <td style="text-align:left;"> x O y </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> x &amp; y </td>
+   <td style="text-align:left;"> x Y y </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> x %in% y </td>
+   <td style="text-align:left;"> correspondencia </td>
+  </tr>
 </tbody>
 </table>
-</div>
-
 
 </div>
 </div>
@@ -1636,8 +1654,8 @@ Levels: a b</code></pre>
 <p>&nbsp;</p>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning in 1:6 * 1:5: comprimento do objeto maior não é múltiplo do comprimento
-do objeto menor</code></pre>
+<pre><code>Warning in 1:6 * 1:5: longitud de objeto mayor no es múltiplo de la longitud de
+uno menor</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  1  4  9 16 25  6</code></pre>
@@ -1649,8 +1667,8 @@ do objeto menor</code></pre>
 <div class="sourceCode cell-code" id="cb165"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a href="#cb165-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning in 1:6 + 1:5: comprimento do objeto maior não é múltiplo do comprimento
-do objeto menor</code></pre>
+<pre><code>Warning in 1:6 + 1:5: longitud de objeto mayor no es múltiplo de la longitud de
+uno menor</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  2  4  6  8 10  7</code></pre>
@@ -1908,38 +1926,35 @@ do objeto menor</code></pre>
 <p><font size="4">Información de la sesión</font></p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.3.1 (2023-06-16)
+<pre><code>R version 4.2.2 Patched (2022-11-10 r83330)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 20.04.2 LTS
+Running under: Ubuntu 20.04.5 LTS
 
 Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/atlas/libblas.so.3.10.3 
-LAPACK: /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3.10.3;  LAPACK version 3.9.0
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
 
 locale:
- [1] LC_CTYPE=pt_BR.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=pt_BR.UTF-8    
- [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=pt_BR.UTF-8   
+ [1] LC_CTYPE=es_ES.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=es_ES.UTF-8    
+ [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=es_ES.UTF-8   
  [7] LC_PAPER=es_CR.UTF-8       LC_NAME=C                 
  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
 [11] LC_MEASUREMENT=es_CR.UTF-8 LC_IDENTIFICATION=C       
-
-time zone: America/Costa_Rica
-tzcode source: system (glibc)
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 loaded via a namespace (and not attached):
- [1] vctrs_0.6.4       httr_1.4.7        svglite_2.1.2     cli_3.6.1        
- [5] knitr_1.45        rlang_1.1.2       xfun_0.41         stringi_1.7.12   
- [9] jsonlite_1.8.7    glue_1.6.2        colorspace_2.1-0  htmltools_0.5.7  
-[13] scales_1.2.1      rmarkdown_2.25    evaluate_0.23     munsell_0.5.0    
-[17] kableExtra_1.3.4  fastmap_1.1.1     yaml_2.3.7        lifecycle_1.0.4  
-[21] stringr_1.5.0     compiler_4.3.1    rvest_1.0.3       htmlwidgets_1.6.2
-[25] rstudioapi_0.15.0 systemfonts_1.0.5 digest_0.6.33     viridisLite_0.4.2
-[29] R6_2.5.1          magrittr_2.0.3    webshot_0.5.5     tools_4.3.1      
-[33] xml2_1.3.5       </code></pre>
+ [1] rstudioapi_0.14   knitr_1.44        xml2_1.3.5        magrittr_2.0.3   
+ [5] rvest_1.0.3       munsell_0.5.0     viridisLite_0.4.2 colorspace_2.1-0 
+ [9] R6_2.5.1          rlang_1.1.1       fastmap_1.1.1     stringr_1.5.0    
+[13] httr_1.4.6        tools_4.2.2       webshot_0.5.4     xfun_0.40        
+[17] cli_3.6.1         htmltools_0.5.6   systemfonts_1.0.4 yaml_2.3.7       
+[21] digest_0.6.33     lifecycle_1.0.3   kableExtra_1.3.4  vctrs_0.6.3      
+[25] htmlwidgets_1.5.4 glue_1.6.2        evaluate_0.22     rmarkdown_2.21   
+[29] stringi_1.7.12    compiler_4.2.2    scales_1.2.1      jsonlite_1.8.7   
+[33] svglite_2.1.0    </code></pre>
 </div>
 </div>
 
@@ -1977,23 +1992,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -2080,9 +2081,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2092,17 +2094,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2117,194 +2110,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
-        }
-        return container.innerHTML
-      } else {
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      return note.innerHTML;
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -2343,12 +2148,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/marce10\.github\.io\/R_avanzado_2023\/");
+      var filterRegex = new RegExp(/https:\/\/marce10\.github\.io\/R_avanzado_2023\//);
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -2373,14 +2178,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-13"><a href="#cb180-13"></a></span>
 <span id="cb180-14"><a href="#cb180-14"></a><span class="in">```{r,echo=FALSE,message=FALSE}</span></span>
 <span id="cb180-15"><a href="#cb180-15"></a></span>
-<span id="cb180-16"><a href="#cb180-16"></a><span class="in">options("digits"=5)</span></span>
-<span id="cb180-17"><a href="#cb180-17"></a><span class="in">options("digits.secs"=3)</span></span>
+<span id="cb180-16"><a href="#cb180-16"></a><span class="fu">options</span>(<span class="st">"digits"</span><span class="ot">=</span><span class="dv">5</span>)</span>
+<span id="cb180-17"><a href="#cb180-17"></a><span class="fu">options</span>(<span class="st">"digits.secs"</span><span class="ot">=</span><span class="dv">3</span>)</span>
 <span id="cb180-18"><a href="#cb180-18"></a></span>
-<span id="cb180-19"><a href="#cb180-19"></a><span class="in"># options to customize chunk outputs</span></span>
-<span id="cb180-20"><a href="#cb180-20"></a><span class="in">knitr::opts_chunk$set(</span></span>
-<span id="cb180-21"><a href="#cb180-21"></a><span class="in">  class.source = "numberLines lineAnchors", # for code line numbers</span></span>
-<span id="cb180-22"><a href="#cb180-22"></a><span class="in">  message = FALSE</span></span>
-<span id="cb180-23"><a href="#cb180-23"></a><span class="in"> )</span></span>
+<span id="cb180-19"><a href="#cb180-19"></a><span class="co"># options to customize chunk outputs</span></span>
+<span id="cb180-20"><a href="#cb180-20"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb180-21"><a href="#cb180-21"></a>  <span class="at">class.source =</span> <span class="st">"numberLines lineAnchors"</span>, <span class="co"># for code line numbers</span></span>
+<span id="cb180-22"><a href="#cb180-22"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
+<span id="cb180-23"><a href="#cb180-23"></a> )</span>
 <span id="cb180-24"><a href="#cb180-24"></a></span>
 <span id="cb180-25"><a href="#cb180-25"></a><span class="in">```</span></span>
 <span id="cb180-26"><a href="#cb180-26"></a></span>
@@ -2408,7 +2213,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-48"><a href="#cb180-48"></a><span class="ss">-   </span>Basado en el lenguaje de programación S</span>
 <span id="cb180-49"><a href="#cb180-49"></a><span class="ss">-   </span>Alrededor de 20 años de antigüedad (el linaje data de 1975 - hace casi 40 años)</span>
 <span id="cb180-50"><a href="#cb180-50"></a></span>
-<span id="cb180-51"><a href="#cb180-51"></a>&lt;img src="images/Rinterf.jpeg" alt="R" height="600" width="800"/&gt;</span>
+<span id="cb180-51"><a href="#cb180-51"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"images/Rinterf.jpeg"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"R"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"600"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">/&gt;</span></span>
 <span id="cb180-52"><a href="#cb180-52"></a></span>
 <span id="cb180-53"><a href="#cb180-53"></a>&nbsp;</span>
 <span id="cb180-54"><a href="#cb180-54"></a></span>
@@ -2420,7 +2225,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-60"><a href="#cb180-60"></a><span class="ss">-   </span>Editor para resaltar la sintaxis que soporta la ejecución directa del código</span>
 <span id="cb180-61"><a href="#cb180-61"></a><span class="ss">-   </span>Herramientas para el trazado, el historial, la depuración y la gestión del espacio de trabajo</span>
 <span id="cb180-62"><a href="#cb180-62"></a></span>
-<span id="cb180-63"><a href="#cb180-63"></a>&lt;img src="images/Rstudio.jpeg" alt="R" height="500" width="800"/&gt;</span>
+<span id="cb180-63"><a href="#cb180-63"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"images/Rstudio.jpeg"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"R"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"500"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">/&gt;</span></span>
 <span id="cb180-64"><a href="#cb180-64"></a></span>
 <span id="cb180-65"><a href="#cb180-65"></a>&nbsp;</span>
 <span id="cb180-66"><a href="#cb180-66"></a></span>
@@ -2453,19 +2258,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-93"><a href="#cb180-93"></a>Se diferencian en los tipos de sus elementos: todos los elementos de un vector atómico deben ser del mismo tipo, mientras que los elementos de una lista pueden tener diferentes tipos</span>
 <span id="cb180-94"><a href="#cb180-94"></a></span>
 <span id="cb180-95"><a href="#cb180-95"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb180-96"><a href="#cb180-96"></a><span class="in">d &lt;- data.frame(</span></span>
-<span id="cb180-97"><a href="#cb180-97"></a><span class="in">    c("Vector atómico", "Lista"),</span></span>
-<span id="cb180-98"><a href="#cb180-98"></a><span class="in">    c("Matriz", "Cuadro de datos (data frame)"),</span></span>
-<span id="cb180-99"><a href="#cb180-99"></a><span class="in">c("arreglo (Array)", ""))</span></span>
+<span id="cb180-96"><a href="#cb180-96"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb180-97"><a href="#cb180-97"></a>    <span class="fu">c</span>(<span class="st">"Vector atómico"</span>, <span class="st">"Lista"</span>),</span>
+<span id="cb180-98"><a href="#cb180-98"></a>    <span class="fu">c</span>(<span class="st">"Matriz"</span>, <span class="st">"Cuadro de datos (data frame)"</span>),</span>
+<span id="cb180-99"><a href="#cb180-99"></a><span class="fu">c</span>(<span class="st">"arreglo (Array)"</span>, <span class="st">""</span>))</span>
 <span id="cb180-100"><a href="#cb180-100"></a></span>
 <span id="cb180-101"><a href="#cb180-101"></a></span>
-<span id="cb180-102"><a href="#cb180-102"></a><span class="in">d &lt;- t(d)</span></span>
+<span id="cb180-102"><a href="#cb180-102"></a>d <span class="ot">&lt;-</span> <span class="fu">t</span>(d)</span>
 <span id="cb180-103"><a href="#cb180-103"></a></span>
-<span id="cb180-104"><a href="#cb180-104"></a><span class="in">colnames(d) &lt;-c("Homogéneo",    "Heterogéneo")</span></span>
+<span id="cb180-104"><a href="#cb180-104"></a><span class="fu">colnames</span>(d) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Homogéneo"</span>,    <span class="st">"Heterogéneo"</span>)</span>
 <span id="cb180-105"><a href="#cb180-105"></a></span>
-<span id="cb180-106"><a href="#cb180-106"></a><span class="in">rownames(d) &lt;-c("1d",   "2d", "nd")</span></span>
+<span id="cb180-106"><a href="#cb180-106"></a><span class="fu">rownames</span>(d) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"1d"</span>,   <span class="st">"2d"</span>, <span class="st">"nd"</span>)</span>
 <span id="cb180-107"><a href="#cb180-107"></a></span>
-<span id="cb180-108"><a href="#cb180-108"></a><span class="in">as.data.frame(d)</span></span>
+<span id="cb180-108"><a href="#cb180-108"></a><span class="fu">as.data.frame</span>(d)</span>
 <span id="cb180-109"><a href="#cb180-109"></a></span>
 <span id="cb180-110"><a href="#cb180-110"></a><span class="in">```</span></span>
 <span id="cb180-111"><a href="#cb180-111"></a></span>
@@ -2488,28 +2293,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-128"><a href="#cb180-128"></a></span>
 <span id="cb180-129"><a href="#cb180-129"></a><span class="in">```{r,collapse=TRUE}</span></span>
 <span id="cb180-130"><a href="#cb180-130"></a></span>
-<span id="cb180-131"><a href="#cb180-131"></a><span class="in">x &lt;- 1</span></span>
-<span id="cb180-132"><a href="#cb180-132"></a><span class="in">x1 &lt;- c(1)</span></span>
+<span id="cb180-131"><a href="#cb180-131"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb180-132"><a href="#cb180-132"></a>x1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>)</span>
 <span id="cb180-133"><a href="#cb180-133"></a></span>
-<span id="cb180-134"><a href="#cb180-134"></a><span class="in">all.equal(x, x1)</span></span>
+<span id="cb180-134"><a href="#cb180-134"></a><span class="fu">all.equal</span>(x, x1)</span>
 <span id="cb180-135"><a href="#cb180-135"></a></span>
-<span id="cb180-136"><a href="#cb180-136"></a><span class="in">class(x)</span></span>
+<span id="cb180-136"><a href="#cb180-136"></a><span class="fu">class</span>(x)</span>
 <span id="cb180-137"><a href="#cb180-137"></a></span>
-<span id="cb180-138"><a href="#cb180-138"></a><span class="in">y &lt;- "something"</span></span>
+<span id="cb180-138"><a href="#cb180-138"></a>y <span class="ot">&lt;-</span> <span class="st">"something"</span></span>
 <span id="cb180-139"><a href="#cb180-139"></a></span>
-<span id="cb180-140"><a href="#cb180-140"></a><span class="in">class(y)</span></span>
+<span id="cb180-140"><a href="#cb180-140"></a><span class="fu">class</span>(y)</span>
 <span id="cb180-141"><a href="#cb180-141"></a></span>
-<span id="cb180-142"><a href="#cb180-142"></a><span class="in">w &lt;- 1L</span></span>
+<span id="cb180-142"><a href="#cb180-142"></a>w <span class="ot">&lt;-</span> 1L</span>
 <span id="cb180-143"><a href="#cb180-143"></a></span>
-<span id="cb180-144"><a href="#cb180-144"></a><span class="in">class(w)</span></span>
-<span id="cb180-145"><a href="#cb180-145"></a><span class="in"> </span></span>
-<span id="cb180-146"><a href="#cb180-146"></a><span class="in">z &lt;- TRUE</span></span>
+<span id="cb180-144"><a href="#cb180-144"></a><span class="fu">class</span>(w)</span>
+<span id="cb180-145"><a href="#cb180-145"></a> </span>
+<span id="cb180-146"><a href="#cb180-146"></a>z <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
 <span id="cb180-147"><a href="#cb180-147"></a></span>
-<span id="cb180-148"><a href="#cb180-148"></a><span class="in">class(z)</span></span>
+<span id="cb180-148"><a href="#cb180-148"></a><span class="fu">class</span>(z)</span>
 <span id="cb180-149"><a href="#cb180-149"></a></span>
-<span id="cb180-150"><a href="#cb180-150"></a><span class="in">q &lt;- factor(1)</span></span>
+<span id="cb180-150"><a href="#cb180-150"></a>q <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="dv">1</span>)</span>
 <span id="cb180-151"><a href="#cb180-151"></a></span>
-<span id="cb180-152"><a href="#cb180-152"></a><span class="in">class(q)</span></span>
+<span id="cb180-152"><a href="#cb180-152"></a><span class="fu">class</span>(q)</span>
 <span id="cb180-153"><a href="#cb180-153"></a></span>
 <span id="cb180-154"><a href="#cb180-154"></a><span class="in">```</span></span>
 <span id="cb180-155"><a href="#cb180-155"></a></span>
@@ -2519,25 +2324,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-159"><a href="#cb180-159"></a></span>
 <span id="cb180-160"><a href="#cb180-160"></a><span class="in">```{r, collapse=TRUE}</span></span>
 <span id="cb180-161"><a href="#cb180-161"></a></span>
-<span id="cb180-162"><a href="#cb180-162"></a><span class="in">v &lt;- c(10, 11, 12, 13)</span></span>
+<span id="cb180-162"><a href="#cb180-162"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>)</span>
 <span id="cb180-163"><a href="#cb180-163"></a></span>
-<span id="cb180-164"><a href="#cb180-164"></a><span class="in">class(v)</span></span>
+<span id="cb180-164"><a href="#cb180-164"></a><span class="fu">class</span>(v)</span>
 <span id="cb180-165"><a href="#cb180-165"></a></span>
-<span id="cb180-166"><a href="#cb180-166"></a><span class="in">typeof(v)</span></span>
+<span id="cb180-166"><a href="#cb180-166"></a><span class="fu">typeof</span>(v)</span>
 <span id="cb180-167"><a href="#cb180-167"></a></span>
-<span id="cb180-168"><a href="#cb180-168"></a><span class="in">is.integer(v)</span></span>
+<span id="cb180-168"><a href="#cb180-168"></a><span class="fu">is.integer</span>(v)</span>
 <span id="cb180-169"><a href="#cb180-169"></a></span>
-<span id="cb180-170"><a href="#cb180-170"></a><span class="in">y &lt;- c("Amazona", "Ara", "Eupsittula", "Myiopsitta")</span></span>
+<span id="cb180-170"><a href="#cb180-170"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Amazona"</span>, <span class="st">"Ara"</span>, <span class="st">"Eupsittula"</span>, <span class="st">"Myiopsitta"</span>)</span>
 <span id="cb180-171"><a href="#cb180-171"></a></span>
-<span id="cb180-172"><a href="#cb180-172"></a><span class="in">class(y)</span></span>
+<span id="cb180-172"><a href="#cb180-172"></a><span class="fu">class</span>(y)</span>
 <span id="cb180-173"><a href="#cb180-173"></a></span>
-<span id="cb180-174"><a href="#cb180-174"></a><span class="in">is.integer(y)</span></span>
+<span id="cb180-174"><a href="#cb180-174"></a><span class="fu">is.integer</span>(y)</span>
 <span id="cb180-175"><a href="#cb180-175"></a></span>
-<span id="cb180-176"><a href="#cb180-176"></a><span class="in">x &lt;- c(1,2,3, "Myiopsitta")</span></span>
+<span id="cb180-176"><a href="#cb180-176"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>, <span class="st">"Myiopsitta"</span>)</span>
 <span id="cb180-177"><a href="#cb180-177"></a></span>
-<span id="cb180-178"><a href="#cb180-178"></a><span class="in">x</span></span>
+<span id="cb180-178"><a href="#cb180-178"></a>x</span>
 <span id="cb180-179"><a href="#cb180-179"></a></span>
-<span id="cb180-180"><a href="#cb180-180"></a><span class="in">class(x)</span></span>
+<span id="cb180-180"><a href="#cb180-180"></a><span class="fu">class</span>(x)</span>
 <span id="cb180-181"><a href="#cb180-181"></a></span>
 <span id="cb180-182"><a href="#cb180-182"></a><span class="in">```</span></span>
 <span id="cb180-183"><a href="#cb180-183"></a></span>
@@ -2547,13 +2352,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-187"><a href="#cb180-187"></a></span>
 <span id="cb180-188"><a href="#cb180-188"></a><span class="in">```{r, collapse=TRUE}</span></span>
 <span id="cb180-189"><a href="#cb180-189"></a></span>
-<span id="cb180-190"><a href="#cb180-190"></a><span class="in">v &lt;- c(10, 11, 12, 13, NA)</span></span>
+<span id="cb180-190"><a href="#cb180-190"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>, <span class="cn">NA</span>)</span>
 <span id="cb180-191"><a href="#cb180-191"></a></span>
-<span id="cb180-192"><a href="#cb180-192"></a><span class="in">class(v)</span></span>
+<span id="cb180-192"><a href="#cb180-192"></a><span class="fu">class</span>(v)</span>
 <span id="cb180-193"><a href="#cb180-193"></a></span>
-<span id="cb180-194"><a href="#cb180-194"></a><span class="in">v &lt;- c(letters[1:3], NA)</span></span>
+<span id="cb180-194"><a href="#cb180-194"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="cn">NA</span>)</span>
 <span id="cb180-195"><a href="#cb180-195"></a></span>
-<span id="cb180-196"><a href="#cb180-196"></a><span class="in">class(v)</span></span>
+<span id="cb180-196"><a href="#cb180-196"></a><span class="fu">class</span>(v)</span>
 <span id="cb180-197"><a href="#cb180-197"></a></span>
 <span id="cb180-198"><a href="#cb180-198"></a><span class="in">```</span></span>
 <span id="cb180-199"><a href="#cb180-199"></a></span>
@@ -2718,7 +2523,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-374"><a href="#cb180-374"></a></span>
 <span id="cb180-375"><a href="#cb180-375"></a><span class="in">```{r, error = TRUE}</span></span>
 <span id="cb180-376"><a href="#cb180-376"></a></span>
-<span id="cb180-377"><a href="#cb180-377"></a><span class="in">m &lt;- data.frame(ID = c("a", "b", "c", "d", "e"), size = c(1, 2, 3, 4, 5, 6), observed = c(FALSE, TRUE, FALSE, FALSE, FALSE))</span></span>
+<span id="cb180-377"><a href="#cb180-377"></a>m <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>, <span class="st">"e"</span>), <span class="at">size =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>), <span class="at">observed =</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>))</span>
 <span id="cb180-378"><a href="#cb180-378"></a></span>
 <span id="cb180-379"><a href="#cb180-379"></a><span class="in">```</span></span>
 <span id="cb180-380"><a href="#cb180-380"></a></span>
@@ -2829,28 +2634,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-495"><a href="#cb180-495"></a></span>
 <span id="cb180-496"><a href="#cb180-496"></a><span class="in">```{r, eval = TRUE}</span></span>
 <span id="cb180-497"><a href="#cb180-497"></a></span>
-<span id="cb180-498"><a href="#cb180-498"></a><span class="in">str(df)</span></span>
+<span id="cb180-498"><a href="#cb180-498"></a><span class="fu">str</span>(df)</span>
 <span id="cb180-499"><a href="#cb180-499"></a></span>
-<span id="cb180-500"><a href="#cb180-500"></a><span class="in">names(df)</span></span>
+<span id="cb180-500"><a href="#cb180-500"></a><span class="fu">names</span>(df)</span>
 <span id="cb180-501"><a href="#cb180-501"></a></span>
-<span id="cb180-502"><a href="#cb180-502"></a><span class="in">dim(df)</span></span>
+<span id="cb180-502"><a href="#cb180-502"></a><span class="fu">dim</span>(df)</span>
 <span id="cb180-503"><a href="#cb180-503"></a></span>
-<span id="cb180-504"><a href="#cb180-504"></a><span class="in">nrow(df)</span></span>
+<span id="cb180-504"><a href="#cb180-504"></a><span class="fu">nrow</span>(df)</span>
 <span id="cb180-505"><a href="#cb180-505"></a></span>
-<span id="cb180-506"><a href="#cb180-506"></a><span class="in">ncol(df)</span></span>
+<span id="cb180-506"><a href="#cb180-506"></a><span class="fu">ncol</span>(df)</span>
 <span id="cb180-507"><a href="#cb180-507"></a></span>
-<span id="cb180-508"><a href="#cb180-508"></a><span class="in">head(df)</span></span>
+<span id="cb180-508"><a href="#cb180-508"></a><span class="fu">head</span>(df)</span>
 <span id="cb180-509"><a href="#cb180-509"></a></span>
-<span id="cb180-510"><a href="#cb180-510"></a><span class="in">tail(df)</span></span>
+<span id="cb180-510"><a href="#cb180-510"></a><span class="fu">tail</span>(df)</span>
 <span id="cb180-511"><a href="#cb180-511"></a></span>
-<span id="cb180-512"><a href="#cb180-512"></a><span class="in">table(df$genus)</span></span>
+<span id="cb180-512"><a href="#cb180-512"></a><span class="fu">table</span>(df<span class="sc">$</span>genus)</span>
 <span id="cb180-513"><a href="#cb180-513"></a></span>
-<span id="cb180-514"><a href="#cb180-514"></a><span class="in">typeof(df)</span></span>
+<span id="cb180-514"><a href="#cb180-514"></a><span class="fu">typeof</span>(df)</span>
 <span id="cb180-515"><a href="#cb180-515"></a></span>
 <span id="cb180-516"><a href="#cb180-516"></a><span class="in">```</span></span>
 <span id="cb180-517"><a href="#cb180-517"></a></span>
 <span id="cb180-518"><a href="#cb180-518"></a><span class="in">```{r, eval = F}</span></span>
-<span id="cb180-519"><a href="#cb180-519"></a><span class="in">View(df)</span></span>
+<span id="cb180-519"><a href="#cb180-519"></a><span class="fu">View</span>(df)</span>
 <span id="cb180-520"><a href="#cb180-520"></a></span>
 <span id="cb180-521"><a href="#cb180-521"></a><span class="in">```</span></span>
 <span id="cb180-522"><a href="#cb180-522"></a></span>
@@ -2880,9 +2685,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-546"><a href="#cb180-546"></a></span>
 <span id="cb180-547"><a href="#cb180-547"></a>Todas las funciones se crean con la función <span class="in">`function()`</span> y siguen la misma estructura:</span>
 <span id="cb180-548"><a href="#cb180-548"></a></span>
-<span id="cb180-549"><a href="#cb180-549"></a>&lt;img src="images/function.png" alt="R" height="350" width="900"/&gt;</span>
+<span id="cb180-549"><a href="#cb180-549"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"images/function.png"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"R"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"350"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"900"</span><span class="kw">/&gt;</span></span>
 <span id="cb180-550"><a href="#cb180-550"></a></span>
-<span id="cb180-551"><a href="#cb180-551"></a>&lt;font size="2"&gt;<span class="sc">\*</span> Modified from &lt;i&gt;Grolemund 2014&lt;/i&gt;&lt;/font&gt; &nbsp;</span>
+<span id="cb180-551"><a href="#cb180-551"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"2"</span><span class="kw">&gt;</span><span class="sc">\*</span> Modified from <span class="kw">&lt;i&gt;</span>Grolemund 2014<span class="kw">&lt;/i&gt;&lt;/font&gt;</span> &nbsp;</span>
 <span id="cb180-552"><a href="#cb180-552"></a></span>
 <span id="cb180-553"><a href="#cb180-553"></a>R viene con muchas funciones que puedes usar para hacer tareas sofisticadas:</span>
 <span id="cb180-554"><a href="#cb180-554"></a></span>
@@ -2921,20 +2726,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-591"><a href="#cb180-591"></a>Operadores aritméticos:</span>
 <span id="cb180-592"><a href="#cb180-592"></a></span>
 <span id="cb180-593"><a href="#cb180-593"></a><span class="in">```{r, echo=F}</span></span>
-<span id="cb180-594"><a href="#cb180-594"></a><span class="in">d &lt;- data.frame(</span></span>
-<span id="cb180-595"><a href="#cb180-595"></a><span class="in">c("\\+" , "suma"),</span></span>
-<span id="cb180-596"><a href="#cb180-596"></a><span class="in">c("\\-",    "resta"),</span></span>
-<span id="cb180-597"><a href="#cb180-597"></a><span class="in">c("\\*" ,   "multiplicación"),</span></span>
-<span id="cb180-598"><a href="#cb180-598"></a><span class="in">c("/",  "división"),</span></span>
-<span id="cb180-599"><a href="#cb180-599"></a><span class="in">c("^ or **",    "exponente"))</span></span>
+<span id="cb180-594"><a href="#cb180-594"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb180-595"><a href="#cb180-595"></a><span class="fu">c</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">+"</span> , <span class="st">"suma"</span>),</span>
+<span id="cb180-596"><a href="#cb180-596"></a><span class="fu">c</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">-"</span>,    <span class="st">"resta"</span>),</span>
+<span id="cb180-597"><a href="#cb180-597"></a><span class="fu">c</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">*"</span> ,   <span class="st">"multiplicación"</span>),</span>
+<span id="cb180-598"><a href="#cb180-598"></a><span class="fu">c</span>(<span class="st">"/"</span>,  <span class="st">"división"</span>),</span>
+<span id="cb180-599"><a href="#cb180-599"></a><span class="fu">c</span>(<span class="st">"^ or **"</span>,    <span class="st">"exponente"</span>))</span>
 <span id="cb180-600"><a href="#cb180-600"></a></span>
 <span id="cb180-601"><a href="#cb180-601"></a></span>
-<span id="cb180-602"><a href="#cb180-602"></a><span class="in">d &lt;- t(d)</span></span>
+<span id="cb180-602"><a href="#cb180-602"></a>d <span class="ot">&lt;-</span> <span class="fu">t</span>(d)</span>
 <span id="cb180-603"><a href="#cb180-603"></a></span>
-<span id="cb180-604"><a href="#cb180-604"></a><span class="in">colnames(d) &lt;- c("Operador      ", "Descrición  ")</span></span>
+<span id="cb180-604"><a href="#cb180-604"></a><span class="fu">colnames</span>(d) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Operador      "</span>, <span class="st">"Descrición  "</span>)</span>
 <span id="cb180-605"><a href="#cb180-605"></a></span>
-<span id="cb180-606"><a href="#cb180-606"></a><span class="in">knitr::kable(d, row.names = F, escape = FALSE) |&gt;</span></span>
-<span id="cb180-607"><a href="#cb180-607"></a><span class="in">  kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 18)</span></span>
+<span id="cb180-606"><a href="#cb180-606"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(d, <span class="at">row.names =</span> F, <span class="at">escape =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb180-607"><a href="#cb180-607"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>), <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">font_size =</span> <span class="dv">18</span>)</span>
 <span id="cb180-608"><a href="#cb180-608"></a></span>
 <span id="cb180-609"><a href="#cb180-609"></a><span class="in">```</span></span>
 <span id="cb180-610"><a href="#cb180-610"></a></span>
@@ -2958,24 +2763,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-630"><a href="#cb180-630"></a>Operadores lógicos:</span>
 <span id="cb180-631"><a href="#cb180-631"></a></span>
 <span id="cb180-632"><a href="#cb180-632"></a><span class="in">```{r, echo=F}</span></span>
-<span id="cb180-633"><a href="#cb180-633"></a><span class="in">d &lt;- data.frame(</span></span>
-<span id="cb180-634"><a href="#cb180-634"></a><span class="in">c("&lt;", "menor que"),</span></span>
-<span id="cb180-635"><a href="#cb180-635"></a><span class="in">c("&lt;=", "menor o igual que"),</span></span>
-<span id="cb180-636"><a href="#cb180-636"></a><span class="in">c("&gt;", "mayo que"),</span></span>
-<span id="cb180-637"><a href="#cb180-637"></a><span class="in">c("&gt;=", "mayor o igual que"),</span></span>
-<span id="cb180-638"><a href="#cb180-638"></a><span class="in">c("==", "exactamente igual que"),</span></span>
-<span id="cb180-639"><a href="#cb180-639"></a><span class="in">c("!=", "diferente que"),</span></span>
-<span id="cb180-640"><a href="#cb180-640"></a><span class="in">c("!x", "No es x"),</span></span>
-<span id="cb180-641"><a href="#cb180-641"></a><span class="in">c("x | y", "    x O y"),</span></span>
-<span id="cb180-642"><a href="#cb180-642"></a><span class="in">c("x &amp; y",  "x Y y"),</span></span>
-<span id="cb180-643"><a href="#cb180-643"></a><span class="in">c("x %in% y",   "correspondencia"))</span></span>
+<span id="cb180-633"><a href="#cb180-633"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb180-634"><a href="#cb180-634"></a><span class="fu">c</span>(<span class="st">"&lt;"</span>, <span class="st">"menor que"</span>),</span>
+<span id="cb180-635"><a href="#cb180-635"></a><span class="fu">c</span>(<span class="st">"&lt;="</span>, <span class="st">"menor o igual que"</span>),</span>
+<span id="cb180-636"><a href="#cb180-636"></a><span class="fu">c</span>(<span class="st">"&gt;"</span>, <span class="st">"mayo que"</span>),</span>
+<span id="cb180-637"><a href="#cb180-637"></a><span class="fu">c</span>(<span class="st">"&gt;="</span>, <span class="st">"mayor o igual que"</span>),</span>
+<span id="cb180-638"><a href="#cb180-638"></a><span class="fu">c</span>(<span class="st">"=="</span>, <span class="st">"exactamente igual que"</span>),</span>
+<span id="cb180-639"><a href="#cb180-639"></a><span class="fu">c</span>(<span class="st">"!="</span>, <span class="st">"diferente que"</span>),</span>
+<span id="cb180-640"><a href="#cb180-640"></a><span class="fu">c</span>(<span class="st">"!x"</span>, <span class="st">"No es x"</span>),</span>
+<span id="cb180-641"><a href="#cb180-641"></a><span class="fu">c</span>(<span class="st">"x | y"</span>, <span class="st">"    x O y"</span>),</span>
+<span id="cb180-642"><a href="#cb180-642"></a><span class="fu">c</span>(<span class="st">"x &amp; y"</span>,  <span class="st">"x Y y"</span>),</span>
+<span id="cb180-643"><a href="#cb180-643"></a><span class="fu">c</span>(<span class="st">"x %in% y"</span>,   <span class="st">"correspondencia"</span>))</span>
 <span id="cb180-644"><a href="#cb180-644"></a></span>
-<span id="cb180-645"><a href="#cb180-645"></a><span class="in">d &lt;- t(d)</span></span>
+<span id="cb180-645"><a href="#cb180-645"></a>d <span class="ot">&lt;-</span> <span class="fu">t</span>(d)</span>
 <span id="cb180-646"><a href="#cb180-646"></a></span>
-<span id="cb180-647"><a href="#cb180-647"></a><span class="in">colnames(d) &lt;- c("Operador      ", "Descrición  ")</span></span>
+<span id="cb180-647"><a href="#cb180-647"></a><span class="fu">colnames</span>(d) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Operador      "</span>, <span class="st">"Descrición  "</span>)</span>
 <span id="cb180-648"><a href="#cb180-648"></a></span>
-<span id="cb180-649"><a href="#cb180-649"></a><span class="in">knitr::kable(d, row.names = F, escape = FALSE) |&gt;</span></span>
-<span id="cb180-650"><a href="#cb180-650"></a><span class="in"> kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE, font_size = 18)</span></span>
+<span id="cb180-649"><a href="#cb180-649"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(d, <span class="at">row.names =</span> F, <span class="at">escape =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb180-650"><a href="#cb180-650"></a> kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>), <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">font_size =</span> <span class="dv">18</span>)</span>
 <span id="cb180-651"><a href="#cb180-651"></a></span>
 <span id="cb180-652"><a href="#cb180-652"></a><span class="in">```</span></span>
 <span id="cb180-653"><a href="#cb180-653"></a></span>
@@ -3005,19 +2810,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-679"><a href="#cb180-679"></a></span>
 <span id="cb180-680"><a href="#cb180-680"></a><span class="in">```{r, eval=F}</span></span>
 <span id="cb180-681"><a href="#cb180-681"></a></span>
-<span id="cb180-682"><a href="#cb180-682"></a><span class="in">1:6 * 1:6</span></span>
+<span id="cb180-682"><a href="#cb180-682"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">*</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
 <span id="cb180-683"><a href="#cb180-683"></a></span>
 <span id="cb180-684"><a href="#cb180-684"></a><span class="in">```</span></span>
 <span id="cb180-685"><a href="#cb180-685"></a></span>
-<span id="cb180-686"><a href="#cb180-686"></a>&lt;img src="images/vectorize.png" alt="R" height="350" width="900"/&gt;</span>
+<span id="cb180-686"><a href="#cb180-686"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"images/vectorize.png"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"R"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"350"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"900"</span><span class="kw">/&gt;</span></span>
 <span id="cb180-687"><a href="#cb180-687"></a></span>
-<span id="cb180-688"><a href="#cb180-688"></a>&lt;font size="2"&gt;<span class="sc">\*</span> Modified from &lt;i&gt;Grolemund &amp; Wickham 2017&lt;/i&gt;&lt;/font&gt;</span>
+<span id="cb180-688"><a href="#cb180-688"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"2"</span><span class="kw">&gt;</span><span class="sc">\*</span> Modified from <span class="kw">&lt;i&gt;</span>Grolemund &amp; Wickham 2017<span class="kw">&lt;/i&gt;&lt;/font&gt;</span></span>
 <span id="cb180-689"><a href="#cb180-689"></a></span>
 <span id="cb180-690"><a href="#cb180-690"></a>&nbsp;</span>
 <span id="cb180-691"><a href="#cb180-691"></a></span>
 <span id="cb180-692"><a href="#cb180-692"></a><span class="in">```{r, echo=F}</span></span>
 <span id="cb180-693"><a href="#cb180-693"></a></span>
-<span id="cb180-694"><a href="#cb180-694"></a><span class="in">1:6 * 1:6</span></span>
+<span id="cb180-694"><a href="#cb180-694"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">*</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
 <span id="cb180-695"><a href="#cb180-695"></a><span class="in">```</span></span>
 <span id="cb180-696"><a href="#cb180-696"></a></span>
 <span id="cb180-699"><a href="#cb180-699"></a><span class="in">```{r}</span></span>
@@ -3028,19 +2833,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-704"><a href="#cb180-704"></a></span>
 <span id="cb180-705"><a href="#cb180-705"></a><span class="in">```{r, eval=F}</span></span>
 <span id="cb180-706"><a href="#cb180-706"></a></span>
-<span id="cb180-707"><a href="#cb180-707"></a><span class="in">1:6 * 1:5</span></span>
+<span id="cb180-707"><a href="#cb180-707"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">*</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
 <span id="cb180-708"><a href="#cb180-708"></a></span>
 <span id="cb180-709"><a href="#cb180-709"></a><span class="in">```</span></span>
 <span id="cb180-710"><a href="#cb180-710"></a></span>
-<span id="cb180-711"><a href="#cb180-711"></a>&lt;img src="images/recycle.png" alt="R" height="350" width="900"/&gt;</span>
+<span id="cb180-711"><a href="#cb180-711"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"images/recycle.png"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"R"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"350"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"900"</span><span class="kw">/&gt;</span></span>
 <span id="cb180-712"><a href="#cb180-712"></a></span>
-<span id="cb180-713"><a href="#cb180-713"></a>&lt;font size="2"&gt;<span class="sc">\*</span> Modified from &lt;i&gt;Grolemund &amp; Wickham 2017&lt;/i&gt;&lt;/font&gt;</span>
+<span id="cb180-713"><a href="#cb180-713"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"2"</span><span class="kw">&gt;</span><span class="sc">\*</span> Modified from <span class="kw">&lt;i&gt;</span>Grolemund &amp; Wickham 2017<span class="kw">&lt;/i&gt;&lt;/font&gt;</span></span>
 <span id="cb180-714"><a href="#cb180-714"></a></span>
 <span id="cb180-715"><a href="#cb180-715"></a>&nbsp;</span>
 <span id="cb180-716"><a href="#cb180-716"></a></span>
 <span id="cb180-717"><a href="#cb180-717"></a><span class="in">```{r, echo=F}</span></span>
 <span id="cb180-718"><a href="#cb180-718"></a></span>
-<span id="cb180-719"><a href="#cb180-719"></a><span class="in">1:6 * 1:5</span></span>
+<span id="cb180-719"><a href="#cb180-719"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">*</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
 <span id="cb180-720"><a href="#cb180-720"></a></span>
 <span id="cb180-721"><a href="#cb180-721"></a><span class="in">```</span></span>
 <span id="cb180-722"><a href="#cb180-722"></a></span>
@@ -3055,7 +2860,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-733"><a href="#cb180-733"></a></span>
 <span id="cb180-734"><a href="#cb180-734"></a><span class="fu"># El estilo importa</span></span>
 <span id="cb180-735"><a href="#cb180-735"></a></span>
-<span id="cb180-736"><a href="#cb180-736"></a>&lt;font size="2"&gt;&lt;a href="https://google.github.io/styleguide/Rguide.xml"&gt;Based on google's R Style Guide&lt;/a&gt;&lt;/font&gt;</span>
+<span id="cb180-736"><a href="#cb180-736"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"2"</span><span class="kw">&gt;&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://google.github.io/styleguide/Rguide.xml"</span><span class="kw">&gt;</span>Based on google's R Style Guide<span class="kw">&lt;/a&gt;&lt;/font&gt;</span></span>
 <span id="cb180-737"><a href="#cb180-737"></a></span>
 <span id="cb180-738"><a href="#cb180-738"></a><span class="fu">## Nombres de archivos</span></span>
 <span id="cb180-739"><a href="#cb180-739"></a></span>
@@ -3076,9 +2881,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-754"><a href="#cb180-754"></a></span>
 <span id="cb180-755"><a href="#cb180-755"></a><span class="in">```{r, eval=F}</span></span>
 <span id="cb180-756"><a href="#cb180-756"></a></span>
-<span id="cb180-757"><a href="#cb180-757"></a><span class="in">  - Bien: dia_uno: dia_1, peso_promedio(),</span></span>
-<span id="cb180-758"><a href="#cb180-758"></a><span class="in">  </span></span>
-<span id="cb180-759"><a href="#cb180-759"></a><span class="in">  - Mal: diauno, dia1, primer.dia_delmes, mean &lt;- function(x) sum(x), c &lt;- 10</span></span>
+<span id="cb180-757"><a href="#cb180-757"></a>  <span class="sc">-</span> Bien<span class="sc">:</span> dia_uno<span class="sc">:</span> dia_1, <span class="fu">peso_promedio</span>(),</span>
+<span id="cb180-758"><a href="#cb180-758"></a>  </span>
+<span id="cb180-759"><a href="#cb180-759"></a>  <span class="sc">-</span> Mal<span class="sc">:</span> diauno, dia1, primer.dia_delmes, mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sum</span>(x), c <span class="ot">&lt;-</span> <span class="dv">10</span></span>
 <span id="cb180-760"><a href="#cb180-760"></a><span class="in">```</span></span>
 <span id="cb180-761"><a href="#cb180-761"></a></span>
 <span id="cb180-762"><a href="#cb180-762"></a>&nbsp;</span>
@@ -3093,23 +2898,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-771"><a href="#cb180-771"></a></span>
 <span id="cb180-772"><a href="#cb180-772"></a><span class="in">```{r, eval=F}</span></span>
 <span id="cb180-773"><a href="#cb180-773"></a></span>
-<span id="cb180-774"><a href="#cb180-774"></a><span class="in">  - Bien: </span></span>
-<span id="cb180-775"><a href="#cb180-775"></a><span class="in">          a &lt;- rnorm(n = 10, sd = 10, mean = 1)</span></span>
-<span id="cb180-776"><a href="#cb180-776"></a><span class="in">          tab.prior &lt;- table(df[df$dias &lt; 0, "campaign.id"])</span></span>
-<span id="cb180-777"><a href="#cb180-777"></a><span class="in">          total &lt;- sum(x[, 1])</span></span>
-<span id="cb180-778"><a href="#cb180-778"></a><span class="in">          total &lt;- sum(x[1, ])</span></span>
-<span id="cb180-779"><a href="#cb180-779"></a><span class="in">          if (debug)</span></span>
-<span id="cb180-780"><a href="#cb180-780"></a><span class="in">          mean(1:10)</span></span>
-<span id="cb180-781"><a href="#cb180-781"></a><span class="in">          </span></span>
-<span id="cb180-782"><a href="#cb180-782"></a><span class="in">  - Mal: </span></span>
-<span id="cb180-783"><a href="#cb180-783"></a><span class="in">         a&lt;-rnorm(n=10,sd=10,mean=1)</span></span>
-<span id="cb180-784"><a href="#cb180-784"></a><span class="in">         tab.prior &lt;- table(df[df$days.from.opt&lt;0, "campaign.id"])  # necesita espacio alrededor de '&lt;'</span></span>
-<span id="cb180-785"><a href="#cb180-785"></a><span class="in">         tab.prior &lt;- table(df[df$days.from.opt &lt; 0,"campaign.id"])  # Necesita espacio despues de la coma</span></span>
-<span id="cb180-786"><a href="#cb180-786"></a><span class="in">         tab.prior&lt;- table(df[df$days.from.opt &lt; 0, "campaign.id"])  # Necesita espacio antes de &lt;-</span></span>
-<span id="cb180-787"><a href="#cb180-787"></a><span class="in">         tab.prior&lt;-table(df[df$days.from.opt &lt; 0, "campaign.id"])  # Necesita espacio alrededor de &lt;-</span></span>
-<span id="cb180-788"><a href="#cb180-788"></a><span class="in">         total &lt;- sum(x[,1])  # Necesita espacio antes de la coma  </span></span>
-<span id="cb180-789"><a href="#cb180-789"></a><span class="in">         if(debug) # Necesita espacio antes del parentesis</span></span>
-<span id="cb180-790"><a href="#cb180-790"></a><span class="in">         mean (1:10) # Espacio extra luego del nombre de la funcion</span></span>
+<span id="cb180-774"><a href="#cb180-774"></a>  <span class="sc">-</span> Bien<span class="sc">:</span> </span>
+<span id="cb180-775"><a href="#cb180-775"></a>          a <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">1</span>)</span>
+<span id="cb180-776"><a href="#cb180-776"></a>          tab.prior <span class="ot">&lt;-</span> <span class="fu">table</span>(df[df<span class="sc">$</span>dias <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">"campaign.id"</span>])</span>
+<span id="cb180-777"><a href="#cb180-777"></a>          total <span class="ot">&lt;-</span> <span class="fu">sum</span>(x[, <span class="dv">1</span>])</span>
+<span id="cb180-778"><a href="#cb180-778"></a>          total <span class="ot">&lt;-</span> <span class="fu">sum</span>(x[<span class="dv">1</span>, ])</span>
+<span id="cb180-779"><a href="#cb180-779"></a>          <span class="cf">if</span> (debug)</span>
+<span id="cb180-780"><a href="#cb180-780"></a>          <span class="fu">mean</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb180-781"><a href="#cb180-781"></a>          </span>
+<span id="cb180-782"><a href="#cb180-782"></a>  <span class="sc">-</span> Mal<span class="sc">:</span> </span>
+<span id="cb180-783"><a href="#cb180-783"></a>         a<span class="ot">&lt;-</span><span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">10</span>,<span class="at">sd=</span><span class="dv">10</span>,<span class="at">mean=</span><span class="dv">1</span>)</span>
+<span id="cb180-784"><a href="#cb180-784"></a>         tab.prior <span class="ot">&lt;-</span> <span class="fu">table</span>(df[df<span class="sc">$</span>days.from.opt<span class="sc">&lt;</span><span class="dv">0</span>, <span class="st">"campaign.id"</span>])  <span class="co"># necesita espacio alrededor de '&lt;'</span></span>
+<span id="cb180-785"><a href="#cb180-785"></a>         tab.prior <span class="ot">&lt;-</span> <span class="fu">table</span>(df[df<span class="sc">$</span>days.from.opt <span class="sc">&lt;</span> <span class="dv">0</span>,<span class="st">"campaign.id"</span>])  <span class="co"># Necesita espacio despues de la coma</span></span>
+<span id="cb180-786"><a href="#cb180-786"></a>         tab.prior<span class="ot">&lt;-</span> <span class="fu">table</span>(df[df<span class="sc">$</span>days.from.opt <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">"campaign.id"</span>])  <span class="co"># Necesita espacio antes de &lt;-</span></span>
+<span id="cb180-787"><a href="#cb180-787"></a>         tab.prior<span class="ot">&lt;-</span><span class="fu">table</span>(df[df<span class="sc">$</span>days.from.opt <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="st">"campaign.id"</span>])  <span class="co"># Necesita espacio alrededor de &lt;-</span></span>
+<span id="cb180-788"><a href="#cb180-788"></a>         total <span class="ot">&lt;-</span> <span class="fu">sum</span>(x[,<span class="dv">1</span>])  <span class="co"># Necesita espacio antes de la coma  </span></span>
+<span id="cb180-789"><a href="#cb180-789"></a>         <span class="cf">if</span>(debug) <span class="co"># Necesita espacio antes del parentesis</span></span>
+<span id="cb180-790"><a href="#cb180-790"></a>         <span class="fu">mean</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="co"># Espacio extra luego del nombre de la funcion</span></span>
 <span id="cb180-791"><a href="#cb180-791"></a></span>
 <span id="cb180-792"><a href="#cb180-792"></a><span class="in">```</span></span>
 <span id="cb180-793"><a href="#cb180-793"></a></span>
@@ -3123,23 +2928,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-801"><a href="#cb180-801"></a></span>
 <span id="cb180-802"><a href="#cb180-802"></a><span class="in">```{r eval=F}</span></span>
 <span id="cb180-803"><a href="#cb180-803"></a></span>
-<span id="cb180-804"><a href="#cb180-804"></a><span class="in">  - Bien:</span></span>
-<span id="cb180-805"><a href="#cb180-805"></a><span class="in">              if (is.null(ylim)) {</span></span>
-<span id="cb180-806"><a href="#cb180-806"></a><span class="in">              ylim &lt;- c(0, 0.06)</span></span>
-<span id="cb180-807"><a href="#cb180-807"></a><span class="in">            }</span></span>
-<span id="cb180-808"><a href="#cb180-808"></a><span class="in">                      </span></span>
-<span id="cb180-809"><a href="#cb180-809"></a><span class="in">            if (is.null(ylim))</span></span>
-<span id="cb180-810"><a href="#cb180-810"></a><span class="in">              ylim &lt;- c(0, 0.06)</span></span>
-<span id="cb180-811"><a href="#cb180-811"></a><span class="in">          </span></span>
-<span id="cb180-812"><a href="#cb180-812"></a><span class="in">  - Mal:</span></span>
-<span id="cb180-813"><a href="#cb180-813"></a><span class="in">            </span></span>
-<span id="cb180-814"><a href="#cb180-814"></a><span class="in">         if (is.null(ylim)) ylim &lt;- c(0, 0.06)</span></span>
-<span id="cb180-815"><a href="#cb180-815"></a><span class="in">                    </span></span>
-<span id="cb180-816"><a href="#cb180-816"></a><span class="in">         if (is.null(ylim)) {ylim &lt;- c(0, 0.06)} </span></span>
+<span id="cb180-804"><a href="#cb180-804"></a>  <span class="sc">-</span> Bien<span class="sc">:</span></span>
+<span id="cb180-805"><a href="#cb180-805"></a>              <span class="cf">if</span> (<span class="fu">is.null</span>(ylim)) {</span>
+<span id="cb180-806"><a href="#cb180-806"></a>              ylim <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.06</span>)</span>
+<span id="cb180-807"><a href="#cb180-807"></a>            }</span>
+<span id="cb180-808"><a href="#cb180-808"></a>                      </span>
+<span id="cb180-809"><a href="#cb180-809"></a>            <span class="cf">if</span> (<span class="fu">is.null</span>(ylim))</span>
+<span id="cb180-810"><a href="#cb180-810"></a>              ylim <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.06</span>)</span>
+<span id="cb180-811"><a href="#cb180-811"></a>          </span>
+<span id="cb180-812"><a href="#cb180-812"></a>  <span class="sc">-</span> Mal<span class="sc">:</span></span>
+<span id="cb180-813"><a href="#cb180-813"></a>            </span>
+<span id="cb180-814"><a href="#cb180-814"></a>         <span class="cf">if</span> (<span class="fu">is.null</span>(ylim)) ylim <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.06</span>)</span>
+<span id="cb180-815"><a href="#cb180-815"></a>                    </span>
+<span id="cb180-816"><a href="#cb180-816"></a>         <span class="cf">if</span> (<span class="fu">is.null</span>(ylim)) {ylim <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.06</span>)} </span>
 <span id="cb180-817"><a href="#cb180-817"></a></span>
-<span id="cb180-818"><a href="#cb180-818"></a><span class="in">         if (is.null(ylim)) {</span></span>
-<span id="cb180-819"><a href="#cb180-819"></a><span class="in">           ylim &lt;- c(0, 0.06)</span></span>
-<span id="cb180-820"><a href="#cb180-820"></a><span class="in">           } </span></span>
+<span id="cb180-818"><a href="#cb180-818"></a>         <span class="cf">if</span> (<span class="fu">is.null</span>(ylim)) {</span>
+<span id="cb180-819"><a href="#cb180-819"></a>           ylim <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.06</span>)</span>
+<span id="cb180-820"><a href="#cb180-820"></a>           } </span>
 <span id="cb180-821"><a href="#cb180-821"></a><span class="in">```</span></span>
 <span id="cb180-822"><a href="#cb180-822"></a></span>
 <span id="cb180-823"><a href="#cb180-823"></a>&nbsp;</span>
@@ -3150,11 +2955,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-828"><a href="#cb180-828"></a></span>
 <span id="cb180-829"><a href="#cb180-829"></a><span class="in">```{r, eval = F}</span></span>
 <span id="cb180-830"><a href="#cb180-830"></a></span>
-<span id="cb180-831"><a href="#cb180-831"></a><span class="in">  - GOOD:</span></span>
-<span id="cb180-832"><a href="#cb180-832"></a><span class="in">         x &lt;- 5 </span></span>
-<span id="cb180-833"><a href="#cb180-833"></a><span class="in">          </span></span>
-<span id="cb180-834"><a href="#cb180-834"></a><span class="in">  - BAD:</span></span>
-<span id="cb180-835"><a href="#cb180-835"></a><span class="in">         x = 5</span></span>
+<span id="cb180-831"><a href="#cb180-831"></a>  <span class="sc">-</span> GOOD<span class="sc">:</span></span>
+<span id="cb180-832"><a href="#cb180-832"></a>         x <span class="ot">&lt;-</span> <span class="dv">5</span> </span>
+<span id="cb180-833"><a href="#cb180-833"></a>          </span>
+<span id="cb180-834"><a href="#cb180-834"></a>  <span class="sc">-</span> BAD<span class="sc">:</span></span>
+<span id="cb180-835"><a href="#cb180-835"></a>         x <span class="ot">=</span> <span class="dv">5</span></span>
 <span id="cb180-836"><a href="#cb180-836"></a><span class="in">```</span></span>
 <span id="cb180-837"><a href="#cb180-837"></a></span>
 <span id="cb180-838"><a href="#cb180-838"></a>&nbsp;</span>
@@ -3167,12 +2972,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-845"><a href="#cb180-845"></a></span>
 <span id="cb180-846"><a href="#cb180-846"></a><span class="in">```{r, eval=F}</span></span>
 <span id="cb180-847"><a href="#cb180-847"></a></span>
-<span id="cb180-848"><a href="#cb180-848"></a><span class="in"># Create histogram of frequency of campaigns by pct budget spent.</span></span>
-<span id="cb180-849"><a href="#cb180-849"></a><span class="in">hist(df$pct.spent,</span></span>
-<span id="cb180-850"><a href="#cb180-850"></a><span class="in">     breaks = "scott",  # method for choosing number of buckets</span></span>
-<span id="cb180-851"><a href="#cb180-851"></a><span class="in">     main   = "Histograma: individuos por unidad de tiempo",</span></span>
-<span id="cb180-852"><a href="#cb180-852"></a><span class="in">     xlab   = "Número de individuos",</span></span>
-<span id="cb180-853"><a href="#cb180-853"></a><span class="in">     ylab   = "Frecuencia")</span></span>
+<span id="cb180-848"><a href="#cb180-848"></a><span class="co"># Create histogram of frequency of campaigns by pct budget spent.</span></span>
+<span id="cb180-849"><a href="#cb180-849"></a><span class="fu">hist</span>(df<span class="sc">$</span>pct.spent,</span>
+<span id="cb180-850"><a href="#cb180-850"></a>     <span class="at">breaks =</span> <span class="st">"scott"</span>,  <span class="co"># method for choosing number of buckets</span></span>
+<span id="cb180-851"><a href="#cb180-851"></a>     <span class="at">main   =</span> <span class="st">"Histograma: individuos por unidad de tiempo"</span>,</span>
+<span id="cb180-852"><a href="#cb180-852"></a>     <span class="at">xlab   =</span> <span class="st">"Número de individuos"</span>,</span>
+<span id="cb180-853"><a href="#cb180-853"></a>     <span class="at">ylab   =</span> <span class="st">"Frecuencia"</span>)</span>
 <span id="cb180-854"><a href="#cb180-854"></a><span class="in">```</span></span>
 <span id="cb180-855"><a href="#cb180-855"></a></span>
 <span id="cb180-856"><a href="#cb180-856"></a>&nbsp;</span>
@@ -3196,11 +3001,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-874"><a href="#cb180-874"></a></span>
 <span id="cb180-875"><a href="#cb180-875"></a><span class="fu">## Package documentation</span></span>
 <span id="cb180-876"><a href="#cb180-876"></a></span>
-<span id="cb180-877"><a href="#cb180-877"></a>&lt;img src="images/packagepage.png" alt="R" height="900" width="800" style="border:3px solid gray"/&gt;</span>
+<span id="cb180-877"><a href="#cb180-877"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"images/packagepage.png"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"R"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"900"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span> <span class="er">style</span><span class="ot">=</span><span class="st">"border:3px solid gray"</span><span class="kw">/&gt;</span></span>
 <span id="cb180-878"><a href="#cb180-878"></a></span>
 <span id="cb180-879"><a href="#cb180-879"></a>&nbsp;</span>
 <span id="cb180-880"><a href="#cb180-880"></a></span>
-<span id="cb180-881"><a href="#cb180-881"></a>&lt;font size="5"&gt;Reference manuals&lt;/font&gt;</span>
+<span id="cb180-881"><a href="#cb180-881"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"5"</span><span class="kw">&gt;</span>Reference manuals<span class="kw">&lt;/font&gt;</span></span>
 <span id="cb180-882"><a href="#cb180-882"></a></span>
 <span id="cb180-883"><a href="#cb180-883"></a>Los manuales de referencia son colecciones de la documentación de todas las funciones de un paquete (sólo 1 por paquete):</span>
 <span id="cb180-884"><a href="#cb180-884"></a></span>
@@ -3215,13 +3020,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-893"><a href="#cb180-893"></a>Todas las funciones (por defecto o de paquetes cargados) deben tener una documentación que siga un formato estándar:</span>
 <span id="cb180-894"><a href="#cb180-894"></a></span>
 <span id="cb180-895"><a href="#cb180-895"></a><span class="in">```{r, eval=F}</span></span>
-<span id="cb180-896"><a href="#cb180-896"></a><span class="in">?mean</span></span>
+<span id="cb180-896"><a href="#cb180-896"></a>?mean</span>
 <span id="cb180-897"><a href="#cb180-897"></a></span>
-<span id="cb180-898"><a href="#cb180-898"></a><span class="in">help("mean")</span></span>
+<span id="cb180-898"><a href="#cb180-898"></a><span class="fu">help</span>(<span class="st">"mean"</span>)</span>
 <span id="cb180-899"><a href="#cb180-899"></a></span>
 <span id="cb180-900"><a href="#cb180-900"></a><span class="in">```</span></span>
 <span id="cb180-901"><a href="#cb180-901"></a></span>
-<span id="cb180-902"><a href="#cb180-902"></a>&lt;img src="images/documentation.png" alt="R" height="700" width="800" style="border:3px solid gray"/&gt; &nbsp;</span>
+<span id="cb180-902"><a href="#cb180-902"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"images/documentation.png"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"R"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"700"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span> <span class="er">style</span><span class="ot">=</span><span class="st">"border:3px solid gray"</span><span class="kw">/&gt;</span> &nbsp;</span>
 <span id="cb180-903"><a href="#cb180-903"></a></span>
 <span id="cb180-904"><a href="#cb180-904"></a>Esta documentación también puede mostrarse en Rstudio pulsando <span class="in">`F1`</span> cuando el cursor está en el nombre de la función</span>
 <span id="cb180-905"><a href="#cb180-905"></a></span>
@@ -3247,7 +3052,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-929"><a href="#cb180-929"></a><span class="in">```</span></span>
 <span id="cb180-930"><a href="#cb180-930"></a></span>
 <span id="cb180-931"><a href="#cb180-931"></a><span class="in">```{r, eval = F}</span></span>
-<span id="cb180-932"><a href="#cb180-932"></a><span class="in">vignette()</span></span>
+<span id="cb180-932"><a href="#cb180-932"></a><span class="fu">vignette</span>()</span>
 <span id="cb180-933"><a href="#cb180-933"></a><span class="in">```</span></span>
 <span id="cb180-934"><a href="#cb180-934"></a></span>
 <span id="cb180-935"><a href="#cb180-935"></a>También deberían aparecer en la página del paquete en CRAN.</span>
@@ -3259,10 +3064,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-941"><a href="#cb180-941"></a>Los paquetes también pueden incluir demostraciones de código extendidas ("demos"). Para listar las demos de un paquete ejecute <span class="in">`demo("nombre del paquete")`</span>:</span>
 <span id="cb180-942"><a href="#cb180-942"></a></span>
 <span id="cb180-943"><a href="#cb180-943"></a><span class="in">```{r, eval=F}</span></span>
-<span id="cb180-944"><a href="#cb180-944"></a><span class="in">demo(package="stats")</span></span>
+<span id="cb180-944"><a href="#cb180-944"></a><span class="fu">demo</span>(<span class="at">package=</span><span class="st">"stats"</span>)</span>
 <span id="cb180-945"><a href="#cb180-945"></a></span>
-<span id="cb180-946"><a href="#cb180-946"></a><span class="in"># call demo directly</span></span>
-<span id="cb180-947"><a href="#cb180-947"></a><span class="in">demo("nlm")</span></span>
+<span id="cb180-946"><a href="#cb180-946"></a><span class="co"># call demo directly</span></span>
+<span id="cb180-947"><a href="#cb180-947"></a><span class="fu">demo</span>(<span class="st">"nlm"</span>)</span>
 <span id="cb180-948"><a href="#cb180-948"></a></span>
 <span id="cb180-949"><a href="#cb180-949"></a><span class="in">```</span></span>
 <span id="cb180-950"><a href="#cb180-950"></a></span>
@@ -3294,11 +3099,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb180-976"><a href="#cb180-976"></a></span>
 <span id="cb180-977"><a href="#cb180-977"></a>------------------------------------------------------------------------</span>
 <span id="cb180-978"><a href="#cb180-978"></a></span>
-<span id="cb180-979"><a href="#cb180-979"></a>&lt;font size="4"&gt;Información de la sesión&lt;/font&gt;</span>
+<span id="cb180-979"><a href="#cb180-979"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"4"</span><span class="kw">&gt;</span>Información de la sesión<span class="kw">&lt;/font&gt;</span></span>
 <span id="cb180-980"><a href="#cb180-980"></a></span>
 <span id="cb180-981"><a href="#cb180-981"></a><span class="in">```{r session info, echo=F}</span></span>
 <span id="cb180-982"><a href="#cb180-982"></a></span>
-<span id="cb180-983"><a href="#cb180-983"></a><span class="in">sessionInfo()</span></span>
+<span id="cb180-983"><a href="#cb180-983"></a><span class="fu">sessionInfo</span>()</span>
 <span id="cb180-984"><a href="#cb180-984"></a></span>
 <span id="cb180-985"><a href="#cb180-985"></a><span class="in">```</span></span>
 </code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3306,18 +3111,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
+      <div class="nav-footer-center">Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></div>
   </div>
 </footer>
-
 
 
 

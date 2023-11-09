@@ -11,7 +11,7 @@ website:
   navbar:
     right:
       - icon: github
-        href: https:/github.com/maRce10/R_avanzado_2023/
+        href: https://github.com/maRce10/R_avanzado_2023/
         aria-label: GitHub
     left:
       - href: index.qmd

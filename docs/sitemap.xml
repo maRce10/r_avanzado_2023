@@ -1,19 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://marce10.github.io/R_avanzado_2023/preparacion_curso.html</loc>
-    <lastmod>2023-09-25T22:24:25.000Z</lastmod>
+    <loc>https://marce10.github.io/R_avanzado_2023/modelos_de_regresion.html</loc>
+    <lastmod>2023-11-09T15:24:54.332Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marce10.github.io/R_avanzado_2023/tarea5.html</loc>
+    <lastmod>2023-11-09T15:24:57.969Z</lastmod>
   </url>
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/reportes_dinamicos.html</loc>
-    <lastmod>2023-09-28T23:36:21.000Z</lastmod>
+    <lastmod>2023-11-09T15:25:05.094Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marce10.github.io/R_avanzado_2023/preparacion_curso.html</loc>
+    <lastmod>2023-11-09T15:25:08.210Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marce10.github.io/R_avanzado_2023/fundamentos_de_r.html</loc>
+    <lastmod>2023-11-09T15:25:14.799Z</lastmod>
   </url>
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/index.html</loc>
-    <lastmod>2023-10-08T12:32:17.000Z</lastmod>
+    <lastmod>2023-11-09T15:30:18.437Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marce10.github.io/R_avanzado_2023/ggplot2.html</loc>
+    <lastmod>2023-11-09T15:26:33.509Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marce10.github.io/R_avanzado_2023/funciones.html</loc>
+    <lastmod>2023-11-09T15:26:52.291Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marce10.github.io/R_avanzado_2023/bucles.html</loc>
+    <lastmod>2023-11-09T15:27:32.036Z</lastmod>
   </url>
   <url>
     <loc>https://marce10.github.io/R_avanzado_2023/respuestas_tarea5.html</loc>
-    <lastmod>2023-10-31T02:44:34.000Z</lastmod>
+    <lastmod>2023-11-09T15:31:15.420Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marce10.github.io/R_avanzado_2023/instructor.html</loc>
+    <lastmod>2023-11-09T15:27:36.397Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marce10.github.io/R_avanzado_2023/estadistica_tradicional_regresion.html</loc>
+    <lastmod>2023-11-09T15:27:41.177Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marce10.github.io/R_avanzado_2023/tarea4.html</loc>
+    <lastmod>2023-11-09T15:27:44.002Z</lastmod>
   </url>
 </urlset>

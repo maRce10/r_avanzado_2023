@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-99.9.9">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,12 +17,11 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -47,13 +46,43 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -80,12 +109,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -95,8 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Buscar"
+    "search-submit-button-title": "Enviar"
   }
 }</script>
 
@@ -110,20 +132,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">R avanzado 2023</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text"> </span></a>
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text"> </span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-manuales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -180,52 +201,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./preparacion_curso.html"> 
-<span class="menu-text">Preparación para el curso</span></a>
+    <a class="nav-link" href="./preparacion_curso.html">
+ <span class="menu-text">Preparación para el curso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN"> 
-<span class="menu-text">Compartir código</span></a>
+    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN">
+ <span class="menu-text">Compartir código</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructor.html"> 
-<span class="menu-text">Instructor</span></a>
+    <a class="nav-link" href="./instructor.html">
+ <span class="menu-text">Instructor</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="https:/github.com/maRce10/R_avanzado_2023/"> <i class="bi bi-github" role="img" aria-label="GitHub">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/maRce10/R_avanzado_2023/"><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
-<span class="menu-text">https:/github.com/maRce10/R_avanzado_2023/</span></a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
-</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Contenidos</h2>
    
   <ul class="collapse">
-  <li><a href="#gramática-de-gráficos" id="toc-gramática-de-gráficos" class="nav-link active" data-scroll-target="#gramática-de-gráficos"><span class="header-section-number">0.1</span> Gramática de gráficos</a></li>
-  <li><a href="#componentes-del-gráfico" id="toc-componentes-del-gráfico" class="nav-link" data-scroll-target="#componentes-del-gráfico"><span class="header-section-number">0.2</span> Componentes del gráfico</a></li>
-  <li><a href="#gráficos-de-dispersión" id="toc-gráficos-de-dispersión" class="nav-link" data-scroll-target="#gráficos-de-dispersión"><span class="header-section-number">0.3</span> Gráficos de dispersión</a></li>
-  <li><a href="#atributos-estéticos" id="toc-atributos-estéticos" class="nav-link" data-scroll-target="#atributos-estéticos"><span class="header-section-number">0.4</span> Atributos estéticos</a></li>
-  <li><a href="#gráficos-multipanel-facetting" id="toc-gráficos-multipanel-facetting" class="nav-link" data-scroll-target="#gráficos-multipanel-facetting"><span class="header-section-number">0.5</span> Gráficos multipanel (Facetting)</a></li>
-  <li><a href="#geoms-adicionales" id="toc-geoms-adicionales" class="nav-link" data-scroll-target="#geoms-adicionales"><span class="header-section-number">0.6</span> “geoms” adicionales</a></li>
-  <li><a href="#personalización-de-ggplots" id="toc-personalización-de-ggplots" class="nav-link" data-scroll-target="#personalización-de-ggplots"><span class="header-section-number">0.7</span> Personalización de ggplots</a></li>
-  <li><a href="#otros-paquetes-de-gráficos-en-r" id="toc-otros-paquetes-de-gráficos-en-r" class="nav-link" data-scroll-target="#otros-paquetes-de-gráficos-en-r"><span class="header-section-number">0.8</span> Otros paquetes de gráficos en R</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">0.9</span> References</a></li>
+  <li><a href="#gramática-de-gráficos" id="toc-gramática-de-gráficos" class="nav-link active" data-scroll-target="#gramática-de-gráficos"><span class="toc-section-number">0.1</span>  Gramática de gráficos</a></li>
+  <li><a href="#componentes-del-gráfico" id="toc-componentes-del-gráfico" class="nav-link" data-scroll-target="#componentes-del-gráfico"><span class="toc-section-number">0.2</span>  Componentes del gráfico</a></li>
+  <li><a href="#gráficos-de-dispersión" id="toc-gráficos-de-dispersión" class="nav-link" data-scroll-target="#gráficos-de-dispersión"><span class="toc-section-number">0.3</span>  Gráficos de dispersión</a></li>
+  <li><a href="#atributos-estéticos" id="toc-atributos-estéticos" class="nav-link" data-scroll-target="#atributos-estéticos"><span class="toc-section-number">0.4</span>  Atributos estéticos</a></li>
+  <li><a href="#gráficos-multipanel-facetting" id="toc-gráficos-multipanel-facetting" class="nav-link" data-scroll-target="#gráficos-multipanel-facetting"><span class="toc-section-number">0.5</span>  Gráficos multipanel (Facetting)</a></li>
+  <li><a href="#geoms-adicionales" id="toc-geoms-adicionales" class="nav-link" data-scroll-target="#geoms-adicionales"><span class="toc-section-number">0.6</span>  “geoms” adicionales</a></li>
+  <li><a href="#personalización-de-ggplots" id="toc-personalización-de-ggplots" class="nav-link" data-scroll-target="#personalización-de-ggplots"><span class="toc-section-number">0.7</span>  Personalización de ggplots</a></li>
+  <li><a href="#otros-paquetes-de-gráficos-en-r" id="toc-otros-paquetes-de-gráficos-en-r" class="nav-link" data-scroll-target="#otros-paquetes-de-gráficos-en-r"><span class="toc-section-number">0.8</span>  Otros paquetes de gráficos en R</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">0.9</span>  References</a></li>
   </ul>
 </nav>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -245,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">8 de noviembre de 2023</p>
+      <p class="date">9 de noviembre de 2023</p>
     </div>
   </div>
   
@@ -253,9 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
-
 
 <style>
 body
@@ -263,6 +280,12 @@ body
 pre.numberSource code
   { counter-reset: none; }
 </style>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
 <section id="objetivos-del-manual" class="level1 unnumbered unlisted alert alert-info">
 <h1 class="unnumbered unlisted">Objetivos del manual</h1>
 <ul>
@@ -327,13 +350,7 @@ pre.numberSource code
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-3-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -354,13 +371,7 @@ pre.numberSource code
 <span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-4-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -377,13 +388,7 @@ pre.numberSource code
 <span id="cb4-11"><a href="#cb4-11"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-4-2.png" id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -398,13 +403,7 @@ pre.numberSource code
 <span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Species, <span class="at">shape =</span> Species))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-5-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -419,13 +418,7 @@ pre.numberSource code
 <span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red2"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-6-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -456,10 +449,19 @@ pre.numberSource code
 <p><br></p>
 <p>1.1 Create a scatter plot of vs “meanfreq” (mean frequency)</p>
 <p>1.1 Crear un gráfico de dispersión de duración (“duration”) vs frecuencia promedio (“meanfreq”)</p>
+<div class="cell">
+
+</div>
 <p><br></p>
 <p>1.2 Añadir un atributo estético para mostrar un color diferente para cada localidad</p>
+<div class="cell">
+
+</div>
 <p><br></p>
 <p>1.3 Añade otro atributo estético para mostrar el rango de frecuencia dominante (“dfrange”) como tamaño los símbolos</p>
+<div class="cell">
+
+</div>
 <p><br></p>
 </div>
 <p>&nbsp;</p>
@@ -479,13 +481,7 @@ pre.numberSource code
 <span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-11-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -496,13 +492,7 @@ pre.numberSource code
 <span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>Species)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-7" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-11-2.png" id="fig-539a35d47e664c97a50115a146a7f1bd-7" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -516,13 +506,7 @@ pre.numberSource code
 <span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species, <span class="at">scales =</span> <span class="st">"free_x"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-12-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -534,13 +518,7 @@ pre.numberSource code
 <span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species, <span class="at">scales =</span> <span class="st">"free_y"</span>, <span class="at">nrow =</span> <span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-13-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -552,13 +530,7 @@ pre.numberSource code
 <span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-14-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -572,13 +544,7 @@ pre.numberSource code
 <span id="cb13-4"><a href="#cb13-4"></a>p <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species, <span class="at">scales =</span> <span class="st">"free_x"</span>, <span class="at">nrow =</span> <span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-15-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -605,13 +571,7 @@ pre.numberSource code
 <span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">nrow =</span> <span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-16-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -622,13 +582,7 @@ pre.numberSource code
 <span id="cb15-5"><a href="#cb15-5"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">nrow =</span> <span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-16-2.png" id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-16-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -637,14 +591,29 @@ pre.numberSource code
 <p>Utilizando el conjunto de datos de ejemplo “msleep”:</p>
 <p><br></p>
 <p>2.1 Crear un gráfico de dispersión de peso corporal (“bodywt”) frente a peso cerebral (“brainwt”)</p>
+<div class="cell">
+
+</div>
 <p><br></p>
 <p>2.2 Añadir orden (“order”) como estética del color</p>
+<div class="cell">
+
+</div>
 <p><br></p>
 <p>2.3 Añadir un componente “faceta” para dividir los gráficos por orden utilizando escalas libres</p>
+<div class="cell">
+
+</div>
 <p><br></p>
 <p>2.4 Elimine los órdenes con menos de 4 especies en el conjunto de datos y haga un gráfico similar al 2.3</p>
+<div class="cell">
+
+</div>
 <p><br></p>
 <p>2.5 Añadir una línea de mejor ajuste a cada gráfico del panel</p>
+<div class="cell">
+
+</div>
 <p><br></p>
 </div>
 </section>
@@ -658,13 +627,7 @@ pre.numberSource code
 <span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-14" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-22-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-14" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Una alternativa interesante son los gráficos de violines:</p>
@@ -675,13 +638,7 @@ pre.numberSource code
 <span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">geom_violin</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-15" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-23-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-15" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -696,13 +653,7 @@ pre.numberSource code
 <span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-16" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-24-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-16" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -710,13 +661,7 @@ pre.numberSource code
 <span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">geom_freqpoly</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-17" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-24-2.png" id="fig-539a35d47e664c97a50115a146a7f1bd-17" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-24-2.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -725,13 +670,7 @@ pre.numberSource code
 <span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">geom_freqpoly</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-18" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-24-3.png" id="fig-539a35d47e664c97a50115a146a7f1bd-18" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-24-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -746,13 +685,7 @@ pre.numberSource code
 <pre><code>Warning: Duplicated aesthetics after name standardisation: fill</code></pre>
 </div>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-19" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-25-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-19" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -764,13 +697,7 @@ pre.numberSource code
 <span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.4</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-20" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-26-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-20" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -790,16 +717,13 @@ pre.numberSource code
 <span id="cb24-7"><a href="#cb24-7"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-21" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-27-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-21" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
+<div class="cell">
+
+</div>
 </section>
 </section>
 <section id="personalización-de-ggplots" class="level2" data-number="0.7">
@@ -818,39 +742,21 @@ pre.numberSource code
 <span id="cb25-4"><a href="#cb25-4"></a>p <span class="sc">+</span> <span class="fu">theme_classic</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-22" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-29-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-22" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>p <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-23" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-29-2.png" id="fig-539a35d47e664c97a50115a146a7f1bd-23" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-29-2.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r numberLines lineAnchors number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>p <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-24" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-29-3.png" id="fig-539a35d47e664c97a50115a146a7f1bd-24" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-29-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -868,13 +774,7 @@ pre.numberSource code
 <span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-25" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-30-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-25" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -884,13 +784,7 @@ pre.numberSource code
 <span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">9</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-26" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-30-2.png" id="fig-539a35d47e664c97a50115a146a7f1bd-26" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-30-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -904,13 +798,7 @@ pre.numberSource code
 <span id="cb30-4"><a href="#cb30-4"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">trans =</span> <span class="st">"log2"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-27" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-31-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-27" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -923,13 +811,7 @@ pre.numberSource code
 <span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">scale_y_reverse</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-28" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-32-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-28" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -950,13 +832,7 @@ pre.numberSource code
 <pre><code>Warning: Removed 21 rows containing missing values (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-29" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-33-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-29" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -980,13 +856,7 @@ pre.numberSource code
 <span id="cb36-4"><a href="#cb36-4"></a>p <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">trans =</span> <span class="fu">log2_trans</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-30" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-34-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-30" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -998,13 +868,7 @@ pre.numberSource code
 <span id="cb37-6"><a href="#cb37-6"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-31" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-34-2.png" id="fig-539a35d47e664c97a50115a146a7f1bd-31" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-34-2.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -1012,13 +876,7 @@ pre.numberSource code
 <span id="cb38-2"><a href="#cb38-2"></a>p <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-32" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-34-3.png" id="fig-539a35d47e664c97a50115a146a7f1bd-32" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-34-3.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -1026,13 +884,7 @@ pre.numberSource code
 <span id="cb39-2"><a href="#cb39-2"></a>p <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> dollar)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-33" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-34-4.png" id="fig-539a35d47e664c97a50115a146a7f1bd-33" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-34-4.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -1040,13 +892,7 @@ pre.numberSource code
 <span id="cb40-2"><a href="#cb40-2"></a>p <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scientific)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-34" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-34-5.png" id="fig-539a35d47e664c97a50115a146a7f1bd-34" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-34-5.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -1074,13 +920,7 @@ pre.numberSource code
 <span id="cb41-22"><a href="#cb41-22"></a>p2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-35" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-34-6.png" id="fig-539a35d47e664c97a50115a146a7f1bd-35" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-34-6.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -1088,13 +928,7 @@ pre.numberSource code
 <span id="cb42-2"><a href="#cb42-2"></a>p2 <span class="sc">+</span> <span class="fu">annotation_logticks</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-36" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-34-7.png" id="fig-539a35d47e664c97a50115a146a7f1bd-36" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-34-7.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -1102,13 +936,7 @@ pre.numberSource code
 <span id="cb43-2"><a href="#cb43-2"></a>p2 <span class="sc">+</span> <span class="fu">annotation_logticks</span>(<span class="at">sides =</span> <span class="st">"lr"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-37" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-34-8.png" id="fig-539a35d47e664c97a50115a146a7f1bd-37" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-34-8.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -1116,13 +944,7 @@ pre.numberSource code
 <span id="cb44-2"><a href="#cb44-2"></a>p2 <span class="sc">+</span> <span class="fu">annotation_logticks</span>(<span class="at">sides =</span> <span class="st">"trbl"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-38" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-34-9.png" id="fig-539a35d47e664c97a50115a146a7f1bd-38" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-34-9.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -1137,6 +959,7 @@ pre.numberSource code
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
+
 <table>
 <thead>
 <tr>
@@ -1198,6 +1021,7 @@ waiting
 </td>
 </tr>
 </tbody>
+
 </table>
 </div>
 </div>
@@ -1207,13 +1031,7 @@ waiting
 <span id="cb46-2"><a href="#cb46-2"></a>  <span class="fu">geom_contour</span>(<span class="fu">aes</span>(<span class="at">z =</span> density, <span class="at">colour =</span> <span class="fu">after_stat</span>(level)))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-39" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-35-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-39" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Código</summary>
@@ -1221,13 +1039,7 @@ waiting
 <span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">geom_raster</span>(<span class="fu">aes</span>(<span class="at">fill =</span> density))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-40" class="quarto-figure quarto-figure-center anchored" width="672">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="ggplot2_files/figure-html/unnamed-chunk-35-2.png" id="fig-539a35d47e664c97a50115a146a7f1bd-40" class="img-fluid figure-img" width="672">
-</div>
-</figure>
-</div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-35-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -1258,46 +1070,43 @@ waiting
 <p><font size="4">Información de la sesión</font></p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.3.1 (2023-06-16)
+<pre><code>R version 4.2.2 Patched (2022-11-10 r83330)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 20.04.2 LTS
+Running under: Ubuntu 20.04.5 LTS
 
 Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/atlas/libblas.so.3.10.3 
-LAPACK: /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3.10.3;  LAPACK version 3.9.0
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
 
 locale:
- [1] LC_CTYPE=pt_BR.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=pt_BR.UTF-8    
- [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=pt_BR.UTF-8   
+ [1] LC_CTYPE=es_ES.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=es_ES.UTF-8    
+ [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=es_ES.UTF-8   
  [7] LC_PAPER=es_CR.UTF-8       LC_NAME=C                 
  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
 [11] LC_MEASUREMENT=es_CR.UTF-8 LC_IDENTIFICATION=C       
-
-time zone: America/Costa_Rica
-tzcode source: system (glibc)
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] scales_1.2.1       viridis_0.6.4      viridisLite_0.4.2  MASS_7.3-60       
-[5] RColorBrewer_1.1-3 ggplot2_3.4.4      knitr_1.45         kableExtra_1.3.4  
+[1] scales_1.2.1       viridis_0.6.4      viridisLite_0.4.2  MASS_7.3-58.2     
+[5] RColorBrewer_1.1-3 ggplot2_3.4.3      knitr_1.44         kableExtra_1.3.4  
 
 loaded via a namespace (and not attached):
- [1] utf8_1.2.4        generics_0.1.3    xml2_1.3.5        stringi_1.7.12   
- [5] lattice_0.22-5    digest_0.6.33     magrittr_2.0.3    evaluate_0.23    
- [9] grid_4.3.1        fastmap_1.1.1     jsonlite_1.8.7    Matrix_1.6-2     
-[13] gridExtra_2.3     httr_1.4.7        rvest_1.0.3       mgcv_1.9-0       
-[17] fansi_1.0.5       isoband_0.2.7     textshaping_0.3.7 cli_3.6.1        
-[21] rlang_1.1.2       munsell_0.5.0     splines_4.3.1     withr_2.5.2      
-[25] yaml_2.3.7        tools_4.3.1       dplyr_1.1.3       colorspace_2.1-0 
-[29] webshot_0.5.5     vctrs_0.6.4       R6_2.5.1          lifecycle_1.0.4  
-[33] stringr_1.5.0     htmlwidgets_1.6.2 ragg_1.2.6        pkgconfig_2.0.3  
-[37] pillar_1.9.0      gtable_0.3.4      glue_1.6.2        systemfonts_1.0.5
-[41] highr_0.10        xfun_0.41         tibble_3.2.1      tidyselect_1.2.0 
-[45] rstudioapi_0.15.0 farver_2.1.1      htmltools_0.5.7   nlme_3.1-163     
-[49] rmarkdown_2.25    svglite_2.1.2     labeling_0.4.3    compiler_4.3.1   </code></pre>
+ [1] tidyselect_1.2.0  xfun_0.40         splines_4.2.2     lattice_0.20-45  
+ [5] colorspace_2.1-0  vctrs_0.6.3       generics_0.1.3    htmltools_0.5.6  
+ [9] yaml_2.3.7        mgcv_1.8-41       utf8_1.2.3        rlang_1.1.1      
+[13] isoband_0.2.7     pillar_1.9.0      glue_1.6.2        withr_2.5.1      
+[17] lifecycle_1.0.3   stringr_1.5.0     munsell_0.5.0     gtable_0.3.4     
+[21] ragg_1.2.5        rvest_1.0.3       htmlwidgets_1.5.4 evaluate_0.22    
+[25] labeling_0.4.3    fastmap_1.1.1     fansi_1.0.4       highr_0.10       
+[29] webshot_0.5.4     jsonlite_1.8.7    farver_2.1.1      systemfonts_1.0.4
+[33] textshaping_0.3.6 gridExtra_2.3     digest_0.6.33     stringi_1.7.12   
+[37] dplyr_1.1.0       grid_4.2.2        cli_3.6.1         tools_4.2.2      
+[41] magrittr_2.0.3    tibble_3.2.1      pkgconfig_2.0.3   Matrix_1.5-1     
+[45] xml2_1.3.5        rmarkdown_2.21    svglite_2.1.0     httr_1.4.6       
+[49] rstudioapi_0.14   R6_2.5.1          nlme_3.1-162      compiler_4.2.2   </code></pre>
 </div>
 </div>
 
@@ -1334,23 +1143,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -1437,9 +1232,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1449,17 +1245,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1474,194 +1261,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
-        }
-        return container.innerHTML
-      } else {
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      return note.innerHTML;
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1700,12 +1299,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/marce10\.github\.io\/R_avanzado_2023\/");
+      var filterRegex = new RegExp(/https:\/\/marce10\.github\.io\/R_avanzado_2023\//);
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1743,41 +1342,41 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-26"><a href="#cb49-26"></a></span>
 <span id="cb49-27"><a href="#cb49-27"></a><span class="in">```{r,echo=FALSE,message=FALSE}</span></span>
 <span id="cb49-28"><a href="#cb49-28"></a></span>
-<span id="cb49-29"><a href="#cb49-29"></a><span class="in">options("digits" = 5)</span></span>
-<span id="cb49-30"><a href="#cb49-30"></a><span class="in">options("digits.secs" = 3)</span></span>
+<span id="cb49-29"><a href="#cb49-29"></a><span class="fu">options</span>(<span class="st">"digits"</span> <span class="ot">=</span> <span class="dv">5</span>)</span>
+<span id="cb49-30"><a href="#cb49-30"></a><span class="fu">options</span>(<span class="st">"digits.secs"</span> <span class="ot">=</span> <span class="dv">3</span>)</span>
 <span id="cb49-31"><a href="#cb49-31"></a></span>
-<span id="cb49-32"><a href="#cb49-32"></a><span class="in"># options to customize chunk outputs</span></span>
-<span id="cb49-33"><a href="#cb49-33"></a><span class="in">knitr::opts_chunk$set(</span></span>
-<span id="cb49-34"><a href="#cb49-34"></a><span class="in">  class.source = "numberLines lineAnchors", # for code line numbers</span></span>
-<span id="cb49-35"><a href="#cb49-35"></a><span class="in">  message = FALSE</span></span>
-<span id="cb49-36"><a href="#cb49-36"></a><span class="in">)</span></span>
+<span id="cb49-32"><a href="#cb49-32"></a><span class="co"># options to customize chunk outputs</span></span>
+<span id="cb49-33"><a href="#cb49-33"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb49-34"><a href="#cb49-34"></a>  <span class="at">class.source =</span> <span class="st">"numberLines lineAnchors"</span>, <span class="co"># for code line numbers</span></span>
+<span id="cb49-35"><a href="#cb49-35"></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
+<span id="cb49-36"><a href="#cb49-36"></a>)</span>
 <span id="cb49-37"><a href="#cb49-37"></a></span>
-<span id="cb49-38"><a href="#cb49-38"></a><span class="in">x &lt;- c("kableExtra", "knitr", "ggplot2", "RColorBrewer", "knitr", "MASS", "viridis")</span></span>
+<span id="cb49-38"><a href="#cb49-38"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"kableExtra"</span>, <span class="st">"knitr"</span>, <span class="st">"ggplot2"</span>, <span class="st">"RColorBrewer"</span>, <span class="st">"knitr"</span>, <span class="st">"MASS"</span>, <span class="st">"viridis"</span>)</span>
 <span id="cb49-39"><a href="#cb49-39"></a></span>
-<span id="cb49-40"><a href="#cb49-40"></a><span class="in">aa &lt;- lapply(x, function(y) {</span></span>
-<span id="cb49-41"><a href="#cb49-41"></a><span class="in">  if (!y %in% installed.packages()[, "Package"]) {</span></span>
-<span id="cb49-42"><a href="#cb49-42"></a><span class="in">    if (!y %in% c("warbleR", "Rraven")) install.packages(y) else devtools::install_github(paste0("maRce10/", y))</span></span>
-<span id="cb49-43"><a href="#cb49-43"></a><span class="in">  }</span></span>
-<span id="cb49-44"><a href="#cb49-44"></a><span class="in">  try(require(y, character.only = T), silent = T)</span></span>
-<span id="cb49-45"><a href="#cb49-45"></a><span class="in">})</span></span>
+<span id="cb49-40"><a href="#cb49-40"></a>aa <span class="ot">&lt;-</span> <span class="fu">lapply</span>(x, <span class="cf">function</span>(y) {</span>
+<span id="cb49-41"><a href="#cb49-41"></a>  <span class="cf">if</span> (<span class="sc">!</span>y <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[, <span class="st">"Package"</span>]) {</span>
+<span id="cb49-42"><a href="#cb49-42"></a>    <span class="cf">if</span> (<span class="sc">!</span>y <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"warbleR"</span>, <span class="st">"Rraven"</span>)) <span class="fu">install.packages</span>(y) <span class="cf">else</span> devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="fu">paste0</span>(<span class="st">"maRce10/"</span>, y))</span>
+<span id="cb49-43"><a href="#cb49-43"></a>  }</span>
+<span id="cb49-44"><a href="#cb49-44"></a>  <span class="fu">try</span>(<span class="fu">require</span>(y, <span class="at">character.only =</span> T), <span class="at">silent =</span> T)</span>
+<span id="cb49-45"><a href="#cb49-45"></a>})</span>
 <span id="cb49-46"><a href="#cb49-46"></a></span>
 <span id="cb49-47"><a href="#cb49-47"></a></span>
-<span id="cb49-48"><a href="#cb49-48"></a><span class="in"># ggplot settings</span></span>
-<span id="cb49-49"><a href="#cb49-49"></a><span class="in">geom_histogram &lt;- function(...) ggplot2::geom_histogram(..., fill = viridis(10, alpha = 0.5)[8], show.legend = FALSE, bins = 20, color = "black")</span></span>
+<span id="cb49-48"><a href="#cb49-48"></a><span class="co"># ggplot settings</span></span>
+<span id="cb49-49"><a href="#cb49-49"></a>geom_histogram <span class="ot">&lt;-</span> <span class="cf">function</span>(...) ggplot2<span class="sc">::</span><span class="fu">geom_histogram</span>(..., <span class="at">fill =</span> <span class="fu">viridis</span>(<span class="dv">10</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)[<span class="dv">8</span>], <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">color =</span> <span class="st">"black"</span>)</span>
 <span id="cb49-50"><a href="#cb49-50"></a></span>
-<span id="cb49-51"><a href="#cb49-51"></a><span class="in">geom_smooth &lt;- function(...) ggplot2::geom_smooth(..., color = viridis(10, alpha = 0.5)[8])</span></span>
+<span id="cb49-51"><a href="#cb49-51"></a>geom_smooth <span class="ot">&lt;-</span> <span class="cf">function</span>(...) ggplot2<span class="sc">::</span><span class="fu">geom_smooth</span>(..., <span class="at">color =</span> <span class="fu">viridis</span>(<span class="dv">10</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)[<span class="dv">8</span>])</span>
 <span id="cb49-52"><a href="#cb49-52"></a></span>
-<span id="cb49-53"><a href="#cb49-53"></a><span class="in">geom_boxplot &lt;- function(...) ggplot2::geom_boxplot(..., fill = viridis(10, alpha = 0.5)[7])</span></span>
+<span id="cb49-53"><a href="#cb49-53"></a>geom_boxplot <span class="ot">&lt;-</span> <span class="cf">function</span>(...) ggplot2<span class="sc">::</span><span class="fu">geom_boxplot</span>(..., <span class="at">fill =</span> <span class="fu">viridis</span>(<span class="dv">10</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)[<span class="dv">7</span>])</span>
 <span id="cb49-54"><a href="#cb49-54"></a></span>
-<span id="cb49-55"><a href="#cb49-55"></a><span class="in">theme_set(theme_classic(base_size = 20))</span></span>
+<span id="cb49-55"><a href="#cb49-55"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">20</span>))</span>
 <span id="cb49-56"><a href="#cb49-56"></a><span class="in">```</span></span>
 <span id="cb49-57"><a href="#cb49-57"></a></span>
 <span id="cb49-58"><a href="#cb49-58"></a></span>
 <span id="cb49-59"><a href="#cb49-59"></a><span class="in">```{r functions and data, eval=T, echo=F}</span></span>
 <span id="cb49-60"><a href="#cb49-60"></a></span>
-<span id="cb49-61"><a href="#cb49-61"></a><span class="in">hylaeformis_data &lt;- read.csv(</span></span>
-<span id="cb49-62"><a href="#cb49-62"></a><span class="in">  paste0("https://raw.githubusercontent.com/maRce10/", "r_avanzado_2023/master/data/hylaeformis_data.csv")</span></span>
-<span id="cb49-63"><a href="#cb49-63"></a><span class="in">)</span></span>
+<span id="cb49-61"><a href="#cb49-61"></a>hylaeformis_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(</span>
+<span id="cb49-62"><a href="#cb49-62"></a>  <span class="fu">paste0</span>(<span class="st">"https://raw.githubusercontent.com/maRce10/"</span>, <span class="st">"r_avanzado_2023/master/data/hylaeformis_data.csv"</span>)</span>
+<span id="cb49-63"><a href="#cb49-63"></a>)</span>
 <span id="cb49-64"><a href="#cb49-64"></a><span class="in">```</span></span>
 <span id="cb49-65"><a href="#cb49-65"></a></span>
 <span id="cb49-66"><a href="#cb49-66"></a>::: {.alert .alert-info}</span>
@@ -1793,7 +1392,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-76"><a href="#cb49-76"></a></span>
 <span id="cb49-77"><a href="#cb49-77"></a><span class="dv">&amp;nbsp;</span> </span>
 <span id="cb49-78"><a href="#cb49-78"></a></span>
-<span id="cb49-79"><a href="#cb49-79"></a>&lt;div class="alert alert-warning"&gt;</span>
+<span id="cb49-79"><a href="#cb49-79"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"alert alert-warning"</span><span class="kw">&gt;</span></span>
 <span id="cb49-80"><a href="#cb49-80"></a></span>
 <span id="cb49-81"><a href="#cb49-81"></a><span class="fu">## ggplot2 {.unnumbered .unlisted}</span></span>
 <span id="cb49-82"><a href="#cb49-82"></a></span>
@@ -1807,7 +1406,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-90"><a href="#cb49-90"></a></span>
 <span id="cb49-91"><a href="#cb49-91"></a><span class="ss">  - </span>Esta gramática proporciona una gran flexibilidad</span>
 <span id="cb49-92"><a href="#cb49-92"></a></span>
-<span id="cb49-93"><a href="#cb49-93"></a>&lt;/div&gt;</span>
+<span id="cb49-93"><a href="#cb49-93"></a><span class="kw">&lt;/div&gt;</span></span>
 <span id="cb49-94"><a href="#cb49-94"></a></span>
 <span id="cb49-95"><a href="#cb49-95"></a><span class="dv">&amp;nbsp;</span> </span>
 <span id="cb49-96"><a href="#cb49-96"></a></span>
@@ -1842,11 +1441,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-125"><a href="#cb49-125"></a></span>
 <span id="cb49-126"><a href="#cb49-126"></a><span class="in">```{r, eval=FALSE}</span></span>
 <span id="cb49-127"><a href="#cb49-127"></a></span>
-<span id="cb49-128"><a href="#cb49-128"></a><span class="in"># install</span></span>
-<span id="cb49-129"><a href="#cb49-129"></a><span class="in">install.packages("ggplot2")</span></span>
+<span id="cb49-128"><a href="#cb49-128"></a><span class="co"># install</span></span>
+<span id="cb49-129"><a href="#cb49-129"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
 <span id="cb49-130"><a href="#cb49-130"></a></span>
-<span id="cb49-131"><a href="#cb49-131"></a><span class="in"># load library</span></span>
-<span id="cb49-132"><a href="#cb49-132"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb49-131"><a href="#cb49-131"></a><span class="co"># load library</span></span>
+<span id="cb49-132"><a href="#cb49-132"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb49-133"><a href="#cb49-133"></a><span class="in">```</span></span>
 <span id="cb49-134"><a href="#cb49-134"></a><span class="dv">&amp;nbsp;</span> </span>
 <span id="cb49-135"><a href="#cb49-135"></a></span>
@@ -1924,28 +1523,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-215"><a href="#cb49-215"></a><span class="dv">&amp;nbsp;</span> </span>
 <span id="cb49-216"><a href="#cb49-216"></a></span>
 <span id="cb49-217"><a href="#cb49-217"></a></span>
-<span id="cb49-218"><a href="#cb49-218"></a>&lt;/br&gt;</span>
+<span id="cb49-218"><a href="#cb49-218"></a><span class="kw">&lt;/br&gt;</span></span>
 <span id="cb49-219"><a href="#cb49-219"></a></span>
-<span id="cb49-220"><a href="#cb49-220"></a>&lt;div class="alert alert-info"&gt;</span>
+<span id="cb49-220"><a href="#cb49-220"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"alert alert-info"</span><span class="kw">&gt;</span></span>
 <span id="cb49-221"><a href="#cb49-221"></a></span>
-<span id="cb49-222"><a href="#cb49-222"></a>&lt;font size="5"&gt;Ejercicio 1&lt;/font&gt; </span>
+<span id="cb49-222"><a href="#cb49-222"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"5"</span><span class="kw">&gt;</span>Ejercicio 1<span class="kw">&lt;/font&gt;</span> </span>
 <span id="cb49-223"><a href="#cb49-223"></a></span>
 <span id="cb49-224"><a href="#cb49-224"></a>Utilizando el conjunto de datos "hylaeformis":</span>
 <span id="cb49-225"><a href="#cb49-225"></a></span>
 <span id="cb49-226"><a href="#cb49-226"></a><span class="in">```{r,  eval=F, echo=T}</span></span>
 <span id="cb49-227"><a href="#cb49-227"></a></span>
-<span id="cb49-228"><a href="#cb49-228"></a><span class="in"># lear desde el sitio del curso</span></span>
-<span id="cb49-229"><a href="#cb49-229"></a><span class="in">hylaeformis_data &lt;- read.csv(</span></span>
-<span id="cb49-230"><a href="#cb49-230"></a><span class="in">  paste0("https://raw.githubusercontent.com/maRce10/", "r_avanzado_2023/master/data/hylaeformis_data.csv")</span></span>
-<span id="cb49-231"><a href="#cb49-231"></a><span class="in">)</span></span>
+<span id="cb49-228"><a href="#cb49-228"></a><span class="co"># lear desde el sitio del curso</span></span>
+<span id="cb49-229"><a href="#cb49-229"></a>hylaeformis_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(</span>
+<span id="cb49-230"><a href="#cb49-230"></a>  <span class="fu">paste0</span>(<span class="st">"https://raw.githubusercontent.com/maRce10/"</span>, <span class="st">"r_avanzado_2023/master/data/hylaeformis_data.csv"</span>)</span>
+<span id="cb49-231"><a href="#cb49-231"></a>)</span>
 <span id="cb49-232"><a href="#cb49-232"></a></span>
-<span id="cb49-233"><a href="#cb49-233"></a><span class="in"># or bajar manualmente y leer copia local</span></span>
-<span id="cb49-234"><a href="#cb49-234"></a><span class="in">hylaeformis_data &lt;- read.csv("hylaeformis_data.csv", stringsAsFactors = FALSE)</span></span>
+<span id="cb49-233"><a href="#cb49-233"></a><span class="co"># or bajar manualmente y leer copia local</span></span>
+<span id="cb49-234"><a href="#cb49-234"></a>hylaeformis_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"hylaeformis_data.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb49-235"><a href="#cb49-235"></a></span>
-<span id="cb49-236"><a href="#cb49-236"></a><span class="in">head(hylaeformis_data, 20)</span></span>
+<span id="cb49-236"><a href="#cb49-236"></a><span class="fu">head</span>(hylaeformis_data, <span class="dv">20</span>)</span>
 <span id="cb49-237"><a href="#cb49-237"></a><span class="in">```</span></span>
 <span id="cb49-238"><a href="#cb49-238"></a></span>
-<span id="cb49-239"><a href="#cb49-239"></a>&lt;/br&gt;</span>
+<span id="cb49-239"><a href="#cb49-239"></a><span class="kw">&lt;/br&gt;</span></span>
 <span id="cb49-240"><a href="#cb49-240"></a></span>
 <span id="cb49-241"><a href="#cb49-241"></a>1.1 Create a scatter plot of  vs "meanfreq" (mean frequency)</span>
 <span id="cb49-242"><a href="#cb49-242"></a></span>
@@ -1953,42 +1552,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-244"><a href="#cb49-244"></a></span>
 <span id="cb49-245"><a href="#cb49-245"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
 <span id="cb49-246"><a href="#cb49-246"></a></span>
-<span id="cb49-247"><a href="#cb49-247"></a><span class="in">ggplot(</span></span>
-<span id="cb49-248"><a href="#cb49-248"></a><span class="in">  data = hylaeformis_data,</span></span>
-<span id="cb49-249"><a href="#cb49-249"></a><span class="in">  mapping = aes(x = duration, y = meanfreq)</span></span>
-<span id="cb49-250"><a href="#cb49-250"></a><span class="in">) +</span></span>
-<span id="cb49-251"><a href="#cb49-251"></a><span class="in">  geom_point()</span></span>
+<span id="cb49-247"><a href="#cb49-247"></a><span class="fu">ggplot</span>(</span>
+<span id="cb49-248"><a href="#cb49-248"></a>  <span class="at">data =</span> hylaeformis_data,</span>
+<span id="cb49-249"><a href="#cb49-249"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> duration, <span class="at">y =</span> meanfreq)</span>
+<span id="cb49-250"><a href="#cb49-250"></a>) <span class="sc">+</span></span>
+<span id="cb49-251"><a href="#cb49-251"></a>  <span class="fu">geom_point</span>()</span>
 <span id="cb49-252"><a href="#cb49-252"></a><span class="in">```</span></span>
 <span id="cb49-253"><a href="#cb49-253"></a></span>
-<span id="cb49-254"><a href="#cb49-254"></a>&lt;/br&gt;</span>
+<span id="cb49-254"><a href="#cb49-254"></a><span class="kw">&lt;/br&gt;</span></span>
 <span id="cb49-255"><a href="#cb49-255"></a></span>
 <span id="cb49-256"><a href="#cb49-256"></a>1.2 Añadir un atributo estético para mostrar un color diferente para cada localidad</span>
 <span id="cb49-257"><a href="#cb49-257"></a></span>
 <span id="cb49-258"><a href="#cb49-258"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
 <span id="cb49-259"><a href="#cb49-259"></a></span>
-<span id="cb49-260"><a href="#cb49-260"></a><span class="in">ggplot(</span></span>
-<span id="cb49-261"><a href="#cb49-261"></a><span class="in">  data = hylaeformis_data,</span></span>
-<span id="cb49-262"><a href="#cb49-262"></a><span class="in">  mapping = aes(x = duration, y = meanfreq)</span></span>
-<span id="cb49-263"><a href="#cb49-263"></a><span class="in">) +</span></span>
-<span id="cb49-264"><a href="#cb49-264"></a><span class="in">  geom_point(aes(color = Locality))</span></span>
+<span id="cb49-260"><a href="#cb49-260"></a><span class="fu">ggplot</span>(</span>
+<span id="cb49-261"><a href="#cb49-261"></a>  <span class="at">data =</span> hylaeformis_data,</span>
+<span id="cb49-262"><a href="#cb49-262"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> duration, <span class="at">y =</span> meanfreq)</span>
+<span id="cb49-263"><a href="#cb49-263"></a>) <span class="sc">+</span></span>
+<span id="cb49-264"><a href="#cb49-264"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Locality))</span>
 <span id="cb49-265"><a href="#cb49-265"></a><span class="in">```</span></span>
 <span id="cb49-266"><a href="#cb49-266"></a></span>
-<span id="cb49-267"><a href="#cb49-267"></a>&lt;/br&gt;</span>
+<span id="cb49-267"><a href="#cb49-267"></a><span class="kw">&lt;/br&gt;</span></span>
 <span id="cb49-268"><a href="#cb49-268"></a></span>
 <span id="cb49-269"><a href="#cb49-269"></a>1.3 Añade otro atributo estético para mostrar el rango de frecuencia dominante ("dfrange") como tamaño los símbolos</span>
 <span id="cb49-270"><a href="#cb49-270"></a></span>
 <span id="cb49-271"><a href="#cb49-271"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
 <span id="cb49-272"><a href="#cb49-272"></a></span>
-<span id="cb49-273"><a href="#cb49-273"></a><span class="in">ggplot(</span></span>
-<span id="cb49-274"><a href="#cb49-274"></a><span class="in">  data = hylaeformis_data,</span></span>
-<span id="cb49-275"><a href="#cb49-275"></a><span class="in">  mapping = aes(x = duration, y = meanfreq)</span></span>
-<span id="cb49-276"><a href="#cb49-276"></a><span class="in">) +</span></span>
-<span id="cb49-277"><a href="#cb49-277"></a><span class="in">  geom_point(aes(color = Locality, size = dfrange))</span></span>
+<span id="cb49-273"><a href="#cb49-273"></a><span class="fu">ggplot</span>(</span>
+<span id="cb49-274"><a href="#cb49-274"></a>  <span class="at">data =</span> hylaeformis_data,</span>
+<span id="cb49-275"><a href="#cb49-275"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> duration, <span class="at">y =</span> meanfreq)</span>
+<span id="cb49-276"><a href="#cb49-276"></a>) <span class="sc">+</span></span>
+<span id="cb49-277"><a href="#cb49-277"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Locality, <span class="at">size =</span> dfrange))</span>
 <span id="cb49-278"><a href="#cb49-278"></a><span class="in">```</span></span>
 <span id="cb49-279"><a href="#cb49-279"></a></span>
-<span id="cb49-280"><a href="#cb49-280"></a>&lt;/br&gt;</span>
+<span id="cb49-280"><a href="#cb49-280"></a><span class="kw">&lt;/br&gt;</span></span>
 <span id="cb49-281"><a href="#cb49-281"></a></span>
-<span id="cb49-282"><a href="#cb49-282"></a>&lt;/div&gt;</span>
+<span id="cb49-282"><a href="#cb49-282"></a><span class="kw">&lt;/div&gt;</span></span>
 <span id="cb49-283"><a href="#cb49-283"></a></span>
 <span id="cb49-284"><a href="#cb49-284"></a><span class="dv">&amp;nbsp;</span></span>
 <span id="cb49-285"><a href="#cb49-285"></a></span>
@@ -2023,18 +1622,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-318"><a href="#cb49-318"></a></span>
 <span id="cb49-319"><a href="#cb49-319"></a></span>
 <span id="cb49-320"><a href="#cb49-320"></a><span class="in">```{r, fig.height=8}</span></span>
-<span id="cb49-321"><a href="#cb49-321"></a><span class="in"># free x and 3 rows</span></span>
-<span id="cb49-322"><a href="#cb49-322"></a><span class="in">ggplot(iris, aes(Sepal.Length, Petal.Length)) +</span></span>
-<span id="cb49-323"><a href="#cb49-323"></a><span class="in">  geom_point() +</span></span>
-<span id="cb49-324"><a href="#cb49-324"></a><span class="in">  facet_wrap(~Species, scales = "free_y", nrow = 3)</span></span>
+<span id="cb49-321"><a href="#cb49-321"></a><span class="co"># free x and 3 rows</span></span>
+<span id="cb49-322"><a href="#cb49-322"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Petal.Length)) <span class="sc">+</span></span>
+<span id="cb49-323"><a href="#cb49-323"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb49-324"><a href="#cb49-324"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species, <span class="at">scales =</span> <span class="st">"free_y"</span>, <span class="at">nrow =</span> <span class="dv">3</span>)</span>
 <span id="cb49-325"><a href="#cb49-325"></a><span class="in">```</span></span>
 <span id="cb49-326"><a href="#cb49-326"></a></span>
 <span id="cb49-327"><a href="#cb49-327"></a></span>
 <span id="cb49-328"><a href="#cb49-328"></a><span class="in">```{r, fig.height=6}</span></span>
-<span id="cb49-329"><a href="#cb49-329"></a><span class="in"># both free and 2 rows</span></span>
-<span id="cb49-330"><a href="#cb49-330"></a><span class="in">ggplot(iris, aes(Sepal.Length, Petal.Length)) +</span></span>
-<span id="cb49-331"><a href="#cb49-331"></a><span class="in">  geom_point() +</span></span>
-<span id="cb49-332"><a href="#cb49-332"></a><span class="in">  facet_wrap(~Species, scales = "free", nrow = 2)</span></span>
+<span id="cb49-329"><a href="#cb49-329"></a><span class="co"># both free and 2 rows</span></span>
+<span id="cb49-330"><a href="#cb49-330"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Petal.Length)) <span class="sc">+</span></span>
+<span id="cb49-331"><a href="#cb49-331"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb49-332"><a href="#cb49-332"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
 <span id="cb49-333"><a href="#cb49-333"></a><span class="in">```</span></span>
 <span id="cb49-334"><a href="#cb49-334"></a><span class="dv">&amp;nbsp;</span> </span>
 <span id="cb49-335"><a href="#cb49-335"></a></span>
@@ -2042,10 +1641,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-337"><a href="#cb49-337"></a></span>
 <span id="cb49-338"><a href="#cb49-338"></a><span class="in">```{r, fig.height=8}</span></span>
 <span id="cb49-339"><a href="#cb49-339"></a></span>
-<span id="cb49-340"><a href="#cb49-340"></a><span class="in">p &lt;- ggplot(iris, aes(Sepal.Length, Petal.Length)) +</span></span>
-<span id="cb49-341"><a href="#cb49-341"></a><span class="in">  geom_point()</span></span>
+<span id="cb49-340"><a href="#cb49-340"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Petal.Length)) <span class="sc">+</span></span>
+<span id="cb49-341"><a href="#cb49-341"></a>  <span class="fu">geom_point</span>()</span>
 <span id="cb49-342"><a href="#cb49-342"></a></span>
-<span id="cb49-343"><a href="#cb49-343"></a><span class="in">p + facet_wrap(~Species, scales = "free_x", nrow = 3)</span></span>
+<span id="cb49-343"><a href="#cb49-343"></a>p <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species, <span class="at">scales =</span> <span class="st">"free_x"</span>, <span class="at">nrow =</span> <span class="dv">3</span>)</span>
 <span id="cb49-344"><a href="#cb49-344"></a><span class="in">```</span></span>
 <span id="cb49-345"><a href="#cb49-345"></a></span>
 <span id="cb49-346"><a href="#cb49-346"></a></span>
@@ -2065,100 +1664,100 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-360"><a href="#cb49-360"></a></span>
 <span id="cb49-361"><a href="#cb49-361"></a><span class="in">```{r, fig.height=8}</span></span>
 <span id="cb49-362"><a href="#cb49-362"></a></span>
-<span id="cb49-363"><a href="#cb49-363"></a><span class="in"># con CI</span></span>
-<span id="cb49-364"><a href="#cb49-364"></a><span class="in">ggplot(iris, aes(Sepal.Length, Petal.Length)) +</span></span>
-<span id="cb49-365"><a href="#cb49-365"></a><span class="in">  geom_point() +</span></span>
-<span id="cb49-366"><a href="#cb49-366"></a><span class="in">  geom_smooth(method = "lm") +</span></span>
-<span id="cb49-367"><a href="#cb49-367"></a><span class="in">  facet_wrap(~Species, scales = "free", nrow = 3)</span></span>
+<span id="cb49-363"><a href="#cb49-363"></a><span class="co"># con CI</span></span>
+<span id="cb49-364"><a href="#cb49-364"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Petal.Length)) <span class="sc">+</span></span>
+<span id="cb49-365"><a href="#cb49-365"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb49-366"><a href="#cb49-366"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb49-367"><a href="#cb49-367"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">nrow =</span> <span class="dv">3</span>)</span>
 <span id="cb49-368"><a href="#cb49-368"></a></span>
-<span id="cb49-369"><a href="#cb49-369"></a><span class="in"># sin CI</span></span>
-<span id="cb49-370"><a href="#cb49-370"></a><span class="in">ggplot(iris, aes(Sepal.Length, Petal.Length)) +</span></span>
-<span id="cb49-371"><a href="#cb49-371"></a><span class="in">  geom_point() +</span></span>
-<span id="cb49-372"><a href="#cb49-372"></a><span class="in">  geom_smooth(method = "lm", se = FALSE) +</span></span>
-<span id="cb49-373"><a href="#cb49-373"></a><span class="in">  facet_wrap(~Species, scales = "free", nrow = 3)</span></span>
+<span id="cb49-369"><a href="#cb49-369"></a><span class="co"># sin CI</span></span>
+<span id="cb49-370"><a href="#cb49-370"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Petal.Length)) <span class="sc">+</span></span>
+<span id="cb49-371"><a href="#cb49-371"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb49-372"><a href="#cb49-372"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb49-373"><a href="#cb49-373"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">nrow =</span> <span class="dv">3</span>)</span>
 <span id="cb49-374"><a href="#cb49-374"></a><span class="in">```</span></span>
 <span id="cb49-375"><a href="#cb49-375"></a><span class="dv">&amp;nbsp;</span> </span>
 <span id="cb49-376"><a href="#cb49-376"></a></span>
-<span id="cb49-377"><a href="#cb49-377"></a>&lt;div class="alert alert-info"&gt;</span>
+<span id="cb49-377"><a href="#cb49-377"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"alert alert-info"</span><span class="kw">&gt;</span></span>
 <span id="cb49-378"><a href="#cb49-378"></a></span>
-<span id="cb49-379"><a href="#cb49-379"></a>&lt;font size="5"&gt;Ejercicio 2&lt;/font&gt; </span>
+<span id="cb49-379"><a href="#cb49-379"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"5"</span><span class="kw">&gt;</span>Ejercicio 2<span class="kw">&lt;/font&gt;</span> </span>
 <span id="cb49-380"><a href="#cb49-380"></a></span>
 <span id="cb49-381"><a href="#cb49-381"></a>Utilizando el conjunto de datos de ejemplo "msleep":</span>
 <span id="cb49-382"><a href="#cb49-382"></a></span>
-<span id="cb49-383"><a href="#cb49-383"></a>&lt;/br&gt;</span>
+<span id="cb49-383"><a href="#cb49-383"></a><span class="kw">&lt;/br&gt;</span></span>
 <span id="cb49-384"><a href="#cb49-384"></a></span>
 <span id="cb49-385"><a href="#cb49-385"></a>2.1 Crear un gráfico de dispersión de peso corporal ("bodywt") frente a peso cerebral ("brainwt")</span>
 <span id="cb49-386"><a href="#cb49-386"></a></span>
 <span id="cb49-387"><a href="#cb49-387"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
 <span id="cb49-388"><a href="#cb49-388"></a></span>
-<span id="cb49-389"><a href="#cb49-389"></a><span class="in">data(msleep)</span></span>
-<span id="cb49-390"><a href="#cb49-390"></a><span class="in">ggplot(</span></span>
-<span id="cb49-391"><a href="#cb49-391"></a><span class="in">  data = msleep,</span></span>
-<span id="cb49-392"><a href="#cb49-392"></a><span class="in">  mapping = aes(x = bodywt, y = brainwt)</span></span>
-<span id="cb49-393"><a href="#cb49-393"></a><span class="in">) +</span></span>
-<span id="cb49-394"><a href="#cb49-394"></a><span class="in">  geom_point()</span></span>
+<span id="cb49-389"><a href="#cb49-389"></a><span class="fu">data</span>(msleep)</span>
+<span id="cb49-390"><a href="#cb49-390"></a><span class="fu">ggplot</span>(</span>
+<span id="cb49-391"><a href="#cb49-391"></a>  <span class="at">data =</span> msleep,</span>
+<span id="cb49-392"><a href="#cb49-392"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bodywt, <span class="at">y =</span> brainwt)</span>
+<span id="cb49-393"><a href="#cb49-393"></a>) <span class="sc">+</span></span>
+<span id="cb49-394"><a href="#cb49-394"></a>  <span class="fu">geom_point</span>()</span>
 <span id="cb49-395"><a href="#cb49-395"></a><span class="in">```</span></span>
 <span id="cb49-396"><a href="#cb49-396"></a></span>
-<span id="cb49-397"><a href="#cb49-397"></a>&lt;/br&gt;</span>
+<span id="cb49-397"><a href="#cb49-397"></a><span class="kw">&lt;/br&gt;</span></span>
 <span id="cb49-398"><a href="#cb49-398"></a></span>
 <span id="cb49-399"><a href="#cb49-399"></a>2.2 Añadir orden ("order") como estética del color</span>
 <span id="cb49-400"><a href="#cb49-400"></a></span>
 <span id="cb49-401"><a href="#cb49-401"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
 <span id="cb49-402"><a href="#cb49-402"></a></span>
-<span id="cb49-403"><a href="#cb49-403"></a><span class="in">ggplot(</span></span>
-<span id="cb49-404"><a href="#cb49-404"></a><span class="in">  data = msleep,</span></span>
-<span id="cb49-405"><a href="#cb49-405"></a><span class="in">  mapping = aes(x = bodywt, y = brainwt, color = order)</span></span>
-<span id="cb49-406"><a href="#cb49-406"></a><span class="in">) +</span></span>
-<span id="cb49-407"><a href="#cb49-407"></a><span class="in">  geom_point()</span></span>
+<span id="cb49-403"><a href="#cb49-403"></a><span class="fu">ggplot</span>(</span>
+<span id="cb49-404"><a href="#cb49-404"></a>  <span class="at">data =</span> msleep,</span>
+<span id="cb49-405"><a href="#cb49-405"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bodywt, <span class="at">y =</span> brainwt, <span class="at">color =</span> order)</span>
+<span id="cb49-406"><a href="#cb49-406"></a>) <span class="sc">+</span></span>
+<span id="cb49-407"><a href="#cb49-407"></a>  <span class="fu">geom_point</span>()</span>
 <span id="cb49-408"><a href="#cb49-408"></a><span class="in">```</span></span>
 <span id="cb49-409"><a href="#cb49-409"></a></span>
-<span id="cb49-410"><a href="#cb49-410"></a>&lt;/br&gt;</span>
+<span id="cb49-410"><a href="#cb49-410"></a><span class="kw">&lt;/br&gt;</span></span>
 <span id="cb49-411"><a href="#cb49-411"></a></span>
 <span id="cb49-412"><a href="#cb49-412"></a>2.3 Añadir un componente "faceta" para dividir los gráficos por orden utilizando escalas libres</span>
 <span id="cb49-413"><a href="#cb49-413"></a></span>
 <span id="cb49-414"><a href="#cb49-414"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
 <span id="cb49-415"><a href="#cb49-415"></a></span>
-<span id="cb49-416"><a href="#cb49-416"></a><span class="in">ggplot(</span></span>
-<span id="cb49-417"><a href="#cb49-417"></a><span class="in">  data = msleep,</span></span>
-<span id="cb49-418"><a href="#cb49-418"></a><span class="in">  mapping = aes(x = bodywt, y = brainwt)</span></span>
-<span id="cb49-419"><a href="#cb49-419"></a><span class="in">) +</span></span>
-<span id="cb49-420"><a href="#cb49-420"></a><span class="in">  geom_point() +</span></span>
-<span id="cb49-421"><a href="#cb49-421"></a><span class="in">  facet_wrap(~order, scales = "free")</span></span>
+<span id="cb49-416"><a href="#cb49-416"></a><span class="fu">ggplot</span>(</span>
+<span id="cb49-417"><a href="#cb49-417"></a>  <span class="at">data =</span> msleep,</span>
+<span id="cb49-418"><a href="#cb49-418"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bodywt, <span class="at">y =</span> brainwt)</span>
+<span id="cb49-419"><a href="#cb49-419"></a>) <span class="sc">+</span></span>
+<span id="cb49-420"><a href="#cb49-420"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb49-421"><a href="#cb49-421"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>order, <span class="at">scales =</span> <span class="st">"free"</span>)</span>
 <span id="cb49-422"><a href="#cb49-422"></a><span class="in">```</span></span>
 <span id="cb49-423"><a href="#cb49-423"></a></span>
-<span id="cb49-424"><a href="#cb49-424"></a>&lt;/br&gt;</span>
+<span id="cb49-424"><a href="#cb49-424"></a><span class="kw">&lt;/br&gt;</span></span>
 <span id="cb49-425"><a href="#cb49-425"></a></span>
 <span id="cb49-426"><a href="#cb49-426"></a>2.4 Elimine los órdenes con menos de 4 especies en el conjunto de datos y haga un gráfico similar al 2.3</span>
 <span id="cb49-427"><a href="#cb49-427"></a></span>
 <span id="cb49-428"><a href="#cb49-428"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
 <span id="cb49-429"><a href="#cb49-429"></a></span>
-<span id="cb49-430"><a href="#cb49-430"></a><span class="in">tab &lt;- table(msleep$order)</span></span>
+<span id="cb49-430"><a href="#cb49-430"></a>tab <span class="ot">&lt;-</span> <span class="fu">table</span>(msleep<span class="sc">$</span>order)</span>
 <span id="cb49-431"><a href="#cb49-431"></a></span>
-<span id="cb49-432"><a href="#cb49-432"></a><span class="in">ms2 &lt;- msleep[msleep$order %in% names(tab)[tab &gt;= 5], ]</span></span>
+<span id="cb49-432"><a href="#cb49-432"></a>ms2 <span class="ot">&lt;-</span> msleep[msleep<span class="sc">$</span>order <span class="sc">%in%</span> <span class="fu">names</span>(tab)[tab <span class="sc">&gt;=</span> <span class="dv">5</span>], ]</span>
 <span id="cb49-433"><a href="#cb49-433"></a></span>
-<span id="cb49-434"><a href="#cb49-434"></a><span class="in">ggplot(</span></span>
-<span id="cb49-435"><a href="#cb49-435"></a><span class="in">  data = ms2,</span></span>
-<span id="cb49-436"><a href="#cb49-436"></a><span class="in">  mapping = aes(x = bodywt, y = brainwt)</span></span>
-<span id="cb49-437"><a href="#cb49-437"></a><span class="in">) +</span></span>
-<span id="cb49-438"><a href="#cb49-438"></a><span class="in">  geom_point() +</span></span>
-<span id="cb49-439"><a href="#cb49-439"></a><span class="in">  geom_smooth(method = "lm") +</span></span>
-<span id="cb49-440"><a href="#cb49-440"></a><span class="in">  facet_wrap(~order, scales = "free")</span></span>
+<span id="cb49-434"><a href="#cb49-434"></a><span class="fu">ggplot</span>(</span>
+<span id="cb49-435"><a href="#cb49-435"></a>  <span class="at">data =</span> ms2,</span>
+<span id="cb49-436"><a href="#cb49-436"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bodywt, <span class="at">y =</span> brainwt)</span>
+<span id="cb49-437"><a href="#cb49-437"></a>) <span class="sc">+</span></span>
+<span id="cb49-438"><a href="#cb49-438"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb49-439"><a href="#cb49-439"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb49-440"><a href="#cb49-440"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>order, <span class="at">scales =</span> <span class="st">"free"</span>)</span>
 <span id="cb49-441"><a href="#cb49-441"></a><span class="in">```</span></span>
 <span id="cb49-442"><a href="#cb49-442"></a></span>
-<span id="cb49-443"><a href="#cb49-443"></a>&lt;/br&gt;</span>
+<span id="cb49-443"><a href="#cb49-443"></a><span class="kw">&lt;/br&gt;</span></span>
 <span id="cb49-444"><a href="#cb49-444"></a></span>
 <span id="cb49-445"><a href="#cb49-445"></a>2.5 Añadir una línea de mejor ajuste a cada gráfico del panel</span>
 <span id="cb49-446"><a href="#cb49-446"></a></span>
 <span id="cb49-447"><a href="#cb49-447"></a><span class="in">```{r, eval = FALSE, echo = FALSE}</span></span>
 <span id="cb49-448"><a href="#cb49-448"></a></span>
-<span id="cb49-449"><a href="#cb49-449"></a><span class="in">ggplot(data = msleep[msleep$order %in% names(tab)[tab &gt; 3], ], mapping = aes(x = bodywt, y = brainwt)) +</span></span>
-<span id="cb49-450"><a href="#cb49-450"></a><span class="in">  geom_point() +</span></span>
-<span id="cb49-451"><a href="#cb49-451"></a><span class="in">  geom_smooth() +</span></span>
-<span id="cb49-452"><a href="#cb49-452"></a><span class="in">  facet_wrap(~order, scales = "free")</span></span>
+<span id="cb49-449"><a href="#cb49-449"></a><span class="fu">ggplot</span>(<span class="at">data =</span> msleep[msleep<span class="sc">$</span>order <span class="sc">%in%</span> <span class="fu">names</span>(tab)[tab <span class="sc">&gt;</span> <span class="dv">3</span>], ], <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bodywt, <span class="at">y =</span> brainwt)) <span class="sc">+</span></span>
+<span id="cb49-450"><a href="#cb49-450"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb49-451"><a href="#cb49-451"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
+<span id="cb49-452"><a href="#cb49-452"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>order, <span class="at">scales =</span> <span class="st">"free"</span>)</span>
 <span id="cb49-453"><a href="#cb49-453"></a><span class="in">```</span></span>
-<span id="cb49-454"><a href="#cb49-454"></a>&lt;/br&gt;</span>
+<span id="cb49-454"><a href="#cb49-454"></a><span class="kw">&lt;/br&gt;</span></span>
 <span id="cb49-455"><a href="#cb49-455"></a></span>
-<span id="cb49-456"><a href="#cb49-456"></a>&lt;/div&gt;</span>
+<span id="cb49-456"><a href="#cb49-456"></a><span class="kw">&lt;/div&gt;</span></span>
 <span id="cb49-457"><a href="#cb49-457"></a></span>
 <span id="cb49-458"><a href="#cb49-458"></a></span>
 <span id="cb49-459"><a href="#cb49-459"></a><span class="fu">### Boxplots</span></span>
@@ -2226,226 +1825,226 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-533"><a href="#cb49-533"></a></span>
 <span id="cb49-534"><a href="#cb49-534"></a><span class="in">```{r, eval=F, echo=F}</span></span>
 <span id="cb49-535"><a href="#cb49-535"></a></span>
-<span id="cb49-536"><a href="#cb49-536"></a><span class="in"># Calcular el promedio del # de reclutas por estación</span></span>
-<span id="cb49-537"><a href="#cb49-537"></a><span class="in">df2 &lt;- aggregate(RECRUITS ~ SEASON, df, mean)</span></span>
-<span id="cb49-538"><a href="#cb49-538"></a><span class="in">names(df2) &lt;- c("season", "rec")</span></span>
+<span id="cb49-536"><a href="#cb49-536"></a><span class="co"># Calcular el promedio del # de reclutas por estación</span></span>
+<span id="cb49-537"><a href="#cb49-537"></a>df2 <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(RECRUITS <span class="sc">~</span> SEASON, df, mean)</span>
+<span id="cb49-538"><a href="#cb49-538"></a><span class="fu">names</span>(df2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"season"</span>, <span class="st">"rec"</span>)</span>
 <span id="cb49-539"><a href="#cb49-539"></a></span>
-<span id="cb49-540"><a href="#cb49-540"></a><span class="in"># Gráfico de barras</span></span>
-<span id="cb49-541"><a href="#cb49-541"></a><span class="in">p &lt;- ggplot(df2, aes(season, rec)) +</span></span>
-<span id="cb49-542"><a href="#cb49-542"></a><span class="in">  geom_bar(stat = "identity")</span></span>
-<span id="cb49-543"><a href="#cb49-543"></a><span class="in">p</span></span>
+<span id="cb49-540"><a href="#cb49-540"></a><span class="co"># Gráfico de barras</span></span>
+<span id="cb49-541"><a href="#cb49-541"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(season, rec)) <span class="sc">+</span></span>
+<span id="cb49-542"><a href="#cb49-542"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>)</span>
+<span id="cb49-543"><a href="#cb49-543"></a>p</span>
 <span id="cb49-544"><a href="#cb49-544"></a></span>
-<span id="cb49-545"><a href="#cb49-545"></a><span class="in"># Cambiar la orientación</span></span>
-<span id="cb49-546"><a href="#cb49-546"></a><span class="in">p + coord_flip()</span></span>
+<span id="cb49-545"><a href="#cb49-545"></a><span class="co"># Cambiar la orientación</span></span>
+<span id="cb49-546"><a href="#cb49-546"></a>p <span class="sc">+</span> <span class="fu">coord_flip</span>()</span>
 <span id="cb49-547"><a href="#cb49-547"></a></span>
-<span id="cb49-548"><a href="#cb49-548"></a><span class="in">### Cambiar el ancho y colores de las barras ###</span></span>
+<span id="cb49-548"><a href="#cb49-548"></a><span class="do">### Cambiar el ancho y colores de las barras </span><span class="al">###</span></span>
 <span id="cb49-549"><a href="#cb49-549"></a></span>
-<span id="cb49-550"><a href="#cb49-550"></a><span class="in"># Cambiar el ancho de las barras</span></span>
-<span id="cb49-551"><a href="#cb49-551"></a><span class="in">ggplot(df2, aes(season, rec)) +</span></span>
-<span id="cb49-552"><a href="#cb49-552"></a><span class="in">  geom_bar(stat = "identity", width = 0.5)</span></span>
+<span id="cb49-550"><a href="#cb49-550"></a><span class="co"># Cambiar el ancho de las barras</span></span>
+<span id="cb49-551"><a href="#cb49-551"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(season, rec)) <span class="sc">+</span></span>
+<span id="cb49-552"><a href="#cb49-552"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">width =</span> <span class="fl">0.5</span>)</span>
 <span id="cb49-553"><a href="#cb49-553"></a></span>
-<span id="cb49-554"><a href="#cb49-554"></a><span class="in">ggplot(df2, aes(season, rec)) +</span></span>
-<span id="cb49-555"><a href="#cb49-555"></a><span class="in">  geom_bar(stat = "identity", width = 0.2)</span></span>
+<span id="cb49-554"><a href="#cb49-554"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(season, rec)) <span class="sc">+</span></span>
+<span id="cb49-555"><a href="#cb49-555"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">width =</span> <span class="fl">0.2</span>)</span>
 <span id="cb49-556"><a href="#cb49-556"></a></span>
-<span id="cb49-557"><a href="#cb49-557"></a><span class="in"># Cambiar colores</span></span>
-<span id="cb49-558"><a href="#cb49-558"></a><span class="in">ggplot(df2, aes(season, rec)) +</span></span>
-<span id="cb49-559"><a href="#cb49-559"></a><span class="in">  geom_bar(stat = "identity", color = "blue", fill = "white")</span></span>
+<span id="cb49-557"><a href="#cb49-557"></a><span class="co"># Cambiar colores</span></span>
+<span id="cb49-558"><a href="#cb49-558"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(season, rec)) <span class="sc">+</span></span>
+<span id="cb49-559"><a href="#cb49-559"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"white"</span>)</span>
 <span id="cb49-560"><a href="#cb49-560"></a></span>
-<span id="cb49-561"><a href="#cb49-561"></a><span class="in"># Remover el tema y agregar barras azules</span></span>
-<span id="cb49-562"><a href="#cb49-562"></a><span class="in">p &lt;- ggplot(df2, aes(season, rec)) +</span></span>
-<span id="cb49-563"><a href="#cb49-563"></a><span class="in">  geom_bar(stat = "identity", fill = "steelblue") +</span></span>
-<span id="cb49-564"><a href="#cb49-564"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb49-565"><a href="#cb49-565"></a><span class="in">p</span></span>
+<span id="cb49-561"><a href="#cb49-561"></a><span class="co"># Remover el tema y agregar barras azules</span></span>
+<span id="cb49-562"><a href="#cb49-562"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(season, rec)) <span class="sc">+</span></span>
+<span id="cb49-563"><a href="#cb49-563"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb49-564"><a href="#cb49-564"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb49-565"><a href="#cb49-565"></a>p</span>
 <span id="cb49-566"><a href="#cb49-566"></a></span>
-<span id="cb49-567"><a href="#cb49-567"></a><span class="in"># Escoger que barras mostrar</span></span>
-<span id="cb49-568"><a href="#cb49-568"></a><span class="in">p + scale_x_discrete(limits = c("Spring", "Winter"))</span></span>
+<span id="cb49-567"><a href="#cb49-567"></a><span class="co"># Escoger que barras mostrar</span></span>
+<span id="cb49-568"><a href="#cb49-568"></a>p <span class="sc">+</span> <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">"Spring"</span>, <span class="st">"Winter"</span>))</span>
 <span id="cb49-569"><a href="#cb49-569"></a></span>
-<span id="cb49-570"><a href="#cb49-570"></a><span class="in">### Agregar anotaciones ###</span></span>
+<span id="cb49-570"><a href="#cb49-570"></a><span class="do">### Agregar anotaciones </span><span class="al">###</span></span>
 <span id="cb49-571"><a href="#cb49-571"></a></span>
-<span id="cb49-572"><a href="#cb49-572"></a><span class="in">df2$rec &lt;- round(df2$rec, 1)</span></span>
+<span id="cb49-572"><a href="#cb49-572"></a>df2<span class="sc">$</span>rec <span class="ot">&lt;-</span> <span class="fu">round</span>(df2<span class="sc">$</span>rec, <span class="dv">1</span>)</span>
 <span id="cb49-573"><a href="#cb49-573"></a></span>
-<span id="cb49-574"><a href="#cb49-574"></a><span class="in"># Fuera de las barras</span></span>
-<span id="cb49-575"><a href="#cb49-575"></a><span class="in">ggplot(df2, aes(season, rec)) +</span></span>
-<span id="cb49-576"><a href="#cb49-576"></a><span class="in">  geom_bar(stat = "identity", fill = "steelblue") +</span></span>
-<span id="cb49-577"><a href="#cb49-577"></a><span class="in">  geom_text(aes(label = rec), vjust = -0.3, size = 3.5) +</span></span>
-<span id="cb49-578"><a href="#cb49-578"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb49-574"><a href="#cb49-574"></a><span class="co"># Fuera de las barras</span></span>
+<span id="cb49-575"><a href="#cb49-575"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(season, rec)) <span class="sc">+</span></span>
+<span id="cb49-576"><a href="#cb49-576"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb49-577"><a href="#cb49-577"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> rec), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.3</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb49-578"><a href="#cb49-578"></a>  <span class="fu">theme_minimal</span>()</span>
 <span id="cb49-579"><a href="#cb49-579"></a></span>
-<span id="cb49-580"><a href="#cb49-580"></a><span class="in"># Dentro de las barras</span></span>
-<span id="cb49-581"><a href="#cb49-581"></a><span class="in">ggplot(df2, aes(season, rec)) +</span></span>
-<span id="cb49-582"><a href="#cb49-582"></a><span class="in">  geom_bar(stat = "identity", fill = "yellow") +</span></span>
-<span id="cb49-583"><a href="#cb49-583"></a><span class="in">  geom_text(aes(label = rec), vjust = 1.6, size = 3.5) +</span></span>
-<span id="cb49-584"><a href="#cb49-584"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb49-580"><a href="#cb49-580"></a><span class="co"># Dentro de las barras</span></span>
+<span id="cb49-581"><a href="#cb49-581"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(season, rec)) <span class="sc">+</span></span>
+<span id="cb49-582"><a href="#cb49-582"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"yellow"</span>) <span class="sc">+</span></span>
+<span id="cb49-583"><a href="#cb49-583"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> rec), <span class="at">vjust =</span> <span class="fl">1.6</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb49-584"><a href="#cb49-584"></a>  <span class="fu">theme_minimal</span>()</span>
 <span id="cb49-585"><a href="#cb49-585"></a></span>
-<span id="cb49-586"><a href="#cb49-586"></a><span class="in">### Cambiar colores de barras por grupo ###</span></span>
+<span id="cb49-586"><a href="#cb49-586"></a><span class="do">### Cambiar colores de barras por grupo </span><span class="al">###</span></span>
 <span id="cb49-587"><a href="#cb49-587"></a></span>
-<span id="cb49-588"><a href="#cb49-588"></a><span class="in"># Cambiar el color de las líneas externas por grupo</span></span>
-<span id="cb49-589"><a href="#cb49-589"></a><span class="in">p &lt;- ggplot(df2, aes(season, rec, color = season)) +</span></span>
-<span id="cb49-590"><a href="#cb49-590"></a><span class="in">  geom_bar(stat = "identity", fill = "white")</span></span>
-<span id="cb49-591"><a href="#cb49-591"></a><span class="in">p</span></span>
+<span id="cb49-588"><a href="#cb49-588"></a><span class="co"># Cambiar el color de las líneas externas por grupo</span></span>
+<span id="cb49-589"><a href="#cb49-589"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(season, rec, <span class="at">color =</span> season)) <span class="sc">+</span></span>
+<span id="cb49-590"><a href="#cb49-590"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"white"</span>)</span>
+<span id="cb49-591"><a href="#cb49-591"></a>p</span>
 <span id="cb49-592"><a href="#cb49-592"></a></span>
-<span id="cb49-593"><a href="#cb49-593"></a><span class="in">### Cambiar el color manualmente ###</span></span>
+<span id="cb49-593"><a href="#cb49-593"></a><span class="do">### Cambiar el color manualmente </span><span class="al">###</span></span>
 <span id="cb49-594"><a href="#cb49-594"></a></span>
-<span id="cb49-595"><a href="#cb49-595"></a><span class="in"># Usar "palette" predefinido de colores</span></span>
-<span id="cb49-596"><a href="#cb49-596"></a><span class="in">p + scale_color_manual(values = c("red", "blue", "green", "yellow"))</span></span>
+<span id="cb49-595"><a href="#cb49-595"></a><span class="co"># Usar "palette" predefinido de colores</span></span>
+<span id="cb49-596"><a href="#cb49-596"></a>p <span class="sc">+</span> <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"yellow"</span>))</span>
 <span id="cb49-597"><a href="#cb49-597"></a></span>
-<span id="cb49-598"><a href="#cb49-598"></a><span class="in"># Usar "palette brewer"</span></span>
-<span id="cb49-599"><a href="#cb49-599"></a><span class="in">p + scale_color_brewer(palette = "Dark2")</span></span>
-<span id="cb49-600"><a href="#cb49-600"></a><span class="in">p + scale_color_brewer(palette = 1)</span></span>
-<span id="cb49-601"><a href="#cb49-601"></a><span class="in">p + scale_color_brewer(palette = 2)</span></span>
+<span id="cb49-598"><a href="#cb49-598"></a><span class="co"># Usar "palette brewer"</span></span>
+<span id="cb49-599"><a href="#cb49-599"></a>p <span class="sc">+</span> <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span>
+<span id="cb49-600"><a href="#cb49-600"></a>p <span class="sc">+</span> <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="dv">1</span>)</span>
+<span id="cb49-601"><a href="#cb49-601"></a>p <span class="sc">+</span> <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="dv">2</span>)</span>
 <span id="cb49-602"><a href="#cb49-602"></a></span>
-<span id="cb49-603"><a href="#cb49-603"></a><span class="in"># Usar escala de grises</span></span>
-<span id="cb49-604"><a href="#cb49-604"></a><span class="in">p + scale_color_grey() + theme_classic()</span></span>
+<span id="cb49-603"><a href="#cb49-603"></a><span class="co"># Usar escala de grises</span></span>
+<span id="cb49-604"><a href="#cb49-604"></a>p <span class="sc">+</span> <span class="fu">scale_color_grey</span>() <span class="sc">+</span> <span class="fu">theme_classic</span>()</span>
 <span id="cb49-605"><a href="#cb49-605"></a></span>
-<span id="cb49-606"><a href="#cb49-606"></a><span class="in">### Cambiar colores de relleno de las barras ###</span></span>
+<span id="cb49-606"><a href="#cb49-606"></a><span class="do">### Cambiar colores de relleno de las barras </span><span class="al">###</span></span>
 <span id="cb49-607"><a href="#cb49-607"></a></span>
-<span id="cb49-608"><a href="#cb49-608"></a><span class="in"># Color de relleno</span></span>
-<span id="cb49-609"><a href="#cb49-609"></a><span class="in">p &lt;- ggplot(df2, aes(season, rec, fill = season)) +</span></span>
-<span id="cb49-610"><a href="#cb49-610"></a><span class="in">  geom_bar(stat = "identity") +</span></span>
-<span id="cb49-611"><a href="#cb49-611"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb49-612"><a href="#cb49-612"></a><span class="in">p</span></span>
+<span id="cb49-608"><a href="#cb49-608"></a><span class="co"># Color de relleno</span></span>
+<span id="cb49-609"><a href="#cb49-609"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(season, rec, <span class="at">fill =</span> season)) <span class="sc">+</span></span>
+<span id="cb49-610"><a href="#cb49-610"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb49-611"><a href="#cb49-611"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb49-612"><a href="#cb49-612"></a>p</span>
 <span id="cb49-613"><a href="#cb49-613"></a></span>
-<span id="cb49-614"><a href="#cb49-614"></a><span class="in">### Cambiar el color de relleno manualmente ###</span></span>
+<span id="cb49-614"><a href="#cb49-614"></a><span class="do">### Cambiar el color de relleno manualmente </span><span class="al">###</span></span>
 <span id="cb49-615"><a href="#cb49-615"></a></span>
-<span id="cb49-616"><a href="#cb49-616"></a><span class="in"># Usar "palette" predefinido de colores</span></span>
-<span id="cb49-617"><a href="#cb49-617"></a><span class="in">p + scale_fill_manual(values = c("red", "blue", "green", "yellow"))</span></span>
+<span id="cb49-616"><a href="#cb49-616"></a><span class="co"># Usar "palette" predefinido de colores</span></span>
+<span id="cb49-617"><a href="#cb49-617"></a>p <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"yellow"</span>))</span>
 <span id="cb49-618"><a href="#cb49-618"></a></span>
-<span id="cb49-619"><a href="#cb49-619"></a><span class="in"># Usar "palette brewer"</span></span>
-<span id="cb49-620"><a href="#cb49-620"></a><span class="in">p + scale_fill_brewer(palette = "Dark2")</span></span>
-<span id="cb49-621"><a href="#cb49-621"></a><span class="in">p + scale_fill_brewer(palette = 1)</span></span>
-<span id="cb49-622"><a href="#cb49-622"></a><span class="in">p + scale_fill_brewer(palette = 2)</span></span>
+<span id="cb49-619"><a href="#cb49-619"></a><span class="co"># Usar "palette brewer"</span></span>
+<span id="cb49-620"><a href="#cb49-620"></a>p <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span>
+<span id="cb49-621"><a href="#cb49-621"></a>p <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="dv">1</span>)</span>
+<span id="cb49-622"><a href="#cb49-622"></a>p <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="dv">2</span>)</span>
 <span id="cb49-623"><a href="#cb49-623"></a></span>
-<span id="cb49-624"><a href="#cb49-624"></a><span class="in"># Usar escala de grises</span></span>
-<span id="cb49-625"><a href="#cb49-625"></a><span class="in">p + scale_fill_grey() + theme_classic()</span></span>
+<span id="cb49-624"><a href="#cb49-624"></a><span class="co"># Usar escala de grises</span></span>
+<span id="cb49-625"><a href="#cb49-625"></a>p <span class="sc">+</span> <span class="fu">scale_fill_grey</span>() <span class="sc">+</span> <span class="fu">theme_classic</span>()</span>
 <span id="cb49-626"><a href="#cb49-626"></a></span>
-<span id="cb49-627"><a href="#cb49-627"></a><span class="in"># Usar color negro del borde y relleno</span></span>
-<span id="cb49-628"><a href="#cb49-628"></a><span class="in">ggplot(df2, aes(season, rec, fill = season)) +</span></span>
-<span id="cb49-629"><a href="#cb49-629"></a><span class="in">  geom_bar(stat = "identity", color = "black") +</span></span>
-<span id="cb49-630"><a href="#cb49-630"></a><span class="in">  scale_fill_manual(values = c("red", "blue", "green", "yellow")) +</span></span>
-<span id="cb49-631"><a href="#cb49-631"></a><span class="in">  theme_classic()</span></span>
+<span id="cb49-627"><a href="#cb49-627"></a><span class="co"># Usar color negro del borde y relleno</span></span>
+<span id="cb49-628"><a href="#cb49-628"></a><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(season, rec, <span class="at">fill =</span> season)) <span class="sc">+</span></span>
+<span id="cb49-629"><a href="#cb49-629"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb49-630"><a href="#cb49-630"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"yellow"</span>)) <span class="sc">+</span></span>
+<span id="cb49-631"><a href="#cb49-631"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb49-632"><a href="#cb49-632"></a></span>
-<span id="cb49-633"><a href="#cb49-633"></a><span class="in">### Cambiar la posición de la leyenda ###</span></span>
+<span id="cb49-633"><a href="#cb49-633"></a><span class="do">### Cambiar la posición de la leyenda </span><span class="al">###</span></span>
 <span id="cb49-634"><a href="#cb49-634"></a></span>
-<span id="cb49-635"><a href="#cb49-635"></a><span class="in"># Cambiar el color de las barras a tonos de azúl</span></span>
-<span id="cb49-636"><a href="#cb49-636"></a><span class="in">p &lt;- ggplot(df2, aes(season, rec, fill = season)) +</span></span>
-<span id="cb49-637"><a href="#cb49-637"></a><span class="in">  geom_bar(stat = "identity") +</span></span>
-<span id="cb49-638"><a href="#cb49-638"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb49-635"><a href="#cb49-635"></a><span class="co"># Cambiar el color de las barras a tonos de azúl</span></span>
+<span id="cb49-636"><a href="#cb49-636"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(season, rec, <span class="at">fill =</span> season)) <span class="sc">+</span></span>
+<span id="cb49-637"><a href="#cb49-637"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb49-638"><a href="#cb49-638"></a>  <span class="fu">theme_minimal</span>()</span>
 <span id="cb49-639"><a href="#cb49-639"></a></span>
-<span id="cb49-640"><a href="#cb49-640"></a><span class="in">p1 &lt;- p + scale_fill_brewer(palette = "Blues")</span></span>
-<span id="cb49-641"><a href="#cb49-641"></a><span class="in">p1 + theme(legend.position = "top")</span></span>
-<span id="cb49-642"><a href="#cb49-642"></a><span class="in">p1 + theme(legend.position = "bottom")</span></span>
+<span id="cb49-640"><a href="#cb49-640"></a>p1 <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Blues"</span>)</span>
+<span id="cb49-641"><a href="#cb49-641"></a>p1 <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span>
+<span id="cb49-642"><a href="#cb49-642"></a>p1 <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
 <span id="cb49-643"><a href="#cb49-643"></a></span>
-<span id="cb49-644"><a href="#cb49-644"></a><span class="in"># Remover la leyenda</span></span>
-<span id="cb49-645"><a href="#cb49-645"></a><span class="in">p1 + theme(legend.position = "none")</span></span>
+<span id="cb49-644"><a href="#cb49-644"></a><span class="co"># Remover la leyenda</span></span>
+<span id="cb49-645"><a href="#cb49-645"></a>p1 <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
 <span id="cb49-646"><a href="#cb49-646"></a></span>
-<span id="cb49-647"><a href="#cb49-647"></a><span class="in">### Cambiar el órden de los items en una leyenda ###</span></span>
+<span id="cb49-647"><a href="#cb49-647"></a><span class="do">### Cambiar el órden de los items en una leyenda </span><span class="al">###</span></span>
 <span id="cb49-648"><a href="#cb49-648"></a></span>
-<span id="cb49-649"><a href="#cb49-649"></a><span class="in"># Cambiar órden de grupos</span></span>
-<span id="cb49-650"><a href="#cb49-650"></a><span class="in">p1 + scale_x_discrete(limits = c("Summer", "Autumn", "Winter", "Spring"))</span></span>
+<span id="cb49-649"><a href="#cb49-649"></a><span class="co"># Cambiar órden de grupos</span></span>
+<span id="cb49-650"><a href="#cb49-650"></a>p1 <span class="sc">+</span> <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">"Summer"</span>, <span class="st">"Autumn"</span>, <span class="st">"Winter"</span>, <span class="st">"Spring"</span>))</span>
 <span id="cb49-651"><a href="#cb49-651"></a></span>
-<span id="cb49-652"><a href="#cb49-652"></a><span class="in">### Editar aún más los elementos de la leyenda ###</span></span>
+<span id="cb49-652"><a href="#cb49-652"></a><span class="do">### Editar aún más los elementos de la leyenda </span><span class="al">###</span></span>
 <span id="cb49-653"><a href="#cb49-653"></a></span>
-<span id="cb49-654"><a href="#cb49-654"></a><span class="in"># Cambiar el título de la leyenda y la fuente</span></span>
-<span id="cb49-655"><a href="#cb49-655"></a><span class="in">p1 &lt;- ggplot(df2, aes(season, rec, fill = season)) +</span></span>
-<span id="cb49-656"><a href="#cb49-656"></a><span class="in">  geom_bar(stat = "identity", color = "black")</span></span>
+<span id="cb49-654"><a href="#cb49-654"></a><span class="co"># Cambiar el título de la leyenda y la fuente</span></span>
+<span id="cb49-655"><a href="#cb49-655"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(season, rec, <span class="at">fill =</span> season)) <span class="sc">+</span></span>
+<span id="cb49-656"><a href="#cb49-656"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"black"</span>)</span>
 <span id="cb49-657"><a href="#cb49-657"></a></span>
-<span id="cb49-658"><a href="#cb49-658"></a><span class="in">titulo &lt;- "Estación"</span></span>
+<span id="cb49-658"><a href="#cb49-658"></a>titulo <span class="ot">&lt;-</span> <span class="st">"Estación"</span></span>
 <span id="cb49-659"><a href="#cb49-659"></a></span>
-<span id="cb49-660"><a href="#cb49-660"></a><span class="in">p2 &lt;- p1 + scale_fill_manual(titulo, values = c("red", "blue", "green", "yellow")) +</span></span>
-<span id="cb49-661"><a href="#cb49-661"></a><span class="in">  theme_classic()</span></span>
+<span id="cb49-660"><a href="#cb49-660"></a>p2 <span class="ot">&lt;-</span> p1 <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(titulo, <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"yellow"</span>)) <span class="sc">+</span></span>
+<span id="cb49-661"><a href="#cb49-661"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb49-662"><a href="#cb49-662"></a></span>
-<span id="cb49-663"><a href="#cb49-663"></a><span class="in">p2 + theme(legend.title = element_text(</span></span>
-<span id="cb49-664"><a href="#cb49-664"></a><span class="in">  colour = "blue", size = 10,</span></span>
-<span id="cb49-665"><a href="#cb49-665"></a><span class="in">  face = "bold"</span></span>
-<span id="cb49-666"><a href="#cb49-666"></a><span class="in">))</span></span>
+<span id="cb49-663"><a href="#cb49-663"></a>p2 <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.title =</span> <span class="fu">element_text</span>(</span>
+<span id="cb49-664"><a href="#cb49-664"></a>  <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">10</span>,</span>
+<span id="cb49-665"><a href="#cb49-665"></a>  <span class="at">face =</span> <span class="st">"bold"</span></span>
+<span id="cb49-666"><a href="#cb49-666"></a>))</span>
 <span id="cb49-667"><a href="#cb49-667"></a></span>
-<span id="cb49-668"><a href="#cb49-668"></a><span class="in">p2 + theme(legend.text = element_text(</span></span>
-<span id="cb49-669"><a href="#cb49-669"></a><span class="in">  colour = "blue", size = 10,</span></span>
-<span id="cb49-670"><a href="#cb49-670"></a><span class="in">  face = "bold"</span></span>
-<span id="cb49-671"><a href="#cb49-671"></a><span class="in">))</span></span>
+<span id="cb49-668"><a href="#cb49-668"></a>p2 <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.text =</span> <span class="fu">element_text</span>(</span>
+<span id="cb49-669"><a href="#cb49-669"></a>  <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">10</span>,</span>
+<span id="cb49-670"><a href="#cb49-670"></a>  <span class="at">face =</span> <span class="st">"bold"</span></span>
+<span id="cb49-671"><a href="#cb49-671"></a>))</span>
 <span id="cb49-672"><a href="#cb49-672"></a></span>
-<span id="cb49-673"><a href="#cb49-673"></a><span class="in"># Cambiar el color del fondo de la leyenda</span></span>
-<span id="cb49-674"><a href="#cb49-674"></a><span class="in">p2 + theme(legend.background = element_rect(</span></span>
-<span id="cb49-675"><a href="#cb49-675"></a><span class="in">  fill = "lightblue",</span></span>
-<span id="cb49-676"><a href="#cb49-676"></a><span class="in">  size = 0.5, linetype = "solid"</span></span>
-<span id="cb49-677"><a href="#cb49-677"></a><span class="in">))</span></span>
+<span id="cb49-673"><a href="#cb49-673"></a><span class="co"># Cambiar el color del fondo de la leyenda</span></span>
+<span id="cb49-674"><a href="#cb49-674"></a>p2 <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.background =</span> <span class="fu">element_rect</span>(</span>
+<span id="cb49-675"><a href="#cb49-675"></a>  <span class="at">fill =</span> <span class="st">"lightblue"</span>,</span>
+<span id="cb49-676"><a href="#cb49-676"></a>  <span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">"solid"</span></span>
+<span id="cb49-677"><a href="#cb49-677"></a>))</span>
 <span id="cb49-678"><a href="#cb49-678"></a></span>
-<span id="cb49-679"><a href="#cb49-679"></a><span class="in">p2 + theme(legend.background = element_rect(</span></span>
-<span id="cb49-680"><a href="#cb49-680"></a><span class="in">  fill = "lightblue",</span></span>
-<span id="cb49-681"><a href="#cb49-681"></a><span class="in">  size = 0.5, linetype = "solid"</span></span>
-<span id="cb49-682"><a href="#cb49-682"></a><span class="in">))</span></span>
+<span id="cb49-679"><a href="#cb49-679"></a>p2 <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.background =</span> <span class="fu">element_rect</span>(</span>
+<span id="cb49-680"><a href="#cb49-680"></a>  <span class="at">fill =</span> <span class="st">"lightblue"</span>,</span>
+<span id="cb49-681"><a href="#cb49-681"></a>  <span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">"solid"</span></span>
+<span id="cb49-682"><a href="#cb49-682"></a>))</span>
 <span id="cb49-683"><a href="#cb49-683"></a></span>
-<span id="cb49-684"><a href="#cb49-684"></a><span class="in">### Gráfico de barras con múltiples grupos ###</span></span>
-<span id="cb49-685"><a href="#cb49-685"></a><span class="in">head(df)</span></span>
+<span id="cb49-684"><a href="#cb49-684"></a><span class="do">### Gráfico de barras con múltiples grupos </span><span class="al">###</span></span>
+<span id="cb49-685"><a href="#cb49-685"></a><span class="fu">head</span>(df)</span>
 <span id="cb49-686"><a href="#cb49-686"></a></span>
-<span id="cb49-687"><a href="#cb49-687"></a><span class="in">df.n &lt;- aggregate(RECRUITS ~ SEASON + DENSITY, df, mean)</span></span>
-<span id="cb49-688"><a href="#cb49-688"></a><span class="in">names(df.n) &lt;- c("season", "density", "rec")</span></span>
+<span id="cb49-687"><a href="#cb49-687"></a>df.n <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(RECRUITS <span class="sc">~</span> SEASON <span class="sc">+</span> DENSITY, df, mean)</span>
+<span id="cb49-688"><a href="#cb49-688"></a><span class="fu">names</span>(df.n) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"season"</span>, <span class="st">"density"</span>, <span class="st">"rec"</span>)</span>
 <span id="cb49-689"><a href="#cb49-689"></a></span>
-<span id="cb49-690"><a href="#cb49-690"></a><span class="in"># Gráfico 1</span></span>
-<span id="cb49-691"><a href="#cb49-691"></a><span class="in">ggplot(df.n, aes(season, rec, fill = density)) +</span></span>
-<span id="cb49-692"><a href="#cb49-692"></a><span class="in">  geom_bar(stat = "identity")</span></span>
+<span id="cb49-690"><a href="#cb49-690"></a><span class="co"># Gráfico 1</span></span>
+<span id="cb49-691"><a href="#cb49-691"></a><span class="fu">ggplot</span>(df.n, <span class="fu">aes</span>(season, rec, <span class="at">fill =</span> density)) <span class="sc">+</span></span>
+<span id="cb49-692"><a href="#cb49-692"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>)</span>
 <span id="cb49-693"><a href="#cb49-693"></a></span>
-<span id="cb49-694"><a href="#cb49-694"></a><span class="in"># Gráfico 2</span></span>
-<span id="cb49-695"><a href="#cb49-695"></a><span class="in">ggplot(df.n, aes(season, rec, fill = density)) +</span></span>
-<span id="cb49-696"><a href="#cb49-696"></a><span class="in">  geom_bar(stat = "identity", position = position_dodge())</span></span>
+<span id="cb49-694"><a href="#cb49-694"></a><span class="co"># Gráfico 2</span></span>
+<span id="cb49-695"><a href="#cb49-695"></a><span class="fu">ggplot</span>(df.n, <span class="fu">aes</span>(season, rec, <span class="at">fill =</span> density)) <span class="sc">+</span></span>
+<span id="cb49-696"><a href="#cb49-696"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>())</span>
 <span id="cb49-697"><a href="#cb49-697"></a></span>
-<span id="cb49-698"><a href="#cb49-698"></a><span class="in"># Cambiar el color manualmente</span></span>
-<span id="cb49-699"><a href="#cb49-699"></a><span class="in">p &lt;- ggplot(df.n, aes(season, rec, fill = density)) +</span></span>
-<span id="cb49-700"><a href="#cb49-700"></a><span class="in">  geom_bar(stat = "identity", color = "black", position = position_dodge()) +</span></span>
-<span id="cb49-701"><a href="#cb49-701"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb49-698"><a href="#cb49-698"></a><span class="co"># Cambiar el color manualmente</span></span>
+<span id="cb49-699"><a href="#cb49-699"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df.n, <span class="fu">aes</span>(season, rec, <span class="at">fill =</span> density)) <span class="sc">+</span></span>
+<span id="cb49-700"><a href="#cb49-700"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb49-701"><a href="#cb49-701"></a>  <span class="fu">theme_minimal</span>()</span>
 <span id="cb49-702"><a href="#cb49-702"></a></span>
-<span id="cb49-703"><a href="#cb49-703"></a><span class="in">p + theme_classic()</span></span>
+<span id="cb49-703"><a href="#cb49-703"></a>p <span class="sc">+</span> <span class="fu">theme_classic</span>()</span>
 <span id="cb49-704"><a href="#cb49-704"></a></span>
-<span id="cb49-705"><a href="#cb49-705"></a><span class="in"># Colores manuales</span></span>
-<span id="cb49-706"><a href="#cb49-706"></a><span class="in">p + scale_fill_manual(values = c("#999999", "#E69F00")) + theme_classic()</span></span>
+<span id="cb49-705"><a href="#cb49-705"></a><span class="co"># Colores manuales</span></span>
+<span id="cb49-706"><a href="#cb49-706"></a>p <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#999999"</span>, <span class="st">"#E69F00"</span>)) <span class="sc">+</span> <span class="fu">theme_classic</span>()</span>
 <span id="cb49-707"><a href="#cb49-707"></a></span>
-<span id="cb49-708"><a href="#cb49-708"></a><span class="in"># Palette de colores</span></span>
-<span id="cb49-709"><a href="#cb49-709"></a><span class="in">p + scale_fill_brewer(palette = "Blues") + theme_classic()</span></span>
+<span id="cb49-708"><a href="#cb49-708"></a><span class="co"># Palette de colores</span></span>
+<span id="cb49-709"><a href="#cb49-709"></a>p <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Blues"</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>()</span>
 <span id="cb49-710"><a href="#cb49-710"></a></span>
-<span id="cb49-711"><a href="#cb49-711"></a><span class="in">### Gráficos de barras con error ###</span></span>
+<span id="cb49-711"><a href="#cb49-711"></a><span class="do">### Gráficos de barras con error </span><span class="al">###</span></span>
 <span id="cb49-712"><a href="#cb49-712"></a></span>
-<span id="cb49-713"><a href="#cb49-713"></a><span class="in"># Calcular promedio +/- SD</span></span>
-<span id="cb49-714"><a href="#cb49-714"></a><span class="in">head(df)</span></span>
+<span id="cb49-713"><a href="#cb49-713"></a><span class="co"># Calcular promedio +/- SD</span></span>
+<span id="cb49-714"><a href="#cb49-714"></a><span class="fu">head</span>(df)</span>
 <span id="cb49-715"><a href="#cb49-715"></a></span>
-<span id="cb49-716"><a href="#cb49-716"></a><span class="in">df3 &lt;- aggregate(RECRUITS ~ SEASON + DENSITY, df, FUN = function(x) c(mean = mean(x), sd = sd(x)))</span></span>
-<span id="cb49-717"><a href="#cb49-717"></a><span class="in">df4 &lt;- cbind(data.frame(df3[, c(1:2)]), df3$RECRUITS[, 1], df3$RECRUITS[, 2])</span></span>
+<span id="cb49-716"><a href="#cb49-716"></a>df3 <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(RECRUITS <span class="sc">~</span> SEASON <span class="sc">+</span> DENSITY, df, <span class="at">FUN =</span> <span class="cf">function</span>(x) <span class="fu">c</span>(<span class="at">mean =</span> <span class="fu">mean</span>(x), <span class="at">sd =</span> <span class="fu">sd</span>(x)))</span>
+<span id="cb49-717"><a href="#cb49-717"></a>df4 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">data.frame</span>(df3[, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)]), df3<span class="sc">$</span>RECRUITS[, <span class="dv">1</span>], df3<span class="sc">$</span>RECRUITS[, <span class="dv">2</span>])</span>
 <span id="cb49-718"><a href="#cb49-718"></a></span>
-<span id="cb49-719"><a href="#cb49-719"></a><span class="in">names(df4) &lt;- c("season", "density", "mean", "sd")</span></span>
-<span id="cb49-720"><a href="#cb49-720"></a><span class="in">str(df4)</span></span>
+<span id="cb49-719"><a href="#cb49-719"></a><span class="fu">names</span>(df4) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"season"</span>, <span class="st">"density"</span>, <span class="st">"mean"</span>, <span class="st">"sd"</span>)</span>
+<span id="cb49-720"><a href="#cb49-720"></a><span class="fu">str</span>(df4)</span>
 <span id="cb49-721"><a href="#cb49-721"></a></span>
-<span id="cb49-722"><a href="#cb49-722"></a><span class="in"># Grafico de barras y desviación estándar</span></span>
-<span id="cb49-723"><a href="#cb49-723"></a><span class="in">p &lt;- ggplot(df4, aes(season, mean, fill = density)) +</span></span>
-<span id="cb49-724"><a href="#cb49-724"></a><span class="in">  geom_bar(stat = "identity", position = position_dodge(), color = "black") +</span></span>
-<span id="cb49-725"><a href="#cb49-725"></a><span class="in">  geom_errorbar(aes(ymin = mean, ymax = mean + sd),</span></span>
-<span id="cb49-726"><a href="#cb49-726"></a><span class="in">    width = 0.2,</span></span>
-<span id="cb49-727"><a href="#cb49-727"></a><span class="in">    position = position_dodge(0.9)</span></span>
-<span id="cb49-728"><a href="#cb49-728"></a><span class="in">  )</span></span>
+<span id="cb49-722"><a href="#cb49-722"></a><span class="co"># Grafico de barras y desviación estándar</span></span>
+<span id="cb49-723"><a href="#cb49-723"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df4, <span class="fu">aes</span>(season, mean, <span class="at">fill =</span> density)) <span class="sc">+</span></span>
+<span id="cb49-724"><a href="#cb49-724"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(), <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb49-725"><a href="#cb49-725"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean, <span class="at">ymax =</span> mean <span class="sc">+</span> sd),</span>
+<span id="cb49-726"><a href="#cb49-726"></a>    <span class="at">width =</span> <span class="fl">0.2</span>,</span>
+<span id="cb49-727"><a href="#cb49-727"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.9</span>)</span>
+<span id="cb49-728"><a href="#cb49-728"></a>  )</span>
 <span id="cb49-729"><a href="#cb49-729"></a></span>
-<span id="cb49-730"><a href="#cb49-730"></a><span class="in">p + scale_fill_brewer(palette = "Paired") + theme_minimal()</span></span>
-<span id="cb49-731"><a href="#cb49-731"></a><span class="in">p + scale_fill_brewer(palette = "Paired") + theme_classic()</span></span>
+<span id="cb49-730"><a href="#cb49-730"></a>p <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Paired"</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
+<span id="cb49-731"><a href="#cb49-731"></a>p <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Paired"</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>()</span>
 <span id="cb49-732"><a href="#cb49-732"></a></span>
-<span id="cb49-733"><a href="#cb49-733"></a><span class="in">### Personalizar aún más los gráficos ###</span></span>
+<span id="cb49-733"><a href="#cb49-733"></a><span class="do">### Personalizar aún más los gráficos </span><span class="al">###</span></span>
 <span id="cb49-734"><a href="#cb49-734"></a></span>
-<span id="cb49-735"><a href="#cb49-735"></a><span class="in"># Poner títulos de ejes</span></span>
-<span id="cb49-736"><a href="#cb49-736"></a><span class="in">p + xlab("Estación") +</span></span>
-<span id="cb49-737"><a href="#cb49-737"></a><span class="in">  ylab("Número de reclutas") +</span></span>
-<span id="cb49-738"><a href="#cb49-738"></a><span class="in">  theme_classic()</span></span>
+<span id="cb49-735"><a href="#cb49-735"></a><span class="co"># Poner títulos de ejes</span></span>
+<span id="cb49-736"><a href="#cb49-736"></a>p <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Estación"</span>) <span class="sc">+</span></span>
+<span id="cb49-737"><a href="#cb49-737"></a>  <span class="fu">ylab</span>(<span class="st">"Número de reclutas"</span>) <span class="sc">+</span></span>
+<span id="cb49-738"><a href="#cb49-738"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb49-739"><a href="#cb49-739"></a></span>
-<span id="cb49-740"><a href="#cb49-740"></a><span class="in"># Remover títulos de ejes</span></span>
-<span id="cb49-741"><a href="#cb49-741"></a><span class="in">p + xlab(NULL) +</span></span>
-<span id="cb49-742"><a href="#cb49-742"></a><span class="in">  ylab(NULL) +</span></span>
-<span id="cb49-743"><a href="#cb49-743"></a><span class="in">  theme_classic()</span></span>
+<span id="cb49-740"><a href="#cb49-740"></a><span class="co"># Remover títulos de ejes</span></span>
+<span id="cb49-741"><a href="#cb49-741"></a>p <span class="sc">+</span> <span class="fu">xlab</span>(<span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb49-742"><a href="#cb49-742"></a>  <span class="fu">ylab</span>(<span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb49-743"><a href="#cb49-743"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb49-744"><a href="#cb49-744"></a></span>
-<span id="cb49-745"><a href="#cb49-745"></a><span class="in"># Otros cambios</span></span>
-<span id="cb49-746"><a href="#cb49-746"></a><span class="in">p2 &lt;- p + labs(x = "Estación", y = "Número de reclutas") +</span></span>
-<span id="cb49-747"><a href="#cb49-747"></a><span class="in">  scale_fill_manual(values = c("black", "grey50")) +</span></span>
-<span id="cb49-748"><a href="#cb49-748"></a><span class="in">  theme_classic()</span></span>
-<span id="cb49-749"><a href="#cb49-749"></a><span class="in">p2</span></span>
+<span id="cb49-745"><a href="#cb49-745"></a><span class="co"># Otros cambios</span></span>
+<span id="cb49-746"><a href="#cb49-746"></a>p2 <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Estación"</span>, <span class="at">y =</span> <span class="st">"Número de reclutas"</span>) <span class="sc">+</span></span>
+<span id="cb49-747"><a href="#cb49-747"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"black"</span>, <span class="st">"grey50"</span>)) <span class="sc">+</span></span>
+<span id="cb49-748"><a href="#cb49-748"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb49-749"><a href="#cb49-749"></a>p2</span>
 <span id="cb49-750"><a href="#cb49-750"></a></span>
-<span id="cb49-751"><a href="#cb49-751"></a><span class="in"># Cambiar los límites X y Y</span></span>
-<span id="cb49-752"><a href="#cb49-752"></a><span class="in">p2 + ylim(0, 100)</span></span>
+<span id="cb49-751"><a href="#cb49-751"></a><span class="co"># Cambiar los límites X y Y</span></span>
+<span id="cb49-752"><a href="#cb49-752"></a>p2 <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">100</span>)</span>
 <span id="cb49-753"><a href="#cb49-753"></a></span>
-<span id="cb49-754"><a href="#cb49-754"></a><span class="in"># Cambiar límites con expand_limits</span></span>
-<span id="cb49-755"><a href="#cb49-755"></a><span class="in">p2 + expand_limits(x = c(0, 6), y = c(0, 80))</span></span>
+<span id="cb49-754"><a href="#cb49-754"></a><span class="co"># Cambiar límites con expand_limits</span></span>
+<span id="cb49-755"><a href="#cb49-755"></a>p2 <span class="sc">+</span> <span class="fu">expand_limits</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">6</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">80</span>))</span>
 <span id="cb49-756"><a href="#cb49-756"></a><span class="in">```</span></span>
 <span id="cb49-757"><a href="#cb49-757"></a></span>
 <span id="cb49-758"><a href="#cb49-758"></a><span class="fu">## Personalización de ggplots</span></span>
@@ -2635,29 +2234,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-956"><a href="#cb49-956"></a></span>
 <span id="cb49-957"><a href="#cb49-957"></a>---</span>
 <span id="cb49-958"><a href="#cb49-958"></a></span>
-<span id="cb49-959"><a href="#cb49-959"></a>&lt;font size="4"&gt;Información de la sesión&lt;/font&gt;</span>
+<span id="cb49-959"><a href="#cb49-959"></a><span class="kw">&lt;font</span> <span class="er">size</span><span class="ot">=</span><span class="st">"4"</span><span class="kw">&gt;</span>Información de la sesión<span class="kw">&lt;/font&gt;</span></span>
 <span id="cb49-960"><a href="#cb49-960"></a></span>
 <span id="cb49-961"><a href="#cb49-961"></a><span class="in">```{r session info, echo=F}</span></span>
 <span id="cb49-962"><a href="#cb49-962"></a></span>
-<span id="cb49-963"><a href="#cb49-963"></a><span class="in">sessionInfo()</span></span>
+<span id="cb49-963"><a href="#cb49-963"></a><span class="fu">sessionInfo</span>()</span>
 <span id="cb49-964"><a href="#cb49-964"></a><span class="in">```</span></span>
 </code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
+      <div class="nav-footer-center">Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></div>
   </div>
 </footer>
-
 
 
 
