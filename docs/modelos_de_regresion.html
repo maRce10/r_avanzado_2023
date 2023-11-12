@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,9 +17,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -118,10 +89,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar"
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
@@ -138,90 +111,92 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <span class="navbar-title">R avanzado 2023</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text"> </span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-manuales" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-manuales" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Manuales</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-manuales">    
         <li>
-    <a class="dropdown-item" href="./fundamentos_de_r.html">
+    <a class="dropdown-item" href="./fundamentos_de_r.html" rel="" target="">
  <span class="dropdown-text">Fundamentos de R</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./reportes_dinamicos.html">
+    <a class="dropdown-item" href="./reportes_dinamicos.html" rel="" target="">
  <span class="dropdown-text">Reportes dinámicos</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./funciones.html">
+    <a class="dropdown-item" href="./funciones.html" rel="" target="">
  <span class="dropdown-text">Funciones</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./bucles.html">
+    <a class="dropdown-item" href="./bucles.html" rel="" target="">
  <span class="dropdown-text">Bucles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./modelos_de_regresion.html">
+    <a class="dropdown-item" href="./modelos_de_regresion.html" rel="" target="">
  <span class="dropdown-text">Modelos de regresión</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./estadistica_tradicional_regresion.html">
+    <a class="dropdown-item" href="./estadistica_tradicional_regresion.html" rel="" target="">
  <span class="dropdown-text">Estadística tradicional como regresión</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ggplot2.html">
+    <a class="dropdown-item" href="./ggplot2.html" rel="" target="">
  <span class="dropdown-text">Gráficos con ggplot2</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tareas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tareas" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Tareas</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tareas">    
         <li>
-    <a class="dropdown-item" href="./tarea4.html">
+    <a class="dropdown-item" href="./tarea4.html" rel="" target="">
  <span class="dropdown-text">Tarea 4</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./tarea5.html">
+    <a class="dropdown-item" href="./tarea5.html" rel="" target="">
  <span class="dropdown-text">Tarea 5</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./respuestas_tarea5.html">
+    <a class="dropdown-item" href="./respuestas_tarea5.html" rel="" target="">
  <span class="dropdown-text">Solución Tarea 5</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./preparacion_curso.html">
+    <a class="nav-link" href="./preparacion_curso.html" rel="" target="">
  <span class="menu-text">Preparación para el curso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN">
+    <a class="nav-link" href="https://codefile.io/f/inMsojTFoN" rel="" target="">
  <span class="menu-text">Compartir código</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructor.html">
+    <a class="nav-link" href="./instructor.html" rel="" target="">
  <span class="menu-text">Instructor</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/maRce10/R_avanzado_2023/"><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/maRce10/R_avanzado_2023/" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -229,47 +204,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Contenidos</h2>
    
   <ul class="collapse">
-  <li><a href="#modelos-lineales-como-marco-unificador" id="toc-modelos-lineales-como-marco-unificador" class="nav-link active" data-scroll-target="#modelos-lineales-como-marco-unificador"><span class="toc-section-number">1</span>  Modelos lineales como marco unificador</a></li>
-  <li><a href="#objetivo-del-manual" id="toc-objetivo-del-manual" class="nav-link" data-scroll-target="#objetivo-del-manual"><span class="toc-section-number">2</span>  Objetivo del manual</a></li>
-  <li><a href="#cómo-simular-datos" id="toc-cómo-simular-datos" class="nav-link" data-scroll-target="#cómo-simular-datos"><span class="toc-section-number">3</span>  Cómo simular datos</a>
+  <li><a href="#modelos-lineales-como-marco-unificador" id="toc-modelos-lineales-como-marco-unificador" class="nav-link active" data-scroll-target="#modelos-lineales-como-marco-unificador"><span class="header-section-number">1</span> Modelos lineales como marco unificador</a></li>
+  <li><a href="#objetivo-del-manual" id="toc-objetivo-del-manual" class="nav-link" data-scroll-target="#objetivo-del-manual"><span class="header-section-number">2</span> Objetivo del manual</a></li>
+  <li><a href="#cómo-simular-datos" id="toc-cómo-simular-datos" class="nav-link" data-scroll-target="#cómo-simular-datos"><span class="header-section-number">3</span> Cómo simular datos</a>
   <ul class="collapse">
-  <li><a href="#generación-de-números-aleatorios-en-r" id="toc-generación-de-números-aleatorios-en-r" class="nav-link" data-scroll-target="#generación-de-números-aleatorios-en-r"><span class="toc-section-number">3.1</span>  Generación de números aleatorios en R</a></li>
-  <li><a href="#generación-de-variables-categóricas" id="toc-generación-de-variables-categóricas" class="nav-link" data-scroll-target="#generación-de-variables-categóricas"><span class="toc-section-number">3.2</span>  Generación de variables categóricas</a></li>
-  <li><a href="#muestreo-aleatorio" id="toc-muestreo-aleatorio" class="nav-link" data-scroll-target="#muestreo-aleatorio"><span class="toc-section-number">3.3</span>  Muestreo aleatorio</a></li>
-  <li><a href="#iterar-un-proceso" id="toc-iterar-un-proceso" class="nav-link" data-scroll-target="#iterar-un-proceso"><span class="toc-section-number">3.4</span>  Iterar un proceso</a></li>
-  <li><a href="#hacer-que-las-simulaciones-sean-reproducibles" id="toc-hacer-que-las-simulaciones-sean-reproducibles" class="nav-link" data-scroll-target="#hacer-que-las-simulaciones-sean-reproducibles"><span class="toc-section-number">3.5</span>  Hacer que las simulaciones sean reproducibles</a></li>
+  <li><a href="#generación-de-números-aleatorios-en-r" id="toc-generación-de-números-aleatorios-en-r" class="nav-link" data-scroll-target="#generación-de-números-aleatorios-en-r"><span class="header-section-number">3.1</span> Generación de números aleatorios en R</a></li>
+  <li><a href="#generación-de-variables-categóricas" id="toc-generación-de-variables-categóricas" class="nav-link" data-scroll-target="#generación-de-variables-categóricas"><span class="header-section-number">3.2</span> Generación de variables categóricas</a></li>
+  <li><a href="#muestreo-aleatorio" id="toc-muestreo-aleatorio" class="nav-link" data-scroll-target="#muestreo-aleatorio"><span class="header-section-number">3.3</span> Muestreo aleatorio</a></li>
+  <li><a href="#iterar-un-proceso" id="toc-iterar-un-proceso" class="nav-link" data-scroll-target="#iterar-un-proceso"><span class="header-section-number">3.4</span> Iterar un proceso</a></li>
+  <li><a href="#hacer-que-las-simulaciones-sean-reproducibles" id="toc-hacer-que-las-simulaciones-sean-reproducibles" class="nav-link" data-scroll-target="#hacer-que-las-simulaciones-sean-reproducibles"><span class="header-section-number">3.5</span> Hacer que las simulaciones sean reproducibles</a></li>
   </ul></li>
-  <li><a href="#crear-juegos-de-datos" id="toc-crear-juegos-de-datos" class="nav-link" data-scroll-target="#crear-juegos-de-datos"><span class="toc-section-number">4</span>  Crear juegos de datos</a>
+  <li><a href="#crear-juegos-de-datos" id="toc-crear-juegos-de-datos" class="nav-link" data-scroll-target="#crear-juegos-de-datos"><span class="header-section-number">4</span> Crear juegos de datos</a>
   <ul class="collapse">
-  <li><a href="#juegos-de-datos-con-variables-numéricas-y-categóricas" id="toc-juegos-de-datos-con-variables-numéricas-y-categóricas" class="nav-link" data-scroll-target="#juegos-de-datos-con-variables-numéricas-y-categóricas"><span class="toc-section-number">4.1</span>  Juegos de datos con variables numéricas y categóricas</a></li>
+  <li><a href="#juegos-de-datos-con-variables-numéricas-y-categóricas" id="toc-juegos-de-datos-con-variables-numéricas-y-categóricas" class="nav-link" data-scroll-target="#juegos-de-datos-con-variables-numéricas-y-categóricas"><span class="header-section-number">4.1</span> Juegos de datos con variables numéricas y categóricas</a></li>
   </ul></li>
-  <li><a href="#cómo-utilizar-datos-simulados-para-entender-el-comportamiento-de-las-herramientas-estadísticas" id="toc-cómo-utilizar-datos-simulados-para-entender-el-comportamiento-de-las-herramientas-estadísticas" class="nav-link" data-scroll-target="#cómo-utilizar-datos-simulados-para-entender-el-comportamiento-de-las-herramientas-estadísticas"><span class="toc-section-number">5</span>  Cómo utilizar datos simulados para entender el comportamiento de las herramientas estadísticas</a>
+  <li><a href="#cómo-utilizar-datos-simulados-para-entender-el-comportamiento-de-las-herramientas-estadísticas" id="toc-cómo-utilizar-datos-simulados-para-entender-el-comportamiento-de-las-herramientas-estadísticas" class="nav-link" data-scroll-target="#cómo-utilizar-datos-simulados-para-entender-el-comportamiento-de-las-herramientas-estadísticas"><span class="header-section-number">5</span> Cómo utilizar datos simulados para entender el comportamiento de las herramientas estadísticas</a>
   <ul class="collapse">
-  <li><a href="#prueba-de-concepto-el-teorema-central-del-límite" id="toc-prueba-de-concepto-el-teorema-central-del-límite" class="nav-link" data-scroll-target="#prueba-de-concepto-el-teorema-central-del-límite"><span class="toc-section-number">5.1</span>  Prueba de concepto: <em>el Teorema Central del Límite</em></a></li>
+  <li><a href="#prueba-de-concepto-el-teorema-central-del-límite" id="toc-prueba-de-concepto-el-teorema-central-del-límite" class="nav-link" data-scroll-target="#prueba-de-concepto-el-teorema-central-del-límite"><span class="header-section-number">5.1</span> Prueba de concepto: <em>el Teorema Central del Límite</em></a></li>
   </ul></li>
-  <li><a href="#regresión-lineal-en-r" id="toc-regresión-lineal-en-r" class="nav-link" data-scroll-target="#regresión-lineal-en-r"><span class="toc-section-number">6</span>  Regresión lineal en R</a>
+  <li><a href="#regresión-lineal-en-r" id="toc-regresión-lineal-en-r" class="nav-link" data-scroll-target="#regresión-lineal-en-r"><span class="header-section-number">6</span> Regresión lineal en R</a>
   <ul class="collapse">
-  <li><a href="#modelo-solo-con-intercepto" id="toc-modelo-solo-con-intercepto" class="nav-link" data-scroll-target="#modelo-solo-con-intercepto"><span class="toc-section-number">6.1</span>  Modelo solo con intercepto</a></li>
-  <li><a href="#añadir-un-predictor-no-asociado" id="toc-añadir-un-predictor-no-asociado" class="nav-link" data-scroll-target="#añadir-un-predictor-no-asociado"><span class="toc-section-number">6.2</span>  Añadir un predictor no asociado</a></li>
-  <li><a href="#simular-un-predictor-asociado" id="toc-simular-un-predictor-asociado" class="nav-link" data-scroll-target="#simular-un-predictor-asociado"><span class="toc-section-number">6.3</span>  Simular un predictor asociado</a></li>
-  <li><a href="#varios-predictores-regresión-múltiple" id="toc-varios-predictores-regresión-múltiple" class="nav-link" data-scroll-target="#varios-predictores-regresión-múltiple"><span class="toc-section-number">6.4</span>  Varios predictores: regresión múltiple</a></li>
-  <li><a href="#añadir-un-predictor-categórico" id="toc-añadir-un-predictor-categórico" class="nav-link" data-scroll-target="#añadir-un-predictor-categórico"><span class="toc-section-number">6.5</span>  Añadir un predictor categórico</a></li>
-  <li><a href="#interacciones" id="toc-interacciones" class="nav-link" data-scroll-target="#interacciones"><span class="toc-section-number">6.6</span>  Interacciones</a></li>
+  <li><a href="#modelo-solo-con-intercepto" id="toc-modelo-solo-con-intercepto" class="nav-link" data-scroll-target="#modelo-solo-con-intercepto"><span class="header-section-number">6.1</span> Modelo solo con intercepto</a></li>
+  <li><a href="#añadir-un-predictor-no-asociado" id="toc-añadir-un-predictor-no-asociado" class="nav-link" data-scroll-target="#añadir-un-predictor-no-asociado"><span class="header-section-number">6.2</span> Añadir un predictor no asociado</a></li>
+  <li><a href="#simular-un-predictor-asociado" id="toc-simular-un-predictor-asociado" class="nav-link" data-scroll-target="#simular-un-predictor-asociado"><span class="header-section-number">6.3</span> Simular un predictor asociado</a></li>
+  <li><a href="#varios-predictores-regresión-múltiple" id="toc-varios-predictores-regresión-múltiple" class="nav-link" data-scroll-target="#varios-predictores-regresión-múltiple"><span class="header-section-number">6.4</span> Varios predictores: regresión múltiple</a></li>
+  <li><a href="#añadir-un-predictor-categórico" id="toc-añadir-un-predictor-categórico" class="nav-link" data-scroll-target="#añadir-un-predictor-categórico"><span class="header-section-number">6.5</span> Añadir un predictor categórico</a></li>
+  <li><a href="#interacciones" id="toc-interacciones" class="nav-link" data-scroll-target="#interacciones"><span class="header-section-number">6.6</span> Interacciones</a></li>
   </ul></li>
-  <li><a href="#extender-los-modelos-lineales-a-estructuras-de-datos-más-complejas" id="toc-extender-los-modelos-lineales-a-estructuras-de-datos-más-complejas" class="nav-link" data-scroll-target="#extender-los-modelos-lineales-a-estructuras-de-datos-más-complejas"><span class="toc-section-number">7</span>  Extender los modelos lineales a estructuras de datos más complejas</a>
+  <li><a href="#extender-los-modelos-lineales-a-estructuras-de-datos-más-complejas" id="toc-extender-los-modelos-lineales-a-estructuras-de-datos-más-complejas" class="nav-link" data-scroll-target="#extender-los-modelos-lineales-a-estructuras-de-datos-más-complejas"><span class="header-section-number">7</span> Extender los modelos lineales a estructuras de datos más complejas</a>
   <ul class="collapse">
-  <li><a href="#modelos-lineales-generalizados-glm" id="toc-modelos-lineales-generalizados-glm" class="nav-link" data-scroll-target="#modelos-lineales-generalizados-glm"><span class="toc-section-number">7.1</span>  Modelos lineales generalizados (GLM)</a></li>
-  <li><a href="#modelos-de-efectos-variables-modelos-mixtos" id="toc-modelos-de-efectos-variables-modelos-mixtos" class="nav-link" data-scroll-target="#modelos-de-efectos-variables-modelos-mixtos"><span class="toc-section-number">7.2</span>  Modelos de efectos variables (modelos mixtos)</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="toc-section-number">7.3</span>  Referencias</a></li>
+  <li><a href="#modelos-lineales-generalizados-glm" id="toc-modelos-lineales-generalizados-glm" class="nav-link" data-scroll-target="#modelos-lineales-generalizados-glm"><span class="header-section-number">7.1</span> Modelos lineales generalizados (GLM)</a></li>
+  <li><a href="#modelos-de-efectos-variables-modelos-mixtos" id="toc-modelos-de-efectos-variables-modelos-mixtos" class="nav-link" data-scroll-target="#modelos-de-efectos-variables-modelos-mixtos"><span class="header-section-number">7.2</span> Modelos de efectos variables (modelos mixtos)</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">7.3</span> Referencias</a></li>
   </ul></li>
   </ul>
 </nav>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -289,7 +265,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">9 de noviembre de 2023</p>
+      <p class="date">12 de noviembre de 2023</p>
     </div>
   </div>
   
@@ -305,9 +281,6 @@ body
 pre.numberSource code
   { counter-reset: none; }
 </style>
-<div class="cell">
-
-</div>
 <section id="objetivos-del-manual" class="level1 unnumbered unlisted alert alert-info">
 <h1 class="unnumbered unlisted">Objetivos del manual</h1>
 <ul>
@@ -316,9 +289,6 @@ pre.numberSource code
 </ul>
 </section>
 <p>&nbsp;</p>
-<div class="cell">
-
-</div>
 <style>
 body
   { counter-reset: source-line 0; }
@@ -380,9 +350,6 @@ pre.numberSource code
 <h2 data-number="3.1" class="anchored" data-anchor-id="generación-de-números-aleatorios-en-r"><span class="header-section-number">3.1</span> Generación de números aleatorios en R</h2>
 <p>La estadística nos permite inferir patrones en los datos. Solemos utilizar conjuntos de datos reales para enseñar estadística. Sin embargo, puede ser circular entender el funcionamiento interno de una herramienta estadística probando su capacidad para inferir un patrón que no estamos seguros de encontrar en los datos (y no tenemos idea del mecanismo que produjo ese patrón). <strong>Las simulaciones nos permiten crear escenarios controlados en los que conocemos con seguridad los patrones</strong> presentes en los datos y los procesos subyacentes que los han generado.</p>
 <p>R ofrece algunas funciones básicas para la simulación de datos. Las más utilizadas son las funciones generadoras de números aleatorios. Los nombres de estas funciones comienzan con <em>r</em> (<code>r____()</code>). Por ejemplo, <code>runif()</code>:</p>
-<div class="cell">
-
-</div>
 <div class="cell">
 <details open="">
 <summary>Código</summary>
@@ -652,7 +619,7 @@ Levels: a b</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;">grupo</th>
@@ -709,7 +676,7 @@ Levels: a b</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;">grupo</th>
@@ -957,9 +924,6 @@ Regresión lineal simple
 <font size="6"><span class="math inline">\(\qquad \mathcal{H}_0: \hat{Y} = \beta_0\)</span></font>
 </center>
 <p>&nbsp;</p>
-<div class="cell">
-
-</div>
 <p>Por ejemplo, un modelo de regresión con este resultado:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -987,7 +951,7 @@ Regresión lineal simple
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: right;">Girth</th>
@@ -1901,7 +1865,7 @@ x2           -1.9324    0.41422 -4.6650 2.5851e-05</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;">x1</th>
@@ -2125,7 +2089,7 @@ Variables indicadoras (Dummy variables)
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;">x1</th>
@@ -2200,9 +2164,6 @@ x1_num        1.8140    0.84160  2.1554 3.6172e-02</code></pre>
 <p>Las cosas se complican un poco más cuando se codifica un predictor categórico con más de dos niveles. Pero la lógica es la misma.</p>
 </div>
 <p>&nbsp;</p>
-<div class="cell">
-
-</div>
 <hr>
 </section>
 <section id="interacciones" class="level2" data-number="6.6">
@@ -2243,7 +2204,7 @@ x1_num        1.8140    0.84160  2.1554 3.6172e-02</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;">x1</th>
@@ -2455,15 +2416,9 @@ x1b:x2       -2.9720    0.96227 -3.0885 3.4061e-03</code></pre>
 <li><p>Modifique el <a href="#simular-un-predictor-asociado">código usado para simular un único predictor asociado</a> aumentando gradualmente el error. Esto se hace aumentando el argumento ‘sd’ en <code>error &lt;- rnorm(n = n, sd = 2)</code>.</p></li>
 <li><p>Mire cómo los errores más grandes afectan la inferencia (debe volver a correr los modelos)</p></li>
 </ul>
-<div class="cell">
-
-</div>
 <ul>
 <li>Ahora reemplace el término de error con <code>error &lt;- rexp(n = n, rate = 0.2)</code>. Esto crea un error con una distribución exponencial (por lo tanto no normal). Se supone que esto es problemático para el poder inferencial de estos modelos. Compare las estimaciones que obtuvo con los valores de la simulación (‘b0’ y ‘b1’). Explore la distribución de los residuos (<code>plot(nombre_del_modelo)</code>) para los modelos de error ‘normal’ y ‘exponencial’.</li>
 </ul>
-<div class="cell">
-
-</div>
 <ul>
 <li>Se supone que la colinealidad (la presencia de predictores correlacionados) afecta a la estabilidad de la regresión múltiple. El siguiente código crea dos predictores altamente colineales (‘x1’ y ‘x2’). La última línea de código muestra la correlación entre ellos.</li>
 </ul>
@@ -2491,9 +2446,6 @@ x1b:x2       -2.9720    0.96227 -3.0885 3.4061e-03</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.94642</code></pre>
 </div>
-</div>
-<div class="cell">
-
 </div>
 <ul>
 <li><p>Construya un modelo de regresión múltiple para estos datos (y ~ x1 + x2). Puede utilizar el mismo código que en la sección <a href="#añadir-más-de-un-predictor:-regresión-múltiple">Añadir más de un predictor: regresión múltiple</a>.</p></li>
@@ -2538,7 +2490,7 @@ x1b:x2       -2.9720    0.96227 -3.0885 3.4061e-03</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: right;">x1</th>
@@ -2623,21 +2575,21 @@ Call:
 glm(formula = y ~ x1 + x2, family = poisson(), data = xy_datos_pois)
 
 Deviance Residuals: 
-     Min        1Q    Median        3Q       Max  
-0.00e+00  0.00e+00  0.00e+00  0.00e+00  2.98e-08  
+      Min         1Q     Median         3Q        Max  
+-1.49e-08  -1.49e-08   0.00e+00   0.00e+00   2.98e-08  
 
 Coefficients:
             Estimate Std. Error z value Pr(&gt;|z|)    
 (Intercept) 1.20e+00   1.29e-01    9.31  &lt; 2e-16 ***
 x1          1.30e+00   2.20e-01    5.92  3.2e-09 ***
-x2          1.22e-16   1.90e-01    0.00        1    
+x2          1.39e-16   1.90e-01    0.00        1    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
-    Null deviance:  3.9471e+01  on 49  degrees of freedom
-Residual deviance: -5.9952e-15  on 47  degrees of freedom
+    Null deviance: 3.9471e+01  on 49  degrees of freedom
+Residual deviance: 2.2204e-16  on 47  degrees of freedom
 AIC: 186.9
 
 Number of Fisher Scoring iterations: 3</code></pre>
@@ -2657,12 +2609,12 @@ Number of Fisher Scoring iterations: 3</code></pre>
 <pre><code>              Estimate Std. Error    z value   Pr(&gt;|z|)
 (Intercept) 1.2000e+00    0.12889 9.3106e+00 1.2709e-20
 x1          1.3000e+00    0.21960 5.9200e+00 3.2198e-09
-x2          1.2248e-16    0.19016 6.4409e-16 1.0000e+00</code></pre>
+x2          1.3882e-16    0.19016 7.3003e-16 1.0000e+00</code></pre>
 </div>
 </div>
 <ul>
 <li><p>El modelo nos dice que <span class="math inline">\(\beta_1\)</span> (el tamaño de efecto de ‘x1’) es 1.3 y que es significativamente diferente de 0 (p = 3.21981^{-9}). Esto se interpreta en realidad como que un aumento de 1 unidad de ‘x1’ resulta en ‘y’ (tasa) en un factor de exp(1.3) = 3.6693.</p></li>
-<li><p>El modelo también nos dice que <span class="math inline">\(\beta_2\)</span> (el tamaño de efecto de ‘x2’) es 1.22482^{-16} y que es significativamente diferente de 0 (p = 1). Esto significa que un aumento en 1 unidad de ‘x2’ resulta en ‘y’ (tasa) en un factor de exp(1.22482^{-16}) = 1.</p></li>
+<li><p>El modelo también nos dice que <span class="math inline">\(\beta_2\)</span> (el tamaño de efecto de ‘x2’) es 1.38824^{-16} y que es significativamente diferente de 0 (p = 1). Esto significa que un aumento en 1 unidad de ‘x2’ resulta en ‘y’ (tasa) en un factor de exp(1.38824^{-16}) = 1.</p></li>
 </ul>
 </div>
 <p>&nbsp;</p>
@@ -2740,7 +2692,7 @@ x2          1.2248e-16    0.19016 6.4409e-16 1.0000e+00</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: right;">x1</th>
@@ -2978,7 +2930,7 @@ x1            1.3166     0.1151 290.0679 11.4395 2.9326e-25</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -3045,7 +2997,7 @@ x1            1.3166     0.1151 290.0679 11.4395 2.9326e-25</code></pre>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -3169,18 +3121,18 @@ x1            1.3166     0.1151 290.0679 11.4395 2.9326e-25</code></pre>
 <p><font size="4">Información de la sesión</font></p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.2.2 Patched (2022-11-10 r83330)
+<pre><code>R version 4.1.2 (2021-11-01)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 20.04.5 LTS
+Running under: Ubuntu 22.04.2 LTS
 
 Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
-LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
 
 locale:
- [1] LC_CTYPE=es_ES.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=es_ES.UTF-8    
- [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=es_ES.UTF-8   
+ [1] LC_CTYPE=es_CR.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=es_CR.UTF-8        LC_COLLATE=es_CR.UTF-8    
+ [5] LC_MONETARY=es_CR.UTF-8    LC_MESSAGES=es_CR.UTF-8   
  [7] LC_PAPER=es_CR.UTF-8       LC_NAME=C                 
  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
 [11] LC_MEASUREMENT=es_CR.UTF-8 LC_IDENTIFICATION=C       
@@ -3189,35 +3141,37 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] car_3.1-2         carData_3.0-5     sjPlot_2.8.14     lmerTest_3.1-3   
- [5] lme4_1.1-33       Matrix_1.5-1      viridis_0.6.4     viridisLite_0.4.2
- [9] ggplot2_3.4.3     knitr_1.44       
+ [1] car_3.1-2         carData_3.0-5     sjPlot_2.8.15     lmerTest_3.1-3   
+ [5] lme4_1.1-35.1     Matrix_1.4-0      viridis_0.6.2     viridisLite_0.4.2
+ [9] ggplot2_3.4.4     knitr_1.45       
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.11         mvtnorm_1.1-3       lattice_0.20-45    
- [4] tidyr_1.3.0         packrat_0.8.1       digest_0.6.33      
- [7] utf8_1.2.3          R6_2.5.1            backports_1.4.1    
-[10] evaluate_0.22       coda_0.19-4         pillar_1.9.0       
-[13] rlang_1.1.1         rstudioapi_0.14     minqa_1.2.5        
-[16] performance_0.10.3  nloptr_2.0.3        rmarkdown_2.21     
-[19] labeling_0.4.3      ggeffects_1.2.2     splines_4.2.2      
-[22] xaringanExtra_0.7.0 sketchy_1.0.2       htmlwidgets_1.5.4  
-[25] munsell_0.5.0       broom_1.0.4         compiler_4.2.2     
-[28] numDeriv_2016.8-1.1 modelr_0.1.11       xfun_0.40          
-[31] pkgconfig_2.0.3     mgcv_1.8-41         htmltools_0.5.6    
-[34] insight_0.19.2      tidyselect_1.2.0    tibble_3.2.1       
-[37] gridExtra_2.3       fansi_1.0.4         crayon_1.5.2       
-[40] dplyr_1.1.0         withr_2.5.1         MASS_7.3-58.2      
-[43] sjmisc_2.8.9        grid_4.2.2          nlme_3.1-162       
-[46] jsonlite_1.8.7      xtable_1.8-4        gtable_0.3.4       
-[49] lifecycle_1.0.3     magrittr_2.0.3      bayestestR_0.13.1  
-[52] scales_1.2.1        stringi_1.7.12      estimability_1.4.1 
-[55] cli_3.6.1           farver_2.1.1        remotes_2.4.2.1    
-[58] generics_0.1.3      vctrs_0.6.3         boot_1.3-28        
-[61] sjlabelled_1.2.0    tools_4.2.2         glue_1.6.2         
-[64] purrr_1.0.2         sjstats_0.18.2      emmeans_1.8.6      
-[67] abind_1.4-5         fastmap_1.1.1       yaml_2.3.7         
-[70] colorspace_2.1-0   </code></pre>
+ [1] tidyr_1.2.0         jsonlite_1.8.7      splines_4.1.2      
+ [4] modelr_0.1.11       assertthat_0.2.1    yaml_2.3.7         
+ [7] remotes_2.4.2.1     bayestestR_0.13.1   numDeriv_2016.8-1.1
+[10] pillar_1.9.0        backports_1.4.1     lattice_0.20-45    
+[13] glue_1.6.2          digest_0.6.33       minqa_1.2.4        
+[16] colorspace_2.1-0    sandwich_3.0-1      htmltools_0.5.7    
+[19] pkgconfig_2.0.3     broom_0.7.12        purrr_0.3.4        
+[22] xtable_1.8-4        mvtnorm_1.1-3       scales_1.2.1       
+[25] emmeans_1.8.9       tibble_3.2.1        mgcv_1.8-39        
+[28] farver_2.1.1        generics_0.1.2      sjlabelled_1.2.0   
+[31] sketchy_1.0.2       TH.data_1.1-0       withr_2.5.2        
+[34] cli_3.6.1           survival_3.2-13     magrittr_2.0.3     
+[37] crayon_1.5.2        estimability_1.4.1  evaluate_0.23      
+[40] fansi_1.0.5         nlme_3.1-155        MASS_7.3-55        
+[43] tools_4.1.2         lifecycle_1.0.4     multcomp_1.4-18    
+[46] munsell_0.5.0       ggeffects_1.3.2     packrat_0.9.2      
+[49] compiler_4.1.2      rlang_1.1.2         grid_4.1.2         
+[52] nloptr_2.0.0        rstudioapi_0.13     htmlwidgets_1.5.4  
+[55] labeling_0.4.3      rmarkdown_2.25      xaringanExtra_0.7.0
+[58] boot_1.3-28         gtable_0.3.4        codetools_0.2-18   
+[61] abind_1.4-5         sjstats_0.18.2      DBI_1.1.3          
+[64] sjmisc_2.8.9        R6_2.5.1            gridExtra_2.3      
+[67] zoo_1.8-9           dplyr_1.0.8         performance_0.8.0  
+[70] fastmap_1.1.1       utf8_1.2.4          insight_0.19.6     
+[73] stringi_1.7.12      Rcpp_1.0.11         vctrs_0.6.4        
+[76] tidyselect_1.1.2    xfun_0.41           coda_0.19-4        </code></pre>
 </div>
 </div>
 
@@ -3255,9 +3209,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -3373,6 +3341,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -3411,12 +3465,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp(/https:\/\/marce10\.github\.io\/R_avanzado_2023\//);
+      var filterRegex = new RegExp("https:\/\/marce10\.github\.io\/R_avanzado_2023\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -5630,7 +5684,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Copyright 2023 | <a href="https://marce10.github.io">Marcelo Araya-Salas</a></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

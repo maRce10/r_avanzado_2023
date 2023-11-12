@@ -170,7 +170,7 @@ cam_dat$n_generos <- sapply(unique(datos_camaras$archivo), function(x){
 head(cam_dat, 3)
 ```
 
-4.  Haga un bucle `sapply` que devuelva la fecha de creación del video para cada archivo. El bucle debe usar los datos en el data frame 'datos_camaras' creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto). El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2.  Las primeras 3 filas del cuadro de datos deben verse así:
+4.  Haga un bucle `sapply` que devuelva la fecha de creación del video para cada archivo. El bucle debe usar los datos en el data frame 'datos_camaras' creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto). El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2. Las primeras 3 filas del cuadro de datos deben verse así:
 
 ```{r, echo = FALSE}
 
@@ -178,7 +178,7 @@ cam_dat$date <- sapply(unique(datos_camaras$archivo), function(x){
   
   Y <- datos_camaras[datos_camaras$archivo == x, ]
   
-  date <- length(unique(Y$Date))
+  date <- unique(Y$Date)
 
   return(date)
   })
@@ -186,8 +186,7 @@ cam_dat$date <- sapply(unique(datos_camaras$archivo), function(x){
 head(cam_dat, 3)
 ```
 
-5. Haga un bucle `sapply` que calcule el número de veces que se observó cada especie. El bucle debe trabajar sobre el data frame 'datos_camaras' creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto) y el cálculo debe ser la suma de la columna 'MaxN'. Ponga los resultados en un cuadro de datos con columnas para especie y número de observaciones. (_pista: `unique(datos_camaras$Species)`_). Remueva el campo en el que especie es igual a "". Las primeras 3 filas del cuadro de datos deben verse así:
-
+5.  Haga un bucle `sapply` que calcule el número de veces que se observó cada especie. El bucle debe trabajar sobre el data frame 'datos_camaras' creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto) y el cálculo debe ser la suma de la columna 'MaxN'. Ponga los resultados en un cuadro de datos con columnas para especie y número de observaciones. (*pista: `unique(datos_camaras$Species)`*). Remueva el campo en el que especie es igual a "". Las primeras 3 filas del cuadro de datos deben verse así:
 
 ```{r, echo = FALSE}
 
@@ -208,7 +207,7 @@ sp_dat <- sp_dat[sp_dat$spp != "", ]
 head(sp_dat, 3)
 ```
 
-6. Utilice bucles `sapply` para añadir el mínimo y máximo de la profundidad para cada una de las especies en el cuadro de datos creado en el ejercicio anterior (_pistas: 1) asegúrese que la columna de profundidad es numérica antes de calcular las profundidades; 2) `gsub(" m", "", vector)`; 3) `gsub(",", ".", vector)`; 4) `as.numeric()`_). Las primeras 3 filas del cuadro de datos deben verse así:
+6.  Utilice bucles `sapply` para añadir el mínimo y máximo de la profundidad para cada una de las especies en el cuadro de datos creado en el ejercicio anterior (*pistas: 1) asegúrese que la columna de profundidad es numérica antes de calcular las profundidades; 2) `gsub(" m", "", vector)`; 3) `gsub(",", ".", vector)`; 4) `as.numeric()`*). Las primeras 3 filas del cuadro de datos deben verse así:
 
 ```{r, echo = FALSE}
 
@@ -239,7 +238,7 @@ head(sp_dat, 3)
 
 ```
 
-7. Calcule el rango de profundidad (i.e. la diferencia entre el mínimo y el máximo de la profundidad) para cada especie y añádalo como una columna al cuadro de datos creado en el ejercicio 5. Las primeras 3 filas del cuadro de datos deben verse así:
+7.  Calcule el rango de profundidad (i.e. la diferencia entre el mínimo y el máximo de la profundidad) para cada especie y añádalo como una columna al cuadro de datos creado en el ejercicio 5. Las primeras 3 filas del cuadro de datos deben verse así:
 
 ```{r, echo = FALSE}
 
@@ -258,10 +257,9 @@ head(sp_dat, 3)
 
 ```
 
-8. Incluya el cuadro de datos generado en los ejercicios 5 a 7 como una tabla en su reporte usando la función `DT` del paquete `datatable`.
+8.  Incluya el cuadro de datos generado en los ejercicios 5 a 7 como una tabla en su reporte usando la función `DT` del paquete `datatable`.
 
 9.  Publique el reporte en [Rpubs](https://rpubs.com/) y añada el enlace en el reporte (use un enlace en el texto).
-
 :::
 
  

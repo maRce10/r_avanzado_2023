@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R avanzado 2023 - Solución a la tarea 5</title>
+<title>R avanzado 2023 - Tarea 5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,16 +93,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
-
-<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
-<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="site_libs/datatables-binding-0.17/datatables.js"></script>
-<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
-<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -224,7 +214,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><font size="7"><b>Solución a la tarea 5</b></font></h1>
+<h1 class="title"><font size="7"><b>Tarea 5</b></font></h1>
 </div>
 
 
@@ -245,31 +235,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>&nbsp;</p>
+<div class="alert alert-warning">
+<p><strong>Instrucciones</strong></p>
+<ul>
+<li>La fecha de entrega es el 27 de octubre a las 11:59:59 pm</li>
+<li>La tarea debe ser escrita en el formato para reportes dinámicos Rmarkdown o quarto (5 pts)</li>
+<li>Debe entregar el archivo html generado del documento Rmarkdown/quarto por medio de mediación virtual (hay un enlace para someter la tarea). No envíe el archivo Rmd.</li>
+<li>El reporte debe utilizar secciones de código (“chunks”) separados para cada ejercicio y subtítulos para cada uno así como comentarios en texto</li>
+<li>El código de los bloques siempre debe ser visible (no use <code>echo = FALSE</code>)</li>
+<li>El código dentro de los bloques de código debe estar documentado con comentarios (usando #)</li>
+<li>Debe usar R básico para la manipulación de datos</li>
+<li>Cada item tiene un valor de 5 puntos</li>
+</ul>
+</div>
+<p>&nbsp;</p>
+<p>Para esta tarea trabajaremos con los datos de camaras submarinas usados en clase. Estos datos muestran la salida de un programa de identificación automática de especies marinas en videos pasivos tomados en la columna de agua. Para cada video analizado el programa genera un archivo de texto (.TXT) con una fila para cada especie detectada mas una serie de metadatos asociados a la detección. Los datos se ven así:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/datos.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Primero debemos preparar los archivos de ejemplo:</p>
+<div class="cell">
+<details open="">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># definir directorio a donde guardar los archivos</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>directorio <span class="ot">&lt;-</span> <span class="st">"DIRECCION_DONDE_GUARDAR_LOS ARCHIVOS_DE_EJEMPLO"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># guardar archivos</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">url =</span> <span class="fu">paste0</span>(</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://github.com/maRce10/ucr_r_avanzado/"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"raw/master/additional_files/datos_camara_submarina.zip"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">destfile =</span> <span class="fu">file.path</span>(directorio, <span class="st">"datos_camara_submarina.zip"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># extraerlos del zip</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">zipfile =</span> <span class="fu">file.path</span>(directorio, <span class="st">"datos_camara_submarina.zip"</span>),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">exdir =</span> directorio</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># hacer vector con nombre y direccion de archivos</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>archivos_txt <span class="ot">&lt;-</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list.files</span>(</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">path =</span> directorio,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">full.names =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">pattern =</span> <span class="st">"TXT$"</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>&nbsp;</p>
+<p>También pueden bajar el archivo directamente de <a href="https://github.com/maRce10/ucr_r_avanzado/raw/master/additional_files/datos_camara_submarina.zip">este enlance</a>. Recuerde extraer los archivos y hacer el vector con los nombres de los archivos (correr líneas de la 9 a la 13).</p>
+<p>Si todo salió bien el vector “archivos_txt” debería tener 19 elementos:</p>
+<div class="cell">
+<details open="">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(archivos_txt)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19</code></pre>
+</div>
+</div>
+<p>&nbsp;</p>
 <div class="alert alert-info">
 <ol type="1">
 <li>Haga un bucle <code>for</code> que una todos los datos contenidos en los archivos de texto en un solo cuadro de datos (‘data frame’, debe llamarse ‘datos_camaras’) y añada una columna con el nombre del archivo de donde provienen los datos (debe llamarse ‘archivo’; <em>pistas: 1) añadir el nombre del archivo en una columna se hace en el cuerpo del bucle luego de leer el archivo; 2) recuerden usar <code>basename()</code></em>).</li>
 </ol>
-<p><em>Respuesta:</em></p>
-<div class="cell">
-<details open="">
-<summary>Código</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># crear un cuadro de datos vacios donde poner los resultados</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>datos_camaras <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ciclar sobre los archivos para leer los datos</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> archivos_txt){</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># leer datos</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  txt <span class="ot">&lt;-</span> <span class="fu">read.table</span>(i, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">skip =</span> <span class="dv">4</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># añadir nombre de archivo</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  txt<span class="sc">$</span>archivo <span class="ot">&lt;-</span> <span class="fu">basename</span>(i)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># adjuntar datos</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  datos_camaras <span class="ot">&lt;-</span> <span class="fu">rbind</span>(datos_camaras, txt) </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 <ol start="2" type="1">
 <li>Haga un bucle <code>sapply</code> que devuelva el número de familias para cada archivo. El bucle debe usar los datos en el data frame ‘datos_camaras’ creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto). El resultado debe ser guardado en un cuadro de datos (‘data frame’) que contenga las columnas ‘archivo’ y ‘n_familias’. (<em>pistas: 1) necesitan crear una función en la llamada del bucle; 2) el bucle debe ciclar sobre cada uno de los nombres de archivo; 3) deben crear un subconjunto de los datos para cada archivo a lo interno del bucle</em>). Las primeras 3 filas del cuadro de datos deben verse así:</li>
 </ol>
@@ -304,26 +343,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-</div>
-<p><em>Respuesta:</em></p>
-<div class="cell">
-<details open="">
-<summary>Código</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ciclar sobre los nombres de archivos en datos_camaras$archivo</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>n_familias <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">unique</span>(datos_camaras<span class="sc">$</span>archivo), <span class="cf">function</span>(x){</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># leer datos de un archivo</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> datos_camaras[datos_camaras<span class="sc">$</span>archivo <span class="sc">==</span> x, ]</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># estimar numero de familias</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  n_fams <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(Y<span class="sc">$</span>Family))</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(n_fams)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># guardar resultados en un cuadro de datos</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>cam_dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">archivo =</span> <span class="fu">basename</span>(<span class="fu">unique</span>(datos_camaras<span class="sc">$</span>archivo)), <span class="at">n_familias =</span> n_familias, <span class="at">row.names =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(n_familias))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ol start="3" type="1">
 <li>Haga un bucle <code>sapply</code> que devuelva el número de géneros (columna ‘genus’) para cada archivo. El bucle debe usar los datos en el data frame ‘datos_camaras’ creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto). El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2. Las primeras 3 filas del cuadro de datos deben verse así:</li>
@@ -364,23 +383,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-</div>
-<p><em>Respuesta:</em></p>
-<div class="cell">
-<details open="">
-<summary>Código</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ciclar sobre los nombres de archivos en datos_camaras$archivo</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cam_dat<span class="sc">$</span>n_generos <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">unique</span>(datos_camaras<span class="sc">$</span>archivo), <span class="cf">function</span>(x){</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>   <span class="co"># leer datos de un archivo</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> datos_camaras[datos_camaras<span class="sc">$</span>archivo <span class="sc">==</span> x, ]</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># estimar numero de generos</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  n_gens <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(Y<span class="sc">$</span>Genus))</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(n_gens)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  })</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ol start="4" type="1">
 <li>Haga un bucle <code>sapply</code> que devuelva la fecha de creación del video para cada archivo. El bucle debe usar los datos en el data frame ‘datos_camaras’ creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto). El resultado debe ser añadido como una nueva columna al cuadro de datos creado en el ejercicio 2. Las primeras 3 filas del cuadro de datos deben verse así:</li>
@@ -427,23 +429,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><em>Respuesta:</em></p>
-<div class="cell">
-<details open="">
-<summary>Código</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ciclar sobre los nombres de archivos en datos_camaras$archivo</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>cam_dat<span class="sc">$</span>date <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">unique</span>(datos_camaras<span class="sc">$</span>archivo), <span class="cf">function</span>(x){</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># leer datos de un archivo</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> datos_camaras[datos_camaras<span class="sc">$</span>archivo <span class="sc">==</span> x, ]</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># extraer fecha</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  date <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(Y<span class="sc">$</span>Date))</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(date)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  })</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 <ol start="5" type="1">
 <li>Haga un bucle <code>sapply</code> que calcule el número de veces que se observó cada especie. El bucle debe trabajar sobre el data frame ‘datos_camaras’ creado en el ejercicio 1 (no debe leer de nuevo los archivos de texto) y el cálculo debe ser la suma de la columna ‘MaxN’. Ponga los resultados en un cuadro de datos con columnas para especie y número de observaciones. (<em>pista: <code>unique(datos_camaras$Species)</code></em>). Remueva el campo en el que especie es igual a ““. Las primeras 3 filas del cuadro de datos deben verse así:</li>
 </ol>
@@ -478,28 +463,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-</div>
-<p><em>Respuesta:</em></p>
-<div class="cell">
-<details open="">
-<summary>Código</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ciclar sobre los nombres de archivos en datos_camaras$archivo</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>n_obs <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">unique</span>(datos_camaras<span class="sc">$</span>Species), <span class="cf">function</span>(x){</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># leer datos de un archivo  </span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> datos_camaras[datos_camaras<span class="sc">$</span>Species <span class="sc">==</span> x, ]</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sumar numero de observaciones</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  obs <span class="ot">&lt;-</span> <span class="fu">sum</span>(X<span class="sc">$</span>MaxN)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(obs)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>sp_dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">spp =</span> <span class="fu">unique</span>(datos_camaras<span class="sc">$</span>Species), n_obs)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>sp_dat <span class="ot">&lt;-</span> sp_dat[sp_dat<span class="sc">$</span>spp <span class="sc">!=</span> <span class="st">""</span>, ]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ol start="6" type="1">
 <li>Utilice bucles <code>sapply</code> para añadir el mínimo y máximo de la profundidad para cada una de las especies en el cuadro de datos creado en el ejercicio anterior (<em>pistas: 1) asegúrese que la columna de profundidad es numérica antes de calcular las profundidades; 2) <code>gsub(" m", "", vector)</code>; 3) <code>gsub(",", ".", vector)</code>; 4) <code>as.numeric()</code></em>). Las primeras 3 filas del cuadro de datos deben verse así:</li>
@@ -543,40 +506,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-</div>
-<p><em>Respuesta:</em></p>
-<div class="cell">
-<details open="">
-<summary>Código</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># convertir profundidad a una columna numerica</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>datos_camaras<span class="sc">$</span>Depth <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">" m"</span>, <span class="st">""</span>, datos_camaras<span class="sc">$</span>Depth)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>datos_camaras<span class="sc">$</span>Depth <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">"."</span>, datos_camaras<span class="sc">$</span>Depth)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>datos_camaras<span class="sc">$</span>Depth <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(datos_camaras<span class="sc">$</span>Depth)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ciclar sobre los nombres de especies</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>sp_dat<span class="sc">$</span>min_prof <span class="ot">&lt;-</span> <span class="fu">sapply</span>(sp_dat<span class="sc">$</span>spp, <span class="cf">function</span>(x){</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># leer los datos para una especie</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> datos_camaras[datos_camaras<span class="sc">$</span>Species <span class="sc">==</span> x, ]</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">#  calcular el minimo de la profundidad</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  min_prf <span class="ot">&lt;-</span> <span class="fu">min</span>(X<span class="sc">$</span>Depth, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(min_prf)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ciclar sobre los nombres de especies</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>sp_dat<span class="sc">$</span>max_prof <span class="ot">&lt;-</span> <span class="fu">sapply</span>(sp_dat<span class="sc">$</span>spp, <span class="cf">function</span>(x){</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># leer los datos para una especie</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> datos_camaras[datos_camaras<span class="sc">$</span>Species <span class="sc">==</span> x, ]</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calcular el maximo de profundidad</span></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  max_prf <span class="ot">&lt;-</span> <span class="fu">max</span>(X<span class="sc">$</span>Depth, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(max_prf)</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ol start="7" type="1">
 <li>Calcule el rango de profundidad (i.e.&nbsp;la diferencia entre el mínimo y el máximo de la profundidad) para cada especie y añádalo como una columna al cuadro de datos creado en el ejercicio 5. Las primeras 3 filas del cuadro de datos deben verse así:</li>
@@ -625,32 +554,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><em>Respuesta:</em></p>
-<div class="cell">
-<details open="">
-<summary>Código</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calcular el maximo menos el minimo de profundidad</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sp_dat<span class="sc">$</span>rango_prof <span class="ot">&lt;-</span> sp_dat<span class="sc">$</span>max_prof <span class="sc">-</span> sp_dat<span class="sc">$</span>min_prof</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 <ol start="8" type="1">
-<li>Incluya el cuadro de datos generado en los ejercicios 5 a 7 como una tabla en su reporte usando la función <code>DT</code> del paquete <code>datatable</code>.</li>
-</ol>
-<p><em>Respuesta:</em></p>
-<div class="cell">
-<details open="">
-<summary>Código</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(sp_dat)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-
-<div id="htmlwidget-cdd81a895d0bbcdf405f" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cdd81a895d0bbcdf405f">{"x":{"filter":"none","data":[["xanthopterus","laticlavius","polylepis","naufragium","verres","azaleus","caballus","bipinnulata","humeralis","nigrirostris","holocanthus","maculicauda","steindachneri","elegans","diplotaenia","chierchiae","dispilus","melanotis","nicholsi","taeniourus","lucasanum","argentiventris","scriptus","dentatus","castaneus","passer","troschelii","atrilobata","acapulcoensis","flavilatus","ghobban","rubroviolaceus","panamensis","labriformis","colonus","psittacinus","punctatissima","lewini","maculata","audax","melampygus","mydas","guentherii","viridis","nigricans","niger","lugubris","macarellus","obesus","ocyurus","jordani","novemfasciatus","ciliaris","rivoliana","limbatus","meyeni","albimarginatus","galapagensis","scudderii","refulgens","sexfasciatus","longa","commersonii","flaviguttatum","sexfasciatum","guttatus","narinari","brachysomus","meleagris","halleri","mento","interruptus","discolor","grammaticum","dovii","arcifrons","dermatolepis","cornutus","berndti","flavimarginatus","panamaensis","dorsalis","cuvier","monoceros","nebulosa","inermis","speciosus","unami","hispidus","zonipectus","xenarcha","olfax","falciformis","albacares","hystrix","aratus"],["xanthopterus","laticlavius","polylepis","naufragium","verres","azaleus","caballus","bipinnulata","humeralis","nigrirostris","holocanthus","maculicauda","steindachneri","elegans","diplotaenia","chierchiae","dispilus","melanotis","nicholsi","taeniourus","lucasanum","argentiventris","scriptus","dentatus","castaneus","passer","troschelii","atrilobata","acapulcoensis","flavilatus","ghobban","rubroviolaceus","panamensis","labriformis","colonus","psittacinus","punctatissima","lewini","maculata","audax","melampygus","mydas","guentherii","viridis","nigricans","niger","lugubris","macarellus","obesus","ocyurus","jordani","novemfasciatus","ciliaris","rivoliana","limbatus","meyeni","albimarginatus","galapagensis","scudderii","refulgens","sexfasciatus","longa","commersonii","flaviguttatum","sexfasciatum","guttatus","narinari","brachysomus","meleagris","halleri","mento","interruptus","discolor","grammaticum","dovii","arcifrons","dermatolepis","cornutus","berndti","flavimarginatus","panamaensis","dorsalis","cuvier","monoceros","nebulosa","inermis","speciosus","unami","hispidus","zonipectus","xenarcha","olfax","falciformis","albacares","hystrix","aratus"],[145,25,26,3,21,23,370,23,10,15,13,552,11,18,10,2,123,1,2,1,31,78,1,42,5,10,50,625,8,6,38,6,3,10,213,4,5,14,72,1,50,6,10,43,3,70,7,1,20,1,4,6,5,9,4,7,6,6,2,3,1,2,8,318,20,112,2,4,5,2,7,12,1,3,1,10,15,3,4,1,1,1,2,1,1,9,8,5,2,1,1,4,2,1,1,1],[6.4,9.6,9.6,10,6.4,9.6,9.6,6.4,10,9.6,9.6,10,10,10,10,10,9.6,10,10,10,9.6,10,10,10,9.6,9.6,9.6,9.6,9.6,9.6,9.6,6.4,10,10,9.6,10,9.6,10,6.4,10,6.4,9.6,9.6,21,6.4,6.4,6.4,6.4,6.4,6.4,6.4,6.4,23.6,9.6,23.6,23.4,23.6,23.6,23.6,9.6,10,10,9.6,9.6,10,10,9.6,10,9.6,10,23.6,23.6,23.6,23.4,23.6,23.4,23.6,23.4,23.4,23.4,23.4,23.4,28,17,17,9.6,9.6,9.6,9.6,18.6,18.6,31.6,28,28,13,13],[31.6,31.6,30,18.6,21,17,28.1,30,18.6,18.6,17,18.6,10,10,23.6,10,23.6,10,10,10,23.6,31.6,10,30,13,23.6,18.6,13,10,18.6,18.6,31.6,23.6,23.6,31.6,10,13,30,31.6,10,31.6,21,23.6,23.4,31.6,31.6,31.6,6.4,31.6,6.4,6.4,23.6,31.6,31.6,28.1,31.6,30,31.6,28.1,9.6,10,17,23.6,17,18.6,17,10,17,17,17,31.6,30,23.6,23.6,23.6,23.6,31.6,31.6,23.4,23.4,23.4,23.4,30,17,17,13,18.6,18.6,18.6,18.6,18.6,31.6,28,28,13,13],[25.2,22,20.4,8.600000000000001,14.6,7.4,18.5,23.6,8.600000000000001,9.000000000000002,7.4,8.600000000000001,0,0,13.6,0,14,0,0,0,14,21.6,0,20,3.4,14,9.000000000000002,3.4,0.4000000000000004,9.000000000000002,9.000000000000002,25.2,13.6,13.6,22,0,3.4,20,25.2,0,25.2,11.4,14,2.399999999999999,25.2,25.2,25.2,0,25.2,0,0,17.2,8,22,4.5,8.200000000000003,6.399999999999999,8,4.5,0,0,7,14,7.4,8.600000000000001,7,0.4000000000000004,7,7.4,7,8,6.399999999999999,0,0.2000000000000028,0,0.2000000000000028,8,8.200000000000003,0,0,0,0,2,0,0,3.4,9.000000000000002,9.000000000000002,9.000000000000002,0,0,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>spp<\/th>\n      <th>n_obs<\/th>\n      <th>min_prof<\/th>\n      <th>max_prof<\/th>\n      <th>rango_prof<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<ol start="9" type="1">
-<li>Publique el reporte en <a href="https://rpubs.com/">Rpubs</a> y añada el enlace en el reporte (use un enlace en el texto).</li>
+<li><p>Incluya el cuadro de datos generado en los ejercicios 5 a 7 como una tabla en su reporte usando la función <code>DT</code> del paquete <code>datatable</code>.</p></li>
+<li><p>Publique el reporte en <a href="https://rpubs.com/">Rpubs</a> y añada el enlace en el reporte (use un enlace en el texto).</p></li>
 </ol>
 </div>
 <p>&nbsp;</p>
@@ -678,14 +584,13 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] DT_0.17
+[1] knitr_1.45
 
 loaded via a namespace (and not attached):
- [1] digest_0.6.33     R6_2.5.1          jsonlite_1.8.7    magrittr_2.0.3   
- [5] evaluate_0.23     rlang_1.1.2       cli_3.6.1         rstudioapi_0.13  
- [9] rmarkdown_2.25    tools_4.1.2       htmlwidgets_1.5.4 crosstalk_1.2.0  
-[13] xfun_0.41         yaml_2.3.7        fastmap_1.1.1     compiler_4.1.2   
-[17] htmltools_0.5.7   knitr_1.45       </code></pre>
+ [1] htmlwidgets_1.5.4 compiler_4.1.2    fastmap_1.1.1     cli_3.6.1        
+ [5] tools_4.1.2       htmltools_0.5.7   rstudioapi_0.13   yaml_2.3.7       
+ [9] rmarkdown_2.25    jsonlite_1.8.7    xfun_0.41         digest_0.6.33    
+[13] rlang_1.1.2       evaluate_0.23    </code></pre>
 </div>
 </div>
 
